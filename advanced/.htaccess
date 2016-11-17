@@ -1,0 +1,45 @@
+Options +FollowSymlinks
+RewriteEngine On
+
+# Backend redirect
+#RewriteCond %{REQUEST_URI} ^/forum
+#RewriteRule ^forum/(.*)$ forum/$1 [L]
+
+# Backend redirect
+RewriteCond %{REQUEST_URI} ^/backend
+RewriteRule ^backend/(.*)$ backend/web/$1 [L]
+
+# Statics redirect
+#RewriteCond %{REQUEST_URI} ^/statics
+#RewriteRule ^statics/(.*)$ statics/web/$1 [L]
+
+# Frontend redirect
+#RewriteCond %{REQUEST_URI} ^/(.*)$
+#RewriteRule ^/(.*)$ frontend/web/$1
+
+<IfModule mod_rewrite.c>
+# deal with admin first
+RewriteCond %{REQUEST_URI} ^/(admin)
+RewriteRule ^admin/assets/(.*)$ backend/web/assets/$1 [L]
+RewriteRule ^admin/css/(.*)$ backend/web/css/$1 [L]
+
+RewriteCond %{REQUEST_URI} !^/backend/web/(assets|css)/
+RewriteCond %{REQUEST_URI} ^/(admin)
+RewriteRule ^.*$ backend/web/index.php [L]
+
+RewriteCond %{REQUEST_URI} ^/backend
+RewriteRule ^backend/(.*)$ backend/web/$1 [L]
+
+RewriteCond %{REQUEST_URI} ^/(assets|css|js|images)
+RewriteRule ^assets/(.*)$ frontend/web/assets/$1 [L]
+RewriteRule ^css/(.*)$ frontend/web/css/$1 [L]
+RewriteRule ^js/(.*)$ frontend/web/js/$1 [L]
+RewriteRule ^images/(.*)$ frontend/web/images/$1 [L]
+RewriteRule ^(.*)$ frontend/web/$1 [L]
+
+RewriteCond %{REQUEST_URI} !^/(frontend|backend)/web/(assets|css|js)/
+RewriteCond %{REQUEST_URI} !index.php
+RewriteCond %{REQUEST_FILENAME} !-f [OR]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ frontend/web/index.php
+</IfModule>
