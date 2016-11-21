@@ -84,7 +84,7 @@ class SiteController extends Controller
 
         $products = $modelProduct->getProductsBySection($request->get('section'),3 ); /// три картинки на страницу
 
-        var_dump($products);
+        //var_dump($products);
         return $this->render('index', $products);
 
     }
