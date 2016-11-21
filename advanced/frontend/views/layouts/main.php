@@ -33,8 +33,7 @@ AppAsset::register($this);
     $sections = new Section();
 
     NavBar::begin([
-        /*'brandLabel' => 'My Company',
-        'brandUrl' => Yii::$app->homeUrl,*/
+
         'brandLabel' => (Html::img('@web/images/logo.png',['alt' => 'PORTELIANO'])),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [

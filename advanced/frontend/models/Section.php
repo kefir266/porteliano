@@ -37,7 +37,7 @@ class Section extends ActiveRecord
             {
                 $references[$node[$id]['parent_id']]['items'][$node[$id]['id']] = &$node[$id];
             }
-            $node[$id]['url'] = 'site/' . $node[$id]['page'];
+            $node[$id]['url'] = $node[$id]['page'];
         }
 
         return $tree;
@@ -46,6 +46,7 @@ class Section extends ActiveRecord
     public function getMenu(){
 
         $result = ArrayHelper::toArray(self::find()->orderBy('parent_id')->all());
+        
 
         $tree = $this->_getTree($result);
         return $tree;

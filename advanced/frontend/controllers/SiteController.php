@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use GuzzleHttp\Psr7\Request;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -12,6 +13,9 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use frontend\models\Product;
+
+
 /*Для тестов*/
 use app\models\EntryForm;
 
@@ -74,8 +78,15 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
-        var_dump($this);
+
+        $modelProduct = new Product();
+        $request = Yii::$app->request;
+
+        $products = $modelProduct->getProductsBySection($request->get('section'),3 ); /// три картинки на страницу
+
+        var_dump($products);
+        return $this->render('index', $products);
+
     }
 
     /**
