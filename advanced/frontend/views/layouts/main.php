@@ -26,23 +26,37 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
+
     <?php
+
+    $sections = new app\models\Section();
+
     NavBar::begin([
         /*'brandLabel' => 'My Company',
         'brandUrl' => Yii::$app->homeUrl,*/
+        'brandLabel' => (Html::img('@web/advanced/frontend/web/img/logo.png',['alt' => 'PORTELIANO'])),
+        'brandUrl' => Yii::$app->homeUrl,
         'options' => [
+
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     $menuItems = [
         ['label' => 'ГЛАВНАЯ', 'url' => ['/site/index']],
-        ['label' => 'НОВИНКИ', 'url' => ['/site/about']],
-        ['label' => 'ДВЕРИ', 'url' => ['/site/about']],
-        ['label' => 'ПЕРЕГОРОДКИ', 'url' => ['/site/about']],
-        ['label' => 'ПРОИЗВОДИТЕЛИ', 'url' => ['/site/about']],
+        ['label' => 'НОВИНКИ', 'url' => ['/site/about']],];
+
+    foreach ($sections->getMenu()['items'] as $section){
+        $menuItems[] = $section;
+    }
+
+
+
+    $menuItems = array_merge($menuItems,
+        [['label' => 'ПРОИЗВОДИТЕЛИ', 'url' => ['/site/about']],
         ['label' => 'О КОМПАНИИ', 'url' => ['/site/about']],
         ['label' => 'КОНТАКТЫ', 'url' => ['/site/contact']],
-    ];
+    ]);
+
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
@@ -60,9 +74,10 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav'],
         'items' => $menuItems,
     ]);
-    
+
     NavBar::end();
     ?>
+
 
     <div class="container">
         <?= Breadcrumbs::widget([
@@ -73,42 +88,9 @@ AppAsset::register($this);
     </div>
 </div>
 
-<footer class="footer"> 
+<footer class="footer">
     <!--<div class="wrap">-->
-        <?php
-        NavBar::begin([
-            'options' => [
-                'class' => 'navbar-inverse navbar-fixed-buttom',
-            ],
-        ]);
-        $menuItems = [
-            ['label' => 'ГЛАВНАЯ', 'url' => ['/site/index']],
-            ['label' => 'НОВИНКИ', 'url' => ['/site/about']],
-            ['label' => 'ДВЕРИ', 'url' => ['/site/about']],
-            ['label' => 'ПЕРЕГОРОДКИ', 'url' => ['/site/about']],
-            ['label' => 'ПРОИЗВОДИТЕЛИ', 'url' => ['/site/about']],
-            ['label' => 'О КОМПАНИИ', 'url' => ['/site/about']],
-            ['label' => 'КОНТАКТЫ', 'url' => ['/site/contact']],
-        ];
-        if (Yii::$app->user->isGuest) {
-            $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-            $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-        } else {
-            $menuItems[] = '<li>'
-                . Html::beginForm(['/site/logout'], 'post')
-                . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link logout']
-                )
-                . Html::endForm()
-                . '</li>';
-        }
-        echo Nav::widget([
-            'options' => ['class' => 'navbar-nav'],
-            'items' => $menuItems,
-        ]);
-        NavBar::end();
-        ?>
+
     <!--</div>-->
     <div class="container">
 

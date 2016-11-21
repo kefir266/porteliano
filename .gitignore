@@ -15,6 +15,7 @@
 #################################
 /nbproject
 .idea
+.htaccess
 /.project
 /.buildpath
 /.settings/

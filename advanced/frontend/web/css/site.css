@@ -8,15 +8,18 @@ body {
     height: auto;
     margin: 0 auto -60px;
     padding: 0 0 60px;
+    background-color: #fdfdf3;
+
 }
 
 .wrap > .container {
     padding: 70px 15px 20px;
+
 }
 
 .footer {
     height: 60px;
-    background-color: #f5f5f5;
+    background-color: #f9f2f4;
     border-top: 1px solid #ddd;
     /*padding-top: 20px;*/
     padding-top: 0px;
@@ -101,10 +104,12 @@ a.desc:after {
     display: inline-block;
     float: none;
     vertical-align: top;
+    background-color: #413332;
 }
 
 .navbar .navbar-collapse {
     text-align: center;
+    border-color: #fdfdf3;
 }
 
 @media (min-width: 992px) {
@@ -136,7 +141,7 @@ a.desc:after {
         float: none;
         width: auto;
         margin-top: 0;
-        background-color: transparent;
+        /*background-color: transparent;*/
         border: 0;
         -webkit-box-shadow: none;
         box-shadow: none;
@@ -201,8 +206,17 @@ a.desc:after {
 }
 
 .navbar ul.nav > li {
-    border-right: 1px solid black;
+    border-right: 1px solid #413332;
 }
 .navbar ul.nav > li:last-of-type {
     border-right: none;
+}
+
+.navbar-brand {
+    float: initial;
+
+}
+.navbar-inverse {
+    background-color: #fdfdf3;
+    border-color: #fdfdf3;
 }
