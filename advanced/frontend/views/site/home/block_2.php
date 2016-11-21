@@ -27,14 +27,24 @@ Block_2_Asset::register($this);
                         <h3>Входные двери</h3>
                     </div>
                 </div>
-
-
+                <div class="grips">
+                    <div class="doors-gradient">
+                        <h3>Входные двери</h3>
+                    </div>
+                </div>
+                <div class="septa">
+                    <div class="doors-gradient">
+                        <h3>Межкомнатные<br/> перегородки</h3>
+                    </div>
+                </div>
+                <div class="interiorDoors">
+                    <div class="doors-gradient">
+                        <h3>Межкомнатные двери</h3>
+                    </div>
+                </div>
             </div>
-            <div class="grips"></div>
-            <div class="septa"></div>
-            <div class="interiorDoors"></div>
 
-            </div>            
+        </div>
 
             <?php
             /*echo Carousel::widget ( [

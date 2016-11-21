@@ -61,9 +61,7 @@ html, body {
     margin: 0 auto -142px;
 }
 .footer-general, .push {
-    /*height: 142px;
-    height: 71px;*/
-    height: 82px;
+    height: 102px;
 }
 .wrap{
     margin: 22px auto -60px;
@@ -259,7 +257,7 @@ header{
 }
 .navbar-line-indent{
     position: absolute;
-    top: 93px;
+    top: 114px;
     left: 0;
 }
 #ask_a_question{

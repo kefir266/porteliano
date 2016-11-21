@@ -39,55 +39,98 @@
 }
 .entryDoors > .doors-gradient{
     position: absolute;
-    top: 300px;
-    left: 2px;
-    width: 223px;
-    height: 167px;
+    top: 309px;
+    left: 1px;
+    width: 225px;
+    height: 159px;
 }
-
+.entryDoors > .doors-gradient > h3{
+    position: absolute;
+    top: 108px;
+    left: 17px;
+}
 .grips{
     position: absolute;
-    top: 70px;
-    left: 200px;
-
+    top: 68px;
+    left: 557px;
     background-image: url(../img/catalog/grips.jpg);
     width: 230px;
     height: 234px;
-    border: solid #935347 5px;
+    /* border: solid #935347 5px; */
+}
+.grips > .doors-gradient{
+    position: absolute;
+    top: 61px;
+    width: 230px;
+    height: 173px;
+}
+.grips > .doors-gradient > h3{
+    position: absolute;
+    top: 122px;
+    left: 17px;
 }
 .septa{
     position: absolute;
-    top: 70px;
-    left: 300px;
-
+    top: 311px;
+    left: 556px;
     background-image: url(../img/catalog/septa.jpg);
     width: 225px;
     height: 234px;
-    border: solid #935347 5px;
+    /* border: solid #935347 5px; */
+}
+.septa > .doors-gradient{
+    position: absolute;
+    top: 60px;
+    width: 223px;
+    height: 173px;
+}
+.septa > .doors-gradient > h3{
+    position: absolute;
+    top: 122px;
+    left: 17px;
 }
 .interiorDoors{
     position: absolute;
-    top: 70px;
-    left: 400px;
+    top: 68px;
+    left: 70px;
 
     background-image: url(../img/catalog/interiorDoors.jpg);
     width: 475px;
     height: 478px;
-    border: solid #935347 5px;
+    border: solid #935347 0px;
 }
+.interiorDoors > .doors-gradient{
+    position: absolute;
+    top: 303px;
+    width: 475px;
+    height: 173px;
+}
+.interiorDoors > .doors-gradient > h3{
+    position: absolute;
+    top: 122px;
+    left: 17px;
+}
+.panel-Catalog > h2{
+    position: absolute;
+    top: -25px;
+    left: 471px;
+    font-size: 40px;
+}
+
+
 .entryDoors:hover
 {
-    animation: backgroundscale_15 .5s linear normal  forwards;
+    animation: backgroundscale_15 .9s linear normal  forwards;
 }
 .grips:hover
 {
-    animation: backgroundscale_15 .5s linear normal  forwards;
+    animation: backgroundscale_15 .9s linear normal  forwards;
 }
 .septa:hover
 {
-    animation: backgroundscale_15 .5s linear normal  forwards;
+    animation: backgroundscale_15 .9s linear normal  forwards;
 }
 .interiorDoors:hover
 {
-    animation: backgroundscale_15 .5s linear normal  forwards;
+    animation: backgroundscale_15 .9s linear normal  forwards;
 }
