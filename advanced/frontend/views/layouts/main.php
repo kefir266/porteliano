@@ -4,19 +4,24 @@
 /* @var $content string */
 
 use yii\helpers\Html;
+use yii\bootstrap;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
-use frontend\assets\AppAsset;
-use common\widgets\Alert;
-use frontend\models\Section;
+use app\assets\AppAsset;
+use app\assets\MainAsset;
 
-AppAsset::register($this);
+use yii\bootstrap\Dropdown;
+/*AppAsset::register($this);*/
+MainAsset::register($this);
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
+    <!-- Подключение шрифтов от Google -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|PT+Sans|PT+Sans+Caption|PT+Serif|PT+Serif+Caption" rel="stylesheet">
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
@@ -25,79 +30,91 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
+<div class="wrap_all">
+    <header >
+        <a href="index.php" class="logo">
+            <?= Html::img('@web/img/logo.png',['alt' => 'PORTELIANO',/*'class' => 'logo',*/]) ?>
+        </a>
+        <section class="site-contact font-PTSans">
 
-<div class="wrap">
+            <div id="phone_1">+7(495) 742-17-24</div>
+            <div id="phone_1_label">Многоканальный телефон</div>
 
-    <?php
+            <div id="phone_2">+7(495) 123-65-56</div>
 
-    $sections = new Section();
+            <div class="email-nonactive">
+            <a href="mailto:absolute@ak-in.ru">absolute@ak-in.ru</a> </div>
+           <!-- -->
+        </section>
+        <button id="ask_a_question" class="btn-link">
+            ЗАДАЙТЕ ВОПРОС
+        </button>
 
-    NavBar::begin([
-
-        'brandLabel' => (Html::img('@web/images/logo.png',['alt' => 'PORTELIANO'])),
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
-    $menuItems = [
-        ['label' => 'ГЛАВНАЯ', 'url' => ['/site/index']],
-        ['label' => 'НОВИНКИ', 'url' => ['/site/about']],];
-
-
-    foreach ($sections->getMenu() as $section){
-        $menuItems[] = $section;
-    }
-
-
-
-    $menuItems = array_merge($menuItems,
-        [['label' => 'ПРОИЗВОДИТЕЛИ', 'url' => ['/site/about']],
-        ['label' => 'О КОМПАНИИ', 'url' => ['/site/about']],
-        ['label' => 'КОНТАКТЫ', 'url' => ['/site/contact']],
-    ]);
-
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>';
-    }
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav'],
-        'items' => $menuItems,
-    ]);
-
-    NavBar::end();
-    ?>
-
-
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
+    </header>
+    <div class="wrap ">
+    </div>
+    <div class="content">
         <?= $content ?>
     </div>
-</div>
+    <div id="navbar-line" class="navbar-line-indent  nav "><!--navbar-line-indent  nav navbar-fixed-top       -->
+        <?php
+        echo Nav::widget([
+            'encodeLabels' => false, /*nav */
+            'options' => ['class' => 'navbar-nav  font-PTSans navbar-header'],
+            'items' => [
+                ['label' => 'ГЛАВНАЯ', 'url' => ['/site/index'],],
+                ['label' => 'НОВИНКИ', 'url' => ['#news']],
+                ['label' => 'ДВЕРИ', 'url' => ['#doors']],
+                ['label' => 'ПЕРЕГОРОДКИ', 'url' => ['#septa']],
+                ['label' => 'ПРОИЗВОДИТЕЛИ', 'url' => ['#producer']],
+                ['label' => 'О КОМПАНИИ', 'url' => ['#about']],
+                ['label' => 'КОНТАКТЫ', 'url' => ['#contact']],
 
-<footer class="footer">
-    <!--<div class="wrap">-->
+                ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist"></span>',
+                    'url' => ['site/index'],
+                ],
+                ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket" ></span>',
+                    'url' => ['site/index'],
+                ],
 
-    <!--</div>-->
-    <div class="container">
-
-        <p class="pull-left">&copy; Porteliano Итальянские двери, 1996-<?= date('Y') ?></p>
-
+            ]]);
+        /**/        
+        ?>
     </div>
+    <div class="push"></div>
+</div>
+<footer class="footer footer-general">
+    <div id="navbar-line" class="nav ">
+        <!--navbar-line-indent  nav navbar-fixed-top-->
+        <?php
+        echo Nav::widget([
+                'encodeLabels' => false,
+                'options' => ['class' => 'nav navbar-nav font-PTSans navbar-footer'],
+                'items' => [
+                    ['label' => 'ГЛАВНАЯ', 'url' => ['/site/index'],],
+                    ['label' => 'НОВИНКИ', 'url' => ['#news']],
+                    ['label' => 'ДВЕРИ', 'url' => ['#doors']],
+                    ['label' => 'ПЕРЕГОРОДКИ', 'url' => ['#septa']],
+                    ['label' => 'ПРОИЗВОДИТЕЛИ', 'url' => ['#producer']],
+                    ['label' => 'О КОМПАНИИ', 'url' => ['#about']],
+                    ['label' => 'КОНТАКТЫ', 'url' => ['#contact']],
+
+                    ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist"></span>',
+                        'url' => ['site/index'],
+                    ],
+                    ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket" ></span>',
+                        'url' => ['site/index'],
+                    ],
+
+                ]]);/**/
+        ?>
+    </div>
+        <div class="footer-copy">
+            <p>
+                &copy; Porteliano Итальянские двери, 1996 - <?= date('Y') ?>
+            </p>            
+        </div>
+
 </footer>
 
 <?php $this->endBody() ?>

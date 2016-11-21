@@ -1,0 +1,325 @@
+/*
+#home {
+    background: url(home-bg.jpg) center 0 repeat fixed; min-height: 1200px;
+}
+#about {
+    background: url(about-bg.jpg) center 0 no-repeat min-height: 1200px;
+}
+*/
+
+
+@font-face {
+    font-family: Copperplate; /* имя шрифта для CSS правил */
+    src: local("Copperplate"), /* проверяем наличие шрифта в ОС пользователя */
+    url(../Fonts/Copperplate.ttc); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+
+}
+@font-face {
+    font-family: PTSans;
+    src: local("PTSans"),
+    url(../Fonts/PTSans.ttc);
+
+}
+@font-face {
+    font-family: PTSerif;
+    src: local("PTSerif"),
+    url(../Fonts/PTSerif.ttc);
+
+}
+@font-face {
+    font-family: PTSerifCaption;
+    src: local("PTSerifCaption"),
+    url(../Fonts/PTSerifCaption.ttc);
+
+}
+@font-face {
+    font-family: PTSansBold;
+    src: local("PTSerifCaption"),
+    url(../Fonts/pt-sansbold.ttf);
+
+}
+
+* {
+    margin: 0;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #fdfdf3;
+    /*background-color: rgba(255, 0, 4, 0.55);*/
+}
+
+.wrap_all{
+    position: relative;
+    min-width: 1800px;
+    width: 100%;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -142px;
+}
+.footer-general, .push {
+    /*height: 142px;
+    height: 71px;*/
+    height: 82px;
+}
+.wrap{
+    margin: 22px auto -60px;
+    margin-left: 348px;
+    padding: 0 0 60px;
+
+    position: relative;
+    font-family: Arial;
+    width: 1100px;
+    min-height: 100%;
+    height: auto;
+    /*background-color: rgba(255, 0, 4, 0.55);*/
+}
+.wrap > .container {
+    padding: 0;
+}
+.content{
+    margin-left: 0;
+    margin-top: 0;
+}
+header{
+    position: relative;
+    /*
+    left: 348px;
+    top: 22px;
+    width: 81%;
+    */
+    margin-left: 348px;
+    margin-top: 22px;
+}
+.container{
+    position: relative;
+    top: 20px;
+    /*min-height: 400px;*/
+}
+
+.font-copperplate {
+    font-family: "Copperplate", Arial;
+}
+.font-PTSans {
+    font-family: "PTSans", Arial;
+}
+.font-PTSans-Regular {
+    font-family: "PT Sans Regular", Arial;
+}
+
+
+.font-PTSerif {
+    font-family: "PTSerif", Arial;
+}
+.font-PTSerifCaption {
+    font-family: "PTSerifCaption", Arial;
+}
+
+
+#phone_1 {
+    font-size: 18px;
+    font-family: "PTSans", Arial;
+    letter-spacing: 1.8px;
+    position: absolute;
+    top: 12px;
+    left: 192px;
+    /* background-color: #ffee00; */
+}
+#phone_2 {
+    font-size: 18px;
+    font-family: "PTSans", Arial;
+    letter-spacing: 1.8px;
+
+    position: absolute;
+    top: 12px;
+    left: 397px;
+    /* background-color: #ffee00; */
+}
+#phone_1_label{
+    color: #c5926b;
+    font-size: 14px;
+    font-family: "PTSans", Arial;
+    letter-spacing: 0.1px;
+
+    position: absolute;
+    top: 33px;
+    left: 204px;
+    /* background-color: #00aa00; */
+}
+
+.email-nonactive {
+    color: #c5926b;
+    font-size: 14px;
+    letter-spacing: 0.1px;
+    font-family: "PTSans", Arial;
+
+    position: absolute;
+    top: 33px;
+    left: 458px;
+    /* background-color: #00aa00; */
+}
+.email-nonactive > a{
+    color: #c5926b;
+    text-decoration: none;
+}
+
+.site-contact{
+    position: relative;
+    width: 606px;
+    height: 114px;
+    top: 0;
+    left: 268px;
+}
+
+
+.header-contact{
+
+}
+.logo{
+    position: absolute;
+    left: 71px;
+}
+.navbar-header{
+    font-size: 17px;
+    position: absolute;
+    top: 0;
+    left: 420px;
+}
+
+.navbar-header> li > a{
+    line-height: 30px;
+    letter-spacing: 0.3px;
+    min-width: 48px;
+    min-height: 60px;
+
+    background-color: #413332;
+    color: #d2cca8;
+}
+
+.navbar-header > li > a:hover{
+    background-color: #574847;
+    color: #ffffff;
+}
+.navbar-footer{
+    font-size: 17px;
+    /*position: absolute;
+    top: 0;
+    left: 420px;
+    */
+    margin-left: 420px;
+}
+.navbar-footer> li > a{
+    line-height: 30px;
+    letter-spacing: 0.3px;
+    min-width: 48px;
+    min-height: 60px;
+
+    background-color: #413332;
+    color: #d2cca8;
+}
+
+.navbar-footer > li > a:hover{
+    background-color: #574847;
+    color: #ffffff;
+}
+
+#wishlist{
+    font-size: 24px;
+
+    width: 50px;
+    /* position: absolute; */
+    top: -1px;
+    left: 3px;
+    vertical-align: middle;
+    font-stretch: extra-condensed;
+    text-align: center;
+}
+.navbar-header > li:nth-child(9n) > a:hover,
+.navbar-header > li:nth-child(8n) > a:hover
+{
+    background-color: #413332;
+    color: #ffffff;
+}
+#basket{
+    top: 0px;
+    left: -6px;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+#navbar-line{
+    height: 60px;
+    width: 100%;
+    min-width: 1800px;
+    background-color: #413332;
+    z-index: 500;
+}
+.navbar-line-indent{
+    position: absolute;
+    top: 93px;
+    left: 0;
+}
+#ask_a_question{
+    font-family: PTSansBold, Arial;
+    position: absolute;
+    left: 875px;
+    top: 10px;
+    padding: 10px 20px 10px 20px;
+
+    border-radius: 20px;
+    text-decoration: none;
+    border: 1px solid #942b34;
+    color: #942b34;
+}
+#ask_a_question:hover{
+    color: white;
+    background: #942b34;
+}
+
+/*
+.list-group-item.active > .badge,
+.nav-pills > .active > a > .badge {
+ color: #31b700;
+ background-color: #fff;
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+    background-color: #574847;
+    color: #ffffff;
+}*/
+.footer-general{
+    margin: 40px 0 0 0;
+}
+.footer-copy{
+    color: #cfcbbd;
+    background-color: #352929;
+    min-width: 1800px;
+}
+.footer-copy > p{
+    margin-left: 420px;
+    line-height: 80px;
+}
+
+.main__header_top {
+    min-width: 1800px;
+    padding: 8px 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 12;
+}
+
+.fixed-top{
+    position: fixed; /* Фиксированное положение */
+    right: 10px; /* Расстояние от правого края окна браузера */
+    top: 20%; /* Расстояние сверху */
+    padding: 10px; /* Поля вокруг текста */
+    background: #ffe; /* Цвет фона */
+    border: 1px solid #333; /* Параметры рамки */
+}
+

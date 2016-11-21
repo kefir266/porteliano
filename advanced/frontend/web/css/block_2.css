@@ -1,0 +1,93 @@
+.wrap-Catalog{
+    position: relative;
+    height: 950px;
+    background-color: #fdfdf3;
+}
+.panel-Catalog{
+    position: absolute;
+    top: 70px;
+    left: 348px;
+    min-height: 730px;
+    width: 1100px;
+}
+.panel-Catalog > h2{
+    font-family: Copperplate;
+}
+.tiles{
+    font-family: "PT Sans Caption";
+    color: #ffffff;
+}
+
+.doors-gradient{
+    /* Gradient */
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,413332+70,413332+100&0+0,1+70,1+100 */
+    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(65,51,50,1) 70%, rgba(65,51,50,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(65,51,50,1) 70%,rgba(65,51,50,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(65,51,50,1) 70%,rgba(65,51,50,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#413332',GradientType=0 ); /* IE6-9 */
+}
+
+.entryDoors{
+    position: absolute;
+    top: 78px;
+    left: 793px;
+
+    background-image: url(../img/catalog/entryDoors.jpg);
+    width: 235px;
+    height: 476px;
+    border: solid #935347 5px;
+}
+.entryDoors > .doors-gradient{
+    position: absolute;
+    top: 300px;
+    left: 2px;
+    width: 223px;
+    height: 167px;
+}
+
+.grips{
+    position: absolute;
+    top: 70px;
+    left: 200px;
+
+    background-image: url(../img/catalog/grips.jpg);
+    width: 230px;
+    height: 234px;
+    border: solid #935347 5px;
+}
+.septa{
+    position: absolute;
+    top: 70px;
+    left: 300px;
+
+    background-image: url(../img/catalog/septa.jpg);
+    width: 225px;
+    height: 234px;
+    border: solid #935347 5px;
+}
+.interiorDoors{
+    position: absolute;
+    top: 70px;
+    left: 400px;
+
+    background-image: url(../img/catalog/interiorDoors.jpg);
+    width: 475px;
+    height: 478px;
+    border: solid #935347 5px;
+}
+.entryDoors:hover
+{
+    animation: backgroundscale_15 .5s linear normal  forwards;
+}
+.grips:hover
+{
+    animation: backgroundscale_15 .5s linear normal  forwards;
+}
+.septa:hover
+{
+    animation: backgroundscale_15 .5s linear normal  forwards;
+}
+.interiorDoors:hover
+{
+    animation: backgroundscale_15 .5s linear normal  forwards;
+}
