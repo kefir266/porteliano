@@ -7,55 +7,48 @@
  */
 
 namespace app\models;
+namespace frontend\models;
 
 
 use yii\db\ActiveRecord;
+use yii\helpers\ArrayHelper;
 
 class Section extends ActiveRecord
 {
 
     private function _getTree($allElements = null) {// one level nested
+        if ($allElements == null) return [];
         $tree = [];
         $references = [];
-        foreach ($allElements as $element ){
+        $firstLevel = true;
+        foreach ( $allElements as $id => $item ){
 
-            $node = &$element['attributes'];
-            $references[$element['id']] = &$node;
-            $node['items'] = [];//items equal children
-            $node['label'] = $node['title'];
-            if ($node['parent_id'] == 0){
-                $tree[$element['id']] = &$node;
-                $node['url'] = 'site/' . $node['page'];
+            $node[$id] = $item;
+
+            $references[$node[$id]['id']] = &$node[$id];
+            $node[$id]['items'] = [];//items equal children
+            $node[$id]['label'] = $node[$id]['title'];
+            if (is_null($node[$id]['parent_id']) || $firstLevel)
+            {
+                $tree[$node[$id]['id']] = &$node[$id];
+                $firstLevel = false;
             }
             else
             {
-                $node['url'] = 'site/' . $node['page'];
-                $references[$node['parent_id']]['items'][$node['id']] = &$node;
-
+                $references[$node[$id]['parent_id']]['items'][$node[$id]['id']] = &$node[$id];
             }
+            $node[$id]['url'] = 'site/' . $node[$id]['page'];
         }
+
         return $tree;
     }
 
     public function getMenu(){
 
-        $result = self::find()->orderBy('parent_id')->all();
-        $tree = $this->_getTree($result);
+        $result = ArrayHelper::toArray(self::find()->orderBy('parent_id')->all());
 
-//        foreach ($result as $item) {
-//
-//            if ($item['parent_id']!=0)
-//                $mItems[] = [
-//                    'label' => $item['name'],
-//                    'url' =>  'accounting/'.$item['model']
-//                ];
-//            else
-//                $mItems[] = [
-//                    'label' => $item['name'],
-//                ];
-//        }
-        $menuForWidget = ['items' => $tree];
-        return $menuForWidget;
+        $tree = $this->_getTree($result);
+        return $tree;
     }
 
 

@@ -9,6 +9,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use frontend\models\Section;
 
 AppAsset::register($this);
 ?>
@@ -29,12 +30,12 @@ AppAsset::register($this);
 
     <?php
 
-    $sections = new app\models\Section();
+    $sections = new Section();
 
     NavBar::begin([
         /*'brandLabel' => 'My Company',
         'brandUrl' => Yii::$app->homeUrl,*/
-        'brandLabel' => (Html::img('@web/advanced/frontend/web/img/logo.png',['alt' => 'PORTELIANO'])),
+        'brandLabel' => (Html::img('@web/images/logo.png',['alt' => 'PORTELIANO'])),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
 
@@ -45,7 +46,8 @@ AppAsset::register($this);
         ['label' => 'ГЛАВНАЯ', 'url' => ['/site/index']],
         ['label' => 'НОВИНКИ', 'url' => ['/site/about']],];
 
-    foreach ($sections->getMenu()['items'] as $section){
+
+    foreach ($sections->getMenu() as $section){
         $menuItems[] = $section;
     }
 
