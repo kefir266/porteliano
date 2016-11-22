@@ -15,7 +15,7 @@ class MainAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'stylename.css',
+        'css/stylename.css',
         'css/main.css',
         'css/home.css',        
     ];
