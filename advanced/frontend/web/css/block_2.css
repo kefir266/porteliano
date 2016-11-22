@@ -11,43 +11,41 @@
     width: 1100px;
 }
 .panel-Catalog > h2{
-    font-family: Copperplate;
+    font-family: Copperplate, serif;
 }
 .tiles{
-    font-family: "PT Sans Caption";
+    font-family: "PT Sans Caption", serif;
     color: #ffffff;
 }
 
 .doors-gradient{
     /* Gradient */
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,413332+70,413332+100&0+0,1+70,1+100 */
-    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(65,51,50,1) 70%, rgba(65,51,50,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(65,51,50,1) 70%,rgba(65,51,50,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(65,51,50,1) 70%,rgba(65,51,50,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,413332+80,413332+100&0+0,1+80,1+100 */
+    background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(65,51,50,1) 80%, rgba(65,51,50,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(65,51,50,1) 80%,rgba(65,51,50,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(65,51,50,1) 80%,rgba(65,51,50,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#413332',GradientType=0 ); /* IE6-9 */
-}
 
+}
 .entryDoors{
     position: absolute;
-    top: 78px;
-    left: 793px;
-
+    top: 69px;
+    left: 796px;
     background-image: url(../img/catalog/entryDoors.jpg);
     width: 235px;
     height: 476px;
-    border: solid #935347 5px;
 }
 .entryDoors > .doors-gradient{
     position: absolute;
-    top: 309px;
+    top: 312px;
     left: 1px;
     width: 225px;
     height: 159px;
 }
 .entryDoors > .doors-gradient > h3{
     position: absolute;
-    top: 108px;
-    left: 17px;
+    top: 102px;
+    left: 23px;
 }
 .grips{
     position: absolute;
@@ -60,19 +58,20 @@
 }
 .grips > .doors-gradient{
     position: absolute;
-    top: 61px;
-    width: 230px;
+    left: 5px;
+    top: 56px;
+    width: 220px;
     height: 173px;
 }
 .grips > .doors-gradient > h3{
     position: absolute;
-    top: 122px;
-    left: 17px;
+    top: 114px;
+    left: 73px;
 }
 .septa{
     position: absolute;
-    top: 311px;
-    left: 556px;
+    top: 313px;
+    left: 557px;
     background-image: url(../img/catalog/septa.jpg);
     width: 225px;
     height: 234px;
@@ -81,13 +80,15 @@
 .septa > .doors-gradient{
     position: absolute;
     top: 60px;
-    width: 223px;
-    height: 173px;
+    left: 5px;
+    width: 215px;
+    height: 169px;
 }
 .septa > .doors-gradient > h3{
     position: absolute;
-    top: 122px;
-    left: 17px;
+    top: 84px;
+    left: 13px;
+    text-align: center;
 }
 .interiorDoors{
     position: absolute;
@@ -97,19 +98,38 @@
     background-image: url(../img/catalog/interiorDoors.jpg);
     width: 475px;
     height: 478px;
-    border: solid #935347 0px;
 }
+
 .interiorDoors > .doors-gradient{
     position: absolute;
-    top: 303px;
-    width: 475px;
+    left: 7px;
+    top: 299px;
+    width: 463px;
     height: 173px;
 }
 .interiorDoors > .doors-gradient > h3{
     position: absolute;
-    top: 122px;
-    left: 17px;
+    top: 109px;
+    left: 96px;
+    font-size: 22px;
 }
+.tiles h3{
+    font-size: 22px;
+}
+
+.grips:after,
+.septa:after,
+.entryDoors:after,
+.interiorDoors:after {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 6px solid #935347;
+    /*Для отладки*/
+    /* background-color: #1b6d85;*/
+}
+
 .panel-Catalog > h2{
     position: absolute;
     top: -25px;
@@ -133,4 +153,74 @@
 .interiorDoors:hover
 {
     animation: backgroundscale_15 .9s linear normal  forwards;
+}
+
+/* Бекущая лента */
+
+.running-ribbon{
+    position: absolute;
+    top: 581px;
+
+    width: 100%;
+    height: 145px;
+}
+
+div.view{
+    height: 150px;
+    width: 89%;
+    margin-left: 5%;
+    overflow: scroll;
+    /*background: #f5ff00;*/
+}
+div.view ul{
+    height: 100%;
+    list-style: none;
+    width: 10000px;
+    line-height: 145px;
+
+}
+div.view ul > li{
+    vertical-align: middle;
+    margin-right: 35px;
+    border: 1px solid black;
+}
+div.view ul > li:hover{
+    background-color: #1b6d85;
+}
+div.view ul li{ float: left}
+
+#show{
+    position: absolute;
+    top: 32px;
+    /* display: none; */
+    margin-top: 1em;
+}
+
+div#show button{
+    padding: 1em;
+    margin-right: 1em;
+    cursor: pointer;
+}
+div#show button:nth-child(1){
+    background-image: url('../img/UI/arrow_inactive.jpg');
+    width: 50px;
+    height: 50px;
+    transform: scale(1, 1);
+}
+div#show button:nth-child(2){
+    left: 1019px;
+    position: absolute;
+    top: 0;
+    background-image: url('../img/UI/arrow_inactive.jpg');
+    transform: scale(-1, 1);
+    width: 50px;
+    height: 50px;
+}
+div#show button:nth-child(1):hover{
+    background-image: url('../img/UI/arrow_active.jpg');
+    transform: scale(-1, 1);
+}
+div#show button:nth-child(2):hover{
+    background-image: url('../img/UI/arrow_active.jpg');
+    transform: scale(1, 1);
 }

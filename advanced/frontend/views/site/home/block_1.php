@@ -31,6 +31,30 @@ foreach ($sections->getMenu() as $section){
 //    ['label' => 'Входные двери', 'url' => '#'],
 //    ['label' => 'Перегородки', 'url' => '#'],
 //];
+// TODO: Сделать загрузку из базы
+$itemsToMaterials = [
+    ['label' => 'Деревянные двери - ?', 'url' => '#'],
+    ['label' => 'Двери со стеклом - ?', 'url' => '#'],
+    ['label' => 'Стеклянные двери - ?', 'url' => '#'],
+    ['label' => 'Радиусные двери - ?', 'url' => '#'],
+];
+$itemsToStyle = [
+    ['label' => 'Любой', 'url' => '#'],
+    ['label' => 'Классический', 'url' => '#'],
+    ['label' => 'Современный', 'url' => '#'],
+];
+$itemsToManufacturer = [
+    ['label' => 'Любой', 'url' => '#'],
+    ['label' => 'Bosca', 'url' => '#'],
+    ['label' => 'Flex', 'url' => '#'],
+];
+$itemsToPrice=[
+    ['label' => 'Любая ', 'url' => '#'],
+    ['label' => 'до 500 Euro', 'url' => '#'],
+    ['label' => '500 – 1000 Euro', 'url' => '#'],
+    ['label' => '1000 – 2000 Euro', 'url' => '#'],
+    ['label' => ' от 2000 Euro', 'url' => '#'],
+];
 ?>
 <div class="crop">
     <div class="wrap-quick-selection">
@@ -56,10 +80,7 @@ foreach ($sections->getMenu() as $section){
                     'split' => true,
                     'label' => 'Со стеклом',
                     'dropdown' => [
-                        'items' => [
-                            ['label' => 'Со стеклом', 'url' => '#'],
-                            ['label' => 'DropdownB', 'url' => '#'],
-                        ],
+                        'items' => $itemsToMaterials,
                     ],
                 ]);
                 ?>
@@ -72,10 +93,7 @@ foreach ($sections->getMenu() as $section){
                     'split' => true,
                     'label' => 'Современный',
                     'dropdown' => [
-                        'items' => [
-                            ['label' => 'Со стеклом', 'url' => '#'],
-                            ['label' => 'DropdownB', 'url' => '#'],
-                        ],
+                        'items' => $itemsToStyle,
                     ],
                 ]);
                 ?>
@@ -88,10 +106,7 @@ foreach ($sections->getMenu() as $section){
                     'split' => true,
                     'label' => 'Любой',
                     'dropdown' => [
-                        'items' => [
-                            ['label' => 'Со стеклом', 'url' => '#'],
-                            ['label' => 'DropdownB', 'url' => '#'],
-                        ],
+                        'items' => $itemsToManufacturer,
                     ],
                 ]);
                 ?>
@@ -104,10 +119,7 @@ foreach ($sections->getMenu() as $section){
                     'split' => true,
                     'label' => "€ 500 - 2000",
                     'dropdown' => [
-                        'items' => [
-                            ['label' => 'Со стеклом', 'url' => '#'],
-                            ['label' => 'DropdownB', 'url' => '#'],
-                        ],
+                        'items' => $itemsToPrice,
                     ],
                 ]);
                 ?>
