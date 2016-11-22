@@ -16,26 +16,34 @@ use yii\helpers\ArrayHelper;
 class Product extends ActiveRecord
 {
     
-    public function getProductsBySection($id = null, $num = null){
-        
-        //TODO нужно сделать условие и для категорий родителей
-        if ($id == null)
-        {
-            $products['products'] = $this->find()->each($num);
-        }
+    public function getProductsBySection($id = null, $num = null)
+    {
 
-        else
-        {
+        //TODO нужно сделать условие и для категорий родителей
+        if ($id == null) {
+            $products['products'] = $this->find()->each($num);
+        } else {
             $products['products'] = $this->find()->where(['section_id' => $id])->each($num);
         }
-        
-        $products['materials'] = $this->hasMany(Material::className(), ['material_id' => 'id'])
+
+        $materials = $this->hasOne(Material::className(), ['material_id' => 'id'])
 //                    ->where(['section_id' => $id])
-                    ->each();
+            ->each();
+        foreach ($materials as $material) {
+            var_dump(material);
+            $products['materials'] [] = ['label' => $material['title']];
+        }
+        var_dump($products['materials']);
         //TODO нужно еще присоединить стили и производители для данной категории
         
         return ArrayHelper::toArray($products);
 
+    }
+
+    public function getMaterials(){
+
+        return $this->hasOne(Material::className(), ['id' => 'material_id']);
+        
     }
 
 }
