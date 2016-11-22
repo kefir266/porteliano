@@ -9,6 +9,7 @@ use yii\bootstrap\Button;
 use app\assets\FontAsset;
 use app\assets\Block_1_Asset;
 use app\assets\AppAsset;
+use app\models\Section;
 
 FontAsset::register($this);
 AppAsset::register($this);
@@ -17,12 +18,19 @@ Block_1_Asset::register($this);
 
 ?>
 <?php
-$items = ['1' => 'Межкомнатные двери', '2' => 'Входные двери', '3' => 'Перегородки' ];
-$items = [
-    ['label' => 'Межкомнатные двери', 'url' => '#'],
-    ['label' => 'Входные двери', 'url' => '#'],
-    ['label' => 'Перегородки', 'url' => '#'],
-];
+
+    $sections = new Section();
+
+foreach ($sections->getMenu() as $section){
+    $items[] = $section;
+}
+
+//$items = ['1' => 'Межкомнатные двери', '2' => 'Входные двери', '3' => 'Перегородки' ];
+//$items = [
+//    ['label' => 'Межкомнатные двери', 'url' => '#'],
+//    ['label' => 'Входные двери', 'url' => '#'],
+//    ['label' => 'Перегородки', 'url' => '#'],
+//];
 ?>
 <div class="crop">
     <div class="wrap-quick-selection">
