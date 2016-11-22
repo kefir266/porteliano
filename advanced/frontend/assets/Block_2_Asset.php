@@ -18,7 +18,8 @@ class Block_2_Asset extends AssetBundle
         'css/block_2.css',
         'css/animation.css',
     ];
-    public $js = [        
+    public $js = [
+        'js/runningRibbon.js',
     ];
     public $depends = [
         'yii\web\JqueryAsset',

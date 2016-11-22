@@ -12,6 +12,16 @@ use yii\helpers\Html;
 AppAsset::register($this);
 MainAsset::register($this);
 Block_2_Asset::register($this);
+
+
+$logos = [
+    Html::img('img/catalog/logos/big/AstorMobili.jpg', ['alt'=>'AstorMobili']),
+    Html::img('img/catalog/logos/big/Agoprofil.jpg', ['alt'=>'Agoprofil']),
+    Html::img('img/catalog/logos/big/Ghizzi&Benatti.jpg',['alt'=>'Ghizzi&Benatti']),
+    Html::img('img/catalog/logos/big/Longhi.jpg',['alt'=>'Longhi']),
+    Html::img('img/catalog/logos/big/PaoloLucchetta.jpg',['alt'=>'PaoloLucchetta']),
+]
+
 ?>
 
 <div class="wrap-Catalog">
@@ -45,15 +55,13 @@ Block_2_Asset::register($this);
             <div class="running-ribbon">
                 <div class="view">
                     <ul>
-                        <li>
-                            <?= Html::img('img/catalog/logos/big/AstorMobili.jpg', ['alt'=>'AstorMobili']);?>
-                        </li>
-                        <li>
-                            <?= Html::img('img/catalog/logos/big/Agoprofil.jpg', ['alt'=>'Agoprofil']);?>
-                        </li>
-                        <li>
-                            <?= Html::img('img/catalog/logos/big/Ghizzi&Benatti.jpg', ['alt'=>'Ghizzi&Benatti']);?>
-                        </li>
+                        <?php
+                        // TODO: оформить кнопки
+                        // TODO: оформить логотипы в серой гамме и цветные
+                        for ($i = 0; $i < count($logos);$i++){
+                            echo '<li>'.$logos[$i].'</li>';
+                        }
+                        ?>
                     </ul>
                 </div>
                 <div id="show">
