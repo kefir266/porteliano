@@ -16,8 +16,8 @@ $this->title = 'home';
 ?>
 
 <?php
-    require_once 'home\block_1.php';
-    require_once 'home\block_2.php';
+    require_once 'home/block_1.php';
+    require_once 'home/block_2.php';
 ?>
 
 
