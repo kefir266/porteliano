@@ -17,8 +17,8 @@
         .show()
         .find("button").on("click", function(){
         var direction = $(this).attr("id");
-        console.log(direction);
         moveRibbon(direction);
+        clearTimeout(timerId);
     } );
 
     function moveRibbon(direction){
@@ -30,14 +30,13 @@
         else
             current --;
         if(current == 0){
-            current = imgsCount; // set last image
+            current = imgsCount; // поставить последнюю картинку
             direction = "next";
             position = totalImgsW-imgW;
         }else if(current-1 == imgsCount){
-            current = 1;			// set first image
+            current = 1;			// поставить первую картинку
             position = 0
         }
-        //console.log(current);
         doIt(viewUL, position, direction);
     }
     function doIt(container, position, direction){
@@ -54,11 +53,10 @@
 
     }
 
-
+    //TODO регулировка таймера бегущей ленты
     // начать двигать ленту с интервалом ... сек
-    //var timerId =
+    var timerId =
     setInterval(function() {
-        //alert( "тик" );
         moveRibbon('next');
     }, 3000);
 })(jQuery);
