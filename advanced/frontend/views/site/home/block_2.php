@@ -19,22 +19,22 @@ Block_2_Asset::register($this);
             <div class="tiles">
                 <div class="entryDoors">
                     <div class="doors-gradient">
-                        <h3>Входные двери</h3>
+                        <h3>ВХОДНЫЕ ДВЕРИ</h3>
                     </div>
                 </div>
                 <div class="grips">
                     <div class="doors-gradient">
-                        <h3>Ручки</h3>
+                        <h3>РУЧКИ</h3>
                     </div>
                 </div>
                 <div class="septa">
                     <div class="doors-gradient">
-                        <h3>Межкомнатные<br/> перегородки</h3>
+                        <h3>МЕЖКОМНАТНЫЕ<br/> ПЕРЕГОРОДКИ</h3>
                     </div>
                 </div>
                 <div class="interiorDoors">
                     <div class="doors-gradient">
-                        <h3>Межкомнатные двери</h3>
+                        <h3>МЕЖКОМНАТНЫЕ ДВЕРИ</h3>
                     </div>
                 </div>
             </div>
