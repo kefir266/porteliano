@@ -2,9 +2,12 @@
 /*
  * Блок с фильтром быстрого подбора:
  */
+
+
 use app\assets\AppAsset;
 use app\assets\MainAsset;
 use app\assets\Block_2_Asset;
+use yii\helpers\Html;
 
 AppAsset::register($this);
 MainAsset::register($this);
@@ -38,6 +41,21 @@ Block_2_Asset::register($this);
                     </div>
                 </div>
             </div>
+            
+            <div class="running-ribbon">
+                <div class="view">
+                    <ul>
+                        <li>
+                            <?= Html::img('img/catalog/logos/AstorMobili.jpg', ['alt'=>'Agoprofil']);?>
+                        </li>
+                    </ul>
+                </div>
+                <div id="show">
+                    <button id="prev" data-param="prev">Назад</button>
+                    <button id="next" data-param="next">Вперед</button>
+                </div>
+            </div>
+
 
         </div>
 

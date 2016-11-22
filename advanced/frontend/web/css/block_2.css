@@ -154,3 +154,43 @@
 {
     animation: backgroundscale_15 .9s linear normal  forwards;
 }
+
+/* Бекущая лента */
+
+.running-ribbon{
+    position: absolute;
+    top: 577px;
+
+    width: 100%;
+    height: 150px;
+}
+
+div.view{
+    height: 162px;
+    width: 89%;
+    margin-left: 7%;
+    overflow: scroll;
+
+    background: #f5ff00;
+}
+div.view ul{
+    list-style: none;
+    width: 10000px;
+
+}
+#show{
+    position: absolute;
+    top: 32px;
+    /* display: none; */
+    margin-top: 1em;
+}
+div#show button{
+    padding: 1em;
+    margin-right: 1em;
+    cursor: pointer;
+}
+div#show button:nth-child(2){
+    left: 1019px;
+    position: absolute;
+    top: 0;
+}
