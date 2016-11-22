@@ -20,21 +20,44 @@ class Product extends ActiveRecord
     {
 
         //TODO нужно сделать условие и для категорий родителей
-        if ($id == null) {
-            $products['products'] = $this->find()->each($num);
-        } else {
-            $products['products'] = $this->find()->where(['section_id' => $id])->each($num);
+
+        $condition = ($id == null) ? [] : ['section_id' => $id];
+
+        $products['products'] = $this->find()->where($condition)->each($num);
+
+        $materials = $this->find()->
+            select('material_id, material.title title')->distinct()
+            ->innerJoin('material','material_id = material.id')
+            ->where($condition)->each();
+
+
+        foreach ($materials as $item) {
+            
+            $products['materials'][]  = ['label' => $item['title'], 'url' => '#'];
         }
 
-        $materials = $this->hasOne(Material::className(), ['material_id' => 'id'])
-//                    ->where(['section_id' => $id])
-            ->each();
-        foreach ($materials as $material) {
-            var_dump(material);
-            $products['materials'] [] = ['label' => $material['title']];
+        $styles = $this->find()->
+        select('style_id, style.title title')->distinct()
+            ->innerJoin('style','style_id = style.id')
+            ->where($condition)->each();
+
+
+        foreach ($styles as $item) {
+
+            $products['styles'][]  = ['label' => $item['title'], 'url' => '#'];
         }
-        var_dump($products['materials']);
-        //TODO нужно еще присоединить стили и производители для данной категории
+
+        $manufacturers = $this->find()->
+        select('manufacturer_id, manufacturer.title title')->distinct()
+            ->innerJoin('manufacturer','manufacturer_id = manufacturer.id')
+            ->where($condition)->each();
+
+
+        foreach ($manufacturers as $item) {
+
+            $products['manufacturers'][]  = ['label' => $item['title'], 'url' => '#'];
+            
+        }
         
         return ArrayHelper::toArray($products);
 

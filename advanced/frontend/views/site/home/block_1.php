@@ -55,12 +55,12 @@ foreach ($sections->getMenu() as $section){
                 echo ButtonDropdown::widget([
                     'options' => ['class' => 'btn-default'],
                     'split' => true,
-                    'label' => 'Со стеклом',
+                    'label' => current($products['materials'])['label'],
                     'dropdown' => [
-                        'items' => [
-                            ['label' => 'Со стеклом', 'url' => '#'],
-                            ['label' => 'DropdownB', 'url' => '#'],
-                        ],
+                        'items' =>
+
+                            $products['materials']
+                        ,
                     ],
                 ]);
                 ?>
@@ -71,12 +71,9 @@ foreach ($sections->getMenu() as $section){
                 echo ButtonDropdown::widget([
                     'options' => ['class' => 'btn-default'],
                     'split' => true,
-                    'label' => 'Современный',
+                    'label' => current($products['styles'])['label'],
                     'dropdown' => [
-                        'items' => [
-                            ['label' => 'Со стеклом', 'url' => '#'],
-                            ['label' => 'DropdownB', 'url' => '#'],
-                        ],
+                        'items' => $products['styles'],
                     ],
                 ]);
                 ?>
@@ -87,12 +84,9 @@ foreach ($sections->getMenu() as $section){
                 echo ButtonDropdown::widget([
                     'options' => ['class' => 'btn-default'],
                     'split' => true,
-                    'label' => 'Любой',
+                    'label' => current($products['manufacturers'])['label'],
                     'dropdown' => [
-                        'items' => [
-                            ['label' => 'Со стеклом', 'url' => '#'],
-                            ['label' => 'DropdownB', 'url' => '#'],
-                        ],
+                        'items' => $products['manufacturers'],
                     ],
                 ]);
                 ?>
