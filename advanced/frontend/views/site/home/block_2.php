@@ -14,8 +14,9 @@ MainAsset::register($this);
 Block_2_Asset::register($this);
 
 
+//TODO: разобраться с путями, вместо web в адресе появился site
 $logos = [
-    Html::img('img/catalog/logos/big/AstorMobili.jpg', ['alt'=>'AstorMobili']),
+    Html::img('../../web/img/catalog/logos/big/AstorMobili.jpg', ['alt'=>'AstorMobili']),
     Html::img('img/catalog/logos/big/Agoprofil.jpg', ['alt'=>'Agoprofil']),
     Html::img('img/catalog/logos/big/Ghizzi&Benatti.jpg',['alt'=>'Ghizzi&Benatti']),
     Html::img('img/catalog/logos/big/Longhi.jpg',['alt'=>'Longhi']),
@@ -56,8 +57,7 @@ $logos = [
                 <div class="view">
                     <ul>
                         <?php
-                        // TODO: оформить кнопки
-                        // TODO: оформить логотипы в серой гамме и цветные
+                        // TODO: сделать логотипы в серой гамме и цветные
                         for ($i = 0; $i < count($logos);$i++){
                             echo '<li>'.$logos[$i].'</li>';
                         }
@@ -65,8 +65,8 @@ $logos = [
                     </ul>
                 </div>
                 <div id="show">
-                    <button id="prev" data-param="prev">Назад</button>
-                    <button id="next" data-param="next">Вперед</button>
+                    <button id="prev" class="btn btn-link" data-param="prev"></button>
+                    <button id="next" class="btn btn-link" data-param="next"></button>
                 </div>
             </div>
 
