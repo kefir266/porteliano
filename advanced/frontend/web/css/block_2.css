@@ -26,20 +26,17 @@
     background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(65,51,50,1) 70%,rgba(65,51,50,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#413332',GradientType=0 ); /* IE6-9 */
 }
-
 .entryDoors{
     position: absolute;
-    top: 78px;
-    left: 793px;
-
+    top: 69px;
+    left: 796px;
     background-image: url(../img/catalog/entryDoors.jpg);
     width: 235px;
     height: 476px;
-    border: solid #935347 5px;
 }
 .entryDoors > .doors-gradient{
     position: absolute;
-    top: 309px;
+    top: 312px;
     left: 1px;
     width: 225px;
     height: 159px;
@@ -66,13 +63,13 @@
 }
 .grips > .doors-gradient > h3{
     position: absolute;
-    top: 122px;
-    left: 17px;
+    top: 107px;
+    left: 77px;
 }
 .septa{
     position: absolute;
-    top: 311px;
-    left: 556px;
+    top: 313px;
+    left: 557px;
     background-image: url(../img/catalog/septa.jpg);
     width: 225px;
     height: 234px;
@@ -86,8 +83,9 @@
 }
 .septa > .doors-gradient > h3{
     position: absolute;
-    top: 122px;
-    left: 17px;
+    top: 83px;
+    left: 18px;
+    text-align: center;
 }
 .interiorDoors{
     position: absolute;
@@ -97,19 +95,34 @@
     background-image: url(../img/catalog/interiorDoors.jpg);
     width: 475px;
     height: 478px;
-    border: solid #935347 0px;
 }
+
 .interiorDoors > .doors-gradient{
     position: absolute;
-    top: 303px;
-    width: 475px;
+    left: 7px;
+    top: 299px;
+    width: 463px;
     height: 173px;
 }
 .interiorDoors > .doors-gradient > h3{
     position: absolute;
-    top: 122px;
-    left: 17px;
+    top: 108px;
+    left: 96px;
 }
+
+.grips:after,
+.septa:after,
+.entryDoors:after,
+.interiorDoors:after {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 5px solid #935347;
+    /*Для отладки*/
+    /* background-color: #1b6d85;*/
+}
+
 .panel-Catalog > h2{
     position: absolute;
     top: -25px;

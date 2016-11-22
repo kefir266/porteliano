@@ -2,11 +2,6 @@
 /*
  * Блок с фильтром быстрого подбора:
  */
-use yii\bootstrap\ButtonDropdown;
-use yii\bootstrap\Dropdown;
-use yii\bootstrap\Carousel;
-use yii\bootstrap\Button;
-
 use app\assets\AppAsset;
 use app\assets\MainAsset;
 use app\assets\Block_2_Asset;
@@ -29,7 +24,7 @@ Block_2_Asset::register($this);
                 </div>
                 <div class="grips">
                     <div class="doors-gradient">
-                        <h3>Входные двери</h3>
+                        <h3>Ручки</h3>
                     </div>
                 </div>
                 <div class="septa">
@@ -72,4 +67,4 @@ Block_2_Asset::register($this);
             ?>
         </div>
 
-    </div>
+
