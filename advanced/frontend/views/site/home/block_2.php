@@ -46,7 +46,13 @@ Block_2_Asset::register($this);
                 <div class="view">
                     <ul>
                         <li>
-                            <?= Html::img('img/catalog/logos/AstorMobili.jpg', ['alt'=>'Agoprofil']);?>
+                            <?= Html::img('img/catalog/logos/big/AstorMobili.jpg', ['alt'=>'AstorMobili']);?>
+                        </li>
+                        <li>
+                            <?= Html::img('img/catalog/logos/big/Agoprofil.jpg', ['alt'=>'Agoprofil']);?>
+                        </li>
+                        <li>
+                            <?= Html::img('img/catalog/logos/big/Ghizzi&Benatti.jpg', ['alt'=>'Ghizzi&Benatti']);?>
                         </li>
                     </ul>
                 </div>

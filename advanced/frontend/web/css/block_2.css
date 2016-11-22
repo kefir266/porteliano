@@ -168,22 +168,30 @@
 div.view{
     height: 162px;
     width: 89%;
-    margin-left: 7%;
+    margin-left: 5%;
     overflow: scroll;
-
     background: #f5ff00;
 }
 div.view ul{
+    height: 100%;
     list-style: none;
     width: 10000px;
+    line-height: 145px;
 
 }
+div.view ul > li{
+    vertical-align: middle;
+    padding-right: 35px;
+}
+div.view ul li{ float: left}
+
 #show{
     position: absolute;
     top: 32px;
     /* display: none; */
     margin-top: 1em;
 }
+
 div#show button{
     padding: 1em;
     margin-right: 1em;
