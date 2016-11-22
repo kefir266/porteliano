@@ -1,12 +1,17 @@
 <?php
 
 namespace frontend\assets;
-
 use yii\web\AssetBundle;
+
 
 /**
  * Main frontend application asset bundle.
  */
+
+namespace app\assets;
+
+use yii\web\AssetBundle;
+
 class AppAsset extends AssetBundle
 {
     public $basePath = '@webroot';
