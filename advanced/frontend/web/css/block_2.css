@@ -1,4 +1,4 @@
-.wrap-Catalog{
+.wrap-catalog {
     position: relative;
     height: 950px;
     background-color: #fdfdf3;
@@ -202,19 +202,19 @@ div#show button{
     cursor: pointer;
 }
 div#show button:nth-child(1){
-    background-image: url('../img/UI/arrow_inactive.jpg');
     width: 50px;
     height: 50px;
+    background-image: url('../img/UI/arrow_inactive.jpg');
     transform: scale(1, 1);
 }
 div#show button:nth-child(2){
-    left: 1019px;
+    left: 1049px;
     position: absolute;
     top: 0;
-    background-image: url('../img/UI/arrow_inactive.jpg');
-    transform: scale(-1, 1);
     width: 50px;
     height: 50px;
+    background-image: url('../img/UI/arrow_inactive.jpg');
+    transform: scale(-1, 1);
 }
 div#show button:nth-child(1):hover{
     background-image: url('../img/UI/arrow_active.jpg');
