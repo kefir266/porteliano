@@ -21,6 +21,7 @@ class MainAsset extends AssetBundle
         'css/block_1.css',
         'css/block_2.css',
         'css/animation.css',
+				'css/block_3.css',
         'css/block_4.css',
         'css/block_5.css',
         'css/block_6.css',
@@ -39,5 +40,6 @@ class MainAsset extends AssetBundle
         'yii\web\JqueryAsset',
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+        
     ];
 }

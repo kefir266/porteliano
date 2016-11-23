@@ -1,5 +1,95 @@
 .wrap-novelty{
     position: relative;
-    height: 950px;
-    background-color: #fd8100;
+    height: 871px;
+    background-color: #fdfdf3;
+}
+.novelty{
+    position: absolute;
+    top: 10%;
+    left: 398px;
+
+    width: 56%;
+    height: 66%;
+}
+.wrap-tiles{
+    position: relative;
+    top: 0;
+    left: 1px;
+}
+.wrap-tiles > h2{
+    position: absolute;
+    top: -11px;
+    left: 414px;
+    font-size: 2.8em;
+    font-family: Copperplate;
+}
+.wrap-info{
+    margin-top: 9px;
+}
+.tile{
+    margin: 83px 0 0 14px;
+    display: inline-block;
+    border: 1px solid #e8e8e8;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.tile:nth-child(1){
+    margin-left: 91px ;
+}
+.novelty >.wrap-info >.info{
+    margin: 0 0 0 13px;
+    display: inline-block;
+    width: 230px;
+    background-color: #ece7d4;
+    font-family: "PT Sans";
+}
+.novelty >.wrap-info >.info:nth-child(1){
+    margin-left: 21px;
+}
+.novelty >.wrap-info >.info > p{
+    margin: 0 0 0 9px;
+    padding: 0 0 0 0;
+}
+.novelty >.wrap-info >.info > p:nth-child(1){
+    margin-top: 9px;
+
+}
+.novelty > .wrap-info > .info > .delimiter{
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    margin-top: 9px;
+}
+.novelty > .wrap-info > .info > .block-4-price {
+    height: 34px;
+    width: 100%;
+
+}
+.block-4-price-count{
+    display: inline-block;
+    margin-left: 13px;
+    margin-top: 5px;
+    font-family: 'PTSerifBold';
+}
+.block-4-price > .glyphicon {
+    margin-left: 157px;
+    margin-top: 5px;
+}
+/* Задание рамок для плиток */
+.wrap-novelty >.novelty > button {
+    position: absolute;
+    top: 602px;
+    left: 366px;
+    height: 42px;
+    width: 268px;
+    color: #e7dcdb;
+    background-color: #935347;
+    border: 0;
+    border-radius: 0;
+    font-family: "PT Sans";
+}
+.wrap-novelty >.novelty > button:hover{
+    color: #ffffff;
+    background-color: #6a372d;
 }
