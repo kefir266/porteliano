@@ -1,0 +1,11 @@
+.wrap-action{
+    position: relative;
+    height: 1080px;
+    background-color: #fde500;
+    z-index: 0;
+}
+
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
