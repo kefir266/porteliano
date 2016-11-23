@@ -117,7 +117,7 @@ $itemsToPrice=[
                 ]);
                 ?>
             </div>
-            <div class="price">
+            <div class="block-1-price">
                 <h5>Цена</h5>
                 <?php
                 echo ButtonDropdown::widget([
