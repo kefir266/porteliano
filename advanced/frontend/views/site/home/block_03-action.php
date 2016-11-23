@@ -17,5 +17,5 @@ MainAsset::register($this);
 
 ?>
 <div class="wrap-action">
-    <div class="parallax-window" data-parallax="scroll" data-image-src="../images/blog.jpg"></div>
+    <!--<div class="parallax-window" data-parallax="scroll" data-image-src="../images/blog.jpg"></div>-->
 </div>
