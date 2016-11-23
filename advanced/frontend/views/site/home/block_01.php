@@ -2,18 +2,22 @@
 /*
  * Блок с фильтром быстрого подбора:
  */
+/*  models  */
+use app\models\Section;
+
+/*  widgets  */
 use yii\bootstrap\ButtonDropdown;
 use yii\bootstrap\Dropdown;
 use yii\bootstrap\Button;
 
+/*  assets  */
 use app\assets\FontAsset;
-use app\assets\Block_1_Asset;
+use app\assets\MainAsset;
 use app\assets\AppAsset;
-use app\models\Section;
 
 FontAsset::register($this);
 AppAsset::register($this);
-Block_1_Asset::register($this);
+MainAsset::register($this);
 
 
 ?>
