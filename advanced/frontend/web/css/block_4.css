@@ -5,18 +5,26 @@
 }
 .novelty{
     position: absolute;
-    top: 10%;
-    left: 429px;
+    top: 3.3%;
+    left: 398px;
     background-color: #fd8100;
-    width: 53%;
+    width: 56%;
     height: 66%;
 }
+.wrap-tiles{
+    position: relative;
+    top: 0;
+    left: 1px;
+}
+.wrap-info{
+    margin-top: 9px;
+}
 .tile{
-    margin: 91px 0 0 30px;
+    margin: 91px 0 0 33px;
     display: inline-block;
 }
 .tile:nth-child(1){
-    margin: 91px 0 0 0;
+    margin-left: 91px ;
 }
 .tile:after {
     content: " ";
@@ -26,4 +34,27 @@
     border: 6px solid #935347;
     /*Для отладки*/
     /* background-color: #1b6d85;*/
+}
+.novelty >.wrap-info >.info{
+    margin: 0 0 0 13px;
+    display: inline-block;
+    width: 230px;
+    background-color: #ece7d4;
+}
+.novelty >.wrap-info >.info:nth-child(1){
+    margin-left: 21px;
+}
+.novelty >.wrap-info >.info > p{
+    margin: 0 0 0 9px;
+    padding: 0 0 0 0;
+}
+.novelty >.wrap-info >.info > p:nth-child(1){
+    margin-top: 9px;
+
+}
+.novelty > .wrap-info > .info > .delimiter{
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    margin-top: 9px;
 }
