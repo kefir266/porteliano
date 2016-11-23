@@ -15,7 +15,7 @@ MainAsset::register($this);
 
 
 
-//TODO: разобраться с путями, вместо web в адресе появился site
+
 $logos = [
     Html::img('@web/img/catalog/logos/big/AstorMobili.jpg', ['alt'=>'AstorMobili']),
     Html::img('@web/img/catalog/logos/big/Agoprofil.jpg', ['alt'=>'Agoprofil']),
