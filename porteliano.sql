@@ -65,14 +65,15 @@ CREATE TABLE IF NOT EXISTS `material` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы porteliano_db.material: ~2 rows (приблизительно)
+-- Дамп данных таблицы porteliano_db.material: ~3 rows (приблизительно)
 DELETE FROM `material`;
 /*!40000 ALTER TABLE `material` DISABLE KEYS */;
 INSERT INTO `material` (`id`, `title`) VALUES
 	(1, 'Дерево'),
-	(2, 'ДСП');
+	(2, 'ДСП'),
+	(3, 'Со стеклом');
 /*!40000 ALTER TABLE `material` ENABLE KEYS */;
 
 
@@ -118,24 +119,24 @@ CREATE TABLE IF NOT EXISTS `product` (
   `section_id` int(10) unsigned NOT NULL,
   `material_id` int(10) unsigned NOT NULL,
   `style_id` int(10) unsigned NOT NULL,
-  `manufacurer` int(10) unsigned NOT NULL,
+  `manufacturer_id` int(10) unsigned NOT NULL,
   `img` varchar(255) NOT NULL,
   `description` text,
   PRIMARY KEY (`id`),
   KEY `FK_product_material` (`material_id`),
-  KEY `FK_product_manufacturer` (`manufacurer`),
   KEY `FK_product_style` (`style_id`),
   KEY `FK_product_section` (`section_id`),
-  CONSTRAINT `FK_product_section` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`),
-  CONSTRAINT `FK_product_manufacturer` FOREIGN KEY (`manufacurer`) REFERENCES `manufacturer` (`id`),
+  KEY `FK_product_manufacturer` (`manufacturer_id`),
+  CONSTRAINT `FK_product_manufacturer` FOREIGN KEY (`manufacturer_id`) REFERENCES `manufacturer` (`id`),
   CONSTRAINT `FK_product_material` FOREIGN KEY (`material_id`) REFERENCES `material` (`id`),
+  CONSTRAINT `FK_product_section` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`),
   CONSTRAINT `FK_product_style` FOREIGN KEY (`style_id`) REFERENCES `style` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы porteliano_db.product: ~2 rows (приблизительно)
 DELETE FROM `product`;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` (`id`, `title`, `section_id`, `material_id`, `style_id`, `manufacurer`, `img`, `description`) VALUES
+INSERT INTO `product` (`id`, `title`, `section_id`, `material_id`, `style_id`, `manufacturer_id`, `img`, `description`) VALUES
 	(3, 'Дверь 1', 4, 1, 1, 1, 'door1', 'Дверь 1'),
 	(4, 'Дверь 2', 3, 2, 2, 2, 'door2', 'Дверь 2');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;

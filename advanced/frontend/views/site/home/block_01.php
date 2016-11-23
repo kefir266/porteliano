@@ -75,16 +75,18 @@ $itemsToPrice=[
                 ]);
                 ?>
             </div>
-            <h2>Межкомнатные двери</h2>
+            <h2><?= $products['section']['title'] ?></h2>
             <div class="material">
                 <h5>Материал</h5>
                 <?php
                 echo ButtonDropdown::widget([
                     'options' => ['class' => 'btn-default'],
                     'split' => true,
-                    'label' => 'Со стеклом',
+                    'label' => current($products['materials'])['label'],
                     'dropdown' => [
-                        'items' => $itemsToMaterials,
+                        'items' =>
+                            $products['materials']
+                        ,
                     ],
                 ]);
                 ?>
@@ -95,9 +97,9 @@ $itemsToPrice=[
                 echo ButtonDropdown::widget([
                     'options' => ['class' => 'btn-default'],
                     'split' => true,
-                    'label' => 'Современный',
+                    'label' => current($products['styles'])['label'],
                     'dropdown' => [
-                        'items' => $itemsToStyle,
+                        'items' => $products['styles'],
                     ],
                 ]);
                 ?>
@@ -108,9 +110,9 @@ $itemsToPrice=[
                 echo ButtonDropdown::widget([
                     'options' => ['class' => 'btn-default'],
                     'split' => true,
-                    'label' => 'Любой',
+                    'label' => current($products['manufacturers'])['label'],
                     'dropdown' => [
-                        'items' => $itemsToManufacturer,
+                        'items' => $products['manufacturers'],
                     ],
                 ]);
                 ?>

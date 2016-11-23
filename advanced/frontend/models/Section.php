@@ -51,5 +51,9 @@ class Section extends ActiveRecord
         return $tree;
     }
 
-
+    public function getSection($id) {
+        
+        return $this->find()->where(['id' => $id]);
+        
+    }
 }
