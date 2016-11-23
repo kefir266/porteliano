@@ -127,16 +127,16 @@
     width: 43px;
 }
 
-.price{
+.block-1-price {
     position: absolute;
     top: 100px;
     left: 726px;
 }
-.price > div > button:nth-child(1){
+.block-1-price > div > button:nth-child(1){
     font-size: 20px;
     width: 177px;
 }
-.price > div > button:nth-child(2){
+.block-1-price > div > button:nth-child(2){
     font-size: 20px;
     width: 43px;
 }

@@ -40,5 +40,6 @@ class MainAsset extends AssetBundle
         'yii\web\JqueryAsset',
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+        
     ];
 }
