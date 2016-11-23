@@ -9,6 +9,7 @@
 namespace frontend\models;
 
 use app\models\Material;
+use app\models\Section;
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
 
@@ -21,27 +22,41 @@ class Product extends ActiveRecord
 
         //TODO нужно сделать условие и для категорий родителей
 
-        $condition = ($id == null) ? [] : ['section_id' => $id];
+//        $sectionID[] = $id;
 
-        $products['products'] = $this->find()->where($condition)->each($num);
+        $products['section'] = Section::findOne(['id' => $id]);
+//        if ($products['section']['parent_id'] != null)
+//            $sectionID[] = $products['section']['parent_id'];
+//        else
+//            $sectionID[] = '0';
+
+        $condition = ($id == null) ? []
+            : 'product.section_id = '.$id.' OR section.parent_id = '.$id ;
+
+
+        $products['products'] = $this->find()
+            ->innerJoin('section', 'product.section_id = section.id')
+            ->where($condition)->each($num);
 
         $materials = $this->find()->
             select('material_id, material.title title')->distinct()
+            ->innerJoin('section', 'product.section_id = section.id')
             ->innerJoin('material','material_id = material.id')
             ->where($condition)->each();
 
-
+        $products['materials'] = [];
         foreach ($materials as $item) {
-            
+
             $products['materials'][]  = ['label' => $item['title'], 'url' => '#'];
         }
 
         $styles = $this->find()->
         select('style_id, style.title title')->distinct()
+            ->innerJoin('section', 'product.section_id = section.id')
             ->innerJoin('style','style_id = style.id')
             ->where($condition)->each();
 
-
+        $products['styles'] = [];
         foreach ($styles as $item) {
 
             $products['styles'][]  = ['label' => $item['title'], 'url' => '#'];
@@ -49,14 +64,14 @@ class Product extends ActiveRecord
 
         $manufacturers = $this->find()->
         select('manufacturer_id, manufacturer.title title')->distinct()
+            ->innerJoin('section', 'product.section_id = section.id')
             ->innerJoin('manufacturer','manufacturer_id = manufacturer.id')
             ->where($condition)->each();
 
-
+        $products['manufacturers'] = [];
         foreach ($manufacturers as $item) {
 
             $products['manufacturers'][]  = ['label' => $item['title'], 'url' => '#'];
-            
         }
         
         return ArrayHelper::toArray($products);
@@ -67,6 +82,12 @@ class Product extends ActiveRecord
 
         return $this->hasOne(Material::className(), ['id' => 'material_id']);
         
+    }
+
+    public function getSection(){
+
+        return $this->hasOne(Section::className(), ['id' => 'section_id']);
+
     }
 
 }
