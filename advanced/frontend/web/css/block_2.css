@@ -116,7 +116,7 @@
 .tiles h3{
     font-size: 22px;
 }
-
+/* Задание рамок для плиток */
 .grips:after,
 .septa:after,
 .entryDoors:after,
