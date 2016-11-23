@@ -25,6 +25,10 @@ foreach ($sections->getMenu() as $section){
     $items[] = $section;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b141b1baf676645487765dc55c6ab797ce780568
 //$items = ['1' => 'Межкомнатные двери', '2' => 'Входные двери', '3' => 'Перегородки' ];
 //$items = [
 //    ['label' => 'Межкомнатные двери', 'url' => '#'],
@@ -47,19 +51,19 @@ foreach ($sections->getMenu() as $section){
                 ]);
                 ?>
             </div>
-            <h2>Межкомнатные двери</h2>
+            <h2><?= $products['section']['title'] ?></h2>
             <div class="material">
                 <h5>Материал</h5>
                 <?php
                 echo ButtonDropdown::widget([
                     'options' => ['class' => 'btn-default'],
                     'split' => true,
-                    'label' => 'Со стеклом',
+                    'label' => current($products['materials'])['label'],
                     'dropdown' => [
-                        'items' => [
-                            ['label' => 'Со стеклом', 'url' => '#'],
-                            ['label' => 'DropdownB', 'url' => '#'],
-                        ],
+                        'items' =>
+
+                            $products['materials']
+                        ,
                     ],
                 ]);
                 ?>
@@ -70,12 +74,9 @@ foreach ($sections->getMenu() as $section){
                 echo ButtonDropdown::widget([
                     'options' => ['class' => 'btn-default'],
                     'split' => true,
-                    'label' => 'Современный',
+                    'label' => current($products['styles'])['label'],
                     'dropdown' => [
-                        'items' => [
-                            ['label' => 'Со стеклом', 'url' => '#'],
-                            ['label' => 'DropdownB', 'url' => '#'],
-                        ],
+                        'items' => $products['styles'],
                     ],
                 ]);
                 ?>
@@ -86,12 +87,9 @@ foreach ($sections->getMenu() as $section){
                 echo ButtonDropdown::widget([
                     'options' => ['class' => 'btn-default'],
                     'split' => true,
-                    'label' => 'Любой',
+                    'label' => current($products['manufacturers'])['label'],
                     'dropdown' => [
-                        'items' => [
-                            ['label' => 'Со стеклом', 'url' => '#'],
-                            ['label' => 'DropdownB', 'url' => '#'],
-                        ],
+                        'items' => $products['manufacturers'],
                     ],
                 ]);
                 ?>

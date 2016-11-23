@@ -9,9 +9,14 @@
 namespace app\models;
 
 
+use frontend\models\Product;
 use yii\db\ActiveRecord;
 
 class Material extends ActiveRecord
 {
-    
+    public function getProducts(){
+
+        return $this->hasMany(Product::className(), [ 'id'  =>  'product_id']);
+
+    }
 }

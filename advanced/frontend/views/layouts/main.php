@@ -64,8 +64,8 @@ MainAsset::register($this);
             'items' => [
                 ['label' => 'ГЛАВНАЯ', 'url' => ['/site/index'],],
                 ['label' => 'НОВИНКИ', 'url' => ['#news']],
-                ['label' => 'ДВЕРИ', 'url' => ['#doors']],
-                ['label' => 'ПЕРЕГОРОДКИ', 'url' => ['#septa']],
+                ['label' => 'ДВЕРИ', 'url' => ['?section=1']],
+                ['label' => 'ПЕРЕГОРОДКИ', 'url' => ['?section=2']],
                 ['label' => 'ПРОИЗВОДИТЕЛИ', 'url' => ['#producer']],
                 ['label' => 'О КОМПАНИИ', 'url' => ['#about']],
                 ['label' => 'КОНТАКТЫ', 'url' => ['#contact']],
