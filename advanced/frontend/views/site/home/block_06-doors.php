@@ -18,7 +18,7 @@ MainAsset::register($this);
 
 
 // псевдоним пути к папке на основе другого псевдонима
-Yii::setAlias('@doors', '@web/img/doors/');
+Yii::setAlias('@doors', '@web/img/doors');
 
 // TODO заменить на загрузку из базы
 $category = ['Входная дверь'];
@@ -93,6 +93,7 @@ $info = [
                     ?>
 
                 </div>
+                <!--TODO: сделать прокрутку при нажатии на стрелки -->
                 <div id="show" >
                     <button id="prev" class="btn btn-link" data-param="prev"></button>
                     <button id="next" class="btn btn-link" data-param="next"></button>
@@ -130,6 +131,7 @@ $info = [
                     ?>
 
                 </div>
+                <!--TODO: сделать прокрутку при нажатии на стрелки -->
                 <div id="show" >
                     <button id="prev" class="btn btn-link" data-param="prev"></button>
                     <button id="next" class="btn btn-link" data-param="next"></button>
