@@ -8,3 +8,45 @@
     position: absolute;
     top: 927px;
 }
+.doors-panel{
+    top: 138px;
+    left: 399px;
+}
+.doors-panel > .wrap-tiles > h2{
+    top: -73px;
+    left: 425px;
+}
+.doors-panel >.wrap-tiles{
+    left: 12px;
+    top: 10px;
+}
+
+.doors-panel > .wrap-tiles > .tile{
+    padding-top: 5px;
+    text-align: center;
+    width: 230px;
+    margin-left: 13px;
+}
+
+.doors-panel > .wrap-tiles >.tile:nth-child(2){
+    margin-left: 9px;
+
+}
+.doors-panel > .wrap-tiles > .tile > img{
+    margin: 0 auto;
+}
+
+.wrap-doors > .nav-tabs{
+    display: block;
+    position: absolute;
+    top: 153px;
+    left: 745px;
+    outline: 3px solid #802b3a;
+    z-index: 1;
+}
+.wrap-doors >.nav-pills > li.active > a{
+    background-color: #802b3a;
+}
+.wrap-doors >.nav-pills > li + li{
+    margin: 0;
+}
