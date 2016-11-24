@@ -2,4 +2,8 @@
     position: relative;
     height: 669px;
     background-color: #00fd67;
+    background-image: url("../img/background/FOTO_INTRO_22.jpg");
+    background-position-y: -454px;
+    background-position-x: -1px;
+    background-size: cover;
 }

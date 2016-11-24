@@ -17,5 +17,7 @@ MainAsset::register($this);
 
 ?>
 <div class="wrap-manufacturers">
-    
+    <div class="manufacturers">
+        
+    </div>
 </div>

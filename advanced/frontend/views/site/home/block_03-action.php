@@ -18,4 +18,10 @@ MainAsset::register($this);
 ?>
 <div class="wrap-action">
     <!--<div class="parallax-window" data-parallax="scroll" data-image-src="../images/blog.jpg"></div>-->
+
+    <p style="
+    font-size:4em;
+    text-align: center;
+    line-height: 647px;
+    ">Тут Будет блок с параллаксом</p>
 </div>
