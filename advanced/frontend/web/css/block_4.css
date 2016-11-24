@@ -97,3 +97,13 @@
     color: #ffffff;
     background-color: #6a372d;
 }
+
+.arrow {
+    background-image: url(../img/novelty/Angle.png);
+    width: 61px;
+    height: 10px;
+    position: absolute;
+    top: 871px;
+    left: 866px;
+    z-index: 1;
+}
