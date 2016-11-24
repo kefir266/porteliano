@@ -93,6 +93,10 @@ $info = [
                     ?>
 
                 </div>
+                <div id="show" >
+                    <button id="prev" class="btn btn-link" data-param="prev"></button>
+                    <button id="next" class="btn btn-link" data-param="next"></button>
+                </div>
                 <button type="button" class="btn ">ПОКАЗАТЬ БОЛЬШЕ</button>
             </div>
         </div>
@@ -125,6 +129,10 @@ $info = [
                     }//€
                     ?>
 
+                </div>
+                <div id="show" >
+                    <button id="prev" class="btn btn-link" data-param="prev"></button>
+                    <button id="next" class="btn btn-link" data-param="next"></button>
                 </div>
                 <button type="button" class="btn ">ПОКАЗАТЬ БОЛЬШЕ</button>
             </div>
