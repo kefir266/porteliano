@@ -1,5 +1,8 @@
 .wrap-septa{
     position: relative;
     height: 870px;
-    background-color: #1d05fd;
+    background-color: #FFFFFF;
+}
+.wrap-septa > .arrow{
+    top: 870px;
 }

@@ -34,7 +34,7 @@ class MainAsset extends AssetBundle
     ];
     public $js = [
         'js/runningRibbon.js',
-        'js/parallax.js'
+        //'js/parallax.js'
     ];
     public $depends = [
         'yii\web\JqueryAsset',
