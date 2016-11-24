@@ -88,5 +88,6 @@ $info = [
         </div>
         <button type="button" class="btn ">ПОКАЗАТЬ БОЛЬШЕ</button>
     </div>
+    <div class="arrow"></div>
 </div>
 

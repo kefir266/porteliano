@@ -75,8 +75,12 @@
 .block-4-price > .glyphicon {
     margin-left: 157px;
     margin-top: 5px;
+    color: #80807e;
 }
-/* Задание рамок для плиток */
+.block-4-price > .glyphicon:hover {
+    color: #942b34;
+}
+
 .wrap-novelty >.novelty > button {
     position: absolute;
     top: 602px;
@@ -92,4 +96,14 @@
 .wrap-novelty >.novelty > button:hover{
     color: #ffffff;
     background-color: #6a372d;
+}
+
+.arrow {
+    background-image: url(../img/novelty/Angle.png);
+    width: 61px;
+    height: 10px;
+    position: absolute;
+    top: 871px;
+    left: 866px;
+    z-index: 1;
 }
