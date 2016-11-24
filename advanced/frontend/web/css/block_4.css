@@ -75,8 +75,12 @@
 .block-4-price > .glyphicon {
     margin-left: 157px;
     margin-top: 5px;
+    color: #80807e;
 }
-/* Задание рамок для плиток */
+.block-4-price > .glyphicon:hover {
+    color: #942b34;
+}
+
 .wrap-novelty >.novelty > button {
     position: absolute;
     top: 602px;
