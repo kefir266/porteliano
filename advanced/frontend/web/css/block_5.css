@@ -1,5 +1,36 @@
 .wrap-key-benefits{
     position: relative;
     height: 802px;
-    background-color: #fd0006;
+    background-color: #dad2bb;
+    padding: 87px 0 0 416px;
+}
+
+.panel-key-benefits{
+    position: relative;
+    height: 568px;
+    width: 960px;
+
+    outline: 1px solid;
+    /*background-color: #8f94fd;*/
+}
+.panel-key-benefits > h2 {
+    margin: 9px 0 0 226px;
+    font-family: 'Copperplate';
+    font-size: 40px;
+}
+.glyphicon-scale:before{
+    font-family: 'FontAwesome';
+    content:"\f277";
+}
+.glyphicon-calc:before{
+    font-family: 'FontAwesome';
+    content:"\F1EC";
+}
+.glyphicon-ruby:before{
+    font-family: 'FontAwesome';
+    content:"\F219";
+}
+.panel-key-benefits > .glyphicon{
+    font-size: 40px;
+    color: #bca998;
 }
