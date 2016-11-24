@@ -17,5 +17,9 @@ MainAsset::register($this);
 
 ?>
 <div class="wrap-Contacts">
-    
+    <p style="
+    font-size:4em;
+    text-align: center;
+    line-height: 652px;
+    ">Тут Будет блок google map</p>
 </div>
