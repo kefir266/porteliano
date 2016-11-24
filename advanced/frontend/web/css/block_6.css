@@ -1,5 +1,10 @@
 .wrap-doors{
     position: relative;
     height: 927px;
-    background-color: #fd0081;
+    background-color: #fdfdf3;
+}
+.arrow {
+    background-image: url(../img/other/angle-light.png);
+    position: absolute;
+    top: 927px;
 }

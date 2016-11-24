@@ -130,12 +130,9 @@
     top: 450px;
     left: 603px
 }
-.arrow {
+.wrap-key-benefits > .arrow {
     background-image: url(../img/other/angle-dark.png);
-    width: 61px;
-    height: 10px;
     position: absolute;
-    top: 871px;
-    left: 866px;
-    z-index: 1;
+    top: 802px;
+
 }

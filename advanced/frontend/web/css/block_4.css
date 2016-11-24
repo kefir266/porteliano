@@ -97,13 +97,17 @@
     color: #ffffff;
     background-color: #6a372d;
 }
-
-.arrow {
+.arrow{
+    width: 61px;
+    height: 10px;
+    z-index: 1;
+    left: 866px;
+}
+.wrap-novelty > .arrow {
     background-image: url(../img/other/angle-light.png);
     width: 61px;
     height: 10px;
     position: absolute;
     top: 871px;
     left: 866px;
-    z-index: 1;
 }
