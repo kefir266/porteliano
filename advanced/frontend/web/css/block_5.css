@@ -31,25 +31,57 @@
 
 
 }
+.panel-key-benefits > .panel-icons > .glyphicon,
 .panel-key-benefits > .glyphicon{
     font-size: 40px;
     color: #bca998;
     width: 102px;  height: 102px;
     /* круг */
-    border: 1px solid black;
-    background: red;
+    border: 1px solid #c1af9f;
+    /*background: red;*/
     -moz-border-radius: 50px;
     -webkit-border-radius: 50px;
     border-radius: 50px;
 
-    /* вертикальное выравнивание */
+    /* вертикальное выравнивание
     display: table-cell;
-    vertical-align: middle
+    vertical-align: middle*/
+    line-height: 102px;
 }
-.panel-key-benefits *:before {
+.panel-key-benefits > .panel-icons> *:before,
+.panel-key-benefits > *:before{
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 42px;
     height: 42px;
+}
+
+.panel-icons{
+    position: absolute;
+    top: 134px;
+}
+.panel-icons > span:nth-child(2){
+    position: absolute;
+    top:160px;
+}
+.panel-icons> span:nth-child(3){
+    position: absolute;
+    top: 331px;
+    left: 0;
+}
+.panel-icons> span:nth-child(4){
+    position: absolute;
+    top: 0;
+    left: 491px;
+}
+.panel-icons> span:nth-child(5){
+    position: absolute;
+    top:160px;
+    left: 491px;
+}
+.panel-icons> span:nth-child(6){
+    position: absolute;
+    top: 331px;
+    left: 491px;
 }
