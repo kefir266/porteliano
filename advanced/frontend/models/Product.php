@@ -39,7 +39,7 @@ class Product extends ActiveRecord
             ->where($condition)->each($num);
 
         $materials = $this->find()->
-            select('material_id, material.title title')->distinct()
+            select('material_id id, material.title title')->distinct()
             ->innerJoin('section', 'product.section_id = section.id')
             ->innerJoin('material','material_id = material.id')
             ->where($condition)->each();
@@ -47,11 +47,16 @@ class Product extends ActiveRecord
         $products['materials'] = [];
         foreach ($materials as $item) {
 
-            $products['materials'][]  = ['label' => $item['title'], 'url' => '#'];
+            $products['materials'][]  = ['label' => $item['title'], 'url' => '#',
+                'linkOptions'=> ['data-toggle' =>'dropdown',
+                    'id-item=' => $item['id'],
+                    'table' => 'material',
+                ],
+            ];
         }
 
         $styles = $this->find()->
-        select('style_id, style.title title')->distinct()
+        select('style_id id, style.title title')->distinct()
             ->innerJoin('section', 'product.section_id = section.id')
             ->innerJoin('style','style_id = style.id')
             ->where($condition)->each();
@@ -59,11 +64,14 @@ class Product extends ActiveRecord
         $products['styles'] = [];
         foreach ($styles as $item) {
 
-            $products['styles'][]  = ['label' => $item['title'], 'url' => '#'];
+            $products['styles'][]  = ['label' => $item['title'], 'url' => '#',
+                'linkOptions'=> ['data-toggle' =>'dropdown',
+                'id-item=' => $item['id'],
+                    'table' => 'style',],];
         }
 
         $manufacturers = $this->find()->
-        select('manufacturer_id, manufacturer.title title')->distinct()
+        select('manufacturer_id id, manufacturer.title title')->distinct()
             ->innerJoin('section', 'product.section_id = section.id')
             ->innerJoin('manufacturer','manufacturer_id = manufacturer.id')
             ->where($condition)->each();
@@ -71,7 +79,10 @@ class Product extends ActiveRecord
         $products['manufacturers'] = [];
         foreach ($manufacturers as $item) {
 
-            $products['manufacturers'][]  = ['label' => $item['title'], 'url' => '#'];
+            $products['manufacturers'][]  = ['label' => $item['title'], 'url' => '#',
+                'linkOptions'=> ['data-toggle' =>'dropdown',
+                    'id-item' => $item['id'],
+                    'table' => 'manufacturer',],];
         }
         
         return ArrayHelper::toArray($products);

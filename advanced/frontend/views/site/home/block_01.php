@@ -14,10 +14,15 @@ use yii\bootstrap\Button;
 use app\assets\FontAsset;
 use app\assets\MainAsset;
 use app\assets\AppAsset;
+use app\assets\BackAsset;
 
 FontAsset::register($this);
 AppAsset::register($this);
 MainAsset::register($this);
+BackAsset::register($this);
+
+
+
 
 
 ?>
@@ -65,6 +70,8 @@ foreach ($sections->getMenu() as $section){
 
                             $products['materials']
                         ,
+                        'clientEvents' => ['click' => 'eventClickDropMenu'],
+                        
                     ],
                 ]);
                 ?>
@@ -73,12 +80,18 @@ foreach ($sections->getMenu() as $section){
                 <h5>Стиль</h5>
                 <?php
                 echo ButtonDropdown::widget([
-                    'options' => ['class' => 'btn-default'],
+                    'options' => [
+                        'class' => 'btn-default',
+
+                    ],
+                    
                     'split' => true,
                     'label' => current($products['styles'])['label'],
                     'dropdown' => [
                         'items' => $products['styles'],
+                        'clientEvents' => ['click' => 'eventClickDropMenu'],
                     ],
+
                 ]);
                 ?>
             </div>
@@ -91,6 +104,7 @@ foreach ($sections->getMenu() as $section){
                     'label' => 'Любой',
                     'dropdown' => [
                         'items' => $products['manufacturers'],
+                        'clientEvents' => ['click' => 'eventClickDropMenu'],
                     ],
                 ]);
                 ?>
