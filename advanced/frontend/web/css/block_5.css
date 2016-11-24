@@ -7,9 +7,7 @@
 
 .panel-key-benefits{
     position: relative;
-    height: 568px;
-    width: 960px;
-
+    width: 960px; height: 568px;
     outline: 1px solid;
     /*background-color: #8f94fd;*/
 }
@@ -29,8 +27,29 @@
 .glyphicon-ruby:before{
     font-family: 'FontAwesome';
     content:"\F219";
+
+
+
 }
 .panel-key-benefits > .glyphicon{
     font-size: 40px;
     color: #bca998;
+    width: 102px;  height: 102px;
+    /* круг */
+    border: 1px solid black;
+    background: red;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+
+    /* вертикальное выравнивание */
+    display: table-cell;
+    vertical-align: middle
+}
+.panel-key-benefits *:before {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 42px;
+    height: 42px;
 }
