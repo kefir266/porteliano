@@ -7,38 +7,6 @@
 }
 */
 
-
-@font-face {
-    font-family: Copperplate; /* имя шрифта для CSS правил */
-    src: local("Copperplate"), /* проверяем наличие шрифта в ОС пользователя */
-    url(../Fonts/Copperplate.ttc); /* если шрифт не установлен, тогда загружаем его по указанному пути */
-
-}
-@font-face {
-    font-family: PTSans;
-    src: local("PTSans"),
-    url(../Fonts/PTSans.ttc);
-
-}
-@font-face {
-    font-family: PTSerif;
-    src: local("PTSerif"),
-    url(../Fonts/PTSerif.ttc);
-
-}
-@font-face {
-    font-family: PTSerifCaption;
-    src: local("PTSerifCaption"),
-    url(../Fonts/PTSerifCaption.ttc);
-
-}
-@font-face {
-    font-family: PTSansBold;
-    src: local("PTSerifCaption"),
-    url(../Fonts/pt-sansbold.ttf);
-
-}
-
 * {
     margin: 0;
 }
