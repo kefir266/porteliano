@@ -27,3 +27,11 @@
     font-family: 'PTSerif', serif;
     width: 25%;
 }
+.contact-form{
+    width: 20%;
+    height: 75%;
+    background-color: #00fde6;
+    position: absolute;
+    top: 12%;
+    left: 57%;
+}

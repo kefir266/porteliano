@@ -24,6 +24,13 @@ MainAsset::register($this);
     <p>
         Гарантированно улучшаем любое диллерское предложение на все модели итальянских дверейи перегородок на 4%!
     </p>
+    <div class="contact-form">
+        <div class="row">
+            <div class="col-lg-5">
+
+            </div>
+        </div>
+    </div>
 
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
