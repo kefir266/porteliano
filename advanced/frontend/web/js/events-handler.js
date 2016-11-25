@@ -5,5 +5,6 @@
 
 
 function eventClickDropMenu(item) {
-    $(item.target).parents(".btn-group").children(".btn-default:first").text(item.target.innerHTML);
+    if (item.target.tagName == 'A')
+        $(item.target).parents(".btn-group").children(".btn-default:first").text(item.target.innerHTML);
 }

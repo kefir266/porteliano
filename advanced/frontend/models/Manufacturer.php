@@ -5,21 +5,21 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "material".
+ * This is the model class for table "manufacturer".
  *
  * @property string $id
  * @property string $title
  *
  * @property Product[] $products
  */
-class Material extends \yii\db\ActiveRecord
+class Manufacturer extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'material';
+        return 'manufacturer';
     }
 
     /**
@@ -49,6 +49,6 @@ class Material extends \yii\db\ActiveRecord
      */
     public function getProducts()
     {
-        return $this->hasMany(Product::className(), ['material_id' => 'id']);
+        return $this->hasMany(Product::className(), ['manufacturer_id' => 'id']);
     }
 }
