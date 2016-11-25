@@ -3,6 +3,18 @@
     position: relative;
     height: 653px;
 }
+.wrap-Contacts > a{
+    /* Статичная карта
+    position: absolute;
+    top: 50% ;
+    margin-top: -225px;
+    left: 50% ;
+    margin-left: -300px;
+    */
+}
+
+
+
 /***************************************/
 .wrap-catalog,
 .wrap-novelty,
