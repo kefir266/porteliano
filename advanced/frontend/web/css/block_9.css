@@ -3,3 +3,21 @@
     height: 652px;
     background-color: #0098fd;
 }
+
+.wrap-action-another > h1{
+    position: absolute;
+    top: 30%;
+    left: 23%;
+    color: #F1F0F0;
+    font-size: 50px;
+    font-family: 'Copperplate', serif;
+}
+.wrap-action-another > p{
+    position: absolute;
+    top: 44%;
+    left: 23%;
+    color: #F1F0F0;
+    font-size: 28px;
+    font-family: 'PTSerif', serif;
+    width: 25%;
+}
