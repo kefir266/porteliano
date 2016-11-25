@@ -13,16 +13,18 @@ use app\assets\MainAsset;
 AppAsset::register($this);
 MainAsset::register($this);
 
+Yii::setAlias('@imgLogos', '@web/img/catalog/logos');
+// TODO: перенести массив $fileNames(возможно и $alt) в базу
+$logos =[];
+$directoryLogo = Yii::getAlias('@webroot').'/img/catalog/logos';
 
-
-
-$logos = [
-    Html::img('@web/img/catalog/logos/big/AstorMobili.jpg', ['alt'=>'AstorMobili']),
-    Html::img('@web/img/catalog/logos/big/Agoprofil.jpg', ['alt'=>'Agoprofil']),
-    Html::img('@web/img/catalog/logos/big/Ghizzi&Benatti.jpg',['alt'=>'Ghizzi&Benatti']),
-    Html::img('@web/img/catalog/logos/big/Longhi.jpg',['alt'=>'Longhi']),
-    Html::img('@web/img/catalog/logos/big/PaoloLucchetta.jpg',['alt'=>'PaoloLucchetta']),
-]
+if (file_exists($directoryLogo)) {
+    $fileNames = array_diff(scandir($directoryLogo), ['..', '.']);
+    for ($i = 2; $i < count($fileNames); $i++){
+        $alt = preg_replace("/\.\w+/i",'',$fileNames[$i]);
+        $logos[] = Html::img('@imgLogos/'.$fileNames[$i], ['alt'=>"$alt"]);
+    }
+}
 ?>
 
 <div class="wrap-catalog">
@@ -58,8 +60,8 @@ $logos = [
                     <ul>
                         <?php
                         // TODO: сделать логотипы в серой гамме и цветные
-                        for ($i = 0; $i < count($logos);$i++){
-                            echo '<li>'.$logos[$i].'</li>';
+                        for ($i = 0; $i < count($logos); $i++){
+                            echo '<li class="gray"><a href="#">'.$logos[$i].'</a></li>';
                         }
                         ?>
                     </ul>
