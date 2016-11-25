@@ -4,17 +4,19 @@
     height: 653px;
 }
 /***************************************/
-.wrap-quick-selection,
 .wrap-catalog,
-.wrap-action,
 .wrap-novelty,
-.wrap-key-benefits,
 .wrap-doors,
-.wrap-facts-at-Glance,
 .wrap-septa,
-.wrap-action-another,
 .wrap-manufacturers,
-.wrap-about,
 .wrap-Contacts{
     background-color: #fdfdf3;
+}
+.wrap-quick-selection,
+.wrap-action,
+.wrap-key-benefits,
+.wrap-facts-at-Glance,
+.wrap-action-another,
+.wrap-about{
+    background-color: #dad2bb;
 }
