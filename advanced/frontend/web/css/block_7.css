@@ -2,4 +2,20 @@
     position: relative;
     height: 510px;
     background-color: #9900fd;
+    z-index: 0;
+
+}
+.facts{
+    position: absolute;
+    top: 160px;
+    left: 21%;
+    width: 60%;
+}
+.facts h1{
+    font-size: 4em;
+    color: #9A2434;
+}
+.facts p{
+    font-size: 2em;
+    color: black;
 }

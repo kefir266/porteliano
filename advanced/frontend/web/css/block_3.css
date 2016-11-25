@@ -5,7 +5,30 @@
     z-index: 0;
 }
 
-.parallax-window {
-    min-height: 400px;
-    background: transparent;
+
+
+.wrap-action > h1{
+    position: absolute;
+    top: 30%;
+    left: 23%;
+    color: #F1F0F0;
+    font-size: 50px;
+    font-family: 'Copperplate', serif;
+}
+.wrap-action > p{
+    position: absolute;
+    top: 44%;
+    left: 23%;
+    color: #F1F0F0;
+    font-size: 28px;
+    font-family: 'PTSerif', serif;
+    width: 25%;
+}
+.contact-form{
+    width: 20%;
+    height: 75%;
+    background-color: #00fde6;
+    position: absolute;
+    top: 12%;
+    left: 57%;
 }

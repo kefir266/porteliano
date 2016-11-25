@@ -1,5 +1,34 @@
 .wrap-Contacts{
+    background-color: #affd00;
     position: relative;
     height: 653px;
-    background-color: #affd00;
+}
+.wrap-Contacts > a{
+    /* Статичная карта
+    position: absolute;
+    top: 50% ;
+    margin-top: -225px;
+    left: 50% ;
+    margin-left: -300px;
+    */
+}
+
+
+
+/***************************************/
+.wrap-catalog,
+.wrap-novelty,
+.wrap-doors,
+.wrap-septa,
+.wrap-manufacturers,
+.wrap-Contacts{
+    background-color: #fdfdf3;
+}
+.wrap-quick-selection,
+.wrap-action,
+.wrap-key-benefits,
+.wrap-facts-at-Glance,
+.wrap-action-another,
+.wrap-about{
+    background-color: #dad2bb;
 }

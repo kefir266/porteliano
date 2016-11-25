@@ -84,7 +84,7 @@ MainAsset::register($this);
     <div class="push"></div>
 </div>
 <footer class="footer footer-general">
-    <div id="navbar-line" class="nav ">
+    <div id="navbar-line-footer" class="nav ">
         <!--navbar-line-indent  nav navbar-fixed-top-->
         <?php
         echo Nav::widget([
