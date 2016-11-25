@@ -182,10 +182,10 @@ div.view ul{
 div.view ul > li{
     vertical-align: middle;
     margin-right: 35px;
-    border: 1px solid black;
+    border: 1px solid #f7ebdb;
 }
 div.view ul > li:hover{
-    background-color: #1b6d85;
+    /*background-color: #1b6d85;*/
 }
 div.view ul li{ float: left}
 

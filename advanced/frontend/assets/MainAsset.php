@@ -31,6 +31,7 @@ class MainAsset extends AssetBundle
         'css/block_10.css',
         'css/block_11.css',
         'css/block_12.css',
+        'css/gray.css',
     ];
     public $js = [
         'js/runningRibbon.js',
