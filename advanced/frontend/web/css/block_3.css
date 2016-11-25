@@ -5,10 +5,7 @@
     z-index: 0;
 }
 
-.parallax-window {
-    min-height: 400px;
-    background: transparent;
-}
+
 
 .wrap-action > h1{
     position: absolute;
