@@ -223,6 +223,13 @@ header{
     background-color: #413332;
     z-index: 500;
 }
+#navbar-line-footer{
+    height: 60px;
+    width: 100%;
+    min-width: 1800px;
+    background-color: #413332;
+    z-index: 500;
+}
 .navbar-line-indent{
     position: absolute;
     top: 114px;
@@ -280,12 +287,14 @@ header{
     z-index: 12;
 }
 
-.fixed-top{
-    position: fixed; /* Фиксированное положение */
-    right: 10px; /* Расстояние от правого края окна браузера */
-    top: 20%; /* Расстояние сверху */
-    padding: 10px; /* Поля вокруг текста */
-    background: #ffe; /* Цвет фона */
-    border: 1px solid #333; /* Параметры рамки */
+
+
+.fixed-0-0-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.fixed-0-0-top  > .navbar-header{
+       left: 8%;
 }
 
