@@ -17,5 +17,9 @@ MainAsset::register($this);
 
 ?>
 <div class="wrap-action-another">
-    
+    <p style="
+    font-size:4em;
+    text-align: center;
+    line-height: 652px;
+    ">Тут Будет блок с параллаксом</p>
 </div>

@@ -17,5 +17,11 @@ MainAsset::register($this);
 
 ?>
 <div class="wrap-manufacturers">
-    
+    <div class="manufacturers">
+        <p style="
+    font-size:4em;
+    text-align: center;
+    line-height: 652px;
+    ">Тут Будет блок с логотипами производителей</p>
+    </div>
 </div>
