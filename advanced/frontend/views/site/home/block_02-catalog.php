@@ -58,8 +58,7 @@ if (file_exists($directoryLogo)) {
             <div class="running-ribbon">
                 <div class="view">
                     <ul>
-                        <?php
-                        // TODO: сделать логотипы в серой гамме и цветные
+                        <?php                        
                         for ($i = 0; $i < count($logos); $i++){
                             echo '<li class="gray"><a href="#">'.$logos[$i].'</a></li>';
                         }
