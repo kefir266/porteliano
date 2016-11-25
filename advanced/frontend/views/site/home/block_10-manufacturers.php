@@ -17,11 +17,14 @@ MainAsset::register($this);
 
 ?>
 <div class="wrap-manufacturers">
-    <div class="manufacturers">
-        <p style="
-    font-size:4em;
-    text-align: center;
-    line-height: 652px;
-    ">Тут Будет блок с логотипами производителей</p>
+    <h2>Производители</h2>
+    <div class="manufacturers">        
+        <ul>
+            <?php
+            for ($i = 0; $i < count($logos); $i++){
+                echo '<li class="gray wrap-resize"><a href="#">'.$logos[$i].'</a></li>';
+            }
+            ?>
+        </ul>
     </div>
 </div>
