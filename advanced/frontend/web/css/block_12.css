@@ -1,5 +1,20 @@
 .wrap-Contacts{
+    background-color: #affd00;
     position: relative;
     height: 653px;
-    background-color: #affd00;
+}
+/***************************************/
+.wrap-quick-selection,
+.wrap-catalog,
+.wrap-action,
+.wrap-novelty,
+.wrap-key-benefits,
+.wrap-doors,
+.wrap-facts-at-Glance,
+.wrap-septa,
+.wrap-action-another,
+.wrap-manufacturers,
+.wrap-about,
+.wrap-Contacts{
+    background-color: #fdfdf3;
 }
