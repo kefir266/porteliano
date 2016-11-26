@@ -6,12 +6,13 @@
  * Time: 14:03
  */
 
-namespace app\models;
+namespace frontend\models;
 
 
 use yii\db\ActiveRecord;
 
-class Style extends ActiveRecord
+class questionForm extends ActiveRecord
 {
-
+    public $username;
+    public $email;
 }

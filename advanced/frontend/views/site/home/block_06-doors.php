@@ -55,7 +55,7 @@ $info = [
     ]
 ]
 ?>
-<div class="wrap-doors">
+<article  id="doors" class="wrap-doors" data-item="a2">
     <!-- Навигация -->
     <ul class="nav nav-tabs nav-pills " role="tablist">
         <li class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">МЕЖКОМНАТНЫЕ</a></li>
@@ -142,7 +142,7 @@ $info = [
     </div>
 
     <div class="arrow"></div>
-</div>
+</article>
 
 
 

@@ -2,6 +2,8 @@
 /*
  * Блок с фильтром быстрого подбора:
  */
+/* @var $form yii\bootstrap\ActiveForm */
+/* @var $modelStyle \frontend\models\QuestionForm */
 
 /*  models  */
 
@@ -15,9 +17,9 @@ AppAsset::register($this);
 MainAsset::register($this);
 ?>
 
-<div  class="wrap-action">
+<div id="action" class="wrap-action">
     <div class="img-holder"
-         data-image="<?='img/background/FOTO_INTRO_01.jpg'?>">
+         data-image="<?= Yii::getAlias('@web').'/img/background/FOTO_INTRO_01.jpg'?>">
     </div>
 
     <h1>АКЦИЯ</h1>

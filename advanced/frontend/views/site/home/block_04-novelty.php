@@ -54,7 +54,7 @@ $info = [
     ]
 ]
 ?>
-<div class="wrap-novelty">
+<article id="novelty" class="wrap-novelty" data-item="a1">
     <div class="novelty">
         <div class="wrap-tiles">
             <?php
@@ -89,5 +89,5 @@ $info = [
         <button type="button" class="btn ">ПОКАЗАТЬ БОЛЬШЕ</button>
     </div>
     <div class="arrow"></div>
-</div>
+</article>
 

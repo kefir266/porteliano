@@ -16,9 +16,9 @@ AppAsset::register($this);
 MainAsset::register($this);
 
 ?>
-<div class="wrap-action-another">
+<div id="action-another"  class="wrap-action-another">
     <div class="img-holder"
-         data-image="<?='img/background/anotherAction.jpg'?>">
+         data-image="<?=Yii::getAlias('@web').'/img/background/anotherAction.jpg'?>">
     </div>
 
     <h1>АКЦИЯ</h1>

@@ -43,7 +43,7 @@ foreach ($sections->getMenu() as $section){
 //];
 ?>
 <div class="crop">
-    <div class="wrap-quick-selection">
+    <div id="quick-selection" class="wrap-quick-selection">
 
         <div class="panel-quick-selection">
             <div class="dropdown category">
