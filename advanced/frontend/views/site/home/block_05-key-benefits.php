@@ -29,7 +29,7 @@ $testText = [
     ]
 ]
 ?>
-<div class="wrap-key-benefits">
+<div id="key-benefits" class="wrap-key-benefits">
     <div class="panel-key-benefits">
         <?= Html::tag('h2','Ключевые преимущества');?>
         <!---->

@@ -35,12 +35,13 @@ class MainAsset extends AssetBundle
     ];
     public $js = [
         'js/runningRibbon.js',
-        'js/fixedMenu.js'
+        'js/fixedMenu.js',
+        '/js/lib/jquery.scroolly.js',
+        'js/scrollspy.js',
     ];
     public $depends = [
         'yii\web\JqueryAsset',
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
-        
     ];
 }

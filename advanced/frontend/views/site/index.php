@@ -22,7 +22,7 @@ $this->title = 'home';
 ?>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://rawgithub.com/pederan/Parallax-ImageScroll/master/jquery.imageScroll.min.js"></script>
-
+<div id="Scrollspy" data-spy="scroll" data-target=".navbar" data-offset="10">
 <?php
     require_once 'home/block_01.php';
     require_once 'home/block_02-catalog.php';
@@ -36,6 +36,6 @@ $this->title = 'home';
     require_once 'home/block_10-manufacturers.php';
     require_once 'home/block_11-about.php';
     require_once 'home/block_12-Contacts.php';
-?>    
-
+?>
+</div>
 

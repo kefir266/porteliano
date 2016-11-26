@@ -186,10 +186,13 @@ header{
     background-color: #413332;
     color: #d2cca8;
 }
-
 .navbar-footer > li > a:hover{
     background-color: #574847;
     color: #ffffff;
+}
+.lightButton{
+    background-color: #574847 !important;
+    color: #ffffff!important;
 }
 
 #wishlist{

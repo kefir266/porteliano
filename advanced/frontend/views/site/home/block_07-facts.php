@@ -16,10 +16,10 @@ AppAsset::register($this);
 MainAsset::register($this);
 
 ?>
-<div class="wrap-facts-at-Glance">
+<div id="facts" class="wrap-facts-at-Glance">
 
     <div class="img-holder"
-         data-image="<?='img/background/facts.jpg'?>">
+         data-image="<?=Yii::getAlias('@web').'/img/background/facts.jpg'?>">
     </div>
     <div class="facts">
         <div class="row">
