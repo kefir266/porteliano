@@ -9,10 +9,18 @@
 namespace frontend\models;
 
 
-use yii\db\ActiveRecord;
+use \yii\base\Model;
 
-class questionForm extends ActiveRecord
+class QuestionForm extends Model
 {
     public $username;
     public $email;
+    public $phone;
+
+    public function rules()
+    {
+        return [
+            // тут определяются правила валидации
+        ];
+    }
 }

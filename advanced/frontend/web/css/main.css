@@ -244,7 +244,7 @@ header{
     top: 114px;
     left: 0;
 }
-#ask_a_question{
+#ask_a_question-button {
     font-family: PTSansBold, Arial;
     position: absolute;
     left: 875px;
@@ -256,9 +256,17 @@ header{
     border: 1px solid #942b34;
     color: #942b34;
 }
-#ask_a_question:hover{
+#ask_a_question-button:hover{
     color: white;
     background: #942b34;
+}
+.modal{
+    /*
+    width: 400px;
+    height: 600px;
+    margin: 10% auto;
+    background-color: #00fde6;
+    */
 }
 
 /*
