@@ -55,7 +55,7 @@ $info = [
     ]
 ]
 ?>
-<div class="wrap-septa">
+<article id="septa" class="wrap-septa" data-item="a3">
     <div class="novelty doors-panel">
         <div class="wrap-tiles">
             <?php
@@ -93,4 +93,4 @@ $info = [
         <button type="button" class="btn ">ПОКАЗАТЬ БОЛЬШЕ</button>
     </div>
     <div class="arrow"></div>
-</div>
+</article>

@@ -51,8 +51,6 @@ MainAsset::register($this);
         </button>
 
     </header>
-    <div class="wrap ">
-    </div>
     <div class="content">
         <?= $content ?>
     </div>
@@ -60,15 +58,37 @@ MainAsset::register($this);
         <?php
         echo Nav::widget([
             'encodeLabels' => false, /*nav */
-            'options' => ['class' => 'navbar-nav  font-PTSans navbar-header'],
+            'options' => ['class' => 'navbar navbar-nav  font-PTSans navbar-header'],
+
             'items' => [
-                ['label' => 'ГЛАВНАЯ', 'url' => ['/site/index'],],
-                ['label' => 'НОВИНКИ', 'url' => ['#news']],
-                ['label' => 'ДВЕРИ', 'url' => ['?section=1']],
-                ['label' => 'ПЕРЕГОРОДКИ', 'url' => ['?section=2']],
-                ['label' => 'ПРОИЗВОДИТЕЛИ', 'url' => ['#producer']],
-                ['label' => 'О КОМПАНИИ', 'url' => ['#about']],
-                ['label' => 'КОНТАКТЫ', 'url' => ['#contact']],
+                [   'label' => 'ГЛАВНАЯ',
+                    'url' => '#quick-selection',
+                    'linkOptions' => ['data-target' => 'a0'],
+                ],
+                ['label' => 'НОВИНКИ',
+                    'url' => ['#novelty'],
+                    'linkOptions' => ['data-target' => 'a1'],
+                ],
+                ['label' => 'ДВЕРИ', 
+                    'url' => ['#doors'],  //?section=1 #doors
+                    'linkOptions' => ['data-target' => 'a2'],
+                ],
+                ['label' => 'ПЕРЕГОРОДКИ', 
+                    'url' => ['#septa'], //?section=2  #septa
+                    'linkOptions' => ['data-target' => 'a3'],
+                ],
+                ['label' => 'ПРОИЗВОДИТЕЛИ',
+                    'url' => ['#manufacturers'],
+                    'linkOptions' => ['data-target' => 'a4'],
+                ],
+                ['label' => 'О КОМПАНИИ',
+                    'url' => ['#about'],
+                    'linkOptions' => ['data-target' => 'a5'],
+                ],
+                ['label' => 'КОНТАКТЫ',
+                    'url' => ['#contacts'],
+                    'linkOptions' => ['data-target' => 'a6'],
+                ],
 
                 ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist"></span>',
                     'url' => ['site/index'],

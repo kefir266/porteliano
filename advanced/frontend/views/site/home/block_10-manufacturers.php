@@ -16,7 +16,7 @@ AppAsset::register($this);
 MainAsset::register($this);
 
 ?>
-<div class="wrap-manufacturers">
+<article id="manufacturers" class="wrap-manufacturers">
     <h2>Производители</h2>
     <div class="manufacturers">        
         <ul>
@@ -27,4 +27,4 @@ MainAsset::register($this);
             ?>
         </ul>
     </div>
-</div>
+</article>

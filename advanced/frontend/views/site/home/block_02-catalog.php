@@ -27,7 +27,7 @@ if (file_exists($directoryLogo)) {
 }
 ?>
 
-<div class="wrap-catalog">
+<div id="catalog" class="wrap-catalog">
 
         <div class="panel-Catalog">
             <h2>Каталог</h2>
