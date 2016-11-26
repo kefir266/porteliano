@@ -227,7 +227,7 @@ header{
     z-index: 500;
 }
 .nav li{
-    border-right: 1px solid black;
+    border-right: 1px solid #352929;
 }
 .nav li:last-child,.nav li:nth-last-child(2){
     border: none;
