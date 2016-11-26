@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 /* @var $form yii\widgets\ActiveForm */
-/* @var $model app\models\Product */
+/* @var $model frontend\models\Product */
 /*  models  */
 
 /*  widgets  */
@@ -17,8 +17,6 @@ use app\assets\FontAsset;
 AppAsset::register($this);
 $test = MainAsset::register($this);
 FontAsset::register($this);
-
-
 
 $this->title = 'home';
 ?>

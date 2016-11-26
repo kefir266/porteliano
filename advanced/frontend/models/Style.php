@@ -13,5 +13,6 @@ use yii\db\ActiveRecord;
 
 class Style extends ActiveRecord
 {
-
+    public $username;
+    public $email;
 }
