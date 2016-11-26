@@ -6,7 +6,7 @@
 .arrow {
     background-image: url(../img/other/angle-light.png);
     position: absolute;
-    top: 927px;
+    top: 100%;
 }
 .doors-panel{
     top: 138px;
