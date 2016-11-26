@@ -27,4 +27,5 @@ MainAsset::register($this);
             ?>
         </ul>
     </div>
+    <div class="arrow"></div>
 </article>
