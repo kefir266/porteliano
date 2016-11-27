@@ -7,14 +7,9 @@
 
 /*  widgets  */
 use yii\helpers\Html;
-
+use yii\helpers\Url;
 /*  assets  */
-use app\assets\AppAsset;
-use app\assets\MainAsset;
 
-
-AppAsset::register($this);
-MainAsset::register($this);
 
 
 // псевдоним пути к папке на основе другого псевдонима
@@ -98,7 +93,8 @@ $info = [
                     <button id="prev" class="btn btn-link" data-param="prev"></button>
                     <button id="next" class="btn btn-link" data-param="next"></button>
                 </div>
-                <button type="button" class="btn ">ПОКАЗАТЬ БОЛЬШЕ</button>
+                <!--<button type="button" class="btn ">ПОКАЗАТЬ БОЛЬШЕ</button>-->
+                <a href="<?=Url::to(['pages/dveri']); ?>" class="btn btn-default btn-lg" role="button">ПОКАЗАТЬ БОЛЬШЕ</a>
             </div>
         </div>
         <div role="tabpanel" class="tab-pane" id="profile">

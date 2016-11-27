@@ -7,11 +7,7 @@
 /*  models  */
 
 /*  assets  */
-use app\assets\AppAsset;
-use app\assets\MainAsset;
 
-AppAsset::register($this);
-MainAsset::register($this);
 ?>
 
 <div id="action" class="wrap-action">

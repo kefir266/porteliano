@@ -9,11 +9,7 @@
 use yii\helpers\Html;
 
 /*  assets  */
-use app\assets\AppAsset;
-use app\assets\MainAsset;
 
-AppAsset::register($this);
-MainAsset::register($this);
 
 ?>
 <div id="action-another"  class="wrap-action-another">
@@ -25,13 +21,7 @@ MainAsset::register($this);
     <p>
         Гарантированно улучшаем любое диллерское предложение на все модели итальянских дверейи перегородок на 4%!
     </p>
-    <div class="contact-form">
-        <div class="row">
-            <div class="col-lg-5">
-
-            </div>
-        </div>
-    </div>
+    <?=require 'contact-form.php'?>
     
     <script>
         $('div.wrap-action-another > .img-holder').imageScroll({

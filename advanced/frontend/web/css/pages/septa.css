@@ -1,0 +1,39 @@
+.wrap-tiles{
+    position: relative;
+    top: 0;
+    left: 1px;
+
+}
+.wrap-tiles  h2{
+    font-size: 2.8em;
+    font-family: Copperplate, serif;
+}
+.tile{
+    margin: 5px 0 0 14px;
+    display: inline-block;
+    border: 6px solid #935347;
+
+}
+
+
+h4{
+    margin-top: 10%;
+    color: #b7743e;
+    font-family: "PT Sans", serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+p{
+    font-family: "PT Sans", serif;
+    font-size: 18px;
+}
+
+p:last-child{
+
+    margin-bottom: 15%;
+}
+.col-md-6 img{
+    margin-left: 31px;
+    margin-right: auto;
+
+}

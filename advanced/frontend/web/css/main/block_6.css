@@ -4,7 +4,7 @@
     background-color: #fdfdf3;
 }
 .arrow {
-    background-image: url(../img/other/angle-light.png);
+    background-image: url(../../img/other/angle-light.png);
     position: absolute;
     top: 100%;
 }
@@ -57,18 +57,16 @@
     top: 242px;
     left: -51px;
     margin-top: 1em;
-    */
     position: absolute;
     top: 32px;
     /* display: none; */
-    margin-top: 1em;
 
     position: absolute;
     top: 242px;
     left: -51px;
     margin-top: 1em;
 }
-.doors-panel > button {
+.doors-panel > .btn {
       position: absolute;
       top: 602px;
       left: 366px;
@@ -80,7 +78,7 @@
       border-radius: 0;
       font-family: "PT Sans";
   }
-.doors-panel > button:hover{
+.doors-panel > .btn:hover{
     color: #ffffff;
     background-color: #6a372d;
 }

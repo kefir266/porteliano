@@ -10,22 +10,17 @@ namespace app\assets;
 use yii\web\AssetBundle;
 
 
-class MainAsset extends AssetBundle
+class SeptaAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     
     public $css = [
-        'css/stylename.css',
-        'css/animation.css',
-        'css/gray.css',        
-        'css/main.css',
-        
+        'css/pages/septa.css',        
     ];
     public $js = [
         // доп. библиотеки
-        'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
-        '/js/lib/jquery.scroolly.js',
+        
         // скрипты
 
     ];
