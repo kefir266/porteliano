@@ -20,7 +20,7 @@ DoorsAsset::register($this);
 Yii::setAlias('@doors', '@web/img/02/');
 
 $this->params['breadcrumbs'][] = [
-    'label' => 'Двери альбом',
+    'label' => 'Двери',
     'url' => Url::to(['pages/dveri']),
     'template' => "<li> {link} </li>\n", // template for this link only
 

@@ -90,6 +90,10 @@ class PagesController extends Controller
     {
         return $this->render('03_Dveri_katalog');
     }
+    public function actionPeregorodki()
+    {
+        return $this->render('05_Peregorodki');
+    }
 
 
 }
