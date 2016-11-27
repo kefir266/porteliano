@@ -48,7 +48,7 @@ html, body {
 }
 .content{
     margin-left: 0;
-    margin-top: 0;
+    margin-top: 49px;
 }
 header{
     position: relative;
@@ -241,7 +241,7 @@ header{
 }
 .navbar-line-indent{
     position: absolute;
-    top: 1%;
+    top: 93px;
     left: 0;
 }
 #ask_a_question-button {
