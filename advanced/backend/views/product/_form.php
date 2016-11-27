@@ -14,13 +14,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'section_id')->textInput(['maxlength' => true]) ?>
+    <?php echo $form->field($model, 'section_id')->dropDownList($model->getSections());   ?>
 
-    <?= $form->field($model, 'material_id')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'material_id')->dropDownList($model->getMaterials()) ?>
 
-    <?= $form->field($model, 'style_id')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'style_id')->dropDownList($model->getStyles()) ?>
 
-    <?= $form->field($model, 'manufacturer_id')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'manufacturer_id')->dropDownList($model->getManufacturers()) ?>
 
     <?= $form->field($model, 'img')->textInput(['maxlength' => true]) ?>
 

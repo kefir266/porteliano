@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "product".
@@ -38,8 +39,8 @@ class Product extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'section_id', 'material_id', 'style_id', 'manufacturer_id', 'img'], 'required'],
-            [['section_id', 'material_id', 'style_id', 'manufacturer_id'], 'integer'],
+            [['title', 'material_id', 'style_id', 'manufacturer_id', 'img'], 'required'],
+            [['section_id'],'integer', 'min'=> 1],
             [['description'], 'string'],
             [['title'], 'string', 'max' => 50],
             [['img'], 'string', 'max' => 255],
@@ -57,13 +58,13 @@ class Product extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'title' => 'Title',
-            'section_id' => 'Section ID',
-            'material_id' => 'Material ID',
-            'style_id' => 'Style ID',
-            'manufacturer_id' => 'Manufacturer ID',
-            'img' => 'Img',
-            'description' => 'Description',
+            'title' => 'Название',
+            'section_id' => 'Категория',
+            'material_id' => 'Материал',
+            'style_id' => 'Стиль',
+            'manufacturer_id' => 'Производитель',
+            'img' => 'Имя файла',
+            'description' => 'Описание',
         ];
     }
 
@@ -72,7 +73,7 @@ class Product extends \yii\db\ActiveRecord
      */
     public function getPrices()
     {
-        return $this->hasMany(Price::className(), ['product_id' => 'id']);
+        return $this->hasMany(Price::className(), ['id' => 'product_id']);
     }
 
     /**
@@ -97,6 +98,28 @@ class Product extends \yii\db\ActiveRecord
     public function getSection()
     {
         return $this->hasOne(Section::className(), ['id' => 'section_id']);
+    }
+
+    public function getSections(){
+
+        $sp = Section::find()->select('id,title')->each();
+        return array_merge(['0' => ''],ArrayHelper::map($sp,'id','title'));
+    }
+
+    public function getMaterials(){
+
+        $sp = Material::find()->select('id,title')->each();
+        return array_merge(['0' => ''],ArrayHelper::map($sp,'id','title'));
+    }
+    public function getManufacturers(){
+
+        $sp = Manufacturer::find()->select('id,title')->each();
+        return array_merge(['0' => ''],ArrayHelper::map($sp,'id','title'));
+    }
+    public function getStyles(){
+
+        $sp = Style::find()->select('id,title')->each();
+        return array_merge(['0' => ''],ArrayHelper::map($sp,'id','title'));
     }
 
     /**

@@ -40,7 +40,7 @@ class Material extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'title' => 'Title',
+            'title' => 'Материал',
         ];
     }
 
