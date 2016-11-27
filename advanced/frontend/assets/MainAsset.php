@@ -17,21 +17,22 @@ class MainAsset extends AssetBundle
     
     public $css = [
         'css/stylename.css',
-        'css/main.css',
-        'css/block_1.css',
-        'css/block_2.css',
         'css/animation.css',
-		'css/block_3.css',
-        'css/block_4.css',
-        'css/block_5.css',
-        'css/block_6.css',
-        'css/block_7.css',
-        'css/block_8.css',
-        'css/block_9.css',
-        'css/block_10.css',
-        'css/block_11.css',
-        'css/block_12.css',
-        'css/gray.css',
+        'css/gray.css',        
+        'css/main.css',
+        'css/main/block_1.css',
+        'css/main/block_2.css',        
+		'css/main/block_3.css',
+        'css/main/block_4.css',
+        'css/main/block_5.css',
+        'css/main/block_6.css',
+        'css/main/block_7.css',
+        'css/main/block_8.css',
+        'css/main/block_9.css',
+        'css/main/block_10.css',
+        'css/main/block_11.css',
+        'css/main/block_12.css',
+        
     ];
     public $js = [
         // доп. библиотеки

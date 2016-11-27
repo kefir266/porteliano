@@ -86,27 +86,27 @@ MainAsset::register($this);
                     'linkOptions' => ['data-target' => 'a0'],
                 ],
                 ['label' => 'НОВИНКИ',
-                    'url' => [Url::to(['site/say'])],//['#novelty'],
+                    'url' => Url::to(['site/index', '#' => 'novelty']),//['#novelty'],
                     'linkOptions' => ['data-target' => 'a1'],
                 ],
                 ['label' => 'ДВЕРИ', 
-                    'url' => ['#doors'],  //?section=1 #doors
+                    'url' => Url::to(['site/index', '#' => 'doors']),  //?section=1 ['#doors']
                     'linkOptions' => ['data-target' => 'a2'],
                 ],
                 ['label' => 'ПЕРЕГОРОДКИ', 
-                    'url' => ['#septa'], //?section=2  #septa
+                    'url' => Url::to(['site/index', '#' => 'septa']), //?section=2  #septa
                     'linkOptions' => ['data-target' => 'a3'],
                 ],
                 ['label' => 'ПРОИЗВОДИТЕЛИ',
-                    'url' => ['#manufacturers'],
+                    'url' => Url::to(['site/index', '#' => 'manufacturers']),
                     'linkOptions' => ['data-target' => 'a4'],
                 ],
                 ['label' => 'О КОМПАНИИ',
-                    'url' => ['#about'],
+                    'url' => Url::to(['site/index', '#' => 'about']),
                     'linkOptions' => ['data-target' => 'a5'],
                 ],
                 ['label' => 'КОНТАКТЫ',
-                    'url' => ['#contacts'],
+                    'url' => Url::to(['site/index', '#' => 'contacts']) ,
                     'linkOptions' => ['data-target' => 'a6'],
                 ],
 

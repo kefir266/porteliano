@@ -4,7 +4,7 @@
     background-color: #fdfdf3;
 }
 .arrow {
-    background-image: url(../img/other/angle-light.png);
+    background-image: url(../../img/other/angle-light.png);
     position: absolute;
     top: 100%;
 }
