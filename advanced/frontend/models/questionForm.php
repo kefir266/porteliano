@@ -7,12 +7,19 @@
  */
 
 namespace frontend\models;
+//TODO: добавить правила валидации
+use \yii\base\Model;
 
-
-use yii\db\ActiveRecord;
-
-class questionForm extends ActiveRecord
+class QuestionForm extends Model
 {
     public $username;
     public $email;
+    public $phone;
+
+    public function rules()
+    {
+        return [
+            // тут определяются правила валидации
+        ];
+    }
 }

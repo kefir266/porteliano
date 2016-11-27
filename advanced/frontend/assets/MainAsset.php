@@ -21,7 +21,7 @@ class MainAsset extends AssetBundle
         'css/block_1.css',
         'css/block_2.css',
         'css/animation.css',
-				'css/block_3.css',
+		'css/block_3.css',
         'css/block_4.css',
         'css/block_5.css',
         'css/block_6.css',
@@ -34,9 +34,13 @@ class MainAsset extends AssetBundle
         'css/gray.css',
     ];
     public $js = [
+        // доп. библиотеки
+        'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
+        '/js/lib/jquery.scroolly.js',
+        // скрипты
+        'js/ajax-modal-popup.js',
         'js/runningRibbon.js',
         'js/fixedMenu.js',
-        '/js/lib/jquery.scroolly.js',
         'js/scrollspy.js',
     ];
     public $depends = [
@@ -45,3 +49,4 @@ class MainAsset extends AssetBundle
         'yii\bootstrap\BootstrapAsset',
     ];
 }
+

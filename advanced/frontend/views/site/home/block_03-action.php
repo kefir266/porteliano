@@ -2,13 +2,10 @@
 /*
  * Блок с фильтром быстрого подбора:
  */
-/* @var $form yii\bootstrap\ActiveForm */
-/* @var $modelStyle \frontend\models\QuestionForm */
+/* @var @questionForm \frontend\models\QuestionForm */
 
 /*  models  */
 
-/*  widgets  */
-use yii\helpers\Html;
 /*  assets  */
 use app\assets\AppAsset;
 use app\assets\MainAsset;
@@ -26,13 +23,7 @@ MainAsset::register($this);
     <p>
         Гарантированно улучшаем любое диллерское предложение на все модели итальянских дверейи перегородок на 4%!
     </p>
-    <div class="contact-form">
-        <div class="row">
-            <div class="col-lg-5">
-
-            </div>
-        </div>
-    </div>
+    <?=require 'contact-form.php'?>
 
     <script>
         $('div.wrap-action > .img-holder').imageScroll({

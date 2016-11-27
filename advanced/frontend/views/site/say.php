@@ -1,4 +1,4 @@
 <?php
 use yii\helpers\Html;
 ?>
-<?= Html::encode($message) ?> 
+<h1 style="text-align: center; margin: 15% auto"><?= Html::encode($message) ?></h1>
