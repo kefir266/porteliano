@@ -7,8 +7,7 @@
  */
 
 namespace frontend\models;
-
-
+//TODO: добавить правила валидации
 use \yii\base\Model;
 
 class QuestionForm extends Model
