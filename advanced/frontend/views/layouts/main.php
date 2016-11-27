@@ -72,6 +72,13 @@ MainAsset::register($this);
            ?>
     </header>
     <div class="content" >
+        <?= yii\widgets\Breadcrumbs::widget([
+            'homeLink' => [
+                'label' => 'Главная',
+                'url' => Url::to(['site/index']),
+            ],
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+        ]) ?>
         <?= $content ?>
     </div>
     <div id="navbar-line" class="navbar-line-indent  nav "><!--navbar-line-indent  nav navbar-fixed-top       -->

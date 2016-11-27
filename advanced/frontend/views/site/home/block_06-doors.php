@@ -9,12 +9,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 /*  assets  */
-use app\assets\AppAsset;
-use app\assets\MainAsset;
 
-
-AppAsset::register($this);
-MainAsset::register($this);
 
 
 // псевдоним пути к папке на основе другого псевдонима

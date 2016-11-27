@@ -30,6 +30,7 @@ html, body {
 }
 .footer-general, .push {
     height: 102px;
+    position: relative;
 }
 .wrap{
     margin: 22px auto -60px;
@@ -49,6 +50,7 @@ html, body {
 .content{
     margin-left: 0;
     margin-top: 49px;
+    min-height: 400px;
 }
 header{
     position: relative;
@@ -313,5 +315,27 @@ header{
 }
 .fixed-0-0-top  > .navbar-header{
        left: 8%;
+}
+
+
+
+.breadcrumb{
+    margin-left: 22%;
+    margin-top: 5%;
+    background-color: #fdfdf3;
+}
+.breadcrumb li{
+    margin-left: 5px;
+}
+.breadcrumb a{
+    color: #413332;
+    font-family: "PT Sans",serif;
+    font-size: 16px;
+}
+/* content = чем разделяются крошки */
+.breadcrumb > li + li::before {
+    padding: 0 5px;
+    color: #ccc;
+    content: " ";
 }
 

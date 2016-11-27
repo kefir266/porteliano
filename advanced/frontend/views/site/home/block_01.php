@@ -12,19 +12,14 @@ use yii\bootstrap\Button;
 
 /*  assets  */
 use app\assets\FontAsset;
-use app\assets\MainAsset;
+use app\assets\MainPageAsset;
 use app\assets\AppAsset;
 use app\assets\BackAsset;
 
 FontAsset::register($this);
 AppAsset::register($this);
-MainAsset::register($this);
+MainPageAsset::register($this);
 BackAsset::register($this);
-
-
-
-
-
 ?>
 <?php
 

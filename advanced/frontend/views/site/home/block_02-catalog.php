@@ -7,11 +7,7 @@
 /*  widgets  */
 use yii\helpers\Html;
 /*  assets  */
-use app\assets\AppAsset;
-use app\assets\MainAsset;
 
-AppAsset::register($this);
-MainAsset::register($this);
 
 Yii::setAlias('@imgLogos', '@web/img/catalog/logos');
 // TODO: перенести массив $fileNames(возможно и $alt) в базу 

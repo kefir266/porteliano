@@ -20,18 +20,6 @@ class MainAsset extends AssetBundle
         'css/animation.css',
         'css/gray.css',        
         'css/main.css',
-        'css/main/block_1.css',
-        'css/main/block_2.css',        
-		'css/main/block_3.css',
-        'css/main/block_4.css',
-        'css/main/block_5.css',
-        'css/main/block_6.css',
-        'css/main/block_7.css',
-        'css/main/block_8.css',
-        'css/main/block_9.css',
-        'css/main/block_10.css',
-        'css/main/block_11.css',
-        'css/main/block_12.css',
         
     ];
     public $js = [
@@ -39,10 +27,7 @@ class MainAsset extends AssetBundle
         'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
         '/js/lib/jquery.scroolly.js',
         // скрипты
-        'js/ajax-modal-popup.js',
-        'js/runningRibbon.js',
-        'js/fixedMenu.js',
-        'js/scrollspy.js',
+
     ];
     public $depends = [
         'yii\web\JqueryAsset',

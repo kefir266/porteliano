@@ -86,4 +86,10 @@ class PagesController extends Controller
     {
         return $this->render('02_Dveri');
     }
+    public function actionDvericatalog()
+    {
+        return $this->render('03_Dveri_katalog');
+    }
+
+
 }
