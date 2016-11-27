@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Хост:                         127.0.0.1
--- Версия сервера:               5.5.50 - MySQL Community Server (GPL)
+-- Версия сервера:               5.5.48 - MySQL Community Server (GPL)
 -- ОС Сервера:                   Win32
 -- HeidiSQL Версия:              9.3.0.4984
 -- --------------------------------------------------------
@@ -26,7 +26,6 @@ CREATE TABLE IF NOT EXISTS `country` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы porteliano_db.country: ~10 rows (приблизительно)
-DELETE FROM `country`;
 /*!40000 ALTER TABLE `country` DISABLE KEYS */;
 INSERT INTO `country` (`code`, `name`, `population`) VALUES
 	('AU', 'Australia', 24016400),
@@ -42,20 +41,61 @@ INSERT INTO `country` (`code`, `name`, `population`) VALUES
 /*!40000 ALTER TABLE `country` ENABLE KEYS */;
 
 
+-- Дамп структуры для таблица porteliano_db.currency
+DROP TABLE IF EXISTS `currency`;
+CREATE TABLE IF NOT EXISTS `currency` (
+  `id` int(10) unsigned NOT NULL,
+  `title` char(3) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `title` (`title`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Дамп данных таблицы porteliano_db.currency: ~1 rows (приблизительно)
+/*!40000 ALTER TABLE `currency` DISABLE KEYS */;
+INSERT INTO `currency` (`id`, `title`) VALUES
+	(643, 'RUB');
+/*!40000 ALTER TABLE `currency` ENABLE KEYS */;
+
+
+-- Дамп структуры для таблица porteliano_db.customer
+DROP TABLE IF EXISTS `customer`;
+CREATE TABLE IF NOT EXISTS `customer` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `email` varchar(100) NOT NULL,
+  `full_name` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `surname` varchar(100) NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `reg_date` datetime NOT NULL,
+  `ip` char(15) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`),
+  KEY `surname` (`surname`),
+  KEY `phone` (`phone`),
+  KEY `full_name` (`full_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Дамп данных таблицы porteliano_db.customer: ~0 rows (приблизительно)
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+
+
 -- Дамп структуры для таблица porteliano_db.manufacturer
 DROP TABLE IF EXISTS `manufacturer`;
 CREATE TABLE IF NOT EXISTS `manufacturer` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
+  `img` varchar(255) NOT NULL,
+  `link` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `title` (`title`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы porteliano_db.manufacturer: ~2 rows (приблизительно)
-DELETE FROM `manufacturer`;
 /*!40000 ALTER TABLE `manufacturer` DISABLE KEYS */;
-INSERT INTO `manufacturer` (`id`, `title`) VALUES
-	(1, 'Рога и копыта'),
-	(2, 'Производитель1');
+INSERT INTO `manufacturer` (`id`, `title`, `img`, `link`) VALUES
+	(1, 'Рога и копыта', '', ''),
+	(2, 'Производитель1', '', '');
 /*!40000 ALTER TABLE `manufacturer` ENABLE KEYS */;
 
 
@@ -64,11 +104,11 @@ DROP TABLE IF EXISTS `material`;
 CREATE TABLE IF NOT EXISTS `material` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `title` (`title`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы porteliano_db.material: ~3 rows (приблизительно)
-DELETE FROM `material`;
 /*!40000 ALTER TABLE `material` DISABLE KEYS */;
 INSERT INTO `material` (`id`, `title`) VALUES
 	(1, 'Дерево'),
@@ -86,7 +126,6 @@ CREATE TABLE IF NOT EXISTS `migration` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы porteliano_db.migration: ~2 rows (приблизительно)
-DELETE FROM `migration`;
 /*!40000 ALTER TABLE `migration` DISABLE KEYS */;
 INSERT INTO `migration` (`version`, `apply_time`) VALUES
 	('m000000_000000_base', 1478611317),
@@ -94,19 +133,62 @@ INSERT INTO `migration` (`version`, `apply_time`) VALUES
 /*!40000 ALTER TABLE `migration` ENABLE KEYS */;
 
 
+-- Дамп структуры для таблица porteliano_db.order
+DROP TABLE IF EXISTS `order`;
+CREATE TABLE IF NOT EXISTS `order` (
+  `id` int(10) unsigned NOT NULL,
+  `date` datetime NOT NULL,
+  `full_name` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_order_customer` (`full_name`),
+  CONSTRAINT `FK_order_customer` FOREIGN KEY (`full_name`) REFERENCES `customer` (`full_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Дамп данных таблицы porteliano_db.order: ~0 rows (приблизительно)
+/*!40000 ALTER TABLE `order` DISABLE KEYS */;
+/*!40000 ALTER TABLE `order` ENABLE KEYS */;
+
+
+-- Дамп структуры для таблица porteliano_db.order_content
+DROP TABLE IF EXISTS `order_content`;
+CREATE TABLE IF NOT EXISTS `order_content` (
+  `order_id` int(10) unsigned DEFAULT NULL,
+  `costomer_id` int(10) unsigned DEFAULT NULL,
+  `product_id` int(10) unsigned DEFAULT NULL,
+  `price` decimal(12,2) unsigned DEFAULT NULL,
+  `quantity` int(10) unsigned DEFAULT NULL,
+  `currency_id` int(10) unsigned DEFAULT NULL,
+  `sum` decimal(12,0) unsigned DEFAULT NULL,
+  KEY `FK_order_content_order` (`order_id`),
+  KEY `FK_order_content_customer` (`costomer_id`),
+  KEY `FK_order_content_product` (`product_id`),
+  KEY `FK_order_content_currency` (`currency_id`),
+  CONSTRAINT `FK_order_content_currency` FOREIGN KEY (`currency_id`) REFERENCES `currency` (`id`),
+  CONSTRAINT `FK_order_content_customer` FOREIGN KEY (`costomer_id`) REFERENCES `customer` (`id`),
+  CONSTRAINT `FK_order_content_order` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`),
+  CONSTRAINT `FK_order_content_product` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Дамп данных таблицы porteliano_db.order_content: ~0 rows (приблизительно)
+/*!40000 ALTER TABLE `order_content` DISABLE KEYS */;
+/*!40000 ALTER TABLE `order_content` ENABLE KEYS */;
+
+
 -- Дамп структуры для таблица porteliano_db.price
 DROP TABLE IF EXISTS `price`;
 CREATE TABLE IF NOT EXISTS `price` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `currency_id` int(10) unsigned NOT NULL DEFAULT '643',
   `cost` decimal(12,2) NOT NULL,
   `product_id` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_price_product` (`product_id`),
+  KEY `FK_price_currency` (`currency_id`),
+  CONSTRAINT `FK_price_currency` FOREIGN KEY (`currency_id`) REFERENCES `currency` (`id`),
   CONSTRAINT `FK_price_product` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы porteliano_db.price: ~0 rows (приблизительно)
-DELETE FROM `price`;
 /*!40000 ALTER TABLE `price` DISABLE KEYS */;
 /*!40000 ALTER TABLE `price` ENABLE KEYS */;
 
@@ -123,6 +205,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `img` varchar(255) NOT NULL,
   `description` text,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `title` (`title`),
   KEY `FK_product_material` (`material_id`),
   KEY `FK_product_style` (`style_id`),
   KEY `FK_product_section` (`section_id`),
@@ -131,14 +214,14 @@ CREATE TABLE IF NOT EXISTS `product` (
   CONSTRAINT `FK_product_material` FOREIGN KEY (`material_id`) REFERENCES `material` (`id`),
   CONSTRAINT `FK_product_section` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`),
   CONSTRAINT `FK_product_style` FOREIGN KEY (`style_id`) REFERENCES `style` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы porteliano_db.product: ~2 rows (приблизительно)
-DELETE FROM `product`;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`id`, `title`, `section_id`, `material_id`, `style_id`, `manufacturer_id`, `img`, `description`) VALUES
-	(3, 'Дверь 1', 4, 1, 1, 1, 'door1', 'Дверь 1'),
-	(4, 'Дверь 2', 3, 2, 2, 2, 'door2', 'Дверь 2');
+	(3, 'Дверь 1', 3, 1, 1, 1, 'door1', 'Update'),
+	(4, 'Дверь 2', 3, 2, 2, 2, 'door2', 'Дверь 2'),
+	(6, 'Новый продукт', 4, 2, 2, 2, 'hgjj.jpg', 'пропаоло hk ген kyu ky');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 
@@ -146,17 +229,17 @@ INSERT INTO `product` (`id`, `title`, `section_id`, `material_id`, `style_id`, `
 DROP TABLE IF EXISTS `section`;
 CREATE TABLE IF NOT EXISTS `section` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `title` varchar(50) DEFAULT NULL,
+  `title` varchar(32) NOT NULL,
   `parent_id` int(10) unsigned DEFAULT NULL,
   `title_main` varchar(100) DEFAULT NULL,
   `page` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `title` (`title`),
   KEY `FK_section_section` (`parent_id`),
   CONSTRAINT `FK_section_section` FOREIGN KEY (`parent_id`) REFERENCES `section` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы porteliano_db.section: ~4 rows (приблизительно)
-DELETE FROM `section`;
 /*!40000 ALTER TABLE `section` DISABLE KEYS */;
 INSERT INTO `section` (`id`, `title`, `parent_id`, `title_main`, `page`) VALUES
 	(1, 'ДВЕРИ', NULL, 'Двери', '?section=1'),
@@ -171,11 +254,11 @@ DROP TABLE IF EXISTS `style`;
 CREATE TABLE IF NOT EXISTS `style` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `title` (`title`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы porteliano_db.style: ~2 rows (приблизительно)
-DELETE FROM `style`;
 /*!40000 ALTER TABLE `style` DISABLE KEYS */;
 INSERT INTO `style` (`id`, `title`) VALUES
 	(1, 'Стиль1'),
@@ -202,10 +285,9 @@ CREATE TABLE IF NOT EXISTS `user` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Дамп данных таблицы porteliano_db.user: ~1 rows (приблизительно)
-DELETE FROM `user`;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`) VALUES
-	(1, 'admin', '', '', NULL, '', 10, 0, 0);
+	(1, 'admin', '', '$2y$13$XFkg1XkmwNpeDfnP7nyU3ONzkE9gzaz8ribn.S23dlJ/9t9j1sFSa', NULL, '', 10, 0, 1480107957);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
