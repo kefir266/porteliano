@@ -241,13 +241,13 @@ header{
 }
 .navbar-line-indent{
     position: absolute;
-    top: 114px;
+    top: 1%;
     left: 0;
 }
 #ask_a_question-button {
     font-family: PTSansBold, Arial;
     position: absolute;
-    left: 875px;
+    left: 100%;
     top: 10px;
     padding: 10px 20px 10px 20px;
 
