@@ -94,6 +94,10 @@ class PagesController extends Controller
     {
         return $this->render('05_Peregorodki');
     }
+    public function actionManufacturers()
+    {
+        return $this->render('07_Proizvoditeli');
+    }
 
 
 }
