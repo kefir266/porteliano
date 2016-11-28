@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Хост:                         127.0.0.1
--- Версия сервера:               5.5.48 - MySQL Community Server (GPL)
+-- Версия сервера:               5.5.50 - MySQL Community Server (GPL)
 -- ОС Сервера:                   Win32
 -- HeidiSQL Версия:              9.3.0.4984
 -- --------------------------------------------------------
@@ -26,6 +26,7 @@ CREATE TABLE IF NOT EXISTS `country` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы porteliano_db.country: ~10 rows (приблизительно)
+DELETE FROM `country`;
 /*!40000 ALTER TABLE `country` DISABLE KEYS */;
 INSERT INTO `country` (`code`, `name`, `population`) VALUES
 	('AU', 'Australia', 24016400),
@@ -51,6 +52,7 @@ CREATE TABLE IF NOT EXISTS `currency` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы porteliano_db.currency: ~1 rows (приблизительно)
+DELETE FROM `currency`;
 /*!40000 ALTER TABLE `currency` DISABLE KEYS */;
 INSERT INTO `currency` (`id`, `title`) VALUES
 	(643, 'RUB');
@@ -76,6 +78,7 @@ CREATE TABLE IF NOT EXISTS `customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы porteliano_db.customer: ~0 rows (приблизительно)
+DELETE FROM `customer`;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 
@@ -92,6 +95,7 @@ CREATE TABLE IF NOT EXISTS `manufacturer` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы porteliano_db.manufacturer: ~2 rows (приблизительно)
+DELETE FROM `manufacturer`;
 /*!40000 ALTER TABLE `manufacturer` DISABLE KEYS */;
 INSERT INTO `manufacturer` (`id`, `title`, `img`, `link`) VALUES
 	(1, 'Рога и копыта', '', ''),
@@ -109,6 +113,7 @@ CREATE TABLE IF NOT EXISTS `material` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы porteliano_db.material: ~3 rows (приблизительно)
+DELETE FROM `material`;
 /*!40000 ALTER TABLE `material` DISABLE KEYS */;
 INSERT INTO `material` (`id`, `title`) VALUES
 	(1, 'Дерево'),
@@ -126,6 +131,7 @@ CREATE TABLE IF NOT EXISTS `migration` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы porteliano_db.migration: ~2 rows (приблизительно)
+DELETE FROM `migration`;
 /*!40000 ALTER TABLE `migration` DISABLE KEYS */;
 INSERT INTO `migration` (`version`, `apply_time`) VALUES
 	('m000000_000000_base', 1478611317),
@@ -139,12 +145,15 @@ CREATE TABLE IF NOT EXISTS `order` (
   `id` int(10) unsigned NOT NULL,
   `date` datetime NOT NULL,
   `full_name` varchar(100) DEFAULT NULL,
+  `done` date DEFAULT NULL,
+  `term` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_order_customer` (`full_name`),
   CONSTRAINT `FK_order_customer` FOREIGN KEY (`full_name`) REFERENCES `customer` (`full_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы porteliano_db.order: ~0 rows (приблизительно)
+DELETE FROM `order`;
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 
@@ -170,6 +179,7 @@ CREATE TABLE IF NOT EXISTS `order_content` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы porteliano_db.order_content: ~0 rows (приблизительно)
+DELETE FROM `order_content`;
 /*!40000 ALTER TABLE `order_content` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_content` ENABLE KEYS */;
 
@@ -189,6 +199,7 @@ CREATE TABLE IF NOT EXISTS `price` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы porteliano_db.price: ~0 rows (приблизительно)
+DELETE FROM `price`;
 /*!40000 ALTER TABLE `price` DISABLE KEYS */;
 /*!40000 ALTER TABLE `price` ENABLE KEYS */;
 
@@ -202,10 +213,12 @@ CREATE TABLE IF NOT EXISTS `product` (
   `material_id` int(10) unsigned NOT NULL,
   `style_id` int(10) unsigned NOT NULL,
   `manufacturer_id` int(10) unsigned NOT NULL,
+  `articul` varchar(50) DEFAULT NULL,
   `img` varchar(255) NOT NULL,
   `description` text,
   PRIMARY KEY (`id`),
   UNIQUE KEY `title` (`title`),
+  UNIQUE KEY `articul` (`articul`),
   KEY `FK_product_material` (`material_id`),
   KEY `FK_product_style` (`style_id`),
   KEY `FK_product_section` (`section_id`),
@@ -216,12 +229,13 @@ CREATE TABLE IF NOT EXISTS `product` (
   CONSTRAINT `FK_product_style` FOREIGN KEY (`style_id`) REFERENCES `style` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы porteliano_db.product: ~2 rows (приблизительно)
+-- Дамп данных таблицы porteliano_db.product: ~3 rows (приблизительно)
+DELETE FROM `product`;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` (`id`, `title`, `section_id`, `material_id`, `style_id`, `manufacturer_id`, `img`, `description`) VALUES
-	(3, 'Дверь 1', 3, 1, 1, 1, 'door1', 'Update'),
-	(4, 'Дверь 2', 3, 2, 2, 2, 'door2', 'Дверь 2'),
-	(6, 'Новый продукт', 4, 2, 2, 2, 'hgjj.jpg', 'пропаоло hk ген kyu ky');
+INSERT INTO `product` (`id`, `title`, `section_id`, `material_id`, `style_id`, `manufacturer_id`, `articul`, `img`, `description`) VALUES
+	(3, 'Дверь 1', 3, 1, 1, 1, NULL, 'door1', 'Update'),
+	(4, 'Дверь 2', 3, 2, 2, 2, NULL, 'door2', 'Дверь 2'),
+	(6, 'Новый продукт', 4, 2, 2, 2, NULL, 'hgjj.jpg', 'пропаоло hk ген kyu ky');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 
@@ -240,6 +254,7 @@ CREATE TABLE IF NOT EXISTS `section` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы porteliano_db.section: ~4 rows (приблизительно)
+DELETE FROM `section`;
 /*!40000 ALTER TABLE `section` DISABLE KEYS */;
 INSERT INTO `section` (`id`, `title`, `parent_id`, `title_main`, `page`) VALUES
 	(1, 'ДВЕРИ', NULL, 'Двери', '?section=1'),
@@ -259,6 +274,7 @@ CREATE TABLE IF NOT EXISTS `style` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы porteliano_db.style: ~2 rows (приблизительно)
+DELETE FROM `style`;
 /*!40000 ALTER TABLE `style` DISABLE KEYS */;
 INSERT INTO `style` (`id`, `title`) VALUES
 	(1, 'Стиль1'),
@@ -282,9 +298,10 @@ CREATE TABLE IF NOT EXISTS `user` (
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `password_reset_token` (`password_reset_token`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Дамп данных таблицы porteliano_db.user: ~1 rows (приблизительно)
+-- Дамп данных таблицы porteliano_db.user: 1 rows
+DELETE FROM `user`;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`) VALUES
 	(1, 'admin', '', '$2y$13$XFkg1XkmwNpeDfnP7nyU3ONzkE9gzaz8ribn.S23dlJ/9t9j1sFSa', NULL, '', 10, 0, 1480107957);
