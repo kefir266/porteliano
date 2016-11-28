@@ -1,6 +1,6 @@
 
 var buttons = $('.navbar li > a[data-target]');
-// TODO: оптимизировать поиск по значению data-target
+//  оптимизировать поиск по значению data-target
 $('ul.navbar > li > a[data-target=a0]').scroolly([{
 	from: 'doc-top = top',
 	to: 'con-bottom +500el= top',

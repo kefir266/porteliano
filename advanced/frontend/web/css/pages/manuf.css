@@ -1,0 +1,31 @@
+.wrap-manuf .list-company{
+    padding: 0;
+    list-style: none;
+
+    width: 645px;
+    margin: 2px -23px 0 0;
+    position: relative;
+}
+.wrap-manuf .list-company li {
+    float: left;
+    width: 112px;
+    margin: 0 16px 16px 0;
+}
+.wrap-manuf .list-company li a {
+    display: block;
+}
+.wrap-manuf .list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.wrap-manuf .list li {
+    margin: 0 0 4px;
+}
+.wrap-manuf ul li {
+    vertical-align: top;
+}
+.wrap-manuf a {
+    color: #353432;
+    text-decoration: none;
+}
