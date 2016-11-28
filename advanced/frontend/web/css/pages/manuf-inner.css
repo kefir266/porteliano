@@ -1,0 +1,9 @@
+.confirm-orders-title {
+    margin: 0;
+    padding: 14px 0 22px 20px;
+    font: normal 40px 'Times New Roman';
+    line-height: 1;
+    color: #b08c4b;
+    background: #fff;
+    //border-top: 1px solid #ddd;
+}
