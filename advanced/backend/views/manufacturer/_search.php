@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\ProductSearch */
+/* @var $model app\models\ManufacturerSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="product-search">
+<div class="manufacturer-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -19,17 +19,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'title') ?>
 
-    <?= $form->field($model, 'section_id')->dropDownList($model->getSections()) ?>
+    <?= $form->field($model, 'img') ?>
 
-    <?= $form->field($model, 'material_id')->dropDownList($model->getMaterials()) ?>
-
-    <?= $form->field($model, 'style_id')->dropDownList($model->getStyles()) ?>
-
-    <?= $form->field($model, 'manufacturer_id')->dropDownList($model->getManufacturers()) ?>
-
-    <?php // echo $form->field($model, 'img') ?>
-
-    <?php // echo $form->field($model, 'description') ?>
+    <?= $form->field($model, 'link') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

@@ -10,7 +10,7 @@ use app\models\Section;
 /**
  * SectioSearch represents the model behind the search form about `app\models\Section`.
  */
-class SectioSearch extends Section
+class SectionSearch extends Section
 {
     /**
      * @inheritdoc

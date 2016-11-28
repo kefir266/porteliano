@@ -5,12 +5,12 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Product;
+use app\models\Manufacturer;
 
 /**
- * ProductSearch represents the model behind the search form about `app\models\Product`.
+ * ManufacturerSearch represents the model behind the search form about `app\models\Manufacturer`.
  */
-class ProductSearch extends Product
+class ManufacturerSearch extends Manufacturer
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class ProductSearch extends Product
     public function rules()
     {
         return [
-            [['id', 'section_id', 'material_id', 'style_id', 'manufacturer_id' ], 'integer'],
-            [['title',  'img', 'description'], 'safe'],
+            [['id'], 'integer'],
+            [['title', 'img', 'link'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class ProductSearch extends Product
      */
     public function search($params)
     {
-        $query = Product::find();
+        $query = Manufacturer::find();
 
         // add conditions that should always apply here
 
@@ -60,15 +60,11 @@ class ProductSearch extends Product
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'section_id' => $this->section_id,
-            'material_id' => $this->material_id,
-            'style_id' => $this->style_id,
-            'manufacturer_id' => $this->manufacturer_id,
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])
             ->andFilterWhere(['like', 'img', $this->img])
-            ->andFilterWhere(['like', 'description', $this->description]);
+            ->andFilterWhere(['like', 'link', $this->link]);
 
         return $dataProvider;
     }
