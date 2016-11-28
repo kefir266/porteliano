@@ -26,11 +26,7 @@ BackAsset::register($this);
 ?>
 <?php
 
-    $sections = new Section();
 
-foreach ($sections->getMenu() as $section){
-    $items[] = $section;
-}
 
 
 //$items = ['1' => 'Межкомнатные двери', '2' => 'Входные двери', '3' => 'Перегородки' ];

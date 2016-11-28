@@ -6,6 +6,7 @@
  * Time: 13:23
  */
 
+//TODO отбор вытащить из под галереи
 
 /*  models  */
 
@@ -65,7 +66,7 @@ $info = [
         <li class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">МЕЖКОМНАТНЫЕ</a></li>
         <li><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">ВХОДНЫЕ</a></li>
     </ul>
-    <?php //require_once Yii::getAlias('@frontend').'/views/layouts/quickSelection.php' ?>
+    <?php require_once Yii::getAlias('@frontend').'/views/layouts/quickSelection.php' ?>
     <!-- Содержимое вкладок -->
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="home">

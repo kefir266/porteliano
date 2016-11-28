@@ -1,7 +1,7 @@
 <?php
 namespace frontend\controllers;
 
-use GuzzleHttp\Psr7\Request;
+//use GuzzleHttp\Psr7\Request;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -82,7 +82,7 @@ class SiteController extends Controller
         $modelProduct = new Product();
         $request = Yii::$app->request;
 
-        $products = $modelProduct->getProductsBySection($request->get('section'),3 ); /// три картинки на страницу
+        $products = $modelProduct->getProductsBySection($request->get('section'),4 ); /// 4 картинки на страницу
         
         return $this->render('index',['products' => $products]);
 

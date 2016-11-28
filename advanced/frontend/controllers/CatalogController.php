@@ -12,7 +12,9 @@ use Yii;
 
 use frontend\models\Product;
 
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
+
 
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
@@ -71,14 +73,11 @@ class CatalogController extends Controller
 
         $modelProduct = new Product();
         $request = Yii::$app->request;
-        $quantity = 8;
-        if ($request->isPost) {
-            $params = $request->getParams();
-            $products = $modelProduct->getFilteredProducts($params,$quantity );
-        }
-        else
-            $products = $modelProduct->getNewProducts($quantity);
-        
+        $quantity = 4;
+
+        $params = $request->get();
+
+        $products = $modelProduct->getFilteredProducts($params, $quantity);
 
         return $this->render('index',['products' => $products]);
     }

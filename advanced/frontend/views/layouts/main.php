@@ -62,7 +62,7 @@ MainAsset::register($this);
             'encodeLabels' => false, /*nav */
             'options' => ['class' => 'navbar-nav  font-PTSans navbar-header'],
             'items' => [
-                ['label' => 'ГЛАВНАЯ', 'url' => ['/site/index'],],
+                ['label' => 'ГЛАВНАЯ', 'url' => ['/'],],
                 ['label' => 'НОВИНКИ', 'url' => ['#news']],
                 ['label' => 'ДВЕРИ', 'url' => ['?section=1']],
                 ['label' => 'ПЕРЕГОРОДКИ', 'url' => ['?section=2']],

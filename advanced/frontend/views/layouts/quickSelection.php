@@ -15,11 +15,18 @@ use app\assets\MainAsset;
 use app\assets\AppAsset;
 use app\assets\BackAsset;
 
+use app\models\Section;
+
 FontAsset::register($this);
 AppAsset::register($this);
 MainAsset::register($this);
 BackAsset::register($this);
 
+$sections = new Section();
+
+foreach ($sections->getMenu() as $section){
+    $items[] = $section;
+}
 ?>
 
 <div class="panel-quick-selection">
@@ -34,14 +41,14 @@ BackAsset::register($this);
                 ]);
                 ?>
 </div>
-<h2><?= $products['section']['title'] ?></h2>
+<h2 class="section-title" section-id =<?= $products['section']['id']?> ><?= $products['section']['title'] ?></h2>
 <div class="material">
     <h5>Материал</h5>
     <?php
     echo ButtonDropdown::widget([
         'options' => ['class' => 'btn-default'],
         'split' => true,
-        'label' => current($products['materials'])['label'],
+        'label' => 'Любой',
         'dropdown' => [
             'items' =>
 
@@ -63,7 +70,7 @@ BackAsset::register($this);
         ],
 
         'split' => true,
-        'label' => current($products['styles'])['label'],
+        'label' => 'Любой',
         'dropdown' => [
             'items' => $products['styles'],
             'clientEvents' => ['click' => 'eventClickDropMenu'],
