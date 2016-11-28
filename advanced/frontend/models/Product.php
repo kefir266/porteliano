@@ -101,4 +101,16 @@ class Product extends ActiveRecord
 
     }
 
+    public function getNewProducts($quantity){
+
+        return [];
+    }
+
+    public function getFilteredProducts($params, $quantity){
+
+        var_dump($params);
+
+        return [];
+    }
+
 }
