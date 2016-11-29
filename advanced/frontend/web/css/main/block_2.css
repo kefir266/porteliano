@@ -183,6 +183,8 @@ div.view ul > li{
     vertical-align: middle;
     margin-right: 35px;
     border: 1px solid #f7ebdb;
+    width: 150px;
+    text-align: center;
 }
 div.view ul > li:hover{
     /*background-color: #1b6d85;*/

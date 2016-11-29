@@ -72,7 +72,7 @@ $info = [
                         echo Html::img('@doors/door_' . ($i+5) . '.jpg',
                             ['alt' => 'door_' . ($i+5), 'class' => '']);
 
-                        //заполняет карточку $i -№ дверей j- строка карточки
+                        //заполняет карточку $i- № дверей, j- строка карточки
                         echo Html::beginTag('div', ['class' => 'info']);
                             for ($j = 0; $j < 3; $j++) {
                                 echo Html::tag('p', $info[$i][$j]);
