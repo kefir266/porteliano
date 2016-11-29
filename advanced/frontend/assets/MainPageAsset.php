@@ -44,6 +44,7 @@ class MainPageAsset extends AssetBundle
         'js/fixedMenu.js',
         'js/scrollspy.js',
         'js/parallax.js',
+        'js/scrollingDoors.js'
     ];
     public $depends = [
         'yii\web\JqueryAsset',

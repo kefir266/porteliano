@@ -4,7 +4,7 @@
 
 //
 (function($){
-    var viewUL = $(".running-ribbon > div.view")
+    var viewUL = $(".running-ribbon-doors > div.view")
             .css("overflow", "hidden")
             .children("ul"),
         imgs = viewUL.find("img"), 	    // коллекция картинок
@@ -55,8 +55,10 @@
 
     
     // начать двигать ленту с интервалом ... сек
+    /*
     var timerId =
     setInterval(function() {
         moveRibbon('next');
     }, 3000);
+    */
 })(jQuery);
