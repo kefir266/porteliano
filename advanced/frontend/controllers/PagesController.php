@@ -111,6 +111,11 @@ class PagesController extends Controller
         $QuestionForm = new QuestionForm();
         return $this->render('09_O kompanii',['questionForm' => $QuestionForm]);
     }
+    public function actionContacts()
+    {
+        $QuestionForm = new QuestionForm();
+        return $this->render('12_Kontakti',['questionForm' => $QuestionForm]);
+    }
 
 //тест
     public function actionAdd_manufacturers_in_db()
