@@ -20,13 +20,14 @@ class PagesAsset extends AssetBundle
         'css/pages/septa.css',
         'css/pages/manuf.css',
         'css/pages/manuf-inner.css',
-        
+        'css/pages/about.css',
+        'css/main/block_3.css',
     ];
     public $js = [
         // доп. библиотеки
         
         // скрипты
-
+        'js/parallax.js',
     ];
     public $depends = [
         'yii\web\JqueryAsset',

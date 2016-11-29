@@ -1,0 +1,19 @@
+.col-md-7{
+    //background-color: rebeccapurple;
+}
+.col-md-4{
+    //background-color: #985f0d;
+}
+.wrap-action{
+    overflow: hidden;
+}
+.action{
+    position: relative;
+
+
+}
+.crop{
+    overflow: hidden;
+    height: 650px;
+    border: solid 1px black; /* Параметры рамки */
+}

@@ -106,6 +106,11 @@ class PagesController extends Controller
     {
         return $this->render('08_Proizvoditeli-vnutr');
     }
+    public function actionAbout()
+    {
+        $QuestionForm = new QuestionForm();
+        return $this->render('09_O kompanii',['questionForm' => $QuestionForm]);
+    }
 
 //тест
     public function actionAdd_manufacturers_in_db()
