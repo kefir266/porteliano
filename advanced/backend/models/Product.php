@@ -140,4 +140,6 @@ class Product extends ActiveRecord
     {
         return new ProductQuery(get_called_class());
     }
+
+    
 }
