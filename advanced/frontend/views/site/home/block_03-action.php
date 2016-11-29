@@ -19,7 +19,7 @@
     <p>
         Гарантированно улучшаем любое диллерское предложение на все модели итальянских дверейи перегородок на 4%!
     </p>
-    <?=require 'contact-form.php'?>
+    <?=require Yii::getAlias('@frontend') . '/views/site/home/contact-form.php'?>
 
     <script>
         $('div.wrap-action > .img-holder').imageScroll({
@@ -37,3 +37,4 @@
     </script>
 
 </div>
+
