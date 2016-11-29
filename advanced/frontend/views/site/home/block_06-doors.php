@@ -47,6 +47,12 @@ $info = [
         1 => $doorData_2[3],
         2 => $doorData_3[3],
         3 => $price[3],
+    ],
+    [
+        0 => $category[0],
+        1 => $doorData_2[3],
+        2 => $doorData_3[3],
+        3 => $price[3],
     ]
 ]
 ?>
@@ -65,12 +71,12 @@ $info = [
                     <ul>
                     <?php
                     //добавляет карточки в область прокрутки $i -№ дверей
-                    for ($i = 0; $i < 4; $i++) {
+                    for ($i = 0; $i < 5; $i++) {
 
                         //вывод картинок
                         echo Html::beginTag('li', ['class' => 'tile']);
                             //  TODO ($i+5) для теста, поставить $i
-                            echo Html::img('@doors/door_' . ($i + 5) . '.jpg',
+                            echo Html::img('@doors/door_' . ($i + 5) . '.PNG',
                                 ['alt' => 'door_' . ($i + 5), 'class' => '']);
 
                             //заполняет карточку $i- № дверей, j- строка карточки
