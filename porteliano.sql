@@ -98,8 +98,8 @@ CREATE TABLE IF NOT EXISTS `manufacturer` (
 DELETE FROM `manufacturer`;
 /*!40000 ALTER TABLE `manufacturer` DISABLE KEYS */;
 INSERT INTO `manufacturer` (`id`, `title`, `img`, `link`) VALUES
-	(1, 'Рога и копыта', '', ''),
-	(2, 'Производитель1', '', '');
+	(1, 'Romagnoli', '', ''),
+	(2, 'PORTE IN DOOR', '', '');
 /*!40000 ALTER TABLE `manufacturer` ENABLE KEYS */;
 
 
@@ -143,7 +143,7 @@ INSERT INTO `migration` (`version`, `apply_time`) VALUES
 DROP TABLE IF EXISTS `order`;
 CREATE TABLE IF NOT EXISTS `order` (
   `id` int(10) unsigned NOT NULL,
-  `date` datetime NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `full_name` varchar(100) DEFAULT NULL,
   `done` date DEFAULT NULL,
   `term` date DEFAULT NULL,
@@ -191,16 +191,22 @@ CREATE TABLE IF NOT EXISTS `price` (
   `currency_id` int(10) unsigned NOT NULL DEFAULT '643',
   `cost` decimal(12,2) NOT NULL,
   `product_id` int(10) unsigned NOT NULL,
+  `date` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_price_product` (`product_id`),
   KEY `FK_price_currency` (`currency_id`),
   CONSTRAINT `FK_price_currency` FOREIGN KEY (`currency_id`) REFERENCES `currency` (`id`),
   CONSTRAINT `FK_price_product` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы porteliano_db.price: ~0 rows (приблизительно)
+-- Дамп данных таблицы porteliano_db.price: ~4 rows (приблизительно)
 DELETE FROM `price`;
 /*!40000 ALTER TABLE `price` DISABLE KEYS */;
+INSERT INTO `price` (`id`, `currency_id`, `cost`, `product_id`, `date`) VALUES
+	(1, 643, 1300.00, 7, NULL),
+	(2, 643, 1400.00, 3, NULL),
+	(3, 643, 1500.00, 6, NULL),
+	(4, 643, 1600.00, 4, NULL);
 /*!40000 ALTER TABLE `price` ENABLE KEYS */;
 
 
@@ -216,6 +222,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `articul` varchar(50) DEFAULT NULL,
   `img` varchar(255) NOT NULL,
   `description` text,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `title` (`title`),
   UNIQUE KEY `articul` (`articul`),
@@ -227,15 +234,16 @@ CREATE TABLE IF NOT EXISTS `product` (
   CONSTRAINT `FK_product_material` FOREIGN KEY (`material_id`) REFERENCES `material` (`id`),
   CONSTRAINT `FK_product_section` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`),
   CONSTRAINT `FK_product_style` FOREIGN KEY (`style_id`) REFERENCES `style` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы porteliano_db.product: ~3 rows (приблизительно)
+-- Дамп данных таблицы porteliano_db.product: ~4 rows (приблизительно)
 DELETE FROM `product`;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` (`id`, `title`, `section_id`, `material_id`, `style_id`, `manufacturer_id`, `articul`, `img`, `description`) VALUES
-	(3, 'Дверь 1', 3, 1, 1, 1, NULL, 'door1', 'Update'),
-	(4, 'Дверь 2', 3, 2, 2, 2, NULL, 'door2', 'Дверь 2'),
-	(6, 'Новый продукт', 4, 2, 2, 2, NULL, 'hgjj.jpg', 'пропаоло hk ген kyu ky');
+INSERT INTO `product` (`id`, `title`, `section_id`, `material_id`, `style_id`, `manufacturer_id`, `articul`, `img`, `description`, `date`) VALUES
+	(3, 'ACROPOLI AC1V B2 ', 3, 1, 1, 1, 'AC1V B2 ', 'МОДЕЛЬ AC1V B2 цена от 3439 У.Е..PNG', 'МОДЕЛЬ AC1V B2 цена от 3439 У.Е.', '0000-00-00 00:00:00'),
+	(4, 'CANALE linea', 3, 1, 1, 2, NULL, 'CANALE linea.jpg', 'CANALE linea', '0000-00-00 00:00:00'),
+	(6, 'CANALE', 3, 2, 2, 2, NULL, 'CANALE.jpg', 'CANALE', '0000-00-00 00:00:00'),
+	(7, 'ACROPOLI AC1V ', 3, 1, 1, 1, ' AC1V ', 'МОДЕЛЬ AC1V цена от 1720 У.Е..PNG', 'МОДЕЛЬ AC1V цена от 1720 У.Е..PNG', '0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 
@@ -277,7 +285,7 @@ CREATE TABLE IF NOT EXISTS `style` (
 DELETE FROM `style`;
 /*!40000 ALTER TABLE `style` DISABLE KEYS */;
 INSERT INTO `style` (`id`, `title`) VALUES
-	(1, 'Стиль1'),
+	(1, 'Классический'),
 	(2, 'Стиль2');
 /*!40000 ALTER TABLE `style` ENABLE KEYS */;
 
