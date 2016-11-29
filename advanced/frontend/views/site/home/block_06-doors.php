@@ -60,40 +60,35 @@ $info = [
     <!-- Содержимое вкладок -->
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="home">
-            <div class="novelty doors-panel">
-
-                <div class="wrap-tiles">
+            <div class="novelty doors-panel running-ribbon-doors">
+                <div class="wrap-tiles view">
+                    <ul>
                     <?php
                     //добавляет карточки в область прокрутки $i -№ дверей
-                    for ($i = 0; $i < 4; $i++){
-                    //вывод картинок
-                    echo Html::beginTag('div', ['class' => 'tile']);
-                        //  TODO ($i+5) для теста, поставить $i
-                        echo Html::img('@doors/door_' . ($i+5) . '.jpg',
-                            ['alt' => 'door_' . ($i+5), 'class' => '']);
+                    for ($i = 0; $i < 4; $i++) {
 
-                        //заполняет карточку $i -№ дверей j- строка карточки
-                        echo Html::beginTag('div', ['class' => 'info']);
-                            for ($j = 0; $j < 3; $j++) {
-                                echo Html::tag('p', $info[$i][$j]);
-                            }
-                            echo Html::tag('div', '', ['class' => 'delimiter']);
-                            echo Html::beginTag('div', ['class' => 'block-4-price']);
-                            echo Html::tag('div', '€ ' . $info[0][3], ['class' => 'block-4-price-count']);
-                            echo Html::tag('div', '', ['class' => 'glyphicon glyphicon-heart-empty ']);
+                        //вывод картинок
+                        echo Html::beginTag('li', ['class' => 'tile']);
+                            //  TODO ($i+5) для теста, поставить $i
+                            echo Html::img('@doors/door_' . ($i + 5) . '.jpg',
+                                ['alt' => 'door_' . ($i + 5), 'class' => '']);
+
+                            //заполняет карточку $i- № дверей, j- строка карточки
+                            echo Html::beginTag('div', ['class' => 'info']);
+                                for ($j = 0; $j < 3; $j++) {
+                                    echo Html::tag('p', $info[$i][$j]);
+                                }
+                                echo Html::tag('div', '', ['class' => 'delimiter']);
+                                echo Html::beginTag('div', ['class' => 'block-4-price']);
+                                    echo Html::tag('div', '€ ' . $info[0][3], ['class' => 'block-4-price-count']);
+                                    echo Html::tag('div', '', ['class' => 'glyphicon glyphicon-heart-empty ']);
+                                echo Html::endTag('div');
                             echo Html::endTag('div');
-                        echo Html::endTag('div');
-                    echo Html::endTag('div');
+                        echo Html::endTag('li');
                     }
                     ?>
+                    </ul>
                 </div>
-                <div class="wrap-info">
-                    <?php
-
-                    ?>
-
-                </div>
-                <!--TODO: сделать прокрутку при нажатии на стрелки -->
                 <div id="show">
                     <button id="prev" class="btn btn-link" data-param="prev"></button>
                     <button id="next" class="btn btn-link" data-param="next"></button>
