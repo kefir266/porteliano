@@ -97,6 +97,13 @@
     margin-top: 5%;
     background-color: #ece7d4;
 }
+.info p{
+    text-align: left;
+    margin-left: 5%;
+}
+.info p:first-child{
+    padding-top: 5%;
+}
 .wrap-doors > h2{
     position: absolute;
     top: 76px;
