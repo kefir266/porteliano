@@ -12,12 +12,12 @@
     width: 56%;
     height: 66%;
 }
-.wrap-tiles{
+.wrap-novelty .wrap-tiles{
     position: relative;
     top: 0;
     left: 1px;
 }
-.wrap-tiles > h2{
+.wrap-novelty .wrap-tiles > h2{
     position: absolute;
     top: -11px;
     left: 414px;
@@ -36,7 +36,7 @@
     padding-right: 10px;
     padding-left: 10px;
 }
-.tile:nth-child(1){
+.wrap-novelty .tile:nth-child(1){
     margin-left: 91px ;
 }
 .wrap-info{
