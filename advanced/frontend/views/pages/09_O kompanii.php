@@ -18,24 +18,25 @@ use yii\helpers\Url;
 use app\assets\PagesAsset;
 
 PagesAsset::register($this);
+Yii::setAlias('@img', '@web/img/');
 Yii::setAlias('@imgBigLogos', '@web/img/catalog/logos/big');
 ?>
 <div class="wrap-about">
     <div class="row">
-        <div class="col-md-3 col-md-offset-3">
+        <div class="col-md-3 .col-sm-3 col-xs-12 col-md-offset-3">
             <h1>О компании</h1>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4 col-md-offset-3">
-            <p>
+        <div class="col-md-4 .col-sm-4 col-xs-12 col-md-offset-3 ">
+            <p class="parag-big">
                 Компания "Porteliano" появилась на российском рынке в 1996 году и по праву заняла лидирующие позиции
                 в секторе интерьера. Наша основная специфика — двери, межкомнатные перегородки, лестницы, паркет,
                 мебель из дерева, стекла и алюминия, любых форм, размеров и конфигураций, в любом стиле — от
                 классики до модерна, свет, зеркала, окна, а также приятные глазу и полезные в доме различные
                 предметы интерьера и аксессуары.
             </p>
-            <p>
+            <p class="parag-sm">
                 Мы работаем более чем с 50 производителями, известными не только в России и Италии, но и за их
                 пределами. Это признанные специалисты своего дела, производящие высококачественную продукцию точно в
                 срок. Как показали время и практика — клиенты, которые хотят сделать что-то экстраординарное, после
@@ -44,8 +45,12 @@ Yii::setAlias('@imgBigLogos', '@web/img/catalog/logos/big');
                 лимитированы как в ассортименте, так и в размерах.
             </p>
         </div>
-        <div class="col-md-4">
-
+        <div class="col-md-2 col-md-offset-1 .col-sm-2 col-xs-2">
+            <div class="ruletka">
+                <h2>Доставка</h2>
+                <p>Все о стоимостидоставки и установки</p>
+                <button class="btn">Подробнее</button>
+            </div>
         </div>
     </div>
     <div class="row">
@@ -54,12 +59,22 @@ Yii::setAlias('@imgBigLogos', '@web/img/catalog/logos/big');
                 <div class="img-holder"
                      data-image="<?= Yii::getAlias('@web') . '/img/background/FOTO_INTRO_01.jpg' ?>">
                 </div>
-                <h1>АКЦИЯ</h1>
-                <p>
-                    Гарантированно улучшаем любое диллерское предложение на все модели итальянских дверейи
-                    перегородок на 4%!
-                </p>
-                <?= require Yii::getAlias('@frontend') . '/views/site/home/contact-form.php' ?>
+                <div class="row">
+                    <div class="action-text">
+                        <article class="col-md-6 col-xs-12 ">
+                            <h1>АКЦИЯ</h1>
+                            <p>
+                                Гарантированно улучшаем любое диллерское предложение на все модели итальянских дверей
+                                и
+                                перегородок на 4%!
+                            </p>
+                        </article>
+                        <div class="col-md-2 col-xs-12">
+                            <? require Yii::getAlias('@frontend') . '/views/site/home/contact-form.php' ?>
+                        </div>
+                    </div>
+
+                </div>
                 <script>
                     $('div.action > .img-holder').imageScroll({
                         holderClass: 'imageHolder',
@@ -69,7 +84,7 @@ Yii::setAlias('@imgBigLogos', '@web/img/catalog/logos/big');
                         mediaWidth: 2000,
                         mediaHeight: 1014,
                         holderMaxHeight: 1000,
-                        holderMinHeight: 647,
+                        holderMinHeight: 866,
                         parallax: true,
                         touch: false
                     });
@@ -78,7 +93,7 @@ Yii::setAlias('@imgBigLogos', '@web/img/catalog/logos/big');
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4 col-md-offset-1">
+        <div class="col-md-3 col-md-offset-3 bg-door">
 
         </div>
         <div class="col-md-4 bottom-text">
