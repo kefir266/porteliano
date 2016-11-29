@@ -1,0 +1,29 @@
+.wrap-manufacturers{
+    position: relative;
+    height: 766px;
+    background-color: #00fde6;
+}
+.wrap-manufacturers > div.manufacturers > ul > li{
+    display: inline-block;
+    margin-left: 9%;
+    margin-top: 4%;
+}
+
+.wrap-manufacturers > div.manufacturers{
+    position: absolute;
+    top: 12%;
+    left: 16%;
+    width: 61%;
+
+}
+ li.wrap-resize > a > img{
+    width: 144%;
+    height: auto;
+}
+.wrap-manufacturers h2{
+    position: absolute;
+    top: 7%;
+    left: 41%;
+    font-size: 237%;
+    font-family: "Copperplate", Arial;
+}

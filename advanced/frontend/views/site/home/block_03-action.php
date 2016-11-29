@@ -2,35 +2,24 @@
 /*
  * Блок с фильтром быстрого подбора:
  */
+/* @var @questionForm \frontend\models\QuestionForm */
 
 /*  models  */
 
-/*  widgets  */
-use yii\helpers\Html;
 /*  assets  */
-use app\assets\AppAsset;
-use app\assets\MainAsset;
 
-AppAsset::register($this);
-MainAsset::register($this);
 ?>
 
-<div  class="wrap-action">
+<div id="action" class="wrap-action">
     <div class="img-holder"
-         data-image="<?='img/background/FOTO_INTRO_01.jpg'?>">
+         data-image="<?= Yii::getAlias('@web').'/img/background/FOTO_INTRO_01.jpg'?>">
     </div>
 
     <h1>АКЦИЯ</h1>
     <p>
         Гарантированно улучшаем любое диллерское предложение на все модели итальянских дверейи перегородок на 4%!
     </p>
-    <div class="contact-form">
-        <div class="row">
-            <div class="col-lg-5">
-
-            </div>
-        </div>
-    </div>
+    <?=require Yii::getAlias('@frontend') . '/views/site/home/contact-form.php'?>
 
     <script>
         $('div.wrap-action > .img-holder').imageScroll({
@@ -48,3 +37,4 @@ MainAsset::register($this);
     </script>
 
 </div>
+

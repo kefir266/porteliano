@@ -3,16 +3,18 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+use yii\bootstrap\Modal;
 use yii\helpers\Html;
 use yii\bootstrap;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
+use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 use app\assets\MainAsset;
 
 use yii\bootstrap\Dropdown;
-/*AppAsset::register($this);*/
+AppAsset::register($this);
 MainAsset::register($this);
 
 ?>
@@ -24,13 +26,15 @@ MainAsset::register($this);
     <link href="https://fonts.googleapis.com/css?family=Montserrat|PT+Sans|PT+Sans+Caption|PT+Serif|PT+Serif+Caption" rel="stylesheet">
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://rawgithub.com/pederan/Parallax-ImageScroll/master/jquery.imageScroll.min.js"></script>
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
 <body>
 <?php $this->beginBody() ?>
-<div class="wrap_all">
+<div class="wrap_all" >
     <header >
         <a href="index.php" class="logo">
             <?= Html::img('@web/img/logo.png',['alt' => 'PORTELIANO',/*'class' => 'logo',*/]) ?>
@@ -44,31 +48,76 @@ MainAsset::register($this);
 
             <div class="email-nonactive">
             <a href="mailto:absolute@ak-in.ru">absolute@ak-in.ru</a> </div>
-           <!-- -->
-        </section>
-        <button id="ask_a_question" class="btn-link">
-            ЗАДАЙТЕ ВОПРОС
-        </button>
-
+           <?php
+           /*$address указывает какой view должен загрузится в Content*/
+           /*$controller должен использовать $this->renderAjax*/
+           $address = Url::to(['site/say'], true);
+           $address = Url::to(['site/entry'], true);
+            Modal::begin([
+                'headerOptions' => ['id' => 'modalHeader'],
+                'header' => '<h2>здесь будет то, что написано в title</h2>',
+                //keeps from closing modal with esc key or by clicking out of the modal.
+                // user must click cancel or X to close
+                //'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
+                'size' => 'modal-sm',
+                'toggleButton' => [
+                    'tag' => 'button',
+                    'value' => $address,
+                    'title' => 'Задайте вопрос',
+                    'id' => 'ask_a_question-button',
+                    'class' => 'showModalButton btn btn-link ',
+                    'label' => 'ЗАДАЙТЕ ВОПРОС',
+                ]
+            ]);
+           echo "<div id='modalContent'></div>";
+            Modal::end();
+           ?>
     </header>
-    <div class="wrap ">
-    </div>
-    <div class="content">
+    <div class="content" >
+        <?= yii\widgets\Breadcrumbs::widget([
+            'homeLink' => [
+                'label' => 'Главная',
+                'url' => Url::to(['site/index']),
+            ],
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+        ]) ?>
         <?= $content ?>
     </div>
     <div id="navbar-line" class="navbar-line-indent  nav "><!--navbar-line-indent  nav navbar-fixed-top       -->
         <?php
         echo Nav::widget([
             'encodeLabels' => false, /*nav */
-            'options' => ['class' => 'navbar-nav  font-PTSans navbar-header'],
+            'options' => ['class' => 'navbar navbar-nav  font-PTSans navbar-header'],
+
             'items' => [
-                ['label' => 'ГЛАВНАЯ', 'url' => ['/'],],
-                ['label' => 'НОВИНКИ', 'url' => ['#news']],
-                ['label' => 'ДВЕРИ', 'url' => ['?section=1']],
-                ['label' => 'ПЕРЕГОРОДКИ', 'url' => ['?section=2']],
-                ['label' => 'ПРОИЗВОДИТЕЛИ', 'url' => ['#producer']],
-                ['label' => 'О КОМПАНИИ', 'url' => ['#about']],
-                ['label' => 'КОНТАКТЫ', 'url' => ['#contact']],
+                [   'label' => 'ГЛАВНАЯ',
+                    'url' => [Url::to(['site/index'])],
+                    'linkOptions' => ['data-target' => 'a0'],
+                ],
+                ['label' => 'НОВИНКИ',
+                    'url' => Url::to(['site/index', '#' => 'novelty']),//['#novelty'],
+                    'linkOptions' => ['data-target' => 'a1'],
+                ],
+                ['label' => 'ДВЕРИ', 
+                    'url' => Url::to(['site/index', '#' => 'doors']),  //?section=1 ['#doors']
+                    'linkOptions' => ['data-target' => 'a2'],
+                ],
+                ['label' => 'ПЕРЕГОРОДКИ', 
+                    'url' => Url::to(['site/index', '#' => 'septa']), //?section=2  #septa
+                    'linkOptions' => ['data-target' => 'a3'],
+                ],
+                ['label' => 'ПРОИЗВОДИТЕЛИ',
+                    'url' => Url::to(['site/index', '#' => 'manufacturers']),
+                    'linkOptions' => ['data-target' => 'a4'],
+                ],
+                ['label' => 'О КОМПАНИИ',
+                    'url' => Url::to(['site/index', '#' => 'about']),
+                    'linkOptions' => ['data-target' => 'a5'],
+                ],
+                ['label' => 'КОНТАКТЫ',
+                    'url' => Url::to(['site/index', '#' => 'contacts']) ,
+                    'linkOptions' => ['data-target' => 'a6'],
+                ],
 
                 ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist"></span>',
                     'url' => ['site/index'],

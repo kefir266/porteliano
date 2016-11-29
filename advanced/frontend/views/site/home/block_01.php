@@ -10,19 +10,14 @@ use app\models\Section;
 
 /*  assets  */
 use app\assets\FontAsset;
-use app\assets\MainAsset;
+use app\assets\MainPageAsset;
 use app\assets\AppAsset;
 use app\assets\BackAsset;
 
 FontAsset::register($this);
 AppAsset::register($this);
-MainAsset::register($this);
+MainPageAsset::register($this);
 BackAsset::register($this);
-
-
-
-
-
 ?>
 <?php
 
@@ -37,7 +32,7 @@ BackAsset::register($this);
 //];
 ?>
 <div class="crop">
-    <div class="wrap-quick-selection">
+    <div id="quick-selection" class="wrap-quick-selection">
 
         <?php require Yii::getAlias('@frontend').'/views/layouts/quickSelection.php' ?>
 

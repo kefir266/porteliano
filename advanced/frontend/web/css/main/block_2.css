@@ -31,7 +31,7 @@
     position: absolute;
     top: 69px;
     left: 796px;
-    background-image: url(../img/catalog/entryDoors.jpg);
+    background-image: url(../../img/catalog/entryDoors.jpg);
     width: 235px;
     height: 476px;
 }
@@ -51,7 +51,7 @@
     position: absolute;
     top: 68px;
     left: 557px;
-    background-image: url(../img/catalog/grips.jpg);
+    background-image: url(../../img/catalog/grips.jpg);
     width: 230px;
     height: 234px;
     /* border: solid #935347 5px; */
@@ -72,7 +72,7 @@
     position: absolute;
     top: 313px;
     left: 557px;
-    background-image: url(../img/catalog/septa.jpg);
+    background-image: url(../../img/catalog/septa.jpg);
     width: 225px;
     height: 234px;
     /* border: solid #935347 5px; */
@@ -95,7 +95,7 @@
     top: 68px;
     left: 70px;
 
-    background-image: url(../img/catalog/interiorDoors.jpg);
+    background-image: url(../../img/catalog/interiorDoors.jpg);
     width: 475px;
     height: 478px;
 }
@@ -182,10 +182,10 @@ div.view ul{
 div.view ul > li{
     vertical-align: middle;
     margin-right: 35px;
-    border: 1px solid black;
+    border: 1px solid #f7ebdb;
 }
 div.view ul > li:hover{
-    background-color: #1b6d85;
+    /*background-color: #1b6d85;*/
 }
 div.view ul li{ float: left}
 
@@ -204,7 +204,7 @@ div#show button{
 div#show button:nth-child(1){
     width: 50px;
     height: 50px;
-    background-image: url('../img/UI/arrow_inactive.jpg');
+    background-image: url('../../img/UI/arrow_inactive.jpg');
     transform: scale(1, 1);
 }
 div#show button:nth-child(2){
@@ -213,14 +213,14 @@ div#show button:nth-child(2){
     top: 0;
     width: 50px;
     height: 50px;
-    background-image: url('../img/UI/arrow_inactive.jpg');
+    background-image: url('../../img/UI/arrow_inactive.jpg');
     transform: scale(-1, 1);
 }
 div#show button:nth-child(1):hover{
-    background-image: url('../img/UI/arrow_active.jpg');
+    background-image: url('../../img/UI/arrow_active.jpg');
     transform: scale(-1, 1);
 }
 div#show button:nth-child(2):hover{
-    background-image: url('../img/UI/arrow_active.jpg');
+    background-image: url('../../img/UI/arrow_active.jpg');
     transform: scale(1, 1);
 }

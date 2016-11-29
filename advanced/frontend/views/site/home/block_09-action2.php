@@ -9,29 +9,19 @@
 use yii\helpers\Html;
 
 /*  assets  */
-use app\assets\AppAsset;
-use app\assets\MainAsset;
 
-AppAsset::register($this);
-MainAsset::register($this);
 
 ?>
-<div class="wrap-action-another">
+<div id="action-another"  class="wrap-action-another">
     <div class="img-holder"
-         data-image="<?='img/background/anotherAction.jpg'?>">
+         data-image="<?=Yii::getAlias('@web').'/img/background/anotherAction.jpg'?>">
     </div>
 
     <h1>АКЦИЯ</h1>
     <p>
         Гарантированно улучшаем любое диллерское предложение на все модели итальянских дверейи перегородок на 4%!
     </p>
-    <div class="contact-form">
-        <div class="row">
-            <div class="col-lg-5">
-
-            </div>
-        </div>
-    </div>
+    <?=require 'contact-form.php'?>
     
     <script>
         $('div.wrap-action-another > .img-holder').imageScroll({

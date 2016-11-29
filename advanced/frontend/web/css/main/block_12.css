@@ -1,9 +1,9 @@
-.wrap-Contacts{
+.wrap-contacts {
     background-color: #affd00;
     position: relative;
     height: 653px;
 }
-.wrap-Contacts > a{
+.wrap-contacts > a{
     /* Статичная карта
     position: absolute;
     top: 50% ;
@@ -21,7 +21,7 @@
 .wrap-doors,
 .wrap-septa,
 .wrap-manufacturers,
-.wrap-Contacts{
+.wrap-contacts {
     background-color: #fdfdf3;
 }
 .wrap-quick-selection,

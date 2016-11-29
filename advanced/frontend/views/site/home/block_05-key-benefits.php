@@ -9,11 +9,7 @@
 use yii\helpers\Html;
 
 /*  assets  */
-use app\assets\AppAsset;
-use app\assets\MainAsset;
 
-AppAsset::register($this);
-MainAsset::register($this);
 
 $testText = [
     [
@@ -29,7 +25,7 @@ $testText = [
     ]
 ]
 ?>
-<div class="wrap-key-benefits">
+<div id="key-benefits" class="wrap-key-benefits">
     <div class="panel-key-benefits">
         <?= Html::tag('h2','Ключевые преимущества');?>
         <!---->

@@ -9,12 +9,7 @@
 use yii\helpers\Html;
 
 /*  assets  */
-use app\assets\AppAsset;
-use app\assets\MainAsset;
 
-
-AppAsset::register($this);
-MainAsset::register($this);
 
 
 // псевдоним пути к папке на основе другого псевдонима
@@ -54,7 +49,7 @@ $info = [
     ]
 ]
 ?>
-<div class="wrap-novelty">
+<article id="novelty" class="wrap-novelty" data-item="a1">
     <div class="novelty">
         <div class="wrap-tiles">
             <?php
@@ -89,5 +84,5 @@ $info = [
         <button type="button" class="btn ">ПОКАЗАТЬ БОЛЬШЕ</button>
     </div>
     <div class="arrow"></div>
-</div>
+</article>
 

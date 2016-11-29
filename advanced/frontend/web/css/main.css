@@ -25,11 +25,12 @@ html, body {
     width: 100%;
     min-height: 100%;
     height: auto !important;
-    height: 100%;
+    /*height: 100%;*/
     margin: 0 auto -142px;
 }
 .footer-general, .push {
     height: 102px;
+    position: relative;
 }
 .wrap{
     margin: 22px auto -60px;
@@ -48,7 +49,8 @@ html, body {
 }
 .content{
     margin-left: 0;
-    margin-top: 0;
+    margin-top: 49px;
+    min-height: 400px;
 }
 header{
     position: relative;
@@ -186,10 +188,13 @@ header{
     background-color: #413332;
     color: #d2cca8;
 }
-
 .navbar-footer > li > a:hover{
     background-color: #574847;
     color: #ffffff;
+}
+.lightButton{
+    background-color: #574847 !important;
+    color: #ffffff!important;
 }
 
 #wishlist{
@@ -217,11 +222,17 @@ header{
 }
 
 #navbar-line{
-    height: 60px;
+    height: 65px;
     width: 100%;
     min-width: 1800px;
     background-color: #413332;
     z-index: 500;
+}
+.nav li{
+    border-right: 1px solid #352929;
+}
+.nav li:last-child,.nav li:nth-last-child(2){
+    border: none;
 }
 #navbar-line-footer{
     height: 60px;
@@ -232,13 +243,13 @@ header{
 }
 .navbar-line-indent{
     position: absolute;
-    top: 114px;
+    top: 93px;
     left: 0;
 }
-#ask_a_question{
+#ask_a_question-button {
     font-family: PTSansBold, Arial;
     position: absolute;
-    left: 875px;
+    left: 100%;
     top: 10px;
     padding: 10px 20px 10px 20px;
 
@@ -247,9 +258,17 @@ header{
     border: 1px solid #942b34;
     color: #942b34;
 }
-#ask_a_question:hover{
+#ask_a_question-button:hover{
     color: white;
     background: #942b34;
+}
+.modal{
+    /*
+    width: 400px;
+    height: 600px;
+    margin: 10% auto;
+    background-color: #00fde6;
+    */
 }
 
 /*
@@ -296,5 +315,27 @@ header{
 }
 .fixed-0-0-top  > .navbar-header{
        left: 8%;
+}
+
+
+
+.breadcrumb{
+    margin-left: 22%;
+    margin-top: 5%;
+    background-color: #fdfdf3;
+}
+.breadcrumb li{
+    margin-left: 5px;
+}
+.breadcrumb a{
+    color: #413332;
+    font-family: "PT Sans",serif;
+    font-size: 16px;
+}
+/* content = чем разделяются крошки */
+.breadcrumb > li + li::before {
+    padding: 0 5px;
+    color: #ccc;
+    content: " ";
 }
 

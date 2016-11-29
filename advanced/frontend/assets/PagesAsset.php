@@ -10,24 +10,24 @@ namespace app\assets;
 use yii\web\AssetBundle;
 
 
-class MainAsset extends AssetBundle
+class PagesAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     
     public $css = [
-        'css/stylename.css',
-        'css/animation.css',
-        'css/gray.css',        
-        'css/main.css',
-        
+        'css/pages/doors.css',
+        'css/pages/septa.css',
+        'css/pages/manuf.css',
+        'css/pages/manuf-inner.css',
+        'css/pages/about.css',
+        'css/main/block_3.css',
     ];
     public $js = [
         // доп. библиотеки
-        'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
-        '/js/lib/jquery.scroolly.js',
+        
         // скрипты
-
+        'js/parallax.js',
     ];
     public $depends = [
         'yii\web\JqueryAsset',

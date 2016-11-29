@@ -1,7 +1,8 @@
 <?php
 namespace frontend\controllers;
 
-//use GuzzleHttp\Psr7\Request;
+use frontend\models\QuestionForm;
+use GuzzleHttp\Psr7\Request;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -78,13 +79,13 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-
+        $QuestionForm = new QuestionForm();
         $modelProduct = new Product();
         $request = Yii::$app->request;
 
         $products = $modelProduct->getProductsBySection($request->get('section'),4 ); /// 4 картинки на страницу
         
-        return $this->render('index',['products' => $products]);
+        return $this->render('index',['products' => $products, 'questionForm' => $QuestionForm]);
 
     }
 
@@ -227,7 +228,9 @@ class SiteController extends Controller
     /*Тест начало*/
     public function actionSay($message = 'Привет')
     {
-        return $this->render('say', ['message' => $message]);
+
+        return $this->renderAjax('say', ['message' => $message]);
+        //return $this->render('say', ['message' => $message]);
     }
 
     public function actionEntry()
@@ -242,7 +245,7 @@ class SiteController extends Controller
             return $this->render('entry-confirm', ['model' => $model]);
         } else {
             // либо страница отображается первый раз, либо есть ошибка в данных
-            return $this->render('entry', ['model' => $model]);
+            return $this->renderAjax('entry', ['model' => $model]);
         }
     }
     /*Тест конец*/

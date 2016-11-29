@@ -7,14 +7,10 @@
 
 /*  widgets  */
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 /*  assets  */
-use app\assets\AppAsset;
-use app\assets\MainAsset;
 
-
-AppAsset::register($this);
-MainAsset::register($this);
 
 
 // псевдоним пути к папке на основе другого псевдонима
@@ -55,7 +51,7 @@ $info = [
     ]
 ]
 ?>
-<div class="wrap-septa">
+<article id="septa" class="wrap-septa" data-item="a3">
     <div class="novelty doors-panel">
         <div class="wrap-tiles">
             <?php
@@ -90,7 +86,7 @@ $info = [
             <button id="prev" class="btn btn-link" data-param="prev"></button>
             <button id="next" class="btn btn-link" data-param="next"></button>
         </div>
-        <button type="button" class="btn ">ПОКАЗАТЬ БОЛЬШЕ</button>
+        <a href="<?=Url::to(['pages/septa']); ?>" class="btn btn-default btn-lg" role="button">ПОКАЗАТЬ БОЛЬШЕ</a>
     </div>
     <div class="arrow"></div>
-</div>
+</article>
