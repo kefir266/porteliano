@@ -82,4 +82,25 @@
     color: #ffffff;
     background-color: #6a372d;
 }
+.info > .delimiter{
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    margin-top: 9px;
+}
+.tile{
+    padding-left: 0;
+    padding-right: 0;
 
+}
+.info{
+    margin-top: 5%;
+    background-color: #ece7d4;
+}
+.wrap-doors > h2{
+    position: absolute;
+    top: 76px;
+    left: 834px;
+    font-size: 2.8em;
+    font-family: Copperplate, serif;
+}
