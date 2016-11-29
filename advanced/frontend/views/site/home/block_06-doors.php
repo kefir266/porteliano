@@ -64,12 +64,13 @@ $info = [
 
                 <div class="wrap-tiles">
                     <?php
-                    //добавляет карточки в область прокрутки
+                    //добавляет карточки в область прокрутки $i -№ дверей
                     for ($i = 0; $i < 4; $i++){
                     //вывод картинок
                     echo Html::beginTag('div', ['class' => 'tile']);
-                        echo Html::img('@doors/door_' . ($i) . '.jpg',
-                            ['alt' => 'door_' . ($i), 'class' => '']);
+                        //  TODO ($i+5) для теста, поставить $i
+                        echo Html::img('@doors/door_' . ($i+5) . '.jpg',
+                            ['alt' => 'door_' . ($i+5), 'class' => '']);
 
                         //заполняет карточку $i -№ дверей j- строка карточки
                         echo Html::beginTag('div', ['class' => 'info']);
