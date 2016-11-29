@@ -41,7 +41,7 @@ foreach ($sections->getMenu() as $section){
                 ]);
                 ?>
 </div>
-<h2 class="section-title" section-id =<?= $products['section']['id']?> ><?= $products['section']['title'] ?></h2>
+<h2 class="section-title" section-id =<?= $products['section']->id?> ><?= $products['section']->title ?></h2>
 <div class="material">
     <h5>Материал</h5>
     <?php

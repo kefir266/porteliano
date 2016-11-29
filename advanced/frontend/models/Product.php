@@ -40,7 +40,7 @@ class Product extends ActiveRecord
         $products['products'] = $this->find()
             ->innerJoin('section', 'product.section_id = section.id')
             ->where($condition)->each($num);
-
+        
         $materials = $this->find()->
             select('material_id id, material.title title')->distinct()
             ->innerJoin('section', 'product.section_id = section.id')
@@ -101,7 +101,7 @@ class Product extends ActiveRecord
                     'table' => 'manufacturer',],];
         }
         
-        return ArrayHelper::toArray($products);
+        return $products;
 
     }
 
