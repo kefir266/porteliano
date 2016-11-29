@@ -5,6 +5,7 @@ namespace app\models;
 use Yii;
 use yii\helpers\ArrayHelper;
 use yii\db\ActiveRecord;
+use yii\helpers\Url;
 
 
 /**
@@ -27,6 +28,7 @@ use yii\db\ActiveRecord;
  */
 class Product extends ActiveRecord
 {
+    public $imageFile;
     /**
      * @inheritdoc
      */
@@ -45,7 +47,8 @@ class Product extends ActiveRecord
             [['section_id'],'integer', 'min'=> 1],
             [['description'], 'string'],
             [['title'], 'string', 'max' => 50],
-            [['img'], 'string', 'max' => 255],
+            [['img'], 'string',  'max' => 50],
+            //[['imageFile'], 'file', 'skipOnEmpty' => 'true', 'extensions' => 'png, jpg'],
             [['manufacturer_id'], 'exist', 'skipOnError' => true, 'targetClass' => Manufacturer::className(), 'targetAttribute' => ['manufacturer_id' => 'id']],
             [['material_id'], 'exist', 'skipOnError' => true, 'targetClass' => Material::className(), 'targetAttribute' => ['material_id' => 'id']],
             [['section_id'], 'exist', 'skipOnError' => true, 'targetClass' => Section::className(), 'targetAttribute' => ['section_id' => 'id']],
@@ -105,23 +108,23 @@ class Product extends ActiveRecord
     public function getSections(){
 
         $sp = Section::find()->select('id,title')->each();
-        return array_merge(['0' => ''],ArrayHelper::map($sp,'id','title'));
+        return ArrayHelper::merge(['0' => ''],ArrayHelper::map($sp,'id','title'));
     }
 
     public function getMaterials(){
 
         $sp = Material::find()->select('id,title')->each();
-        return array_merge(['0' => ''],ArrayHelper::map($sp,'id','title'));
+        return ArrayHelper::merge(['0' => ''],ArrayHelper::map($sp,'id','title'));
     }
     public function getManufacturers(){
 
         $sp = Manufacturer::find()->select('id,title')->each();
-        return array_merge(['0' => ''],ArrayHelper::map($sp,'id','title'));
+        return ArrayHelper::merge([0 => ''],ArrayHelper::map($sp, 'id','title'));
     }
     public function getStyles(){
 
         $sp = Style::find()->select('id,title')->each();
-        return array_merge(['0' => ''],ArrayHelper::map($sp,'id','title'));
+        return ArrayHelper::merge(['0' => ''],ArrayHelper::map($sp,'id','title'));
     }
 
     /**
@@ -141,5 +144,25 @@ class Product extends ActiveRecord
         return new ProductQuery(get_called_class());
     }
 
-    
+    public function upload(){
+
+        if ($this->img) {
+
+            $path = Url::to('@frontend/web/img/'.$this->manufacturer->title.'/');
+            $filename = strtolower($this->img);
+            $this->imageFile->saveAS($path,$filename);
+
+        }
+    }
+
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)){
+
+            //$this->upload();
+            return true;
+        }
+        else return false;
+    }
+
 }
