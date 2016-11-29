@@ -8,6 +8,7 @@
 
 namespace frontend\models;
 
+use app\models\Manufacturer;
 use app\models\Material;
 use app\models\Section;
 use yii\db\ActiveRecord;
@@ -116,9 +117,24 @@ class Product extends ActiveRecord
 
     }
 
+    public function getManufacturer(){
+
+        return $this->hasOne(Manufacturer::className(), ['id' => 'manufacturer_id']);
+
+    }
+    
+
     public function getNewProducts($quantity){
 
         return [];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPrices()
+    {
+        return $this->hasMany(Price::className(), ['product_id' => 'id']);
     }
 
     public function getFilteredProducts($params, $quantity){
@@ -130,9 +146,9 @@ class Product extends ActiveRecord
         $query = $this->find()
             ->innerJoin('section', 'product.section_id = section.id ')
             ->where(['product.section_id' => $id])->orWhere(['section.parent_id' => $id]);
-        $query = (!!$params['style']) ? $query->andWhere(['product.style_id' => $params['style']]) : $query;
-        $query = (!!$params['manufacturer']) ? $query->andWhere(['product.manufacturer_id' => $params['manufacturer']]) : $query;
-        $query = (!!$params['material']) ? $query->andWhere(['product.material_id' => $params['material']]) : $query;
+        $query = (isset($params['style'])) ? $query->andWhere(['product.style_id' => $params['style']]) : $query;
+        $query = (isset($params['manufacturer'])) ? $query->andWhere(['product.manufacturer_id' => $params['manufacturer']]) : $query;
+        $query = (isset($params['material'])) ? $query->andWhere(['product.material_id' => $params['material']]) : $query;
 
         $products['products'] = $query->each($quantity);
 

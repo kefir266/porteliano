@@ -1,7 +1,12 @@
 <?php
-/*
- * Блок с фильтром быстрого подбора:
+/**
+ * Created by PhpStorm.
+ * User: dmitrij
+ * Date: 28.11.2016
+ * Time: 13:23
  */
+
+//TODO отбор вытащить из под галереи
 
 /*  models  */
 
@@ -15,7 +20,7 @@ use app\assets\MainAsset;
 
 AppAsset::register($this);
 MainAsset::register($this);
-
+Yii::setAlias('@novelty', '@web/img/novelty/');
 
 // псевдоним пути к папке на основе другого псевдонима
 Yii::setAlias('@doors', '@web/img/doors');
@@ -78,14 +83,20 @@ $info = [
                 </div>
                 <div class="wrap-info">
                     <?php
-                    for ($i = 0; $i < 4; $i++){
+                    $i = 0;
+                    foreach ($products['products'] as $product){
                         echo Html::beginTag('div', ['class' => 'info']);
-                        for ($j = 0; $j < 3; $j++) {
-                            echo Html::tag('p', $info[$i][$j]);
-                        }
+//                        for ($j = 0; $j < 3; $j++) {
+//                            echo Html::tag('p', $info[$i][$j]);
+//                        }
+
+                        echo Html::tag('p', $product->section->title);
+                        echo Html::tag('p', $product->manufacturer->title);
+                        echo Html::tag('p', $product->title);
+
                         echo Html::tag('div','',['class' => 'delimiter']);
                         echo Html::beginTag('div',['class' => 'block-4-price']);
-                        echo Html::tag('div','€ '.$info[$i][3],['class' => 'block-4-price-count']);
+                        echo Html::tag('div','€ '.$product->prices[0]->cost,['class' => 'block-4-price-count']);
                         echo Html::tag('div','',['class' => 'glyphicon glyphicon-heart-empty ']);
                         echo Html::endTag('div');
                         echo Html::endTag('div');
