@@ -32,8 +32,9 @@
     margin-left: 9px;
 
 }
-.doors-panel > .wrap-tiles > .tile > img{
-    margin: 0 auto;
+.doors-panel > .wrap-tiles  .tile > img{
+    /*margin: 0 auto;*/
+    max-height: 342px;
 }
 
 .wrap-doors > .nav-tabs{

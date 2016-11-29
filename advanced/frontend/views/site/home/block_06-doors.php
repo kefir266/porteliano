@@ -48,6 +48,12 @@ $info = [
         1 => $doorData_2[3],
         2 => $doorData_3[3],
         3 => $price[3],
+    ],
+    [
+        0 => $category[0],
+        1 => $doorData_2[3],
+        2 => $doorData_3[3],
+        3 => $price[3],
     ]
 ]
 ?>
@@ -90,13 +96,6 @@ $info = [
                     ?>
                     </ul>
                 </div>
-                <div class="wrap-info">
-                    <?php
-
-                    ?>
-
-                </div>
-                <!--TODO: сделать прокрутку при нажатии на стрелки -->
                 <div id="show">
                     <button id="prev" class="btn btn-link" data-param="prev"></button>
                     <button id="next" class="btn btn-link" data-param="next"></button>
