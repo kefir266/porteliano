@@ -71,7 +71,6 @@ class ProductController extends Controller
     public function actionCreate()
     {
         $model = new Product();
-        //$model->imageFile = UploadedFile::getInstance($model, 'imageFile');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -91,7 +90,6 @@ class ProductController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        //$model->imageFile = UploadedFile::getInstance($model, 'imageFile');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -131,56 +129,4 @@ class ProductController extends Controller
         }
     }
 
-//    public function actionImageUpload()
-//    {
-//        $model = new Product();
-//
-//        $imageFile = UploadedFile::getInstance($model, 'img');
-//        $directory = \Yii::getAlias('@frontend/web/img/temp') . DIRECTORY_SEPARATOR . Yii::$app->session->id . DIRECTORY_SEPARATOR;
-//        if (!is_dir($directory)) {
-//            mkdir($directory);
-//        }
-//        if ($imageFile) {
-//            $uid = uniqid(time(), true);
-//            $fileName = $uid . '.' . $imageFile->extension;
-//            $filePath = $directory . $fileName;
-//            if ($imageFile->saveAs($filePath)) {
-//                $path = '/img/temp/' . Yii::$app->session->id . DIRECTORY_SEPARATOR . $fileName;
-//                return Json::encode([
-//                    'files' => [[
-//                        'name' => $fileName,
-//                        'size' => $imageFile->size,
-//                        "url" => $path,
-//                        "thumbnailUrl" => $path,
-//                        "deleteUrl" => 'image-delete?name=' . $fileName,
-//                        "deleteType" => "POST"
-//                    ]]
-//                ]);
-//            }
-//        }
-//        var_dump($model);
-//        return '';
-//    }
-//
-//    public function actionImageDelete($name)
-//    {
-//        $directory = \Yii::getAlias('@frontend/web/img/temp') . DIRECTORY_SEPARATOR . Yii::$app->session->id;
-//        if (is_file($directory . DIRECTORY_SEPARATOR . $name)) {
-//            unlink($directory . DIRECTORY_SEPARATOR . $name);
-//        }
-//        $files = FileHelper::findFiles($directory);
-//        $output = [];
-//        foreach ($files as $file){
-//            $path = '/img/temp/' . Yii::$app->session->id . DIRECTORY_SEPARATOR . basename($file);
-//            $output['files'][] = [
-//                'name' => basename($file),
-//                'size' => filesize($file),
-//                "url" => $path,
-//                "thumbnailUrl" => $path,
-//                "deleteUrl" => 'image-delete?name=' . basename($file),
-//                "deleteType" => "POST"
-//            ];
-//        }
-//        return Json::encode($output);
-//    }
 }
