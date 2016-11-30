@@ -5,7 +5,13 @@
 
 
 function eventClickDropMenu(item) {
-    $(item.target).parents(".btn-group").children(".btn-default:first").text(item.target.innerHTML).css('color','red');
+    $(item.target).parents(".btn-group").children(".btn-default:first").text(item.target.innerHTML);
 }
 
-$(".btn-group")
+// для 03_dveri-catalog
+$('ul.dropdown-menu > li > a').on('click',function(event){
+    $(this)
+        .parents(".btn-group")
+        .children(".btn-default:first")
+        .text($(this).text());
+});
