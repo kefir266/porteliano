@@ -94,24 +94,9 @@ class PagesController extends Controller
         $modelProduct = new Product();
         $request = Yii::$app->request;
         $products = $modelProduct->getProductsBySection($request->get('section'),3 ); /// три картинки на страницу
-
         
-        switch ($ind) {
-            case 0:
-                $categoryTitle = 'Межкомнатные двери';
-                break;
-            case 1:
-                $categoryTitle = 'Входные двери';
-                break;
-            case 2:
-                $categoryTitle = 'Ручки';
-                break;
-            default:
-                $categoryTitle = 'нет категории';
-        }
-        
-        return $this->render('03_Dveri_katalog',['products' => $products, 
-            'categoryTitle' => $categoryTitle,
+        return $this->render('03_Dveri_katalog',['products' => $products,
+            'ind' => $ind,
         ]);
     }
 
