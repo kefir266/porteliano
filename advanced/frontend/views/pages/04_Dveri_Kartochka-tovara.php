@@ -18,8 +18,9 @@ use yii\helpers\Url;
 
 /*  assets  */
 use app\assets\TestAsset;
-
 TestAsset::register($this);
+
+
 // псевдоним пути к папке
 Yii::setAlias('@imgLogos', '@web/img/catalog/logos');
 Yii::setAlias('@doors', '@web/img/02/');

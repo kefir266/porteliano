@@ -1,35 +1,35 @@
-.wrap-tiles{
+.doors-wrap.wrap-tiles{
     position: relative;
     top: 0;
     left: 1px;
 }
-.wrap-tiles  h2{
+.doors-wrap.wrap-tiles  h2{
     font-size: 2.8em;
     font-family: Copperplate, serif;
 }
-.tile{
+.doors-wrap.wrap-tiles .tile{
     margin: 5px 0 0 14px;
     display: inline-block;
     border: 6px solid #935347;
 
 }
 
-.tile:nth-child(1){
+.doors-wrap.wrap-tiles .tile:nth-child(1){
     margin-left: 91px ;
 }
-h4{
+.doors-wrap.wrap-tiles h4{
     margin-top: 10%;
     color: #b7743e;
     font-family: "PT Sans", serif;
     font-weight: bold;
     font-size: 20px;
 }
-p{
+.doors-wrap.wrap-tiles p{
     font-family: "PT Sans", serif;
     font-size: 18px;
 }
 
-.col-md-10 p:last-child{
+.doors-wrap.wrap-tiles .col-md-10 p:last-child{
 
     margin-bottom: 15%;
 }
