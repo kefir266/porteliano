@@ -7,6 +7,7 @@
  */
 namespace frontend\controllers;
 
+use frontend\models\Product;
 use frontend\models\QuestionForm;
 use GuzzleHttp\Psr7\Request;
 use Yii;
@@ -84,9 +85,14 @@ class PagesController extends Controller
         return $this->render('02_Dveri');
     }
 
-    public function actionDvericatalog()
+    public function actionDoorcatalog()
     {
-        return $this->render('03_Dveri_katalog');
+        $modelProduct = new Product();
+        $request = Yii::$app->request;
+
+        $products = $modelProduct->getProductsBySection($request->get('section'),3 ); /// три картинки на страницу
+
+        return $this->render('03_Dveri_katalog',['products' => $products]);
     }
 
     public function actionSepta()
