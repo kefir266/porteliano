@@ -99,6 +99,16 @@ class PagesController extends Controller
             'ind' => $ind,
         ]);
     }
+    public function actionDoor_card($indx = 0)
+    {
+        $modelProduct = new Product();
+        $request = Yii::$app->request;
+        $products = $modelProduct->getProductsBySection($request->get('section'),3 ); /// три картинки на страницу
+
+        return $this->render('04_Dveri_Kartochka-tovara',
+            ['products' => $products, 'ind' => $indx,
+        ]);
+    }
 
     public function actionSepta()
     {
