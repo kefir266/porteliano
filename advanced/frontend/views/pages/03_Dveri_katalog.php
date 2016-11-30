@@ -5,6 +5,7 @@
  * Date: 27.11.2016
  * Time: 21:04
  */
+/** @var string $ind */
 /*  models  */
 
 /*  widgets  */
@@ -16,28 +17,64 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 /*  assets  */
-use app\assets\TestAsset;
+use app\assets\DoorCatalogAsset;
 
-TestAsset::register($this);
-
+DoorCatalogAsset::register($this);
+// псевдоним пути к папке
 Yii::setAlias('@imgLogos', '@web/img/catalog/logos');
 Yii::setAlias('@doors', '@web/img/02/');
+Yii::setAlias('@doors', '@web/img/doors');
+Yii::setAlias('@cover', '@web/img/cover');
+
+// определение какие обложки и заголовки показывать
+switch ($indx) {
+    case 0:
+        $categoryTitle = 'Межкомнатные двери';
+
+        $coverImgLeft = '@cover/outer.jpg';
+        $coverImgRight = '@cover/grips.png';
+
+        $coverTextLeft = 'Входные двери';
+        $coverTextRight = 'Ручки';
+        break;
+    case 1:
+        $categoryTitle = 'Входные двери';
+        $coverImgLeft = '@cover/grips.png';
+        $coverImgRight = '@cover/inner.png';
+
+        $coverTextLeft = 'Межкомнатные двери';
+        $coverTextRight = 'Ручки';
+        break;
+    case 2:
+        $categoryTitle = 'Ручки';
+        $coverImgLeft = '@cover/outer.jpg';
+        $coverImgRight = '@cover/inner.png';
+
+        $coverTextLeft = 'Межкомнатные двери';
+        $coverTextRight = 'Входные двери';
+        break;
+    default:
+        $categoryTitle = 'нет категории';
+}
+
 $this->params['breadcrumbs'][] = [
-    'label' => 'Двери каталог',
+    'label' => 'Двери ',
     'url' => Url::to(['pages/dveri']),
-    'template' => "<li> {link} </li>\n", // template for this link only
+    'template' => "<li><ins>{link}</ins></li>\n", // template for this link only
+];
+
+$this->params['breadcrumbs'][] =[
+    'label' => $categoryTitle,    //'Межкомнтаные двери ',
+    'url' => Url::to(['pages/doorcatalog']),
+    'template' => "<li> {link} </li>\n",
 ];
 
 $sections = new Section();
 $items = [];
-$title = $products['section']['title'];
+$title = $categoryTitle;//$products['section']['title'];
 foreach ($sections->getMenu() as $section) {
     $items[] = $section;
 }
-
-
-// псевдоним пути к папке на основе другого псевдонима
-Yii::setAlias('@doors', '@web/img/doors');
 
 // TODO заменить на загрузку из базы
 $category = ['Входная дверь'];
@@ -46,7 +83,6 @@ $doorData_3 = ['Export 1106', 'Export 1136', 'SECURITY', 'Elite 1115'];
 $price = ['1545', '1545', '2119', '2194'];
 
 // массив для заполнения информационных полей под плитками новинок
-
 $info = [
     [
         0 => $category[0],
@@ -79,6 +115,7 @@ $info = [
         3 => $price[3],
     ]
 ]
+
 ?>
 <div class="door-catalog">
     <div class="panel-quick-selection">
@@ -88,7 +125,7 @@ $info = [
                     <?= $title ? $title : 'Межкомнатные двери' ?>
                 </h2>
             </div>
-        </div>
+        </div> <!-- заголовок -->
         <div class="row">
             <div class="col-lg-12 ">
                 <div class="flex-container">
@@ -171,27 +208,30 @@ $info = [
                     </div>
                 </div>
             </div>
-        </div>
+        </div> <!-- панель выбора -->
         <div class="row">
             <div class="col-md-5">
                 <span>Сортировать по:</span>
                 <span class="btn btn-link">Алфавиту</span>
                 <span class="btn btn-link">Цене</span>
             </div>
-        </div>
+        </div> <!-- методы сортировки -->
         <div class="row">
             <div class="col-md-12">
                 <div class="sampling-area">
                     <?php
-                    for ($k = 0; $k < 3; $k++) {
+                    // этот цикл для теста, его надо удалить при выводе из базы
+                    for ($k = 0; $k < 4; $k++) {
                         //добавляет карточки в область прокрутки $i -№ дверей
-                        for ($i = 0; $i < 5; $i++) {
+                        for ($i = 0; $i < 4; $i++) {
 
                             //вывод картинок
                             echo Html::beginTag('li', ['class' => 'tile']);
                             //  TODO ($i+5) для теста, поставить $i
+                            // TODO  indx' => $indx, в $indx поставить индекс категории для двери
+                            echo Html::beginTag('a', ['href' => Url::to(['pages/door_card', 'indx' => $indx ]),]);
                             echo Html::img('@doors/door_' . ($i + 5) . '.PNG',
-                                ['alt' => 'door_' . ($i + 5), 'class' => '']);
+                                ['alt' => 'door_' . ($i + 5)]);
 
                             //заполняет карточку $i- № дверей, j- строка карточки
                             echo Html::beginTag('div', ['class' => 'info']);
@@ -210,6 +250,41 @@ $info = [
                     ?>
                 </div>
             </div>
-        </div>
+        </div> <!-- контейнер для выбранных дверей -->
+        <div class="row">
+            <div class="col-md-12">
+                <a href="#">
+                    <div class="center-flex">
+                        <div class="glyphicon glyphicon-plus-sign"></div>
+                        <div class="">Показать ещё</div>
+                    </div>
+                </a>
+            </div>
+        </div> <!-- кнопка показать ещё -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="plate">
+                    <a href="#one">
+                        <?= Html::img($coverImgLeft, [
+                            'style' => 'width: 100%',
+                        ]) ?>
+
+                        <div class="doors-gradient doors-gradient-pos"></div>
+                        <h2 class="center-block"><?=$coverTextLeft?></h2>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <div class="plate">
+                    <a href="#two">
+                        <?= Html::img($coverImgRight, [
+                            'style' => 'width: 100%',
+                        ]) ?>
+                        <div class="doors-gradient doors-gradient-pos"></div>
+                        <h2 ><?=$coverTextRight?></h2>
+                    </a>
+                </div>
+            </div>
+        </div> <!-- Обложки на соседние категории -->
     </div>
 </div>

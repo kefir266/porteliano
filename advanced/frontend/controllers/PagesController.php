@@ -85,14 +85,29 @@ class PagesController extends Controller
         return $this->render('02_Dveri');
     }
 
-    public function actionDoorcatalog()
+    /**
+     * @param $ind
+     * @return string
+     */
+    public function actionDoorcatalog($ind)
     {
         $modelProduct = new Product();
         $request = Yii::$app->request;
-
+        $products = $modelProduct->getProductsBySection($request->get('section'),3 ); /// три картинки на страницу
+        
+        return $this->render('03_Dveri_katalog',['products' => $products,
+            'ind' => $ind,
+        ]);
+    }
+    public function actionDoor_card($indx = 0)
+    {
+        $modelProduct = new Product();
+        $request = Yii::$app->request;
         $products = $modelProduct->getProductsBySection($request->get('section'),3 ); /// три картинки на страницу
 
-        return $this->render('03_Dveri_katalog',['products' => $products]);
+        return $this->render('04_Dveri_Kartochka-tovara',
+            ['products' => $products, 'ind' => $indx,
+        ]);
     }
 
     public function actionSepta()

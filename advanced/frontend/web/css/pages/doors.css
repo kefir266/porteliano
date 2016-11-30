@@ -1,35 +1,96 @@
-.wrap-tiles{
+.doors-wrap.wrap-tiles{
     position: relative;
     top: 0;
     left: 1px;
 }
-.wrap-tiles  h2{
+.doors-wrap  h2{
     font-size: 2.8em;
     font-family: Copperplate, serif;
 }
-.tile{
+.doors-wrap.wrap-tiles .tile{
     margin: 5px 0 0 14px;
     display: inline-block;
     border: 6px solid #935347;
 
 }
 
-.tile:nth-child(1){
+.doors-wrap.wrap-tiles .tile:nth-child(1){
     margin-left: 91px ;
 }
-h4{
+.doors-wrap.wrap-tiles h4{
     margin-top: 10%;
     color: #b7743e;
     font-family: "PT Sans", serif;
     font-weight: bold;
     font-size: 20px;
 }
-p{
+.doors-wrap.wrap-tiles p{
     font-family: "PT Sans", serif;
     font-size: 18px;
 }
 
-p:last-child{
+.doors-wrap.wrap-tiles .col-md-10 p:last-child{
 
     margin-bottom: 15%;
+}
+/*  градиент на обложках*/
+.plate{
+    position: relative;
+}
+.plate-out-doors{
+    position: relative;
+}
+.doors-gradient{
+    /* Gradient */
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,413332+92,413332+100&0+0,1+92,1+100 */
+    background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(65,51,50,1) 92%, rgba(65,51,50,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(65,51,50,1) 92%,rgba(65,51,50,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(65,51,50,1) 92%,rgba(65,51,50,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#413332',GradientType=0 ); /* IE6-9 */
+
+}
+.grips-gradient-pos{
+    position: absolute;
+    top: 40%;
+    left: 111px;
+    width: 83%;
+    height: 50%;
+}
+.doors-out-gradient-pos{
+    position: absolute;
+    top: 241px;
+    left: 112px;
+    width: 84%;
+    height: 50%;
+}
+.doors-inn-gradient-pos{
+    position: absolute;
+    top: 241px;
+    left: 112px;
+    width: 84%;
+    height: 50%;
+}
+
+.plate > a > h2{
+    position: absolute;
+    top: 68%;
+    left: 38%;
+    font-size: 22px;
+    color: #fdfdf3;
+}
+.plate-out-doors > a > h2{
+    position: absolute;
+    top: 85%;
+    left: 43%;
+    font-size: 22px;
+    color: #fdfdf3;
+}
+.plate-inn-doors > a > h2{
+    position: absolute;
+    top: 86%;
+    left: 30%;
+    font-size: 22px;
+    width: 100%;
+    text-align: center;
+    color: #fdfdf3;
 }

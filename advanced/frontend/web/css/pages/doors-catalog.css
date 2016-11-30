@@ -1,3 +1,6 @@
+body{
+    background-color: #fdfdf3;
+}
 .door-catalog{
     margin-left: 418px;
     /*background-color: #66afe9;*/
@@ -33,8 +36,12 @@
     width: 180px;
     text-align: left;
 }
+.dropdown-menu{
+    width: 180px;
+}
+
 .flex-container button{
-    margin: auto;  /* Магия! */
+    margin: auto;
 }
 .flex-container button:last-child{
     font-family: "PT Sans", serif;
@@ -74,7 +81,9 @@ span.btn{
         margin-top: 20px;
         margin-bottom: 14px;
         width: 400px;
-
+    }
+    .sampling-area{
+        width: 490px;
     }
 }
 @media screen and (min-width: 1024px) {
@@ -154,6 +163,7 @@ span.btn{
 .info{
     margin-top: 5%;
     background-color: #ece7d4;
+    color: #77767b;
 }
 .info > .delimiter{
     height: 2px;
@@ -170,3 +180,59 @@ span.btn{
 }
 
 /************* ---карточки товара--- *******************************/
+
+.glyphicon-plus-sign{
+    font-size: 40px;
+}
+.glyphicon-plus-sign:hover{
+    color: #935347;
+}
+.col-md-12 > a{
+    text-decoration: none;
+}
+.center-flex{
+    display: flex;
+    /* направление потока
+        элементы переносились на новую строку*/
+    flex-flow: column wrap;
+    /* Теперь определим, как будет распределяться пространство*/
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: black;
+}
+.glyphicon-plus-sign + div{
+    font-size: 16px;
+}
+.plate{
+    position: relative;
+}
+.doors-gradient-pos{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+}
+
+.doors-gradient{
+    /* Gradient */
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,413332+92,413332+100&0+0,1+92,1+100 */
+    background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(65,51,50,1) 92%, rgba(65,51,50,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(65,51,50,1) 92%,rgba(65,51,50,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(65,51,50,1) 92%,rgba(65,51,50,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#413332',GradientType=0 ); /* IE6-9 */
+
+}
+.plate h2{
+    position: absolute;
+    top: 85%;
+    left: 0;
+    color: white;
+    font-size: 22px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+}
