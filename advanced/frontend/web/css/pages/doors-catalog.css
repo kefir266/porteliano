@@ -33,8 +33,12 @@
     width: 180px;
     text-align: left;
 }
+.dropdown-menu{
+    width: 180px;
+}
+
 .flex-container button{
-    margin: auto;  /* Магия! */
+    margin: auto;
 }
 .flex-container button:last-child{
     font-family: "PT Sans", serif;
@@ -170,3 +174,31 @@ span.btn{
 }
 
 /************* ---карточки товара--- *******************************/
+
+.glyphicon-plus-sign{
+    font-size: 40px;
+}
+.glyphicon-plus-sign:hover{
+    color: #935347;
+}
+.col-md-12 > a{
+    text-decoration: none;
+}
+.center-flex{
+    display: flex;
+    /* направление потока
+        элементы переносились на новую строку*/
+    flex-flow: column wrap;
+    /* Теперь определим, как будет распределяться пространство*/
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: black;
+}
+.center-flex:hover{
+
+}
+.glyphicon-plus-sign + div{
+    font-size: 16px;
+}

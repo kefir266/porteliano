@@ -183,6 +183,7 @@ $info = [
             <div class="col-md-12">
                 <div class="sampling-area">
                     <?php
+                    // этот цикл для теста, его надо удалить при выводи из базы
                     for ($k = 0; $k < 3; $k++) {
                         //добавляет карточки в область прокрутки $i -№ дверей
                         for ($i = 0; $i < 5; $i++) {
@@ -209,6 +210,16 @@ $info = [
                     }
                     ?>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <a href="#">
+                    <div class="center-flex">
+                        <div class="glyphicon glyphicon-plus-sign"></div>
+                        <div class="">Показать ещё</div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
