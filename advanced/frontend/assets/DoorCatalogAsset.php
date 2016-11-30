@@ -10,7 +10,7 @@ namespace app\assets;
 use yii\web\AssetBundle;
 
 
-class TestAsset extends AssetBundle
+class DoorCatalogAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
@@ -18,7 +18,7 @@ class TestAsset extends AssetBundle
     public $css = [
         'css/pages/doors-catalog.css',
         'css/pages/doors-card.css',
-
+        
 
     ];
     public $js = [

@@ -163,6 +163,7 @@ span.btn{
 .info{
     margin-top: 5%;
     background-color: #ece7d4;
+    color: #77767b;
 }
 .info > .delimiter{
     height: 2px;
@@ -214,6 +215,7 @@ span.btn{
     width: 100%;
     height: 50%;
 }
+
 .doors-gradient{
     /* Gradient */
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,413332+92,413332+100&0+0,1+92,1+100 */

@@ -17,9 +17,9 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 /*  assets  */
-use app\assets\TestAsset;
+use app\assets\DoorCatalogAsset;
 
-TestAsset::register($this);
+DoorCatalogAsset::register($this);
 // псевдоним пути к папке
 Yii::setAlias('@imgLogos', '@web/img/catalog/logos');
 Yii::setAlias('@doors', '@web/img/02/');
@@ -75,8 +75,6 @@ $title = $categoryTitle;//$products['section']['title'];
 foreach ($sections->getMenu() as $section) {
     $items[] = $section;
 }
-
-
 
 // TODO заменить на загрузку из базы
 $category = ['Входная дверь'];

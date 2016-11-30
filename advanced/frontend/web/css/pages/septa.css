@@ -8,7 +8,7 @@
     font-size: 2.8em;
     font-family: Copperplate, serif;
 }
-.tile{
+.wrap-tiles .tile{
     margin: 5px 0 0 14px;
     display: inline-block;
     border: 6px solid #935347;
