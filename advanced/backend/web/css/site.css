@@ -127,3 +127,7 @@ a.desc:after {
 .container {
     left: 150px;
 }
+
+img.prev {
+    height: 100px;
+}

@@ -27,10 +27,21 @@ use yii\widgets\ActiveForm;
 
     <?php
     //echo $form->field($model, 'imageFile')->fileInput();
+//    $widget = \kartik\file\FileInput::widget();
+//    $widget
+
     echo $form->field($model, 'img')->widget(\kartik\file\FileInput::className(),
         [
-            'options' => ['accept' => '@frontend/web/img/*'],
+            'options' => ['accept' => '@frontend/web/img/*',],
             'model' => $model,
+            'pluginOptions' => [
+                'initialCaption'=> $model->img,
+                'initialPreviewConfig' => [
+                    ['caption' => $model->img, ],],
+                'initialPreview'=>[
+                    "<img src = '/img/".$model->manufacturer->title.'/'.$model->img."' class='prev'>",
+                ],
+            ]
         ]);
     //echo $form->field($model, 'img')->textInput(['maxlength' => true])
     ?>
