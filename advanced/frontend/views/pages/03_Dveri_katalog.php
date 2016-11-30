@@ -17,9 +17,9 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 /*  assets  */
-use app\assets\PagesAsset;
+use app\assets\DoorCatalogAsset;
 
-PagesAsset::register($this);
+DoorCatalogAsset::register($this);
 // псевдоним пути к папке
 Yii::setAlias('@imgLogos', '@web/img/catalog/logos');
 Yii::setAlias('@doors', '@web/img/02/');

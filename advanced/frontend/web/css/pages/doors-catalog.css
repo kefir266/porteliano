@@ -163,6 +163,7 @@ span.btn{
 .info{
     margin-top: 5%;
     background-color: #ece7d4;
+    color: #77767b;
 }
 .info > .delimiter{
     height: 2px;
