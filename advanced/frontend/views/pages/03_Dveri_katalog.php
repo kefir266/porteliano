@@ -5,6 +5,7 @@
  * Date: 27.11.2016
  * Time: 21:04
  */
+/** @var string $categoryTitle */
 /*  models  */
 
 /*  widgets  */
@@ -22,15 +23,22 @@ TestAsset::register($this);
 
 Yii::setAlias('@imgLogos', '@web/img/catalog/logos');
 Yii::setAlias('@doors', '@web/img/02/');
+
 $this->params['breadcrumbs'][] = [
-    'label' => 'Двери каталог',
+    'label' => 'двери ',
     'url' => Url::to(['pages/dveri']),
-    'template' => "<li> {link} </li>\n", // template for this link only
+    'template' => "<li><ins>{link}</ins></li>\n", // template for this link only
+];
+
+$this->params['breadcrumbs'][] =[
+    'label' => $categoryTitle,    //'Межкомнтаные двери ',
+    'url' => Url::to(['pages/doorcatalog']),
+    'template' => "<li> {link} </li>\n",
 ];
 
 $sections = new Section();
 $items = [];
-$title = $products['section']['title'];
+$title = $categoryTitle;//$products['section']['title'];
 foreach ($sections->getMenu() as $section) {
     $items[] = $section;
 }
@@ -38,7 +46,7 @@ foreach ($sections->getMenu() as $section) {
 
 // псевдоним пути к папке на основе другого псевдонима
 Yii::setAlias('@doors', '@web/img/doors');
-
+Yii::setAlias('@other', '@web/img/other');
 // TODO заменить на загрузку из базы
 $category = ['Входная дверь'];
 $doorData_2 = ['Bauxt', 'Bauxt', 'Security', 'Bauxt'];
@@ -184,9 +192,9 @@ $info = [
                 <div class="sampling-area">
                     <?php
                     // этот цикл для теста, его надо удалить при выводи из базы
-                    for ($k = 0; $k < 3; $k++) {
+                    for ($k = 0; $k < 4; $k++) {
                         //добавляет карточки в область прокрутки $i -№ дверей
-                        for ($i = 0; $i < 5; $i++) {
+                        for ($i = 0; $i < 4; $i++) {
 
                             //вывод картинок
                             echo Html::beginTag('li', ['class' => 'tile']);
@@ -220,6 +228,31 @@ $info = [
                         <div class="">Показать ещё</div>
                     </div>
                 </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="plate">
+                    <a href="#one">
+                        <?= Html::img('@other/dop_perehod_GRIP_1.png', [
+                            'style' => 'width: 100%',
+                        ]) ?>
+
+                        <div class="doors-gradient doors-gradient-pos"></div>
+                        <h2 class="center-block"><?='РУЧКИ ДЛЯ МЕЖКОМНТАНЫХ ДВЕРЕЙ'?></h2>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <div class="plate">
+                    <a href="#two">
+                        <?= Html::img('@other/dop_perehod_GRIP_2.png', [
+                            'style' => 'width: 100%',
+                        ]) ?>
+                        <div class="doors-gradient doors-gradient-pos"></div>
+                        <h2 ><?='РАЗДВИЖНЫЕ ПЕРЕГОРОДКИ'?></h2>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
