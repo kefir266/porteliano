@@ -5,7 +5,7 @@
  * Date: 27.11.2016
  * Time: 21:04
  */
-/** @var string $ind */
+/** @var string $categoryTitle */
 /*  models  */
 
 /*  widgets  */
@@ -20,42 +20,9 @@ use yii\helpers\Url;
 use app\assets\TestAsset;
 
 TestAsset::register($this);
-// псевдоним пути к папке
+
 Yii::setAlias('@imgLogos', '@web/img/catalog/logos');
 Yii::setAlias('@doors', '@web/img/02/');
-Yii::setAlias('@doors', '@web/img/doors');
-Yii::setAlias('@cover', '@web/img/cover');
-
-// определение какие обложки и заголовки показывать
-switch ($ind) {
-    case 0:
-        $categoryTitle = 'Межкомнатные двери';
-
-        $coverImgLeft = '@cover/outer.jpg';
-        $coverImgRight = '@cover/grips.png';
-
-        $coverTextLeft = 'Входные двери';
-        $coverTextRight = 'Ручки';
-        break;
-    case 1:
-        $categoryTitle = 'Входные двери';
-        $coverImgLeft = '@cover/grips.png';
-        $coverImgRight = '@cover/inner.png';
-
-        $coverTextLeft = 'Межкомнатные двери';
-        $coverTextRight = 'Ручки';
-        break;
-    case 2:
-        $categoryTitle = 'Ручки';
-        $coverImgLeft = '@cover/outer.jpg';
-        $coverImgRight = '@cover/inner.png';
-
-        $coverTextLeft = 'Межкомнатные двери';
-        $coverTextRight = 'Входные двери';
-        break;
-    default:
-        $categoryTitle = 'нет категории';
-}
 
 $this->params['breadcrumbs'][] = [
     'label' => 'Двери ',
@@ -77,7 +44,9 @@ foreach ($sections->getMenu() as $section) {
 }
 
 
-
+// псевдоним пути к папке на основе другого псевдонима
+Yii::setAlias('@doors', '@web/img/doors');
+Yii::setAlias('@other', '@web/img/other');
 // TODO заменить на загрузку из базы
 $category = ['Входная дверь'];
 $doorData_2 = ['Bauxt', 'Bauxt', 'Security', 'Bauxt'];
@@ -85,6 +54,7 @@ $doorData_3 = ['Export 1106', 'Export 1136', 'SECURITY', 'Elite 1115'];
 $price = ['1545', '1545', '2119', '2194'];
 
 // массив для заполнения информационных полей под плитками новинок
+
 $info = [
     [
         0 => $category[0],
@@ -117,7 +87,6 @@ $info = [
         3 => $price[3],
     ]
 ]
-
 ?>
 <div class="door-catalog">
     <div class="panel-quick-selection">
@@ -265,23 +234,23 @@ $info = [
             <div class="col-md-6">
                 <div class="plate">
                     <a href="#one">
-                        <?= Html::img($coverImgLeft, [
+                        <?= Html::img('@other/dop_perehod_GRIP_1.png', [
                             'style' => 'width: 100%',
                         ]) ?>
 
                         <div class="doors-gradient doors-gradient-pos"></div>
-                        <h2 class="center-block"><?=$coverTextLeft?></h2>
+                        <h2 class="center-block"><?='РУЧКИ ДЛЯ МЕЖКОМНТАНЫХ ДВЕРЕЙ'?></h2>
                     </a>
                 </div>
             </div>
             <div class="col-md-6 col-xs-12">
                 <div class="plate">
                     <a href="#two">
-                        <?= Html::img($coverImgRight, [
+                        <?= Html::img('@other/dop_perehod_GRIP_2.png', [
                             'style' => 'width: 100%',
                         ]) ?>
                         <div class="doors-gradient doors-gradient-pos"></div>
-                        <h2 ><?=$coverTextRight?></h2>
+                        <h2 ><?='РАЗДВИЖНЫЕ ПЕРЕГОРОДКИ'?></h2>
                     </a>
                 </div>
             </div>
