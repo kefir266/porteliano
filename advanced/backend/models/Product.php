@@ -47,7 +47,7 @@ class Product extends ActiveRecord
             [['section_id'],'integer', 'min'=> 1],
             [['description'], 'string'],
             [['title'], 'string', 'max' => 50],
-            [['img'], 'string',  'max' => 50],
+            [['img'], 'string',  'max' => 255],
             //[['imageFile'], 'file', 'skipOnEmpty' => 'true', 'extensions' => 'png, jpg'],
             [['manufacturer_id'], 'exist', 'skipOnError' => true, 'targetClass' => Manufacturer::className(), 'targetAttribute' => ['manufacturer_id' => 'id']],
             [['material_id'], 'exist', 'skipOnError' => true, 'targetClass' => Material::className(), 'targetAttribute' => ['material_id' => 'id']],
@@ -144,16 +144,16 @@ class Product extends ActiveRecord
         return new ProductQuery(get_called_class());
     }
 
-    public function upload(){
-
-        if ($this->img) {
-
-            $path = Url::to('@frontend/web/img/'.$this->manufacturer->title.'/');
-            $filename = strtolower($this->img);
-            $this->imageFile->saveAS($path,$filename);
-
-        }
-    }
+//    public function upload(){
+//
+//        if ($this->img) {
+//
+//            $path = Url::to('@frontend/web/img/'.$this->manufacturer->title.'/');
+//            $filename = strtolower($this->img);
+//            $this->imageFile->saveAS($path,$filename);
+//
+//        }
+//    }
 
     public function beforeSave($insert)
     {

@@ -27,7 +27,14 @@ use yii\widgets\ActiveForm;
 
     <?php
     //echo $form->field($model, 'imageFile')->fileInput();
-    echo $form->field($model, 'img')->widget(\kartik\file\FileInput::className(),['options' => ['accept' => 'image/*'],]); ?>
+    echo $form->field($model, 'img')->widget(\kartik\file\FileInput::className(),
+        [
+            'options' => ['accept' => '@frontend/web/img/*'],
+            'model' => $model,
+        ]);
+    //echo $form->field($model, 'img')->textInput(['maxlength' => true])
+    ?>
+
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
     <div class="form-group">

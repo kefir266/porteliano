@@ -37,6 +37,8 @@ AppAsset::register($this);
     $menuItems = [
         ['label' => 'Home', 'url' => ['/site/index']],
         ['label' => 'Продукция', 'url' => ['/product']],
+        ['label' => 'Цены', 'url' => ['/price']],
+        ['label' => 'Заказы', 'url' => ['/order']],
         [
             'label' => 'Справочники',
             'url' => '#',
@@ -57,14 +59,16 @@ AppAsset::register($this);
                     [
                         'label' => 'Стили',
                         'url' => '/admin/style'
-                    ]
+                    ],
+                    [
+                        'label' => 'Валюты',
+                        'url' => '/admin/currency'
+                    ],
+
                 ],
 
         ],
-        [
-            'label' => 'Заказы',
-            'url' => 'admin/order'
-        ]
+        
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];

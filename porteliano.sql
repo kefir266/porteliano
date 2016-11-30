@@ -83,6 +83,21 @@ DELETE FROM `customer`;
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 
 
+-- Дамп структуры для таблица porteliano_db.file
+DROP TABLE IF EXISTS `file`;
+CREATE TABLE IF NOT EXISTS `file` (
+  `product_id` int(10) unsigned DEFAULT NULL,
+  `file` varchar(255) NOT NULL,
+  KEY `FK__product` (`product_id`),
+  CONSTRAINT `FK__product` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Дамп данных таблицы porteliano_db.file: ~0 rows (приблизительно)
+DELETE FROM `file`;
+/*!40000 ALTER TABLE `file` DISABLE KEYS */;
+/*!40000 ALTER TABLE `file` ENABLE KEYS */;
+
+
 -- Дамп структуры для таблица porteliano_db.manufacturer
 DROP TABLE IF EXISTS `manufacturer`;
 CREATE TABLE IF NOT EXISTS `manufacturer` (
@@ -92,14 +107,15 @@ CREATE TABLE IF NOT EXISTS `manufacturer` (
   `link` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `title` (`title`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы porteliano_db.manufacturer: ~2 rows (приблизительно)
+-- Дамп данных таблицы porteliano_db.manufacturer: ~3 rows (приблизительно)
 DELETE FROM `manufacturer`;
 /*!40000 ALTER TABLE `manufacturer` DISABLE KEYS */;
 INSERT INTO `manufacturer` (`id`, `title`, `img`, `link`) VALUES
 	(1, 'Romagnoli', '', ''),
-	(2, 'PORTE IN DOOR', '', '');
+	(2, 'PORTE IN DOOR', '', ''),
+	(3, 'Agoprofil', '', '');
 /*!40000 ALTER TABLE `manufacturer` ENABLE KEYS */;
 
 
@@ -112,12 +128,11 @@ CREATE TABLE IF NOT EXISTS `material` (
   UNIQUE KEY `title` (`title`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы porteliano_db.material: ~3 rows (приблизительно)
+-- Дамп данных таблицы porteliano_db.material: ~2 rows (приблизительно)
 DELETE FROM `material`;
 /*!40000 ALTER TABLE `material` DISABLE KEYS */;
 INSERT INTO `material` (`id`, `title`) VALUES
 	(1, 'Дерево'),
-	(2, 'ДСП'),
 	(3, 'Со стеклом');
 /*!40000 ALTER TABLE `material` ENABLE KEYS */;
 
@@ -220,7 +235,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `style_id` int(10) unsigned NOT NULL,
   `manufacturer_id` int(10) unsigned NOT NULL,
   `articul` varchar(50) DEFAULT NULL,
-  `img` varchar(255) NOT NULL,
+  `img` varchar(255) DEFAULT NULL,
   `description` text,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
@@ -234,16 +249,17 @@ CREATE TABLE IF NOT EXISTS `product` (
   CONSTRAINT `FK_product_material` FOREIGN KEY (`material_id`) REFERENCES `material` (`id`),
   CONSTRAINT `FK_product_section` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`),
   CONSTRAINT `FK_product_style` FOREIGN KEY (`style_id`) REFERENCES `style` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы porteliano_db.product: ~4 rows (приблизительно)
+-- Дамп данных таблицы porteliano_db.product: ~5 rows (приблизительно)
 DELETE FROM `product`;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`id`, `title`, `section_id`, `material_id`, `style_id`, `manufacturer_id`, `articul`, `img`, `description`, `date`) VALUES
-	(3, 'ACROPOLI AC1V B2 ', 3, 1, 1, 1, 'AC1V B2 ', 'МОДЕЛЬ AC1V B2 цена от 3439 У.Е..PNG', 'МОДЕЛЬ AC1V B2 цена от 3439 У.Е.', '0000-00-00 00:00:00'),
+	(3, 'ACROPOLI AC1V B2 ', 3, 1, 1, 1, 'AC1V B2 ', 'ALSACE_MOD.180.png', 'МОДЕЛЬ AC1V B2 цена от 3439 У.Е.', '0000-00-00 00:00:00'),
 	(4, 'CANALE linea', 3, 1, 1, 2, NULL, 'CANALE linea.jpg', 'CANALE linea', '0000-00-00 00:00:00'),
-	(6, 'CANALE', 3, 2, 2, 2, NULL, 'CANALE.jpg', 'CANALE', '0000-00-00 00:00:00'),
-	(7, 'ACROPOLI AC1V ', 3, 1, 1, 1, ' AC1V ', 'МОДЕЛЬ AC1V цена от 1720 У.Е..PNG', 'МОДЕЛЬ AC1V цена от 1720 У.Е..PNG', '0000-00-00 00:00:00');
+	(6, 'CANALE', 3, 1, 1, 2, NULL, 'CANALE.jpg', 'CANALE', '0000-00-00 00:00:00'),
+	(7, 'ACROPOLI AC1V ', 3, 1, 1, 1, ' AC1V ', 'дополнит фото к МОДЕЛЬ AC1B.PNG', 'МОДЕЛЬ AC1V цена от 1720 У.Е..PNG', '0000-00-00 00:00:00'),
+	(8, 'ALSACE_MOD', 3, 1, 1, 3, NULL, 'ALSACE_MOD.180.png', '', '2016-11-30 09:26:49');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 
@@ -279,14 +295,14 @@ CREATE TABLE IF NOT EXISTS `style` (
   `title` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `title` (`title`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы porteliano_db.style: ~2 rows (приблизительно)
 DELETE FROM `style`;
 /*!40000 ALTER TABLE `style` DISABLE KEYS */;
 INSERT INTO `style` (`id`, `title`) VALUES
 	(1, 'Классический'),
-	(2, 'Стиль2');
+	(3, 'Современный стиль');
 /*!40000 ALTER TABLE `style` ENABLE KEYS */;
 
 

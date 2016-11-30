@@ -87,7 +87,13 @@ $info = [
                         echo Html::tag('p', $product->title);
                             echo Html::tag('div', '', ['class' => 'delimiter']);
                             echo Html::beginTag('div', ['class' => 'block-4-price']);
-                            echo Html::tag('div', '€ ' . $product->prices[0]->cost, ['class' => 'block-4-price-count']);
+                        //var_dump($product);
+                            $price = $product->prices;
+                        //var_dump('массив'.count($price));
+                            echo Html::tag('div', '€ ' .  (( count($price) > 0) ?
+                                current($price)->cost
+                                : ''),
+                                ['class' => 'block-4-price-count']);
                             echo Html::tag('div', '', ['class' => 'glyphicon glyphicon-heart-empty ']);
                             echo Html::endTag('div');
                         echo Html::endTag('div');
