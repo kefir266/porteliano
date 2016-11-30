@@ -1,0 +1,59 @@
+.door-catalog{
+    margin-left: 418px;
+    background-color: #985f0d;
+    max-width: 1030px;
+
+}
+.flex-container {
+    background-color: #4cae4c;
+    max-width: 1030px;
+    min-width: 450px;
+    min-height: 105px;
+    /* Сначала создадим flex-контекст*/
+    display: flex;
+    /* направление потока
+        элементы переносились на новую строку*/
+    flex-flow: row wrap;
+
+    /* Теперь определим, как будет распределяться пространство*/
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flex-container > div{
+    display: inline-block;
+}
+.btn{
+    font-size: 16px;
+    font-family: PTSerif, serif;
+    font-style: italic;
+
+}
+.btn-group > .btn:first-child{
+    width: 180px;
+    text-align: left;
+}
+.flex-container button{
+    margin: auto;  /* Магия! */
+}
+.flex-container button:last-child{
+    margin-top: 25%;
+    font-family: "PT Sans", serif;
+}
+h5{
+    font-family: "PT Sans", serif;
+    font-size: 12px;
+
+}
+@media screen and (max-width: 1023px) {
+    .flex-container{
+        width: 450px;
+    }
+    .btn-group > .btn:first-child{
+        width: 400px;
+        text-align: left;
+    }
+}
+@media screen and (max-width: 1024px) {
+
+}

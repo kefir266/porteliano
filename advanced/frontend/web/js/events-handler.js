@@ -5,5 +5,7 @@
 
 
 function eventClickDropMenu(item) {
-    $(item.target).parents(".btn-group").children(".btn-default:first").text(item.target.innerHTML);
+    $(item.target).parents(".btn-group").children(".btn-default:first").text(item.target.innerHTML).css('color','red');
 }
+
+$(".btn-group")

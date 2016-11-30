@@ -7,6 +7,10 @@
 {
     margin-top: 5%;
 }
+.wrap-contacts  h2{
+    font-family: "Copperplate", serif;
+    font-size: 40px;
+}
 @media screen and  (min-width: 1024px) {
     .contact-img {
         height: 404px;
@@ -15,10 +19,17 @@
         background-position-x: 0;
         margin-bottom: 1%;
     }
+    .forma{
+        position: absolute;
+        top: 52%;
+        left: 63%;
+    }
 }
 
 @media screen and  (max-width: 1023px) {
-
+.wrap-contacts > .row{
+    margin-left: 1%;
+}
 }
 .orange{
     color: #b7743e;
@@ -32,11 +43,7 @@
 
     margin-top: 5%;
 }
-.forma{
-    position: absolute;
-    top: 52%;
-    left: 63%;
-}
+
 .contact-form {
     width: 365px;
     height: 480px;

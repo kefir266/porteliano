@@ -23,9 +23,9 @@ BackAsset::register($this);
 ?>
 <?php
 
-    $sections = new Section();
-
-foreach ($sections->getMenu() as $section){
+$sections = new Section();
+$items = [];
+foreach ($sections->getMenu() as $section) {
     $items[] = $section;
 }
 
