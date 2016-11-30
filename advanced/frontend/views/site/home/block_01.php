@@ -6,7 +6,9 @@
 use app\models\Section;
 
 /*  widgets  */
-
+use yii\bootstrap\ButtonDropdown;
+use yii\bootstrap\Dropdown;
+use yii\bootstrap\Button;
 
 /*  assets  */
 use app\assets\FontAsset;
@@ -21,7 +23,11 @@ BackAsset::register($this);
 ?>
 <?php
 
-
+$sections = new Section();
+$items = [];
+foreach ($sections->getMenu() as $section) {
+    $items[] = $section;
+}
 
 
 //$items = ['1' => 'Межкомнатные двери', '2' => 'Входные двери', '3' => 'Перегородки' ];

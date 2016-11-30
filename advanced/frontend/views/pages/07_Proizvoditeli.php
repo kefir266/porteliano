@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = [
 ];
 
 Yii::setAlias('@imgLogos', '@web/img/catalog/logos');
-// TODO: перенести массив $fileNames(возможно и $alt) в базу
+// TODO: перенести массив $fileNames в базу
 $logos = [];
 $directoryLogo = Yii::getAlias('@webroot') . '/img/catalog/logos';
 

@@ -18,7 +18,7 @@ use yii\bootstrap\ActiveForm;
 <div class="contact-form">
     <div class="row">
 
-        <div class="col-lg-10 col-lg-offset-1">
+        <article class="col-lg-10 col-lg-offset-1">
             <h2>Заполните форму</h2>
             <p>Наш менеджер свяжется с вами и раскажет о данном предложении</p>
             <hr style="
@@ -27,7 +27,7 @@ use yii\bootstrap\ActiveForm;
                     background-color:#9a2434; /* Цвет линии для браузера Firefox и Opera */
                     height: 2px; /* Толщина линии */
                    "/>
-        </div>
+        </article>
 
     </div>
     <div class="row">

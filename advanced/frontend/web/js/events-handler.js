@@ -34,3 +34,11 @@ function eventClickSelectButton(item) {
         + ((!!style)? '&style=' + style.replace(/[^.\d]+/g,"") : '')
         + ((!!price)? '&price=' + price : '').replace(/[^.\d]+/g,""));
 }
+
+// для 03_dveri-catalog
+$('ul.dropdown-menu > li > a').on('click',function(event){
+    $(this)
+        .parents(".btn-group")
+        .children(".btn-default:first")
+        .text($(this).text());
+});

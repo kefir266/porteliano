@@ -1,19 +1,245 @@
-.col-md-7{
-    //background-color: rebeccapurple;
+.col-md-7 {
+/ / background-color: rebeccapurple;
 }
-.col-md-4{
-    //background-color: #985f0d;
+
+.col-md-4 {
+/ / background-color: #985f0d;
 }
-.wrap-action{
-    overflow: hidden;
+
+
+.wrap-about {
+    max-width: 100%;
 }
-.action{
+.action {
     position: relative;
-
+    height: 866px;
+}
+@media screen and  (min-width: 1024px) {
+    .action-text{
+        position: absolute;
+        top:5%;
+        left:24%;
+        width: 1030px;
+    }
 
 }
-.crop{
+@media screen and  (max-width: 1023px) {
+    .wrap-about {
+        max-width: 480px;
+        padding: 1%;
+    }
+    .action-text{
+        position: absolute;
+        top:5%;
+        left: 0;
+        width: 480px;
+    }
+    .action {
+        position: relative;
+        height: 870px;
+    }
+
+}
+
+.action  h1 {
+    /*
+    position: absolute;
+    top: 30%;
+    left: 23%;*/
+    color: #F1F0F0;
+    font-size: 50px;
+    font-family: 'Copperplate', serif;
+}
+
+.action .col-md-6 > p {
+    /*
+    position: absolute;
+    top: 44%;
+    left: 23%;
+    width: 25%;
+*/
+    color: #F1F0F0;
+    font-size: 28px;
+    font-family: 'PTSerif', serif;
+
+}
+
+.crop {
     overflow: hidden;
     height: 650px;
     border: solid 1px black; /* Параметры рамки */
+}
+
+.contact-form {
+    min-width: 365px;
+    height: 480px;
+    background-color: #FFFFFF;
+    /*
+    position: absolute;
+    top: 12%;
+    left: 57%;
+    */
+    padding-top: 1%;
+}
+
+.contact-form p {
+    margin-bottom: 5%;
+}
+
+.contact-form hr {
+    margin: 10% 0 10% 0;
+}
+
+.contact-form > .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.contact-form button {
+    background-color: #6a372d;
+    border: none;
+    width: 100%;
+}
+
+.contact-form button:hover {
+    background-color: #955347;
+}
+
+.contact-form input {
+    background-color: #f3f0df;
+    font-family: 'PTSerif', serif;
+    font-style: italic;
+    color: #000;
+    margin: 0 0 1% 6%;
+    width: 89%;
+}
+
+/* цвет шрифта для placeholder */
+.contact-form input::-webkit-input-placeholder {
+    color: #000;
+}
+
+.contact-form input::-moz-placeholder {
+    color: #000;
+}
+
+.contact-form input:-moz-placeholder {
+    color: #000;
+}
+
+.contact-form input:-ms-input-placeholder {
+    color: #000;
+}
+
+/* сдвиг placeholder-а вправо при фокусе */
+.contact-form input::-webkit-input-placeholder {
+    color: #000;
+    text-overflow: ellipsis;
+    text-indent: 0px;
+    transition: text-indent 0.3s ease;
+}
+
+.contact-form input::-moz-placeholder {
+    color: #000;
+    text-overflow: ellipsis;
+    text-indent: 0px;
+    transition: text-indent 0.3s ease;
+}
+
+.contact-form input:-moz-placeholder {
+    color: #000;
+    text-overflow: ellipsis;
+    text-indent: 0px;
+    transition: text-indent 0.3s ease;
+}
+
+.contact-form input:-ms-input-placeholder {
+    color: #000;
+    text-overflow: ellipsis;
+    text-indent: 0px;
+    transition: text-indent 0.3s ease;
+}
+
+.contact-form input:focus::-webkit-input-placeholder {
+    text-indent: 500px;
+    transition: text-indent 0.3s ease;
+}
+
+.contact-form input:focus::-moz-placeholder {
+    text-indent: 500px;
+    transition: text-indent 0.3s ease;
+}
+
+.contact-form input:focus:-moz-placeholder {
+    text-indent: 500px;
+    transition: text-indent 0.3s ease;
+}
+
+.contact-form input:focus:-ms-input-placeholder {
+    text-indent: 500px;
+    transition: text-indent 0.3s ease;
+}
+
+.bottom-text {
+    padding-top: 3%;
+}
+.ruletka{
+    font-family: "PT Serif", serif;
+}
+@media screen and  (min-width: 1024px) {
+    .ruletka {
+        height: 370px;
+        width: 250px;
+        background: #d1c9b2 url("../../img/other/ruletka.jpg") no-repeat;
+        text-align: center;
+        padding-top: 150px;
+        margin-top: 67px;
+        margin-left: -90px;
+    }
+    .wrap-about h1:first-child{
+        margin-top: 13%;
+    }
+}
+
+@media screen and  (max-width: 1023px) {
+    .ruletka {
+        height: 210px;
+        width: 460px;
+        background: #d1c9b2 url("../../img/other/ruletka.jpg") no-repeat;
+        background-position-x: 210px;
+        margin-bottom: 1%;
+        padding: 20%;
+        padding-top: 30%;
+    }
+}
+
+.ruletka button {
+    background-color: #6a372d;
+    border: none;
+    width: 200px;
+    color: #ffffff;
+}
+
+.ruletka button:hover {
+    background-color: #955347;
+}
+p{
+    font-family: "PT Sans", serif;
+    font-size: 18px;
+}
+.parag-big{
+    font-size: 22px;
+}
+.parag-sm{
+    font-size: 18px;
+}
+@media screen and  (min-width: 1024px) {
+    .bg-door {
+        background:  no-repeat url(../../img/other/O-kompanii.png);
+        margin-left: 405px;
+        margin-right: 10px;
+        width: 305px;
+        height: 586px;
+        background-position-y: 75px;
+    }
 }

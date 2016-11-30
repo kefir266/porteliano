@@ -83,7 +83,7 @@ MainAsset::register($this);
         ]) ?>
         <?= $content ?>
     </div>
-    <div id="navbar-line" class="navbar-line-indent  nav "><!--navbar-line-indent  nav navbar-fixed-top       -->
+    <div id="navbar-line" class="hidden-sm hidden-xs navbar-line-indent  nav "><!--navbar-line-indent  nav navbar-fixed-top       -->
         <?php
         echo Nav::widget([
             'encodeLabels' => false, /*nav */
