@@ -22,11 +22,12 @@ AppAsset::register($this);
 MainAsset::register($this);
 BackAsset::register($this);
 
-//$sections = new Section();
-//
-//foreach ($sections->getMenu() as $section){
-//    $items[] = $section;
-//}
+$sections = new Section();
+
+$items =[];
+foreach ($sections->getMenu() as $section){
+    $items[] = $section;
+}
 ?>
 
 <div class="panel-quick-selection">
