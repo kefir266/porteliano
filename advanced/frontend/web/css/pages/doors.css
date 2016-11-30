@@ -29,7 +29,7 @@ p{
     font-size: 18px;
 }
 
-p:last-child{
+.col-md-10 p:last-child{
 
     margin-bottom: 15%;
 }
