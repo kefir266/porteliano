@@ -27,7 +27,7 @@ Yii::setAlias('@doors', '@web/img/doors');
 Yii::setAlias('@cover', '@web/img/cover');
 
 // определение какие обложки и заголовки показывать
-switch ($ind) {
+switch ($indx) {
     case 0:
         $categoryTitle = 'Межкомнатные двери';
 
@@ -222,7 +222,7 @@ $info = [
             <div class="col-md-12">
                 <div class="sampling-area">
                     <?php
-                    // этот цикл для теста, его надо удалить при выводи из базы
+                    // этот цикл для теста, его надо удалить при выводе из базы
                     for ($k = 0; $k < 4; $k++) {
                         //добавляет карточки в область прокрутки $i -№ дверей
                         for ($i = 0; $i < 4; $i++) {
@@ -230,8 +230,10 @@ $info = [
                             //вывод картинок
                             echo Html::beginTag('li', ['class' => 'tile']);
                             //  TODO ($i+5) для теста, поставить $i
+                            // TODO  indx' => $indx, в $indx поставить индекс категории для двери
+                            echo Html::beginTag('a', ['href' => Url::to(['pages/door_card', 'indx' => $indx ]),]);
                             echo Html::img('@doors/door_' . ($i + 5) . '.PNG',
-                                ['alt' => 'door_' . ($i + 5), 'class' => '']);
+                                ['alt' => 'door_' . ($i + 5)]);
 
                             //заполняет карточку $i- № дверей, j- строка карточки
                             echo Html::beginTag('div', ['class' => 'info']);
