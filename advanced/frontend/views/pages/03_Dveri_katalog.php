@@ -127,7 +127,7 @@ $info = [
                     <?= $title ? $title : 'Межкомнатные двери' ?>
                 </h2>
             </div>
-        </div>
+        </div> <!-- заголовок -->
         <div class="row">
             <div class="col-lg-12 ">
                 <div class="flex-container">
@@ -210,14 +210,14 @@ $info = [
                     </div>
                 </div>
             </div>
-        </div>
+        </div> <!-- панель выбора -->
         <div class="row">
             <div class="col-md-5">
                 <span>Сортировать по:</span>
                 <span class="btn btn-link">Алфавиту</span>
                 <span class="btn btn-link">Цене</span>
             </div>
-        </div>
+        </div> <!-- методы сортировки -->
         <div class="row">
             <div class="col-md-12">
                 <div class="sampling-area">
@@ -250,7 +250,7 @@ $info = [
                     ?>
                 </div>
             </div>
-        </div>
+        </div> <!-- контейнер для выбранных дверей -->
         <div class="row">
             <div class="col-md-12">
                 <a href="#">
@@ -260,7 +260,7 @@ $info = [
                     </div>
                 </a>
             </div>
-        </div>
+        </div> <!-- кнопка показать ещё -->
         <div class="row">
             <div class="col-md-6">
                 <div class="plate">
@@ -285,6 +285,6 @@ $info = [
                     </a>
                 </div>
             </div>
-        </div>
+        </div> <!-- Обложки на соседние категории -->
     </div>
 </div>
