@@ -41,7 +41,7 @@ $bottomContent_2 = 'Речь идет о входных конструкциях
             <?php
             for ($i = 1; $i < 5; $i++) {
                 echo '<div class="col-md-3">';
-                echo Html::beginTag('a',['href' => '#']);
+                echo Html::beginTag('a',['href' => Url::to(['pages/doorcatalog', 'ind' => '0'])]);
                 echo Html::img("@doors/inner_0$i.jpg",
                     ['alt' => "door_0$i", 'class' => 'tile']);
                 echo Html::endTag('a');
@@ -58,7 +58,7 @@ $bottomContent_2 = 'Речь идет о входных конструкциях
             <?php
             for ($i = 1; $i < 3; $i++) {
                 echo '<div class="col-md-6">';
-                echo Html::beginTag('a',['href' => '#']);
+                echo Html::beginTag('a',['href' => Url::to(['pages/doorcatalog', 'ind' => '1'])]);
                 echo Html::img("@doors/outer_0$i.jpg",
                     ['alt' => "door_0$i", 'class' => 'tile']);
                 echo Html::endTag('a');
@@ -74,7 +74,7 @@ $bottomContent_2 = 'Речь идет о входных конструкциях
         <div class="row">
             <?php
             echo '<div class="col-md-6 ">';
-            echo Html::beginTag('a',['href' => '#']);
+            echo Html::beginTag('a',['href' => Url::to(['pages/doorcatalog', 'ind' => '2'])]);
             echo Html::img("@doors/grips.jpg",
                 ['alt' => "door_0$i", 'class' => 'tile']);
             echo '</div>';
