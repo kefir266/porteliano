@@ -11,6 +11,7 @@
 .doors-panel{
     top: 138px;
     left: 399px;
+    width: 54%;
 }
 .doors-panel > .wrap-tiles > h2{
     top: -73px;
