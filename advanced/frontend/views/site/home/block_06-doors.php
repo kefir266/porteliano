@@ -66,33 +66,34 @@ $info = [
     <!-- Содержимое вкладок -->
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="home">
+            <!-- Вкладка 'Межкомнатные'  -->
             <div class="novelty doors-panel running-ribbon-doors">
                 <div class="wrap-tiles view">
                     <ul>
-                    <?php
-                    //добавляет карточки в область прокрутки $i -№ дверей
-                    for ($i = 0; $i < 5; $i++) {
+                        <?php
+                        //добавляет карточки в область прокрутки $i -№ дверей
+                        for ($i = 0; $i < 5; $i++) {
 
-                        //вывод картинок
-                        echo Html::beginTag('li', ['class' => 'tile']);
+                            //вывод картинок
+                            echo Html::beginTag('li', ['class' => 'tile']);
                             //  TODO ($i+5) для теста, поставить $i
                             echo Html::img('@doors/door_' . ($i + 5) . '.PNG',
                                 ['alt' => 'door_' . ($i + 5), 'class' => '']);
 
                             //заполняет карточку $i- № дверей, j- строка карточки
                             echo Html::beginTag('div', ['class' => 'info']);
-                                for ($j = 0; $j < 3; $j++) {
-                                    echo Html::tag('p', $info[$i][$j]);
-                                }
-                                echo Html::tag('div', '', ['class' => 'delimiter']);
-                                echo Html::beginTag('div', ['class' => 'block-4-price']);
-                                    echo Html::tag('div', '€ ' . $info[0][3], ['class' => 'block-4-price-count']);
-                                    echo Html::tag('div', '', ['class' => 'glyphicon glyphicon-heart-empty ']);
-                                echo Html::endTag('div');
+                            for ($j = 0; $j < 3; $j++) {
+                                echo Html::tag('p', $info[$i][$j]);
+                            }
+                            echo Html::tag('div', '', ['class' => 'delimiter']);
+                            echo Html::beginTag('div', ['class' => 'block-4-price']);
+                            echo Html::tag('div', '€ ' . $info[0][3], ['class' => 'block-4-price-count']);
+                            echo Html::tag('div', '', ['class' => 'glyphicon glyphicon-heart-empty ']);
                             echo Html::endTag('div');
-                        echo Html::endTag('li');
-                    }
-                    ?>
+                            echo Html::endTag('div');
+                            echo Html::endTag('li');
+                        }
+                        ?>
                     </ul>
                 </div>
                 <div id="show">
@@ -105,7 +106,44 @@ $info = [
             </div>
         </div>
         <div role="tabpanel" class="tab-pane" id="profile">
+            <!-- Вкладка 'Входные'  -->
+            <div class="novelty doors-panel running-ribbon-doors">
+                <div class="wrap-tiles view">
+                    <ul>
+                        <?php
+                        //добавляет карточки в область прокрутки $i -№ дверей
+                        for ($i = 0; $i < 5; $i++) {
 
+                            //вывод картинок
+                            echo Html::beginTag('li', ['class' => 'tile']);
+                            //  TODO ($i+5) для теста, поставить $i
+                            echo Html::img('@doors/door_' . ($i + 5) . '.PNG',
+                                ['alt' => 'door_' . ($i + 5), 'class' => '']);
+
+                            //заполняет карточку $i- № дверей, j- строка карточки
+                            echo Html::beginTag('div', ['class' => 'info']);
+                            for ($j = 0; $j < 3; $j++) {
+                                echo Html::tag('p', $info[$i][$j]);
+                            }
+                            echo Html::tag('div', '', ['class' => 'delimiter']);
+                            echo Html::beginTag('div', ['class' => 'block-4-price']);
+                            echo Html::tag('div', '€ ' . $info[0][3], ['class' => 'block-4-price-count']);
+                            echo Html::tag('div', '', ['class' => 'glyphicon glyphicon-heart-empty ']);
+                            echo Html::endTag('div');
+                            echo Html::endTag('div');
+                            echo Html::endTag('li');
+                        }
+                        ?>
+                    </ul>
+                </div>
+                <div id="show">
+                    <button id="prev" class="btn btn-link" data-param="prev"></button>
+                    <button id="next" class="btn btn-link" data-param="next"></button>
+                </div>
+                <!--<button type="button" class="btn ">ПОКАЗАТЬ БОЛЬШЕ</button>-->
+                <a href="<?= Url::to(['pages/dveri']); ?>" class="btn btn-default btn-lg" role="button">ПОКАЗАТЬ
+                    БОЛЬШЕ</a>
+            </div>
         </div>
     </div>
 
