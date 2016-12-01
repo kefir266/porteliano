@@ -25,7 +25,20 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'manufacturer_id')->dropDownList($model->getManufacturers()) ?>
 
+    <?= $form->field($model, 'currentPrice'
+//        [
+//        'options' => [
+//            'tag' => 'div',
+//            'class' => '',
+//        ],
+//        'template' => '<span class="col-md-2 col-lg-2">
+//            <label class="control-label">Final item price</label>{input}{error}</span>'
+//            ]
+    )
+        ->textInput(['type' => 'number'])?>
 
+    <?= $form->field($model, 'currentCurrency' )->dropDownList($model->getCurrencies()) ?>
+    
     <?php
 
 //    echo $form->field($model, 'img')->widget(\kartik\file\FileInput::className(),
