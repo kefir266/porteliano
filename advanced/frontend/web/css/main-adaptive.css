@@ -1,0 +1,60 @@
+/*
+#home {
+    background: url(home-bg.jpg) center 0 repeat fixed; min-height: 1200px;
+}
+#about {
+    background: url(about-bg.jpg) center 0 no-repeat min-height: 1200px;
+}
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: auto;
+    height: 100%;
+    background-color: #fdfdf3;
+    /*background-color: rgba(255, 0, 4, 0.55);*/
+}
+
+
+
+
+.fixed-0-0-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.fixed-0-0-top  > .navbar-header{
+       left: 8%;
+}
+
+
+/*      breadcrumb      */
+.breadcrumb{
+    margin-left: 22%;
+    margin-top: 5%;
+    background-color: #fdfdf3;
+}
+.breadcrumb li{
+    margin-left: 5px;
+}
+.breadcrumb a{
+    color: #413332;
+    font-family: "PT Sans",serif;
+    font-size: 16px;
+}
+/* content = чем разделяются крошки */
+.breadcrumb > li + li::before {
+    padding: 0 5px;
+    color: #ccc;
+    content: " ";
+}
+/**************************************************/
+/* NavBar */
+.navbar-toggle {
+
+    float: left;
+
+}
