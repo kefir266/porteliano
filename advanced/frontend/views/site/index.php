@@ -13,10 +13,12 @@ use yii\bootstrap;
 use app\assets\AppAsset;
 use app\assets\MainAsset;
 use app\assets\FontAsset;
+use app\assets\BackAsset;
 
 AppAsset::register($this);
 $test = MainAsset::register($this);
 FontAsset::register($this);
+BackAsset::register($this);
 
 $this->title = 'home';
 ?>

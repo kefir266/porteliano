@@ -4,6 +4,69 @@
 
 
 
+(function ($) {
+
+    $(".add-to-cart").on('click', addToCart);
+    $(".add-to-wish").on('click', addToWish);
+
+})(jQuery);
+
+function addToCart(e) {
+
+    e.preventDefault();
+
+    var id = $(this).attr('id');
+    id = id.substring(1,id.length);
+    console.log(id);
+    $.ajax({
+        url: 'cart/add',
+        data:{
+            id: id
+        },
+        type:'GET',
+        success: callbackCart,
+        error: function () {
+            console.log('error');
+
+        }
+    }
+
+    )
+
+}
+
+function addToWish(e) {
+
+    e.preventDefault();
+
+    var id = $(this).attr('id');
+    id = id.substring(1,id.length);
+    console.log(id);
+    $.ajax({
+            url: 'cart/addwish',
+            data:{
+                id: id
+            },
+            type:'GET',
+            success: callbackWish,
+            error: function () {
+                console.log('error');
+
+            }
+        }
+
+    )
+
+}
+
+function callbackCart(res) {
+    console.log(res);
+}
+
+function callbackWish(res) {
+    console.log(res);
+}
+
 function eventClickDropMenu(item) {
     if (item.target.tagName == 'A'){
         var idItem = item.target.getAttribute('id-item');
