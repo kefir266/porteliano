@@ -118,3 +118,16 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+.vertical-menu {
+
+    width: 150px;
+    position: absolute;
+    padding: 10px;
+}
+.container {
+    left: 150px;
+}
+
+img.prev {
+    height: 100px;
+}

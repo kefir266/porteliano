@@ -55,6 +55,9 @@ class LoginForm extends Model
      */
     public function login()
     {
+//        $user = $this->getUser();
+//        $hash = $user->setPassword($this->password);
+//        $user->save();
         if ($this->validate()) {
             return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
         } else {
@@ -75,4 +78,6 @@ class LoginForm extends Model
 
         return $this->_user;
     }
+
+
 }

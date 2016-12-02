@@ -1,22 +1,54 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dmitrij
- * Date: 21.11.2016
- * Time: 14:03
- */
 
 namespace app\models;
 
+use Yii;
 
-use frontend\models\Product;
-use yii\db\ActiveRecord;
-
-class Material extends ActiveRecord
+/**
+ * This is the model class for table "material".
+ *
+ * @property string $id
+ * @property string $title
+ *
+ * @property Product[] $products
+ */
+class Material extends \yii\db\ActiveRecord
 {
-    public function getProducts(){
+    /**
+     * @inheritdoc
+     */
+    public static function tableName()
+    {
+        return 'material';
+    }
 
-        return $this->hasMany(Product::className(), [ 'id'  =>  'product_id']);
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        return [
+            [['title'], 'required'],
+            [['title'], 'string', 'max' => 50],
+        ];
+    }
 
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'title' => 'Title',
+        ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getProducts()
+    {
+        return $this->hasMany(Product::className(), ['material_id' => 'id']);
     }
 }

@@ -13,17 +13,17 @@
     RewriteCond %{REQUEST_URI} !^/advanced/backend/web/(assets|js|css|js)/
     RewriteCond %{REQUEST_URI} ^/(admin)
     RewriteRule ^.*$ advanced/backend/web/index.php [L]
-    RewriteCond %{REQUEST_URI} ^/(assets|css|js|images)
-    RewriteRule ^assets/(.*)$ advanced/frontend/web/assets/$1 [L]
-    RewriteRule ^css/(.*)$ advanced/frontend/web/css/$1 [L]
-    RewriteRule ^js/(.*)$ advanced/frontend/web/js/$1 [L]
-    RewriteRule ^images/(.*)$ advanced/frontend/web/images/$1 [L]
-    RewriteRule ^img/(.*)$ advanced/frontend/web/img/$1 [L]
-    RewriteRule ^Fonts/(.*)$ advanced/frontend/web/Fonts/$1 [L]
-    RewriteRule ^(.*)$ advanced/advanced/frontend/web/$1 [L]
-    RewriteCond %{REQUEST_URI} !^/(frontend|backend)/web/(assets|css|js)/
-    RewriteCond %{REQUEST_URI} !index.php
-    RewriteCond %{REQUEST_FILENAME} !-f [OR]
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^.*$ advanced/frontend/web/index.php
+#    RewriteCond %{REQUEST_URI} ^/(assets|css|js|images)
+#    RewriteRule ^assets/(.*)$ advanced/frontend/web/assets/$1 [L]
+#    RewriteRule ^css/(.*)$ advanced/frontend/web/css/$1 [L]
+#    RewriteRule ^js/(.*)$ advanced/frontend/web/js/$1 [L]
+#    RewriteRule ^images/(.*)$ advanced/frontend/web/images/$1 [L]
+#    RewriteRule ^img/(.*)$ advanced/frontend/web/img/$1 [L]
+#    RewriteRule ^Fonts/(.*)$ advanced/frontend/web/Fonts/$1 [L]
+#    RewriteRule ^(.*)$ advanced/advanced/frontend/web/$1 [L]
+#    RewriteCond %{REQUEST_URI} !^/(frontend|backend)/web/(assets|css|js)/
+#    RewriteCond %{REQUEST_URI} !index.php
+#    RewriteCond %{REQUEST_FILENAME} !-f [OR]
+#    RewriteCond %{REQUEST_FILENAME} !-d
+#    RewriteRule ^.*$ advanced/frontend/web/index.php
 </IfModule>

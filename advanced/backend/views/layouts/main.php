@@ -36,6 +36,39 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => 'Продукция', 'url' => ['/product']],
+        ['label' => 'Цены', 'url' => ['/price']],
+        ['label' => 'Заказы', 'url' => ['/order']],
+        [
+            'label' => 'Справочники',
+            'url' => '#',
+            'items' =>
+                [
+                    [
+                        'label' => 'Категории',
+                        'url' => '/admin/section'
+                    ],
+                    [
+                        'label' => 'Материалы',
+                        'url' => '/admin/material'
+                    ],
+                    [
+                        'label' => 'Производители',
+                        'url' => '/admin/manufacturer'
+                    ],
+                    [
+                        'label' => 'Стили',
+                        'url' => '/admin/style'
+                    ],
+                    [
+                        'label' => 'Валюты',
+                        'url' => '/admin/currency'
+                    ],
+
+                ],
+
+        ],
+        
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
@@ -56,6 +89,34 @@ AppAsset::register($this);
     NavBar::end();
     ?>
 
+    <div class="vertical-menu">
+        <?php echo Nav::widget(['items' => [
+            [
+                'label' => 'Справочники',
+                'url' => '#',
+                'items' =>
+                    [
+                        [
+                            'label' => 'Категории',
+                            'url' => '/admin/section'
+                        ],
+                        [
+                            'label' => 'Материалы',
+                            'url' => '/admin/material'
+                        ],
+                        [
+                            'label' => 'Производители',
+                            'url' => '/admin/manufacturer'
+                        ],
+                        [
+                            'label' => 'Стили',
+                            'url' => '/admin/style'
+                        ]
+                    ],
+
+            ]
+        ]]); ?>
+    </div>
     <div class="container">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
