@@ -15,7 +15,13 @@ class Cart
 {
 
     private $_cart;
-    
+
+    public function __construct()
+    {
+        $this->_cart['quantity'] = 0;
+    }
+
+
     public function add($product){
         
         $this->_cart[$product->id]['quantity']++;
@@ -26,5 +32,10 @@ class Cart
     
     public function clear(){
         $this->_cart = [];
+        $this->_cart['quantity'] = 0;
+    }
+
+    public function getQuantity(){
+        return $this->_cart['quantity'];
     }
 }

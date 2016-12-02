@@ -52,4 +52,27 @@ class CartController extends Controller
 
         return 'не найден '.$id;
     }
+
+    public function actionGetwish(){
+        $session = Yii::$app->session;
+        $session->open();
+        if (!isset($session['wish'])) {
+            $session['wish'] = new Wish();
+        }
+
+        return $session['wish']->getQuantity();
+
+    }
+
+    public function actionGetcart(){
+        $session = Yii::$app->session;
+        $session->open();
+        if (!isset($session['cart'])) {
+            $session['cart'] = new Cart();
+        }
+
+        return $session['cart']->getQuantity();
+
+    }
+
 }

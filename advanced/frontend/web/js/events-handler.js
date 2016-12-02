@@ -9,7 +9,31 @@
     $(".add-to-cart").on('click', addToCart);
     $(".add-to-wish").on('click', addToWish);
 
+    var jCart = $("#basket");
+    var jWish = $('#wishlist');
+
+    getQuantity('getcart', jCart);
+    getQuantity('getwish', jWish);
+
 })(jQuery);
+
+function getQuantity(action, jtag){
+    $.ajax({
+            url: '/cart/'+action,
+
+            type:'GET',
+            success: function (res) {
+                callbackQuantity(res,jtag);},
+            error: function () {
+                console.log('error');
+
+            }
+        }
+
+    )
+
+
+}
 
 function addToCart(e) {
 
@@ -17,14 +41,14 @@ function addToCart(e) {
 
     var id = $(this).attr('id');
     id = id.substring(1,id.length);
-    console.log(id);
     $.ajax({
-        url: 'cart/add',
+        url: '/cart/add',
         data:{
             id: id
         },
         type:'GET',
-        success: callbackCart,
+        success: function (res) {
+            callbackQuantity(res);},
         error: function () {
             console.log('error');
 
@@ -41,14 +65,14 @@ function addToWish(e) {
 
     var id = $(this).attr('id');
     id = id.substring(1,id.length);
-    console.log(id);
     $.ajax({
-            url: 'cart/addwish',
+            url: '/cart/addwish',
             data:{
                 id: id
             },
             type:'GET',
-            success: callbackWish,
+            success: function (res) {
+                callbackQuantity(res);},
             error: function () {
                 console.log('error');
 
@@ -59,13 +83,23 @@ function addToWish(e) {
 
 }
 
-function callbackCart(res) {
+function callbackQuantity(res, jtag) {
+    if (!!jtag){
+        jtag.text(res);
+        if (res == 0) {
+            jtag.removeClass("glyphicon-heart");
+            jtag.addClass("glyphicon-heart-empty");
+        }
+        else {
+            jtag.addClass("glyphicon-heart");
+            jtag.removeClass("glyphicon-heart-empty");
+
+        }
+
+    }
     console.log(res);
 }
 
-function callbackWish(res) {
-    console.log(res);
-}
 
 function eventClickDropMenu(item) {
     if (item.target.tagName == 'A'){

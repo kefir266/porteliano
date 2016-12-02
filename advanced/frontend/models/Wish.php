@@ -15,7 +15,12 @@ class Wish
 {
 
     private $_wish;
-    
+
+    public function __construct()
+    {
+        $this->_wish['quantity'] = 0;
+    }
+
     public function add($product){
         
         $this->_wish[$product->id]['quantity']++;
@@ -27,5 +32,10 @@ class Wish
     
     public function clear(){
         $this->_wish = [];
+        $this->_wish['quantity'] = 0;
+    }
+
+    public function getQuantity(){
+        return $this->_wish['quantity'];
     }
 }
