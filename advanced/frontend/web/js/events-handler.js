@@ -87,13 +87,19 @@ function callbackQuantity(res, jtag) {
     if (!!jtag){
         jtag.text(res);
         if (res == 0) {
-            jtag.removeClass("glyphicon-heart");
-            jtag.addClass("glyphicon-heart-empty");
+            jtag.text('');
+            if (jtag.attr('id')== 'wishlist')
+            {
+                jtag.removeClass("glyphicon-heart");
+                jtag.addClass("glyphicon-heart-empty");
+            }
         }
         else {
-            jtag.addClass("glyphicon-heart");
-            jtag.removeClass("glyphicon-heart-empty");
-
+            if (jtag.attr('id')== 'wishlist')
+            {
+                jtag.addClass("glyphicon-heart");
+                jtag.removeClass("glyphicon-heart-empty");
+            }
         }
 
     }
