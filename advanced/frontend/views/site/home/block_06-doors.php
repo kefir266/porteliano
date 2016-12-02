@@ -68,7 +68,7 @@ $info = [
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="home">
             <!-- Вкладка 'Межкомнатные'  -->
-            <div class="novelty doors-panel running-ribbon-doors">
+            <div id="doors-inn" class="novelty doors-panel running-ribbon-doors">
                 <div class="wrap-tiles view">
                     <ul>
 
@@ -116,33 +116,41 @@ $info = [
         </div>
         <div role="tabpanel" class="tab-pane" id="profile">
             <!-- Вкладка 'Входные'  -->
-            <div class="novelty doors-panel running-ribbon-doors">
+            <div id="doors-out" class="novelty doors-panel running-ribbon-doors">
                 <div class="wrap-tiles view">
                     <ul>
+
                         <?php
                         //добавляет карточки в область прокрутки $i -№ дверей
-                        for ($i = 0; $i < 5; $i++) {
-
+                        foreach ($products['products'] as $product){
                             //вывод картинок
-                            echo Html::beginTag('li', ['class' => 'tile']);
+                            echo Html::beginTag('div', ['class' => 'tile']);
                             //  TODO ($i+5) для теста, поставить $i
-                            echo Html::img('@doors/door_' . ($i + 5) . '.PNG',
-                                ['alt' => 'door_' . ($i + 5), 'class' => '']);
+                            echo Html::img('@img/'.$product->manufacturer->title.'/'
+                                .$product->img,
+                                ['alt' => $product->title, 'class' => '']);
 
-                            //заполняет карточку $i- № дверей, j- строка карточки
+                            //заполняет карточку $i -№ дверей j- строка карточки
                             echo Html::beginTag('div', ['class' => 'info']);
-                            for ($j = 0; $j < 3; $j++) {
-                                echo Html::tag('p', $info[$i][$j]);
-                            }
+                            echo Html::tag('p', $product->section->title);
+                            echo Html::tag('p', $product->manufacturer->title);
+                            echo Html::tag('p', $product->title);
                             echo Html::tag('div', '', ['class' => 'delimiter']);
                             echo Html::beginTag('div', ['class' => 'block-4-price']);
-                            echo Html::tag('div', '€ ' . $info[0][3], ['class' => 'block-4-price-count']);
+                            //var_dump($product);
+                            $price = $product->prices;
+                            //var_dump('массив'.count($price));
+                            echo Html::tag('div', '€ ' .  (( count($price) > 0) ?
+                                    current($price)->cost
+                                    : ''),
+                                ['class' => 'block-4-price-count']);
                             echo Html::tag('div', '', ['class' => 'glyphicon glyphicon-heart-empty ']);
                             echo Html::endTag('div');
                             echo Html::endTag('div');
-                            echo Html::endTag('li');
+                            echo Html::endTag('div');
                         }
                         ?>
+
                     </ul>
                 </div>
                 <div id="show">
