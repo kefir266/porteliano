@@ -32,7 +32,7 @@ if (file_exists($directoryLogo)) {
             </div>
         </div>
         <div class="row">
-            <div  class="tiles">
+            <div class="tiles">
                 <div class="col-md-3 col-sm-4 col-xs-5">
                     <div class="entryDoors">
                         <div class="doors-gradient">
@@ -71,25 +71,28 @@ if (file_exists($directoryLogo)) {
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="running-ribbon">
-                    <div class="view">
-                        <ul>
-                            <?php
-                            for ($i = 0; $i < count($logos); $i++) {
-                                echo '<li class="gray"><a href="#">' . $logos[$i] . '</a></li>';
-                            }
-                            ?>
-                        </ul>
-                    </div>
-                    <div id="show">
+                <div class="running-ribbon row">
+                    <div class="col-md-1 col-sm-1 col-xs-1 show">
                         <button id="prev" class="btn btn-link" data-param="prev"></button>
+                    </div>
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <div class="view">
+                            <ul>
+                                <?php
+                                for ($i = 0; $i < count($logos); $i++) {
+                                    echo '<li class="gray"><a href="#">' . $logos[$i] . '</a></li>';
+                                }
+                                ?>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1 show">
                         <button id="next" class="btn btn-link" data-param="next"></button>
                     </div>
+
                 </div>
             </div>
         </div>
-
-
     </div>
 </div>
 

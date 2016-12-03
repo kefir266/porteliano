@@ -35,9 +35,10 @@ class MainPageAdaptiveAsset extends AssetBundle
         'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
         '/js/lib/jquery.scroolly.js',
         // скрипты
+        'js/runningRibbon.js',
         /*
         'js/ajax-modal-popup.js',
-        'js/runningRibbon.js',
+
         'js/fixedMenu.js',
         'js/scrollspy.js',
         'js/parallax.js',
