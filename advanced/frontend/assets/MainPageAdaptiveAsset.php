@@ -16,8 +16,8 @@ class MainPageAdaptiveAsset extends AssetBundle
     public $baseUrl = '@web';
     
     public $css = [
-        'css/main/block_1.css',/*
-        'css/main/block_2.css',
+        'css/main/block_1.css',
+        'css/main/block_2.css',/*
 		'css/main/block_3.css',
         'css/main/block_4.css',
         'css/main/block_5.css',
