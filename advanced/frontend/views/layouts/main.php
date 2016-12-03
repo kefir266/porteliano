@@ -36,7 +36,7 @@ MainAdaptiveAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-<div class="wrap_all">
+<div class="wrap-all">
     <header>
         <div class="row">
             <div class="col-md-2 col-sm-2 col-xs-4">
@@ -45,7 +45,7 @@ MainAdaptiveAsset::register($this);
                 </a>
             </div>
 
-            <div class="col-md-offset-1 col-md-5 col-sm-3 col-sm-offset-2 col-xs-offset-2 col-xs-6    ">
+            <div class="col-md-offset-1 col-md-5 col-sm-4 col-sm-offset-2 col-xs-offset-2 col-xs-6    ">
                 <div class="row">
                     <section class="hidden-xs col-md-6  col-sm-12 site-contact font-PTSans">
                         <div id="phone_1">+7(495) 742-17-24</div>
@@ -92,12 +92,11 @@ MainAdaptiveAsset::register($this);
         <div class="row">
             <div class="col-md-12">
                 <div id="navbar-line" class=''>
-                    <!-- " navbar-line-indent  nav ">navbar-line-indent  nav navbar-fixed-top       --><!--
-                        <?php
+                    <?php
                     NavBar::begin([]);
                     echo Nav::widget([
-                        'encodeLabels' => false, /*nav */
-                        'options' => ['class' => 'navbar navbar-nav  font-PTSans'], //navbar-header'],
+                        'encodeLabels' => false, /*nav  navbar-header*/
+                        'options' => ['class' => 'navbar navbar-nav  font-PTSans '],
 
                         'items' => [
                             ['label' => 'ГЛАВНАЯ',
@@ -140,10 +139,10 @@ MainAdaptiveAsset::register($this);
                     NavBar::end();
                     /**/
                     ?>
-                    </div>
                 </div>
             </div>
-            -->
+        </div>
+        <!---->
 
     </header>
     <div class="content">
