@@ -1,17 +1,75 @@
 .wrap-quick-selection{
    /* height: 1415px; */
-    position: relative;
-    height: 1112px;
-    width: 1800px;
-    margin-top: -373px;
+    height: 720px;
+    background-position-y: -190px;
     background-image: url(../../img/background/d1ade-FOTO_INTRO_19.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-}
-.crop{
-    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
+.category, .section-title, .pick-up{
+    margin-right: auto;
+    margin-left: auto;
+}
+/* Кнопки выбора для Блока с фильтром быстрого подбора*/
+.material, .style, .manufacturer, .block-1-price{
+    display: inline-block;
+    margin-left: 5%;
+}
+
+
+.material > div > button:nth-child(1){
+    font-size: 20px;
+    width: 177px;
+}
+.material > div > button:nth-child(2){
+    font-size: 20px;
+    width: 43px;
+}
+
+.style > div > button:nth-child(1){
+    font-size: 20px;
+    width: 177px;
+}
+.style > div > button:nth-child(2){
+    font-size: 20px;
+    width: 43px;
+}
+
+.manufacturer > div > button:nth-child(1){
+    font-size: 20px;
+    width: 177px;
+}
+.manufacturer > div > button:nth-child(2){
+    font-size: 20px;
+    width: 43px;
+}
+
+.block-1-price > div > button:nth-child(1){
+    font-size: 20px;
+    width: 177px;
+}
+.block-1-price > div > button:nth-child(2){
+    font-size: 20px;
+    width: 43px;
+}
+
+.pick-up > button{
+    margin-top: 15%;
+
+    font-family: PTSans, sans-serif;
+    width: 272px;
+    height: 42px;
+    vertical-align: middle;
+    background-color: #935347;
+    color: #fffeff;
+}
+
+/*
 .category{
     position: absolute;
     top: 0;
@@ -19,7 +77,7 @@
     font-size: 21px;
     z-index: 1;
 }
-/* Указывается размер каретки*/
+/* Указывается размер каретки*//*
 .category > a,
 .category > a >.caret{
     color: #000;
@@ -31,7 +89,7 @@
     border-right: 9px solid transparent;
     border-left: 9px solid transparent;
 }
-/* Категории */
+/* Категории *//*
 .category > ul > li > a{
     font-size: 20px;
 }
@@ -44,9 +102,9 @@
 }
 
 
-/* Подкатегории */
+/* Подкатегории *//*
 .dropdown-submenu > ul{
-    list-style-type: none; /* Убираем маркеры */
+    list-style-type: none;
 }
 .dropdown-submenu > ul > li > a,
 .dropdown-submenu > ul > li{
@@ -86,75 +144,8 @@
     font-size: 66px;
     border-bottom: #6a372d dashed;
 }
-/* Кнопки выбора для Блока с фильтром быстрого подбора*/
-.material{
-    position: absolute;
-    top: 100px;
-    left: 9px;
-}
-.material > div > button:nth-child(1){
-    font-size: 20px;
-    width: 177px;
-}
-.material > div > button:nth-child(2){
-    font-size: 20px;
-    width: 43px;
-}
 
-.style{
-    position: absolute;
-    top: 100px;
-    left: 247px;
-}
-.style > div > button:nth-child(1){
-    font-size: 20px;
-    width: 177px;
-}
-.style > div > button:nth-child(2){
-    font-size: 20px;
-    width: 43px;
-}
 
-.manufacturer{
-    position: absolute;
-    top: 100px;
-    left: 488px;
-}
-.manufacturer > div > button:nth-child(1){
-    font-size: 20px;
-    width: 177px;
-}
-.manufacturer > div > button:nth-child(2){
-    font-size: 20px;
-    width: 43px;
-}
 
-.block-1-price {
-    position: absolute;
-    top: 100px;
-    left: 726px;
-}
-.block-1-price > div > button:nth-child(1){
-    font-size: 20px;
-    width: 177px;
-}
-.block-1-price > div > button:nth-child(2){
-    font-size: 20px;
-    width: 43px;
-}
 
-.pick-up{
-    position: absolute;
-    top: 217px;
-    left: 341px;
-    font-family: PTSans;
-}
-
-.pick-up > button{
-    width: 272px;
-    height: 42px;
-    vertical-align: middle;
-    background-color: #935347;
-    color: #fffeff;
-}
 

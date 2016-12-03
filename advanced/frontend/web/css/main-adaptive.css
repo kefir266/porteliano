@@ -19,7 +19,11 @@ body {
     /*background-color: rgba(255, 0, 4, 0.55);*/
 }
 .wrap-all{
-    display: flex;
+    /*display: flex;*/
+
+}
+.content{
+    width: 100%;
 }
 /*
 .fixed-0-0-top {
@@ -104,6 +108,9 @@ body {
 /*****************************************************/
 /*  header */
 header{
+    position: relative;
+}
+header > div{
     margin-left: auto;
     margin-right: auto;
 }

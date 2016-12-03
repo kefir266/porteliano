@@ -10,12 +10,9 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
-use app\assets\AppAsset;
+
 use app\assets\MainAdaptiveAsset;
 
-use yii\bootstrap\Dropdown;
-
-//AppAsset::register($this);
 MainAdaptiveAsset::register($this);
 
 ?>
@@ -37,126 +34,128 @@ MainAdaptiveAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 <div class="wrap-all">
-    <header>
-        <div class="row">
-            <div class="col-md-2 col-sm-2 col-xs-4">
-                <a href="index.php" class="logo">
-                    <?= Html::img('@web/img/logo.png', ['alt' => 'PORTELIANO',/*'class' => 'logo',*/]) ?>
-                </a>
-            </div>
+    <header style="display: flex">
+        <div>
+            <div class="row">
+                <div class="col-md-2 col-sm-2 col-xs-4">
+                    <a href="index.php" class="logo">
+                        <?= Html::img('@web/img/logo.png', ['alt' => 'PORTELIANO',/*'class' => 'logo',*/]) ?>
+                    </a>
+                </div>
 
-            <div class="col-md-offset-1 col-md-5 col-sm-4 col-sm-offset-2 col-xs-offset-2 col-xs-6    ">
-                <div class="row">
-                    <section class="hidden-xs col-md-6  col-sm-12 site-contact font-PTSans">
-                        <div id="phone_1">+7(495) 742-17-24</div>
-                        <div id="phone_1_label">Многоканальный телефон</div>
-                    </section>
-                    <section class="col-md-6 col-sm-12">
-                        <div id="phone_2">+7(495) 123-65-56</div>
-                        <a class="hidden-xs email-nonactive" href="mailto:absolute@ak-in.ru">absolute@ak-in.ru</a>
-                    </section>
+                <div class="col-md-offset-1 col-md-6 col-sm-4 col-sm-offset-2 col-xs-offset-2 col-xs-6    ">
+                    <div class="row">
+                        <section class="hidden-xs col-md-6  col-sm-12 site-contact font-PTSans">
+                            <div id="phone_1">+7(495) 742-17-24</div>
+                            <div id="phone_1_label">Многоканальный телефон</div>
+                        </section>
+                        <section class="col-md-6 col-sm-12">
+                            <div id="phone_2">+7(495) 123-65-56</div>
+                            <a class="hidden-xs email-nonactive" href="mailto:absolute@ak-in.ru">absolute@ak-in.ru</a>
+                        </section>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-md-push-0 col-sm-3 col-xs-push-2 col-xs-6">
+                    <div>
+                        <?php
+                        /*$address указывает какой view должен загрузится в Content*/
+                        /*$controller должен использовать $this->renderAjax*/
+                        $address = Url::to(['site/say'], true);
+                        $address = Url::to(['site/entry'], true);
+                        Modal::begin([
+                            'headerOptions' => ['id' => 'modalHeader'],
+                            'header' => '<h2>здесь будет то, что написано в title</h2>',
+                            //keeps from closing modal with esc key or by clicking out of the modal.
+                            // user must click cancel or X to close
+                            //'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
+                            'size' => 'modal-sm',
+                            'toggleButton' => [
+                                'tag' => 'button',
+                                'value' => $address,
+                                'title' => 'Задайте вопрос',
+                                'id' => 'ask_a_question-button',
+                                'class' => 'showModalButton btn btn-link ',
+                                'label' => 'ЗАДАЙТЕ ВОПРОС',
+                            ]
+                        ]);
+                        echo "<div id='modalContent'></div>";
+                        Modal::end();
+                        ?>
+                    </div> <!-- Задать вопрос -->
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="navbar-line" class=''>
+                        <?php
+                        NavBar::begin([]);
+                        echo Nav::widget([
+                            'encodeLabels' => false, /*nav  navbar-header*/
+                            'options' => ['class' => 'navbar navbar-nav  font-PTSans '],
+
+                            'items' => [
+                                ['label' => 'ГЛАВНАЯ',
+                                    'url' => [Url::to(['site/index'])],
+                                    'linkOptions' => ['data-target' => 'a0'],
+                                ],
+                                ['label' => 'НОВИНКИ',
+                                    'url' => Url::to(['site/index', '#' => 'novelty']),//['#novelty'],
+                                    'linkOptions' => ['data-target' => 'a1'],
+                                ],
+                                ['label' => 'ДВЕРИ',
+                                    'url' => Url::to(['site/index', '#' => 'doors']),  //?section=1 ['#doors']
+                                    'linkOptions' => ['data-target' => 'a2'],
+                                ],
+                                ['label' => 'ПЕРЕГОРОДКИ',
+                                    'url' => Url::to(['site/index', '#' => 'septa']), //?section=2  #septa
+                                    'linkOptions' => ['data-target' => 'a3'],
+                                ],
+                                ['label' => 'ПРОИЗВОДИТЕЛИ',
+                                    'url' => Url::to(['site/index', '#' => 'manufacturers']),
+                                    'linkOptions' => ['data-target' => 'a4'],
+                                ],
+                                ['label' => 'О КОМПАНИИ',
+                                    'url' => Url::to(['site/index', '#' => 'about']),
+                                    'linkOptions' => ['data-target' => 'a5'],
+                                ],
+                                ['label' => 'КОНТАКТЫ',
+                                    'url' => Url::to(['site/index', '#' => 'contacts']),
+                                    'linkOptions' => ['data-target' => 'a6'],
+                                ],
+
+                                ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist"></span>',
+                                    'url' => ['site/index'],
+                                ],
+                                ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket" ></span>',
+                                    'url' => ['site/index'],
+                                ],
+
+                            ]]);
+                        NavBar::end();
+                        /**/
+                        ?>
+                    </div>
                 </div>
             </div>
-
-            <div class="col-md-4 col-md-push-0 col-sm-3 col-xs-push-2 col-xs-6">
-                <div>
-                    <?php
-                    /*$address указывает какой view должен загрузится в Content*/
-                    /*$controller должен использовать $this->renderAjax*/
-                    $address = Url::to(['site/say'], true);
-                    $address = Url::to(['site/entry'], true);
-                    Modal::begin([
-                        'headerOptions' => ['id' => 'modalHeader'],
-                        'header' => '<h2>здесь будет то, что написано в title</h2>',
-                        //keeps from closing modal with esc key or by clicking out of the modal.
-                        // user must click cancel or X to close
-                        //'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
-                        'size' => 'modal-sm',
-                        'toggleButton' => [
-                            'tag' => 'button',
-                            'value' => $address,
-                            'title' => 'Задайте вопрос',
-                            'id' => 'ask_a_question-button',
-                            'class' => 'showModalButton btn btn-link ',
-                            'label' => 'ЗАДАЙТЕ ВОПРОС',
-                        ]
-                    ]);
-                    echo "<div id='modalContent'></div>";
-                    Modal::end();
-                    ?>
-                </div> <!-- Задать вопрос -->
-            </div>
-
         </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <div id="navbar-line" class=''>
-                    <?php
-                    NavBar::begin([]);
-                    echo Nav::widget([
-                        'encodeLabels' => false, /*nav  navbar-header*/
-                        'options' => ['class' => 'navbar navbar-nav  font-PTSans '],
-
-                        'items' => [
-                            ['label' => 'ГЛАВНАЯ',
-                                'url' => [Url::to(['site/index'])],
-                                'linkOptions' => ['data-target' => 'a0'],
-                            ],
-                            ['label' => 'НОВИНКИ',
-                                'url' => Url::to(['site/index', '#' => 'novelty']),//['#novelty'],
-                                'linkOptions' => ['data-target' => 'a1'],
-                            ],
-                            ['label' => 'ДВЕРИ',
-                                'url' => Url::to(['site/index', '#' => 'doors']),  //?section=1 ['#doors']
-                                'linkOptions' => ['data-target' => 'a2'],
-                            ],
-                            ['label' => 'ПЕРЕГОРОДКИ',
-                                'url' => Url::to(['site/index', '#' => 'septa']), //?section=2  #septa
-                                'linkOptions' => ['data-target' => 'a3'],
-                            ],
-                            ['label' => 'ПРОИЗВОДИТЕЛИ',
-                                'url' => Url::to(['site/index', '#' => 'manufacturers']),
-                                'linkOptions' => ['data-target' => 'a4'],
-                            ],
-                            ['label' => 'О КОМПАНИИ',
-                                'url' => Url::to(['site/index', '#' => 'about']),
-                                'linkOptions' => ['data-target' => 'a5'],
-                            ],
-                            ['label' => 'КОНТАКТЫ',
-                                'url' => Url::to(['site/index', '#' => 'contacts']),
-                                'linkOptions' => ['data-target' => 'a6'],
-                            ],
-
-                            ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist"></span>',
-                                'url' => ['site/index'],
-                            ],
-                            ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket" ></span>',
-                                'url' => ['site/index'],
-                            ],
-
-                        ]]);
-                    NavBar::end();
-                    /**/
-                    ?>
-                </div>
-            </div>
-        </div>
-        <!---->
-
     </header>
-    <div class="content">
-        <?= yii\widgets\Breadcrumbs::widget([
+    <div class="row">
+        <?= Breadcrumbs::widget([
             'homeLink' => [
                 'label' => 'Главная',
                 'url' => Url::to(['site/index']),
             ],
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
+    </div>
+    <div class="content">
         <?= $content ?>
     </div>
+</div>
 
-    <div class="push"></div>
+<div class="push"></div>
 </div>
 <!--
 <footer class="footer footer-general">

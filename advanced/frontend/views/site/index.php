@@ -9,20 +9,22 @@
 use yii\helpers\Html;
 use yii\bootstrap;
 
-/*  assets  */
-use app\assets\AppAsset;
-use app\assets\MainAsset;
+/*  assets
 use app\assets\FontAsset;
-
 FontAsset::register($this);
+*/
+use app\assets\MainPageAdaptiveAsset;
+
+MainPageAdaptiveAsset::register($this);
 
 $this->title = 'home';
 ?>
 
 <div id="Scrollspy" data-spy="scroll" data-target=".navbar" data-offset="10">
-<?php
-/*
-    require_once 'home/block_01.php';
+    <? require_once 'home/block_01.php'; ?>
+
+    <?php
+    /*
     require_once 'home/block_02-catalog.php';
     require_once 'home/block_03-action.php';
     require_once 'home/block_04-novelty.php';
@@ -35,6 +37,6 @@ $this->title = 'home';
     require_once 'home/block_11-about.php';
     require_once 'home/block_12-Contacts.php';
 */
-?>
+    ?>
 </div>
 
