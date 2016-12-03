@@ -45,7 +45,7 @@ MainAdaptiveAsset::register($this);
                 </a>
             </div>
 
-            <div class="col-md-offset-2 col-md-6 col-sm-3 col-sm-offset-2 col-xs-offset-2 col-xs-4    ">
+            <div class="col-md-offset-1 col-md-5 col-sm-3 col-sm-offset-2 col-xs-offset-2 col-xs-6    ">
                 <div class="row">
                     <section class="hidden-xs col-md-6  col-sm-12 site-contact font-PTSans">
                         <div id="phone_1">+7(495) 742-17-24</div>
@@ -58,7 +58,7 @@ MainAdaptiveAsset::register($this);
                 </div>
             </div>
 
-            <div class="col-md-2 col-sm-3 col-xs-push-2 col-xs-3">
+            <div class="col-md-4 col-md-push-0 col-sm-3 col-xs-push-2 col-xs-6">
                 <div>
                     <?php
                     /*$address указывает какой view должен загрузится в Content*/
@@ -86,7 +86,6 @@ MainAdaptiveAsset::register($this);
                     ?>
                 </div> <!-- Задать вопрос -->
             </div>
-
 
         </div>
 
