@@ -16,9 +16,9 @@ class MainAdaptiveAsset extends AssetBundle
     public $baseUrl = '@web';
     
     public $css = [
-        'css/stylename.css',
-        'css/animation.css',
-        'css/gray.css',        
+       // 'css/stylename.css',
+       // 'css/animation.css',
+       // 'css/gray.css',        
         'css/main-adaptive.css',
         
     ];

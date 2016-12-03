@@ -39,51 +39,55 @@ MainAdaptiveAsset::register($this);
 <div class="wrap_all">
     <header>
         <div class="row">
-            <div class="col-md-2 col-xs-4">
+            <div class="col-md-2 col-sm-2 col-xs-4">
                 <a href="index.php" class="logo">
                     <?= Html::img('@web/img/logo.png', ['alt' => 'PORTELIANO',/*'class' => 'logo',*/]) ?>
                 </a>
             </div>
-            <div class="col-md-2 col-md-offset-1 hidden-xs">
-                <section class="site-contact font-PTSans">
-                    <div id="phone_1">+7(495) 742-17-24</div>
-                    <div id="phone_1_label">Многоканальный телефон</div>
-                </section>
-            </div>
-            <div class="col-xs-5">
-                <div class="col-md-4  ">
-                    <div id="phone_2">+7(495) 123-65-56</div>
-                    <a class="hidden-xs" href="mailto:absolute@ak-in.ru">absolute@ak-in.ru</a>
-                </div>
-                <div class="col-md-2 ">
-                    <div>
-                        <?php
-                        /*$address указывает какой view должен загрузится в Content*/
-                        /*$controller должен использовать $this->renderAjax*/
-                        $address = Url::to(['site/say'], true);
-                        $address = Url::to(['site/entry'], true);
-                        Modal::begin([
-                            'headerOptions' => ['id' => 'modalHeader'],
-                            'header' => '<h2>здесь будет то, что написано в title</h2>',
-                            //keeps from closing modal with esc key or by clicking out of the modal.
-                            // user must click cancel or X to close
-                            //'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
-                            'size' => 'modal-sm',
-                            'toggleButton' => [
-                                'tag' => 'button',
-                                'value' => $address,
-                                'title' => 'Задайте вопрос',
-                                'id' => 'ask_a_question-button',
-                                'class' => 'showModalButton btn btn-link ',
-                                'label' => 'ЗАДАЙТЕ ВОПРОС',
-                            ]
-                        ]);
-                        echo "<div id='modalContent'></div>";
-                        Modal::end();
-                        ?>
-                    </div> <!-- Задать вопрос -->
+
+            <div class="col-md-offset-2 col-md-6 col-sm-3 col-sm-offset-2 col-xs-offset-2 col-xs-4    ">
+                <div class="row">
+                    <section class="hidden-xs col-md-6  col-sm-12 site-contact font-PTSans">
+                        <div id="phone_1">+7(495) 742-17-24</div>
+                        <div id="phone_1_label">Многоканальный телефон</div>
+                    </section>
+                    <section class="col-md-6 col-sm-12">
+                        <div id="phone_2">+7(495) 123-65-56</div>
+                        <a class="hidden-xs email-nonactive" href="mailto:absolute@ak-in.ru">absolute@ak-in.ru</a>
+                    </section>
                 </div>
             </div>
+
+            <div class="col-md-2 col-sm-3 col-xs-push-2 col-xs-3">
+                <div>
+                    <?php
+                    /*$address указывает какой view должен загрузится в Content*/
+                    /*$controller должен использовать $this->renderAjax*/
+                    $address = Url::to(['site/say'], true);
+                    $address = Url::to(['site/entry'], true);
+                    Modal::begin([
+                        'headerOptions' => ['id' => 'modalHeader'],
+                        'header' => '<h2>здесь будет то, что написано в title</h2>',
+                        //keeps from closing modal with esc key or by clicking out of the modal.
+                        // user must click cancel or X to close
+                        //'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
+                        'size' => 'modal-sm',
+                        'toggleButton' => [
+                            'tag' => 'button',
+                            'value' => $address,
+                            'title' => 'Задайте вопрос',
+                            'id' => 'ask_a_question-button',
+                            'class' => 'showModalButton btn btn-link ',
+                            'label' => 'ЗАДАЙТЕ ВОПРОС',
+                        ]
+                    ]);
+                    echo "<div id='modalContent'></div>";
+                    Modal::end();
+                    ?>
+                </div> <!-- Задать вопрос -->
+            </div>
+
+
         </div>
 
         <div class="row">
