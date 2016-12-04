@@ -22,6 +22,7 @@ class PagesAsset extends AssetBundle
         'css/pages/manuf.css',
         'css/pages/manuf-inner.css',
         'css/pages/about.css',
+        'css/pages/delivery.css',
         'css/pages/contacts.css',
 
     ];
