@@ -22,40 +22,6 @@ $doorData_2 = ['Bauxt', 'Bauxt', 'Security', 'Bauxt'];
 $doorData_3 = ['Export 1106', 'Export 1136', 'SECURITY', 'Elite 1115'];
 $price = ['1545', '1545', '2119', '2194'];
 
-// массив для заполнения информационных полей под плитками новинок
-
-$info = [
-    [
-        0 => $category[0],
-        1 => $doorData_2[0],
-        2 => $doorData_3[0],
-        3 => $price[0],
-    ],
-    [
-        0 => $category[0],
-        1 => $doorData_2[1],
-        2 => $doorData_3[1],
-        3 => $price[1],
-    ],
-    [
-        0 => $category[0],
-        1 => $doorData_2[2],
-        2 => $doorData_3[2],
-        3 => $price[2],
-    ],
-    [
-        0 => $category[0],
-        1 => $doorData_2[3],
-        2 => $doorData_3[3],
-        3 => $price[3],
-    ],
-    [
-        0 => $category[0],
-        1 => $doorData_2[3],
-        2 => $doorData_3[3],
-        3 => $price[3],
-    ]
-]
 ?>
 <article id="doors" class="wrap-doors" data-item="a2">
     <h2>Двери</h2>

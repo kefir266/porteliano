@@ -38,4 +38,9 @@ class Cart
     public function getQuantity(){
         return $this->_cart['quantity'];
     }
+
+    public function get(){
+
+        return $this->_cart;
+    }
 }

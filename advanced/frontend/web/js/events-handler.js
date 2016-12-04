@@ -48,7 +48,10 @@ function addToCart(e) {
         },
         type:'GET',
         success: function (res) {
-            callbackQuantity(res);},
+            callbackQuantity(res);
+            getCart('cart');
+
+        },
         error: function () {
             console.log('error');
 
@@ -58,6 +61,8 @@ function addToCart(e) {
     )
 
 }
+
+
 
 function addToWish(e) {
 
@@ -72,13 +77,33 @@ function addToWish(e) {
             },
             type:'GET',
             success: function (res) {
-                callbackQuantity(res);},
+                callbackQuantity(res);
+                getCart('wish');
+            },
             error: function () {
                 console.log('error');
 
             }
         }
 
+    )
+
+}
+
+function getCart(cartWish){
+
+    $.ajax(
+        {
+            url: '/cart/gettab',
+            data:{cartwish: cartWish},
+            type:'GET',
+            success: function(res) {
+                showModal('#modal-' + cartWish, res);
+            },
+            error: function() {
+                console.log('Error tab');
+            }
+        }
     )
 
 }
@@ -99,13 +124,21 @@ function callbackQuantity(res, jtag) {
             {
                 jtag.addClass("glyphicon-heart");
                 jtag.removeClass("glyphicon-heart-empty");
+
             }
         }
 
+
+
     }
-    console.log(res);
+    //console.log(res);
 }
 
+function showModal(id, tab){
+
+    $(id + ' .modal-body').html(tab);
+    $(id).modal();
+}
 
 function eventClickDropMenu(item) {
     if (item.target.tagName == 'A'){

@@ -75,4 +75,13 @@ class CartController extends Controller
 
     }
 
+    public function actionGettab() {
+
+        $cartWish = Yii::$app->request->get('cartwish');
+
+        $session = Yii::$app->session;
+        $session->open();
+        return $this->render('modalCart', ['cart' => $session[$cartWish]]);
+    }
+
 }

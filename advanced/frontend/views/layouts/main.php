@@ -166,7 +166,26 @@ MainAsset::register($this);
 
 </footer>
 
-<?php $this->endBody() ?>
+<?php Modal::begin([
+    'id' => 'modal-cart',
+    'header' => 'Корзина',
+    'footer' => '<button type="button" class="btn btn-default" data-dismiss="modal">Продолжить покупки</button>
+        <button type="button" class="btn btn-primary">Оформить заказ</button>',
+    ]);
+
+    Modal::end();
+?>
+
+<?php Modal::begin([
+    'id' => 'modal-wish',
+    'header' => 'Отобранные товары',
+    'footer' => '<button type="button" class="btn btn-default" data-dismiss="modal">Продолжить покупки</button>',
+]);
+
+Modal::end();
+?>
+
+<?php $this->endBody(); ?>
 </body>
 </html>
 <?php $this->endPage() ?>

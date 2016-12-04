@@ -137,6 +137,11 @@ class Product extends ActiveRecord
         return $this->hasMany(Price::className(), ['product_id' => 'id']);
     }
 
+    public function getPrice(){
+
+        return $this->hasMany(Price::className(), ['product_id' => 'id'] )->orderBy('date desc')->one();
+    }
+
     public function getFilteredProducts($params, $quantity){
 
         $id = (!!$params['section']) ? '3': $params['section'];
