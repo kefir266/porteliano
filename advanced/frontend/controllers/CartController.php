@@ -81,7 +81,19 @@ class CartController extends Controller
 
         $session = Yii::$app->session;
         $session->open();
-        return $this->render('modalCart', ['cart' => $session[$cartWish]]);
+        $this->layout = false;
+        return $this->render('modal'.$cartWish, ['cart' => $session[$cartWish]]);
+    }
+
+    public function actionClear() {
+
+        $cartWish = Yii::$app->request->post('cartwish');
+
+        $session = Yii::$app->session;
+        $session->open();
+        $session[$cartWish]->clear();
+        $this->layout = false;
+        return 'Пусто!';
     }
 
 }

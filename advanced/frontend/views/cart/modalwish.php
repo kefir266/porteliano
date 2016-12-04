@@ -21,7 +21,7 @@
 
         <thead>
             <tr>
-                <td>Фото</td><td>Товар</td><td>Количество</td><td>Цена</td><td>Сумма</td><td>
+                <td>Фото</td><td>Товар</td>
                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
             </tr>
         </thead>
@@ -33,19 +33,13 @@
                         <td><img src=" <?= '/img/'.$item['product']->manufacturer->title.'/'. $item['product']->img ?>"
                             class ="cart-image"></td>
                         <td><?= trim($item['product']->title) ?></td>
-                        <td><?= $item['quantity'] ?></td>
-                        <td><?= $item['product']->price->cost ?></td>
-                        <td><?= $item['product']->price->cost * $item['quantity'] ?></td>
+
                         <td><span class="glyphicon glyphicon-remove del-item" aria-hidden="true"></span></td>
                 </tr>
                     <?php endif; ?>
 
                 <? endforeach; ?>
-            <tr>
-                <td colspan="4">Итого:</td>
-                <td><?= $cart->getQuantity() ?></td>
-                <td></td>
-            </tr>
+
 
         </tbody>
 

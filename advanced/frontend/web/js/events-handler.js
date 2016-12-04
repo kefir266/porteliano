@@ -31,13 +31,35 @@ function getQuantity(action, jtag){
         }
 
     )
+}
 
+function refreshCart(quantity, jtag){
+
+    console.log(quantity);
+    if (quantity == 0) {
+        jtag.text('');
+        if (jtag.attr('id')== 'wishlist')
+        {
+            jtag.removeClass("glyphicon-heart");
+            jtag.addClass("glyphicon-heart-empty");
+        }
+    }
+    else {
+        jtag.text(quantity);
+        if (jtag.attr('id')== 'wishlist')
+        {
+            jtag.addClass("glyphicon-heart");
+            jtag.removeClass("glyphicon-heart-empty");
+
+        }
+    }
 
 }
 
 function addToCart(e) {
 
     e.preventDefault();
+    var jtag = $('#basket');
 
     var id = $(this).attr('id');
     id = id.substring(1,id.length);
@@ -48,7 +70,7 @@ function addToCart(e) {
         },
         type:'GET',
         success: function (res) {
-            callbackQuantity(res);
+            callbackQuantity(res, jtag);
             getCart('cart');
 
         },
@@ -62,11 +84,36 @@ function addToCart(e) {
 
 }
 
+function clearCart(cartWish){
 
+    if (cartWish == 'cart')
+        var jtag = $('#basket');
+    else
+        var jtag = $('#wishlist');
+
+    $.ajax({
+            url: '/cart/clear',
+            data:{
+                cartwish: cartWish
+            },
+            type:'POST',
+            success: function (res) {
+                refreshCart(0, jtag);
+            },
+            error: function () {
+                console.log('error clear');
+
+            }
+        }
+
+    )
+}
 
 function addToWish(e) {
 
     e.preventDefault();
+
+    var jtag = $('#wishlist');
 
     var id = $(this).attr('id');
     id = id.substring(1,id.length);
@@ -77,7 +124,7 @@ function addToWish(e) {
             },
             type:'GET',
             success: function (res) {
-                callbackQuantity(res);
+                callbackQuantity(res, jtag);
                 getCart('wish');
             },
             error: function () {
@@ -109,29 +156,11 @@ function getCart(cartWish){
 }
 
 function callbackQuantity(res, jtag) {
+    console.log(jtag);
     if (!!jtag){
-        jtag.text(res);
-        if (res == 0) {
-            jtag.text('');
-            if (jtag.attr('id')== 'wishlist')
-            {
-                jtag.removeClass("glyphicon-heart");
-                jtag.addClass("glyphicon-heart-empty");
-            }
-        }
-        else {
-            if (jtag.attr('id')== 'wishlist')
-            {
-                jtag.addClass("glyphicon-heart");
-                jtag.removeClass("glyphicon-heart-empty");
 
-            }
-        }
-
-
-
+        refreshCart(res, jtag);
     }
-    //console.log(res);
 }
 
 function showModal(id, tab){

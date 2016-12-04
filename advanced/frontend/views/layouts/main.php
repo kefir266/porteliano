@@ -119,11 +119,11 @@ MainAsset::register($this);
                     'linkOptions' => ['data-target' => 'a6'],
                 ],
 
-                ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist"></span>',
-                    'url' => ['site/index'],
+                ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist" onclick=getCart("cart")></span>',
+                    'url' => ['#'],
                 ],
-                ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket" ></span>',
-                    'url' => ['site/index'],
+                ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket" onclick=getCart("wish")></span>',
+                    'url' => ['/#'],
                 ],
 
             ]]);
@@ -148,7 +148,7 @@ MainAsset::register($this);
                     ['label' => 'О КОМПАНИИ', 'url' => ['#about']],
                     ['label' => 'КОНТАКТЫ', 'url' => ['#contact']],
 
-                    ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist"></span>',
+                    ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist" ></span>',
                         'url' => ['site/index'],
                     ],
                     ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket" ></span>',
@@ -168,9 +168,10 @@ MainAsset::register($this);
 
 <?php Modal::begin([
     'id' => 'modal-cart',
-    'header' => 'Корзина',
+    'header' => '<h2>Корзина</h2>',
     'footer' => '<button type="button" class="btn btn-default" data-dismiss="modal">Продолжить покупки</button>
-        <button type="button" class="btn btn-primary">Оформить заказ</button>',
+        <button type="button" class="btn btn-success">Оформить заказ</button>
+        <button type="button" class="btn btn-danger" onclick=clearCart("cart")>Очистить корзину</button>',
     ]);
 
     Modal::end();
@@ -178,8 +179,9 @@ MainAsset::register($this);
 
 <?php Modal::begin([
     'id' => 'modal-wish',
-    'header' => 'Отобранные товары',
-    'footer' => '<button type="button" class="btn btn-default" data-dismiss="modal">Продолжить покупки</button>',
+    'header' => '<h2>Отобранные товары</h2>',
+    'footer' => '<button type="button" class="btn btn-default" data-dismiss="modal">Продолжить покупки</button>
+    <button type="button" class="btn btn-danger" onclick=clearCart("wish")>Очистить корзину</button>',
 ]);
 
 Modal::end();

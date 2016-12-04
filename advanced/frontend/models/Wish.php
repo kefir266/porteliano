@@ -38,4 +38,10 @@ class Wish
     public function getQuantity(){
         return $this->_wish['quantity'];
     }
+
+    public function get() {
+
+        return $this->_wish;
+
+    }
 }
