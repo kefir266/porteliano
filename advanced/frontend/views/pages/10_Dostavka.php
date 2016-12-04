@@ -51,7 +51,7 @@ $this->params['breadcrumbs'][] = [
         </div>
         <!-- колонка цен и колонка внимание-->
         <div class="row">
-            <!-- колонка цен -->
+            <!-- колонка цен
             <div class="col-md-3 col-sm-4 col-xs-12 col-md-offset-3 ">
                 <div class="row">
                     <div class="col-md-12">
@@ -91,7 +91,31 @@ $this->params['breadcrumbs'][] = [
                     </div>
                 </div>
             </div>
-            <!-- колонка внимание-->
+             -->
+            <div class="col-md-3 col-sm-4 col-xs-12 col-md-offset-3 ">
+                <table class="table table-responsive table-hover">
+                    <caption><h3>По Москве</h3></caption>
+                    <tbody>
+                    <tr>
+                        <td>до 5 км от МКАД......................</td>
+                        <td>3000 р</td>
+                    </tr>
+                    <tr>
+                        <td>от 5-15 км от МКАД................</td>
+                        <td>3200 р</td>
+                    </tr>
+                    <tr>
+                        <td>от 15-30 км от МКАД..............</td>
+                        <td>3500 р</td>
+                    </tr>
+                    <tr>
+                        <td>от 30-70 км от МКАД..............</td>
+                        <td>3500 р</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- колонка внимание  -->
             <div class="col-md-4  .col-sm-2 col-xs-2">
                 <h3> Внимание!</h3>
                 <p>
@@ -101,6 +125,7 @@ $this->params['breadcrumbs'][] = [
                     подъёму компания не оказывает.
                 </p>
             </div>
+
         </div>
     </div>
     <!-- collapse -->
