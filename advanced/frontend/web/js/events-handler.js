@@ -4,6 +4,109 @@
 
 
 
+(function ($) {
+
+    $(".add-to-cart").on('click', addToCart);
+    $(".add-to-wish").on('click', addToWish);
+
+    var jCart = $("#basket");
+    var jWish = $('#wishlist');
+
+    getQuantity('getcart', jCart);
+    getQuantity('getwish', jWish);
+
+})(jQuery);
+
+function getQuantity(action, jtag){
+    $.ajax({
+            url: '/cart/'+action,
+
+            type:'GET',
+            success: function (res) {
+                callbackQuantity(res,jtag);},
+            error: function () {
+                console.log('error');
+
+            }
+        }
+
+    )
+
+
+}
+
+function addToCart(e) {
+
+    e.preventDefault();
+
+    var id = $(this).attr('id');
+    id = id.substring(1,id.length);
+    $.ajax({
+        url: '/cart/add',
+        data:{
+            id: id
+        },
+        type:'GET',
+        success: function (res) {
+            callbackQuantity(res);},
+        error: function () {
+            console.log('error');
+
+        }
+    }
+
+    )
+
+}
+
+function addToWish(e) {
+
+    e.preventDefault();
+
+    var id = $(this).attr('id');
+    id = id.substring(1,id.length);
+    $.ajax({
+            url: '/cart/addwish',
+            data:{
+                id: id
+            },
+            type:'GET',
+            success: function (res) {
+                callbackQuantity(res);},
+            error: function () {
+                console.log('error');
+
+            }
+        }
+
+    )
+
+}
+
+function callbackQuantity(res, jtag) {
+    if (!!jtag){
+        jtag.text(res);
+        if (res == 0) {
+            jtag.text('');
+            if (jtag.attr('id')== 'wishlist')
+            {
+                jtag.removeClass("glyphicon-heart");
+                jtag.addClass("glyphicon-heart-empty");
+            }
+        }
+        else {
+            if (jtag.attr('id')== 'wishlist')
+            {
+                jtag.addClass("glyphicon-heart");
+                jtag.removeClass("glyphicon-heart-empty");
+            }
+        }
+
+    }
+    console.log(res);
+}
+
+
 function eventClickDropMenu(item) {
     if (item.target.tagName == 'A'){
         var idItem = item.target.getAttribute('id-item');
