@@ -1,3 +1,38 @@
 .delivery{
     min-height: 485px;
 }
+.lifting-costs{
+    font-family: "PT Sans",sans-serif;
+    font-size: 18px;
+}
+.table-headers{
+    color: #b7743e;
+    font-weight: bold;
+    font-family: "PT Sans",sans-serif;
+}
+.panel-heading > .panel-title{
+    font-family: PTSerif, serif;
+    font-size: 30px;
+    text-decoration: none;
+}
+.panel-heading > .panel-title > a:hover{
+    text-decoration: none;
+}
+.panel-heading > .panel-title > a:focus{
+    text-decoration: none;
+}
+
+.lifting-costs-head > .panel-heading{
+    background-color: #ece7d4;
+}
+
+.panel-lifting-costs{
+    background-color: #ece7d4;
+}
+
+.panel-metering-costs {
+    background-color: #dad2bb;
+}
+.metering-costs-head > .panel-heading{
+    background-color: #dad2bb;
+}
