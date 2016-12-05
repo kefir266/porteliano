@@ -33,7 +33,8 @@ $price = ['1545', '1545', '2119', '2194'];
     <!-- Содержимое вкладок -->
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="home">
-            <div class="novelty doors-panel running-ribbon-doors">
+            <!-- Вкладка 'Межкомнатные'  -->
+            <div id="doors-inn" class="novelty doors-panel running-ribbon-doors">
                 <div class="wrap-tiles view">
                     <ul>
                         <?php require Yii::getAlias('@frontend')."/views/layouts/ribbonElement.php"; ?>
@@ -49,7 +50,21 @@ $price = ['1545', '1545', '2119', '2194'];
             </div>
         </div>
         <div role="tabpanel" class="tab-pane" id="profile">
-
+            <!-- Вкладка 'Входные'  -->
+            <div id="doors-out" class="novelty doors-panel running-ribbon-doors">
+                <div class="wrap-tiles view">
+                    <ul>
+                         <?php require Yii::getAlias('@frontend')."/views/layouts/ribbonElement.php"; ?>
+                    </ul>
+                </div>
+                <div id="show">
+                    <button id="prev" class="btn btn-link" data-param="prev"></button>
+                    <button id="next" class="btn btn-link" data-param="next"></button>
+                </div>
+                <!--<button type="button" class="btn ">ПОКАЗАТЬ БОЛЬШЕ</button>-->
+                <a href="<?= Url::to(['pages/dveri']); ?>" class="btn btn-default btn-lg" role="button">ПОКАЗАТЬ
+                    БОЛЬШЕ</a>
+            </div>
         </div>
     </div>
 
