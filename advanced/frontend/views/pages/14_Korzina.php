@@ -48,11 +48,13 @@ Yii::setAlias('@img', '@web/img/');
             <span class="description">
              <?= $description ?>
             </span>
+
             </div>
             <!-- счетик? пределать в Yii2 widget -->
             <div class="col-md-1 button-area">
                 <!-- Добавить счетчик -->
                 Тут счетчик
+
             </div>
             <!-- удаление из корзины текущего товара-->
             <div class="col-md-1 delete-area">
@@ -76,6 +78,16 @@ Yii::setAlias('@img', '@web/img/');
                 Очистить корзину
             </a>
         </div>
+
+        <div class="col-md-1 col-md-offset-3 delete-all-area">
+            <a href="/#">
+                <span
+                    class="btn btn-default send-button"
+                    role="button"
+                >ОТПРАВИТЬ ЗАЯВКУ</span>
+            </a>
+        </div>
+
     </div>
 </div>
 
