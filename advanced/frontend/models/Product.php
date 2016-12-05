@@ -11,6 +11,7 @@ namespace frontend\models;
 use app\models\Manufacturer;
 use app\models\Material;
 use app\models\Section;
+use app\models\Style;
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
 
@@ -114,6 +115,12 @@ class Product extends ActiveRecord
     public function getSection(){
 
         return $this->hasOne(Section::className(), ['id' => 'section_id']);
+
+    }
+
+    public function getStyle(){
+
+        return $this->hasOne(Style::className(), ['id' => 'style_id']);
 
     }
 

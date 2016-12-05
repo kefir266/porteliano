@@ -81,5 +81,13 @@ class CatalogController extends Controller
 
         return $this->render('index',['products' => $products]);
     }
+    
+    public function actionProduct() {
+
+        $id = Yii::$app->request->get('id');
+        
+        $product = Product::findOne($id);
+        return $this->render('04_Dveri_Kartochka-tovara', ['product' => $product]);
+    }
 
 }

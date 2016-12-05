@@ -85,62 +85,18 @@ $doorData_2 = ['Bauxt', 'Bauxt', 'Security', 'Bauxt'];
 $doorData_3 = ['Export 1106', 'Export 1136', 'SECURITY', 'Elite 1115'];
 $price = ['1545', '1545', '2119', '2194'];
 
-// массив для заполнения информационных полей под плитками
-$info = [
-    [
-        0 => $category[0],
-        1 => $doorData_2[0],
-        2 => $doorData_3[0],
-        3 => $price[0],
-    ],
-    [
-        0 => $category[0],
-        1 => $doorData_2[1],
-        2 => $doorData_3[1],
-        3 => $price[1],
-    ],
-    [
-        0 => $category[0],
-        1 => $doorData_2[2],
-        2 => $doorData_3[2],
-        3 => $price[2],
-    ],
-    [
-        0 => $category[0],
-        1 => $doorData_2[3],
-        2 => $doorData_3[3],
-        3 => $price[3],
-    ],
-    [
-        0 => $category[0],
-        1 => $doorData_2[3],
-        2 => $doorData_3[3],
-        3 => $price[3],
-    ]
-];
-$card = [
-    'Межкомнатная дверь Impronta Mod. Over 1000',
-    'Impronta',
-    'Easy',
-    '-',
-    'Современный',
-    'Размеры и цвета будут подобраны индивидуально каждому клиенту',
-    '700 €',
-];
-// TODO: заменить на адрес картинки из базы
-$srcImg = '@doors/door_9.PNG';
 
 ?>
 <div class="door-catalog">
     <div class="panel-quick-selection">
         <div class="row">
             <div class="col-md-5 doorImg">
-                <?= Html::img($srcImg) ?>
+                <?= Html::img('/img/'.$product->manufacturer->title.'/'.$product->img) ?>
             </div>
             <div class="col-md-7 ">
                 <div class="row">
                     <div class="col-md-9">
-                        <h1><?= $card[0] ?></h1>
+                        <h1><?= $product->section->title ?></h1>
                     </div>
                 </div>
                 <div class="row">
@@ -148,7 +104,7 @@ $srcImg = '@doors/door_9.PNG';
                         <h4>Производитель</h4>
                     </div>
                     <div class="col-md-6">
-                        <h4><?= $card[1] ?></h4>
+                        <h4><?= $product->manufacturer->title ?></h4>
                     </div>
                 </div> <!--Производитель-->
                 <div class="row">
@@ -156,7 +112,7 @@ $srcImg = '@doors/door_9.PNG';
                         <h4>Коллекция</h4>
                     </div>
                     <div class="col-md-6">
-                        <h4><?= $card[2] ?></h4>
+                        <h4><?= $product->collection ?></h4>
                     </div>
                 </div> <!--Коллекция-->
                 <div class="row">
@@ -164,7 +120,7 @@ $srcImg = '@doors/door_9.PNG';
                         <h4>Артикул</h4>
                     </div>
                     <div class="col-md-6">
-                        <h4><?= $card[3] ?></h4>
+                        <h4><?= $product->article ?></h4>
                     </div>
                 </div> <!--Артикул-->
                 <div class="row">
@@ -172,12 +128,12 @@ $srcImg = '@doors/door_9.PNG';
                         <h4>Стиль</h4>
                     </div>
                     <div class="col-md-6">
-                        <h4><?= $card[4] ?></h4>
+                        <h4><?= $product->style->title ?></h4>
                     </div>
                 </div> <!--Стиль-->
                 <div class="row">
                     <div class="col-md-9">
-                        <h5><?= $card[5] ?></h5>
+                        <h5><?= $product->note ?></h5>
                     </div>
                 </div> <!----------->
                 <div class="row">
@@ -185,7 +141,7 @@ $srcImg = '@doors/door_9.PNG';
                         <h4>Стоимость</h4>
                     </div>
                     <div class="col-md-6">
-                        <h4><?= $card[6] ?></h4>
+                        <h4><?= $product->price->cost ?></h4>
                     </div>
                 </div> <!--Стоимость-->
             </div>

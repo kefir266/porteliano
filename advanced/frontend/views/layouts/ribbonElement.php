@@ -15,9 +15,11 @@ foreach ($products['products'] as $product) {
     //вывод картинок
     echo Html::beginTag('div', ['class' => 'tile']);
 
-    echo Html::img('@img/' . $product->manufacturer->title . '/'
+    echo Html::a(
+
+        Html::img('@img/' . $product->manufacturer->title . '/'
         . $product->img,
-        ['alt' => $product->title, 'class' => '']);
+        ['alt' => $product->title, 'class' => '']), '/catalog/product/?id='. $product->id);
 
     //заполняется карточка
     echo Html::beginTag('div', ['class' => 'info']);
