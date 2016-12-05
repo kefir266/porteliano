@@ -37,11 +37,11 @@ foreach ($products['products'] as $product) {
                 : ''), ['href' =>
             Url::to(['cart/add', 'id' => $product->id])]),
         ['class' => 'block-4-price-count add-to-cart',
-            'id' => 'p' . $product->id]
+            'data-id' => $product->id]
     );
     echo Html::tag('a',
         Html::tag('div', '', ['class' => 'glyphicon glyphicon-heart-empty add-to-wish ',
-            'id' => 'w' . $product->id]),
+            'data-id' => $product->id]),
         ['href' =>
             Url::to(['cart/addWish', 'id' => $product->id])]);
     echo Html::endTag('div');

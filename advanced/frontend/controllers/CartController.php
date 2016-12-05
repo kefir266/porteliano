@@ -113,4 +113,16 @@ class CartController extends Controller
         return $this->render('modal'.$cartWish,['cart' => $session[$cartWish]]);
     }
 
+    public function actionIswished(){
+
+        $id = Yii::$app->request->get('id');
+        $session = Yii::$app->session;
+        $session->open();
+
+        if (isset($session['wish'])) {
+            if ($session['wish']->isWished($id)) return 1;
+        }
+        return 0;
+    }
+
 }

@@ -69,6 +69,18 @@ function getQuantity(action, jtag){
     )
 }
 
+function setGlyphiconHeart(jtag, state) {
+
+    if (state == 0) {
+        jtag.removeClass("glyphicon-heart");
+        jtag.addClass("glyphicon-heart-empty");
+    }
+    else {
+        jtag.addClass("glyphicon-heart");
+        jtag.removeClass("glyphicon-heart-empty");
+    }
+}
+
 function refreshCart(quantity, jtag){
 
     console.log(quantity);
@@ -94,11 +106,12 @@ function refreshCart(quantity, jtag){
 
 function addToCart(e) {
 
+
     e.preventDefault();
     var jtag = $('#basket');
 
-    var id = $(this).attr('id');
-    id = id.substring(1,id.length);
+    var id = $(e.target).data('id');
+
     $.ajax({
         url: '/cart/add',
         data:{
@@ -151,8 +164,8 @@ function addToWish(e) {
 
     var jtag = $('#wishlist');
 
-    var id = $(this).attr('id');
-    id = id.substring(1,id.length);
+    var id = $(e.target).data('id');
+
     $.ajax({
             url: '/cart/addwish',
             data:{
@@ -189,6 +202,24 @@ function getCart(cartWish){
         }
     )
 
+}
+
+function isWished(id, tag){
+
+    $.ajax({
+        url: '/cart/iswished',
+        data: {
+            id: id
+        },
+        type: 'GET',
+        success: function (res) {
+            setGlyphiconHeart(res);
+        },
+        error: function () {
+            console.log('error isWished');
+
+        }
+    });
 }
 
 function callbackQuantity(res, jtag) {

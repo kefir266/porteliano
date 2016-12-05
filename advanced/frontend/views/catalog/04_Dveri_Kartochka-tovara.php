@@ -19,9 +19,11 @@ use yii\helpers\Url;
 /*  assets  */
 use app\assets\TestAsset;
 use app\assets\FontAsset;
+use app\assets\BackAsset;
 
 TestAsset::register($this);
 FontAsset::register($this);
+BackAsset::register($this);
 
 // псевдоним пути к папке
 Yii::setAlias('@doors', '@web/img/doors');
@@ -147,15 +149,18 @@ $price = ['1545', '1545', '2119', '2194'];
                 </div> <!--Стоимость-->
                 <div class="row buttons-area">
                     <div class="col-md-6">
-                        <a  href="/#">
-                <span id="in-basket" class="btn btn-default send-button" role="button">
-                    Добавить в корзину
+                        <a  href="#">
+<!--                            TODO перекрасить кнопку по функции $product->isOrdered() -->
+                <span id="in-basket" class="btn btn-default send-button"
+                      role="button" data-id="<?= $product->id ?>" onclick=addToCart(event)>
+                    <?= ($product->isOrdered()) ? 'Товар уже в корзине' : 'Добавить в корзину'  ?>
                 </span>
                         </a>
                     </div>
                     <div class="col-md-6">
-                        <a id="in-wishlist" class="btn btn-default" href="/#">
-                <span class="glyphicon glyphicon-heart-empty "></span>
+                        <a id="in-wishlist" class="btn btn-default" href="#">
+                <span class="glyphicon glyphicon-heart<?= ($product->isWished()) ? '' : '-empty' ?>"
+                      data-id="<?= $product->id ?>" onclick=addToWish(event)></span>
                         </a>
                     </div>
                 </div> <!--Добавить в корзину-->

@@ -58,6 +58,11 @@ class Wish
 
     }
 
+    public function isWished($id){
+
+        return (isset($this->_wish[$id]));
+    }
+
     private function _calcQuantity(){
         $quantity = 0;
         $sum = 0;

@@ -63,7 +63,12 @@ class Cart
         return $this->getQuantity();
         
     }
-    
+
+    public function isOrdered($id) {
+
+        return (isset($this->_cart[$id]));
+    }
+
     private function _calcQuantity(){
         $quantity = 0;
         $sum = 0;
@@ -76,4 +81,5 @@ class Cart
         $this->_cart['quantity'] = $quantity;
         $this->_cart['sum'] = $sum;
     }
+
 }
