@@ -119,11 +119,11 @@ MainAsset::register($this);
                     'linkOptions' => ['data-target' => 'a6'],
                 ],
 
-                ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist" onclick=getCart("cart")></span>',
+                ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist" onclick=getCart("wish")></span>',
                     'url' => ['#'],
                 ],
-                ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket" onclick=getCart("wish")></span>',
-                    'url' => ['/#'],
+                ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket" onclick=getCart("cart")></span>',
+                    'url' => ['#'],
                 ],
 
             ]]);
