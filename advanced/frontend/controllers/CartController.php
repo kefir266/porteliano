@@ -95,5 +95,22 @@ class CartController extends Controller
         $this->layout = false;
         return 'Пусто!';
     }
+    
+    public function actionDelelement(){
+        $cartWish = Yii::$app->request->post('cartwish');
+        $id = Yii::$app->request->post('id');
+        $session = Yii::$app->session;
+        $session->open();
+
+        if (isset($session[cartWish])) {
+            $session[cartWish]->delete($id);
+        }
+
+        $this->layout = false;
+
+        //return print_r($this->render('modal'.$cartWish,['cart' => $session[$cartWish]]), true);
+        
+        return $this->render('modal'.$cartWish,['cart' => $session[$cartWish]]);
+    }
 
 }

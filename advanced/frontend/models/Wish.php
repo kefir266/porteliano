@@ -23,7 +23,7 @@ class Wish
 
     public function add($product){
         
-        $this->_wish[$product->id]['quantity']++;
+        $this->_wish[$product->id]['quantity'] = 1;
         $this->_wish[$product->id]['product'] = $product;
         $this->_wish['quantity']++;
 
@@ -44,4 +44,30 @@ class Wish
         return $this->_wish;
 
     }
+
+    public function delete($id){
+
+        if (isset($this->_wish[$id])) {
+
+            unset($this->_wish[$id]);
+            $this->_calcQuantity();
+
+        }
+
+        return $this->getQuantity();
+
+    }
+
+    private function _calcQuantity(){
+        $quantity = 0;
+        $sum = 0;
+        foreach ($this->_wish as $id => $item) {
+            if (is_numeric($id)) {
+                $quantity += $item['quantity'];
+            }
+        }
+        $this->_wish['quantity'] = $quantity;
+    }
+
+
 }

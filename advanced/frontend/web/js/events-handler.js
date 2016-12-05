@@ -15,7 +15,43 @@
     getQuantity('getcart', jCart);
     getQuantity('getwish', jWish);
 
+
+    $("#modal-cart .modal-body").on('click','.del-item', function () {
+        delItem('cart',$(this).data('id'));
+
+    })
+    $("#modal-wish .modal-body").on('click','.del-item', function () {
+        delItem('wish', $(this).data('id'));
+
+    })
 })(jQuery);
+
+function delItem(cartWish, id){
+
+    if (cartWish == 'cart')
+        var jtag = $('#basket');
+    else
+        var jtag = $('#wishlist');
+
+    $.ajax({
+            url: '/cart/delelement',
+            data: {
+                id: id,
+                cartwish: cartWish
+            },
+            type:'POST',
+            success: function (res) {
+                showModal('#modal-'+cartWish,res);
+                getQuantity('get' + cartWish, jtag);
+            },
+            error: function () {
+                console.log('error delete');
+
+            }
+        }
+
+    )
+}
 
 function getQuantity(action, jtag){
     $.ajax({
@@ -156,7 +192,6 @@ function getCart(cartWish){
 }
 
 function callbackQuantity(res, jtag) {
-    console.log(jtag);
     if (!!jtag){
 
         refreshCart(res, jtag);

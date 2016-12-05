@@ -339,3 +339,8 @@ header{
     content: " ";
 }
 
+.del-item {
+
+    cursor: pointer;
+}
+

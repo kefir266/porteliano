@@ -34,7 +34,9 @@
                             class ="cart-image"></td>
                         <td><?= trim($item['product']->title) ?></td>
 
-                        <td><span class="glyphicon glyphicon-remove del-item" aria-hidden="true"></span></td>
+                        <td><span class="glyphicon glyphicon-remove del-item"
+                                  aria-hidden="true" data-id="<?= $item['product']->id ?>">
+                            </span></td>
                 </tr>
                     <?php endif; ?>
 

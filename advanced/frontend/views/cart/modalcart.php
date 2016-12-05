@@ -7,7 +7,7 @@
  */
 ?>
 
-<? if (empty($cart)): ?>
+<? if ($cart->getQuantity() === 0): ?>
 
     <H2>Корзина пуста!</H2>
 
@@ -35,16 +35,19 @@
                         <td><?= trim($item['product']->title) ?></td>
                         <td><?= $item['quantity'] ?></td>
                         <td><?= $item['product']->price->cost ?></td>
-                        <td><?= $item['product']->price->cost * $item['quantity'] ?></td>
-                        <td><span class="glyphicon glyphicon-remove del-item" aria-hidden="true"></span></td>
+                        <td><?= $item['sum'] ?></td>
+                        <td><span class="glyphicon glyphicon-remove del-item" 
+                                  aria-hidden="true" data-id="<?= $item['product']->id ?>">
+                            </span></td>
                 </tr>
                     <?php endif; ?>
 
                 <? endforeach; ?>
             <tr>
-                <td colspan="4">Итого:</td>
+                <td colspan="2">Итого:</td>
                 <td><?= $cart->getQuantity() ?></td>
-                <td></td>
+                <td>Сумма:</td>
+                <td><?= $cart->getSum() ?></td>
             </tr>
 
         </tbody>
