@@ -19,7 +19,7 @@ foreach ($products['products'] as $product) {
 
         Html::img('@img/' . $product->manufacturer->title . '/'
         . $product->img,
-        ['alt' => $product->title, 'class' => '']), '/catalog/product/?id='. $product->id);
+        ['alt' => $product->title, 'class' => 'tile-img']), '/catalog/product/?id='. $product->id);
 
     //заполняется карточка
     echo Html::beginTag('div', ['class' => 'info']);
