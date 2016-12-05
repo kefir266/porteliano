@@ -94,39 +94,39 @@ $price = ['1545', '1545', '2119', '2194'];
             <div class="col-md-5 doorImg">
                 <?= Html::img('/img/' . $product->manufacturer->title . '/' . $product->img) ?>
             </div>
-            <div class="col-md-7 ">
+            <div class="product-discript-door col-md-7 ">
                 <div class="row">
-                    <div class="col-md-9">
-                        <h1><?= $product->section->title ?></h1>
+                    <div class="col-md-10">
+                        <h1 class="product-title"><?= $product->section->title ?></h1>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <h4>Производитель</h4>
+                        <h4 class="product-discript">Производитель</h4>
                     </div>
                     <div class="col-md-6">
-                        <h4><?= $product->manufacturer->title ?></h4>
+                        <h4 ><?= $product->manufacturer->title ?></h4>
                     </div>
                 </div> <!--Производитель-->
                 <div class="row">
                     <div class="col-md-6">
-                        <h4>Коллекция</h4>
+                        <h4 class="product-discript">Коллекция</h4>
                     </div>
                     <div class="col-md-6">
-                        <h4><?= 'collection'//$product->collection  ?></h4>
+                        <h4><?= $product->collection  ?></h4>
                     </div>
                 </div> <!--Коллекция-->
                 <div class="row">
                     <div class="col-md-6">
-                        <h4>Артикул</h4>
+                        <h4 class="product-discript">Артикул</h4>
                     </div>
                     <div class="col-md-6">
-                        <h4><?= 'article'//$product->article  ?></h4>
+                        <h4><?= $product->article  ?></h4>
                     </div>
                 </div> <!--Артикул-->
                 <div class="row">
                     <div class="col-md-6">
-                        <h4>Стиль</h4>
+                        <h4 class="product-discript">Стиль</h4>
                     </div>
                     <div class="col-md-6">
                         <h4><?= $product->style->title ?></h4>
@@ -134,15 +134,15 @@ $price = ['1545', '1545', '2119', '2194'];
                 </div> <!--Стиль-->
                 <div class="row">
                     <div class="col-md-9">
-                        <h5><?= 'note'//$product->note  ?></h5>
+                        <h5 class="product-note"><?=$product->note  ?></h5>
                     </div>
                 </div> <!----------->
                 <div class="row">
                     <div class="col-md-6">
-                        <h4>Стоимость</h4>
+                        <h4 class="product-discript product-price-h">Стоимость</h4>
                     </div>
                     <div class="col-md-6">
-                        <h4><?= $product->price->cost ?></h4>
+                        <h4 class="product-price"><?= $product->price->cost ?></h4>
                     </div>
                 </div> <!--Стоимость-->
                 <div class="row buttons-area">
