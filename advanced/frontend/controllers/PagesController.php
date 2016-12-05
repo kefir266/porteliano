@@ -149,8 +149,14 @@ class PagesController extends Controller
     }
     public function actionBasket()
     {
+        
+
         $QuestionForm = new QuestionForm();
-        return $this->render('14_Korzina',['questionForm' => $QuestionForm]);
+        return $this->render('14_Korzina',
+            [
+                'questionForm' => $QuestionForm,
+                'model' => $model,
+            ]);
     }    
 
 //тест
@@ -166,6 +172,8 @@ class PagesController extends Controller
         }
         */
     }
+    /******  для заглушки корзины  *****************************************/
 
+    /***********************************************************************/
 
 }

@@ -32,3 +32,6 @@
 #count-goods{
     margin-top: 30px;
 }
+.delete-area > .delete{
+    line-height: 80px;
+}

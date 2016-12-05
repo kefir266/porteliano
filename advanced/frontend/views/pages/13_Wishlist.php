@@ -18,7 +18,7 @@ use yii\helpers\Url;
 use app\assets\PagesAsset;
 
 use app\assets\BasketAsset;
-
+$countGoods = '2 товара';
 BasketAsset::register($this);
 Yii::setAlias('@img', '@web/img/');
 
