@@ -18,9 +18,10 @@ use yii\helpers\Url;
 
 /*  assets  */
 use app\assets\TestAsset;
+use app\assets\FontAsset;
 
 TestAsset::register($this);
-
+FontAsset::register($this);
 
 // псевдоним пути к папке
 Yii::setAlias('@doors', '@web/img/doors');
@@ -91,7 +92,7 @@ $price = ['1545', '1545', '2119', '2194'];
     <div class="panel-quick-selection">
         <div class="row">
             <div class="col-md-5 doorImg">
-                <?= Html::img('/img/'.$product->manufacturer->title.'/'.$product->img) ?>
+                <?= Html::img('/img/' . $product->manufacturer->title . '/' . $product->img) ?>
             </div>
             <div class="col-md-7 ">
                 <div class="row">
@@ -112,7 +113,7 @@ $price = ['1545', '1545', '2119', '2194'];
                         <h4>Коллекция</h4>
                     </div>
                     <div class="col-md-6">
-                        <h4><?= $product->collection ?></h4>
+                        <h4><?= 'collection'//$product->collection  ?></h4>
                     </div>
                 </div> <!--Коллекция-->
                 <div class="row">
@@ -120,7 +121,7 @@ $price = ['1545', '1545', '2119', '2194'];
                         <h4>Артикул</h4>
                     </div>
                     <div class="col-md-6">
-                        <h4><?= $product->article ?></h4>
+                        <h4><?= 'article'//$product->article  ?></h4>
                     </div>
                 </div> <!--Артикул-->
                 <div class="row">
@@ -133,7 +134,7 @@ $price = ['1545', '1545', '2119', '2194'];
                 </div> <!--Стиль-->
                 <div class="row">
                     <div class="col-md-9">
-                        <h5><?= $product->note ?></h5>
+                        <h5><?= 'note'//$product->note  ?></h5>
                     </div>
                 </div> <!----------->
                 <div class="row">
@@ -144,8 +145,23 @@ $price = ['1545', '1545', '2119', '2194'];
                         <h4><?= $product->price->cost ?></h4>
                     </div>
                 </div> <!--Стоимость-->
+                <div class="row buttons-area">
+                    <div class="col-md-6">
+                        <a  href="/#">
+                <span id="in-basket" class="btn btn-default send-button" role="button">
+                    Добавить в корзину
+                </span>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a id="in-wishlist" class="btn btn-default" href="/#">
+                <span class="glyphicon glyphicon-heart-empty "></span>
+                        </a>
+                    </div>
+                </div> <!--Добавить в корзину-->
             </div>
         </div> <!--карточка-->
+
         <div class="row">
             <div class="col-md-6">
                 <div class="plate">

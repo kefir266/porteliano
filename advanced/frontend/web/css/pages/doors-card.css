@@ -2,3 +2,45 @@
 .doorImg > img{
     height: 500px;
 }
+.buttons-area{
+    margin-top: 30px;
+}
+#in-wishlist{
+    color: #935347;
+    line-height: 55px;
+    /**/
+    width: 80px;
+    height: 55px;
+
+    font-size: 18px;
+    display: block;
+    padding: 0;
+
+    background-color: inherit;
+    border-color: #eeeeee;
+
+    margin-left: 31px;
+}
+
+#in-basket{
+    display: block;
+    padding: 0;
+    line-height: 55px;
+
+    width: 320px;
+    height: 55px;
+
+    font-size: 16px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #935347;
+}
+#in-basket:hover,.basket-button:active{
+    text-decoration: none;
+    background-color: #6a372d;
+    color: #ffffff;
+}
+#in-wishlist:hover,.basket-button:active{
+    color: #6a372d;
+    background-color: #ffffff;
+}
