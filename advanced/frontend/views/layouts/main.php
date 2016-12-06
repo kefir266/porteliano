@@ -34,6 +34,7 @@ MainAdaptiveAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 <div class="wrap-all">
+    <div class="navbar-line-empty"></div>
     <header style="display: flex">
         <div>
             <div class="row">
@@ -88,6 +89,7 @@ MainAdaptiveAsset::register($this);
             </div>
             <div class="row">
                 <div class="col-md-12">
+
                     <div id="navbar-line" class=''>
                         <?php
                         NavBar::begin([]);

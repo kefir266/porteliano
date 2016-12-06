@@ -6,37 +6,45 @@
     z-index: 0;
 }
 .action-panel{
-    
-}
-.wrap-action > .action-header {
+    width: 80%;
     position: absolute;
-    top: 30%;
-    left: 23%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.action-header {
+    /*position: absolute;*/
+    top: 100px;
+    left: 30%;
     color: #F1F0F0;
     font-size: 50px;
     font-family: 'Copperplate', serif;
+    margin-top: 100px;
+
 }
-/*
-.wrap-action > p {
-    position: absolute;
-    top: 44%;
-    left: 23%;
+
+.action-text {
+    /*position: absolute;*/
+    top: 240px;
+    left: 70px;
     color: #F1F0F0;
     font-size: 28px;
     font-family: 'PTSerif', serif;
-    width: 25%;
+    width: 100%;
 }
 
 .contact-form {
     width: 365px;
     height: 490px;
     background-color: #FFFFFF;
-    position: absolute;
-    top: 12%;
-    left: 57%;
+
+    /*position: absolute;*/
+    top: 0;
+    left: 0;
     padding-top: 1%;
 }
-*/
+
 .contact-form p {
     margin-bottom: 5%;
 }

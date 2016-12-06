@@ -165,3 +165,10 @@ header > div{
 header .row:first-child {
     margin: 3%;
 }
+.navbar-line-empty{
+    position: absolute;
+    top: 139px;
+    height: 64px;
+    width: 100%;
+    background-color: #413332;
+}
