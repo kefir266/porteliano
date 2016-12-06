@@ -119,11 +119,11 @@ MainAsset::register($this);
                     'linkOptions' => ['data-target' => 'a6'],
                 ],
 
-                ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist" onclick=getCart("wish")></span>',
-                    'url' => ['#'],
+                ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist"></span>',
+                    'url' => ['cart/wishlist'],
                 ],
-                ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket" onclick=getCart("cart")></span>',
-                    'url' => ['#'],
+                ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket"></span>',
+                    'url' => ['cart/index'],
                 ],
 
             ]]);
@@ -149,10 +149,10 @@ MainAsset::register($this);
                     ['label' => 'КОНТАКТЫ', 'url' => ['#contact']],
 
                     ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist" ></span>',
-                        'url' => ['site/index'],
+                        'url' => ['cart/wishlist'],
                     ],
                     ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket" ></span>',
-                        'url' => ['site/index'],
+                        'url' => ['cart/index'],
                     ],
 
                 ]]);/**/

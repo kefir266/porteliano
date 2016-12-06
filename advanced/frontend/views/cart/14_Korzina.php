@@ -31,22 +31,24 @@ Yii::setAlias('@img', '@web/img/');
         </div>
     </div>
     <!-- товары -->
-    <?php
-    // TODO: переделать на загрузку из базы
-    for ($i = 0; $i < 2; $i++) {
-        $countGoods = '2 товара';
-        $description = 'Межкомнатная дверь Impronta Mod. Over 1000';
-        $pathToIcon = '@img/Romagnoli/AC 1B.PNG';
-        ?>
+
+    <? if ($cart->getQuantity() === 0): ?>
+
+        <H2>Корзина пуста!</H2>
+
+
+    <?php else: ?>
+    <?php  foreach($cart->get() as $id => $item): ?>
+        <?php if (((int)($id) > 0 ) && $item['quantity'] > 0 ): ?>
         <div class="row goods-row">
             <!-- иконка -->
             <div class="col-md-1 col-md-offset-3 ">
-                <?= Html::img($pathToIcon, ['class' => 'door-icon', 'alt' => "door icon"]) ?>
+                <?= Html::img('/img/'.$item['product']->manufacturer->title.'/'. $item['product']->img, ['class' => 'door-icon', 'alt' => "door icon"]) ?>
             </div>
             <!-- описание-->
             <div class="col-md-3">
             <span class="description">
-             <?= $description ?>
+             <?= $item['product']->title ?>
             </span>
 
             </div>
@@ -61,6 +63,8 @@ Yii::setAlias('@img', '@web/img/');
                 <a class="delete" href="#idToDelete">Удалить</a>
             </div>
         </div>
+            <?php endif; ?>
+    <?php endforeach; ?>
         <!-- разделитель -->
         <div class="row">
             <div class="col-md-6 col-md-offset-3 ">
@@ -68,9 +72,7 @@ Yii::setAlias('@img', '@web/img/');
             </div>
         </div>
 
-        <?php
-    };
-    ?>
+
     <!-- удаление из корзины всего товара-->
     <div class="row">
         <div class="col-md-1 col-md-offset-3 delete-all-area">
@@ -89,6 +91,7 @@ Yii::setAlias('@img', '@web/img/');
         </div>
 
     </div>
+        <?php endif; ?>
 </div>
 
 

@@ -125,4 +125,20 @@ class CartController extends Controller
         return 0;
     }
 
+    public function actionIndex(){
+
+        $session = Yii::$app->session;
+        $session->open();
+        
+        return $this->render('14_Korzina', ['cart' => $session['cart']]);
+    }
+    
+    public function actionWishlist(){
+
+        $session = Yii::$app->session;
+        $session->open();
+
+        return $this->render('13_Wishlist', ['wish' => $session['wish']]);
+    }
+
 }
