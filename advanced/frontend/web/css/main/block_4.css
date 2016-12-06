@@ -6,43 +6,43 @@
 .wrap-novelty .row{
     max-width: 100%;
 }
-.arrow {
+.wrap-novelty .arrow {
     background-image: url(../../img/other/angle-light.png);
     position: absolute;
     top: 100%;
 }
-.doors-panel{
+.wrap-novelty .doors-panel{
     top: 138px;
     left: 399px;
     width: 100%;
 }
 
 
-.doors-panel >.wrap-tiles{
+.wrap-novelty .doors-panel >.wrap-tiles{
     left: 12px;
     top: 10px;
 }
-.tile{
+.wrap-novelty .tile{
     padding-left: 0;
     padding-right: 0;
     text-align: center;
     display: inline-block;
 }
-.tile:hover{
+.wrap-novelty .tile:hover{
     box-shadow: 0px 0px 21px 7px #dcd7be;
 }
-.doors-panel > .wrap-tiles  .tile{
+.wrap-novelty .doors-panel > .wrap-tiles  .tile{
     padding-top: 5px;
     text-align: center;
     width: 230px;
     margin-left: 13px;
 }
 
-.doors-panel > .wrap-tiles >.tile:nth-child(2){
+.wrap-novelty .doors-panel > .wrap-tiles >.tile:nth-child(2){
     margin-left: 9px;
 
 }
-.tile-img{
+.wrap-novelty .tile-img{
     /*margin: 0 auto;*/
     max-height: 342px;
     margin-left: 35px;
@@ -50,7 +50,7 @@
 }
 
 /*-inner-doors*/
-.novelty-show-more {
+.wrap-novelty .novelty-show-more {
     height: 42px;
     width: 268px;
     color: #e7dcdb;
@@ -62,48 +62,48 @@
     margin-right: auto;
     display: block;
 }
-.novelty-show-more:hover{
+.wrap-novelty .novelty-show-more:hover{
     color: #ffffff;
     background-color: #6a372d;
 }
-.info > .delimiter{
+.wrap-novelty .info > .delimiter{
     height: 2px;
     width: 100%;
     background-color: white;
     margin-top: 9px;
 }
 
-.info{
+.wrap-novelty .info{
     margin-top: 5%;
     background-color: #ece7d4;
 }
-.info p{
+.wrap-novelty .info p{
     text-align: left;
     margin-left: 5%;
 }
-.info p:first-child{
+.wrap-novelty .info p:first-child{
     padding-top: 5%;
 }
-.novelty-h2{
+.wrap-novelty .novelty-h2{
     text-align: center;
     font-size: 2.8em;
     font-family: Copperplate, serif;
     margin-top: 100px;
     margin-bottom: 40px;
 }
-.running-ribbon-doors div.view{
+.wrap-novelty .running-ribbon-doors div.view{
     height: 600px;
     width: 100%;
 
 }
-.running-ribbon-doors div.view ul{
+.wrap-novelty .running-ribbon-doors div.view ul{
     height: 100%; width: 100%;
     list-style: none;
     /*line-height: 145px;*/
     padding-left: 0;
 }
 /*.block-4-price-count*/
-.block-price-count{
+.wrap-novelty .block-price-count{
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
@@ -111,10 +111,10 @@
     font-family: 'PTSerifBold', serif;
     font-size: 18px;
 }
-.block-price-count > a{
+.wrap-novelty .block-price-count > a{
     color: #4e3d36;
 }
-.add-to-wish{
+.wrap-novelty .add-to-wish{
     font-size: 16px;
     margin-left: 100px;
     color: #4e3d36;
