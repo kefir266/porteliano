@@ -5,7 +5,7 @@
     z-index: 1;
 }
 .novelty{
-    position: absolute;
+    /*position: absolute;*/
     top: 10%;
     left: 398px;
 
@@ -18,7 +18,7 @@
     left: 1px;
 }
 .wrap-novelty .wrap-tiles > h2{
-    position: absolute;
+    /*position: absolute;*/
     top: -11px;
     left: 414px;
     font-size: 2.8em;
@@ -87,7 +87,7 @@
 }
 
 .wrap-novelty >.novelty > button {
-    position: absolute;
+    /*position: absolute;*/
     top: 602px;
     left: 366px;
     height: 42px;
@@ -113,6 +113,7 @@
     width: 61px;
     height: 10px;
     position: absolute;
-    top: 871px;
-    left: 866px;
+    top: 871px;    ;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
