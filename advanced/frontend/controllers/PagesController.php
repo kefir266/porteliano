@@ -132,11 +132,32 @@ class PagesController extends Controller
         $QuestionForm = new QuestionForm();
         return $this->render('09_O kompanii',['questionForm' => $QuestionForm]);
     }
+    public function actionAbout_dostavka()
+    {
+        $QuestionForm = new QuestionForm();
+        return $this->render('10_Dostavka',['questionForm' => $QuestionForm]);
+    }
     public function actionContacts()
     {
         $QuestionForm = new QuestionForm();
         return $this->render('12_Kontakti',['questionForm' => $QuestionForm]);
     }
+    public function actionWishlist()
+    {
+        $QuestionForm = new QuestionForm();
+        return $this->render('13_Wishlist',['questionForm' => $QuestionForm]);
+    }
+    public function actionBasket()
+    {
+        
+
+        $QuestionForm = new QuestionForm();
+        return $this->render('14_Korzina',
+            [
+                'questionForm' => $QuestionForm,
+                'model' => $model,
+            ]);
+    }    
 
 //тест
     public function actionAdd_manufacturers_in_db()
@@ -151,6 +172,8 @@ class PagesController extends Controller
         }
         */
     }
+    /******  для заглушки корзины  *****************************************/
 
+    /***********************************************************************/
 
 }

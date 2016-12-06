@@ -9,13 +9,18 @@
 use yii\helpers\Html;
 use yii\bootstrap;
 
-/*  assets
+/*  assets*/
 use app\assets\FontAsset;
 FontAsset::register($this);
-*/
-use app\assets\MainPageAdaptiveAsset;
 
+use app\assets\MainPageAdaptiveAsset;
 MainPageAdaptiveAsset::register($this);
+
+use app\assets\BackAsset;
+FontAsset::register($this);
+
+BackAsset::register($this);
+
 
 $this->title = 'home';
 ?>

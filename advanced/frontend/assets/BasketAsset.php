@@ -10,27 +10,17 @@ namespace app\assets;
 use yii\web\AssetBundle;
 
 
-class PagesAsset extends AssetBundle
+class BasketAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
 
-    public $css = [        
-        'css/pages/doors.css',
-        'css/pages/doors-catalog.css',
-        'css/pages/septa.css',
-        'css/pages/manuf.css',
-        'css/pages/manuf-inner.css',
-        'css/pages/about.css',
-        'css/pages/delivery.css',
-        'css/pages/contacts.css',
-
-    ];
+    public $css = ['css/pages/basket.css',];
     public $js = [
         // доп. библиотеки
         
         // скрипты
-        'js/parallax.js',
+       'js/events-handler.js'
     ];
     public $depends = [
         'yii\web\JqueryAsset',

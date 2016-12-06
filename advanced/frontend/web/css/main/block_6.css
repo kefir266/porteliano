@@ -33,9 +33,11 @@
     margin-left: 9px;
 
 }
-.doors-panel > .wrap-tiles  .tile > img{
+.tile-img{
     /*margin: 0 auto;*/
     max-height: 342px;
+    margin-left: 35px;
+    margin-right: 35px;
 }
 
 .wrap-doors > .nav-tabs{
@@ -125,4 +127,21 @@
     list-style: none;
     /*line-height: 145px;*/
     padding-left: 0;
+}
+/*.block-4-price-count*/
+.block-price-count{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    font-family: 'PTSerifBold', serif;
+    font-size: 18px;
+}
+.block-price-count > a{
+    color: #4e3d36;
+}
+.add-to-wish{
+    font-size: 16px;
+    margin-left: 100px;
+    color: #4e3d36;
 }

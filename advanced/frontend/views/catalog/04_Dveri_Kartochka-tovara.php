@@ -18,17 +18,20 @@ use yii\helpers\Url;
 
 /*  assets  */
 use app\assets\TestAsset;
+use app\assets\FontAsset;
+use app\assets\BackAsset;
 
 TestAsset::register($this);
-
+FontAsset::register($this);
+BackAsset::register($this);
 
 // псевдоним пути к папке
 Yii::setAlias('@doors', '@web/img/doors');
 Yii::setAlias('@cover', '@web/img/cover');
 
 // определение какие обложки и заголовки показывать
-switch ($ind) {
-    case 0:
+switch ($product->section->id) {
+    case 3:
         $categoryTitle = 'Межкомнатные двери';
 
         $coverImgLeft = '@cover/outer.jpg';
@@ -37,7 +40,7 @@ switch ($ind) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Ручки';
         break;
-    case 1:
+    case 4:
         $categoryTitle = 'Входные двери';
         $coverImgLeft = '@cover/grips.png';
         $coverImgRight = '@cover/inner.png';
@@ -45,7 +48,7 @@ switch ($ind) {
         $coverTextLeft = 'Межкомнатные двери';
         $coverTextRight = 'Ручки';
         break;
-    case 2:
+    case 5:
         $categoryTitle = 'Ручки';
         $coverImgLeft = '@cover/outer.jpg';
         $coverImgRight = '@cover/inner.png';
@@ -79,117 +82,86 @@ foreach ($sections->getMenu() as $section) {
     $items[] = $section;
 }
 
-// TODO заменить на загрузку данных из базы
-$category = ['Входная дверь'];
-$doorData_2 = ['Bauxt', 'Bauxt', 'Security', 'Bauxt'];
-$doorData_3 = ['Export 1106', 'Export 1136', 'SECURITY', 'Elite 1115'];
-$price = ['1545', '1545', '2119', '2194'];
 
-// массив для заполнения информационных полей под плитками
-$info = [
-    [
-        0 => $category[0],
-        1 => $doorData_2[0],
-        2 => $doorData_3[0],
-        3 => $price[0],
-    ],
-    [
-        0 => $category[0],
-        1 => $doorData_2[1],
-        2 => $doorData_3[1],
-        3 => $price[1],
-    ],
-    [
-        0 => $category[0],
-        1 => $doorData_2[2],
-        2 => $doorData_3[2],
-        3 => $price[2],
-    ],
-    [
-        0 => $category[0],
-        1 => $doorData_2[3],
-        2 => $doorData_3[3],
-        3 => $price[3],
-    ],
-    [
-        0 => $category[0],
-        1 => $doorData_2[3],
-        2 => $doorData_3[3],
-        3 => $price[3],
-    ]
-];
-$card = [
-    'Межкомнатная дверь Impronta Mod. Over 1000',
-    'Impronta',
-    'Easy',
-    '-',
-    'Современный',
-    'Размеры и цвета будут подобраны индивидуально каждому клиенту',
-    '700 €',
-];
-// TODO: заменить на адрес картинки из базы
-$srcImg = '@doors/door_9.PNG';
 
 ?>
 <div class="door-catalog">
     <div class="panel-quick-selection">
         <div class="row">
             <div class="col-md-5 doorImg">
-                <?= Html::img($srcImg) ?>
+                <?= Html::img('/img/' . $product->manufacturer->title . '/' . $product->img) ?>
             </div>
-            <div class="col-md-7 ">
+            <div class="product-discript-door col-md-7 ">
                 <div class="row">
-                    <div class="col-md-9">
-                        <h1><?= $card[0] ?></h1>
+                    <div class="col-md-10">
+                        <h1 class="product-title"><?= $product->section->title ?></h1>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <h4>Производитель</h4>
+                        <h4 class="product-discript">Производитель</h4>
                     </div>
                     <div class="col-md-6">
-                        <h4><?= $card[1] ?></h4>
+                        <h4 ><?= $product->manufacturer->title ?></h4>
                     </div>
                 </div> <!--Производитель-->
                 <div class="row">
                     <div class="col-md-6">
-                        <h4>Коллекция</h4>
+                        <h4 class="product-discript">Коллекция</h4>
                     </div>
                     <div class="col-md-6">
-                        <h4><?= $card[2] ?></h4>
+                        <h4><?= $product->collection  ?></h4>
                     </div>
                 </div> <!--Коллекция-->
                 <div class="row">
                     <div class="col-md-6">
-                        <h4>Артикул</h4>
+                        <h4 class="product-discript">Артикул</h4>
                     </div>
                     <div class="col-md-6">
-                        <h4><?= $card[3] ?></h4>
+                        <h4><?= $product->article  ?></h4>
                     </div>
                 </div> <!--Артикул-->
                 <div class="row">
                     <div class="col-md-6">
-                        <h4>Стиль</h4>
+                        <h4 class="product-discript">Стиль</h4>
                     </div>
                     <div class="col-md-6">
-                        <h4><?= $card[4] ?></h4>
+                        <h4><?= $product->style->title ?></h4>
                     </div>
                 </div> <!--Стиль-->
                 <div class="row">
                     <div class="col-md-9">
-                        <h5><?= $card[5] ?></h5>
+                        <h5 class="product-note"><?=$product->note  ?></h5>
                     </div>
                 </div> <!----------->
                 <div class="row">
                     <div class="col-md-6">
-                        <h4>Стоимость</h4>
+                        <h4 class="product-discript product-price-h">Стоимость</h4>
                     </div>
                     <div class="col-md-6">
-                        <h4><?= $card[6] ?></h4>
+                        <h4 class="product-price"><?= $product->price->cost ?></h4>
                     </div>
                 </div> <!--Стоимость-->
+                <div class="row buttons-area">
+                    <div class="col-md-6">
+                        <a  href="#">
+<!--                            TODO перекрасить кнопку по функции $product->isOrdered() -->
+                <span id="in-basket" class="btn btn-default send-button"
+                      role="button" data-id="<?= $product->id ?>" onclick=addToCart(event)>
+                    <?= ($product->isOrdered()) ? 'Товар уже в корзине' : 'Добавить в корзину'  ?>
+                </span>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a id="in-wishlist" class="btn btn-default" href="#">
+                <span class="glyphicon glyphicon-heart<?= ($product->isWished()) ? '' : '-empty' ?>"
+                      data-id="<?= $product->id ?>" onclick=addToWish(event)></span>
+                        </a>
+                    </div>
+                </div> <!--Добавить в корзину-->
             </div>
         </div> <!--карточка-->
+
         <div class="row">
             <div class="col-md-6">
                 <div class="plate">

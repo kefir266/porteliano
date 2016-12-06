@@ -1,119 +1,118 @@
 .wrap-novelty{
     position: relative;
-    height: 871px;
+    height: 927px;
     background-color: #fdfdf3;
-    z-index: 1;
 }
-.novelty{
-    /*position: absolute;*/
-    top: 10%;
-    left: 398px;
+.arrow {
+    background-image: url(../../img/other/angle-light.png);
+    position: absolute;
+    top: 100%;
+}
+.doors-panel{
+    top: 138px;
+    left: 399px;
+    width: 100%;
+}
 
-    width: 56%;
-    height: 66%;
-}
-.wrap-novelty .wrap-tiles{
-    position: relative;
-    top: 0;
-    left: 1px;
-}
-.wrap-novelty .wrap-tiles > h2{
-    /*position: absolute;*/
-    top: -11px;
-    left: 414px;
-    font-size: 2.8em;
-    font-family: Copperplate, serif;
+
+.doors-panel >.wrap-tiles{
+    left: 12px;
+    top: 10px;
 }
 .tile{
-    margin: 83px 0 0 14px;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
     display: inline-block;
-    border: 1px solid #e8e8e8;
-    padding-right: 10px;
-    padding-left: 10px;
 }
-.wrap-novelty > .novelty > .wrap-tiles > .tile {
+.tile:hover{
+    box-shadow: 0px 0px 21px 7px #dcd7be;
+}
+.doors-panel > .wrap-tiles  .tile{
     padding-top: 5px;
-    padding-right: 10px;
-    padding-left: 10px;
-}
-.wrap-novelty .tile:nth-child(1){
-    margin-left: 91px ;
-}
-.wrap-info{
-    margin-top: 9px;
-}
-.novelty >.wrap-info >.info{
-    margin: 0 0 0 13px;
-    display: inline-block;
+    text-align: center;
     width: 230px;
-    background-color: #ece7d4;
-    font-family: "PT Sans";
-}
-.novelty >.wrap-info >.info:nth-child(1){
-    margin-left: 21px;
-}
-.novelty >.wrap-info >.info > p{
-    margin: 0 0 0 9px;
-    padding: 0 0 0 0;
-}
-.novelty >.wrap-info >.info > p:nth-child(1){
-    margin-top: 9px;
-
-}
-.novelty > .wrap-info > .info > .delimiter{
-    height: 2px;
-    width: 100%;
-    background-color: white;
-    margin-top: 9px;
-}
-.novelty > .wrap-info > .info > .block-4-price {
-    height: 34px;
-    width: 100%;
-
-}
-.block-4-price-count{
-    display: inline-block;
     margin-left: 13px;
-    margin-top: 5px;
-    font-family: 'PTSerifBold', serif;
-}
-.block-4-price > .glyphicon {
-    margin-left: 157px;
-    margin-top: 5px;
-    color: #80807e;
-}
-.block-4-price > .glyphicon:hover {
-    color: #942b34;
 }
 
-.wrap-novelty >.novelty > button {
-    /*position: absolute;*/
-    top: 602px;
-    left: 366px;
+.doors-panel > .wrap-tiles >.tile:nth-child(2){
+    margin-left: 9px;
+
+}
+.tile-img{
+    /*margin: 0 auto;*/
+    max-height: 342px;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+/*-inner-doors*/
+.novelty-show-more {
     height: 42px;
     width: 268px;
     color: #e7dcdb;
     background-color: #935347;
     border: 0;
     border-radius: 0;
-    font-family: "PT Sans", serif;
+    font-family: "PT Sans", sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
-.wrap-novelty >.novelty > button:hover{
+.novelty-show-more:hover{
     color: #ffffff;
     background-color: #6a372d;
 }
-.arrow{
-    width: 61px;
-    height: 10px;
-    z-index: 1;
-    left: 866px;
+.info > .delimiter{
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    margin-top: 9px;
 }
-.wrap-novelty > .arrow {
-    background-image: url(../../img/other/angle-light.png);
-    width: 61px;
-    height: 10px;
-    position: absolute;
-    top: 871px;    ;
-    left: 50%;
-    transform: translate(-50%, 0);
+
+.info{
+    margin-top: 5%;
+    background-color: #ece7d4;
+}
+.info p{
+    text-align: left;
+    margin-left: 5%;
+}
+.info p:first-child{
+    padding-top: 5%;
+}
+.novelty-h2{
+    text-align: center;
+    font-size: 2.8em;
+    font-family: Copperplate, serif;
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+.running-ribbon-doors div.view{
+    height: 600px;
+    width: 100%;
+
+}
+.running-ribbon-doors div.view ul{
+    height: 100%; width: 100%;
+    list-style: none;
+    /*line-height: 145px;*/
+    padding-left: 0;
+}
+/*.block-4-price-count*/
+.block-price-count{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    font-family: 'PTSerifBold', serif;
+    font-size: 18px;
+}
+.block-price-count > a{
+    color: #4e3d36;
+}
+.add-to-wish{
+    font-size: 16px;
+    margin-left: 100px;
+    color: #4e3d36;
 }

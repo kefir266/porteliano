@@ -11,13 +11,27 @@ namespace frontend\models;
 use app\models\Manufacturer;
 use app\models\Material;
 use app\models\Section;
+use app\models\Style;
+use app\models\Wish;
+
+use yii;
+
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
 
 
 class Product extends ActiveRecord
 {
-    
+
+    private $_session;
+
+    public function afterFind()
+    {
+        parent::afterFind();
+        $this->_session = Yii::$app->session;
+        $this->_session->open();
+    }
+
     public function getProductsBySection($id = null, $num = null)
     {
 
@@ -117,6 +131,12 @@ class Product extends ActiveRecord
 
     }
 
+    public function getStyle(){
+
+        return $this->hasOne(Style::className(), ['id' => 'style_id']);
+
+    }
+
     public function getManufacturer(){
 
         return $this->hasOne(Manufacturer::className(), ['id' => 'manufacturer_id']);
@@ -137,6 +157,11 @@ class Product extends ActiveRecord
         return $this->hasMany(Price::className(), ['product_id' => 'id']);
     }
 
+    public function getPrice(){
+
+        return $this->hasMany(Price::className(), ['product_id' => 'id'] )->orderBy('date desc')->one();
+    }
+
     public function getFilteredProducts($params, $quantity){
 
         $id = (!!$params['section']) ? '3': $params['section'];
@@ -153,6 +178,25 @@ class Product extends ActiveRecord
         $products['products'] = $query->each($quantity);
 
         return $products;
+    }
+
+    public function isWished(){
+
+        if (isset($this->_session['wish'])) {
+            if ($this->_session['wish']->isWished($this->id)) return true;
+        }
+
+        return false;
+    }
+
+    public function isOrdered(){
+
+        if (isset($this->_session['cart'])) {
+            if ($this->_session['cart']->isOrdered($this->id)) return true;
+        }
+
+        return false;
+
     }
 
 }

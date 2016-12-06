@@ -220,3 +220,6 @@ a.desc:after {
     background-color: #fdfdf3;
     border-color: #fdfdf3;
 }
+.cart-image {
+    height: 50px;
+}

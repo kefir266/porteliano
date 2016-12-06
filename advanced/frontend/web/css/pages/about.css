@@ -213,14 +213,14 @@
     }
 }
 
-.ruletka button {
+.ruletka .btn {
     background-color: #6a372d;
     border: none;
     width: 200px;
     color: #ffffff;
 }
 
-.ruletka button:hover {
+.ruletka .btn:hover {
     background-color: #955347;
 }
 p{

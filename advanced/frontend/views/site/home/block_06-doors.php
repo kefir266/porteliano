@@ -22,40 +22,6 @@ $doorData_2 = ['Bauxt', 'Bauxt', 'Security', 'Bauxt'];
 $doorData_3 = ['Export 1106', 'Export 1136', 'SECURITY', 'Elite 1115'];
 $price = ['1545', '1545', '2119', '2194'];
 
-// массив для заполнения информационных полей под плитками новинок
-
-$info = [
-    [
-        0 => $category[0],
-        1 => $doorData_2[0],
-        2 => $doorData_3[0],
-        3 => $price[0],
-    ],
-    [
-        0 => $category[0],
-        1 => $doorData_2[1],
-        2 => $doorData_3[1],
-        3 => $price[1],
-    ],
-    [
-        0 => $category[0],
-        1 => $doorData_2[2],
-        2 => $doorData_3[2],
-        3 => $price[2],
-    ],
-    [
-        0 => $category[0],
-        1 => $doorData_2[3],
-        2 => $doorData_3[3],
-        3 => $price[3],
-    ],
-    [
-        0 => $category[0],
-        1 => $doorData_2[3],
-        2 => $doorData_3[3],
-        3 => $price[3],
-    ]
-]
 ?>
 <article id="doors" class="wrap-doors" data-item="a2">
     <h2>Двери</h2>
@@ -71,38 +37,7 @@ $info = [
             <div id="doors-inn" class="novelty doors-panel running-ribbon-doors">
                 <div class="wrap-tiles view">
                     <ul>
-
-                    <?php
-                    //добавляет карточки в область прокрутки $i -№ дверей
-                    foreach ($products['products'] as $product){
-                    //вывод картинок
-                    echo Html::beginTag('div', ['class' => 'tile']);
-                        //  TODO ($i+5) для теста, поставить $i
-                        echo Html::img('@img/'.$product->manufacturer->title.'/'
-                            .$product->img,
-                            ['alt' => $product->title, 'class' => '']);
-
-                        //заполняет карточку $i -№ дверей j- строка карточки
-                        echo Html::beginTag('div', ['class' => 'info']);
-                        echo Html::tag('p', $product->section->title);
-                        echo Html::tag('p', $product->manufacturer->title);
-                        echo Html::tag('p', $product->title);
-                            echo Html::tag('div', '', ['class' => 'delimiter']);
-                            echo Html::beginTag('div', ['class' => 'block-4-price']);
-                        //var_dump($product);
-                            $price = $product->prices;
-                        //var_dump('массив'.count($price));
-                            echo Html::tag('div', '€ ' .  (( count($price) > 0) ?
-                                current($price)->cost
-                                : ''),
-                                ['class' => 'block-4-price-count']);
-                            echo Html::tag('div', '', ['class' => 'glyphicon glyphicon-heart-empty ']);
-                            echo Html::endTag('div');
-                        echo Html::endTag('div');
-                    echo Html::endTag('div');
-                    }
-                    ?>
-
+                        <?php require Yii::getAlias('@frontend')."/views/layouts/ribbonElement.php"; ?>
                     </ul>
                 </div>
                 <div id="show">
@@ -119,38 +54,7 @@ $info = [
             <div id="doors-out" class="novelty doors-panel running-ribbon-doors">
                 <div class="wrap-tiles view">
                     <ul>
-
-                        <?php
-                        //добавляет карточки в область прокрутки $i -№ дверей
-                        foreach ($products['products'] as $product){
-                            //вывод картинок
-                            echo Html::beginTag('div', ['class' => 'tile']);
-                            //  TODO ($i+5) для теста, поставить $i
-                            echo Html::img('@img/'.$product->manufacturer->title.'/'
-                                .$product->img,
-                                ['alt' => $product->title, 'class' => '']);
-
-                            //заполняет карточку $i -№ дверей j- строка карточки
-                            echo Html::beginTag('div', ['class' => 'info']);
-                            echo Html::tag('p', $product->section->title);
-                            echo Html::tag('p', $product->manufacturer->title);
-                            echo Html::tag('p', $product->title);
-                            echo Html::tag('div', '', ['class' => 'delimiter']);
-                            echo Html::beginTag('div', ['class' => 'block-4-price']);
-                            //var_dump($product);
-                            $price = $product->prices;
-                            //var_dump('массив'.count($price));
-                            echo Html::tag('div', '€ ' .  (( count($price) > 0) ?
-                                    current($price)->cost
-                                    : ''),
-                                ['class' => 'block-4-price-count']);
-                            echo Html::tag('div', '', ['class' => 'glyphicon glyphicon-heart-empty ']);
-                            echo Html::endTag('div');
-                            echo Html::endTag('div');
-                            echo Html::endTag('div');
-                        }
-                        ?>
-
+                         <?php require Yii::getAlias('@frontend')."/views/layouts/ribbonElement.php"; ?>
                     </ul>
                 </div>
                 <div id="show">

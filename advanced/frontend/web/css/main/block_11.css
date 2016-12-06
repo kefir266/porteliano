@@ -36,10 +36,11 @@
     font-size: 20px;
 }
 
-.wrap-about > button {
+.wrap-about > .btn {
     position: absolute;
     top: 73%;
     left: 37%;
+    line-height: 42px;
     height: 42px;
     width: 462px;
     color: #e7dcdb;
@@ -51,7 +52,7 @@
     padding: 0 41px 5px 41px;
     letter-spacing: 2px;
 }
-.wrap-about > button:hover{
+.wrap-about > .btn:hover{
     color: #ffffff;
     background-color: #6a372d;
 }
