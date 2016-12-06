@@ -3,6 +3,9 @@
     height: 927px;
     background-color: #fdfdf3;
 }
+.wrap-novelty .row{
+    max-width: 100%;
+}
 .arrow {
     background-image: url(../../img/other/angle-light.png);
     position: absolute;

@@ -3,6 +3,9 @@
     height: 950px;
     background-color: #fdfdf3;
 }
+.wrap-catalog .row{
+    max-width: 100%;
+}
 .panel-Catalog{
     margin-left: auto;
     margin-right: auto;

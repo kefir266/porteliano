@@ -5,6 +5,9 @@
     /*background-color: #fde500;*/
     z-index: 0;
 }
+.wrap-action .row{
+    max-width: 100%;
+}
 .action-panel{
     width: 80%;
     position: absolute;
