@@ -2,9 +2,9 @@
     cursor: pointer;
 
     filter: url(#gray);  /* Firefox 4+ */
-    filter: gray; /* IE 5+ */
     -webkit-filter: url(#gray); /* Chrome ?? */
     -webkit-filter: grayscale(1); /* Chrome 18+ */
+    filter:  gray; /* IE 5+ */
     -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)"; /* new IE */
 }
 .gray:hover {
