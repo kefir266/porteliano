@@ -102,15 +102,12 @@ class CartController extends Controller
         $session = Yii::$app->session;
         $session->open();
 
-        if (isset($session[cartWish])) {
-            $session[cartWish]->delete($id);
+        if (isset($session[$cartWish])) {
+            return $session[$cartWish]->delete($id);
         }
-
-        $this->layout = false;
-
-        //return print_r($this->render('modal'.$cartWish,['cart' => $session[$cartWish]]), true);
-        
-        return $this->render('modal'.$cartWish,['cart' => $session[$cartWish]]);
+        return 0;
+        //$this->layout = false;
+        //return $this->render('modal'.$cartWish,['cart' => $session[$cartWish]]);
     }
 
     public function actionIswished(){

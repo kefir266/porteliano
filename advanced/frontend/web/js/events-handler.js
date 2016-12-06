@@ -16,17 +16,17 @@
     getQuantity('getwish', jWish);
 
 
-    $("#modal-cart .modal-body").on('click','.del-item', function () {
-        delItem('cart',$(this).data('id'));
-
-    })
-    $("#modal-wish .modal-body").on('click','.del-item', function () {
-        delItem('wish', $(this).data('id'));
-
-    })
+    // $("#modal-cart .modal-body").on('click','.del-item', function () {
+    //     delItem('cart',$(this).data('id'));
+    //
+    // })
+    // $("#modal-wish .modal-body").on('click','.del-item', function () {
+    //     delItem('wish', $(this).data('id'));
+    //
+    // })
 })(jQuery);
 
-function delItem(cartWish, id){
+function delItem(e,cartWish, id){
 
     if (cartWish == 'cart')
         var jtag = $('#basket');
@@ -41,8 +41,10 @@ function delItem(cartWish, id){
             },
             type:'POST',
             success: function (res) {
-                showModal('#modal-'+cartWish,res);
+                //showModal('#modal-'+cartWish,res);
                 getQuantity('get' + cartWish, jtag);
+                $(e.target).parents(".goods-row").remove();
+                getQuantity('get' + cartWish, $("#counter-goods"), '0'); //would be altered
             },
             error: function () {
                 console.log('error delete');
@@ -53,13 +55,13 @@ function delItem(cartWish, id){
     )
 }
 
-function getQuantity(action, jtag){
+function getQuantity(action, jtag,zero){
     $.ajax({
             url: '/cart/'+action,
 
             type:'GET',
             success: function (res) {
-                callbackQuantity(res,jtag);},
+                callbackQuantity(res,jtag,zero);},
             error: function () {
                 console.log('error');
 
@@ -81,11 +83,11 @@ function setGlyphiconHeart(jtag, state) {
     }
 }
 
-function refreshCart(quantity, jtag){
+function refreshCart(quantity, jtag, zero){
 
     console.log(quantity);
     if (quantity == 0) {
-        jtag.text('');
+        jtag.text((!!zero)? zero : '');
         if (jtag.attr('id')== 'wishlist')
         {
             jtag.removeClass("glyphicon-heart");
@@ -93,7 +95,7 @@ function refreshCart(quantity, jtag){
         }
     }
     else {
-        jtag.text(quantity);
+        jtag.html('<span class="circle-number">'+quantity+'</span>');
         if (jtag.attr('id')== 'wishlist')
         {
             jtag.addClass("glyphicon-heart");
@@ -120,7 +122,7 @@ function addToCart(e) {
         type:'GET',
         success: function (res) {
             callbackQuantity(res, jtag);
-            getCart('cart');
+            //getCart('cart');
 
         },
         error: function () {
@@ -148,6 +150,7 @@ function clearCart(cartWish){
             type:'POST',
             success: function (res) {
                 refreshCart(0, jtag);
+                $("#tab-cart").html("");
             },
             error: function () {
                 console.log('error clear');
@@ -174,7 +177,7 @@ function addToWish(e) {
             type:'GET',
             success: function (res) {
                 callbackQuantity(res, jtag);
-                getCart('wish');
+                //getCart('wish');
             },
             error: function () {
                 console.log('error');
@@ -222,10 +225,10 @@ function isWished(id, tag){
     });
 }
 
-function callbackQuantity(res, jtag) {
+function callbackQuantity(res, jtag, zero) {
     if (!!jtag){
 
-        refreshCart(res, jtag);
+        refreshCart(res, jtag, zero);
     }
 }
 

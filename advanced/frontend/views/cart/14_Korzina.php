@@ -16,8 +16,11 @@ use yii\helpers\Url;
 
 /*  assets  */
 use app\assets\BasketAsset;
+use app\assets\BackAsset;
 
 BasketAsset::register($this);
+BackAsset::register($this);
+
 Yii::setAlias('@img', '@web/img/');
 ?>
 <div class="wrap-basket">
@@ -31,7 +34,7 @@ Yii::setAlias('@img', '@web/img/');
         </div>
     </div>
     <!-- товары -->
-
+    <div id="tab-cart">
     <? if ($cart->getQuantity() === 0): ?>
 
         <H2>Корзина пуста!</H2>
@@ -60,7 +63,7 @@ Yii::setAlias('@img', '@web/img/');
             </div>
             <!-- удаление из корзины текущего товара-->
             <div class="col-md-1 delete-area">
-                <a class="delete" href="#idToDelete">Удалить</a>
+                <a class="delete" href="#" onclick="delItem(event, 'cart', <?= $item['product']->id ?> )">Удалить</a>
             </div>
         </div>
             <?php endif; ?>
@@ -76,7 +79,7 @@ Yii::setAlias('@img', '@web/img/');
     <!-- удаление из корзины всего товара-->
     <div class="row">
         <div class="col-md-1 col-md-offset-3 delete-all-area">
-            <a class="delete" href="#idToDelete">
+            <a class="delete" href="#" onclick=clearCart("cart")>
                 Очистить корзину
             </a>
         </div>
@@ -92,6 +95,7 @@ Yii::setAlias('@img', '@web/img/');
 
     </div>
         <?php endif; ?>
+    </div>
 </div>
 
 

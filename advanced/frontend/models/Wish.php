@@ -53,7 +53,7 @@ class Wish
             $this->_calcQuantity();
 
         }
-
+        
         return $this->getQuantity();
 
     }
@@ -65,10 +65,9 @@ class Wish
 
     private function _calcQuantity(){
         $quantity = 0;
-        $sum = 0;
         foreach ($this->_wish as $id => $item) {
             if (is_numeric($id)) {
-                $quantity += $item['quantity'];
+                $quantity++;
             }
         }
         $this->_wish['quantity'] = $quantity;
