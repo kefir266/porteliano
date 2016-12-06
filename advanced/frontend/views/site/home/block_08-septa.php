@@ -12,13 +12,12 @@ use yii\helpers\Url;
 /*  assets  */
 
 
-
 // псевдоним пути к папке на основе другого псевдонима
 Yii::setAlias('@septa', '@web/img/septa');
 
 // TODO заменить на загрузку из базы
 $category = ['Входная дверь'];
-$doorData_2 = ['Bauxt','Bauxt','Security','Bauxt'];
+$doorData_2 = ['Bauxt', 'Bauxt', 'Security', 'Bauxt'];
 $doorData_3 = ['Export 1106', 'Export 1136', 'SECURITY', 'Elite 1115'];
 $price = ['1545', '1545', '2119', '2194'];
 
@@ -79,13 +78,19 @@ $info = [
 ?>
 <article id="septa" class="wrap-septa" data-item="a3">
     <div class="row">
-        <div class="col-md-offset-5">
-            <?=Html::tag('h2','Перегородки');?>
+        <div class="col-md-offset-1 col-md-10">
+            <h2 class="septa-h2">Перегородки</h2>
         </div>
     </div>
+    <!-- Вкладки -->
     <div class="row">
-        <div class="col-md-offset-5">
-            <div class="novelty doors-panel septa-panel running-ribbon-septa">
+        <!-- кнопка назад -->
+        <div class="col-md-1 flex-vert-centr show">
+            <button id="prev" class="btn btn-link " data-param="prev"></button>
+        </div>
+        <!-- Перегородки -->
+        <div class="col-md-10">
+            <div id="doors-inn" class="doors-panel running-ribbon-doors">
                 <div class="wrap-tiles view">
                     <ul>
                         <?php
@@ -95,7 +100,7 @@ $info = [
                             //вывод картинок
                             echo Html::beginTag('li', ['class' => 'tile']);
                             //  TODO ($i+1) для теста, поставить $i
-                            echo Html::img('@septa/septa_'.($i+1).'.jpg',
+                            echo Html::img('@septa/septa_' . ($i + 1) . '.jpg',
                                 ['alt' => 'door_' . ($i), 'class' => '']);
 
                             //заполняет карточку $i- № дверей, j- строка карточки
@@ -114,13 +119,22 @@ $info = [
                         ?>
                     </ul>
                 </div>
-                <div id="show" >
-                    <button id="prev" class="btn btn-link" data-param="prev"></button>
-                    <button id="next" class="btn btn-link" data-param="next"></button>
-                </div>
-                <a href="<?=Url::to(['pages/septa']); ?>" class="btn btn-default btn-lg" role="button">ПОКАЗАТЬ БОЛЬШЕ</a>
             </div>
+        </div>  
+        </div>
+        <!-- кнопка вперед -->
+        <div class="col-md-1 show">
+            <button id="next" class="btn btn-link" data-param="next"></button>
+        </div>
+    </div>
+    <!-- Кнопка -->
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <a href="<?= Url::to(['pages/dveri']); ?>" class="btn btn-default btn-lg door-show-more" role="button">
+                ПОКАЗАТЬ БОЛЬШЕ</a>
         </div>
     </div>
     <div class="arrow"></div>
 </article>
+
+

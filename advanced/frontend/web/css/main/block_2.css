@@ -187,31 +187,31 @@
     margin-top: 1em;
 }
 
-div.show button{
+.wrap-catalog div.show button{
     padding: 0;
     margin-right: 0;
     cursor: pointer;
     margin-top: 50%;
 }
-button#prev{
+ button#prev{
     width: 50px;
     height: 50px;
     background-image: url('../../img/UI/arrow_inactive.jpg');
     transform: scale(1, 1);
 }
-button#next{
+ button#next{
     width: 50px;
     height: 50px;
     background-image: url('../../img/UI/arrow_inactive.jpg');
     transform: scale(-1, 1);
 
 }
-button#prev:hover{
+ button#prev:hover{
     background-image: url('../../img/UI/arrow_active.jpg');
     transform: scale(-1, 1);
 
 }
-button#next:hover{
+ button#next:hover{
     background-image: url('../../img/UI/arrow_active.jpg');
     transform: scale(1, 1);
 }

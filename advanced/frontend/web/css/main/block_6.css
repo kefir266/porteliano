@@ -28,6 +28,7 @@
 .wrap-doors .tile {
     padding-left: 0;
     padding-right: 0;
+    margin-top: 30px;
     text-align: center;
     display: inline-block;
 
@@ -154,7 +155,4 @@
 .wrap-doors #next{
     margin-left: -90%;
     margin-top: 160px;
-}
-.wrap-doors .tile{
-    margin-top: 30px;
 }

@@ -1,9 +1,12 @@
 .wrap-facts-at-Glance{
     position: relative;
     height: 510px;
-    background-color: #9900fd;
+    /*background-color: #9900fd;*/
     z-index: 0;
 
+}
+.wrap-facts-at-Glance .row {
+    max-width: 100%;
 }
 .facts{
     position: absolute;
