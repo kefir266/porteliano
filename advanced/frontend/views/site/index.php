@@ -26,13 +26,15 @@ $this->title = 'home';
 ?>
 
 <div id="Scrollspy" data-spy="scroll" data-target=".navbar" data-offset="10">
-    <? require_once 'home/block_01.php'; ?>
-    <? require_once 'home/block_02-catalog.php'; ?>
-    <?php
-
-
+    <?
+    require_once 'home/block_01.php';
+    require_once 'home/block_02-catalog.php';
     require_once 'home/block_03-action.php';
-    require_once 'home/block_04-novelty.php';/*
+    require_once 'home/block_04-novelty.php';
+
+
+
+    /*
     require_once 'home/block_05-key-benefits.php';
     require_once 'home/block_06-doors.php';
     require_once 'home/block_07-facts.php';

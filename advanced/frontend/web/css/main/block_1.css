@@ -20,7 +20,9 @@
     display: inline-block;
     margin-left: 5%;
 }
-
+.wrap-quick-selection .row{
+    max-width: 100%;
+}
 
 .material > div > button:nth-child(1){
     font-size: 20px;

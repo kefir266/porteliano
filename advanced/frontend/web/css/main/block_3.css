@@ -2,7 +2,7 @@
 .wrap-action {
     position: relative;
     height: 647px;
-    background-color: #fde500;
+    /*background-color: #fde500;*/
     z-index: 0;
 }
 .action-panel{
