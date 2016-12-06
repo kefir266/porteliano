@@ -36,6 +36,8 @@
 .tile-img{
     /*margin: 0 auto;*/
     max-height: 342px;
+    margin-left: 35px;
+    margin-right: 35px;
 }
 
 .wrap-doors > .nav-tabs{
