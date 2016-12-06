@@ -21,8 +21,8 @@ class MainPageAdaptiveAsset extends AssetBundle
 		'css/main/block_3.css',
         'css/main/block_4.css',
         'css/main/block_5.css',
-        'css/main/block_6.css',/*
-        'css/main/block_7.css',
+        'css/main/block_6.css',
+        'css/main/block_7.css',/*
         'css/main/block_8.css',
         'css/main/block_9.css',
         'css/main/block_10.css',

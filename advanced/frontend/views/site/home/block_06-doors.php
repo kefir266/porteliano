@@ -32,7 +32,7 @@ $price = ['1545', '1545', '2119', '2194'];
     <!-- Навигация -->
     <div class="row">
         <div class="col-md-offset-1 col-md-10 flex-wrap">
-            <ul class="nav nav-tabs nav-pills center-block indent-tabs" role="tablist">
+            <ul class="nav nav-tabs nav-pills center-block" role="tablist">
                 <li class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">МЕЖКОМНАТНЫЕ</a></li>
                 <li><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">ВХОДНЫЕ</a></li>
             </ul>
