@@ -36,7 +36,7 @@ foreach ($products['products'] as $product) {
                 current($price)->cost
                 : ''), ['href' =>
             Url::to(['cart/add', 'id' => $product->id])]),
-        ['class' => 'block-4-price-count add-to-cart',
+        ['class' => 'block-price-count add-to-cart',
             'data-id' => $product->id]
     );
     echo Html::tag('a',
