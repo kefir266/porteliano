@@ -68,6 +68,7 @@ $price = ['1545', '1545', '2119', '2194'];
             <button id="next" class="btn btn-link" data-param="next"></button>
         </div>
     </div>
+    <!-- Кнопка -->
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <a href="<?= Url::to(['pages/dveri']); ?>" class="btn btn-default btn-lg door-show-more" role="button">
