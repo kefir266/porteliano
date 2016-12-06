@@ -1,11 +1,14 @@
+
 .wrap-action {
     position: relative;
     height: 647px;
     background-color: #fde500;
     z-index: 0;
 }
-
-.wrap-action > h1 {
+.action-panel{
+    
+}
+.wrap-action > .action-header {
     position: absolute;
     top: 30%;
     left: 23%;
@@ -13,7 +16,7 @@
     font-size: 50px;
     font-family: 'Copperplate', serif;
 }
-
+/*
 .wrap-action > p {
     position: absolute;
     top: 44%;
@@ -25,15 +28,15 @@
 }
 
 .contact-form {
-    width: 20%;
-    height: 75%;
+    width: 365px;
+    height: 490px;
     background-color: #FFFFFF;
     position: absolute;
     top: 12%;
     left: 57%;
     padding-top: 1%;
 }
-
+*/
 .contact-form p {
     margin-bottom: 5%;
 }

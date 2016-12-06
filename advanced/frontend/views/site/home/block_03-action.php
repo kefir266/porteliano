@@ -14,17 +14,19 @@
     <div class="img-holder"
          data-image="<?= Yii::getAlias('@web').'/img/background/FOTO_INTRO_01.jpg'?>">
     </div>
+    <div class="action-panel">
+        <h1 class="action-header">АКЦИЯ</h1>
+        <p>
+            Гарантированно улучшаем любое диллерское предложение на все модели итальянских дверейи перегородок на 4%!
+        </p>
+        <?=require Yii::getAlias('@frontend') . '/views/site/home/contact-form.php'?>
 
-    <h1>АКЦИЯ</h1>
-    <p>
-        Гарантированно улучшаем любое диллерское предложение на все модели итальянских дверейи перегородок на 4%!
-    </p>
-    <?=require Yii::getAlias('@frontend') . '/views/site/home/contact-form.php'?>
-
+    </div>
     <script>
-        $('div.wrap-action > .img-holder').imageScroll({
+        
+        $('.wrap-action > .img-holder').imageScroll({
             holderClass: 'imageHolder',
-            container: $('div.wrap-action'),
+            container: $('.wrap-action'),
             speed: 0.1,
             coverRatio: 0.75,
             mediaWidth: 2000,

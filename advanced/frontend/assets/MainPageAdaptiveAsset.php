@@ -17,8 +17,8 @@ class MainPageAdaptiveAsset extends AssetBundle
     
     public $css = [
         'css/main/block_1.css',
-        'css/main/block_2.css',/*
-		'css/main/block_3.css',
+        'css/main/block_2.css',
+		'css/main/block_3.css',/*
         'css/main/block_4.css',
         'css/main/block_5.css',
         'css/main/block_6.css',
