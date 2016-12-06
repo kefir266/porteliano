@@ -20,8 +20,8 @@ class MainPageAdaptiveAsset extends AssetBundle
         'css/main/block_2.css',
 		'css/main/block_3.css',
         'css/main/block_4.css',
-        'css/main/block_5.css',/*
-        'css/main/block_6.css',
+        'css/main/block_5.css',
+        'css/main/block_6.css',/*
         'css/main/block_7.css',
         'css/main/block_8.css',
         'css/main/block_9.css',
@@ -36,13 +36,13 @@ class MainPageAdaptiveAsset extends AssetBundle
         '/js/lib/jquery.scroolly.js',
         // скрипты
         'js/runningRibbon.js',
+        'js/scrollingDoors.js'
         /*
-        'js/ajax-modal-popup.js',
-
+        'js/ajax-modal-popup.js'
         'js/fixedMenu.js',
         'js/scrollspy.js',
         'js/parallax.js',
-        'js/scrollingDoors.js'
+
         */
     ];
     public $depends = [

@@ -128,10 +128,10 @@ MainAdaptiveAsset::register($this);
                                 ],
 
                                 ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist"></span>',
-                                    'url' => ['site/index'],
+                                    'url' => ['#'],
                                 ],
                                 ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket" ></span>',
-                                    'url' => ['site/index'],
+                                    'url' => ['#'],
                                 ],
 
                             ]]);
