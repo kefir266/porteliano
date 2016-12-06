@@ -72,8 +72,11 @@ $info = [
                                     break;
                                 }
                                 //вывод картинок
-                                echo Html::beginTag('div', ['class' => 'tile']);
-
+                                if($i > 2){
+                                    echo Html::beginTag('div', ['class' => 'tile']);
+                                }else{
+                                    echo Html::beginTag('div', ['class' => 'tile hidden-sm hidden-xs']);
+                                }
                                 echo Html::a(
 
                                     Html::img('@img/' . $product->manufacturer->title . '/'
@@ -81,7 +84,8 @@ $info = [
                                         ['alt' => $product->title, 'class' => 'tile-img']), '/catalog/product/?id=' . $product->id);
 
                                 //заполняется карточка
-                                echo Html::beginTag('div', ['class' => 'info']);
+
+                                echo Html::beginTag('div', ['class' => 'info ']);
                                 echo Html::tag('p', $product->section->title);
                                 echo Html::tag('p', $product->manufacturer->title);
                                 echo Html::tag('p', $product->title);
