@@ -30,8 +30,8 @@ Yii::setAlias('@doors', '@web/img/doors');
 Yii::setAlias('@cover', '@web/img/cover');
 
 // определение какие обложки и заголовки показывать
-switch ($ind) {
-    case 0:
+switch ($product->section->id) {
+    case 3:
         $categoryTitle = 'Межкомнатные двери';
 
         $coverImgLeft = '@cover/outer.jpg';
@@ -40,7 +40,7 @@ switch ($ind) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Ручки';
         break;
-    case 1:
+    case 4:
         $categoryTitle = 'Входные двери';
         $coverImgLeft = '@cover/grips.png';
         $coverImgRight = '@cover/inner.png';
@@ -48,7 +48,7 @@ switch ($ind) {
         $coverTextLeft = 'Межкомнатные двери';
         $coverTextRight = 'Ручки';
         break;
-    case 2:
+    case 5:
         $categoryTitle = 'Ручки';
         $coverImgLeft = '@cover/outer.jpg';
         $coverImgRight = '@cover/inner.png';
@@ -82,11 +82,6 @@ foreach ($sections->getMenu() as $section) {
     $items[] = $section;
 }
 
-// TODO заменить на загрузку данных из базы
-$category = ['Входная дверь'];
-$doorData_2 = ['Bauxt', 'Bauxt', 'Security', 'Bauxt'];
-$doorData_3 = ['Export 1106', 'Export 1136', 'SECURITY', 'Elite 1115'];
-$price = ['1545', '1545', '2119', '2194'];
 
 
 ?>
