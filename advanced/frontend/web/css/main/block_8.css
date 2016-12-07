@@ -4,7 +4,7 @@
     background-color: #FFFFFF;
 }
 .wrap-septa .row {
-    max-width: 100%;
+    /*max-width: 100%;*/
 }
 
 .wrap-septa .arrow {
@@ -13,13 +13,13 @@
     top: 100%;
 }
 
-.wrap-septa .doors-panel {
+.wrap-septa .septa-panel {
     top: 138px;
     left: 399px;
     width: 100%;
 }
 
-.wrap-septa .doors-panel > .wrap-tiles {
+.wrap-septa .septa-panel > .wrap-tiles {
     left: 12px;
     top: 10px;
 }
@@ -79,13 +79,13 @@
     margin-bottom: 40px;
 }
 
-.wrap-septa .running-ribbon-doors div.view {
+.wrap-septa .running-ribbon-septa div.view {
     height: 600px;
     width: 96%;
 
 }
 
-.wrap-septa .running-ribbon-doors div.view ul {
+.wrap-septa .running-ribbon-septa div.view ul {
     height: 100%;
     width: 10000px;
     list-style: none;
@@ -113,7 +113,7 @@
 }
 
 /*******************************************************************/
-.wrap-septa .door-show-more {
+.wrap-septa .septa-show-more {
     height: 42px;
     width: 268px;
     color: #e7dcdb;
@@ -126,7 +126,7 @@
     display: block;
 }
 
-.wrap-septa .door-show-more:hover {
+.wrap-septa .septa-show-more:hover {
     color: #ffffff;
     background-color: #6a372d;
 }
