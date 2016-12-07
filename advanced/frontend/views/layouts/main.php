@@ -158,42 +158,40 @@ MainAdaptiveAsset::register($this);
 </div>
 
 <div class="push"></div>
-</div>
-<!--
-<footer class="footer footer-general">
+
+
+<footer id="footer" class="footer footer-general">
     <div id="navbar-line-footer" class="nav ">
-        <!--navbar-line-indent  nav navbar-fixed-top--><!--
-<?php
-echo Nav::widget([
-    'encodeLabels' => false,
-    'options' => ['class' => 'nav navbar-nav font-PTSans navbar-footer'],
-    'items' => [
-        ['label' => 'ГЛАВНАЯ', 'url' => ['/site/index'],],
-        ['label' => 'НОВИНКИ', 'url' => ['#news']],
-        ['label' => 'ДВЕРИ', 'url' => ['#doors']],
-        ['label' => 'ПЕРЕГОРОДКИ', 'url' => ['#septa']],
-        ['label' => 'ПРОИЗВОДИТЕЛИ', 'url' => ['#producer']],
-        ['label' => 'О КОМПАНИИ', 'url' => ['#about']],
-        ['label' => 'КОНТАКТЫ', 'url' => ['#contact']],
+        <?php
+        echo Nav::widget([
+            'encodeLabels' => false,
+            'options' => ['class' => 'nav navbar-nav font-PTSans navbar-footer'],
+            'items' => [
+                ['label' => 'ГЛАВНАЯ', 'url' => ['/site/index'],],
+                ['label' => 'НОВИНКИ', 'url' => ['#news']],
+                ['label' => 'ДВЕРИ', 'url' => ['#doors']],
+                ['label' => 'ПЕРЕГОРОДКИ', 'url' => ['#septa']],
+                ['label' => 'ПРОИЗВОДИТЕЛИ', 'url' => ['#producer']],
+                ['label' => 'О КОМПАНИИ', 'url' => ['#about']],
+                ['label' => 'КОНТАКТЫ', 'url' => ['#contact']],
 
-        ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist"></span>',
-            'url' => ['site/index'],
-        ],
-        ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket" ></span>',
-            'url' => ['site/index'],
-        ],
+                ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist"></span>',
+                    'url' => ['site/index'],
+                ],
+                ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket" ></span>',
+                    'url' => ['site/index'],
+                ],
 
-    ]]);/**/
-?>
-</div>
-<div class="footer-copy">
-    <p>
-        &copy; Porteliano Итальянские двери, 1996 - <?= date('Y') ?>
-    </p>
-</div>
+            ]]);/**/
+        ?>
+    </div>
+    <div class="footer-copy">
+            &copy; Porteliano Итальянские двери, 1996 - <?= date('Y') ?>
+        </p>
+    </div>
 
 </footer>
--->
+
 <?php $this->endBody() ?>
 </body>
 </html>
