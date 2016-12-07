@@ -237,6 +237,12 @@ header .row:first-child {
     width: 100%;
     z-index: 5000;
 }
+/* Для fixedMenu.js */
 .fixed-0-0-top  > .navbar-header{
     left: 8%;
+}
+/* Для scrollspy.js */
+.lightButton{
+    background-color: #574847 !important;
+    color: #ffffff!important;
 }
