@@ -1,0 +1,144 @@
+.contact-form {
+    width: 365px;
+    height: 490px;
+    background-color: #FFFFFF;
+
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+}
+
+.contact-form p {
+    margin-bottom: 5%;
+}
+
+.contact-form hr {
+    margin: 10% 0 10% 0;
+}
+
+.contact-form > .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.contact-form button {
+
+    background-color: #955347;
+    border: none;
+    width: 100%;
+
+}
+
+.contact-form button:hover {
+    background-color: #6a372d;
+}
+
+.contact-form input {
+    background-color: #f3f0df;
+    font-family: 'PTSerif', serif;
+    font-style: italic;
+    color: #000;
+    margin: 0 0 1% 6%;
+    width: 89%;
+}
+
+/* цвет шрифта для placeholder */
+.contact-form input::-webkit-input-placeholder {
+    color: #000;
+}
+
+.contact-form input::-moz-placeholder {
+    color: #000;
+}
+
+.contact-form input:-moz-placeholder {
+    color: #000;
+}
+
+.contact-form input:-ms-input-placeholder {
+    color: #000;
+}
+
+/* сдвиг placeholder-а вправо при фокусе */
+.contact-form input::-webkit-input-placeholder {
+    color: #000;
+    text-overflow: ellipsis;
+    text-indent: 0px;
+    transition: text-indent 0.3s ease;
+}
+
+.contact-form input::-moz-placeholder {
+    color: #000;
+    text-overflow: ellipsis;
+    text-indent: 0px;
+    transition: text-indent 0.3s ease;
+}
+
+.contact-form input:-moz-placeholder {
+    color: #000;
+    text-overflow: ellipsis;
+    text-indent: 0px;
+    transition: text-indent 0.3s ease;
+}
+
+.contact-form input:-ms-input-placeholder {
+    color: #000;
+    text-overflow: ellipsis;
+    text-indent: 0px;
+    transition: text-indent 0.3s ease;
+}
+
+.contact-form input:focus::-webkit-input-placeholder {
+    text-indent: 500px;
+    transition: text-indent 0.3s ease;
+}
+
+.contact-form input:focus::-moz-placeholder {
+    text-indent: 500px;
+    transition: text-indent 0.3s ease;
+}
+
+.contact-form input:focus:-moz-placeholder {
+    text-indent: 500px;
+    transition: text-indent 0.3s ease;
+}
+
+.contact-form input:focus:-ms-input-placeholder {
+    text-indent: 500px;
+    transition: text-indent 0.3s ease;
+}
+
+/* плавное изменение прозрачности  placeholder-а при фокусе
+.contact-form input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+.contact-form input::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+.contact-form input:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+.contact-form input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+
+.contact-form input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+.contact-form input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+.contact-form input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+.contact-form input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+*/
+
+
+/*******************************************************/
+.contact-form-header{
+    font-family: "PT Serif", serif;
+    font-size: 40px;
+}
+.contact-form-city,
+.contact-form-str,
+.contact-form-phone,
+.contact-form-mail{
+    font-family: "PT Sans", sans-serif;
+    font-size: 18px;
+}
+.contact-form-city{
+    color: #fda552;
+}
+ .contact-form-mail{
+     color: #b16e3a;
+ }
+.contact-form-back-call{
+    height: 540px;
+}
