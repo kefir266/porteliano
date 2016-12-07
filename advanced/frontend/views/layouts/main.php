@@ -89,8 +89,8 @@ MainAdaptiveAsset::register($this);
 
         </div>
     </header>
-    <div class="row">
-        <div class="col-md-12">
+    <div class="row row-navbar">
+        <div class="col-md-12 col-navbar">
             <div id="navbar-line" class=''>
                 <?php
                 NavBar::begin([]);

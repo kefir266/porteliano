@@ -246,3 +246,10 @@ header .row:first-child {
     background-color: #574847 !important;
     color: #ffffff!important;
 }
+
+.row-navbar{
+    max-width: none;
+}
+.col-navbar{
+    height: 64px;
+}
