@@ -10,11 +10,11 @@ use yii\helpers\Html;
 use yii\bootstrap;
 
 /*  assets*/
-use app\assets\FontAsset;
-FontAsset::register($this);
-
 use app\assets\MainPageAdaptiveAsset;
 MainPageAdaptiveAsset::register($this);
+
+use app\assets\FontAsset;
+FontAsset::register($this);
 
 use app\assets\BackAsset;
 BackAsset::register($this);
@@ -36,10 +36,6 @@ $this->title = 'home';
     require_once 'home/block_09-action2.php';
     require_once 'home/block_10-manufacturers.php';
     require_once 'home/block_11-about.php';
-
-
     require_once 'home/block_12-Contacts.php';
-
     ?>
 </div>
-

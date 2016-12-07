@@ -10,9 +10,8 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
-
+/**/
 use app\assets\MainAdaptiveAsset;
-
 MainAdaptiveAsset::register($this);
 
 ?>
@@ -34,8 +33,8 @@ MainAdaptiveAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 <div class="wrap-all">
-    <div class="navbar-line-empty"></div>
-    <header style="display: flex">
+
+    <header>
         <div>
             <div class="row">
                 <div class="col-md-2 col-sm-2 col-xs-4">
@@ -87,62 +86,62 @@ MainAdaptiveAsset::register($this);
                 </div>
 
             </div>
-            <div class="row">
-                <div class="col-md-12">
 
-                    <div id="navbar-line" class=''>
-                        <?php
-                        NavBar::begin([]);
-                        echo Nav::widget([
-                            'encodeLabels' => false, /*nav  navbar-header*/
-                            'options' => ['class' => 'navbar navbar-nav  font-PTSans '],
-
-                            'items' => [
-                                ['label' => 'ГЛАВНАЯ',
-                                    'url' => [Url::to(['site/index'])],
-                                    'linkOptions' => ['data-target' => 'a0'],
-                                ],
-                                ['label' => 'НОВИНКИ',
-                                    'url' => Url::to(['site/index', '#' => 'novelty']),//['#novelty'],
-                                    'linkOptions' => ['data-target' => 'a1'],
-                                ],
-                                ['label' => 'ДВЕРИ',
-                                    'url' => Url::to(['site/index', '#' => 'doors']),  //?section=1 ['#doors']
-                                    'linkOptions' => ['data-target' => 'a2'],
-                                ],
-                                ['label' => 'ПЕРЕГОРОДКИ',
-                                    'url' => Url::to(['site/index', '#' => 'septa']), //?section=2  #septa
-                                    'linkOptions' => ['data-target' => 'a3'],
-                                ],
-                                ['label' => 'ПРОИЗВОДИТЕЛИ',
-                                    'url' => Url::to(['site/index', '#' => 'manufacturers']),
-                                    'linkOptions' => ['data-target' => 'a4'],
-                                ],
-                                ['label' => 'О КОМПАНИИ',
-                                    'url' => Url::to(['site/index', '#' => 'about']),
-                                    'linkOptions' => ['data-target' => 'a5'],
-                                ],
-                                ['label' => 'КОНТАКТЫ',
-                                    'url' => Url::to(['site/index', '#' => 'contacts']),
-                                    'linkOptions' => ['data-target' => 'a6'],
-                                ],
-
-                                ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist"></span>',
-                                    'url' => ['#'],
-                                ],
-                                ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket" ></span>',
-                                    'url' => ['#'],
-                                ],
-
-                            ]]);
-                        NavBar::end();
-                        /**/
-                        ?>
-                    </div>
-                </div>
-            </div>
         </div>
     </header>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="navbar-line" class=''>
+                <?php
+                NavBar::begin([]);
+                echo Nav::widget([
+                    'encodeLabels' => false, /*nav  navbar-header*/
+                    'options' => ['class' => 'navbar navbar-nav navbar-center  font-PTSans '],
+
+                    'items' => [
+                        ['label' => 'ГЛАВНАЯ',
+                            'url' => [Url::to(['site/index'])],
+                            'linkOptions' => ['data-target' => 'a0'],
+                        ],
+                        ['label' => 'НОВИНКИ',
+                            'url' => Url::to(['site/index', '#' => 'novelty']),//['#novelty'],
+                            'linkOptions' => ['data-target' => 'a1'],
+                        ],
+                        ['label' => 'ДВЕРИ',
+                            'url' => Url::to(['site/index', '#' => 'doors']),  //?section=1 ['#doors']
+                            'linkOptions' => ['data-target' => 'a2'],
+                        ],
+                        ['label' => 'ПЕРЕГОРОДКИ',
+                            'url' => Url::to(['site/index', '#' => 'septa']), //?section=2  #septa
+                            'linkOptions' => ['data-target' => 'a3'],
+                        ],
+                        ['label' => 'ПРОИЗВОДИТЕЛИ',
+                            'url' => Url::to(['site/index', '#' => 'manufacturers']),
+                            'linkOptions' => ['data-target' => 'a4'],
+                        ],
+                        ['label' => 'О КОМПАНИИ',
+                            'url' => Url::to(['site/index', '#' => 'about']),
+                            'linkOptions' => ['data-target' => 'a5'],
+                        ],
+                        ['label' => 'КОНТАКТЫ',
+                            'url' => Url::to(['site/index', '#' => 'contacts']),
+                            'linkOptions' => ['data-target' => 'a6'],
+                        ],
+
+                        ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist"></span>',
+                            'url' => ['#'],
+                        ],
+                        ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket" ></span>',
+                            'url' => ['#'],
+                        ],
+
+                    ]]);
+                NavBar::end();
+                /**/
+                ?>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <?= Breadcrumbs::widget([
             'homeLink' => [
@@ -156,9 +155,7 @@ MainAdaptiveAsset::register($this);
         <?= $content ?>
     </div>
 </div>
-
 <div class="push"></div>
-
 
 <footer id="footer" class="footer footer-general">
     <div id="navbar-line-footer" class="nav ">
@@ -196,3 +193,6 @@ MainAdaptiveAsset::register($this);
 </body>
 </html>
 <?php $this->endPage() ?>
+<?php
+
+?>

@@ -16,6 +16,5 @@ class FontAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/stylename.css',
-    ];
-    public $js = [];    
+    ];   
 }

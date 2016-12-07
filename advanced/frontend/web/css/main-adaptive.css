@@ -77,6 +77,11 @@ body {
     background-color: #574847;
     color: #ffffff;
 }
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    background-color: #574847;
+    color: #ffffff;
+}
 
 .navbar-default .navbar-nav > li > a {
     color: #d2cca8;
@@ -85,12 +90,16 @@ body {
     min-width: 48px;
     min-height: 60px;
     font-size: 17px;
+
+    border-left: 1px solid #352929;
 }
 
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    background-color: #574847;
-    color: #ffffff;
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    background-color: #574847;!important;
+    color: #ffffff;!important;
 }
+
 @media (min-width: 1092px){
     /* TODO переключить на кнопку   */
 }
@@ -113,6 +122,7 @@ header{
 header > div{
     margin-left: auto;
     margin-right: auto;
+    width: 90%;
 }
 #phone_1 {
     font-size: 18px;
@@ -211,4 +221,22 @@ header .row:first-child {
 .navbar-footer{
     font-size: 17px;
     background-color: #413332;
+}
+.navbar-center {
+    width: 100%;
+    text-align: center;
+}
+.navbar-center > li{
+    float: none;
+    display: inline-block;
+}
+.fixed-0-0-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5000;
+}
+.fixed-0-0-top  > .navbar-header{
+    left: 8%;
 }

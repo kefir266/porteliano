@@ -15,13 +15,11 @@ class MainAdaptiveAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     
-    public $css = [
-        'css/stylename.css',
+    public $css = [        
         'css/animation.css',
-        'css/gray.css',        
-        'css/main-adaptive.css',
+        'css/gray.css',
         'css/contact-form.css',
-        
+        'css/main-adaptive.css',
     ];
     public $js = [
         // доп. библиотеки
@@ -31,9 +29,10 @@ class MainAdaptiveAsset extends AssetBundle
 
     ];
     public $depends = [
-        'yii\web\JqueryAsset',
-        'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap\BootstrapPluginAsset',
+        'yii\web\JqueryAsset',
+        'yii\web\YiiAsset',        
     ];
 }
 
