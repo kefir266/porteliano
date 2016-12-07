@@ -13,8 +13,12 @@ use yii\helpers\Html;
 
 ?>
 <article id="manufacturers" class="wrap-manufacturers">
-    <h2>Производители</h2>
-    <div class="manufacturers">        
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="manufacturers-h2">Производители</h2>
+        </div>
+    </div>
+    <div class="manufacturers">
         <ul>
             <?php
             for ($i = 0; $i < count($logos); $i++){
