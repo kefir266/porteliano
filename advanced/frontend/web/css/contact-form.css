@@ -122,6 +122,15 @@
 
 
 /*******************************************************/
+.contact-form-header-all{
+    font-family: "PT Serif", serif;
+    font-size: 30px;
+}
+.contact-form-text{
+    font-family: "PT Sans", sans-serif;
+    font-size: 16px;
+}
+
 .contact-form-header{
     font-family: "PT Serif", serif;
     font-size: 40px;
