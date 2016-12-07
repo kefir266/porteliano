@@ -10,17 +10,16 @@ namespace app\assets;
 use yii\web\AssetBundle;
 
 
-class MainAsset extends AssetBundle
+class MainAdaptiveAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     
-    public $css = [
-        
+    public $css = [        
         'css/animation.css',
-        'css/gray.css',        
-        'css/main.css',
-        
+        'css/gray.css',
+        'css/contact-form.css',
+        'css/main-adaptive.css',
     ];
     public $js = [
         // доп. библиотеки
@@ -30,9 +29,10 @@ class MainAsset extends AssetBundle
 
     ];
     public $depends = [
-        'yii\web\JqueryAsset',
-        'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap\BootstrapPluginAsset',
+        'yii\web\JqueryAsset',
+        'yii\web\YiiAsset',        
     ];
 }
 

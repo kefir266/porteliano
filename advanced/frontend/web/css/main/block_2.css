@@ -3,19 +3,31 @@
     height: 950px;
     background-color: #fdfdf3;
 }
+.wrap-catalog .row{
+    max-width: 100%;
+}
 .panel-Catalog{
-    position: absolute;
-    top: 70px;
-    left: 348px;
+    margin-left: auto;
+    margin-right: auto;
     min-height: 730px;
-    width: 1100px;
+    position: relative;
 }
-.panel-Catalog > h2{
+
+
+.panel-Catalog >div > div > h2{
     font-family: Copperplate, serif;
+    margin-right: auto;
+    margin-left: auto;
 }
+
 .tiles{
     font-family: "PT Sans Caption", serif;
     color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tiles > div{
+
 }
 
 .doors-gradient{
@@ -27,151 +39,135 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#413332',GradientType=0 ); /* IE6-9 */
 
 }
+
 .entryDoors{
-    position: absolute;
-    top: 69px;
-    left: 796px;
-    background-image: url(../../img/catalog/entryDoors.jpg);
+
+    background: no-repeat url(../../img/catalog/entryDoors.jpg);
     width: 235px;
     height: 476px;
+
+    margin-top: 20px;
+    padding-top: 285px;
+    padding-left: 0;
+}
+.doors-gradient h3{
+    text-align: center;
+    padding-top: 50%;
 }
 .entryDoors > .doors-gradient{
-    position: absolute;
-    top: 312px;
-    left: 1px;
     width: 225px;
     height: 159px;
 }
+/*
 .entryDoors > .doors-gradient > h3{
     position: absolute;
     top: 102px;
     left: 23px;
 }
+*/
 .grips{
-    position: absolute;
-    top: 68px;
-    left: 557px;
-    background-image: url(../../img/catalog/grips.jpg);
+
+    background: no-repeat url(../../img/catalog/grips.jpg);
     width: 230px;
     height: 234px;
-    /* border: solid #935347 5px; */
+
+    padding-left: 0;
+    padding-top: 30px;
+    margin-top: 20px;
 }
 .grips > .doors-gradient{
-    position: absolute;
-    left: 5px;
-    top: 56px;
     width: 220px;
     height: 173px;
 }
 .grips > .doors-gradient > h3{
-    position: absolute;
-    top: 114px;
-    left: 73px;
+    padding-top: 60%;
 }
 .septa{
-    position: absolute;
-    top: 313px;
-    left: 557px;
-    background-image: url(../../img/catalog/septa.jpg);
+    background: no-repeat url(../../img/catalog/septa.jpg);
     width: 225px;
     height: 234px;
-    /* border: solid #935347 5px; */
+
+    padding-left: 0;
+    padding-top: 33px;
+    margin-top: 10px;
+
 }
 .septa > .doors-gradient{
-    position: absolute;
-    top: 60px;
-    left: 5px;
     width: 215px;
     height: 169px;
 }
 .septa > .doors-gradient > h3{
-    position: absolute;
-    top: 84px;
-    left: 13px;
     text-align: center;
 }
 .interiorDoors{
-    position: absolute;
-    top: 68px;
-    left: 70px;
-
-    background-image: url(../../img/catalog/interiorDoors.jpg);
+    background: no-repeat  url(../../img/catalog/interiorDoors.jpg);
     width: 475px;
     height: 478px;
+
+    padding-left: 0;
+    padding-top: 273px;
+    margin-top: 20px;
 }
 
 .interiorDoors > .doors-gradient{
-    position: absolute;
-    left: 7px;
-    top: 299px;
+
     width: 463px;
     height: 173px;
 }
 .interiorDoors > .doors-gradient > h3{
-    position: absolute;
-    top: 109px;
-    left: 96px;
     font-size: 22px;
+    padding-top: 25%;
 }
 .tiles h3{
     font-size: 22px;
 }
 /* Задание рамок для плиток */
-.grips:after,
-.septa:after,
-.entryDoors:after,
-.interiorDoors:after {
-    content: " ";
-    width: 100%;
-    height: 100%;
-    display: block;
+.grips,
+.septa,
+.entryDoors,
+.interiorDoors{
+
     border: 6px solid #935347;
-    /*Для отладки*/
-    /* background-color: #1b6d85;*/
 }
 
-.panel-Catalog > h2{
-    position: absolute;
-    top: -25px;
-    left: 471px;
+.panel-Catalog  h2{
+
     font-size: 40px;
 }
 
 
 .entryDoors:hover
 {
-    animation: backgroundscale_15 .9s linear normal  forwards;
+    animation: backgroundscale_15 1.3s linear normal  forwards;
 }
 .grips:hover
 {
-    animation: backgroundscale_15 .9s linear normal  forwards;
+    animation: backgroundscale_15 1.3s linear normal  forwards;
 }
 .septa:hover
 {
-    animation: backgroundscale_15 .9s linear normal  forwards;
+    animation: backgroundscale_15 1.3s linear normal  forwards;
 }
 .interiorDoors:hover
 {
-    animation: backgroundscale_15 .9s linear normal  forwards;
+    animation: backgroundscale_15 1.3s linear normal  forwards;
 }
 
-/* Бекущая лента */
+/* Бегущая лента */
 
 .running-ribbon{
-    position: absolute;
-    top: 581px;
-
     width: 100%;
     height: 145px;
 }
-
 .running-ribbon div.view{
     height: 150px;
-    width: 89%;
-    margin-left: 5%;
+    width: 830px;
+    margin-left: -3%;
+    /* margin-right: auto; */
     overflow: scroll;
-    /*background: #f5ff00;*/
 }
+
+
 .running-ribbon div.view ul{
     height: 100%; width: 10000px;
     list-style: none;
@@ -183,44 +179,53 @@
     border: 1px solid #f7ebdb;
     width: 150px;
     text-align: center;
+    float: left
 }
-.running-ribbon div.view ul > li:hover{
-    /*background-color: #1b6d85;*/
-}
-.running-ribbon div.view ul li{ float: left}
+.running-ribbon div.view ul li{ }
 
-#show{
-    position: absolute;
-    top: 32px;
-    /* display: none; */
+.show{
     margin-top: 1em;
 }
 
-div#show button{
-    padding: 1em;
-    margin-right: 1em;
+.wrap-catalog div.show button{
+    padding: 0;
+    margin-right: 0;
     cursor: pointer;
+    margin-top: 50%;
 }
-div#show button:nth-child(1){
+ button#prev{
     width: 50px;
     height: 50px;
     background-image: url('../../img/UI/arrow_inactive.jpg');
     transform: scale(1, 1);
 }
-div#show button:nth-child(2){
-    left: 1049px;
-    position: absolute;
-    top: 0;
+ button#next{
     width: 50px;
     height: 50px;
     background-image: url('../../img/UI/arrow_inactive.jpg');
     transform: scale(-1, 1);
+
 }
-div#show button:nth-child(1):hover{
+ button#prev:hover{
     background-image: url('../../img/UI/arrow_active.jpg');
     transform: scale(-1, 1);
+
 }
-div#show button:nth-child(2):hover{
+ button#next:hover{
     background-image: url('../../img/UI/arrow_active.jpg');
     transform: scale(1, 1);
+}
+
+
+@media all and (max-width: 992px){
+    .running-ribbon div.view{
+        width: 530px;
+    }
+
+}
+@media all and  (max-width: 768px){
+    .running-ribbon div.view{
+        width: 380px;
+    }
+
 }

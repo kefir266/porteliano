@@ -18,9 +18,9 @@ use yii\bootstrap\ActiveForm;
 <div class="contact-form">
     <div class="row">
 
-        <article class="col-lg-10 col-lg-offset-1">
-            <h2>Заполните форму</h2>
-            <p>Наш менеджер свяжется с вами и раскажет о данном предложении</p>
+        <article class="col-lg-12">
+            <h2 class="contact-form-header-all">Заполните форму</h2>
+            <p class=".contact-form-text">Наш менеджер свяжется с вами и раскажет о данном предложении</p>
             <hr style="
                     border: none; /* Убираем границу для браузера Firefox */
                     color: #9a2434; /* Цвет линии для остальных браузеров */
@@ -31,7 +31,7 @@ use yii\bootstrap\ActiveForm;
 
     </div>
     <div class="row">
-        <div class="col-lg-10 col-md-offset-1">
+        <div class="col-lg-12">
             <?php
             $form = ActiveForm::begin([
                 'id' => 'login-form',
@@ -78,7 +78,7 @@ use yii\bootstrap\ActiveForm;
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-10 col-md-offset-1">
+        <div class="col-lg-12">
             <div class="form-group">
                     <?= Html::submitButton('ОТПРАВИТЬ ЗАЯВКУ', ['class' => 'btn btn-primary']) ?>
             </div>

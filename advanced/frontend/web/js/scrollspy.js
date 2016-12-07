@@ -6,6 +6,7 @@ $('ul.navbar > li > a[data-target=a0]').scroolly([{
 	to: 'con-bottom +500el= top',
 	onCheckIn: function($el){
 		$('.navbar li > a[data-target=a0]').addClass('lightButton');
+		$('.navbar > li').removeClass('active');
 	},
 	onCheckOut: function($el){
 		buttons.removeClass('lightButton');
