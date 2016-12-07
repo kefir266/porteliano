@@ -126,7 +126,7 @@
             totalImgsW = imgsCount * imgW,  // общая ширина
             current = 1; 					// текушая картинка(позиция)
 
-        $("div#show")
+        $("div.show")
             .show()
             .find("button").on("click", function(){
             var direction = $(this).attr("id");

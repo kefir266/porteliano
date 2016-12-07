@@ -81,11 +81,11 @@
 
 .wrap-septa .running-ribbon-septa div.view {
     height: 600px;
-    width: 96%;
+    width: 94%;
 
 }
 
-.wrap-septa .running-ribbon-septa div.view ul {
+.running-ribbon-septa ul {
     height: 100%;
     width: 10000px;
     list-style: none;
@@ -156,3 +156,26 @@
     margin-top: 160px;
 }
 
+
+.prev{
+    width: 50px;
+    height: 50px;
+    background-image: url('../../img/UI/arrow_inactive.jpg');
+    transform: scale(1, 1);
+}
+.next{
+    width: 50px;
+    height: 50px;
+    background-image: url('../../img/UI/arrow_inactive.jpg');
+    transform: scale(-1, 1);
+
+}
+.prev:hover{
+    background-image: url('../../img/UI/arrow_active.jpg');
+    transform: scale(-1, 1);
+
+}
+.next:hover{
+    background-image: url('../../img/UI/arrow_active.jpg');
+    transform: scale(1, 1);
+}

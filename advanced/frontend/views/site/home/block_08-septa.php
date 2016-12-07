@@ -86,11 +86,11 @@ $info = [
     <div class="row">
         <!-- кнопка назад -->
         <div class="col-md-1 flex-vert-centr show">
-            <button id="prev" class="btn btn-link " data-param="prev"></button>
+            <button id="prev"  class="btn btn-link prev" data-param="prev"></button>
         </div>
         <!-- Перегородки -->
         <div class="col-md-10">
-            <div id="doors-inn" class="doors-panel running-ribbon-doors">
+            <div id="doors-inn" class="doors-panel running-ribbon-septa">
                 <div class="wrap-tiles view">
                     <ul>
                         <?php
@@ -110,8 +110,8 @@ $info = [
                             }
                             echo Html::tag('div', '', ['class' => 'delimiter']);
                             echo Html::beginTag('div', ['class' => 'block-4-price']);
-                            echo Html::tag('div', '€ ' . $info[0][3], ['class' => 'block-4-price-count']);
-                            echo Html::tag('div', '', ['class' => 'glyphicon glyphicon-heart-empty ']);
+                            echo Html::tag('div', '€ ' . $info[0][3], ['class' => 'block-price-count']);
+                            echo Html::tag('div', '', ['class' => 'glyphicon glyphicon-heart-empty add-to-wish']);
                             echo Html::endTag('div');
                             echo Html::endTag('div');
                             echo Html::endTag('li');
@@ -120,17 +120,17 @@ $info = [
                     </ul>
                 </div>
             </div>
-        </div>  
         </div>
         <!-- кнопка вперед -->
         <div class="col-md-1 show">
-            <button id="next" class="btn btn-link" data-param="next"></button>
+            <button id="next" class="btn btn-link next" data-param="next"></button>
         </div>
     </div>
+    
     <!-- Кнопка -->
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            <a href="<?= Url::to(['pages/dveri']); ?>" class="btn btn-default btn-lg door-show-more" role="button">
+            <a href="<?= Url::to(['pages/dveri']); ?>" class="btn btn-default btn-lg septa-show-more" role="button">
                 ПОКАЗАТЬ БОЛЬШЕ</a>
         </div>
     </div>
