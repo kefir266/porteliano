@@ -3,6 +3,9 @@
     height: 766px;
     background-color: #fff;
 }
+.wrap-manufacturers .row {
+    max-width: 100%;
+}
 .wrap-manufacturers > div.manufacturers > ul > li{
     display: inline-block;
     margin-left: 9%;

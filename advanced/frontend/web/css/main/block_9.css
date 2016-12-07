@@ -3,6 +3,9 @@
     height: 652px;
     background-color: #0098fd;
 }
+.wrap-action-another .row {
+    max-width: 100%;
+}
 
 .wrap-action-another > h1{
     position: absolute;
