@@ -9,10 +9,12 @@
 namespace frontend\controllers;
 
 use app\models\Cart;
+use app\models\Order;
 use app\models\Wish;
+use app\models\Customer;
 use yii;
-use yii\base\Controller;
-use frontend\models\Product;
+use yii\web\Controller;
+use app\models\Product;
 
 class CartController extends Controller
 {
@@ -124,10 +126,43 @@ class CartController extends Controller
 
     public function actionIndex(){
 
+        $modelOrder = new Order();
+
         $session = Yii::$app->session;
         $session->open();
-        
-        return $this->render('14_Korzina', ['cart' => $session['cart']]);
+
+        $modelOrder->fillNewOrderContent($session['cart']);
+
+        $postrequest = Yii::$app->request->post();
+        if ($modelOrder->load($postrequest) && $modelOrder->loadNewOrderContent($postrequest)) {
+
+
+                $customer = Customer::findOne(['full_name' => $modelOrder->customer]);
+                if ($customer)
+                    $modelOrder->full_name = $customer->full_name;
+                else
+                {
+                    $customer = new Customer();
+                    $customer->full_name = $modelOrder->customer;
+                    $customer->email = $modelOrder->email;
+                    $customer->phone = $modelOrder->phone;
+                    if ($customer->save())
+                        $modelOrder->full_name = $customer->full_name;
+                    else
+                    {
+                        echo "Такой пользователь уже существует";
+                        return $this->refresh();
+                    }
+                }
+                if ($modelOrder->save())
+                    return 'Ваш заказ принят';
+        }
+
+        return $this->render('14_Korzina',
+                [
+                    'cart' => $session['cart'],
+                    'modelOrder' => $modelOrder,
+            ]);
     }
     
     public function actionWishlist(){

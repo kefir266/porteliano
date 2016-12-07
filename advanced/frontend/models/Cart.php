@@ -8,7 +8,6 @@
 
 namespace app\models;
 
-use app\models\Product;
 
 
 class Cart
