@@ -190,6 +190,27 @@ MainAdaptiveAsset::register($this);
 
     </footer>
 
+
+    <?php Modal::begin([
+        'id' => 'modal-cart',
+        'header' => '<h2>Корзина</h2>',
+        'footer' => '<button type="button" class="btn btn-default" data-dismiss="modal">Продолжить покупки</button>
+        <button type="button" class="btn btn-success">Оформить заказ</button>
+        <button type="button" class="btn btn-danger" onclick=clearCart("cart")>Очистить корзину</button>',
+    ]);
+
+    Modal::end();
+    ?>
+
+    <?php Modal::begin([
+        'id' => 'modal-wish',
+        'header' => '<h2>Отобранные товары</h2>',
+        'footer' => '<button type="button" class="btn btn-default" data-dismiss="modal">Продолжить покупки</button>
+    <button type="button" class="btn btn-danger" onclick=clearCart("wish")>Очистить корзину</button>',
+    ]);
+
+    Modal::end();
+    ?>
     <?php $this->endBody() ?>
     </body>
     </html>
