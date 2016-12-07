@@ -20,6 +20,7 @@ class MainAdaptiveAsset extends AssetBundle
         'css/animation.css',
         'css/gray.css',        
         'css/main-adaptive.css',
+        'css/contact-form.css',
         
     ];
     public $js = [
