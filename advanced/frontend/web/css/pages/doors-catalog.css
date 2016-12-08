@@ -2,9 +2,11 @@ body{
     background-color: #fdfdf3;
 }
 .door-catalog{
-    margin-left: 418px;
+
     /*background-color: #66afe9;*/
     max-width: 1030px;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 .flex-container {
@@ -207,6 +209,7 @@ span.btn{
 }
 .plate{
     position: relative;
+    margin-bottom: 10px;
 }
 .doors-gradient-pos{
     position: absolute;
