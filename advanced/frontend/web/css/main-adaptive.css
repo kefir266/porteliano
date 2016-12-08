@@ -194,7 +194,7 @@ header .row:first-child {
     background-color: #413332;
 }
 
-.footer-general, .push {
+.footer-general {/*,.push */
     height: 102px;
     position: relative;
 }

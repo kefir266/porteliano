@@ -10,8 +10,8 @@
 
 .wrap-doors .arrow {
     background-image: url(../../img/other/angle-light.png);
-    position: absolute;
-    top: 100%;
+    width: 61px;
+    height: 10px;
 }
 
 .wrap-doors .doors-panel {

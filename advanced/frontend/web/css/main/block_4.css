@@ -6,17 +6,24 @@
 .wrap-novelty .row{
     max-width: 100%;
 }
-.wrap-novelty .arrow {
-    background-image: url(../../img/other/angle-light.png);
+.arrow{
     position: absolute;
     top: 100%;
+    /* верт. центр */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+.wrap-novelty .arrow {
+    background-image: url(../../img/other/angle-light.png);
+    width: 61px;
+    height: 10px;
 }
 .wrap-novelty .doors-panel{
     top: 138px;
     left: 399px;
     width: 100%;
 }
-
 
 .wrap-novelty .doors-panel >.wrap-tiles{
     left: 12px;

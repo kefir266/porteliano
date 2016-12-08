@@ -78,8 +78,8 @@
 
 .wrap-key-benefits > .arrow {
     background-image: url(../../img/other/angle-dark.png);
-    /*position: absolute;*/
-    top: 802px;
+    width: 59px;
+    height: 10px;
 }
 .row-indent{
     margin-top: 60px;

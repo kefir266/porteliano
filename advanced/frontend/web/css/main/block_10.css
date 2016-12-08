@@ -28,3 +28,8 @@
     font-size: 237%;
     font-family: "Copperplate", serif;
 }
+.wrap-manufacturers .arrow {
+    background-image: url(../../img/other/angle-light.png);
+    width: 61px;
+    height: 10px;
+}
