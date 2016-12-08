@@ -39,25 +39,43 @@ switch ($product->section->id) {
 
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Ручки';
+
+        $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '1']);
+        $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '2']);
         break;
     case 4:
         $categoryTitle = 'Входные двери';
         $coverImgLeft = '@cover/grips.png';
         $coverImgRight = '@cover/inner.png';
 
-        $coverTextLeft = 'Межкомнатные двери';
-        $coverTextRight = 'Ручки';
+        $coverTextLeft = 'Ручки';
+        $coverTextRight = 'Межкомнатные двери';
+
+        $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '0']);
+        $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '2']);
         break;
     case 5:
         $categoryTitle = 'Ручки';
         $coverImgLeft = '@cover/outer.jpg';
         $coverImgRight = '@cover/inner.png';
 
-        $coverTextLeft = 'Межкомнатные двери';
-        $coverTextRight = 'Входные двери';
+        $coverTextLeft = 'Входные двери';
+        $coverTextRight = 'Межкомнатные двери';
+
+        $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '1']);
+        $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '0']);
         break;
     default:
         $categoryTitle = 'нет категории';
+
+        $coverImgLeft = '@cover/outer.jpg';
+        $coverImgRight = '@cover/grips.png';
+
+        $coverTextLeft = 'Входные двери';
+        $coverTextRight = 'Ручки';
+
+        $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '1']);
+        $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '2']);
 }
 
 // в хлебные крошки 2 ссылки
@@ -88,8 +106,8 @@ foreach ($sections->getMenu() as $section) {
 <div class="door-catalog">
     <div class="panel-quick-selection">
         <div class="row">
-            <div class="col-md-5 doorImg">
-                <?= Html::img('/img/' . $product->manufacturer->title . '/' . $product->img) ?>
+            <div class="col-md-5 ">
+                <?= Html::img('/img/' . $product->manufacturer->title . '/' . $product->img, ['class'=> 'doorImg']) ?>
             </div>
             <div class="product-discript-door col-md-7 ">
                 <div class="row">
@@ -97,6 +115,7 @@ foreach ($sections->getMenu() as $section) {
                         <h1 class="product-title"><?= $product->section->title ?></h1>
                     </div>
                 </div>
+                <!--Производитель-->
                 <div class="row">
                     <div class="col-md-6">
                         <h4 class="product-discript">Производитель</h4>
@@ -104,7 +123,8 @@ foreach ($sections->getMenu() as $section) {
                     <div class="col-md-6">
                         <h4 ><?= $product->manufacturer->title ?></h4>
                     </div>
-                </div> <!--Производитель-->
+                </div>
+                <!--Коллекция-->
                 <div class="row">
                     <div class="col-md-6">
                         <h4 class="product-discript">Коллекция</h4>
@@ -112,7 +132,8 @@ foreach ($sections->getMenu() as $section) {
                     <div class="col-md-6">
                         <h4><?= $product->collection  ?></h4>
                     </div>
-                </div> <!--Коллекция-->
+                </div>
+                <!--Артикул-->
                 <div class="row">
                     <div class="col-md-6">
                         <h4 class="product-discript">Артикул</h4>
@@ -120,7 +141,8 @@ foreach ($sections->getMenu() as $section) {
                     <div class="col-md-6">
                         <h4><?= $product->article  ?></h4>
                     </div>
-                </div> <!--Артикул-->
+                </div>
+                <!--Стиль-->
                 <div class="row">
                     <div class="col-md-6">
                         <h4 class="product-discript">Стиль</h4>
@@ -128,12 +150,15 @@ foreach ($sections->getMenu() as $section) {
                     <div class="col-md-6">
                         <h4><?= $product->style->title ?></h4>
                     </div>
-                </div> <!--Стиль-->
+                </div>
+                <!----------->
                 <div class="row">
                     <div class="col-md-9">
                         <h5 class="product-note"><?=$product->note  ?></h5>
+                        <hr class="hr-separation"/>
                     </div>
-                </div> <!----------->
+                </div>
+                <!--Стоимость-->
                 <div class="row">
                     <div class="col-md-6">
                         <h4 class="product-discript product-price-h">Стоимость</h4>
@@ -141,7 +166,12 @@ foreach ($sections->getMenu() as $section) {
                     <div class="col-md-6">
                         <h4 class="product-price"><?= $product->price->cost ?></h4>
                     </div>
-                </div> <!--Стоимость-->
+                </div>
+                <div class="row">
+                    <div class="col-md-9">
+                        <hr class="hr-separation"/>
+                    </div>
+                </div>
                 <div class="row buttons-area">
                     <div class="col-md-6">
                         <a  href="#">
@@ -165,9 +195,9 @@ foreach ($sections->getMenu() as $section) {
         <div class="row">
             <div class="col-md-6">
                 <div class="plate">
-                    <a href="#one">
+                    <a href="<?=$coverLinkLeft?>">
                         <?= Html::img($coverImgLeft, [
-                            'style' => 'width: 100%',
+                            'class'=>'img-border'
                         ]) ?>
 
                         <div class="doors-gradient doors-gradient-pos"></div>
@@ -177,9 +207,9 @@ foreach ($sections->getMenu() as $section) {
             </div>
             <div class="col-md-6 col-xs-12">
                 <div class="plate">
-                    <a href="#two">
+                    <a href="<?=$coverLinkRight?>">
                         <?= Html::img($coverImgRight, [
-                            'style' => 'width: 100%',
+                            'class'=>'img-border'
                         ]) ?>
                         <div class="doors-gradient doors-gradient-pos"></div>
                         <h2><?= $coverTextRight ?></h2>

@@ -31,31 +31,35 @@ $bottomContent_1 = 'Не забывая об эстетической привл
 $bottomContent_2 = 'Именно они позволят значительно сэкономить место в жилом или рабочем помещении, которое никогда не бывает лишним, а еще одно их достоинство — легкость и бесшумность открывания. Выполненные из дерева, металла и стекла, раздвижные конструкции также имеют оригинальный дизайн, поэтому итальянские межкомнатные двери и перегородки из нашего ассортимента Вы сможете использовать в интерьере любого стиля — от классики и ретро до этники и хай-тека.';
 ?>
 <div class="wrap septa">
-    <div class="container-fluid">
+    <div class="septa-container">
         <div class="wrap-tiles">
+            <!-- Заголовок -->
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-10 col-md-offset-1">
                     <?= Html::tag('h2', 'Раздвижные перегородки'); ?>
                 </div>
             </div>
+            <!-- плитки -->
             <div class="row">
-                <div class="col-md-3">
-                    <?= Html::beginTag('a', ['href' => '#']); ?>
-                    <?= Html::img("@septa/septa_01.jpg",
-                        ['alt' => "door_0$i", 'class' => 'tile']); ?>
-                    <?= Html::endTag('a'); ?>
-                </div>
-                <div class="col-md-6">
-                    <?= Html::beginTag('a', ['href' => '#']); ?>
-                    <?= Html::img("@septa/septa_02.jpg",
-                        ['alt' => "door_0$i", 'class' => 'tile']); ?>
-                    <?= Html::endTag('a'); ?>
-                </div>
-                <div class="col-md-3">
-                    <?= Html::beginTag('a', ['href' => '#']); ?>
-                    <?= Html::img("@septa/septa_03.jpg",
-                        ['alt' => "door_0$i", 'class' => 'tile']); ?>
-                    <?= Html::endTag('a'); ?>
+                <div class="col-md-11 col-md-offset-1">
+                    <div class="plate">
+                        <?= Html::beginTag('a', ['href' => '#']); ?>
+                        <?= Html::img("@septa/septa_01.jpg",
+                            ['alt' => "door_0$i", 'class' => 'tile']); ?>
+                        <?= Html::endTag('a'); ?>
+                    </div>
+                    <div class="plate">
+                        <?= Html::beginTag('a', ['href' => '#']); ?>
+                        <?= Html::img("@septa/septa_02.jpg",
+                            ['alt' => "door_0$i", 'class' => 'tile']); ?>
+                        <?= Html::endTag('a'); ?>
+                    </div>
+                    <div class="plate">
+                        <?= Html::beginTag('a', ['href' => '#']); ?>
+                        <?= Html::img("@septa/septa_03.jpg",
+                            ['alt' => "door_0$i", 'class' => 'tile']); ?>
+                        <?= Html::endTag('a'); ?>
+                    </div>
                 </div>
             </div>
             <div class="row">
