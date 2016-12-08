@@ -130,10 +130,10 @@ MainAdaptiveAsset::register($this);
                             'linkOptions' => ['data-target' => 'a6'],
                         ],
 
-                        ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist"></span>',
+                        ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist"><span class="circle-number">5</span></span>',
                             'url' => ['#'],
                         ],
-                        ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket" ></span>',
+                        ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket" ><span class="circle-number">5</span></span>',
                             'url' => ['#'],
                         ],
 
@@ -173,16 +173,17 @@ MainAdaptiveAsset::register($this);
                     ['label' => 'О КОМПАНИИ', 'url' => ['#about']],
                     ['label' => 'КОНТАКТЫ', 'url' => ['#contact']],
 
-                    ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist"></span>',
+                    ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist"><span class="circle-number">5</span></span>',
                         'url' => ['site/index'],
                     ],
-                    ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket" ></span>',
+                    ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket" ><span class="circle-number">5</span></span>',
                         'url' => ['site/index'],
                     ],
 
                 ]]);/**/
             ?>
         </div>
+
         <div class="footer-copy">
             &copy; Porteliano Итальянские двери, 1996 - <?= date('Y') ?>
             </p>

@@ -280,3 +280,22 @@ header .row:first-child {
 .col-navbar {
     height: 64px;
 }
+#wishlist{
+    position: relative;
+}
+.circle-number{
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    z-index: 1;
+    color: #efe2e9;
+    background-color: #942b32;
+    line-height: 18px;
+    font-size: 9px;
+    /* круг */
+    width: 18px;
+    height: 18px;
+    -moz-border-radius: 9px;
+    -webkit-border-radius: 9px;
+    border-radius: 9px;
+}
