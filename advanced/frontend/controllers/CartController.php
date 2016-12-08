@@ -14,7 +14,7 @@ use app\models\Wish;
 use app\models\Customer;
 use yii;
 use yii\web\Controller;
-use app\models\Product;
+use frontend\models\Product;
 
 class CartController extends Controller
 {
@@ -131,32 +131,43 @@ class CartController extends Controller
         $session = Yii::$app->session;
         $session->open();
 
-        $modelOrder->fillNewOrderContent($session['cart']);
+        if (isset($session['cart'])) {
+            $modelOrder->fillNewOrderContent($session['cart']);
 
-        $postrequest = Yii::$app->request->post();
-        if ($modelOrder->load($postrequest) && $modelOrder->loadNewOrderContent($postrequest)) {
-
+            $postrequest = Yii::$app->request->post();
+            if ($modelOrder->load($postrequest) && $modelOrder->loadNewOrderContent($postrequest)) {
 
                 $customer = Customer::findOne(['full_name' => $modelOrder->customer]);
                 if ($customer)
                     $modelOrder->full_name = $customer->full_name;
-                else
-                {
+                else {
                     $customer = new Customer();
                     $customer->full_name = $modelOrder->customer;
                     $customer->email = $modelOrder->email;
                     $customer->phone = $modelOrder->phone;
                     if ($customer->save())
                         $modelOrder->full_name = $customer->full_name;
-                    else
-                    {
+                    else {
                         echo "Такой пользователь уже существует";
                         return $this->refresh();
                     }
                 }
-                if ($modelOrder->save())
-                    return 'Ваш заказ принят';
+                if ($modelOrder->save()) {
+                    Yii::$app->mailer->compose('orderAdmin', ['cart' => $session['cart'],
+                        'modelOrder' => $modelOrder,])
+                        ->setFrom('porteliano@mail.ru')
+                        ->setTo('kefir266@gmail.com')
+                        ->setSubject('Заказ ' . $modelOrder->id)
+                        ->send();
+
+                    unset($session['cart']);
+
+                    return $this->render('successful');
+                }
+            }
         }
+        else
+            return $this->render('empty');
 
         return $this->render('14_Korzina',
                 [

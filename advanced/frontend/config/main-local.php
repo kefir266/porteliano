@@ -6,6 +6,23 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'xNYSkWOSi6_txYz3mP5Mx5bO4zTsrEwn',
         ],
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            'viewPath' => '@common/mail',
+            // send all mails to a file by default. You have to set
+            // 'useFileTransport' to false and configure a transport
+            // for the mailer to send real emails.
+            'useFileTransport' => false,
+
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.mail.ru',
+                'username' => 'porteliano@mail.ru',
+                'password' => 'GjhntkbfyjDoors777',
+                'port' => '587',
+                'encryption' => 'tls',
+            ],
+        ],
     ],
 ];
 
