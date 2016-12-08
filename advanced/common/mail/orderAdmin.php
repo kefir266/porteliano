@@ -53,7 +53,7 @@ Yii::setAlias('@img', '@web/img/');
                     </div>
                     <div class="col-md-1 button-area">
                         <?=
-                        $newOrderContent[$id]['quantity'];
+                        $modelOrder->newOrderContent[$id]['quantity'];
                         ?>
                     </div>
                 </div>

@@ -89,13 +89,20 @@ class CartController extends Controller
 
     public function actionClear() {
 
-        $cartWish = Yii::$app->request->post('cartwish');
 
-        $session = Yii::$app->session;
-        $session->open();
-        $session[$cartWish]->clear();
-        $this->layout = false;
-        return 'Пусто!';
+        try{
+            $cartWish = Yii::$app->request->post('cartwish');
+
+            $session = Yii::$app->session;
+            $session->open();
+            unset($session[$cartWish]);
+            $this->layout = true;
+
+        } catch (yii\base\Exception $e) {
+            unset($session['cart']);
+            unset($session['wish']);
+        }
+        return $this->render('empty');
     }
     
     public function actionDelelement(){
