@@ -79,7 +79,7 @@ class CatalogController extends Controller
 
         $products = $modelProduct->getFilteredProducts($params, $quantity);
 
-        return $this->render('index',['products' => $products]);
+        return $this->render('03_Dveri_katalog',['products' => $products]);
     }
     
     public function actionProduct() {

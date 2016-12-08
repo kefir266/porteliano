@@ -1,10 +1,12 @@
 <?php
 namespace frontend\controllers;
 
+use app\models\Section;
 use frontend\models\QuestionForm;
 use GuzzleHttp\Psr7\Request;
 use Yii;
 use yii\base\InvalidParamException;
+use yii\helpers\ArrayHelper;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -84,8 +86,15 @@ class SiteController extends Controller
         $request = Yii::$app->request;
 
         $products = $modelProduct->getProductsBySection($request->get('section'),4 ); /// 4 картинки на страницу
-        
-        return $this->render('index',['products' => $products, 'questionForm' => $QuestionForm]);
+        $sectionNames = ArrayHelper::map(Section::findAll(['1','2']),'id','title_main');
+        $sectionNames['novelty'] = 'Новинки';
+
+        return $this->render('index',
+            [
+                'products' => $products,
+                'questionForm' => $QuestionForm,
+                'sectionNames' => $sectionNames, 
+            ]);
 
     }
 
