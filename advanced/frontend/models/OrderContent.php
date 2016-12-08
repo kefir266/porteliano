@@ -7,6 +7,7 @@ use Yii;
 /**
  * This is the model class for table "order_content".
  *
+ * @property string $id
  * @property string $order_id
  * @property string $product_id
  * @property string $price
@@ -39,7 +40,7 @@ class OrderContent extends \yii\db\ActiveRecord
             [['price', 'sum'], 'number'],
             [['currency_id'], 'exist', 'skipOnError' => true, 'targetClass' => Currency::className(), 'targetAttribute' => ['currency_id' => 'id']],
             [['order_id'], 'exist', 'skipOnError' => true, 'targetClass' => Order::className(), 'targetAttribute' => ['order_id' => 'id']],
-            [['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => Product::className(), 'targetAttribute' => ['product_id' => 'id']],
+            //[['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => Product::className(), 'targetAttribute' => ['product_id' => 'id']],
         ];
     }
 
@@ -49,6 +50,7 @@ class OrderContent extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
+            'id' => 'ID',
             'order_id' => 'Order ID',
             'product_id' => 'Product ID',
             'price' => 'Price',

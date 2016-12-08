@@ -26,7 +26,7 @@
     // })
 })(jQuery);
 
-function delItem(e,cartWish, id){
+function delItem(e, cartWish, id) {
 
     if (cartWish == 'cart')
         var jtag = $('#basket');
@@ -39,7 +39,7 @@ function delItem(e,cartWish, id){
                 id: id,
                 cartwish: cartWish
             },
-            type:'POST',
+            type: 'POST',
             success: function (res) {
                 //showModal('#modal-'+cartWish,res);
                 getQuantity('get' + cartWish, jtag);
@@ -51,23 +51,22 @@ function delItem(e,cartWish, id){
 
             }
         }
-
     )
 }
 
-function getQuantity(action, jtag,zero){
+function getQuantity(action, jtag, zero) {
     $.ajax({
-            url: '/cart/'+action,
+            url: '/cart/' + action,
 
-            type:'GET',
+            type: 'GET',
             success: function (res) {
-                callbackQuantity(res,jtag,zero);},
+                callbackQuantity(res, jtag, zero);
+            },
             error: function () {
                 console.log('error');
 
             }
         }
-
     )
 }
 
@@ -83,21 +82,19 @@ function setGlyphiconHeart(jtag, state) {
     }
 }
 
-function refreshCart(quantity, jtag, zero){
+function refreshCart(quantity, jtag, zero) {
 
     console.log(quantity);
     if (quantity == 0) {
-        jtag.text((!!zero)? zero : '');
-        if (jtag.attr('id')== 'wishlist')
-        {
+        jtag.text((!!zero) ? zero : '');
+        if (jtag.attr('id') == 'wishlist') {
             jtag.removeClass("glyphicon-heart");
             jtag.addClass("glyphicon-heart-empty");
         }
     }
     else {
-        jtag.html('<span class="circle-number">'+quantity+'</span>');
-        if (jtag.attr('id')== 'wishlist')
-        {
+        jtag.html('<span class="circle-number">' + quantity + '</span>');
+        if (jtag.attr('id') == 'wishlist') {
             jtag.addClass("glyphicon-heart");
             jtag.removeClass("glyphicon-heart-empty");
 
@@ -115,27 +112,26 @@ function addToCart(e) {
     var id = $(e.target).data('id');
 
     $.ajax({
-        url: '/cart/add',
-        data:{
-            id: id
-        },
-        type:'GET',
-        success: function (res) {
-            callbackQuantity(res, jtag);
-            //getCart('cart');
+            url: '/cart/add',
+            data: {
+                id: id
+            },
+            type: 'GET',
+            success: function (res) {
+                callbackQuantity(res, jtag);
+                //getCart('cart');
 
-        },
-        error: function () {
-            console.log('error');
+            },
+            error: function () {
+                console.log('error');
 
+            }
         }
-    }
-
     )
 
 }
 
-function clearCart(cartWish){
+function clearCart(cartWish) {
 
     if (cartWish == 'cart')
         var jtag = $('#basket');
@@ -144,10 +140,10 @@ function clearCart(cartWish){
 
     $.ajax({
             url: '/cart/clear',
-            data:{
+            data: {
                 cartwish: cartWish
             },
-            type:'POST',
+            type: 'POST',
             success: function (res) {
                 refreshCart(0, jtag);
                 $("#tab-cart").html("");
@@ -157,7 +153,6 @@ function clearCart(cartWish){
 
             }
         }
-
     )
 }
 
@@ -171,10 +166,10 @@ function addToWish(e) {
 
     $.ajax({
             url: '/cart/addwish',
-            data:{
+            data: {
                 id: id
             },
-            type:'GET',
+            type: 'GET',
             success: function (res) {
                 callbackQuantity(res, jtag);
                 //getCart('wish');
@@ -184,22 +179,21 @@ function addToWish(e) {
 
             }
         }
-
     )
 
 }
 
-function getCart(cartWish){
+function getCart(cartWish) {
 
     $.ajax(
         {
             url: '/cart/gettab',
-            data:{cartwish: cartWish},
-            type:'GET',
-            success: function(res) {
+            data: {cartwish: cartWish},
+            type: 'GET',
+            success: function (res) {
                 showModal('#modal-' + cartWish, res);
             },
-            error: function() {
+            error: function () {
                 console.log('Error tab');
             }
         }
@@ -207,7 +201,7 @@ function getCart(cartWish){
 
 }
 
-function isWished(id, tag){
+function isWished(id, tag) {
 
     $.ajax({
         url: '/cart/iswished',
@@ -226,20 +220,20 @@ function isWished(id, tag){
 }
 
 function callbackQuantity(res, jtag, zero) {
-    if (!!jtag){
+    if (!!jtag) {
 
         refreshCart(res, jtag, zero);
     }
 }
 
-function showModal(id, tab){
+function showModal(id, tab) {
 
     $(id + ' .modal-body').html(tab);
     $(id).modal();
 }
 
 function eventClickDropMenu(item) {
-    if (item.target.tagName == 'A'){
+    if (item.target.tagName == 'A') {
         var idItem = item.target.getAttribute('id-item');
         var button = $(item.target).parents(".btn-group").children(".btn-default:first");
 
@@ -252,25 +246,25 @@ function eventClickDropMenu(item) {
 function eventClickSelectButton(item) {
 
 
-    var    material = $("div .material").find(".btn-default").attr('id-item');
-    var    manufacturer = $("div .material").find(".btn-default").attr('id-item');
-    var    style = $("div .style").find(".btn-default").attr('id-item');
-    var    price = $("div .block-1-price").find(".btn-default").attr('id-item');
-    var    section = $(".section-title").attr('section-id');
+    var material = $("div .material").find(".btn-default").attr('id-item');
+    var manufacturer = $("div .material").find(".btn-default").attr('id-item');
+    var style = $("div .style").find(".btn-default").attr('id-item');
+    var price = $("div .block-1-price").find(".btn-default").attr('id-item');
+    var section = $(".section-title").attr('section-id');
 
 
     console.log(material);
     $(location).attr('href',
         '/catalog/?'
-            +((!!section) ? '&section=' + section.replace(/[^.\d]+/g,"") : '')
-        +((!!material)?  '&material='+material.replace(/[^.\d]+/g,"") : '')
-        + ((!!manufacturer)? '&manufacturer=' + manufacturer.replace(/[^.\d]+/g,"") : '')
-        + ((!!style)? '&style=' + style.replace(/[^.\d]+/g,"") : '')
-        + ((!!price)? '&price=' + price : '').replace(/[^.\d]+/g,""));
+        + ((!!section) ? '&section=' + section.replace(/[^.\d]+/g, "") : '')
+        + ((!!material) ? '&material=' + material.replace(/[^.\d]+/g, "") : '')
+        + ((!!manufacturer) ? '&manufacturer=' + manufacturer.replace(/[^.\d]+/g, "") : '')
+        + ((!!style) ? '&style=' + style.replace(/[^.\d]+/g, "") : '')
+        + ((!!price) ? '&price=' + price : '').replace(/[^.\d]+/g, ""));
 }
 
 // для 03_dveri-catalog
-$('ul.dropdown-menu > li > a').on('click',function(event){
+$('ul.dropdown-menu > li > a').on('click', function (event) {
     $(this)
         .parents(".btn-group")
         .children(".btn-default:first")
