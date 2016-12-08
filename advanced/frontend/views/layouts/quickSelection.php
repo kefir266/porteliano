@@ -48,7 +48,7 @@ foreach ($sections->getMenu() as $section) {
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 ">
+            <div class="col-md-12 col-md-offset-0 col-xs-10 col-xs-offset-1">
                 <div class="material">
                     <h5>Материал</h5>
                     <?php
