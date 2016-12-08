@@ -125,6 +125,10 @@
 
 .panel-quick-selection{
     font-size: 22px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 .panel-quick-selection  h2{
     color: #955347;
