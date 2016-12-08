@@ -27,31 +27,43 @@ Yii::setAlias('@doors', '@web/img/doors');
 Yii::setAlias('@cover', '@web/img/cover');
 
 // определение какие обложки и заголовки показывать
-switch ($indx) {
+switch ($ind) {
     case 0:
         $categoryTitle = 'Межкомнатные двери';
 
         $coverImgLeft = '@cover/outer.jpg';
         $coverImgRight = '@cover/grips.png';
 
+
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Ручки';
+
+        $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '1']);
+        $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '2']);
         break;
     case 1:
         $categoryTitle = 'Входные двери';
+
         $coverImgLeft = '@cover/grips.png';
         $coverImgRight = '@cover/inner.png';
 
-        $coverTextLeft = 'Межкомнатные двери';
-        $coverTextRight = 'Ручки';
+        $coverTextLeft = 'Ручки';
+        $coverTextRight = 'Межкомнатные двери';
+
+        $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '2']);
+        $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '0']);
         break;
     case 2:
         $categoryTitle = 'Ручки';
+
         $coverImgLeft = '@cover/outer.jpg';
         $coverImgRight = '@cover/inner.png';
 
-        $coverTextLeft = 'Межкомнатные двери';
-        $coverTextRight = 'Входные двери';
+        $coverTextLeft = 'Входные двери';
+        $coverTextRight = 'Межкомнатные двери';
+
+        $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '1']);
+        $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '0']);
         break;
     default:
         $categoryTitle = 'нет категории';
@@ -263,7 +275,7 @@ foreach ($sections->getMenu() as $section) {
         <div class="row">
             <div class="col-md-6">
                 <div class="plate">
-                    <a href="#one">
+                    <a href="<?=$coverLinkLeft?>">
                         <?= Html::img($coverImgLeft, [
                             'style' => 'width: 100%',
                         ]) ?>
@@ -275,7 +287,7 @@ foreach ($sections->getMenu() as $section) {
             </div>
             <div class="col-md-6 col-xs-12">
                 <div class="plate">
-                    <a href="#two">
+                    <a href="<?=$coverLinkRight?>">
                         <?= Html::img($coverImgRight, [
                             'style' => 'width: 100%',
                         ]) ?>
