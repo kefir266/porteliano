@@ -62,7 +62,7 @@
 
 .pick-up > button{
     margin-top: 15%;
-
+    font-size: 16px;
     font-family: PTSans, sans-serif;
     width: 272px;
     height: 42px;
@@ -71,7 +71,9 @@
     color: #fffeff;
 }
 .pick-up > button:active,
-.pick-up > button:hover{
+.pick-up > button:hover,
+.pick-up > button:visited,
+.pick-up > button:focus{
     background-color: #6a372d;
     color: #fffeff;
 }

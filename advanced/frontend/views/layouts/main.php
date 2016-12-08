@@ -144,13 +144,15 @@ MainAdaptiveAsset::register($this);
             </div>
         </div>
         <div class="row">
-            <?= Breadcrumbs::widget([
+            <div class="col-md-offset-1 col-md-10">
+                <?= Breadcrumbs::widget([
                 'homeLink' => [
                     'label' => 'Главная',
                     'url' => Url::to(['site/index']),
                 ],
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
+            </div>
         </div>
         <div class="content">
             <?= $content ?>

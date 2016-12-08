@@ -37,10 +37,11 @@ $bottomContent_2 = 'Речь идет о входных конструкциях
                 <?= Html::tag('h2', 'Межкомнатные двери'); ?>
             </div>
         </div>
+        <div class="doors-panel">
         <div class="row">
             <?php
             for ($i = 1; $i < 5; $i++) {
-                echo '<div class="col-md-3 plate-inn-doors">';
+                echo '<div class="plate-inn-doors plate">';
                 echo Html::beginTag('a',['href' => Url::to(['pages/doorcatalog', 'ind' => '0'])]);
                 echo Html::img("@doors/inner_0$i.jpg",
                     ['alt' => "door_0$i", 'class' => 'tile']);
@@ -59,8 +60,8 @@ $bottomContent_2 = 'Речь идет о входных конструкциях
         <div class="row">
             <?php
             for ($i = 1; $i < 3; $i++) {
-                echo '<div class="col-md-6 plate-out-doors">';
-                echo Html::beginTag('a',['href' => Url::to(['pages/doorcatalog', 'ind' => '1'])]);
+                echo '<div class="col-md-6 plate-out-doors plate">';
+                echo Html::beginTag('a',['href' => Url::to(['pages/doorcatalog', 'ind' => '1']), 'class'=>'plate-wrap']);
                 echo Html::img("@doors/outer_0$i.jpg",
                     ['alt' => "door_0$i", 'class' => 'tile']);
                 echo '<div class="doors-gradient doors-out-gradient-pos"></div>
@@ -78,7 +79,7 @@ $bottomContent_2 = 'Речь идет о входных конструкциях
         <div class="row">
             
             <div class="col-md-6 wrap-doors-tiles plate">
-            <?= Html::beginTag('a',['href' => Url::to(['pages/doorcatalog', 'ind' => '2'])]);?>
+            <?= Html::beginTag('a',['href' => Url::to(['pages/doorcatalog', 'ind' => '2']),'class' => 'grip-wrap']);?>
             <?= Html::img("@doors/grips.jpg",
                 ['alt' => "door_0$i", 'class' => 'tile']);?>
             
@@ -89,6 +90,8 @@ $bottomContent_2 = 'Речь идет о входных конструкциях
             </div>
 
         </div>
+        </div>
+        
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <?= Html::tag('h4', $bottomHead); ?>
