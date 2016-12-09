@@ -40,7 +40,7 @@ class Product extends ActiveRecord
 //        $sectionID[] = $id;
 
         //По умолчанию открываем входные двери
-        $id = ($id == null) ? '3': $id;
+        //$id = ($id == null) ? '3': $id;
         $products['section'] = Section::findOne(['id' => $id]);
 //        if ($products['section']['parent_id'] != null)
 //            $sectionID[] = $products['section']['parent_id'];

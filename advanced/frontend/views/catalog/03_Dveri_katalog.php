@@ -98,7 +98,7 @@ $title = $categoryTitle;//$products['section']['title'];
 foreach ($sections->getMenu() as $section) {
     $items[] = $section;
 }
-{
+
 // TODO заменить на загрузку из базы
     $category = ['Входная дверь'];
     $doorData_2 = ['Bauxt', 'Bauxt', 'Security', 'Bauxt'];
