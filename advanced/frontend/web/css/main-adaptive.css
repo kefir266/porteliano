@@ -282,3 +282,8 @@ header .row:first-child {
     -webkit-border-radius: 9px;
     border-radius: 9px;
 }
+.modal-dialog,
+.modal-dialog{
+    /*margin-top: 30px;*/
+    background-color: #0f0f0f;
+}
