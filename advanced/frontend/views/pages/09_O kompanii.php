@@ -49,7 +49,7 @@ Yii::setAlias('@imgBigLogos', '@web/img/catalog/logos/big');
             <div class="ruletka">
                 <h2>Доставка</h2>
                 <p>Все о стоимостидоставки и установки</p>
-                
+                <!-- TODO: Кнопка ведет на всплывающее окно с формой обратной связи.-->
                 <a href="<?= Url::to(['pages/about_dostavka']); ?>"
                    class="btn btn-default btn-lg"
                    role="button">

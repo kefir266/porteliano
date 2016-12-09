@@ -63,8 +63,7 @@ MainAdaptiveAsset::register($this);
                         <div>
                             <?php
                             /*$address указывает какой view должен загрузится в Content*/
-                            /*$controller должен использовать $this->renderAjax*/
-                            $address = Url::to(['site/say'], true);
+                            /*$controller должен использовать $this->renderAjax
                             $address = Url::to(['site/entry'], true);
                             Modal::begin([
                                 'headerOptions' => ['id' => 'modalHeader'],
@@ -83,7 +82,8 @@ MainAdaptiveAsset::register($this);
                                 ]
                             ]);
                             echo "<div id='modalContent'></div>";
-                            Modal::end();
+                            Modal::end();*/
+                            RunModalForm('Задайте вопрос',Url::to(['site/entry'], true));
                             ?>
                         </div> <!-- Задать вопрос -->
                     </div>
@@ -218,6 +218,31 @@ MainAdaptiveAsset::register($this);
     </body>
     </html>
 <?php $this->endPage() ?>
-<?php
 
+<?php
+    function RunModalForm($title, $address = null){
+        /*$address указывает какой view должен загрузится в Content*/
+        /*$controller должен использовать $this->renderAjax*/
+        if($address === null){
+            $address = Url::to(['site/entry'], true);
+        }
+        Modal::begin([
+            'headerOptions' => ['id' => 'modalHeader'],
+            'header' => '<h2>здесь будет то, что написано в title</h2>',
+            //keeps from closing modal with esc key or by clicking out of the modal.
+            // user must click cancel or X to close
+            //'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
+            'size' => 'modal-sm',
+            'toggleButton' => [
+                'tag' => 'button',
+                'value' => $address,
+                'title' => 'Задайте вопрос',
+                'id' => 'ask_a_question-button',
+                'class' => 'showModalButton btn btn-link ',
+                'label' => 'ЗАДАЙТЕ ВОПРОС',
+            ]
+        ]);
+        echo "<div id='modalContent'></div>";
+        Modal::end();
+    }
 ?>
