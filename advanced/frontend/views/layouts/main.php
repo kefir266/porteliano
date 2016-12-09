@@ -131,10 +131,10 @@ MainAdaptiveAsset::register($this);
                         ],
 
                         ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist"></span>',
-                            'url' => ['#'],
+                            'url' => ['cart/wishlist'],
                         ],
                         ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket" ></span>',
-                            'url' => ['#'],
+                            'url' => ['cart/index'],
                         ],
 
                     ]]);
@@ -220,7 +220,7 @@ MainAdaptiveAsset::register($this);
 <?php $this->endPage() ?>
 
 <?php
-    function RunModalForm($title, $address = null){
+    function RunModalForm($label = 'Задайте вопрос', $title = 'Задайте вопрос', $address = null){
         /*$address указывает какой view должен загрузится в Content*/
         /*$controller должен использовать $this->renderAjax*/
         if($address === null){
@@ -236,10 +236,10 @@ MainAdaptiveAsset::register($this);
             'toggleButton' => [
                 'tag' => 'button',
                 'value' => $address,
-                'title' => 'Задайте вопрос',
+                'title' => $title,
                 'id' => 'ask_a_question-button',
                 'class' => 'showModalButton btn btn-link ',
-                'label' => 'ЗАДАЙТЕ ВОПРОС',
+                'label' => $label,
             ]
         ]);
         echo "<div id='modalContent'></div>";
