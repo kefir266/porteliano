@@ -19,11 +19,7 @@ Yii::setAlias('@img', '@web/img');
 ?>
 <article id="doors" class="wrap-doors" data-item="a2">
     <h2><?= $sectionNames[$currentSection] ?></h2>
-    <!-- Навигация -->
-    <ul class="nav nav-tabs nav-pills " role="tablist">
-        <li class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">МЕЖКОМНАТНЫЕ</a></li>
-        <li><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">ВХОДНЫЕ</a></li>
-    </ul>
+    <?= $navigation ?>
     <!-- Содержимое вкладок -->
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="home">
