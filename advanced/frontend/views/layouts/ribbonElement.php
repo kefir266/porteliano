@@ -11,9 +11,9 @@ use yii\helpers\Url;
 
 
 ?>
-<li class="title">
+
 <?php
-    //echo Html::beginTag('div', ['class' => 'tile']);
+    echo Html::beginTag('div', ['class' => 'tile']);
 
     echo Html::a(
 
@@ -46,7 +46,6 @@ use yii\helpers\Url;
             Url::to(['cart/addWish', 'id' => $product->id])]);
     echo Html::endTag('div');
     echo Html::endTag('div');
-   // echo Html::endTag('div');
+    echo Html::endTag('div');
 
 ?>
-</li>

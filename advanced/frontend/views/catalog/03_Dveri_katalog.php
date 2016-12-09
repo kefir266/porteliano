@@ -112,10 +112,11 @@ $price = ['1545', '1545', '2119', '2194'];
                     <div class="material">
                         <h5>Вид</h5>
                         <?php
+                        //var_dump($products['materials']);
                         echo ButtonDropdown::widget([
                             'options' => ['class' => 'btn-default'],
                             'split' => true,
-                            'label' => current($products['materials'])['label'],
+                            'label' => $products['materials'][$params['material']]['label'],
                             'dropdown' => [
                                 'items' =>
 
@@ -200,10 +201,11 @@ $price = ['1545', '1545', '2119', '2194'];
             <div class="col-md-12">
                 <div class="sampling-area">
                     
-                    <?php foreach ($products['products'] as $product) {
-                        require Yii::getAlias('@frontend') . "/views/layouts/ribbonElement.php";
-                    }
-                    ?>
+                    <?php foreach ($products['products'] as $product): ?>
+                    <li class="title">
+                        <?php require Yii::getAlias('@frontend') . "/views/layouts/ribbonElement.php"; ?>
+                    </li>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div> <!-- контейнер для выбранных дверей -->

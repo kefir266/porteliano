@@ -68,7 +68,7 @@ class Product extends ActiveRecord
                 'table' => 'materials',],];
         foreach ($materials as $item) {
 
-            $products['materials'][]  = ['label' => $item['title'], 'url' => '#',
+            $products['materials'][$item['id']]  = ['label' => $item['title'], 'url' => '#',
                 'linkOptions'=> ['data-toggle' =>'dropdown',
                     'id-item=' => $item['id'],
                     'table' => 'material',
@@ -89,7 +89,7 @@ class Product extends ActiveRecord
                 'table' => 'styles',],];
         foreach ($styles as $item) {
 
-            $products['styles'][]  = ['label' => $item['title'], 'url' => '#',
+            $products['styles'][$item['id']]  = ['label' => $item['title'], 'url' => '#',
                 'linkOptions'=> ['data-toggle' =>'dropdown',
                 'id-item=' => $item['id'],
                     'table' => 'style',],];
@@ -109,7 +109,7 @@ class Product extends ActiveRecord
 
         foreach ($manufacturers as $item) {
 
-            $products['manufacturers'][]  = ['label' => $item['title'], 'url' => '#',
+            $products['manufacturers'][$item['id']]  = ['label' => $item['title'], 'url' => '#',
                 'linkOptions'=> ['data-toggle' =>'dropdown',
                     'id-item' => $item['id'],
                     'table' => 'manufacturer',],];
@@ -164,7 +164,7 @@ class Product extends ActiveRecord
 
     public function getFilteredProducts($params, $quantity){
 
-        $id = (!!$params['section']) ? '3': $params['section'];
+        $id = (isset($params['section'])) ? $params['section'] : 3;
         $products = $this->getProductsBySection($id,$quantity);
 
 
