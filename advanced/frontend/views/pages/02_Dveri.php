@@ -72,6 +72,7 @@ $bottomContent_2 = 'Речь идет о входных конструкциях
                 <?= Html::tag('h2', 'Межкомнатные двери'); ?>
             </div>
         </div>
+        <div class="doors-panel">
         <div class="row">
             <?php
             for ($i = 1; $i < 5; $i++) {
@@ -113,7 +114,7 @@ $bottomContent_2 = 'Речь идет о входных конструкциях
         <div class="row">
             
             <div class="col-md-6 wrap-doors-tiles plate">
-            <?= Html::beginTag('a',['href' => Url::to(['pages/doorcatalog', 'ind' => '2'])]);?>
+            <?= Html::beginTag('a',['href' => Url::to(['pages/doorcatalog', 'ind' => '2']),'class' => 'grip-wrap']);?>
             <?= Html::img("@doors/grips.jpg",
                 ['alt' => "door_0$i", 'class' => 'tile']);?>
             
@@ -124,6 +125,8 @@ $bottomContent_2 = 'Речь идет о входных конструкциях
             </div>
 
         </div>
+        </div>
+
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <?= Html::tag('h4', $bottomHead); ?>

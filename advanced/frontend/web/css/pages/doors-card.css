@@ -1,6 +1,11 @@
 
-.doorImg > img{
+.doorImg {
     height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border: 1px solid #e8e8e8;
+    padding: 25px 70px 25px 70px;
 }
 .buttons-area{
     margin-top: 35px;
@@ -73,4 +78,13 @@
     font-family: "PT Serif",serif;
     font-weight: bold;
     font-size: 40px;
+}
+.img-border{
+    width: 100%;
+    border: 6px solid #935347;
+    margin-top: 100px;
+}
+.hr-separation{
+    color: #eeeeee;
+    margin-top: 0;
 }

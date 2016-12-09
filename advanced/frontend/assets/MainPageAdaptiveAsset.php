@@ -10,17 +10,14 @@ namespace app\assets;
 use yii\web\AssetBundle;
 
 
-class MainPageAsset extends AssetBundle
+class MainPageAdaptiveAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     
     public $css = [
-        'css/animation.css',
-        'css/gray.css',        
-        'css/main.css',
         'css/main/block_1.css',
-        'css/main/block_2.css',        
+        'css/main/block_2.css',
 		'css/main/block_3.css',
         'css/main/block_4.css',
         'css/main/block_5.css',
@@ -35,15 +32,19 @@ class MainPageAsset extends AssetBundle
     ];
     public $js = [
         // доп. библиотеки
-        'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
+        '/js/lib/jquery.min.js',
+        '/js/lib/jquery.imageScroll.min.js',
         '/js/lib/jquery.scroolly.js',
         // скрипты
-        'js/ajax-modal-popup.js',
         'js/runningRibbon.js',
+        'js/scrollingDoors.js',
+
+        'js/ajax-modal-popup.js',
         'js/fixedMenu.js',
         'js/scrollspy.js',
         'js/parallax.js',
-        'js/scrollingDoors.js'
+/*
+        */
     ];
     public $depends = [
         'yii\web\JqueryAsset',

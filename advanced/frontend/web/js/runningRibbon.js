@@ -4,7 +4,7 @@
 
 //
 (function($){
-    var viewUL = $(".running-ribbon > div.view")
+    var viewUL = $(".running-ribbon  div.view")
             .css("overflow", "hidden")
             .children("ul"),
         imgs = viewUL.find("img"), 	    // коллекция картинок
@@ -13,7 +13,7 @@
         totalImgsW = imgsCount * imgW,  // общая ширина
         current = 1; 					// текушая картинка(позиция)
 
-    $(".running-ribbon > div#show")
+    $(".running-ribbon > div.show")
         .show()
         .find("button").on("click", function(){
         var direction = $(this).attr("id");

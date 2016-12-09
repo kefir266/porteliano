@@ -5,7 +5,7 @@
 //
 (function($){
     function doorRibon_inn() {
-        var viewUL = $("#doors-inn").find("div.view")
+        var viewUL = $("#doors-inn").find(".view")
                 .css("overflow", "hidden")
                 .children("ul"),
             imgs = viewUL.find("img"), 	    // коллекция картинок
@@ -16,7 +16,7 @@
             console.log('imgsCount = ' + imgsCount);
             console.log('current = ' + current);
             console.log('totalImgsW = ' + totalImgsW);
-        $("div#show")
+        $("div.show")
             .show()
             .find("button").on("click", function(){
             var direction = $(this).attr("id");
@@ -126,7 +126,7 @@
             totalImgsW = imgsCount * imgW,  // общая ширина
             current = 1; 					// текушая картинка(позиция)
 
-        $("div#show")
+        $("div.show")
             .show()
             .find("button").on("click", function(){
             var direction = $(this).attr("id");

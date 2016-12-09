@@ -38,31 +38,43 @@ Yii::setAlias('@doors', '@web/img/doors');
 Yii::setAlias('@cover', '@web/img/cover');
 
 // определение какие обложки и заголовки показывать
-switch ($indx) {
+switch ($ind) {
     case 0:
         $categoryTitle = 'Межкомнатные двери';
 
         $coverImgLeft = '@cover/outer.jpg';
         $coverImgRight = '@cover/grips.png';
 
+
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Ручки';
+
+        $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '1']);
+        $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '2']);
         break;
     case 1:
         $categoryTitle = 'Входные двери';
+
         $coverImgLeft = '@cover/grips.png';
         $coverImgRight = '@cover/inner.png';
 
-        $coverTextLeft = 'Межкомнатные двери';
-        $coverTextRight = 'Ручки';
+        $coverTextLeft = 'Ручки';
+        $coverTextRight = 'Межкомнатные двери';
+
+        $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '2']);
+        $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '0']);
         break;
     case 2:
         $categoryTitle = 'Ручки';
+
         $coverImgLeft = '@cover/outer.jpg';
         $coverImgRight = '@cover/inner.png';
 
-        $coverTextLeft = 'Межкомнатные двери';
-        $coverTextRight = 'Входные двери';
+        $coverTextLeft = 'Входные двери';
+        $coverTextRight = 'Межкомнатные двери';
+
+        $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '1']);
+        $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '0']);
         break;
     default:
         $categoryTitle = 'нет категории';
@@ -86,13 +98,12 @@ $title = $categoryTitle;//$products['section']['title'];
 foreach ($sections->getMenu() as $section) {
     $items[] = $section;
 }
-
+{
 // TODO заменить на загрузку из базы
-$category = ['Входная дверь'];
-$doorData_2 = ['Bauxt', 'Bauxt', 'Security', 'Bauxt'];
-$doorData_3 = ['Export 1106', 'Export 1136', 'SECURITY', 'Elite 1115'];
-$price = ['1545', '1545', '2119', '2194'];
-
+    $category = ['Входная дверь'];
+    $doorData_2 = ['Bauxt', 'Bauxt', 'Security', 'Bauxt'];
+    $doorData_3 = ['Export 1106', 'Export 1136', 'SECURITY', 'Elite 1115'];
+    $price = ['1545', '1545', '2119', '2194'];
 // массив для заполнения информационных полей под плитками новинок
 
 
@@ -112,7 +123,6 @@ $price = ['1545', '1545', '2119', '2194'];
                     <div class="material">
                         <h5>Вид</h5>
                         <?php
-                        //var_dump($products['materials']);
                         echo ButtonDropdown::widget([
                             'options' => ['class' => 'btn-default'],
                             'split' => true,
@@ -200,7 +210,7 @@ $price = ['1545', '1545', '2119', '2194'];
         <div class="row">
             <div class="col-md-12">
                 <div class="sampling-area">
-                    
+
                     <?php foreach ($products['products'] as $product): ?>
                     <li class="title">
                         <?php require Yii::getAlias('@frontend') . "/views/layouts/ribbonElement.php"; ?>
@@ -222,7 +232,7 @@ $price = ['1545', '1545', '2119', '2194'];
         <div class="row">
             <div class="col-md-6">
                 <div class="plate">
-                    <a href="#one">
+                    <a href="<?=$coverLinkLeft?>">
                         <?= Html::img($coverImgLeft, [
                             'style' => 'width: 100%',
                         ]) ?>
@@ -234,7 +244,7 @@ $price = ['1545', '1545', '2119', '2194'];
             </div>
             <div class="col-md-6 col-xs-12">
                 <div class="plate">
-                    <a href="#two">
+                    <a href="<?=$coverLinkRight?>">
                         <?= Html::img($coverImgRight, [
                             'style' => 'width: 100%',
                         ]) ?>
