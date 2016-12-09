@@ -55,6 +55,8 @@ class Product extends ActiveRecord
             [['currentPrice'],'match', 'pattern'=>'/^[0-9]{1,12}(\.[0-9]{0,4})?$/'],
             [['currentCurrency'], 'safe',],
             [['upload_files', ],'safe'],
+            [['article'], 'unique'],
+            [['note'], 'string', 'max' => 500],
             //[['imageFile'], 'file', 'skipOnEmpty' => 'true', 'extensions' => 'png, jpg'],
             [['manufacturer_id'], 'exist', 'skipOnError' => true, 'targetClass' => Manufacturer::className(), 'targetAttribute' => ['manufacturer_id' => 'id']],
             [['material_id'], 'exist', 'skipOnError' => true, 'targetClass' => Material::className(), 'targetAttribute' => ['material_id' => 'id']],
@@ -79,7 +81,9 @@ class Product extends ActiveRecord
             'upload_files' => 'Дополнительные файлы',
             'description' => 'Описание',
             'currentPrice' => 'Цена',
-            'currentCurrency' => 'Валюта'
+            'currentCurrency' => 'Валюта',
+            'article' => 'Артикул',
+            'note' => 'Заметки',
         ];
     }
 
