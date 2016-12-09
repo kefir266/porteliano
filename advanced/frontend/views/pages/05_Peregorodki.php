@@ -73,3 +73,7 @@ $bottomContent_2 = 'Именно они позволят значительно 
         </div>
     </div>
 </div>
+<script>
+    $('.navbar li > a[data-target]').removeClass('lightButton');
+    $('.navbar li > a[data-target=a3]').addClass('lightButton');
+</script>
