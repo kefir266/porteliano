@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `customer` (
   KEY `full_name` (`full_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы porteliano_db.customer: ~2 rows (приблизительно)
+-- Дамп данных таблицы porteliano_db.customer: ~3 rows (приблизительно)
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
 INSERT INTO `customer` (`id`, `email`, `full_name`, `name`, `surname`, `phone`, `reg_date`, `ip`) VALUES
 	(1, '2324@4456.ru', 'Покупатель2', NULL, NULL, NULL, '2016-12-07 23:14:25', NULL),
@@ -134,12 +134,13 @@ CREATE TABLE IF NOT EXISTS `material` (
   `title` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `title` (`title`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы porteliano_db.material: ~2 rows (приблизительно)
 /*!40000 ALTER TABLE `material` DISABLE KEYS */;
 INSERT INTO `material` (`id`, `title`) VALUES
 	(1, 'Дерево'),
+	(2, 'Метал'),
 	(3, 'Со стеклом');
 /*!40000 ALTER TABLE `material` ENABLE KEYS */;
 
@@ -173,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `order` (
   CONSTRAINT `FK_order_customer` FOREIGN KEY (`full_name`) REFERENCES `customer` (`full_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы porteliano_db.order: ~1 rows (приблизительно)
+-- Дамп данных таблицы porteliano_db.order: ~4 rows (приблизительно)
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
 INSERT INTO `order` (`id`, `date`, `full_name`, `done`, `term`) VALUES
 	(20, '2016-12-08 00:25:26', 'Покупатель1', NULL, NULL),
@@ -202,7 +203,7 @@ CREATE TABLE IF NOT EXISTS `order_content` (
   CONSTRAINT `FK_order_content_product` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы porteliano_db.order_content: ~2 rows (приблизительно)
+-- Дамп данных таблицы porteliano_db.order_content: ~6 rows (приблизительно)
 /*!40000 ALTER TABLE `order_content` DISABLE KEYS */;
 INSERT INTO `order_content` (`id`, `order_id`, `product_id`, `price`, `quantity`, `currency_id`, `sum`) VALUES
 	(33, 20, 3, 1400.00, 1, 643, 1400),
@@ -299,7 +300,7 @@ INSERT INTO `section` (`id`, `title`, `parent_id`, `title_main`, `page`) VALUES
 	(1, 'ДВЕРИ', NULL, 'Двери', '?section=1'),
 	(2, 'ПЕРЕГОРОДКИ', NULL, 'Перегородки', '?section=2'),
 	(3, 'Межкомнатные двери', 1, 'Межкомнатные двери', '?section=3'),
-	(4, 'Входные двери', 1, 'Входные двери', 'index/?section=4'),
+	(4, 'Входные двери', 1, 'Входные двери', '?section=4'),
 	(5, 'Ручки', NULL, 'Ручки', '?section=5');
 /*!40000 ALTER TABLE `section` ENABLE KEYS */;
 

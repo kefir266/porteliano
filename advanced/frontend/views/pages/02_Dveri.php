@@ -114,7 +114,7 @@ $bottomContent_2 = 'Речь идет о входных конструкциях
         <div class="row">
             
             <div class="col-md-6 wrap-doors-tiles plate">
-            <?= Html::beginTag('a',['href' => Url::to(['pages/doorcatalog', 'ind' => '2']),'class' => 'grip-wrap']);?>
+            <?= Html::beginTag('a',['href' => Url::to(['/catalog', 'section' => '5']),'class' => 'grip-wrap']);?>
             <?= Html::img("@doors/grips.jpg",
                 ['alt' => "door_0$i", 'class' => 'tile']);?>
             

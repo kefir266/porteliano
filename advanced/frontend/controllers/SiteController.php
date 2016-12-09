@@ -86,10 +86,10 @@ class SiteController extends Controller
         $request = Yii::$app->request;
 
         $products = $modelProduct->getProductsBySection($request->get('section'),'4' ); /// 4 картинки на страницу
-        $novelty = $modelProduct->getProductsBySection(null,'4' );
-        $doorsIn = $modelProduct->getProductsBySection('3','4' );
-        $doorsOut = $modelProduct->getProductsBySection('4','4' );
-        $septum = $modelProduct->getProductsBySection('2','4' );
+        $novelty = $modelProduct->getProducts(null,'4' );
+        $doorsIn = $modelProduct->getProducts('3','4' );
+        $doorsOut = $modelProduct->getProducts('4','4' );
+        $septum = $modelProduct->getProducts('2','4' );
 //        $sectionNames = ArrayHelper::map(Section::findAll(['1','2']),'id','title_main');
 //        $sectionNames['novelty'] = 'Новинки';
 

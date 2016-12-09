@@ -130,12 +130,12 @@ MainAdaptiveAsset::register($this);
                             'linkOptions' => ['data-target' => 'a6'],
                         ],
 
-                        ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist"></span>',
-                            'url' => ['#'],
-                        ],
-                        ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket" ></span>',
-                            'url' => ['#'],
-                        ],
+                ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist"></span>',
+                    'url' => ['cart/wishlist'],
+                ],
+                ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket"></span>',
+                    'url' => ['cart/index'],
+                ],
 
                     ]]);
                 NavBar::end();

@@ -32,20 +32,24 @@ class Product extends ActiveRecord
         $this->_session->open();
     }
 
+    public function getProducts($section = null, $num = null){
+
+        $condition = ($section == null) ? []
+            : 'product.section_id = '.$section.' OR section.parent_id = '.$section ;
+
+        $products['products'] = $this->find()
+            ->innerJoin('section', 'product.section_id = section.id')
+            ->where($condition)->limit($num)->each();
+        return $products;
+    }
+
     public function getProductsBySection($id = null, $num = null)
     {
 
         //TODO Нужно выделить класс .everything
 
-//        $sectionID[] = $id;
-
-        //По умолчанию открываем входные двери
-        //$id = ($id == null) ? '3': $id;
+        $id = ($id == null) ? '3': $id;
         $products['section'] = Section::findOne(['id' => $id]);
-//        if ($products['section']['parent_id'] != null)
-//            $sectionID[] = $products['section']['parent_id'];
-//        else
-//            $sectionID[] = '0';
 
         $condition = ($id == null) ? []
             : 'product.section_id = '.$id.' OR section.parent_id = '.$id ;

@@ -38,8 +38,8 @@ Yii::setAlias('@doors', '@web/img/doors');
 Yii::setAlias('@cover', '@web/img/cover');
 
 // определение какие обложки и заголовки показывать
-switch ($ind) {
-    case 0:
+switch ($products['section']->id) {
+    case 3:
         $categoryTitle = 'Межкомнатные двери';
 
         $coverImgLeft = '@cover/outer.jpg';
@@ -52,7 +52,7 @@ switch ($ind) {
         $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '1']);
         $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '2']);
         break;
-    case 1:
+    case 4:
         $categoryTitle = 'Входные двери';
 
         $coverImgLeft = '@cover/grips.png';
@@ -64,7 +64,7 @@ switch ($ind) {
         $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '2']);
         $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '0']);
         break;
-    case 2:
+    case 5:
         $categoryTitle = 'Ручки';
 
         $coverImgLeft = '@cover/outer.jpg';
@@ -126,7 +126,8 @@ foreach ($sections->getMenu() as $section) {
                         echo ButtonDropdown::widget([
                             'options' => ['class' => 'btn-default'],
                             'split' => true,
-                            'label' => $products['materials'][$params['material']]['label'],
+                            'label' => (isset($params['material']))? $products['materials'][$params['material']]['label']
+                                : 'Любой',
                             'dropdown' => [
                                 'items' =>
 

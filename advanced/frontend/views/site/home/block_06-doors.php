@@ -20,7 +20,7 @@ Yii::setAlias('@img', '@web/img');
 <article id="doors" class="wrap-doors" data-item="a2">
     <div class="row">
         <div class="col-md-offset-1 col-md-10">
-            <h2 class="doors-h2"><?= $sectionNames[$currentSection] ?></h2>
+            <h2 class="doors-h2">Двери</h2>
         </div>
     </div>
     <!-- Навигация -->
