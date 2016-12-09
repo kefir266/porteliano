@@ -13,19 +13,22 @@ use yii\widgets\ActiveForm;
     <?php $form = ActiveForm::begin([
         'options' => ['enctype' => 'multipart/formdata']
     ]); ?>
+    <div class="row">
+    <div class="col-md-12">
+        <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
+        <?= $form->field($model, 'section_id')->dropDownList($model->getSections()); ?>
 
-    <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'material_id')->dropDownList($model->getMaterials()) ?>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-md-12">
+            <?= $form->field($model, 'style_id')->dropDownList($model->getStyles()) ?>
 
-    <?php echo $form->field($model, 'section_id')->dropDownList($model->getSections()); ?>
+            <?= $form->field($model, 'manufacturer_id')->dropDownList($model->getManufacturers()) ?>
 
-    <?= $form->field($model, 'material_id')->dropDownList($model->getMaterials()) ?>
-
-    <?= $form->field($model, 'style_id')->dropDownList($model->getStyles()) ?>
-
-    <?= $form->field($model, 'manufacturer_id')->dropDownList($model->getManufacturers()) ?>
-
-    <?= $form->field($model, 'currentPrice'
+            <?= $form->field($model, 'currentPrice'
 //        [
 //        'options' => [
 //            'tag' => 'div',
@@ -34,83 +37,102 @@ use yii\widgets\ActiveForm;
 //        'template' => '<span class="col-md-2 col-lg-2">
 //            <label class="control-label">Final item price</label>{input}{error}</span>'
 //            ]
-    )
-        ->textInput(['type' => 'number'])?>
+            )
+                ->textInput(['type' => 'number'])?>
 
-    <?= $form->field($model, 'currentCurrency' )->dropDownList($model->getCurrencies()) ?>
-    
-    <?php
+            <?= $form->field($model, 'currentCurrency' )->dropDownList($model->getCurrencies()) ?>
+            <?= $form->field($model, 'article')->textInput(['maxlength' => true]) ?>
+        </div>
+    </div>
 
-//    echo $form->field($model, 'img')->widget(\kartik\file\FileInput::className(),
-//        [
-//            'options' => ['accept' => '/img/'.$model->manufacturer->title.'/*',],
-//            'model' => $model,
-//            //'name' => 'attachment_49[]',
-//            'pluginOptions' => [
-//                'initialCaption' => $model->title,
-//                'initialPreviewConfig' =>
-//                    ['caption' => '/img/' .$model->manufacturer->title . '/' .$model->img,],
-//                'initialPreview' =>
-//                    ['/img/' . $model->manufacturer->title . '/' . $model->img,],
-//
-//                'overwriteInitial' => false,
-//                'maxFileSize' => 2000
-//            ]
-//        ]);
-//    //    echo $form->field($model, 'img')->textInput(['maxlength' => true])
+    <div class="row">
+        <div class="col-md-9">
+            <?php
 
-    $previews = "/img/" . $model->manufacturer->title . '/' . $model->img;
-    $previewConf = ['caption' => $model->img,];
+            //    echo $form->field($model, 'img')->widget(\kartik\file\FileInput::className(),
+            //        [
+            //            'options' => ['accept' => '/img/'.$model->manufacturer->title.'/*',],
+            //            'model' => $model,
+            //            //'name' => 'attachment_49[]',
+            //            'pluginOptions' => [
+            //                'initialCaption' => $model->title,
+            //                'initialPreviewConfig' =>
+            //                    ['caption' => '/img/' .$model->manufacturer->title . '/' .$model->img,],
+            //                'initialPreview' =>
+            //                    ['/img/' . $model->manufacturer->title . '/' . $model->img,],
+            //
+            //                'overwriteInitial' => false,
+            //                'maxFileSize' => 2000
+            //            ]
+            //        ]);
+            //    //    echo $form->field($model, 'img')->textInput(['maxlength' => true])
 
-    echo $form->field($model, 'img')->widget(\kartik\file\FileInput::className(), [
-        //'name' => 'attachment_49[]',
-        'options' => ['accept' => '/img/'.$model->manufacturer->title.'/*',],
+            $previews = "/img/" . $model->manufacturer->title . '/' . $model->img;
+            $previewConf = ['caption' => $model->img,];
+
+            echo $form->field($model, 'img')->widget(\kartik\file\FileInput::className(), [
+                //'name' => 'attachment_49[]',
+                'options' => ['accept' => '/img/'.$model->manufacturer->title.'/*',],
 //        'options' => [
 //            'multiple' => false,
 //        ],
-        'model' => $model,
-        'pluginOptions' => [
-            'initialPreview' => $previews,
-            'initialPreviewAsData' => true,
-            'initialCaption'=>$model->img,
-            'initialPreviewConfig' => $previewConf,
-            'overwriteInitial' => true,
-            'maxFileSize' => 2000
-        ]
-    ]);
+                'model' => $model,
+                'pluginOptions' => [
+                    'initialPreview' => $previews,
+                    'initialPreviewAsData' => true,
+                    'initialCaption'=>$model->img,
+                    'initialPreviewConfig' => $previewConf,
+                    'overwriteInitial' => true,
+                    'maxFileSize' => 2000
+                ]
+            ]);
 
-    ?>
+            ?>
+        </div>
+        <div class="col-md-9">
+            <?php
 
+            $previews = [];
+            $previewConf = [];
+            foreach ($model->files as $id => $file) {
 
+                $previews[$id] = "/img/" . $model->manufacturer->title . '/' . $file->file;
+                $previewConf[$id] = ['caption' => $file->file,];
+            }
+            echo $form->field($model, 'upload_files[]')->widget(\kartik\file\FileInput::className(), [
+                'name' => 'attachment_49[]',
+                'options' => [
+                    'multiple' => true
+                ],
+                'pluginOptions' => [
+                    'initialPreview' => $previews,
+                    'initialPreviewAsData' => true,
+                    //'initialCaption'=>"",
+                    'initialPreviewConfig' => $previewConf,
+                    'overwriteInitial' => false,
+                    'maxFileSize' => 2000
+                ]
+            ]);
+            ?>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+            <?= $form->field($model, 'note')->textarea(['rows' => 3, 'maxlength' => true]) ?>
+        </div>
+    </div>
 
-    <?php
+    <div class="row">
 
-    $previews = [];
-    $previewConf = [];
-    foreach ($model->files as $id => $file) {
+        <div class="col-md-9">
 
-        $previews[$id] = "/img/" . $model->manufacturer->title . '/' . $file->file;
-        $previewConf[$id] = ['caption' => $file->file,];
-    }
-    echo $form->field($model, 'upload_files[]')->widget(\kartik\file\FileInput::className(), [
-        'name' => 'attachment_49[]',
-        'options' => [
-            'multiple' => true
-        ],
-        'pluginOptions' => [
-            'initialPreview' => $previews,
-            'initialPreviewAsData' => true,
-            //'initialCaption'=>"",
-            'initialPreviewConfig' => $previewConf,
-            'overwriteInitial' => false,
-            'maxFileSize' => 2000
-        ]
-    ]);
-    ?>
-    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
-
-    <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+            <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+            <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        </div>
     </div>
 
     <?php ActiveForm::end(); ?>
