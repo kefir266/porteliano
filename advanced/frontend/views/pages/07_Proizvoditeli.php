@@ -39,7 +39,7 @@ if (file_exists($directoryLogo)) {
     }
 }
 ?>
-<div class="wrap wrap-manuf">
+<div class="wrap wrap-manuf switch" data-swith="manufacturers">
     <div class="row">
         <div class="col-md-4 ">
             <h2>Производители</h2>

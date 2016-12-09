@@ -31,6 +31,7 @@ class PagesAsset extends AssetBundle
         
         // скрипты
         'js/parallax.js',
+        'js/navbarSwitch.js',
     ];
     public $depends = [
         'yii\web\JqueryAsset',

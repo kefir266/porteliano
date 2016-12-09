@@ -130,7 +130,7 @@ $info = [
     <!-- Кнопка -->
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            <a href="<?= Url::to(['pages/dveri']); ?>" class="btn btn-default btn-lg septa-show-more" role="button">
+            <a href="<?= Url::to(['pages/septa']); ?>" class="btn btn-default btn-lg septa-show-more" role="button">
                 ПОКАЗАТЬ БОЛЬШЕ</a>
         </div>
     </div>

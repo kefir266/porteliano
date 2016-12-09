@@ -21,7 +21,7 @@ PagesAsset::register($this);
 Yii::setAlias('@img', '@web/img/');
 Yii::setAlias('@imgBigLogos', '@web/img/catalog/logos/big');
 ?>
-<div class="wrap-contacts">
+<div class="wrap-contacts switch" data-swith="contact">
 
     <div class="row">
         <div class="col-md-3 .col-sm-4 col-xs-12 col-md-offset-3 ">
