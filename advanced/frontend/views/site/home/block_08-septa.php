@@ -23,57 +23,7 @@ $price = ['1545', '1545', '2119', '2194'];
 
 // массив для заполнения информационных полей под плитками новинок
 
-$info = [
-    [
-        0 => $category[0],
-        1 => $doorData_2[0],
-        2 => $doorData_3[0],
-        3 => $price[0],
-    ],
-    [
-        0 => $category[0],
-        1 => $doorData_2[1],
-        2 => $doorData_3[1],
-        3 => $price[1],
-    ],
-    [
-        0 => $category[0],
-        1 => $doorData_2[2],
-        2 => $doorData_3[2],
-        3 => $price[2],
-    ],
-    [
-        0 => $category[0],
-        1 => $doorData_2[3],
-        2 => $doorData_3[3],
-        3 => $price[3],
-    ],
-    [
-        0 => $category[0],
-        1 => $doorData_2[3],
-        2 => $doorData_3[3],
-        3 => $price[3],
-    ],
-    [
-        0 => $category[0],
-        1 => $doorData_2[3],
-        2 => $doorData_3[3],
-        3 => $price[3],
-    ],
-    [
-        0 => $category[0],
-        1 => $doorData_2[3],
-        2 => $doorData_3[3],
-        3 => $price[3],
-    ],
-    [
-        0 => $category[0],
-        1 => $doorData_2[3],
-        2 => $doorData_3[3],
-        3 => $price[3],
-    ],
 
-];
 //echo Html::img('@septa/septa_'.$i.'.jpg',
 ?>
 <article id="septa" class="wrap-septa" data-item="a3">
@@ -93,30 +43,13 @@ $info = [
             <div id="doors-inn" class="doors-panel running-ribbon-septa">
                 <div class="wrap-tiles view">
                     <ul>
-                        <?php
-                        //добавляет карточки в область прокрутки $i -№ дверей
-                        for ($i = 0; $i < 8; $i++) {
+                        <?php if (isset($septum['products'])): ?>
+                            <?php foreach ($septum['products'] as $product): ?>
 
-                            //вывод картинок
-                            echo Html::beginTag('li', ['class' => 'tile']);
-                            //  TODO ($i+1) для теста, поставить $i
-                            echo Html::img('@septa/septa_' . ($i + 1) . '.jpg',
-                                ['alt' => 'door_' . ($i), 'class' => '']);
+                                <?php require Yii::getAlias('@frontend') . "/views/layouts/ribbonElement.php"; ?>
 
-                            //заполняет карточку $i- № дверей, j- строка карточки
-                            echo Html::beginTag('div', ['class' => 'info']);
-                            for ($j = 0; $j < 3; $j++) {
-                                echo Html::tag('p', $info[$i][$j]);
-                            }
-                            echo Html::tag('div', '', ['class' => 'delimiter']);
-                            echo Html::beginTag('div', ['class' => 'block-4-price']);
-                            echo Html::tag('div', '€ ' . $info[0][3], ['class' => 'block-price-count']);
-                            echo Html::tag('div', '', ['class' => 'glyphicon glyphicon-heart-empty add-to-wish']);
-                            echo Html::endTag('div');
-                            echo Html::endTag('div');
-                            echo Html::endTag('li');
-                        }
-                        ?>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </ul>
                 </div>
             </div>

@@ -63,7 +63,7 @@ MainAdaptiveAsset::register($this);
                         <div>
                             <?php
                             /*$address указывает какой view должен загрузится в Content*/
-                            /*$controller должен использовать $this->renderAjax
+                            /*$controller должен использовать $this->renderAjax*/
                             $address = Url::to(['site/entry'], true);
                             Modal::begin([
                                 'headerOptions' => ['id' => 'modalHeader'],
@@ -82,8 +82,7 @@ MainAdaptiveAsset::register($this);
                                 ]
                             ]);
                             echo "<div id='modalContent'></div>";
-                            Modal::end();*/
-                            RunModalForm('Задайте вопрос',Url::to(['site/entry'], true));
+                            Modal::end();
                             ?>
                         </div> <!-- Задать вопрос -->
                     </div>
@@ -133,9 +132,10 @@ MainAdaptiveAsset::register($this);
                         ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist"></span>',
                             'url' => ['cart/wishlist'],
                         ],
-                        ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket" ></span>',
+                        ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket"></span>',
                             'url' => ['cart/index'],
                         ],
+
 
                     ]]);
                 NavBar::end();
@@ -219,30 +219,3 @@ MainAdaptiveAsset::register($this);
     </html>
 <?php $this->endPage() ?>
 
-<?php
-    function RunModalForm($label = 'Задайте вопрос', $title = 'Задайте вопрос', $address = null){
-        /*$address указывает какой view должен загрузится в Content*/
-        /*$controller должен использовать $this->renderAjax*/
-        if($address === null){
-            $address = Url::to(['site/entry'], true);
-        }
-        Modal::begin([
-            'headerOptions' => ['id' => 'modalHeader'],
-            'header' => '<h2>здесь будет то, что написано в title</h2>',
-            //keeps from closing modal with esc key or by clicking out of the modal.
-            // user must click cancel or X to close
-            //'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
-            'size' => 'modal-sm',
-            'toggleButton' => [
-                'tag' => 'button',
-                'value' => $address,
-                'title' => $title,
-                'id' => 'ask_a_question-button',
-                'class' => 'showModalButton btn btn-link ',
-                'label' => $label,
-            ]
-        ]);
-        echo "<div id='modalContent'></div>";
-        Modal::end();
-    }
-?>

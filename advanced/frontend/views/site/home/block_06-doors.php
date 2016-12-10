@@ -16,12 +16,6 @@ use yii\helpers\Url;
 Yii::setAlias('@doors', '@web/img/doors');
 Yii::setAlias('@img', '@web/img');
 
-// TODO заменить на загрузку из базы
-$category = ['Входная дверь'];
-$doorData_2 = ['Bauxt', 'Bauxt', 'Security', 'Bauxt'];
-$doorData_3 = ['Export 1106', 'Export 1136', 'SECURITY', 'Elite 1115'];
-$price = ['1545', '1545', '2119', '2194'];
-
 ?>
 <article id="doors" class="wrap-doors" data-item="a2">
     <div class="row">
@@ -32,10 +26,10 @@ $price = ['1545', '1545', '2119', '2194'];
     <!-- Навигация -->
     <div class="row">
         <div class="col-md-offset-1 col-md-10 flex-wrap">
-            <ul class="nav nav-tabs nav-pills center-block" role="tablist">
+            <ul class="nav nav-tabs nav-pills " role="tablist">
                 <li class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">МЕЖКОМНАТНЫЕ</a></li>
                 <li><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">ВХОДНЫЕ</a></li>
-            </ul>
+            </ul>'
         </div>
     </div>
     <!-- Вкладки -->
@@ -52,14 +46,32 @@ $price = ['1545', '1545', '2119', '2194'];
                     <div id="doors-inn" class="doors-panel running-ribbon-doors">
                         <div class="wrap-tiles view">
                             <ul>
-                                <?php require Yii::getAlias('@frontend')."/views/layouts/ribbonElement.php"; ?>
+                                <?php if (isset($doorsIn['products'])): ?>
+                                <?php foreach ($doorsIn['products'] as $product): ?>
+
+                                        <?php require Yii::getAlias('@frontend') . "/views/layouts/ribbonElement.php"; ?>
+
+                                <?php endforeach; ?>
+                                <?php endif; ?>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="profile">
                     <!-- Вкладка 'Входные'  -->
-                    <div id="doors-out"></div>
+                    <div id="doors-out">
+                        <div class="wrap-tiles view">
+                            <ul>
+                                <?php if (isset($doorsOut['products'])): ?>
+                                    <?php foreach ($doorsOut['products'] as $product): ?>
+
+                                        <?php require Yii::getAlias('@frontend') . "/views/layouts/ribbonElement.php"; ?>
+
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

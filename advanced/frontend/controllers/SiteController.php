@@ -1,10 +1,12 @@
 <?php
 namespace frontend\controllers;
 
+use app\models\Section;
 use frontend\models\QuestionForm;
 use GuzzleHttp\Psr7\Request;
 use Yii;
 use yii\base\InvalidParamException;
+use yii\helpers\ArrayHelper;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -83,9 +85,24 @@ class SiteController extends Controller
         $modelProduct = new Product();
         $request = Yii::$app->request;
 
-        $products = $modelProduct->getProductsBySection($request->get('section'),4 ); /// 4 картинки на страницу
-        
-        return $this->render('index',['products' => $products, 'questionForm' => $QuestionForm]);
+        $products = $modelProduct->getProductsBySection($request->get('section'),'4' ); /// 4 картинки на страницу
+        $novelty = $modelProduct->getProducts(null,'4' );
+        $doorsIn = $modelProduct->getProducts('3','4' );
+        $doorsOut = $modelProduct->getProducts('4','4' );
+        $septum = $modelProduct->getProducts('2','4' );
+//        $sectionNames = ArrayHelper::map(Section::findAll(['1','2']),'id','title_main');
+//        $sectionNames['novelty'] = 'Новинки';
+
+        return $this->render('index',
+            [
+                'products' => $products,
+                'questionForm' => $QuestionForm,
+//                'sectionNames' => $sectionNames,
+                'doorsIn' => $doorsIn,
+                'doorsOut' => $doorsOut,
+                'novelty' => $novelty,
+                'septum' => $septum
+            ]);
 
     }
 

@@ -32,20 +32,24 @@ class Product extends ActiveRecord
         $this->_session->open();
     }
 
+    public function getProducts($section = null, $num = null){
+
+        $condition = ($section == null) ? []
+            : 'product.section_id = '.$section.' OR section.parent_id = '.$section ;
+
+        $products['products'] = $this->find()
+            ->innerJoin('section', 'product.section_id = section.id')
+            ->where($condition)->limit($num)->each();
+        return $products;
+    }
+
     public function getProductsBySection($id = null, $num = null)
     {
 
         //TODO Нужно выделить класс .everything
 
-//        $sectionID[] = $id;
-
-        //По умолчанию открываем входные двери
         $id = ($id == null) ? '3': $id;
         $products['section'] = Section::findOne(['id' => $id]);
-//        if ($products['section']['parent_id'] != null)
-//            $sectionID[] = $products['section']['parent_id'];
-//        else
-//            $sectionID[] = '0';
 
         $condition = ($id == null) ? []
             : 'product.section_id = '.$id.' OR section.parent_id = '.$id ;
@@ -68,7 +72,7 @@ class Product extends ActiveRecord
                 'table' => 'materials',],];
         foreach ($materials as $item) {
 
-            $products['materials'][]  = ['label' => $item['title'], 'url' => '#',
+            $products['materials'][$item['id']]  = ['label' => $item['title'], 'url' => '#',
                 'linkOptions'=> ['data-toggle' =>'dropdown',
                     'id-item=' => $item['id'],
                     'table' => 'material',
@@ -89,7 +93,7 @@ class Product extends ActiveRecord
                 'table' => 'styles',],];
         foreach ($styles as $item) {
 
-            $products['styles'][]  = ['label' => $item['title'], 'url' => '#',
+            $products['styles'][$item['id']]  = ['label' => $item['title'], 'url' => '#',
                 'linkOptions'=> ['data-toggle' =>'dropdown',
                 'id-item=' => $item['id'],
                     'table' => 'style',],];
@@ -109,7 +113,7 @@ class Product extends ActiveRecord
 
         foreach ($manufacturers as $item) {
 
-            $products['manufacturers'][]  = ['label' => $item['title'], 'url' => '#',
+            $products['manufacturers'][$item['id']]  = ['label' => $item['title'], 'url' => '#',
                 'linkOptions'=> ['data-toggle' =>'dropdown',
                     'id-item' => $item['id'],
                     'table' => 'manufacturer',],];
@@ -164,7 +168,7 @@ class Product extends ActiveRecord
 
     public function getFilteredProducts($params, $quantity){
 
-        $id = (!!$params['section']) ? '3': $params['section'];
+        $id = (isset($params['section'])) ? $params['section'] : 3;
         $products = $this->getProductsBySection($id,$quantity);
 
 

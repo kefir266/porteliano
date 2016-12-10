@@ -10,14 +10,14 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 
-//добавляются карточки в область прокрутки 
-foreach ($products['products'] as $product) {
-    //вывод картинок
+?>
+
+<?php
     echo Html::beginTag('div', ['class' => 'tile']);
 
     echo Html::a(
 
-        Html::img('@img/' . $product->manufacturer->title . '/'
+        Html::img('/img/' . $product->manufacturer->title . '/'
         . $product->img,
         ['alt' => $product->title, 'class' => 'tile-img']), '/catalog/product/?id='. $product->id);
 
@@ -47,5 +47,5 @@ foreach ($products['products'] as $product) {
     echo Html::endTag('div');
     echo Html::endTag('div');
     echo Html::endTag('div');
-}
+
 ?>
