@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = [
     'template' => "<li> {link} </li>\n", // template for this link only
 
 ];
-$coverTitles = ['деревянные','Стеклянные','Радиусные','Дверисо стеклом','Металлические двери','деревянные двери'];
+$coverTitles = ['деревянные','Стеклянные','Радиусные','Двери со стеклом','Металлические двери','деревянные двери'];
 $sectionUrls = [
     [],
     ['/catalog',
@@ -97,7 +97,7 @@ $bottomContent_2 = 'Речь идет о входных конструкциях
             <?php
             for ($i = 1; $i < 3; $i++) {
                 echo '<div class="col-md-6 plate-out-doors">';
-                echo Html::beginTag('a',['href' => Url::to($sectionUrls[$i+3])]);
+                echo Html::beginTag('a',['href' => Url::to($sectionUrls[$i+3]), 'class' => 'cover-plate']);
                 echo Html::img("@doors/outer_0$i.jpg",
                     ['alt' => "door_0$i", 'class' => 'tile']);
                 echo '<div class="doors-gradient doors-out-gradient-pos"></div>
@@ -137,14 +137,5 @@ $bottomContent_2 = 'Речь идет о входных конструкциях
         </div>
         
     </div>
-<<<<<<< 7801a688729b213918e748837fe360dd103aa3db
 </div>
-=======
-</div>
-<script>
-    /*
-    $('.navbar li > a[data-target]').removeClass('lightButton');
-    $('.navbar li > a[data-target=a2]').addClass('lightButton');
-    */
-</script>
->>>>>>> 2b43720a8d99442332c6ef10557eac8a5bfafcf6
+
