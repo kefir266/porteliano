@@ -28,7 +28,7 @@ class MainPageAdaptiveAsset extends AssetBundle
         'css/main/block_10.css',
         'css/main/block_11.css',
         'css/main/block_12.css',
-        
+        'css/logo_sprites_all.css',
     ];
     public $js = [
         // доп. библиотеки
