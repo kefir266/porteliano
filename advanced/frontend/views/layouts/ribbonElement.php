@@ -40,7 +40,8 @@ use yii\helpers\Url;
             'data-id' => $product->id]
     );
     echo Html::tag('a',
-        Html::tag('div', '', ['class' => 'glyphicon glyphicon-heart-empty add-to-wish ',
+        Html::tag('div', '', [
+            'class' => 'glyphicon glyphicon-heart-empty add-to-wish ',
             'data-id' => $product->id]),
         ['href' =>
             Url::to(['cart/addWish', 'id' => $product->id])]);
