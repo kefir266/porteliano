@@ -5,10 +5,14 @@
 .col-md-4 {
 / / background-color: #985f0d;
 }
-
+.limited-block{
+    max-width: 1100px;
+    margin-right: auto;
+    margin-left: auto;
+}
 
 .wrap-about {
-    max-width: 100%;
+
 }
 .action {
     position: relative;
@@ -193,7 +197,7 @@
         background: #d1c9b2 url("../../img/other/ruletka.jpg") no-repeat;
         text-align: center;
         padding-top: 150px;
-        margin-top: 67px;
+        /*margin-top: 67px;*/
         margin-left: -90px;
     }
     .wrap-about h1:first-child{
@@ -232,14 +236,20 @@ p{
 }
 .parag-sm{
     font-size: 18px;
+    margin-bottom: 100px;
 }
 @media screen and  (min-width: 1024px) {
     .bg-door {
         background:  no-repeat url(../../img/other/O-kompanii.png);
-        margin-left: 405px;
+        /*margin-left: 405px;*/
         margin-right: 10px;
         width: 305px;
         height: 586px;
         background-position-y: 75px;
+
     }
+}
+.bottom-block{
+    margin-top: 100px;
+    margin-bottom: 120px;
 }
