@@ -18,17 +18,13 @@ use yii\helpers\Url;
 
 /*  assets  */
 /*  assets  */
-use app\assets\AppAsset;
-use app\assets\MainAsset;
+
 use app\assets\FontAsset;
 use app\assets\BackAsset;
 use app\assets\DoorCatalogAsset;
 
-AppAsset::register($this);
-$test = MainAsset::register($this);
 FontAsset::register($this);
 BackAsset::register($this);
-
 
 DoorCatalogAsset::register($this);
 // псевдоним пути к папке
@@ -110,13 +106,15 @@ foreach ($sections->getMenu() as $section) {
 ?>
 <div class="door-catalog">
     <div class="panel-quick-selection">
+        <!-- заголовок -->
         <div class="row">
             <div class="col-md-12">
                 <h2>
                     <?= $title ? $title : 'Межкомнатные двери' ?>
                 </h2>
             </div>
-        </div> <!-- заголовок -->
+        </div>
+        <!-- панель выбора -->
         <div class="row">
             <div class="col-lg-12 ">
                 <div class="flex-container">
@@ -200,26 +198,29 @@ foreach ($sections->getMenu() as $section) {
                     </div>
                 </div>
             </div>
-        </div> <!-- панель выбора -->
+        </div>
+        <!-- методы сортировки -->
         <div class="row">
             <div class="col-md-5">
                 <span>Сортировать по:</span>
                 <span class="btn btn-link">Алфавиту</span>
                 <span class="btn btn-link">Цене</span>
             </div>
-        </div> <!-- методы сортировки -->
+        </div>
+        <!-- контейнер для выбранных дверей -->
         <div class="row">
             <div class="col-md-12">
                 <div class="sampling-area">
 
                     <?php foreach ($products['products'] as $product): ?>
-                    <li class="title">
+
                         <?php require Yii::getAlias('@frontend') . "/views/layouts/ribbonElement.php"; ?>
-                    </li>
+
                     <?php endforeach; ?>
                 </div>
             </div>
-        </div> <!-- контейнер для выбранных дверей -->
+        </div>
+        <!-- кнопка показать ещё -->
         <div class="row">
             <div class="col-md-12">
                 <a href="#">
@@ -229,7 +230,8 @@ foreach ($sections->getMenu() as $section) {
                     </div>
                 </a>
             </div>
-        </div> <!-- кнопка показать ещё -->
+        </div>
+        <!-- Обложки на соседние категории -->
         <div class="row">
             <div class="col-md-6">
                 <div class="plate">
@@ -254,6 +256,6 @@ foreach ($sections->getMenu() as $section) {
                     </a>
                 </div>
             </div>
-        </div> <!-- Обложки на соседние категории -->
+        </div>
     </div>
 </div>

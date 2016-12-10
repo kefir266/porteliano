@@ -110,16 +110,13 @@ span.btn{
     margin-right: 0;
     margin-left: 15px;
     margin-bottom: 0;
+    list-style-type: none;
 }
 .tile:nth-child(1){
    /* margin-left: 91px ;*/
 }
 .tile:nth-child(2){
     margin-left: 9px;
-}
-.tile > img{
-    /*margin: 0 auto;*/
-    max-height: 342px;
 }
 
 .info{
@@ -238,4 +235,7 @@ span.btn{
     margin-right: auto;
     margin-left: auto;
     width: 100%;
+}
+.tile-img{
+    max-height: 342px;
 }
