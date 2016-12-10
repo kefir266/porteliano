@@ -29,3 +29,9 @@
 .first-p{
     font-size: 22px;
 }
+.generic > ul{
+    margin-left: 20px;
+}
+.generic > ul > li{
+    text-indent: 25px;
+}
