@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Order */
@@ -31,9 +32,27 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'date',
             'full_name',
-            'done',
-            'term',
+//            'done',
+//            'term',
         ],
     ]) ?>
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        //'filterModel' => $searchModel,
+
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+
+            'id',
+            'order_id',
+            'product_id',
+            'price',
+            'quantity',
+            // 'currency_id',
+             'sum',
+
+            ['class' => 'yii\grid\ActionColumn', 'controller' => 'order-content',],
+        ],
+    ]); ?>
 
 </div>

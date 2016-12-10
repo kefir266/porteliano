@@ -1,0 +1,106 @@
+body{
+    background-color: #fdfdf3;
+}
+.delivery{
+    min-height: 485px;
+    font-family: "PT Sans",sans-serif;
+    font-size: 18px;
+}
+.lifting-costs{
+    font-family: "PT Sans",sans-serif;
+    font-size: 18px;
+}
+.table-headers{
+    color: #b7743e;
+    font-weight: bold;
+    font-family: "PT Sans",sans-serif;
+}
+.panel-heading > .panel-title{
+    font-family: PTSerif, serif;
+    font-size: 30px;
+    text-decoration: none;
+}
+.panel-heading > .panel-title > a:hover{
+    text-decoration: none;
+}
+.panel-heading > .panel-title > a:focus{
+    text-decoration: none;
+}
+
+.lifting-costs-head > .panel-heading{
+    background-color: #ece7d4;
+}
+
+.panel-lifting-costs{
+    background-color: #ece7d4;
+}
+
+.panel-metering-costs {
+    background-color: #dad2bb;
+}
+.metering-costs-head > .panel-heading{
+    background-color: #dad2bb;
+}
+.delivery-header{
+    font-size: 40px;
+    font-family: "Copperplate", serif;
+}
+.delivery-cost{
+    font-size: 30px;
+    font-family: "PT Serif", serif;
+}
+.mark-header{
+    font-size: 20px;
+    font-family: "PT Sans", serif;
+    font-weight: bold;
+    color: #b7743e;
+}
+.currency{
+    font-family: "ALS Rubl", ALSRubl, serif;
+}
+.consultation{
+    height: 390px;
+    overflow: hidden;
+}
+.action h1,
+.consultation-header{
+    font-size: 40px;
+    font-family: "Copperplate", serif;
+    color: #ffffff;
+}
+.consultation-text{
+    color: #ffffff;
+    font-size: 18px;
+    font-family: "PT Sans", serif;
+    text-align: center;
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.action-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 1030px;
+}
+.consultation-button{
+    font-size: 16px;
+    font-family: "PT Sans", serif;
+    color: #ffffff;
+    background-color: #935347;
+    border: none;
+    border-radius: 0;
+}
+.consultation-button:hover,
+.consultation-button:active,
+.consultation-button:focus{
+    color: #ffffff;
+    background-color: #6a372d;
+    border: none;
+    outline: hidden;
+    border-radius: 0;
+}
+.consultation-form{
+    margin-top: 40px;
+}

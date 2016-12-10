@@ -29,7 +29,7 @@ $title = 'Традиции и инновации';
 
 Yii::setAlias('@imgBigLogos', '@web/img/catalog/logos/big');
 ?>
-<div class="wrap order-registration">
+<div class="wrap order-registration switch" data-swith="manufacturers">
     <div class="confirm-orders-title"><?=$nameFactory?> - <?=$title?></div>
     <div class="generic">
         <?=  Html::img('@imgBigLogos/agoprofil-logo.png')?>

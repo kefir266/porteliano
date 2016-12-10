@@ -10,6 +10,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
 
+
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -89,10 +90,13 @@ AppAsset::register($this);
     NavBar::end();
     ?>
 
-    <div class="vertical-menu">
-        <?php echo Nav::widget(['items' => [
+    <div class="left-menu">
+        <?php echo Nav::widget([
+            'options' => ['class' => 'nav navbar-nav nav-stacked'],
+            'items' => [
             [
                 'label' => 'Справочники',
+                'options' => ['class' => 'nav navbar-nav'],
                 'url' => '#',
                 'items' =>
                     [

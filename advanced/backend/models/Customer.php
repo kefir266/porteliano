@@ -68,11 +68,4 @@ class Customer extends \yii\db\ActiveRecord
         return $this->hasMany(Order::className(), ['full_name' => 'full_name']);
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getOrderContents()
-    {
-        return $this->hasMany(OrderContent::className(), ['costomer_id' => 'id']);
-    }
 }

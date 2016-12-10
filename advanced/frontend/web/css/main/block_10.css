@@ -1,7 +1,10 @@
 .wrap-manufacturers{
     position: relative;
     height: 766px;
-    background-color: #00fde6;
+    background-color: #fff;
+}
+.wrap-manufacturers .row {
+    max-width: 100%;
 }
 .wrap-manufacturers > div.manufacturers > ul > li{
     display: inline-block;
@@ -9,21 +12,24 @@
     margin-top: 4%;
 }
 
-.wrap-manufacturers > div.manufacturers{
-    position: absolute;
-    top: 12%;
-    left: 16%;
-    width: 61%;
-
+.wrap-manufacturers > .manufacturers{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    height: 620px;
 }
- li.wrap-resize > a > img{
-    width: 144%;
+.wrap-resize > a > img{
+    width: 100%;
     height: auto;
 }
-.wrap-manufacturers h2{
-    position: absolute;
-    top: 7%;
-    left: 41%;
+.manufacturers-h2{
+    text-align: center;
     font-size: 237%;
-    font-family: "Copperplate", Arial;
+    font-family: "Copperplate", serif;
+}
+.wrap-manufacturers .arrow {
+    background-image: url(../../img/other/angle-light.png);
+    width: 61px;
+    height: 10px;
 }

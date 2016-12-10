@@ -22,7 +22,7 @@ class SeptaAsset extends AssetBundle
         // доп. библиотеки
         
         // скрипты
-
+        'js/navbarSwitch.js',
     ];
     public $depends = [
         'yii\web\JqueryAsset',

@@ -11,27 +11,45 @@ namespace frontend\models;
 use app\models\Manufacturer;
 use app\models\Material;
 use app\models\Section;
+use app\models\Style;
+use app\models\Wish;
+
+use yii;
+
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
 
 
 class Product extends ActiveRecord
 {
-    
+
+    private $_session;
+
+    public function afterFind()
+    {
+        parent::afterFind();
+        $this->_session = Yii::$app->session;
+        $this->_session->open();
+    }
+
+    public function getProducts($section = null, $num = null){
+
+        $condition = ($section == null) ? []
+            : 'product.section_id = '.$section.' OR section.parent_id = '.$section ;
+
+        $products['products'] = $this->find()
+            ->innerJoin('section', 'product.section_id = section.id')
+            ->where($condition)->limit($num)->each();
+        return $products;
+    }
+
     public function getProductsBySection($id = null, $num = null)
     {
 
         //TODO Нужно выделить класс .everything
 
-//        $sectionID[] = $id;
-
-        //По умолчанию открываем входные двери
         $id = ($id == null) ? '3': $id;
         $products['section'] = Section::findOne(['id' => $id]);
-//        if ($products['section']['parent_id'] != null)
-//            $sectionID[] = $products['section']['parent_id'];
-//        else
-//            $sectionID[] = '0';
 
         $condition = ($id == null) ? []
             : 'product.section_id = '.$id.' OR section.parent_id = '.$id ;
@@ -54,7 +72,7 @@ class Product extends ActiveRecord
                 'table' => 'materials',],];
         foreach ($materials as $item) {
 
-            $products['materials'][]  = ['label' => $item['title'], 'url' => '#',
+            $products['materials'][$item['id']]  = ['label' => $item['title'], 'url' => '#',
                 'linkOptions'=> ['data-toggle' =>'dropdown',
                     'id-item=' => $item['id'],
                     'table' => 'material',
@@ -75,7 +93,7 @@ class Product extends ActiveRecord
                 'table' => 'styles',],];
         foreach ($styles as $item) {
 
-            $products['styles'][]  = ['label' => $item['title'], 'url' => '#',
+            $products['styles'][$item['id']]  = ['label' => $item['title'], 'url' => '#',
                 'linkOptions'=> ['data-toggle' =>'dropdown',
                 'id-item=' => $item['id'],
                     'table' => 'style',],];
@@ -95,7 +113,7 @@ class Product extends ActiveRecord
 
         foreach ($manufacturers as $item) {
 
-            $products['manufacturers'][]  = ['label' => $item['title'], 'url' => '#',
+            $products['manufacturers'][$item['id']]  = ['label' => $item['title'], 'url' => '#',
                 'linkOptions'=> ['data-toggle' =>'dropdown',
                     'id-item' => $item['id'],
                     'table' => 'manufacturer',],];
@@ -114,6 +132,12 @@ class Product extends ActiveRecord
     public function getSection(){
 
         return $this->hasOne(Section::className(), ['id' => 'section_id']);
+
+    }
+
+    public function getStyle(){
+
+        return $this->hasOne(Style::className(), ['id' => 'style_id']);
 
     }
 
@@ -137,9 +161,14 @@ class Product extends ActiveRecord
         return $this->hasMany(Price::className(), ['product_id' => 'id']);
     }
 
+    public function getPrice(){
+
+        return $this->hasMany(Price::className(), ['product_id' => 'id'] )->orderBy('date desc')->one();
+    }
+
     public function getFilteredProducts($params, $quantity){
 
-        $id = (!!$params['section']) ? '3': $params['section'];
+        $id = (isset($params['section'])) ? $params['section'] : 3;
         $products = $this->getProductsBySection($id,$quantity);
 
 
@@ -153,6 +182,25 @@ class Product extends ActiveRecord
         $products['products'] = $query->each($quantity);
 
         return $products;
+    }
+
+    public function isWished(){
+
+        if (isset($this->_session['wish'])) {
+            if ($this->_session['wish']->isWished($this->id)) return true;
+        }
+
+        return false;
+    }
+
+    public function isOrdered(){
+
+        if (isset($this->_session['cart'])) {
+            if ($this->_session['cart']->isOrdered($this->id)) return true;
+        }
+
+        return false;
+
     }
 
 }

@@ -10,3 +10,13 @@ $(function(){
         );  
     });
 });
+$(function(){
+    $(document).on('click', '.get-consultation', function(){
+        $('#consultation').load($(this).attr('value'));
+        //dynamiclly set the header for the modal
+        $('#consultation-modal-header').find('h2').text(
+            $(this).attr('title')
+        );
+    });
+//$('.get-consultation').css('background','black');
+});

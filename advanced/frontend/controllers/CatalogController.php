@@ -73,13 +73,24 @@ class CatalogController extends Controller
 
         $modelProduct = new Product();
         $request = Yii::$app->request;
-        $quantity = 4;
+        $quantity = 20;
 
         $params = $request->get();
 
         $products = $modelProduct->getFilteredProducts($params, $quantity);
 
-        return $this->render('index',['products' => $products]);
+        return $this->render('03_Dveri_katalog',[
+            'products' => $products,
+            'params' => $params,]
+            );
+    }
+    
+    public function actionProduct() {
+
+        $id = Yii::$app->request->get('id');
+        
+        $product = Product::findOne($id);
+        return $this->render('04_Dveri_Kartochka-tovara', ['product' => $product]);
     }
 
 }

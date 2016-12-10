@@ -68,25 +68,10 @@ header{
     /*min-height: 400px;*/
 }
 
-.font-copperplate {
-    font-family: "Copperplate", Arial;
-}
+
 .font-PTSans {
-    font-family: "PTSans", Arial;
+    font-family: "PTSans", sans-serif;
 }
-.font-PTSans-Regular {
-    font-family: "PT Sans Regular", Arial;
-}
-
-
-.font-PTSerif {
-    font-family: "PTSerif", Arial;
-}
-.font-PTSerifCaption {
-    font-family: "PTSerifCaption", Arial;
-}
-
-
 #phone_1 {
     font-size: 18px;
     font-family: "PTSans", Arial;
@@ -140,11 +125,6 @@ header{
     height: 114px;
     top: 0;
     left: 268px;
-}
-
-
-.header-contact{
-
 }
 .logo{
     position: absolute;
@@ -337,5 +317,10 @@ header{
     padding: 0 5px;
     color: #ccc;
     content: " ";
+}
+
+.del-item {
+
+    cursor: pointer;
 }
 

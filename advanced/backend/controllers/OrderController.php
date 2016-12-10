@@ -5,9 +5,11 @@ namespace backend\controllers;
 use Yii;
 use app\models\Order;
 use app\models\OrderSearch;
+use app\models\OrderContentSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * OrderController implements the CRUD actions for Order model.
@@ -20,6 +22,20 @@ class OrderController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['login', 'error'],
+                        'allow' => true,
+                    ],
+                    [
+                        'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -51,8 +67,13 @@ class OrderController extends Controller
      */
     public function actionView($id)
     {
+        $model = $this->findModel($id);
+        $searchModel = new OrderContentSearch();
+        $dataProvider = $searchModel->search(['order_id' => $id ]);
+
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
+            'dataProvider' => $dataProvider,
         ]);
     }
 
@@ -83,12 +104,15 @@ class OrderController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $searchModel = new OrderContentSearch();
+        $dataProvider = $searchModel->search(['order_id' => $id ]);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'dataProvider' => $dataProvider,
             ]);
         }
     }

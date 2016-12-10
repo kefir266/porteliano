@@ -25,6 +25,18 @@ use app\models\EntryForm;
 
 /**
  * Page controller
+ * ссылки для перехода
+ *
+ * /pages/dveri
+ * /pages/doorcatalog
+ * /pages/door_card
+ * /pages/manufacturers
+ * /pages/manufacturers_inner
+ * /pages/about
+ * /pages/about_dostavka
+ * /pages/contacts
+ * /pages/wishlist
+ * /pages/basket
  */
 class PagesController extends Controller
 {
@@ -99,6 +111,7 @@ class PagesController extends Controller
             'ind' => $ind,
         ]);
     }
+
     public function actionDoor_card($indx = 0)
     {
         $modelProduct = new Product();
@@ -117,7 +130,7 @@ class PagesController extends Controller
 
     public function actionManufacturers()
     {
-        //TODO переделать в запрос из базы
+        //TODO переделать в запрос производителей из базы
         $manufArr = file('manuf.txt');
 
         return $this->render('07_Proizvoditeli', ['manufacturer' => $manufArr,]);
@@ -132,11 +145,32 @@ class PagesController extends Controller
         $QuestionForm = new QuestionForm();
         return $this->render('09_O kompanii',['questionForm' => $QuestionForm]);
     }
+    public function actionAbout_dostavka()
+    {
+        $QuestionForm = new QuestionForm();
+        return $this->render('10_Dostavka',['questionForm' => $QuestionForm]);
+    }
     public function actionContacts()
     {
         $QuestionForm = new QuestionForm();
         return $this->render('12_Kontakti',['questionForm' => $QuestionForm]);
     }
+    public function actionWishlist()
+    {
+        $QuestionForm = new QuestionForm();
+        return $this->render('13_Wishlist',['questionForm' => $QuestionForm]);
+    }
+    public function actionBasket()
+    {
+        
+
+        $QuestionForm = new QuestionForm();
+        return $this->render('14_Korzina',
+            [
+                'questionForm' => $QuestionForm,
+                'model' => $model,
+            ]);
+    }    
 
 //тест
     public function actionAdd_manufacturers_in_db()
@@ -151,6 +185,8 @@ class PagesController extends Controller
         }
         */
     }
+    /******  для заглушки корзины  *****************************************/
 
+    /***********************************************************************/
 
 }

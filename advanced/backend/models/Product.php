@@ -5,7 +5,6 @@ namespace app\models;
 use Yii;
 use yii\helpers\ArrayHelper;
 use yii\db\ActiveRecord;
-use yii\helpers\Url;
 
 
 /**
@@ -32,6 +31,8 @@ class Product extends ActiveRecord
 
     public $upload_files;
 
+    public $currentPrice;
+    public $currentCurrency;
     /**
      * @inheritdoc
      */
@@ -51,7 +52,11 @@ class Product extends ActiveRecord
             [['description'], 'string'],
             [['title'], 'string', 'max' => 50],
             [['img'], 'safe'],
-            [['upload_files', '$imageFile'],'safe'],
+            [['currentPrice'],'match', 'pattern'=>'/^[0-9]{1,12}(\.[0-9]{0,4})?$/'],
+            [['currentCurrency'], 'safe',],
+            [['upload_files', ],'safe'],
+            [['article'], 'unique'],
+            [['note'], 'string', 'max' => 500],
             //[['imageFile'], 'file', 'skipOnEmpty' => 'true', 'extensions' => 'png, jpg'],
             [['manufacturer_id'], 'exist', 'skipOnError' => true, 'targetClass' => Manufacturer::className(), 'targetAttribute' => ['manufacturer_id' => 'id']],
             [['material_id'], 'exist', 'skipOnError' => true, 'targetClass' => Material::className(), 'targetAttribute' => ['material_id' => 'id']],
@@ -75,6 +80,10 @@ class Product extends ActiveRecord
             'img' => 'Имя файла',
             'upload_files' => 'Дополнительные файлы',
             'description' => 'Описание',
+            'currentPrice' => 'Цена',
+            'currentCurrency' => 'Валюта',
+            'article' => 'Артикул',
+            'note' => 'Заметки',
         ];
     }
 
@@ -132,6 +141,11 @@ class Product extends ActiveRecord
         return ArrayHelper::merge(['0' => ''],ArrayHelper::map($sp,'id','title'));
     }
 
+    public function getCurrencies(){
+        $cur = Currency::find()->select('id, title')->each();
+        return ArrayHelper::merge(['0' => ''],ArrayHelper::map($cur,'id','title') );
+    }
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -154,6 +168,13 @@ class Product extends ActiveRecord
         return $this->hasMany(File::className(), ['product_id' => 'id']);
     }
 
+    public function getPrice(){
+
+        return $this->hasMany(Price::className(), ['product_id' => 'id'] )->orderBy('date desc')->one();
+    }
+
+
+
 //    public function upload(){
 //
 //        if ($this->img) {
@@ -172,6 +193,12 @@ class Product extends ActiveRecord
         foreach($this->getFiles()->all() as $file) {
             $this->upload_files[] = $file->getAttribute('file');
         }
+        $price = $this->getPrice();
+        if (isset($price)){
+            $this->currentPrice = $price->getAttribute('cost');
+            $this->currentCurrency = $this->getPrice()->getAttribute('currency_id');
+        }
+
         $imageFile = $this->img;
     }
 
@@ -200,7 +227,12 @@ class Product extends ActiveRecord
             }
         }
 
-//        $this->load(Yii::$app->request->post());
-//        var_dump($this->upload_files);
+        if (isset($this->currentPrice)){
+            $modelPrice = new Price();
+            $modelPrice->cost = $this->currentPrice;
+            $modelPrice->currency_id  = $this->currentCurrency;
+            $modelPrice->date = date('Y-m-d');
+            $modelPrice->save();
+        }
     }
 }

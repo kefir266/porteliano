@@ -27,40 +27,69 @@ $testText = [
 ?>
 <div id="key-benefits" class="wrap-key-benefits">
     <div class="panel-key-benefits">
-        <?= Html::tag('h2','Ключевые преимущества');?>
-        <!---->
-        <div class="panel-icons">
-            <span class="glyphicon glyphicon-time"></span>
-            <span class="glyphicon glyphicon-ruby"></span>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-scale"></span>
-            <span class="glyphicon glyphicon-alert"></span>
-            <span class="glyphicon glyphicon-calc"></span>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="key-benefits-h2">Ключевые преимущества</h2>
+            </div>
         </div>
-        <div class="panel-text">
-            <div class="text-block-time">
-                <h4><?=$testText[0][0]?></h4>
-                <p><?=$testText[1][0]?></p>
+        <div class="row ">
+            <div class="col-md-1 col-md-offset-1">
+                <span class="glyphicon glyphicon-time"></span>
             </div>
-            <div class="text-block-ruby">
-                <h4><?=$testText[0][1]?></h4>
-                <p><?=$testText[1][1]?></p>
+            <div class="col-md-4">
+                <div class="text-block-time">
+                    <h4 class="key-benefits-header"><?=$testText[0][0]?></h4>
+                    <p class="key-benefits-text"><?=$testText[1][0]?></p>
+                </div>
             </div>
-            <div class="text-block-star">
-                <h4><?=$testText[0][2]?></h4>
-                <p><?=$testText[1][2]?></p>
+            <div class="col-md-1 ">
+                <span class="glyphicon glyphicon-scale"></span>
             </div>
-            <div class="text-block-scale">
-                <h4><?=$testText[0][3]?></h4>
-                <p><?=$testText[1][3]?></p>
+            <div class="col-md-5">
+                <div class="text-block-scale">
+                    <h4 class="key-benefits-header"><?=$testText[0][3]?></h4>
+                    <p class="key-benefits-text"><?=$testText[1][3]?></p>
+                </div>
             </div>
-            <div class="text-block-alert">
-                <h4><?=$testText[0][4]?></h4>
-                <p><?=$testText[1][4]?></p>
+        </div>
+        <div class="row row-indent">
+            <div class="col-md-1 col-md-offset-1">
+                <span class="glyphicon glyphicon-ruby"></span>
             </div>
-            <div class="text-block-calc">
-                <h4><?=$testText[0][5]?></h4>
-                <p><?=$testText[1][5]?></p>
+            <div class="col-md-4">
+                <div class="text-block-ruby">
+                    <h4 class="key-benefits-header"><?=$testText[0][1]?></h4>
+                    <p class="key-benefits-text"><?=$testText[1][1]?></p>
+                </div>
+            </div>
+            <div class="col-md-1 ">
+                <span class="glyphicon glyphicon-alert"></span>
+            </div>
+            <div class="col-md-5">
+                <div class="text-block-alert">
+                    <h4 class="key-benefits-header"><?=$testText[0][4]?></h4>
+                    <p class="key-benefits-text"><?=$testText[1][4]?></p>
+                </div>
+            </div>
+        </div>
+        <div class="row row-indent">
+            <div class="col-md-1 col-md-offset-1">
+                <span class="glyphicon glyphicon-star"></span>
+            </div>
+            <div class="col-md-4">
+                <div class="text-block-star">
+                    <h4 class="key-benefits-header"><?=$testText[0][2]?></h4>
+                    <p class="key-benefits-text"><?=$testText[1][2]?></p>
+                </div>
+            </div>
+            <div class="col-md-1 ">
+                <span class="glyphicon glyphicon-calc"></span>
+            </div>
+            <div class="col-md-5">
+                <div class="text-block-calc">
+                    <h4 class="key-benefits-header"><?=$testText[0][5]?></h4>
+                    <p class="key-benefits-text"><?=$testText[1][5]?></p>
+                </div>
             </div>
         </div>
     </div>

@@ -1,0 +1,56 @@
+.door-icon{
+    height: 110px;
+    border: 1px solid #ece7d4;
+    padding: 4px 12px;
+}
+.goods-row{
+    margin-top: 50px;
+}
+.description{
+    line-height: 80px;
+}
+.button-area{
+    line-height: 80px;
+}
+.basket-button:hover,.basket-button:active{
+    background-color: #6a372d;
+    color: #ffffff;
+}
+.basket-button{
+    line-height: 42px;
+    font-size: 26px;
+    color: #d3ccad;
+    background-color: #935347;
+    width: 80px;
+    height: 42px;
+
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+#count-goods{
+    margin-top: 30px;
+}
+.delete-area > .delete{
+    line-height: 80px;
+
+}
+.send-button{
+    line-height: 40px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #935347;
+    width: 250px;
+    height: 40px;
+
+    padding-right: 0;
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.send-button:hover,.basket-button:active{
+    background-color: #6a372d;
+    color: #ffffff;
+
+}

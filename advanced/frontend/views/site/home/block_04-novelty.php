@@ -7,16 +7,19 @@
 
 /*  widgets  */
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 /*  assets  */
 
 
-
 // псевдоним пути к папке на основе другого псевдонима
 Yii::setAlias('@novelty', '@web/img/novelty/');
+// псевдоним пути к папке на основе другого псевдонима
+Yii::setAlias('@doors', '@web/img/doors');
+Yii::setAlias('@img', '@web/img');
 
 $category = ['Межкомнатная дверь', 'Межкомнатная перегородка'];
-$manufacturer = ['Ghizzi&Bennatti','New Design porte','FOA','Bluinterni'];
+$manufacturer = ['Ghizzi&Bennatti', 'New Design porte', 'FOA', 'Bluinterni'];
 $model = ['Tekna 2', 'Giudetto IMP 1011 QQ H', 'Bell neutro', 'MULTY'];
 $price = ['720', '688', '1265', '750'];
 
@@ -51,37 +54,34 @@ $info = [
 ?>
 <article id="novelty" class="wrap-novelty" data-item="a1">
     <div class="novelty">
-        <div class="wrap-tiles">
-            <?php
-            echo Html::tag('h2','Новинки');
-            echo Html::img('@novelty/door_1.jpg',
-                ['alt'=>'door_1', 'class' => 'tile']);
-            echo Html::img('@novelty/door_2.jpg',
-                ['alt'=>'door_1', 'class' => 'tile']);
-            echo Html::img('@novelty/door_3.jpg',
-                ['alt'=>'door_1', 'class' => 'tile']);
-            echo Html::img('@novelty/door_4.jpg',
-                ['alt'=>'door_1', 'class' => 'tile']);
-            ?>
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10">
+                <h2 class="novelty-h2">Новинки</h2>
+            </div>
         </div>
-        <div class="wrap-info">
-            <?php
-            for ($i = 0; $i < 4; $i++){
-                echo Html::beginTag('div', ['class' => 'info']);
-                    for ($j = 0; $j < 3; $j++) {
-                    echo Html::tag('p', $info[$i][$j]);
-                    }
-                    echo Html::tag('div','',['class' => 'delimiter']);
-                    echo Html::beginTag('div',['class' => 'block-4-price']);
-                        echo Html::tag('div','€ '.$info[$i][3],['class' => 'block-4-price-count']);
-                        echo Html::tag('div','',['class' => 'glyphicon glyphicon-heart-empty ']);
-                    echo Html::endTag('div');
-                echo Html::endTag('div');
-            }//€
-            ?>
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="novelty doors-panel running-ribbon-doors">
+                    <div class="wrap-tiles view">
+                        <ul>
+                            <?php if (isset($novelty['products'])): ?>
+                                <?php foreach ($novelty['products'] as $product): ?>
 
+                                    <?php require Yii::getAlias('@frontend') . "/views/layouts/ribbonElement.php"; ?>
+
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-        <button type="button" class="btn ">ПОКАЗАТЬ БОЛЬШЕ</button>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <a href="<?= Url::to(['pages/dveri']); ?>" class="btn btn-default btn-lg novelty-show-more" role="button">
+                    ПОКАЗАТЬ БОЛЬШЕ</a>
+            </div>
+        </div>
     </div>
     <div class="arrow"></div>
 </article>

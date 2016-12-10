@@ -3,12 +3,12 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "order_content".
  *
  * @property string $order_id
- * @property string $costomer_id
  * @property string $product_id
  * @property string $price
  * @property string $quantity
@@ -16,11 +16,11 @@ use Yii;
  * @property string $sum
  *
  * @property Currency $currency
- * @property Customer $costomer
+ * @property Customer $customer
  * @property Order $order
  * @property Product $product
  */
-class OrderContent extends \yii\db\ActiveRecord
+class OrderContent extends ActiveRecord
 {
     /**
      * @inheritdoc
@@ -36,10 +36,9 @@ class OrderContent extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['order_id', 'costomer_id', 'product_id', 'quantity', 'currency_id'], 'integer'],
+            [['order_id', 'product_id', 'quantity', 'currency_id'], 'integer'],
             [['price', 'sum'], 'number'],
             [['currency_id'], 'exist', 'skipOnError' => true, 'targetClass' => Currency::className(), 'targetAttribute' => ['currency_id' => 'id']],
-            [['costomer_id'], 'exist', 'skipOnError' => true, 'targetClass' => Customer::className(), 'targetAttribute' => ['costomer_id' => 'id']],
             [['order_id'], 'exist', 'skipOnError' => true, 'targetClass' => Order::className(), 'targetAttribute' => ['order_id' => 'id']],
             [['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => Product::className(), 'targetAttribute' => ['product_id' => 'id']],
         ];
@@ -51,13 +50,12 @@ class OrderContent extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'order_id' => 'Order ID',
-            'costomer_id' => 'Costomer ID',
+            'order_id' => 'Номер заказа',
             'product_id' => 'Product ID',
-            'price' => 'Price',
-            'quantity' => 'Quantity',
+            'price' => 'Цена',
+            'quantity' => 'Количество',
             'currency_id' => 'Currency ID',
-            'sum' => 'Sum',
+            'sum' => 'Сумма',
         ];
     }
 
@@ -69,13 +67,6 @@ class OrderContent extends \yii\db\ActiveRecord
         return $this->hasOne(Currency::className(), ['id' => 'currency_id']);
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getCostomer()
-    {
-        return $this->hasOne(Customer::className(), ['id' => 'costomer_id']);
-    }
 
     /**
      * @return \yii\db\ActiveQuery

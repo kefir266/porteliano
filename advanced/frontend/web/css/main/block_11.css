@@ -9,49 +9,46 @@
     background: #93fd73 url("../../img/background/FOTO_INTRO_22.jpg");
     background-position-y: 75%;
 }
-.wrap-about > h1{
-
-    position: absolute;
-    top: 12%;
-    left: 43%;
-    font-family: Copperplate;
+.wrap-about .row {
+    max-width: 100%;
+}
+.block-header{
+    margin-top: 100px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: Copperplate, serif;
     font-size: 34px;
 }
-.wrap-about > p:nth-child(2){
-    position: absolute;
-    top: 24%;
-    left: 23%;
-    width: 20%;
-    font-family: "PT Sans";
+.about-left{
+    font-family: "PT Sans",sans-serif;
     font-weight: bold;
     font-size: 28px;
-    line-height: 124%;
 }
-.wrap-about > p:nth-child(3){
-    position: absolute;
-    top: 25%;
-    left: 49%;
-    width: 28%;
-    font-family: "PT Serif";
+.about-right{
+    font-family: "PT Serif",sans-serif;
     font-size: 20px;
 }
 
-.wrap-about > button {
-    position: absolute;
-    top: 73%;
-    left: 37%;
+.get-consultation {
+    line-height: 42px;
     height: 42px;
     width: 462px;
     color: #e7dcdb;
     background-color: #935347;
     border: 0;
     border-radius: 0;
-    font-family: "PT Sans";
+    font-family: "PT Sans", sans-serif;
     font-size: 20px;
     padding: 0 41px 5px 41px;
     letter-spacing: 2px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
-.wrap-about > button:hover{
+.get-consultation:hover,
+.get-consultation:focus,
+.get-consultation:active{
     color: #ffffff;
     background-color: #6a372d;
 }

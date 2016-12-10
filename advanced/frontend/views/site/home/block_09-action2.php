@@ -16,12 +16,22 @@ use yii\helpers\Html;
     <div class="img-holder"
          data-image="<?=Yii::getAlias('@web').'/img/background/anotherAction.jpg'?>">
     </div>
+    <div class="action-panel">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <h1 class="action-header">АКЦИЯ</h1>
+                <p class="action-text">
+                    Гарантированно улучшаем любое диллерское предложение на все модели итальянских дверейи перегородок на 4%!
+                </p>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <?require Yii::getAlias('@frontend') . '/views/site/home/contact-form.php'?>
+            </div>
+        </div>
 
-    <h1>АКЦИЯ</h1>
-    <p>
-        Гарантированно улучшаем любое диллерское предложение на все модели итальянских дверейи перегородок на 4%!
-    </p>
-    <?=require 'contact-form.php'?>
+
+
+    </div>
     
     <script>
         $('div.wrap-action-another > .img-holder').imageScroll({
