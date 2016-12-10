@@ -66,7 +66,7 @@ require_once Yii::getAlias('@frontend').'/views/layouts/manufacturersNames.php';
             echo Html::beginTag('ul', ['class' => 'list-company']);
             for ($i = 0; $i < 15/*count($logoNames)*/; $i++) {
                 echo Html::beginTag('li', ['class' => 'wrap-resize']);
-                echo '<a href="#" class="'.$logoNames[$i].'"></a>';
+                echo '<a href="#" class="center-logo '.$logoNames[$i].'"></a>';
                 echo Html::endTag('li');
             }
             echo Html::endTag('ul');

@@ -161,10 +161,10 @@
 }
 .running-ribbon div.view{
     height: 150px;
-    width: 830px;
-    margin-left: -3%;
-    /* margin-right: auto; */
+    width: 800px;
+    margin-left: 0;
     overflow: scroll;
+    margin-top: 25px;
 }
 
 
@@ -181,7 +181,10 @@
     text-align: center;
     float: left
 }
-.running-ribbon div.view ul li{ }
+.running-ribbon div.view ul li{
+    width: 200px;
+    text-align: center;
+}
 
 .show{
     margin-top: 1em;
@@ -228,4 +231,8 @@
         width: 380px;
     }
 
+}
+.center-logo{
+    margin-left: auto;
+    margin-right: auto;
 }
