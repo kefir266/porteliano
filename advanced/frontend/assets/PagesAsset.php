@@ -24,7 +24,7 @@ class PagesAsset extends AssetBundle
         'css/pages/about.css',
         'css/pages/delivery.css',
         'css/pages/contacts.css',
-
+        'css/logo_sprites_all.css',
     ];
     public $js = [
         // доп. библиотеки
