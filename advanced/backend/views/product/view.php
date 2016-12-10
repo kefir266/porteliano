@@ -35,8 +35,35 @@ $this->params['breadcrumbs'][] = $this->title;
             'style.title',
             'manufacturer.title',
             'img',
+            'article',
+            'note',
             'description:ntext',
+
         ],
     ]) ?>
+    <?php
+
+    $previews = "/img/" . $model->manufacturer->title . '/' . $model->img;
+    $previewConf = ['caption' => $model->img,];
+
+    echo \kartik\widgets\FileInput::widget([
+        'name' => 'attachment_49[]',
+        'model' => $model,
+
+//        'options' => ['accept' => '/img/'.$model->manufacturer->title.'/*',],
+//        'options' => [
+//            'multiple' => false,
+//        ],
+
+        'pluginOptions' => [
+            'initialPreview' => $previews,
+            'initialPreviewAsData' => true,
+            'initialCaption'=>$model->img,
+            'initialPreviewConfig' => $previewConf,
+            'overwriteInitial' => true,
+            'maxFileSize' => 2000
+        ]
+    ])
+    ?>
 
 </div>

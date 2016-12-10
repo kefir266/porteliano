@@ -43,7 +43,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'expandOneOnly' => true,
         ],
 
-        'title',
+        [
+
+            'attribute' => 'title',],
         [
             'attribute'=>'section_id',
             'vAlign'=>'middle',
@@ -64,7 +66,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'vAlign'=>'middle',
             'width'=>'180px',
             'value'=>function ($model, $key, $index, $widget) {
-                return $model->material->title;
+                return Html::a($model->material->title,['material/view','id' => $model->material->id]);
             },
             'filterType'=>GridView::FILTER_SELECT2,
             'filter'=>ArrayHelper::map(Material::find()->asArray()->all(), 'id', 'title'),
@@ -79,7 +81,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'vAlign'=>'middle',
             'width'=>'180px',
             'value'=>function ($model, $key, $index, $widget) {
-                return $model->manufacturer->title;
+                return Html::a($model->manufacturer->title,['manufacturer/view','id' => $model->manufacturer->id]);
             },
             'filterType'=>GridView::FILTER_SELECT2,
             'filter'=>ArrayHelper::map(Manufacturer::find()->asArray()->all(), 'id', 'title'),
@@ -94,7 +96,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'vAlign'=>'middle',
             'width'=>'180px',
             'value'=>function ($model, $key, $index, $widget) {
-                return $model->style->title;
+                return Html::a($model->style->title,['style/view','id' => $model->style->id]);
             },
             'filterType'=>GridView::FILTER_SELECT2,
             'filter'=>ArrayHelper::map(Style::find()->asArray()->all(), 'id', 'title'),
@@ -104,7 +106,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'filterInputOptions'=>['placeholder'=>'Любые'],
             'format'=>'raw'
         ],
-        'article',
+        [
+            'class'=>'kartik\grid\EditableColumn',
+            'attribute' => 'article',
+        ],
 //            'img',
         'description:ntext',
 //            ['attribute' => 'date','format' => ['datetime',(isset(Yii::$app->modules['datecontrol']['displaySettings']['datetime'])) ? Yii::$app->modules['datecontrol']['displaySettings']['datetime'] : 'd-m-Y H:i:s A']],
