@@ -18,7 +18,7 @@
 /* Кнопки выбора для Блока с фильтром быстрого подбора*/
 .material, .style, .manufacturer, .block-1-price{
     display: inline-block;
-    margin-left: 5%;
+    margin-left: 4%;
 }
 .wrap-quick-selection .row{
     max-width: 100%;
@@ -125,7 +125,7 @@
 
 .panel-quick-selection{
     font-size: 22px;
-    width: 100%;
+    width: 1100px;
     margin-left: auto;
     margin-right: auto;
 

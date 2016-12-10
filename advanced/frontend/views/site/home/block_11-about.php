@@ -6,6 +6,7 @@
 /*  models  */
 
 /*  widgets  */
+use yii\bootstrap\Modal;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
@@ -33,11 +34,31 @@ use yii\helpers\Url;
     </div>
     <div class="row">
         <div class="col-md-12">
-            <a href="<?= Url::to(['pages/about']); ?>"
-               class="btn btn-default btn-lg get-consultation"
-               role="button">
-                Получить бесплатную консультацию
-            </a>
+
+            <?php
+            /*$address указывает какой view должен загрузится в Content*/
+            /*$controller должен использовать $this->renderAjax*/
+            $address = Url::to(['site/entry'], true);           
+            
+            Modal::begin([
+                'headerOptions' => ['id' => 'consultation-modal-header'],
+                'header' => '<h2>здесь будет то, что написано в title</h2>',
+                //keeps from closing modal with esc key or by clicking out of the modal.
+                // user must click cancel or X to close
+                //'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
+                'size' => '',
+                'toggleButton' => [
+                    'tag' => 'button',
+                    'value' => $address,
+                    'title' => 'Обратная связь',
+                    'id' => '',
+                    'class' => 'btn btn-default btn-lg get-consultation',
+                    'label' => 'Получить бесплатную консультацию',
+                ]
+            ]);
+            echo "<div id='consultation'></div>";
+            Modal::end();
+            ?>
         </div>
     </div>
     

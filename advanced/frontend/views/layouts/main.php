@@ -64,7 +64,6 @@ MainAdaptiveAsset::register($this);
                             <?php
                             /*$address указывает какой view должен загрузится в Content*/
                             /*$controller должен использовать $this->renderAjax*/
-                            $address = Url::to(['site/say'], true);
                             $address = Url::to(['site/entry'], true);
                             Modal::begin([
                                 'headerOptions' => ['id' => 'modalHeader'],
@@ -130,12 +129,13 @@ MainAdaptiveAsset::register($this);
                             'linkOptions' => ['data-target' => 'a6'],
                         ],
 
-                ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist"></span>',
-                    'url' => ['cart/wishlist'],
-                ],
-                ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket"></span>',
-                    'url' => ['cart/index'],
-                ],
+                        ['label' => '<span class="glyphicon glyphicon-heart-empty " id="wishlist"></span>',
+                            'url' => ['cart/wishlist'],
+                        ],
+                        ['label' => '<span class="glyphicon glyphicon-shopping-cart" id="basket"></span>',
+                            'url' => ['cart/index'],
+                        ],
+
 
                     ]]);
                 NavBar::end();
@@ -218,6 +218,4 @@ MainAdaptiveAsset::register($this);
     </body>
     </html>
 <?php $this->endPage() ?>
-<?php
 
-?>

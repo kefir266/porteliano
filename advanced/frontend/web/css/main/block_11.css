@@ -46,7 +46,9 @@
     margin-right: auto;
     display: block;
 }
-.get-consultation:hover,.get-consultation:active{
+.get-consultation:hover,
+.get-consultation:focus,
+.get-consultation:active{
     color: #ffffff;
     background-color: #6a372d;
 }

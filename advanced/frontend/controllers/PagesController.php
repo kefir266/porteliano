@@ -25,6 +25,18 @@ use app\models\EntryForm;
 
 /**
  * Page controller
+ * ссылки для перехода
+ *
+ * /pages/dveri
+ * /pages/doorcatalog
+ * /pages/door_card
+ * /pages/manufacturers
+ * /pages/manufacturers_inner
+ * /pages/about
+ * /pages/about_dostavka
+ * /pages/contacts
+ * /pages/wishlist
+ * /pages/basket
  */
 class PagesController extends Controller
 {
@@ -99,6 +111,7 @@ class PagesController extends Controller
             'ind' => $ind,
         ]);
     }
+
     public function actionDoor_card($indx = 0)
     {
         $modelProduct = new Product();

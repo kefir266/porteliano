@@ -10,7 +10,7 @@ use yii\helpers\Html;
 
 /*  assets  */
 
-
+require_once Yii::getAlias('@frontend').'/views/layouts/manufacturersNames.php';
 ?>
 <article id="manufacturers" class="wrap-manufacturers">
     <div class="row">
@@ -21,8 +21,10 @@ use yii\helpers\Html;
     <div class="manufacturers">
         <ul>
             <?php
-            for ($i = 0; $i < count($logos); $i++){
-                echo '<li class="gray wrap-resize"><a href="#">'.$logos[$i].'</a></li>';
+            for ($i = 0; $i < count($logoNames); $i++){
+                echo '<li>
+                        <a href="#" class="'.$logoNames[$i].'"></a>
+                      </li>';
             }
             ?>
         </ul>

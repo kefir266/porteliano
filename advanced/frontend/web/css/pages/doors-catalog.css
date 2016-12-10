@@ -110,16 +110,13 @@ span.btn{
     margin-right: 0;
     margin-left: 15px;
     margin-bottom: 0;
+    list-style-type: none;
 }
 .tile:nth-child(1){
    /* margin-left: 91px ;*/
 }
 .tile:nth-child(2){
     margin-left: 9px;
-}
-.tile > img{
-    /*margin: 0 auto;*/
-    max-height: 342px;
 }
 
 .info{
@@ -210,12 +207,13 @@ span.btn{
 .plate{
     position: relative;
     margin-bottom: 10px;
+    outline: 6px solid #935347;
 }
 .doors-gradient-pos{
     position: absolute;
-    top: 49%;
-    left: 2%;
-    width: 98%;
+    top: 50%;
+    left: 0;
+    width: 100%;
     height: 50%;
 }
 
@@ -238,4 +236,25 @@ span.btn{
     margin-right: auto;
     margin-left: auto;
     width: 100%;
+}
+.tile-img{
+    max-height: 342px;
+}
+.add-to-wish{
+    font-size: 18px;
+    margin-left: 100px;
+    color: #4e3d36;
+    margin-top: 5px;
+}
+.block-price-count {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    font-family: 'PTSerifBold', serif;
+    font-size: 18px;
+}
+
+ .block-price-count > a {
+    color: #4e3d36;
 }

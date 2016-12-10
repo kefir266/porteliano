@@ -77,16 +77,16 @@
 
 .doors-out-gradient-pos {
     position: absolute;
-    top: 244px;
-    left: 3%;
-    width: 101%;
+    top: 49%;
+    left: 15px;
+    width: 99%;
     height: 50%;
 }
 
 .doors-inn-gradient-pos {
     position: absolute;
     top: 242px;
-    left: 6%;
+    left: 12%;
     width: 96%;
     height: 50%;
 }
@@ -114,12 +114,12 @@
 .plate-inn-doors > a > h2 {
     position: absolute;
     top: 86%;
-    left: 0;
+    left: 50%;
     font-size: 22px;
     width: 100%;
     text-align: center;
     color: #fdfdf3;
-
+    transform: translateX(-40%);
 }
 .inn-panel {
     display: flex;
@@ -133,5 +133,12 @@
 .grip-wrap {
     display: block;
     width: 470px;
+    position: relative;
+}
+.cover-plate{
+    width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     position: relative;
 }

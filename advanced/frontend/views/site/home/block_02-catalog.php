@@ -22,6 +22,7 @@ if (file_exists($directoryLogo)) {
         $logos[] = Html::img('@imgLogos/' . $fileNames[$i], ['alt' => "$alt"]);
     }
 }
+require_once Yii::getAlias('@frontend').'/views/layouts/manufacturersNames.php';
 ?>
 
 <div style='display: flex' id="catalog" class="wrap-catalog">
@@ -79,8 +80,8 @@ if (file_exists($directoryLogo)) {
                         <div class="view">
                             <ul>
                                 <?php
-                                for ($i = 0; $i < count($logos); $i++) {
-                                    echo '<li class="gray"><a href="#">' . $logos[$i] . '</a></li>';
+                                for ($i = 0; $i < count($logoNames); $i++) {
+                                    echo '<li> <a href="#" class="center-logo '.$logoNames[$i].'"></a></li>';
                                 }
                                 ?>
                             </ul>

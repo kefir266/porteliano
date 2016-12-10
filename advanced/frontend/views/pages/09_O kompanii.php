@@ -21,7 +21,7 @@ PagesAsset::register($this);
 Yii::setAlias('@img', '@web/img/');
 Yii::setAlias('@imgBigLogos', '@web/img/catalog/logos/big');
 ?>
-<div class="wrap-about">
+<div class="wrap-about switch" data-swith="about">
     <div class="row">
         <div class="col-md-3 .col-sm-3 col-xs-12 col-md-offset-3">
             <h1>О компании</h1>
@@ -49,7 +49,7 @@ Yii::setAlias('@imgBigLogos', '@web/img/catalog/logos/big');
             <div class="ruletka">
                 <h2>Доставка</h2>
                 <p>Все о стоимостидоставки и установки</p>
-                
+                <!-- TODO: Кнопка ведет на всплывающее окно с формой обратной связи.-->
                 <a href="<?= Url::to(['pages/about_dostavka']); ?>"
                    class="btn btn-default btn-lg"
                    role="button">
