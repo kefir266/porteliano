@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "order_content".
@@ -19,7 +20,7 @@ use Yii;
  * @property Order $order
  * @property Product $product
  */
-class OrderContent extends \yii\db\ActiveRecord
+class OrderContent extends ActiveRecord
 {
     /**
      * @inheritdoc
@@ -49,12 +50,12 @@ class OrderContent extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'order_id' => 'Order ID',
+            'order_id' => 'Номер заказа',
             'product_id' => 'Product ID',
-            'price' => 'Price',
-            'quantity' => 'Quantity',
+            'price' => 'Цена',
+            'quantity' => 'Количество',
             'currency_id' => 'Currency ID',
-            'sum' => 'Sum',
+            'sum' => 'Сумма',
         ];
     }
 

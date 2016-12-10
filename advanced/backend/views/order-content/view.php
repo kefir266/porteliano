@@ -2,16 +2,15 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Order */
+/* @var $model app\models\OrderContent */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Orders', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Order Contents', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="order-view">
+<div class="order-content-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -30,29 +29,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'date',
-            'full_name',
-//            'done',
-//            'term',
-        ],
-    ]) ?>
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        //'filterModel' => $searchModel,
-
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
             'order_id',
             'product_id',
             'price',
             'quantity',
-            // 'currency_id',
-             'sum',
-
-            ['class' => 'yii\grid\ActionColumn', 'controller' => 'order-content',],
+            'currency_id',
+            'sum',
         ],
-    ]); ?>
+    ]) ?>
 
 </div>
