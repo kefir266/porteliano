@@ -35,7 +35,6 @@ $logoNames = [
     's-22_res',
     's-23_romagnoli',
 ]
-
 ?>
 <article id="manufacturers" class="wrap-manufacturers">
     <div class="row">
