@@ -49,6 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
     echo \kartik\widgets\FileInput::widget([
         'name' => 'attachment_49[]',
         'model' => $model,
+        'disabled' => true,
 
 //        'options' => ['accept' => '/img/'.$model->manufacturer->title.'/*',],
 //        'options' => [
