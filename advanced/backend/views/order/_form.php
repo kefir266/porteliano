@@ -1,7 +1,10 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use yii\grid\GridView;
+use kartik\widgets\ActiveForm;
+use kartik\builder\Form;
+use kartik\datecontrol\DateControl;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Order */
@@ -10,22 +13,53 @@ use yii\widgets\ActiveForm;
 
 <div class="order-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['type' => ActiveForm::TYPE_HORIZONTAL]); echo Form::widget([
 
-    <?= $form->field($model, 'id')->textInput(['maxlength' => true]) ?>
+        'model' => $model,
+        'form' => $form,
+        'columns' => 1,
+        'attributes' => [
 
-    <?= $form->field($model, 'date')->textInput() ?>
+            'id' => ['type' => Form::INPUT_TEXT, 'options' => ['placeholder' => 'Enter Номер заказа...', 'maxlength' => 10]],
 
-    <?= $form->field($model, 'full_name')->textInput(['maxlength' => true]) ?>
+            'done' => ['type' => Form::INPUT_WIDGET, 'widgetClass' => DateControl::classname(),'options' => ['type' => DateControl::FORMAT_DATE]],
 
-    <?= $form->field($model, 'done')->textInput() ?>
+            'term' => ['type' => Form::INPUT_WIDGET, 'widgetClass' => DateControl::classname(),'options' => ['type' => DateControl::FORMAT_DATE]],
 
-    <?= $form->field($model, 'term')->textInput() ?>
+            'full_name' => ['type' => Form::INPUT_TEXT, 'options' => ['placeholder' => 'Enter Заказчик...', 'maxlength' => 100]],
 
-    <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-    </div>
+        ]
 
-    <?php ActiveForm::end(); ?>
+    ]);
 
+
+
+
+    echo Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'),
+        ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']
+    );
+
+
+    ActiveForm::end(); ?>
+<?php
+    echo GridView::widget([
+        'dataProvider' => $dataProvider,
+        //'filterModel' => $searchModel,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+
+            'id',
+            'order_id',
+            'product_id',
+            'price',
+            'quantity',
+            // 'currency_id',
+            'sum',
+
+            ['class' => 'yii\grid\ActionColumn', 'controller' => 'order-content',],
+        ],
+    ]);
+    ?>
 </div>
+
+

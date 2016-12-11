@@ -5,12 +5,12 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Product;
+use app\models\OrderContent;
 
 /**
- * ProductSearch represents the model behind the search form about `app\models\Product`.
+ * OrderContentSearch represents the model behind the search form about `app\models\OrderContent`.
  */
-class ProductSearch extends Product
+class OrderContentSearch extends OrderContent
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class ProductSearch extends Product
     public function rules()
     {
         return [
-            [['id', 'section_id', 'material_id', 'style_id', 'manufacturer_id' ], 'integer'],
-            [['title',  'img', 'description','article'], 'safe'],
+            [['id', 'order_id', 'product_id', 'quantity', 'currency_id'], 'integer'],
+            [['price', 'sum'], 'number'],
         ];
     }
 
@@ -41,23 +41,12 @@ class ProductSearch extends Product
      */
     public function search($params)
     {
-        $query = Product::find();
+        $query = OrderContent::find();
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'sort' => [
-                'attributes' => [
-                    'date',
-                    'manufacturer',
-                    'title',
-                    'article'
-                ],
-            ],
-            'pagination' => [
-                'pageSize' => 20,
-            ],
         ]);
 
         $this->load($params);
@@ -71,17 +60,16 @@ class ProductSearch extends Product
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'section_id' => $this->section_id,
-            'material_id' => $this->material_id,
-            'style_id' => $this->style_id,
-            'manufacturer_id' => $this->manufacturer_id,
+            'order_id' => $params['order_id'],
+            'product_id' => $this->product_id,
+            'price' => $this->price,
+            'quantity' => $this->quantity,
+            'currency_id' => $this->currency_id,
+            'sum' => $this->sum,
         ]);
-
-        $query->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'img', $this->img])
-            ->andFilterWhere(['like', 'description', $this->description])
-            ->andFilterWhere(['like', 'article', $this->article]);
 
         return $dataProvider;
     }
+
+
 }

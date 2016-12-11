@@ -46,11 +46,11 @@ class Order extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'date' => 'Date',
-            'full_name' => 'Full Name',
-            'done' => 'Done',
-            'term' => 'Term',
+            'id' => 'Номер заказа',
+            'date' => 'Дата создания',
+            'full_name' => 'Заказчик',
+            'done' => 'Выполнен',
+            'term' => 'Сроки',
         ];
     }
 
@@ -77,5 +77,10 @@ class Order extends \yii\db\ActiveRecord
     public static function find()
     {
         return new OrderQuery(get_called_class());
+    }
+
+    public function getOrderContent( ) {
+
+        return $this->hasMany(OrderContent::className(), ['order_id' => 'id']);
     }
 }
