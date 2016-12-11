@@ -74,7 +74,7 @@ header{
 }
 #phone_1 {
     font-size: 18px;
-    font-family: "PTSans", Arial;
+    font-family: "PTSans", sans-serif;
     letter-spacing: 1.8px;
     position: absolute;
     top: 12px;
@@ -83,7 +83,7 @@ header{
 }
 #phone_2 {
     font-size: 18px;
-    font-family: "PTSans", Arial;
+    font-family: "PTSans", sans-serif;
     letter-spacing: 1.8px;
 
     position: absolute;
@@ -94,7 +94,7 @@ header{
 #phone_1_label{
     color: #c5926b;
     font-size: 14px;
-    font-family: "PTSans", Arial;
+    font-family: "PTSans", sans-serif;
     letter-spacing: 0.1px;
 
     position: absolute;
@@ -107,7 +107,7 @@ header{
     color: #c5926b;
     font-size: 14px;
     letter-spacing: 0.1px;
-    font-family: "PTSans", Arial;
+    font-family: "PTSans", sans-serif;
 
     position: absolute;
     top: 33px;
@@ -227,7 +227,7 @@ header{
     left: 0;
 }
 #ask_a_question-button {
-    font-family: PTSansBold, Arial;
+    font-family: PTSansBold, sans-serif;
     position: absolute;
     left: 100%;
     top: 10px;
@@ -309,7 +309,7 @@ header{
 }
 .breadcrumb a{
     color: #413332;
-    font-family: "PT Sans",serif;
+    font-family: "PTSans", sans-serif;
     font-size: 16px;
 }
 /* content = чем разделяются крошки */
