@@ -88,3 +88,8 @@
     color: #eeeeee;
     margin-top: 0;
 }
+.plate {
+    position: relative;
+    margin-bottom: 10px;
+    outline: none;
+}
