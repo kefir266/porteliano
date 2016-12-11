@@ -46,10 +46,14 @@
     src: local("GothamPro"),
     url(../Fonts/GothamPro.ttf);
 }
-rouble.otf
 
 @font-face {
     font-family: ALSRubl;
     src: local("rouble"),
     url(../Fonts/rouble.otf);
+}
+@font-face {
+    font-family: Awesome;
+    src: local("awesome"),
+    url(../Fonts/awesome.ttf);
 }
