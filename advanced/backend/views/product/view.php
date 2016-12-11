@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
     ]) ?>
     <?php
 
-    $previews = "/img/" . $model->manufacturer->title . '/' . $model->img;
+    $previews = "/img/products/" . $model->manufacturer->title . '/' . $model->img;
     $previewConf = ['caption' => $model->img,];
 
     echo \kartik\widgets\FileInput::widget([

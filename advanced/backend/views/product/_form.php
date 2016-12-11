@@ -67,12 +67,12 @@ use yii\widgets\ActiveForm;
             //        ]);
             //    //    echo $form->field($model, 'img')->textInput(['maxlength' => true])
 
-            $previews = "/img/" . $model->manufacturer->title . '/' . $model->img;
+            $previews = "/img/products/" . $model->manufacturer->title . '/' . $model->img;
             $previewConf = ['caption' => $model->img,];
 
             echo $form->field($model, 'img')->widget(\kartik\file\FileInput::className(), [
                 //'name' => 'attachment_49[]',
-                'options' => ['accept' => '/img/'.$model->manufacturer->title.'/*',],
+                'options' => ['accept' => '/img/products/'.$model->manufacturer->title.'/*',],
 //        'options' => [
 //            'multiple' => false,
 //        ],
@@ -96,7 +96,7 @@ use yii\widgets\ActiveForm;
             $previewConf = [];
             foreach ($model->files as $id => $file) {
 
-                $previews[$id] = "/img/" . $model->manufacturer->title . '/' . $file->file;
+                $previews[$id] = "/img/products/" . $model->manufacturer->title . '/' . $file->file;
                 $previewConf[$id] = ['caption' => $file->file,];
             }
             echo $form->field($model, 'upload_files[]')->widget(\kartik\file\FileInput::className(), [

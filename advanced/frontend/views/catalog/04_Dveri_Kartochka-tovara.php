@@ -107,7 +107,7 @@ foreach ($sections->getMenu() as $section) {
     <div class="panel-quick-selection">
         <div class="row">
             <div class="col-md-5 ">
-                <?= Html::img('/img/' . $product->manufacturer->title . '/' . $product->img, ['class'=> 'doorImg']) ?>
+                <?= Html::img('/img/products/' . $product->manufacturer->title . '/' . $product->img, ['class'=> 'doorImg']) ?>
             </div>
             <div class="product-discript-door col-md-7 ">
                 <div class="row">
