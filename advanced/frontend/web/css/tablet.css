@@ -44,8 +44,8 @@ section{
 
 header .row:first-child > div:nth-child(2) > div.row > 
 section:first-child{
-	width:180px;
-	margin-right:24px;
+	width:190px;
+	margin-right:14px;
 }
 
 header .row:first-child > div:nth-child(2) > div.row > 
@@ -61,6 +61,7 @@ section:last-child > a{
 header .row:first-child > div:nth-child(2) > div.row > 
 section:first-child > div#phone_1_label{
 	padding-left:10px;
+	font-size:1em;
 }
 
 header .row:first-child > div:nth-child(3){
