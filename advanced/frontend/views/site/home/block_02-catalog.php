@@ -61,7 +61,7 @@ require_once Yii::getAlias('@frontend').'/views/layouts/manufacturersNames.php';
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-12 col-xs-12">
+                <div class="col-md-3 col-sm-12 col-xs-12 col-xs-pull-5">
                     <div class="interiorDoors">
                         <div class="doors-gradient">
                             <h3>МЕЖКОМНАТНЫЕ ДВЕРИ</h3>

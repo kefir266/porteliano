@@ -26,7 +26,7 @@ foreach ($sections->getMenu() as $section) {
 <!---->
 <div id="quick-selection" class="wrap-quick-selection">
     <div class="panel-quick-selection">
-        <div class="row">
+        <div class="row center-block">
             <div style="display: flex" class="col-sm-12">
                 <div class="dropdown category">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">
@@ -41,14 +41,14 @@ foreach ($sections->getMenu() as $section) {
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row center-block">
             <div style="display: flex" class="col-sm-12">
                 <h2 class="section-title"
                     section-id=<?= $products['section']->id ?>><?= $products['section']->title ?></h2>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12 col-md-offset-0 col-xs-10 col-xs-offset-1">
+        <div class="row center-block">
+            <div class="col-md-12 col-md-offset-0 col-xs-12 col-clear">
                 <div class="material">
                     <h5>Материал</h5>
                     <?php
