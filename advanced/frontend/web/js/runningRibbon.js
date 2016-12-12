@@ -7,12 +7,14 @@
     var viewUL = $(".running-ribbon  div.view")
             .css("overflow", "hidden")
             .children("ul"),
-        imgs = viewUL.find("img"), 	    // коллекция картинок
+        imgs = viewUL.find("a"), 	    // коллекция картинок
         imgW = 160,						// ширина одной картинки
         imgsCount = imgs.length, 		// общее колличество картинок
         totalImgsW = imgsCount * imgW,  // общая ширина
         current = 1; 					// текушая картинка(позиция)
-
+        //console.log('imgsCount = ' + imgsCount);
+       // console.log('current = ' + current);
+       // console.log('totalImgsW = ' + totalImgsW);
     $(".running-ribbon > div.show")
         .show()
         .find("button").on("click", function(){
@@ -40,6 +42,8 @@
         doIt(viewUL, position, direction);
     }
     function doIt(container, position, direction){
+        //console.log('current = ' + current);
+        //console.log('imgsCount = ' + imgsCount);
         var sign; // "-=" or "+="
         if(direction && position != 0){
             sign = (direction == "next") ? "-=" : "+=";

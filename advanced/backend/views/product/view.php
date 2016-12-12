@@ -43,12 +43,13 @@ $this->params['breadcrumbs'][] = $this->title;
     ]) ?>
     <?php
 
-    $previews = "/img/" . $model->manufacturer->title . '/' . $model->img;
+    $previews = "/img/products/" . $model->manufacturer->title . '/' . $model->img;
     $previewConf = ['caption' => $model->img,];
 
     echo \kartik\widgets\FileInput::widget([
         'name' => 'attachment_49[]',
         'model' => $model,
+        'disabled' => true,
 
 //        'options' => ['accept' => '/img/'.$model->manufacturer->title.'/*',],
 //        'options' => [

@@ -13,9 +13,9 @@
             imgsCount = imgs.length, 		// общее колличество картинок
             totalImgsW = imgsCount * imgW,  // общая ширина
             current = 1; 					// текушая картинка(позиция)
-            console.log('imgsCount = ' + imgsCount);
-            console.log('current = ' + current);
-            console.log('totalImgsW = ' + totalImgsW);
+        //  console.log('imgsCount = ' + imgsCount);
+          //  console.log('current = ' + current);
+          //  console.log('totalImgsW = ' + totalImgsW);
         $("div.show")
             .show()
             .find("button").on("click", function(){
@@ -41,8 +41,8 @@
                 position = 0
             }
             doIt(viewUL, position, direction);
-            console.log('current = ' + current);
-            console.log('imgsCount = ' + imgsCount);
+          // console.log('current = ' + current);
+          //  console.log('imgsCount = ' + imgsCount);
         }
         function doIt(container, position, direction){
             var sign; // "-=" or "+="
@@ -69,9 +69,9 @@
             imgsCount = imgs.length, 		// общее колличество картинок
             totalImgsW = imgsCount * imgW,  // общая ширина
             current = 1; 					// текушая картинка(позиция)
-        console.log('imgsCount = ' + imgsCount);
-        console.log('current = ' + current);
-        console.log('totalImgsW = ' + totalImgsW);
+        //console.log('imgsCount = ' + imgsCount);
+        //console.log('current = ' + current);
+       // console.log('totalImgsW = ' + totalImgsW);
         $("div#show")
             .show()
             .find("button").on("click", function(){
@@ -97,8 +97,8 @@
                 position = 0
             }
             doIt(viewUL, position, direction);
-            console.log('current = ' + current);
-            console.log('imgsCount = ' + imgsCount);
+            //console.log('current = ' + current);
+            //console.log('imgsCount = ' + imgsCount);
         }
         function doIt(container, position, direction){
             var sign; // "-=" or "+="

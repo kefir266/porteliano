@@ -11,6 +11,9 @@
 /tags
 *.mo
 
+/web/assets/
+/advanced/frontend/web/img/products/
+
 # IDE and editor specific files #
 #################################
 /nbproject

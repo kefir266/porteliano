@@ -91,35 +91,35 @@ AppAsset::register($this);
     ?>
 
     <div class="left-menu">
-        <?php echo Nav::widget([
-            'options' => ['class' => 'nav navbar-nav nav-stacked'],
-            'items' => [
-            [
-                'label' => 'Справочники',
-                'options' => ['class' => 'nav navbar-nav'],
-                'url' => '#',
-                'items' =>
-                    [
-                        [
-                            'label' => 'Категории',
-                            'url' => '/admin/section'
-                        ],
-                        [
-                            'label' => 'Материалы',
-                            'url' => '/admin/material'
-                        ],
-                        [
-                            'label' => 'Производители',
-                            'url' => '/admin/manufacturer'
-                        ],
-                        [
-                            'label' => 'Стили',
-                            'url' => '/admin/style'
-                        ]
-                    ],
-
-            ]
-        ]]); ?>
+<!--        --><?php //echo Nav::widget([
+//            'options' => ['class' => 'nav navbar-nav nav-stacked'],
+//            'items' => [
+//            [
+//                'label' => 'Справочники',
+//                'options' => ['class' => 'nav navbar-nav'],
+//                'url' => '#',
+//                'items' =>
+//                    [
+//                        [
+//                            'label' => 'Категории',
+//                            'url' => '/admin/section'
+//                        ],
+//                        [
+//                            'label' => 'Материалы',
+//                            'url' => '/admin/material'
+//                        ],
+//                        [
+//                            'label' => 'Производители',
+//                            'url' => '/admin/manufacturer'
+//                        ],
+//                        [
+//                            'label' => 'Стили',
+//                            'url' => '/admin/style'
+//                        ]
+//                    ],
+//
+//            ]
+//        ]]); ?>
     </div>
     <div class="container">
         <?= Breadcrumbs::widget([

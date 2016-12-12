@@ -47,7 +47,7 @@ Yii::setAlias('@img', '@web/img/');
     <div class="row goods-row">
         <!-- иконка -->
         <div class="col-md-1 col-md-offset-3 ">
-            <?= Html::img('/img/'.$item['product']->manufacturer->title.'/'. $item['product']->img,
+            <?= Html::img('/img/products/'.$item['product']->manufacturer->title.'/'. $item['product']->img,
                 ['class' => 'door-icon', 'alt' => "door icon"]) ?>
         </div>
         <!-- описание и удаление -->

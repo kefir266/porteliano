@@ -39,9 +39,26 @@
     font-family: GothamPro;
     src:url(../Fonts/GothamPro.ttf);
 }
+
+@font-face {
+    font-family: Awesome;
+    src: local("awesome"),
+    url(../Fonts/awesome.ttf);
+}
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../Fonts/glyphicons-halflings-regular.eot');
+    src: url('../Fonts/glyphicons-halflings-regular.eot?#iefix')
+    format('embedded-opentype'),
+    url('../Fonts/glyphicons-halflings-regular.woff')     format('woff'),
+    url('../Fonts/glyphicons-halflings-regular.ttf')     format('truetype'),
+    url('../Fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular')  format('svg');
+}
+
 /*rouble.otf*/
 
 @font-face {
     font-family: ALSRubl;
     src:url(../Fonts/rouble.otf);
 }
+

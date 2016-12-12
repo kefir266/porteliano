@@ -87,6 +87,8 @@ class Product extends ActiveRecord
         ];
     }
 
+
+
     /**
      * @return \yii\db\ActiveQuery
      */

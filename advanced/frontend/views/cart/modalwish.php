@@ -32,7 +32,7 @@
                 <? foreach($cart->get() as $id => $item): ?>
                     <?php if (((int)($id) > 0 ) && $item['quantity'] > 0 ): ?>
                 <tr>
-                        <td><img src=" <?= '/img/'.$item['product']->manufacturer->title.'/'. $item['product']->img ?>"
+                        <td><img src=" <?= '/img/products/'.$item['product']->manufacturer->title.'/'. $item['product']->img ?>"
                             class ="cart-image"></td>
                         <td><?= trim($item['product']->title) ?></td>
 
