@@ -94,7 +94,11 @@ TabletAsset::register($this);
             </div>
         </header>
         <div class="col-navbar">
-            <div id="panel-tablet"></div>
+            <div id="wrap-tablet">
+                <div id="panel-tablet">
+                    <div id="button-toggle" class="glyphicon glyphicon-align-left"></div>
+                </div>
+            </div>
             <div id="navbar-line" class=''>
                 <?php
                 NavBar::begin([]);

@@ -92,6 +92,7 @@ button#ask_a_question-button{
 	margin:0px;
 	padding:0px;
 	border-radius:0px;
+	background-color:#413332;
 }
 
 .col-navbar > #navbar-line > .navbar-default > .container{
@@ -135,8 +136,33 @@ button#ask_a_question-button{
 	padding:20px 10px;
 }
 
-.navbar-header{
+#wrap-tablet{
+	position:relative;
+	width:100%;
+	height:60px;
+	position:absolute;
 	display:none;
+}
+
+#wrap-tablet > #panel-tablet{
+	width:701px;
+	height:100%;
+	margin:0px auto;
+	position:relative;
+}
+
+#wrap-tablet > #panel-tablet > div#button-toggle:before{
+	position:relative;
+	z-index:100;
+	color:#d2ccac;
+	font-size:20px;
+	line-height:60px;
+	margin-left: 10px;
+	cursor:pointer;
+}
+
+#wrap-tablet > #panel-tablet > div#button-toggle:hover{
+	color:#fff;
 }
 
 .navbar-collapse, .navbar-center{
@@ -194,21 +220,20 @@ button#ask_a_question-button{
 
 	.col-navbar > #navbar-line > .navbar-default > .container >
 	.navbar-collapse > ul{
-		position:absolute;
 		width:701px;
-		top:58px;
-		/*min-height:30px;*/
-		/*height:0px;*/
-		/*overflow:hidden;*/
+		position:relative;
+		min-height:0px;
+		padding-top:58px;
+		display:none;
 	}
 
 	.navbar-center > li{
 		float:none;
-		width:100%;
 		line-height:60px;
 		background-color:#413332;
 		position:relative;
 		z-index:1000;
+		min-height:0px;
 	}
 
 	.navbar-center > li:nth-child(9),
@@ -221,5 +246,24 @@ button#ask_a_question-button{
 		height:60px;
 		padding-right:0px;
 		text-align:left;
+		padding-left:20px;
+	}
+
+	div#wrap-tablet{
+		display:block;
+	}
+
+	div#wrap-tablet.fixed{
+
+	}
+
+	/*Межкомнатные двери*/
+	div.panel-quick-selection{
+		width:701px;
+		margin:0px auto;
+	}
+
+	div.panel-quick-selection > div.row{
+		margin:0px;
 	}
 }
