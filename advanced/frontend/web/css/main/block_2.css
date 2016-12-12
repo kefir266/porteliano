@@ -245,12 +245,7 @@ button#next:hover {
 
 }
 
-@media all and  (max-width: 768px) {
-    .running-ribbon div.view {
-        width: 380px;
-    }
 
-}
 
 .center-logo {
     margin-left: auto;
@@ -260,7 +255,6 @@ button#next:hover {
 @media screen and (max-width: 768px) {
     .panel-Catalog {
         width: 348px;
-
     }
 
     .grips {
@@ -269,5 +263,58 @@ button#next:hover {
     }
     .grips > .doors-gradient {
         width: 100%;
+        margin-top: 41%;
+        height: 50%;
+    }
+    .septa {
+        width: 170px;
+        height: 170px;
+        background-size: cover;
+    }
+    .grips > .doors-gradient > h3 {
+        padding-top: 20%;
+    }
+    .septa > .doors-gradient {
+        width: 100%;
+        height: 50%;
+        margin-top: 40%;
+        background-size: cover;
+    }
+    .septa > .doors-gradient > h3 {
+        padding-top: 0;
+    }
+    .entryDoors {
+        width: 170px;
+        height: 350px;
+        margin-top: 20px;
+        padding-top: 0;
+        padding-left: 0;
+        background-size: cover;
+    }
+    .entryDoors > .doors-gradient {
+        width: 100%;
+        height: 159px;
+        margin-top: 180px;
+    }
+    .entryDoors .doors-gradient h3 {
+        text-align: center;
+        padding-top: 60%;
+    }
+    .interiorDoors {
+        width: 345px;
+        height: 340px;
+        padding-top: 42%;
+        background-size: cover;
+    }
+    .interiorDoors > .doors-gradient > h3 {
+        font-size: 22px;
+        padding-top: 40%;
+    }
+    .interiorDoors > .doors-gradient {
+        width: 100%;
+    }
+
+    .running-ribbon div.view {
+        width: 370px;
     }
 }
