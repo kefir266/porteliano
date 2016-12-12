@@ -75,10 +75,10 @@ require_once Yii::getAlias('@frontend') . '/views/layouts/manufacturersNames.php
     </div>
     <div class="ribbon-panel ">
         <div class="running-ribbon row">
-            <div class="col-md-1 col-sm-1 col-xs-1 show">
+            <div class="col-md-1 col-sm-1 col-xs-2 show">
                 <button id="prev" class="btn btn-link" data-param="prev"></button>
             </div>
-            <div class="col-md-10 col-sm-10 col-xs-10">
+            <div class="col-md-10 col-sm-10 col-xs-7">
                 <div class="view">
                     <ul>
                         <?php

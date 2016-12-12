@@ -325,5 +325,10 @@ button#next:hover {
 
     .running-ribbon div.view {
         width: 370px;
+        margin-left: -28px;
+    }
+    button#next {
+        margin-left: 68px;
+        margin-top: 25px;
     }
 }
