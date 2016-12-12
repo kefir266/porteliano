@@ -84,7 +84,6 @@ function setGlyphiconHeart(jtag, state) {
 
 function refreshCart(quantity, jtag, zero) {
 
-    console.log(quantity);
     if (quantity == 0) {
         jtag.text((!!zero) ? zero : '');
         if (jtag.attr('id') == 'wishlist') {
@@ -233,10 +232,8 @@ function showModal(id, tab) {
 }
 
 function eventClickDropMenu(item) {
-    console.log('dropMenu');
     if (item.target.tagName == 'A') {
-        var idItem = item.target.data('id');
-        console.log(idItem);
+        var idItem = $(item.target).data('id');
         var button = $(item.target).parents(".btn-group").children(".btn-default:first");
 
         button.text(item.target.innerHTML);
@@ -247,7 +244,6 @@ function eventClickDropMenu(item) {
 
 function eventClickSelectButton(item) {
 
-    console.log('click');
     var material = $("div .material").find(".btn-default").data('id');
     var manufacturer = $("div .manufacturer").find(".btn-default").data('id');
     var style = $("div .style").find(".btn-default").data('id');
@@ -256,7 +252,6 @@ function eventClickSelectButton(item) {
 
 
 
-    console.log(material);
     $(location).attr('href',
         '/catalog/?'
         + ((!!section) ? '&section=' + section : '')

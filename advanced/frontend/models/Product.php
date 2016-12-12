@@ -74,7 +74,7 @@ class Product extends ActiveRecord
 
             $products['materials'][$item['id']]  = ['label' => $item['title'], 'url' => '#',
                 'linkOptions'=> ['data-toggle' =>'dropdown',
-                    'data-id=' => $item['id'],
+                    'data-id' => $item['id'],
                     'table' => 'material',
                 ],
             ];
@@ -95,7 +95,7 @@ class Product extends ActiveRecord
 
             $products['styles'][$item['id']]  = ['label' => $item['title'], 'url' => '#',
                 'linkOptions'=> ['data-toggle' =>'dropdown',
-                'data-id=' => $item['id'],
+                'data-id' => $item['id'],
                     'table' => 'style',],];
         }
 
