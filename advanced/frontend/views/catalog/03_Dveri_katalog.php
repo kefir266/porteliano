@@ -48,6 +48,19 @@ switch ($products['section']->id) {
         $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '1']);
         $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '2']);
         break;
+    case 2:
+        $categoryTitle = 'Перегородки';
+
+        $coverImgLeft = '@cover/outer.jpg';
+        $coverImgRight = '@cover/grips.png';
+
+
+        $coverTextLeft = 'Входные двери';
+        $coverTextRight = 'Ручки';
+
+        $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '1']);
+        $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '2']);
+        break;
     case 4:
         $categoryTitle = 'Входные двери';
 

@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
+use kartik\file\FileInput;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Product */
@@ -11,7 +12,7 @@ use yii\helpers\Url;
 
 <div class="product-form">
 
-    <?php $form = ActiveForm::begin([
+    <?php $form = \yii\bootstrap\ActiveForm::begin([
         'options' => ['enctype' => 'multipart/formdata']
     ]); ?>
     <div class="row">
@@ -71,7 +72,7 @@ use yii\helpers\Url;
             $previews = "/frontend/web/img/products/" . $model->manufacturer->title . '/' . $model->img;
             $previewConf = ['caption' => $model->img,];
 
-            echo $form->field($model, 'img')->widget(\kartik\file\FileInput::className(), [
+            echo $form->field($model, 'img')->widget(FileInput::className(), [
                 'name' => 'img',
 
                 'options' => ['accept' => 'image/*',],
@@ -80,7 +81,7 @@ use yii\helpers\Url;
 //        ],
                 'model' => $model,
                 'pluginOptions' => [
-                    'uploadUrl' => Url::to(['/file/upload']),
+                    //'uploadUrl' => Url::to(['/file/upload']),
                     'initialPreview' => $previews,
                     'initialPreviewAsData' => true,
                     'initialCaption'=>$model->img,
@@ -138,6 +139,6 @@ use yii\helpers\Url;
         </div>
     </div>
 
-    <?php ActiveForm::end(); ?>
+    <?php \yii\bootstrap\ActiveForm::end(); ?>
 
 </div>

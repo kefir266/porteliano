@@ -31,8 +31,8 @@ use yii\helpers\Url;
     $price = $product->prices;
     echo
     Html::tag('div',
-        Html::tag('a', '€ '
-            . ((count($price) > 0) ?
+        Html::tag('a', ((count($price)) ? current($price)->currency->title : '')
+            . ' '. ((count($price) > 0) ?
                 current($price)->cost
                 : ''), ['href' =>
             Url::to(['cart/add', 'id' => $product->id])]),
