@@ -34,10 +34,10 @@ require_once Yii::getAlias('@frontend').'/views/layouts/manufacturersNames.php';
         </div>
         <div class="row">
             <div class="tiles">
-                <div class="col-md-3 col-sm-4 col-xs-5">
-                    <div class="entryDoors">
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="interiorDoors">
                         <div class="doors-gradient">
-                            <h3>ВХОДНЫЕ ДВЕРИ</h3>
+                            <h3>МЕЖКОМНАТНЫЕ ДВЕРИ</h3>
                         </div>
                     </div>
                 </div>
@@ -61,13 +61,14 @@ require_once Yii::getAlias('@frontend').'/views/layouts/manufacturersNames.php';
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-12 col-xs-12">
-                    <div class="interiorDoors">
+                <div class="col-md-3 col-sm-4 col-xs-5">
+                    <div class="entryDoors">
                         <div class="doors-gradient">
-                            <h3>МЕЖКОМНАТНЫЕ ДВЕРИ</h3>
+                            <h3>ВХОДНЫЕ ДВЕРИ</h3>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
         <div class="row">
