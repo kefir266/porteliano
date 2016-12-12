@@ -13,9 +13,11 @@ use yii\widgets\Breadcrumbs;
 /**/
 use app\assets\MainAdaptiveAsset;
 use app\assets\TabletAsset;
+use app\assets\MobileAsset;
 
 MainAdaptiveAsset::register($this);
 TabletAsset::register($this);
+MobileAsset::register($this);
 
 ?>
 <?php $this->beginPage() ?>
