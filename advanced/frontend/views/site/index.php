@@ -32,9 +32,9 @@ $this->title = 'home';
 
     require 'home/block_04-novelty.php';
 
-    require_once 'home/block_05-key-benefits.php';/*
+    require_once 'home/block_05-key-benefits.php';
 
-    require 'home/block_06-doors.php';
+    require 'home/block_06-doors.php';/*
 
     require_once 'home/block_07-facts.php';
 
@@ -44,6 +44,6 @@ $this->title = 'home';
     require_once 'home/block_10-manufacturers.php';
     require_once 'home/block_11-about.php';
     require_once 'home/block_12-Contacts.php';
-    */
+*/
     ?>
 </div>

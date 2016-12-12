@@ -23,7 +23,7 @@ class MainAdaptiveAsset extends AssetBundle
     ];
     public $js = [
         // доп. библиотеки
-        'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
+        //'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
         '/js/lib/jquery.scroolly.js',
         // скрипты
 
