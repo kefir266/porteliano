@@ -16,7 +16,7 @@ use app\assets\TabletAsset;
 use app\assets\MobileAsset;
 
 MainAdaptiveAsset::register($this);
-TabletAsset::register($this);
+//TabletAsset::register($this);
 MobileAsset::register($this);
 
 ?>
@@ -49,7 +49,7 @@ MobileAsset::register($this);
                         </a>
                     </div>
 
-                    <div class="col-md-offset-1 col-md-6 col-sm-4 col-sm-offset-2 col-xs-offset-2 col-xs-6    ">
+                    <div class="col-md-offset-1 col-md-6 col-sm-4 col-sm-offset-2 col-xs-offset-1 col-xs-7">
                         <div class="row">
                             <section class="hidden-xs col-md-6  col-sm-12 site-contact font-PTSans">
                                 <div id="phone_1">+7(495) 742-17-24</div>
