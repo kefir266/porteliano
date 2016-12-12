@@ -12,7 +12,7 @@
 * */
 var avatarElem = $('#navbar-line');
 //var avatarSourceBottom = avatarElem.getBoundingClientRect().bottom + window.pageYOffset;
-var avatarSourceBottom = avatarElem[0].getBoundingClientRect().bottom + window.pageYOffset;
+var avatarSourceBottom = avatarElem[0].getBoundingClientRect().top + window.pageYOffset;
 var fixClass = 'fixed-0-0-top';
 
 $(window).scroll(function() {

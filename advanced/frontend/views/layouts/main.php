@@ -94,6 +94,7 @@ TabletAsset::register($this);
             </div>
         </header>
         <div class="col-navbar">
+            <div id="panel-tablet"></div>
             <div id="navbar-line" class=''>
                 <?php
                 NavBar::begin([]);
