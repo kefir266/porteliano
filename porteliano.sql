@@ -115,15 +115,20 @@ CREATE TABLE IF NOT EXISTS `manufacturer` (
   `link` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `title` (`title`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы porteliano_db.manufacturer: ~4 rows (приблизительно)
+-- Дамп данных таблицы porteliano_db.manufacturer: ~8 rows (приблизительно)
 /*!40000 ALTER TABLE `manufacturer` DISABLE KEYS */;
 INSERT INTO `manufacturer` (`id`, `title`, `img`, `link`) VALUES
 	(1, 'Romagnoli', '', ''),
 	(2, 'PORTE IN DOOR', '', ''),
 	(3, 'Agoprofil', '', ''),
-	(4, 'ASTOR MOBILI', '', '');
+	(4, 'ASTOR MOBILI', '', ''),
+	(5, 'LONGHI', '', ''),
+	(6, 'Lualdi', '', ''),
+	(7, 'Ghizzi&Benatti', '', ''),
+	(8, 'Impronta', '', ''),
+	(9, 'OICOS', '', '');
 /*!40000 ALTER TABLE `manufacturer` ENABLE KEYS */;
 
 
@@ -136,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `material` (
   UNIQUE KEY `title` (`title`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы porteliano_db.material: ~2 rows (приблизительно)
+-- Дамп данных таблицы porteliano_db.material: ~3 rows (приблизительно)
 /*!40000 ALTER TABLE `material` DISABLE KEYS */;
 INSERT INTO `material` (`id`, `title`) VALUES
 	(1, 'Дерево'),
@@ -177,7 +182,7 @@ CREATE TABLE IF NOT EXISTS `order` (
 -- Дамп данных таблицы porteliano_db.order: ~4 rows (приблизительно)
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
 INSERT INTO `order` (`id`, `date`, `full_name`, `done`, `term`) VALUES
-	(20, '2016-12-08 00:25:26', 'Покупатель1', NULL, NULL),
+	(20, '2016-12-08 00:25:26', 'Покупатель3', NULL, NULL),
 	(21, '2016-12-08 00:27:51', 'Покупатель1', NULL, NULL),
 	(22, '2016-12-08 00:32:51', 'Покупатель1', NULL, NULL),
 	(23, '2016-12-08 00:33:13', 'Покупатель3', NULL, NULL);
@@ -203,11 +208,10 @@ CREATE TABLE IF NOT EXISTS `order_content` (
   CONSTRAINT `FK_order_content_product` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы porteliano_db.order_content: ~6 rows (приблизительно)
+-- Дамп данных таблицы porteliano_db.order_content: ~5 rows (приблизительно)
 /*!40000 ALTER TABLE `order_content` DISABLE KEYS */;
 INSERT INTO `order_content` (`id`, `order_id`, `product_id`, `price`, `quantity`, `currency_id`, `sum`) VALUES
 	(33, 20, 3, 1400.00, 1, 643, 1400),
-	(34, 20, 6, 1500.00, 1, 643, 1500),
 	(35, 22, 3, 1400.00, 5, 643, 7000),
 	(36, 22, 6, 1500.00, 6, 643, 9000),
 	(37, 23, 3, 1400.00, 5, 643, 7000),
@@ -257,7 +261,6 @@ CREATE TABLE IF NOT EXISTS `product` (
   `note` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `title` (`title`),
-  UNIQUE KEY `articul` (`article`),
   KEY `FK_product_material` (`material_id`),
   KEY `FK_product_style` (`style_id`),
   KEY `FK_product_section` (`section_id`),
@@ -266,17 +269,26 @@ CREATE TABLE IF NOT EXISTS `product` (
   CONSTRAINT `FK_product_material` FOREIGN KEY (`material_id`) REFERENCES `material` (`id`),
   CONSTRAINT `FK_product_section` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`),
   CONSTRAINT `FK_product_style` FOREIGN KEY (`style_id`) REFERENCES `style` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы porteliano_db.product: ~6 rows (приблизительно)
+-- Дамп данных таблицы porteliano_db.product: ~11 rows (приблизительно)
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`id`, `title`, `section_id`, `material_id`, `style_id`, `manufacturer_id`, `article`, `img`, `description`, `date`, `collection`, `note`) VALUES
 	(3, 'ACROPOLI AC1V B2 ', 3, 1, 1, 1, 'AC1V B2 ', 'AC 1B.PNG', 'МОДЕЛЬ AC1V B2 цена от 3439 У.Е.', '0000-00-00 00:00:00', NULL, NULL),
 	(4, 'CANALE linea', 3, 1, 1, 2, NULL, 'CANALE linea.jpg', 'CANALE linea', '0000-00-00 00:00:00', NULL, NULL),
 	(6, 'CANALE', 3, 1, 1, 2, NULL, 'CANALE.jpg', 'CANALE', '0000-00-00 00:00:00', NULL, NULL),
 	(7, 'ACROPOLI AC1V ', 3, 1, 1, 1, ' AC1V ', 'AC1V.PNG', 'МОДЕЛЬ AC1V цена от 1720 У.Е..PNG', '0000-00-00 00:00:00', NULL, NULL),
-	(8, 'ALSACE_MOD', 3, 1, 1, 3, NULL, 'ALSACE_MOD.180.png', '', '2016-11-30 09:26:49', NULL, NULL),
-	(9, 'Allure', 3, 3, 3, 4, NULL, 'Allure.jpg', '', '2016-11-30 11:28:55', NULL, NULL);
+	(8, 'ALSACE_MOD', 3, 1, 1, 3, '', 'ALSACE_MOD.180.png', '', '2016-11-30 09:26:49', NULL, ''),
+	(9, 'Allure', 3, 3, 3, 4, '', 'Allure.jpg', '', '2016-11-30 11:28:55', NULL, ''),
+	(10, 'Wind_серия 300', 2, 3, 3, 5, '', '_перегородки в интерьере к Wind_серия 300_раздвижная система, крепление к стене,_стоим за одно полотно- от 1893 у.е..png', 'крепление к стене,_стоим за одно полотно- от 1893 у.е', '2016-12-11 16:07:34', NULL, ''),
+	(11, 'GT1V.SE1', 2, 3, 3, 1, '', 'МОДЕЛЬ GT1V.SE1 цена за одно полотно-  от 690 у.е..PNG', '', '2016-12-11 16:15:07', NULL, 'цена за одно полотно'),
+	(12, 'drive', 2, 1, 3, 6, '', 'drive.png', '', '2016-12-11 16:17:47', NULL, ''),
+	(13, 'Reflex', 2, 3, 3, 7, '', 'Reflex_стоим.- от 1656 у.е..png', '', '2016-12-11 16:22:55', NULL, ''),
+	(14, 'Theory 70', 2, 3, 3, 8, '', 'модель Theory 70_стоим.- от 1704 у.е..png', '', '2016-12-11 16:25:15', NULL, ''),
+	(15, 'tekno', 4, 2, 3, 9, '', 'tekno.jpg', '', '2016-12-11 19:03:33', NULL, ''),
+	(16, 'Idoor', 4, 2, 1, 9, '', 'idoor.jpg', '', '2016-12-11 19:05:27', NULL, ''),
+	(17, 'Evolution', 4, 3, 1, 9, '', 'Classica.jpg', '', '2016-12-11 19:08:32', NULL, ''),
+	(18, 'Pantografato', 4, 1, 1, 9, '', 'Pantografato.jpg', '', '2016-12-11 19:10:27', NULL, '');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 

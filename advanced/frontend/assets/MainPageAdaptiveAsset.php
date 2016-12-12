@@ -35,6 +35,8 @@ class MainPageAdaptiveAsset extends AssetBundle
         '/js/lib/jquery.min.js',
         '/js/lib/jquery.imageScroll.min.js',
         '/js/lib/jquery.scroolly.js',
+        //'/js/lib/jquery.fontawesome.js', // для иконок
+
         // скрипты
         'js/runningRibbon.js',
         'js/scrollingDoors.js',

@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Product */
@@ -67,17 +68,19 @@ use yii\widgets\ActiveForm;
             //        ]);
             //    //    echo $form->field($model, 'img')->textInput(['maxlength' => true])
 
-            $previews = "/img/" . $model->manufacturer->title . '/' . $model->img;
+            $previews = "/frontend/web/img/products/" . $model->manufacturer->title . '/' . $model->img;
             $previewConf = ['caption' => $model->img,];
 
             echo $form->field($model, 'img')->widget(\kartik\file\FileInput::className(), [
-                //'name' => 'attachment_49[]',
-                'options' => ['accept' => '/img/'.$model->manufacturer->title.'/*',],
+                'name' => 'img',
+
+                'options' => ['accept' => 'image/*',],
 //        'options' => [
 //            'multiple' => false,
 //        ],
                 'model' => $model,
                 'pluginOptions' => [
+                    'uploadUrl' => Url::to(['/file/upload']),
                     'initialPreview' => $previews,
                     'initialPreviewAsData' => true,
                     'initialCaption'=>$model->img,
@@ -96,7 +99,7 @@ use yii\widgets\ActiveForm;
             $previewConf = [];
             foreach ($model->files as $id => $file) {
 
-                $previews[$id] = "/img/" . $model->manufacturer->title . '/' . $file->file;
+                $previews[$id] = "/img/products/" . $model->manufacturer->title . '/' . $file->file;
                 $previewConf[$id] = ['caption' => $file->file,];
             }
             echo $form->field($model, 'upload_files[]')->widget(\kartik\file\FileInput::className(), [

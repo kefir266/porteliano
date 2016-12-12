@@ -39,7 +39,7 @@ class Product extends ActiveRecord
 
         $products['products'] = $this->find()
             ->innerJoin('section', 'product.section_id = section.id')
-            ->where($condition)->limit($num)->each();
+            ->where($condition)->limit($num)->orderBy('date DESC')->each();
         return $products;
     }
 

@@ -17,7 +17,7 @@ use yii\helpers\Url;
 
     echo Html::a(
 
-        Html::img('/img/' . $product->manufacturer->title . '/'
+        Html::img('/img/products/' . $product->manufacturer->title . '/'
         . $product->img,
         ['alt' => $product->title, 'class' => 'tile-img']), '/catalog/product/?id='. $product->id);
 

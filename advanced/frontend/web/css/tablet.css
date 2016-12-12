@@ -1,0 +1,129 @@
+header{
+	width:960px;
+	margin:0px auto;
+	padding:22px 0px;
+}
+
+header > div{
+	width:100%;
+	margin:0px;
+	padding:0px;
+}
+
+header .row:first-child{
+	margin:0px;
+	padding:0px;
+}
+
+header .row:first-child > div:first-child{
+	padding:0px;
+	margin:0px;
+	width:195px;
+}
+
+header .row:first-child > div:nth-child(2){
+	width:400px;
+	margin:0px;
+	margin-left:195px;
+	padding:0px;
+	margin-right:10px;
+}
+
+header .row:first-child > div:nth-child(2) > div.row{
+	width:100%;
+	margin:0px;
+	padding:0px;
+}
+
+header .row:first-child > div:nth-child(2) > div.row > 
+section{
+	margin:0px;
+	padding:0px;
+	padding-top:15px;
+}
+
+header .row:first-child > div:nth-child(2) > div.row > 
+section:first-child{
+	width:190px;
+	margin-right:14px;
+}
+
+header .row:first-child > div:nth-child(2) > div.row > 
+section:last-child{
+	width:196px;
+}
+
+header .row:first-child > div:nth-child(2) > div.row > 
+section:last-child > a{
+	padding-left:58px;
+}
+
+header .row:first-child > div:nth-child(2) > div.row > 
+section:first-child > div#phone_1_label{
+	padding-left:10px;
+	font-size:1em;
+}
+
+header .row:first-child > div:nth-child(3){
+	width:160px;
+	position:relative;
+	margin:0px;
+	padding:0px;
+	padding-top:10px;
+	left:0px;
+}
+
+header .row:first-child > div:nth-child(3) > div{
+	margin:0px;
+	padding:0px;
+	text-align:right;
+}
+
+header .row:first-child > div:nth-child(3) > div > 
+button#ask_a_question-button{
+	margin:0px;
+}
+
+@media (max-width:980px){
+	header{
+		width:701px;
+	}
+
+	header .row:first-child > div:first-child{
+		width:200px;
+	}
+
+	header .row:first-child > div:nth-child(2){
+		width:195px;
+		margin-left:125px;
+		margin-right:0px;
+	}
+
+	header .row:first-child > div:nth-child(2) > div.row >
+	section{
+		padding-top:0px;
+		line-height:18px;
+	}
+
+	header .row:first-child > div:nth-child(2) > div.row >
+	section:first-child{
+		width:195px;
+		margin-right:0px;
+	}
+
+	header .row:first-child > div:nth-child(2) > div.row >
+	section:first-child{
+		width:195px;
+	}
+
+	header .row:first-child > div:nth-child(2) > div.row >
+	section > div#phone_1,
+	header .row:first-child > div:nth-child(2) > div.row >
+	section > div#phone_2{
+		font-size:18px;
+	}
+
+	header .row:first-child > div:nth-child(3){
+		width:181px;
+	}
+}
