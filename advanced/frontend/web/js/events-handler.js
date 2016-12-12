@@ -233,34 +233,37 @@ function showModal(id, tab) {
 }
 
 function eventClickDropMenu(item) {
+    console.log('dropMenu');
     if (item.target.tagName == 'A') {
-        var idItem = item.target.getAttribute('id-item');
+        var idItem = item.target.data('id');
+        console.log(idItem);
         var button = $(item.target).parents(".btn-group").children(".btn-default:first");
 
         button.text(item.target.innerHTML);
-        button.attr('id-item', idItem);
+        button.attr('data-id', idItem);
     }
 }
 
 
 function eventClickSelectButton(item) {
 
+    console.log('click');
+    var material = $("div .material").find(".btn-default").data('id');
+    var manufacturer = $("div .manufacturer").find(".btn-default").data('id');
+    var style = $("div .style").find(".btn-default").data('id');
+    var price = $("div .block-1-price").find(".btn-default").data('id');
+    var section = $(".section-title").data('id');
 
-    var material = $("div .material").find(".btn-default").attr('id-item');
-    var manufacturer = $("div .material").find(".btn-default").attr('id-item');
-    var style = $("div .style").find(".btn-default").attr('id-item');
-    var price = $("div .block-1-price").find(".btn-default").attr('id-item');
-    var section = $(".section-title").attr('section-id');
 
 
     console.log(material);
     $(location).attr('href',
         '/catalog/?'
-        + ((!!section) ? '&section=' + section.replace(/[^.\d]+/g, "") : '')
-        + ((!!material) ? '&material=' + material.replace(/[^.\d]+/g, "") : '')
-        + ((!!manufacturer) ? '&manufacturer=' + manufacturer.replace(/[^.\d]+/g, "") : '')
-        + ((!!style) ? '&style=' + style.replace(/[^.\d]+/g, "") : '')
-        + ((!!price) ? '&price=' + price : '').replace(/[^.\d]+/g, ""));
+        + ((!!section) ? '&section=' + section : '')
+        + ((!!material) ? '&material=' + material : '')
+        + ((!!manufacturer) ? '&manufacturer=' + manufacturer : '')
+        + ((!!style) ? '&style=' + style : '')
+        + ((!!price) ? '&price=' + price : ''));
 }
 
 // для 03_dveri-catalog
