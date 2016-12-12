@@ -27,8 +27,8 @@ $this->title = 'home';
     <?
 
     require_once 'home/block_01.php';
-    require_once 'home/block_02-catalog.php';/*
-    require_once 'home/block_03-action.php';
+    require_once 'home/block_02-catalog.php';
+    require_once 'home/block_03-action.php';/*
 
     require 'home/block_04-novelty.php';
 
