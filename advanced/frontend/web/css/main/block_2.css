@@ -11,14 +11,19 @@
 .panel-Catalog {
     margin-left: auto;
     margin-right: auto;
-    min-height: 730px;
     position: relative;
+    max-width: 960px;
+    min-height: 480px;
+}
+.indent-col{
+    margin-left: 2px;
+    margin-right: -2px;
 }
 
 .panel-Catalog > div > div > h2 {
+
     font-family: Copperplate, serif;
-    margin-right: auto;
-    margin-left: auto;
+    text-align: center;
 }
 
 .tiles {
@@ -174,8 +179,8 @@
 
 .running-ribbon div.view {
     height: 150px;
-    width: 800px;
-    margin-left: 0;
+    width: 940px;
+    margin-left: -15px;
     overflow: scroll;
     margin-top: 25px;
 }
@@ -217,6 +222,7 @@ button#prev {
     height: 50px;
     background-image: url('../../img/UI/arrow_inactive.jpg');
     transform: scale(1, 1);
+     margin-left: -5px;
 }
 
 button#next {
@@ -224,7 +230,7 @@ button#next {
     height: 50px;
     background-image: url('../../img/UI/arrow_inactive.jpg');
     transform: scale(-1, 1);
-
+     margin-left: 38px;
 }
 
 button#prev:hover {
@@ -244,14 +250,17 @@ button#next:hover {
     }
 
 }
-
-
-
 .center-logo {
     margin-left: auto;
     margin-right: auto;
 }
 
+.ribbon-panel {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1100px;
+}
 @media screen and (max-width: 768px) {
     .panel-Catalog {
         width: 348px;
