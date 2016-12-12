@@ -145,7 +145,7 @@ TabletAsset::register($this);
                 ?>
             </div>
         </div>
-        <div class="row">
+        <div class="row max-width">
             <div class="col-md-offset-1 col-md-10">
                 <?= Breadcrumbs::widget([
                 'homeLink' => [
