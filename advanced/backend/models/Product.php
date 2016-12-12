@@ -51,7 +51,7 @@ class Product extends ActiveRecord
             [['section_id'],'integer', 'min'=> 1],
             [['description'], 'string'],
             [['title'], 'string', 'max' => 50],
-            [['img'], 'safe'],
+            [['img'],'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg'],
             [['currentPrice'],'match', 'pattern'=>'/^[0-9]{1,12}(\.[0-9]{0,4})?$/'],
             [['currentCurrency'], 'safe',],
             [['upload_files', ],'safe'],
