@@ -12,9 +12,9 @@
         imgsCount = imgs.length, 		// общее колличество картинок
         totalImgsW = imgsCount * imgW,  // общая ширина
         current = 1; 					// текушая картинка(позиция)
-        console.log('imgsCount = ' + imgsCount);
-        console.log('current = ' + current);
-        console.log('totalImgsW = ' + totalImgsW);
+        //console.log('imgsCount = ' + imgsCount);
+       // console.log('current = ' + current);
+       // console.log('totalImgsW = ' + totalImgsW);
     $(".running-ribbon > div.show")
         .show()
         .find("button").on("click", function(){
@@ -42,8 +42,8 @@
         doIt(viewUL, position, direction);
     }
     function doIt(container, position, direction){
-        console.log('current = ' + current);
-        console.log('imgsCount = ' + imgsCount);
+        //console.log('current = ' + current);
+        //console.log('imgsCount = ' + imgsCount);
         var sign; // "-=" or "+="
         if(direction && position != 0){
             sign = (direction == "next") ? "-=" : "+=";
