@@ -18,13 +18,13 @@ Yii::setAlias('@img', '@web/img');
 
 ?>
 <article id="doors" class="wrap-doors" data-item="a2">
-    <div class="row">
+    <div class="row center-block">
         <div class="col-md-offset-1 col-md-10">
             <h2 class="doors-h2">Двери</h2>
         </div>
     </div>
     <!-- Навигация -->
-    <div class="row">
+    <div class="row center-block">
         <div class="col-md-offset-1 col-md-10 flex-wrap">
             <ul class="nav nav-tabs nav-pills center-block" role="tablist">
                 <li class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">МЕЖКОМНАТНЫЕ</a></li>
@@ -33,13 +33,13 @@ Yii::setAlias('@img', '@web/img');
         </div>
     </div>
     <!-- Вкладки -->
-    <div class="row">
+    <div class="row center-block">
         <!-- кнопка назад -->
-        <div class="col-md-1 flex-vert-centr show">
-            <button id="prev" class="btn btn-link " data-param="prev"></button>
+        <div class="col-md-1 col-xs-12 flex-vert-centr show ">
+            <button id="prev" class="btn btn-link butt-prev" data-param="prev"></button>
         </div>
         <!-- Содержимое вкладок -->
-        <div class="col-md-10">
+        <div class="col-md-10 col-xs-12 novetly-col">
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="home">
                     <!-- Вкладка 'Межкомнатные'  -->
@@ -76,12 +76,12 @@ Yii::setAlias('@img', '@web/img');
             </div>
         </div>
         <!-- кнопка вперед -->
-        <div class="col-md-1 show">
+        <div class="col-md-1 col-xs-12 show">
             <button id="next" class="btn btn-link" data-param="next"></button>
         </div>
     </div>
     <!-- Кнопка -->
-    <div class="row">
+    <div class="row center-block">
         <div class="col-md-10 col-md-offset-1">
             <a href="<?= Url::to(['pages/dveri']); ?>" class="btn btn-default btn-lg door-show-more" role="button">
                 ПОКАЗАТЬ БОЛЬШЕ</a>

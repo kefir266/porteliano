@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use yii\web\UploadedFile;
 
 /**
  * FileController implements the CRUD actions for File model.
@@ -124,7 +125,11 @@ class FileController extends Controller
     public function actionUpload() {
 
         //$file = Yii::$app->request->post('filename');
-        return json_encode(['/img/']);
+        $imageFile = UploadedFile::getInstanceByName($_FILES['Product']['tmp_name']['img']);
+        //$result = $imageFile->saveAs('/img/products/' . $_FILES['Product']['name']);
+//        var_dump($_FILES['Product']['tmp_name']['img']);
+//        var_dump( $imageFile);
+        return json_encode($_FILES['Product']['name']);
     }
 
     /**

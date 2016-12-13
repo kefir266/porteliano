@@ -143,7 +143,51 @@
     border-bottom: #6a372d dashed;
 }
 
+@media screen and (max-width: 768px) {
 
+    .panel-quick-selection {
+        font-size: 20px;
+        width: 460px;
+    }
 
+    .panel-quick-selection h2 {
+        font-size: 50px;
+    }
 
+    .panel-quick-selection h2:hover {
+        font-size: 50px;
+    }
 
+    .material, .style, .manufacturer, .block-1-price {
+        margin-left: 0;
+    }
+    .col-navbar {
+        height: 50px;
+    }
+    .block-1-price .btn-default.btn,
+    .manufacturer .btn-default.btn,
+    .style .btn-default.btn,
+    .material .btn-default.btn {
+        font-size: 16px;
+    }
+
+    .block-1-price > div > button:nth-child(1),
+    .manufacturer > div > button:nth-child(1),
+    .style > div > button:nth-child(1),
+    .material > div > button:nth-child(1) {
+        width: 188px;
+    }
+    .block-1-price > div.btn-group > button:nth-child(2),
+    .manufacturer > div > button:nth-child(2),
+    .style > div > button:nth-child(2),
+    .material > div > button:nth-child(2) {
+        width: 40px;
+    }
+    .col-clear{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    div.col-navbar {
+        height: 50px; !important;
+    }
+}

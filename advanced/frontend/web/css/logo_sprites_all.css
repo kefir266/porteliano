@@ -3,279 +3,278 @@
 	display: block;
 }
 
-.s-01_agoprofil{
+.s-01_agoprofil:hover{
 	background-position: 0 0;
 	width: 168px;
 	height: 100px;
 }
 
-.s-02_astor{
+.s-02_astor:hover{
 	background-position: 0 -100px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-03_bosca{
+.s-03_bosca:hover{
 	background-position: 0 -200px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-04_casali{
+.s-04_casali:hover{
 	background-position: 0 -300px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-05_cocif{
+.s-05_cocif:hover{
 	background-position: 0 -400px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-06_colombo{
+.s-06_colombo:hover{
 	background-position: 0 -500px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-07_comas{
+.s-07_comas:hover{
 	background-position: 0 -600px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-08_cora{
+.s-08_cora:hover{
 	background-position: 0 -700px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-09_dierre{
+.s-09_dierre:hover{
 	background-position: 0 -800px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-10_foa{
+.s-10_foa:hover{
 	background-position: 0 -900px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-11_ghizzi-benatti{
+.s-11_ghizzi-benatti:hover{
 	background-position: 0 -1000px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-12_henry-glass{
+.s-12_henry-glass:hover{
 	background-position: 0 -1100px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-13_impronta{
+.s-13_impronta:hover{
 	background-position: 0 -1200px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-14_itlas{
+.s-14_itlas:hover{
 	background-position: 0 -1300px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-15_lineacali{
+.s-15_lineacali:hover{
 	background-position: 0 -1400px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-16_longhi{
+.s-16_longhi:hover{
 	background-position: 0 -1500px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-17_lualdi{
+.s-17_lualdi:hover{
 	background-position: 0 -1600px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-18_design-porte{
+.s-18_design-porte:hover{
 	background-position: 0 -1700px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-19_oikos{
+.s-19_oikos:hover{
 	background-position: 0 -1800px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-20_paolo-lucchetta{
+.s-20_paolo-lucchetta:hover{
 	background-position: 0 -1900px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-21_porte-in-door{
+.s-21_porte-in-door:hover{
 	background-position: 0 -2000px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-22_res{
+.s-22_res:hover{
 	background-position: 0 -2100px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-23_romagnoli{
+.s-23_romagnoli:hover{
 	background-position: 0 -2200px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-01_agoprofil:hover{
+.s-01_agoprofil{
 	background-position: -169px 0;
 	width: 168px;
 	height: 100px;
 }
 
-.s-02_astor:hover{
+.s-02_astor{
 	background-position: -169px -100px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-03_bosca:hover{
+.s-03_bosca{
 	background-position: -169px -200px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-04_casali:hover{
+.s-04_casali{
 	background-position: -169px -300px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-05_cocif:hover{
+.s-05_cocif{
 	background-position: -169px -400px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-06_colombo:hover{
+.s-06_colombo{
 	background-position: -169px -500px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-07_comas:hover{
+.s-07_comas{
 	background-position: -169px -600px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-08_cora:hover{
+.s-08_cora{
 	background-position: -169px -700px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-09_dierre:hover{
+.s-09_dierre{
 	background-position: -169px -800px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-10_foa:hover{
+.s-10_foa{
 	background-position: -169px -900px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-11_ghizzi-benatti:hover{
+.s-11_ghizzi-benatti{
 	background-position: -169px -1000px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-12_henry-glass:hover{
+.s-12_henry-glass{
 	background-position: -169px -1100px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-13_impronta:hover{
+.s-13_impronta{
 	background-position: -169px -1200px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-14_itlas:hover{
+.s-14_itlas{
 	background-position: -169px -1300px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-15_lineacali:hover{
+.s-15_lineacali{
 	background-position: -169px -1400px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-16_longhi:hover{
+.s-16_longhi{
 	background-position: -169px -1500px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-17_lualdi:hover{
+.s-17_lualdi{
 	background-position: -169px -1600px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-18_design-porte:hover{
+.s-18_design-porte{
 	background-position: -169px -1700px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-19_oikos:hover{
+.s-19_oikos{
 	background-position: -169px -1800px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-20_paolo-lucchetta:hover{
+.s-20_paolo-lucchetta{
 	background-position: -169px -1900px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-21_porte-in-door:hover{
+.s-21_porte-in-door{
 	background-position: -169px -2000px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-22_res:hover{
+.s-22_res{
 	background-position: -169px -2100px ;
 	width: 168px;
 	height: 100px;
 }
 
-.s-23_romagnoli:hover{
+.s-23_romagnoli{
 	background-position: -169px -2200px ;
 	width: 168px;
 	height: 100px;
 }
-
