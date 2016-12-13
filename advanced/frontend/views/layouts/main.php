@@ -44,7 +44,7 @@ MobileAsset::register($this);
             <div>
                 <div class="row">
                     <div class="col-md-2 col-sm-2 col-xs-4">
-                        <a href="index.php" class="logo">
+                        <a href="/" class="logo">
                             <?= Html::img('@web/img/logo.png', ['alt' => 'PORTELIANO',/*'class' => 'logo',*/]) ?>
                         </a>
                     </div>
@@ -105,7 +105,7 @@ MobileAsset::register($this);
 
                     'items' => [
                         ['label' => 'ГЛАВНАЯ',
-                            'url' => [Url::to(['site/index'])],
+                            'url' => [Url::to(['/'])],
                             'linkOptions' => ['data-target' => 'a0'],
                         ],
                         ['label' => 'НОВИНКИ',
