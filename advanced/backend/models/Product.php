@@ -176,19 +176,6 @@ class Product extends ActiveRecord
     }
 
 
-
-//    public function upload(){
-//
-//        if ($this->img) {
-//
-//            $path = Url::to('@frontend/web/img/'.$this->manufacturer->title.'/');
-//            $filename = strtolower($this->img);
-//            $this->imageFile->saveAS($path,$filename);
-//
-//        }
-//    }
-
-
     public function afterFind()
     {
         parent::afterFind();
@@ -235,6 +222,7 @@ class Product extends ActiveRecord
             $modelPrice->cost = $this->currentPrice;
             $modelPrice->currency_id  = $this->currentCurrency;
             $modelPrice->date = date('Y-m-d');
+            $modelPrice->product_id = $this->id;
             $modelPrice->save();
         }
     }

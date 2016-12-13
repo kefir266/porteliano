@@ -34,6 +34,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'material.title',
             'style.title',
             'manufacturer.title',
+            'currentPrice',
+            'currentCurrency',
             'img',
             'article',
             'note',
