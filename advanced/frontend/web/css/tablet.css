@@ -546,20 +546,33 @@ div#other-panel > a > span > span{
 
 	.novelty > div.row:nth-child(2){
 		width:720px;
-		height:472px;
+		height:500px;
 	}
 
 	.novelty > div.row:nth-child(2) > div,
 	.novelty > div.row:nth-child(2) > div > .doors-panel{
 		margin:0px;
 		padding:0px;
-		height:472px;
+	}
+
+	.novelty > div.row:last-child{
+		margin-top:50px;
 	}
 
 	.novelty > div.row:nth-child(2) > div > .doors-panel > 
 	div.view{
 		width:720px;
-		height:472px;
+		height:490px;
 		overflow:hidden;
+	}
+
+	.wrap-novelty .tile{
+		margin:0px;
+		padding:0px;
+		margin-right:10px;
+	}
+
+	.wrap-novelty .tile:nth-child(3){
+		margin-right:0px;
 	}
 }
