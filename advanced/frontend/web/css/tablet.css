@@ -543,4 +543,23 @@ div#other-panel > a > span > span{
 		width:720px;
 		margin:0px auto;
 	}
+
+	.novelty > div.row:nth-child(2){
+		width:720px;
+		height:472px;
+	}
+
+	.novelty > div.row:nth-child(2) > div,
+	.novelty > div.row:nth-child(2) > div > .doors-panel{
+		margin:0px;
+		padding:0px;
+		height:472px;
+	}
+
+	.novelty > div.row:nth-child(2) > div > .doors-panel > 
+	div.view{
+		width:720px;
+		height:472px;
+		overflow:hidden;
+	}
 }
