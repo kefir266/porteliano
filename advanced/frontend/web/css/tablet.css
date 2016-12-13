@@ -195,7 +195,7 @@ div#other-panel > a > span > span{
 	display:block;
 }
 
-@media (max-width:980px){
+@media (min-width:768px) and (max-width:980px){
 	header{
 		width:701px;
 	}
@@ -326,8 +326,13 @@ div#other-panel > a > span > span{
 
 	/*Каталог*/
 
-	.panel-Catalog{
+	.wrap-catalog{
+		height:750px;
+	}
+
+	.wrap-catalog > .panel-Catalog{
 		width:701px;
+		height:350px;
 		margin:0px auto;
 	}
 
@@ -346,6 +351,16 @@ div#other-panel > a > span > span{
 		padding:0px;
 		position:relative;
 		left:10px;
+	}
+
+	.tiles > div:nth-child(3){
+		width:170px;
+		height:350px;
+		margin:0px;
+		padding:0px;
+		position:relative;
+		left:20px;
+		top:0px;
 	}
 
 	.tiles > div:nth-child(2) > div:first-child,
@@ -391,7 +406,8 @@ div#other-panel > a > span > span{
 		background-size:cover;
 	}
 
-	.grips > .doors-gradient{
+	.grips > .doors-gradient,
+	.septa > .doors-gradient{
 		width:149px;
 		height:120px;
 		position:relative;
@@ -403,5 +419,91 @@ div#other-panel > a > span > span{
 		top:50px;
 	}
 
+	.septa > .doors-gradient > h3{
+		font-size:15px;
+	}
 
+	.entryDoors{
+		width:170px;
+		height:350px;
+		background-size:cover;
+		position:relative;
+		top:-20px;
+	}
+
+	.entryDoors > .doors-gradient{
+		width:158px;
+		height:173px;
+		position:relative;
+		top:-140px;
+	}
+
+	.ribbon-panel{
+		width:720px;
+		height:175px;
+	}
+
+	.ribbon-panel > .running-ribbon{
+		height:175px;
+	}
+
+	.ribbon-panel > .running-ribbon > div{
+		position:relative;
+		margin:0px;
+		padding:0px;
+	}
+
+	.row{
+		margin:0px;
+		padding:0px;
+	}
+
+	.ribbon-panel > .running-ribbon > div:first-child{
+		width:50px;
+		height:50px;
+		margin:0px;
+		padding:0px;
+		margin-right:15px;
+		position:relative;
+		top:calc((175px - 50px) / 2);
+	}
+
+	.ribbon-panel > .running-ribbon > div:nth-child(2){
+		width:585px;
+		height:175px;
+		background-color:#fff;
+	}
+
+	.ribbon-panel > .running-ribbon > div:nth-child(2) > .view{
+		width:585px;
+		height:175px;
+		margin:0px;
+		padding:0px;
+		padding:17px 0px;
+	}
+
+	.ribbon-panel > .running-ribbon > div:nth-child(2) > .view >
+	ul > li{
+		height:140px;
+		padding:0px;
+		margin:0px;
+		margin-right:10px;
+		padding-top:20px;
+	}
+
+	.ribbon-panel > .running-ribbon > div:last-child{
+		width:50px;
+		height:50px;
+		margin:0px;
+		padding:0px;
+		margin-left:20px;
+		position:relative;
+		top:calc((175px - 50px) / 2);
+	}
+
+	.ribbon-panel > .running-ribbon > div:last-child > #next,
+	.ribbon-panel > .running-ribbon > div:first-child > #prev{
+		margin:0px;
+		padding:0px;
+	}
 }
