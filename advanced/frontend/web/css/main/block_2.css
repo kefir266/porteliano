@@ -24,8 +24,6 @@
 }
 
 .tiles{
-    font-family: "PT Sans Caption", serif;
-    color: #ffffff;
     margin-left: auto;
     margin-right: auto;
 }
@@ -129,8 +127,9 @@
 .septa,
 .entryDoors,
 .interiorDoors{
-
     border: 6px solid #935347;
+    color: #ffffff;
+    font-family: "PT Sans Caption",sans-serif;
 }
 
 .panel-Catalog  h2{
