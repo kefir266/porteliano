@@ -38,18 +38,7 @@ use yii\helpers\Html;
     </div>
 
     <script>
-        $('div.wrap-facts-at-Glance > .img-holder').imageScroll({
-            holderClass: 'imageHolder',
-            container: $('div.wrap-facts-at-Glance'),
-            speed: 0.1,
-            coverRatio: 0.75,
-            mediaWidth: 2000,
-            mediaHeight: 1415,
-            holderMaxHeight: 1000,
-            holderMinHeight: 950,
-            parallax: true,
-            touch: false
-        });
+        
     </script>
 
 </div>
