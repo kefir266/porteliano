@@ -506,4 +506,34 @@ div#other-panel > a > span > span{
 		margin:0px;
 		padding:0px;
 	}
+
+	/*Акция*/
+
+	.action-panel{
+		width:720px;
+	}
+
+	.action-panel > div.row > div{
+		/*float:left;*/
+	}
+
+	.action-panel > div.row > div:first-child{
+		width:288px;
+		margin:0px;
+		padding:0px;
+	}
+
+	.action-panel > div.row > div:first-child > h1{
+		font-size:40px;
+	}
+
+	.action-panel > div.row > div:first-child > .action-text{
+		font-size:23px;
+		margin-top:40px;
+	}
+
+	.action-panel > div.row > div:last-child{
+		width:362px;
+		margin-left:52px;
+	}
 }
