@@ -39,7 +39,7 @@ function delItem(e, cartWish, id) {
                 id: id,
                 cartwish: cartWish
             },
-            type: 'POST',
+            type: 'GET',
             success: function (res) {
                 //showModal('#modal-'+cartWish,res);
                 getQuantity('get' + cartWish, jtag);
@@ -142,7 +142,7 @@ function clearCart(cartWish) {
             data: {
                 cartwish: cartWish
             },
-            type: 'POST',
+            type: 'GET',
             success: function (res) {
                 refreshCart(0, jtag);
                 $("#tab-cart").html("");
