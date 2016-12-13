@@ -48,6 +48,19 @@ switch ($products['section']->id) {
         $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '1']);
         $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '2']);
         break;
+    case 2:
+        $categoryTitle = 'Перегородки';
+
+        $coverImgLeft = '@cover/outer.jpg';
+        $coverImgRight = '@cover/grips.png';
+
+
+        $coverTextLeft = 'Входные двери';
+        $coverTextRight = 'Ручки';
+
+        $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '1']);
+        $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '2']);
+        break;
     case 4:
         $categoryTitle = 'Входные двери';
 
@@ -124,7 +137,8 @@ foreach ($sections->getMenu() as $section) {
                         echo ButtonDropdown::widget([
                             'options' => ['class' => 'btn-default'],
                             'split' => true,
-                            'label' => (isset($params['material']))? $products['materials'][$params['material']]['label']
+                            'label' => (isset($params['material']))
+                                ? $products['materials'][$params['material']]['label']
                                 : 'Любой',
                             'dropdown' => [
                                 'items' =>
@@ -147,7 +161,9 @@ foreach ($sections->getMenu() as $section) {
                             ],
 
                             'split' => true,
-                            'label' => current($products['styles'])['label'],
+                            'label' => (isset($params['style']))
+                                ? $products['styles'][$params['style']]['label']
+                                : 'Любой',
                             'dropdown' => [
                                 'items' => $products['styles'],
                                 'clientEvents' => ['click' => 'eventClickDropMenu'],
@@ -162,7 +178,9 @@ foreach ($sections->getMenu() as $section) {
                         echo ButtonDropdown::widget([
                             'options' => ['class' => 'btn-default'],
                             'split' => true,
-                            'label' => 'Любой',
+                            'label' => (isset($params['manufacturer']))
+                                ? $products['manufacturers'][$params['manufacturer']]['label']
+                                : 'Любой',
                             'dropdown' => [
                                 'items' => $products['manufacturers'],
                                 'clientEvents' => ['click' => 'eventClickDropMenu'],
