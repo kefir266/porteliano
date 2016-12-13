@@ -96,6 +96,19 @@ MobileAsset::register($this);
             </div>
         </header>
         <div class="col-navbar">
+            <div id="wrap-tablet">
+                <div id="panel-tablet">
+                    <div id="button-toggle" class="glyphicon glyphicon-align-left"></div>
+                    <div id="other-panel">
+                        <a href="/cart/wishlist">
+                            <span class="glyphicon glyphicon-heart-empty"></span>
+                        </a>
+                        <a href="/cart/index">
+                            <span class="glyphicon glyphicon-shopping-cart"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
             <div id="navbar-line" class=''>
                 <?php
                 NavBar::begin([]);
