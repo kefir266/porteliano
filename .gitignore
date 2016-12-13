@@ -10,7 +10,8 @@
 /dist
 /tags
 *.mo
-
+*.lock
+/advanced/backend/web/img
 /web/assets/
 /advanced/frontend/web/img/products/
 

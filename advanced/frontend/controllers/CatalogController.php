@@ -8,6 +8,7 @@
 
 namespace frontend\controllers;
 
+use app\models\Section;
 use Yii;
 
 use frontend\models\Product;
@@ -77,11 +78,21 @@ class CatalogController extends Controller
 
         $params = $request->get();
 
+        $ind = '3';
+        if (isset($params['ind'])) {
+            $ind = $params['ind'];
+        }
+        if (isset($params['section'])){
+            $ind = $params['section'];
+        }
+
         $products = $modelProduct->getFilteredProducts($params, $quantity);
 
         return $this->render('03_Dveri_katalog',[
             'products' => $products,
-            'params' => $params,]
+            'params' => $params,
+            'ind' => $ind,
+            ]
             );
     }
     

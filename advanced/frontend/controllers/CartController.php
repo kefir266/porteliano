@@ -19,6 +19,12 @@ use frontend\models\Product;
 class CartController extends Controller
 {
 
+    public function beforeAction($action)
+    {
+        return parent::beforeAction($action);
+        $this->enableCsrfValidation = false;
+    }
+
     public function actionAdd(){
 
         $id = Yii::$app->request->get('id');
@@ -90,12 +96,14 @@ class CartController extends Controller
     public function actionClear() {
 
 
+        var_dump(Yii::$app->request);
         try{
-            $cartWish = Yii::$app->request->post('cartwish');
+            $cartWish = Yii::$app->request->get('cartwish');
 
             $session = Yii::$app->session;
             $session->open();
-            unset($session[$cartWish]);
+            var_dump($session[$cartWish]);
+            $session[$cartWish]->clear();
             $this->layout = true;
 
         } catch (yii\base\Exception $e) {
@@ -106,7 +114,7 @@ class CartController extends Controller
     }
     
     public function actionDelelement(){
-        $cartWish = Yii::$app->request->post('cartwish');
+        $cartWish = Yii::$app->request->get('cartwish');
         $id = Yii::$app->request->post('id');
         $session = Yii::$app->session;
         $session->open();

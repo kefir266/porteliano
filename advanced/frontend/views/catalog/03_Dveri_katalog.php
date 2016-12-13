@@ -45,8 +45,8 @@ switch ($products['section']->id) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Ручки';
 
-        $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '1']);
-        $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '2']);
+        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'ind' => '5']);
         break;
     case 2:
         $categoryTitle = 'Перегородки';
@@ -58,8 +58,8 @@ switch ($products['section']->id) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Ручки';
 
-        $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '1']);
-        $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '2']);
+        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'ind' => '5']);
         break;
     case 4:
         $categoryTitle = 'Входные двери';
@@ -70,8 +70,8 @@ switch ($products['section']->id) {
         $coverTextLeft = 'Ручки';
         $coverTextRight = 'Межкомнатные двери';
 
-        $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '2']);
-        $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '0']);
+        $coverLinkLeft = Url::to(['catalog/', 'ind' => '5']);
+        $coverLinkRight = Url::to(['catalog/', 'ind' => '3']);
         break;
     case 5:
         $categoryTitle = 'Ручки';
@@ -82,8 +82,8 @@ switch ($products['section']->id) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Межкомнатные двери';
 
-        $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '1']);
-        $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '0']);
+        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'ind' => '3']);
         break;
     default:
         $categoryTitle = 'нет категории';
@@ -123,7 +123,7 @@ foreach ($sections->getMenu() as $section) {
         <div class="row">
             <div class="col-md-12">
                 <h2>
-                    <?= $title ? $title : 'Межкомнатные двери' ?>
+                    <?= $sections->findOne($ind)->title_main ?>
                 </h2>
             </div>
         </div>

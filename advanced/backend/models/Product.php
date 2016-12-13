@@ -51,13 +51,13 @@ class Product extends ActiveRecord
             [['section_id'],'integer', 'min'=> 1],
             [['description'], 'string'],
             [['title'], 'string', 'max' => 50],
-            [['img'],'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg'],
+            [['img'],'string'],
             [['currentPrice'],'match', 'pattern'=>'/^[0-9]{1,12}(\.[0-9]{0,4})?$/'],
             [['currentCurrency'], 'safe',],
             [['upload_files', ],'safe'],
             [['article'], 'unique'],
             [['note'], 'string', 'max' => 500],
-            //[['imageFile'], 'file', 'skipOnEmpty' => 'true', 'extensions' => 'png, jpg'],
+            [['imageFile'], 'file', 'skipOnEmpty' => 'true', 'extensions' => 'png, jpg'],
             [['manufacturer_id'], 'exist', 'skipOnError' => true, 'targetClass' => Manufacturer::className(), 'targetAttribute' => ['manufacturer_id' => 'id']],
             [['material_id'], 'exist', 'skipOnError' => true, 'targetClass' => Material::className(), 'targetAttribute' => ['material_id' => 'id']],
             [['section_id'], 'exist', 'skipOnError' => true, 'targetClass' => Section::className(), 'targetAttribute' => ['section_id' => 'id']],
@@ -192,6 +192,7 @@ class Product extends ActiveRecord
     public function afterFind()
     {
         parent::afterFind();
+        $this->imageFile = $this->img;
         foreach($this->getFiles()->all() as $file) {
             $this->upload_files[] = $file->getAttribute('file');
         }
@@ -201,7 +202,7 @@ class Product extends ActiveRecord
             $this->currentCurrency = $this->getPrice()->getAttribute('currency_id');
         }
 
-        $imageFile = $this->img;
+        //$this->imageFile = $this->img;
     }
 
     public function beforeSave($insert)

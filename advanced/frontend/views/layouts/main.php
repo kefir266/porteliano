@@ -13,9 +13,11 @@ use yii\widgets\Breadcrumbs;
 /**/
 use app\assets\MainAdaptiveAsset;
 use app\assets\TabletAsset;
+use app\assets\MobileAsset;
 
 MainAdaptiveAsset::register($this);
-TabletAsset::register($this);
+//TabletAsset::register($this);
+MobileAsset::register($this);
 
 ?>
 <?php $this->beginPage() ?>
@@ -47,7 +49,7 @@ TabletAsset::register($this);
                         </a>
                     </div>
 
-                    <div class="col-md-offset-1 col-md-6 col-sm-4 col-sm-offset-2 col-xs-offset-2 col-xs-6    ">
+                    <div class="col-md-offset-1 col-md-6 col-sm-4 col-sm-offset-2 col-xs-offset-1 col-xs-7">
                         <div class="row">
                             <section class="hidden-xs col-md-6  col-sm-12 site-contact font-PTSans">
                                 <div id="phone_1">+7(495) 742-17-24</div>
@@ -62,7 +64,7 @@ TabletAsset::register($this);
                     </div>
 
                     <div class="col-md-2 col-md-push-0 col-sm-3 col-xs-push-2 col-xs-6">
-                        <div>
+                        <div class="header-ask-question">
                             <?php
                             /*$address указывает какой view должен загрузится в Content*/
                             /*$controller должен использовать $this->renderAjax*/
@@ -162,7 +164,7 @@ TabletAsset::register($this);
     </div>
     <div class="push"></div>
 
-    <footer id="footer" class="footer footer-general">
+    <footer id="footer" class="hidden-xs footer footer-general">
         <div id="navbar-line-footer" class="nav ">
             <?php
             echo Nav::widget([
