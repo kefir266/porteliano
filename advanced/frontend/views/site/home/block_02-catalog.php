@@ -36,7 +36,7 @@ require_once Yii::getAlias('@frontend') . '/views/layouts/manufacturersNames.php
         <div class="row">
             <div class="tiles">
                 <div class="col-md-6 col-sm-12 col-xs-12">
-                    <a href="<?= Url::to(['/catalog', 'section' => '3']) ?>">
+                    <a class="no-link-decoration" href="<?= Url::to(['/catalog', 'section' => '3']) ?>">
                         <div class="interiorDoors">
                             <div class="doors-gradient">
                                 <h3>МЕЖКОМНАТНЫЕ ДВЕРИ</h3>
@@ -47,7 +47,7 @@ require_once Yii::getAlias('@frontend') . '/views/layouts/manufacturersNames.php
                 <div class="col-md-3 col-sm-1 col-xs-1 indent-col">
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                            <a href="<?= Url::to(['/catalog', 'section' => '5']) ?>">
+                            <a class="no-link-decoration" href="<?= Url::to(['/catalog', 'section' => '5']) ?>">
                                 <div class="grips">
                                     <div class="doors-gradient">
                                         <h3>РУЧКИ</h3>
@@ -58,7 +58,7 @@ require_once Yii::getAlias('@frontend') . '/views/layouts/manufacturersNames.php
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                            <a href="<?= Url::to(['/catalog', 'section' => '2']) ?>">
+                            <a class="no-link-decoration" href="<?= Url::to(['/catalog', 'section' => '2']) ?>">
                                 <div class="septa">
                                     <div class="doors-gradient">
                                         <h3>МЕЖКОМНАТНЫЕ<br/> ПЕРЕГОРОДКИ</h3>
@@ -69,10 +69,8 @@ require_once Yii::getAlias('@frontend') . '/views/layouts/manufacturersNames.php
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-4 col-xs-5">
-                    <a href="<?= Url::to(['/catalog', 'section' => '4']) ?>">
+                    <a class="no-link-decoration" href="<?= Url::to(['/catalog', 'section' => '4']) ?>">
                         <div class="entryDoors">
-
-
                             <div class="doors-gradient">
                                 <h3>ВХОДНЫЕ ДВЕРИ</h3>
                             </div>

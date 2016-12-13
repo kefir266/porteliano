@@ -233,7 +233,6 @@
     .running-ribbon div.view{
         width: 380px;
     }
-
 }
 .center-logo{
     margin-left: auto;
@@ -244,4 +243,7 @@
     margin-left: auto;
     margin-right: auto;
     max-width: 1100px;
+}
+.no-link-decoration:hover{
+    text-decoration: none;
 }
