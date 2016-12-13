@@ -1,3 +1,7 @@
+.navbar-header{
+    display: none;
+}
+
 @media screen and (max-width: 768px)and (min-width: 480px) {
     header > div {
         margin-left: auto;
@@ -32,7 +36,118 @@
         text-align: right;
     }
 
-    /************** Menu  *******************************
+    /*******************************************************/
+
+    /**************  Навигация  *******************************
+    .col-navbar, #navbar-line, .navbar-default {
+        width: 100%;
+        height: 60px;
+        margin: 0px;
+        padding: 0px;
+        border-radius: 0px;
+        background-color: #413332;
+    }
+
+    .col-navbar > #navbar-line > .navbar-default > .container {
+        width: 480px;
+        margin: 0px auto;
+        padding: 0px;
+    }
+
+    .col-navbar > #navbar-line > .navbar-default > .container >
+    .navbar-collapse {
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+        height: 60px;
+    }
+
+    .col-navbar > #navbar-line > .navbar-default > .container >
+    .navbar-collapse > ul {
+        width: 480px;
+        height: 60px;
+        display: block;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .navbar-center > li {
+        float: left;
+        height: 60px;
+        display: block;
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+        line-height: 55px;
+        padding-top: 1px;
+    }
+
+    .navbar-default .navbar-nav > li > a {
+        padding: 0px;
+        margin: 0px;
+        display: inline;
+        padding: 20px 10px;
+    }
+
+    #wrap-tablet {
+        width: 100%;
+        height: 60px;
+        position: absolute;
+        display: none;
+    }
+    /********!!!!!!!!**********
+    #wrap-tablet > #panel-tablet {
+        width: 701px;
+        height: 100%;
+        margin: 0px auto;
+        position: relative;
+    }
+
+    div#other-panel {
+        float: right;
+        position: relative;
+        width: 100px;
+        height: 40px;
+        z-index: 1000;
+        line-height: 70px;
+    }
+
+    div#other-panel > a {
+        color: #d3ccad;
+        padding: 0px 10px;
+    }
+
+    div#other-panel > a:hover {
+        text-decoration: none;
+    }
+/*
+    div#other-panel > a > span {
+        font-size: 20px;
+    }
+
+    div#other-panel > a > span > span {
+        text-align: center;
+    }
+
+    #wrap-tablet > #panel-tablet > div#button-toggle:before {
+        position: relative;
+        z-index: 100;
+        color: #d2ccac;
+        font-size: 20px;
+        line-height: 60px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    #wrap-tablet > #panel-tablet > div#button-toggle:hover {
+        color: #fff;
+    }
+
+    .navbar-collapse, .navbar-center {
+        display: block;
+    }*/
+
+    /************** Menu  *******************************//*
     @media screen {
         .col-navbar, #navbar-line, .navbar-default {
             width: 100%;
@@ -48,7 +163,6 @@
         }
 
         #wrap-tablet {
-            position: relative;
             width: 100%;
             height: 60px;
             position: absolute;
@@ -96,7 +210,17 @@
 
         div#other-panel > a {
             color: #d3ccad;
+        }*/
+/**********  navbar-line ********
+        .navbar-default {
+            width: 100%;
+            height: 60px;
+            margin: 0px;
+            padding: 0px;
+            border-radius: 0px;
+            background-color: #413332;
         }
+        */
     }
-    */
+
 }
