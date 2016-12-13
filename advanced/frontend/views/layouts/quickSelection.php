@@ -44,7 +44,7 @@ foreach ($sections->getMenu() as $section) {
         <div class="row center-block">
             <div style="display: flex" class="col-sm-12">
                 <h2 class="section-title"
-                    section-id=<?= $products['section']->id ?>><?= $products['section']->title ?></h2>
+                    data-id=<?= $products['section']->id ?>><?= $products['section']->title ?></h2>
             </div>
         </div>
         <div class="row center-block">

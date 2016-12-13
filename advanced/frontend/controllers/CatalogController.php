@@ -82,6 +82,9 @@ class CatalogController extends Controller
         if (isset($params['ind'])) {
             $ind = $params['ind'];
         }
+        if (isset($params['section'])){
+            $ind = $params['section'];
+        }
 
         $products = $modelProduct->getFilteredProducts($params, $quantity);
 
