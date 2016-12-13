@@ -575,4 +575,31 @@ div#other-panel > a > span > span{
 	.wrap-novelty .tile:nth-child(3){
 		margin-right:0px;
 	}
+
+	/*Ключевые преимущества*/
+
+	.panel-key-benefits{
+		width:720px;
+		margin:0px auto;
+	}
+
+	.panel-key-benefits > div.row:nth-child(2) > 
+	div:nth-child(odd){
+		padding:0px;
+		width:100px;
+		float:left;
+	}
+
+	.panel-key-benefits > div.row:nth-child(2) > 
+	div:nth-child(odd):before{
+		clear:both;
+	}
+
+	.panel-key-benefits > div.row:nth-child(2) > 
+	div:nth-child(even){
+		margin:0px;
+		padding:0px;
+		width:590px;
+		height:100px;
+	}
 }
