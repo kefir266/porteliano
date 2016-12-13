@@ -67,14 +67,14 @@ class Product extends ActiveRecord
 
         $products['materials'][] = ['label' => 'Любой', 'url' => '#',
             'linkOptions'=> ['data-toggle' =>'dropdown',
-                'id-item' => '0',
+                'data-id' => '0',
                 'class' => 'everything',
                 'table' => 'materials',],];
         foreach ($materials as $item) {
 
             $products['materials'][$item['id']]  = ['label' => $item['title'], 'url' => '#',
                 'linkOptions'=> ['data-toggle' =>'dropdown',
-                    'id-item=' => $item['id'],
+                    'data-id' => $item['id'],
                     'table' => 'material',
                 ],
             ];
@@ -88,14 +88,14 @@ class Product extends ActiveRecord
 
         $products['styles'][] = ['label' => 'Любой', 'url' => '#',
             'linkOptions'=> ['data-toggle' =>'dropdown',
-                'id-item' => '0',
+                'data-id' => '0',
                 'class' => 'everything',
                 'table' => 'styles',],];
         foreach ($styles as $item) {
 
             $products['styles'][$item['id']]  = ['label' => $item['title'], 'url' => '#',
                 'linkOptions'=> ['data-toggle' =>'dropdown',
-                'id-item=' => $item['id'],
+                'data-id' => $item['id'],
                     'table' => 'style',],];
         }
 
@@ -107,7 +107,7 @@ class Product extends ActiveRecord
 
         $products['manufacturers'][] = ['label' => 'Любой', 'url' => '#',
             'linkOptions'=> ['data-toggle' =>'dropdown',
-                'id-item' => '0',
+                'data-id' => '0',
                 'class' => 'everything',
                 'table' => 'manufacturer',],];
 
@@ -115,7 +115,7 @@ class Product extends ActiveRecord
 
             $products['manufacturers'][$item['id']]  = ['label' => $item['title'], 'url' => '#',
                 'linkOptions'=> ['data-toggle' =>'dropdown',
-                    'id-item' => $item['id'],
+                    'data-id' => $item['id'],
                     'table' => 'manufacturer',],];
         }
         

@@ -239,6 +239,8 @@ span.btn{
 }
 .tile-img{
     max-height: 342px;
+    max-width: 220px;
+    height: 342px;
 }
 .add-to-wish{
     font-size: 18px;

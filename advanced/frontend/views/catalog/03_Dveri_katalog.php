@@ -137,7 +137,8 @@ foreach ($sections->getMenu() as $section) {
                         echo ButtonDropdown::widget([
                             'options' => ['class' => 'btn-default'],
                             'split' => true,
-                            'label' => (isset($params['material']))? $products['materials'][$params['material']]['label']
+                            'label' => (isset($params['material']))
+                                ? $products['materials'][$params['material']]['label']
                                 : 'Любой',
                             'dropdown' => [
                                 'items' =>
@@ -160,7 +161,9 @@ foreach ($sections->getMenu() as $section) {
                             ],
 
                             'split' => true,
-                            'label' => current($products['styles'])['label'],
+                            'label' => (isset($params['style']))
+                                ? $products['styles'][$params['style']]['label']
+                                : 'Любой',
                             'dropdown' => [
                                 'items' => $products['styles'],
                                 'clientEvents' => ['click' => 'eventClickDropMenu'],
@@ -175,7 +178,9 @@ foreach ($sections->getMenu() as $section) {
                         echo ButtonDropdown::widget([
                             'options' => ['class' => 'btn-default'],
                             'split' => true,
-                            'label' => 'Любой',
+                            'label' => (isset($params['manufacturer']))
+                                ? $products['manufacturers'][$params['manufacturer']]['label']
+                                : 'Любой',
                             'dropdown' => [
                                 'items' => $products['manufacturers'],
                                 'clientEvents' => ['click' => 'eventClickDropMenu'],
