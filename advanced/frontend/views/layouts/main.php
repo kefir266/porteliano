@@ -42,7 +42,7 @@ TabletAsset::register($this);
             <div>
                 <div class="row">
                     <div class="col-md-2 col-sm-2 col-xs-4">
-                        <a href="index.php" class="logo">
+                        <a href="<?=Yii::$app->urlManager->createUrl(['site/index'])?>" class="logo">
                             <?= Html::img('@web/img/logo.png', ['alt' => 'PORTELIANO',/*'class' => 'logo',*/]) ?>
                         </a>
                     </div>
@@ -97,6 +97,14 @@ TabletAsset::register($this);
             <div id="wrap-tablet">
                 <div id="panel-tablet">
                     <div id="button-toggle" class="glyphicon glyphicon-align-left"></div>
+                    <div id="other-panel">
+                        <a href="/cart/wishlist">
+                            <span class="glyphicon glyphicon-heart-empty"></span>
+                        </a>
+                        <a href="/cart/index">
+                            <span class="glyphicon glyphicon-shopping-cart"></span>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div id="navbar-line" class=''>

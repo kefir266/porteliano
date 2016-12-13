@@ -11,6 +11,7 @@
 * от родителя и “прилипает” к границе окна.
 * */
 var avatarElem = $('#navbar-line');
+var tabletElem = $('#wrap-tablet');
 //var avatarSourceBottom = avatarElem.getBoundingClientRect().bottom + window.pageYOffset;
 var avatarSourceBottom = avatarElem[0].getBoundingClientRect().top + window.pageYOffset;
 var fixClass = 'fixed-0-0-top';
@@ -18,7 +19,9 @@ var fixClass = 'fixed-0-0-top';
 $(window).scroll(function() {
     if (avatarElem.hasClass(fixClass) && window.pageYOffset < avatarSourceBottom) {
         avatarElem.removeClass(fixClass);
+        tabletElem.removeClass('fixed');
     } else if (window.pageYOffset > avatarSourceBottom) {
         avatarElem.addClass(fixClass);
+        tabletElem.addClass('fixed');
     }
 });

@@ -151,6 +151,32 @@ button#ask_a_question-button{
 	position:relative;
 }
 
+div#other-panel{
+	float:right;
+	position:relative;
+	width:100px;
+	height:40px;
+	z-index:1000;
+	line-height:70px;
+}
+
+div#other-panel > a{
+	color:#d3ccad;
+	padding:0px 10px;
+}
+
+div#other-panel > a:hover{
+	text-decoration:none;
+}
+
+div#other-panel > a > span{
+	font-size:20px;
+}
+
+div#other-panel > a > span > span{
+	text-align:center;
+}
+
 #wrap-tablet > #panel-tablet > div#button-toggle:before{
 	position:relative;
 	z-index:100;
@@ -254,10 +280,17 @@ button#ask_a_question-button{
 	}
 
 	div#wrap-tablet.fixed{
-
+		position:fixed;
+		top:0px;
+		width:100%;
+		z-index:99999;
 	}
 
 	/*Межкомнатные двери*/
+	.wrap-quick-selection{
+		background-position:center center;
+	}
+
 	div.panel-quick-selection{
 		width:701px;
 		margin:0px auto;
@@ -265,5 +298,29 @@ button#ask_a_question-button{
 
 	div.panel-quick-selection > div.row{
 		margin:0px;
+	}
+
+	div.panel-quick-selection > div.row:nth-child(2) > div{
+		margin:0px;
+		padding:0px;
+	}
+
+	div.panel-quick-selection > div.row:nth-child(2) > div >
+	h2{
+		width:660px;
+		padding-bottom:5px;
+		font-size:58px;
+	}
+
+	div.panel-quick-selection > div.row:nth-child(3) > div{
+		width:500px;
+		display:block;
+		margin-left:calc((100% - 500px) / 2);
+		padding:0px;
+	}
+
+	h2.tablet-section-title_1,
+	h2.tablet-section-title_2{
+		display:block;
 	}
 }
