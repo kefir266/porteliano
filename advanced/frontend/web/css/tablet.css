@@ -626,4 +626,16 @@ div#other-panel > a > span > span{
 		margin-left:110px;
 		margin-bottom: 39px
 	}
+
+	/*Двери*/
+
+	.wrap-doors > div.row{
+		margin:0px;
+		padding:0px;
+	}
+
+	.wrap-doors > .row:nth-child(3){
+		width:720px;
+		margin:0px auto;
+	}
 }
