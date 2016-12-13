@@ -192,6 +192,7 @@ class Product extends ActiveRecord
     public function afterFind()
     {
         parent::afterFind();
+        $this->imageFile = $this->img;
         foreach($this->getFiles()->all() as $file) {
             $this->upload_files[] = $file->getAttribute('file');
         }
