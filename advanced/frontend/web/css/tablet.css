@@ -536,4 +536,11 @@ div#other-panel > a > span > span{
 		width:362px;
 		margin-left:52px;
 	}
+
+	/*Новинки*/
+
+	.novelty{
+		width:720px;
+		margin:0px auto;
+	}
 }
