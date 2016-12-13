@@ -93,19 +93,3 @@
 .row-indent {
     margin-top: 60px;
 }
-
-@media screen and (max-width: 768px) {
-
-    .row-indent {
-        margin-top: 10px;
-    !important;
-    }
-
-    .wrap-key-benefits {
-        height: 1100px;
-    }
-
-    .key-benefits-h2 {
-        margin: 75px 0 60px 0;
-    }
-}

@@ -39,32 +39,3 @@
     font-family: 'PTSerif', serif;
     width: 100%;
 }
-
-@media screen and (max-width: 768px) {
-    .wrap-action {
-        height: 866px;
-    }
-
-    .action-panel {
-        width: 435px;
-    }
-
-    .action-text,
-    .action-header {
-        text-align: center;
-    }
-
-    .action-header {
-        margin-top: 0;
-    }
-
-    .action-text {
-        font-size: 22px;
-    }
-
-    .contact-form {
-        margin-top: 35px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
