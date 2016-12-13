@@ -323,4 +323,85 @@ div#other-panel > a > span > span{
 	h2.tablet-section-title_2{
 		display:block;
 	}
+
+	/*Каталог*/
+
+	.panel-Catalog{
+		width:701px;
+		margin:0px auto;
+	}
+
+	.tiles > div:first-child{
+		width:350px;
+		height:350px;
+		margin:0px;
+		padding:0px;
+		position:relative;
+	}
+
+	.tiles > div:nth-child(2){
+		width:161px;
+		height:350px;
+		margin:0px;
+		padding:0px;
+		position:relative;
+		left:10px;
+	}
+
+	.tiles > div:nth-child(2) > div:first-child,
+	.tiles > div:nth-child(2) > div:last-child{
+		width:161px;
+		height:170px;
+		position:relative;
+		margin:0px;
+		padding:0px;
+	}
+
+	.tiles > div:nth-child(2) > div:last-child{
+		top:10px;
+	}
+
+	.tiles > div:nth-child(2) > div:first-child > div,
+	.tiles > div:nth-child(2) > div:last-child > div{
+		margin:0px;
+		padding:0px;
+		width:100%;
+		height:170px;
+	}
+
+	.interiorDoors{
+		width:350px;
+		height:350px;
+		margin:0px;
+		padding:0px;
+		background-size:cover;
+	}
+
+	.interiorDoors > .doors-gradient{
+		width:338px;
+		position:relative;
+		top:145px;
+	}
+
+	.grips, .septa{
+		width:161px;
+		height:170px;
+		margin:0px;
+		padding:0px;
+		background-size:cover;
+	}
+
+	.grips > .doors-gradient{
+		width:149px;
+		height:120px;
+		position:relative;
+		top:20px;
+	}
+
+	.interiorDoors > .doors-gradient > h3{
+		position:relative;
+		top:50px;
+	}
+
+
 }
