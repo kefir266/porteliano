@@ -25,15 +25,15 @@
     text-align: center;
 }
 .glyphicon-scale:before{
-    font-family: 'FontAwesome';
+    font-family: 'Awesome';
     content:"\f277";
 }
 .glyphicon-calc:before{
-    font-family: 'FontAwesome';
+    font-family: 'Awesome';
     content:"\F1EC";
 }
 .glyphicon-ruby:before{
-    font-family: 'FontAwesome';
+    font-family: 'Awesome';
     content:"\F219";
 }
 
