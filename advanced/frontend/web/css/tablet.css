@@ -84,7 +84,118 @@ button#ask_a_question-button{
 	margin:0px;
 }
 
-@media (max-width:980px){
+/*Навигация*/
+
+.col-navbar, #navbar-line, .navbar-default{
+	width:100%;
+	height:60px;
+	margin:0px;
+	padding:0px;
+	border-radius:0px;
+	background-color:#413332;
+}
+
+.col-navbar > #navbar-line > .navbar-default > .container{
+	width:960px;
+	margin:0px auto;
+	padding:0px;
+}
+
+.col-navbar > #navbar-line > .navbar-default > .container >
+.navbar-collapse{
+	padding:0px;
+	margin:0px;
+	width:100%;
+	height:60px;
+}
+
+.col-navbar > #navbar-line > .navbar-default > .container >
+.navbar-collapse > ul{
+	width:960px;
+	height:60px;
+	display:block;
+	margin:0px;
+	padding:0px;
+}
+
+.navbar-center > li{
+	float:left;
+	height:60px;
+	display:block;
+	box-sizing: border-box;
+	margin:0px;
+	padding:0px;
+	line-height:55px;
+	padding-top:1px;
+}
+
+.navbar-default .navbar-nav > li > a{
+	padding:0px;
+	margin:0px;
+	display:inline;
+	padding:20px 10px;
+}
+
+#wrap-tablet{
+	position:relative;
+	width:100%;
+	height:60px;
+	position:absolute;
+	display:none;
+}
+
+#wrap-tablet > #panel-tablet{
+	width:701px;
+	height:100%;
+	margin:0px auto;
+	position:relative;
+}
+
+div#other-panel{
+	float:right;
+	position:relative;
+	width:100px;
+	height:40px;
+	z-index:1000;
+	line-height:70px;
+}
+
+div#other-panel > a{
+	color:#d3ccad;
+	padding:0px 10px;
+}
+
+div#other-panel > a:hover{
+	text-decoration:none;
+}
+
+div#other-panel > a > span{
+	font-size:20px;
+}
+
+div#other-panel > a > span > span{
+	text-align:center;
+}
+
+#wrap-tablet > #panel-tablet > div#button-toggle:before{
+	position:relative;
+	z-index:100;
+	color:#d2ccac;
+	font-size:20px;
+	line-height:60px;
+	margin-left: 10px;
+	cursor:pointer;
+}
+
+#wrap-tablet > #panel-tablet > div#button-toggle:hover{
+	color:#fff;
+}
+
+.navbar-collapse, .navbar-center{
+	display:block;
+}
+
+@media (min-width:768px) and (max-width:980px){
 	header{
 		width:701px;
 	}
@@ -125,5 +236,274 @@ button#ask_a_question-button{
 
 	header .row:first-child > div:nth-child(3){
 		width:181px;
+	}
+
+	/*Навигация*/
+
+	.col-navbar > #navbar-line > .navbar-default > .container{
+		width:701px;
+	}
+
+	.col-navbar > #navbar-line > .navbar-default > .container >
+	.navbar-collapse > ul{
+		width:701px;
+		position:relative;
+		min-height:0px;
+		padding-top:58px;
+		display:none;
+	}
+
+	.navbar-center > li{
+		float:none;
+		line-height:60px;
+		background-color:#413332;
+		position:relative;
+		z-index:1000;
+		min-height:0px;
+	}
+
+	.navbar-center > li:nth-child(9),
+	.navbar-center > li:nth-child(8){
+		display:none;
+	}
+
+	.navbar-default .navbar-nav > li > a{
+		display:block;
+		height:60px;
+		padding-right:0px;
+		text-align:left;
+		padding-left:20px;
+	}
+
+	div#wrap-tablet{
+		display:block;
+	}
+
+	div#wrap-tablet.fixed{
+		position:fixed;
+		top:0px;
+		width:100%;
+		z-index:99999;
+	}
+
+	/*Межкомнатные двери*/
+	.wrap-quick-selection{
+		background-position:center center;
+	}
+
+	div.panel-quick-selection{
+		width:701px;
+		margin:0px auto;
+	}
+
+	div.panel-quick-selection > div.row{
+		margin:0px;
+	}
+
+	div.panel-quick-selection > div.row:nth-child(2) > div{
+		margin:0px;
+		padding:0px;
+	}
+
+	div.panel-quick-selection > div.row:nth-child(2) > div >
+	h2{
+		width:660px;
+		padding-bottom:5px;
+		font-size:58px;
+	}
+
+	div.panel-quick-selection > div.row:nth-child(3) > div{
+		width:500px;
+		display:block;
+		margin-left:calc((100% - 500px) / 2);
+		padding:0px;
+	}
+
+	h2.tablet-section-title_1,
+	h2.tablet-section-title_2{
+		display:block;
+	}
+
+	/*Каталог*/
+
+	.wrap-catalog{
+		height:750px;
+	}
+
+	.wrap-catalog > .panel-Catalog{
+		width:701px;
+		height:350px;
+		margin:0px auto;
+	}
+
+	.tiles > div:first-child{
+		width:350px;
+		height:350px;
+		margin:0px;
+		padding:0px;
+		position:relative;
+	}
+
+	.tiles > div:nth-child(2){
+		width:161px;
+		height:350px;
+		margin:0px;
+		padding:0px;
+		position:relative;
+		left:10px;
+	}
+
+	.tiles > div:nth-child(3){
+		width:170px;
+		height:350px;
+		margin:0px;
+		padding:0px;
+		position:relative;
+		left:20px;
+		top:0px;
+	}
+
+	.tiles > div:nth-child(2) > div:first-child,
+	.tiles > div:nth-child(2) > div:last-child{
+		width:161px;
+		height:170px;
+		position:relative;
+		margin:0px;
+		padding:0px;
+	}
+
+	.tiles > div:nth-child(2) > div:last-child{
+		top:10px;
+	}
+
+	.tiles > div:nth-child(2) > div:first-child > div,
+	.tiles > div:nth-child(2) > div:last-child > div{
+		margin:0px;
+		padding:0px;
+		width:100%;
+		height:170px;
+	}
+
+	.interiorDoors{
+		width:350px;
+		height:350px;
+		margin:0px;
+		padding:0px;
+		background-size:cover;
+	}
+
+	.interiorDoors > .doors-gradient{
+		width:338px;
+		position:relative;
+		top:145px;
+	}
+
+	.grips, .septa{
+		width:161px;
+		height:170px;
+		margin:0px;
+		padding:0px;
+		background-size:cover;
+	}
+
+	.grips > .doors-gradient,
+	.septa > .doors-gradient{
+		width:149px;
+		height:120px;
+		position:relative;
+		top:20px;
+	}
+
+	.interiorDoors > .doors-gradient > h3{
+		position:relative;
+		top:50px;
+	}
+
+	.septa > .doors-gradient > h3{
+		font-size:15px;
+	}
+
+	.entryDoors{
+		width:170px;
+		height:350px;
+		background-size:cover;
+		position:relative;
+		top:-20px;
+	}
+
+	.entryDoors > .doors-gradient{
+		width:158px;
+		height:173px;
+		position:relative;
+		top:-140px;
+	}
+
+	.ribbon-panel{
+		width:720px;
+		height:175px;
+	}
+
+	.ribbon-panel > .running-ribbon{
+		height:175px;
+	}
+
+	.ribbon-panel > .running-ribbon > div{
+		position:relative;
+		margin:0px;
+		padding:0px;
+	}
+
+	.row{
+		margin:0px;
+		padding:0px;
+	}
+
+	.ribbon-panel > .running-ribbon > div:first-child{
+		width:50px;
+		height:50px;
+		margin:0px;
+		padding:0px;
+		margin-right:15px;
+		position:relative;
+		top:calc((175px - 50px) / 2);
+	}
+
+	.ribbon-panel > .running-ribbon > div:nth-child(2){
+		width:585px;
+		height:175px;
+		background-color:#fff;
+	}
+
+	.ribbon-panel > .running-ribbon > div:nth-child(2) > .view{
+		width:585px;
+		height:175px;
+		margin:0px;
+		padding:0px;
+		padding:17px 0px;
+	}
+
+	.ribbon-panel > .running-ribbon > div:nth-child(2) > .view >
+	ul > li{
+		height:140px;
+		padding:0px;
+		margin:0px;
+		margin-right:10px;
+		padding-top:20px;
+	}
+
+	.ribbon-panel > .running-ribbon > div:last-child{
+		width:50px;
+		height:50px;
+		margin:0px;
+		padding:0px;
+		margin-left:20px;
+		position:relative;
+		top:calc((175px - 50px) / 2);
+	}
+
+	.ribbon-panel > .running-ribbon > div:last-child > #next,
+	.ribbon-panel > .running-ribbon > div:first-child > #prev{
+		margin:0px;
+		padding:0px;
 	}
 }

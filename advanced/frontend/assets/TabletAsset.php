@@ -9,4 +9,8 @@ class TabletAsset extends AssetBundle{
 	public $css = [
 		'css/tablet.css'
 	];
+
+	public $js = [
+		'js/tablet-menu.js'
+	];
 }
