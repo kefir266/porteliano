@@ -168,7 +168,7 @@
         margin-right: auto;
     }
 }
-
+/******  BLOCK 4  NOVELTY **********************/
 @media screen and (max-width: 768px) {
     .novelty > .wrap-tiles.view > ul > .tile:first-child,
     .novelty > .wrap-tiles.view > ul > .tile:nth-child(2) {
@@ -187,6 +187,11 @@
 
     .row-indent {
         margin-top: 10px;
+    }
+    .wrap-novelty .running-ribbon-doors div.view ul {
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
