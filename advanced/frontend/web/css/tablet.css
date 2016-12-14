@@ -1,3 +1,5 @@
+@media (min-width:768px){
+
 header{
 	width:960px;
 	margin:0px auto;
@@ -193,6 +195,8 @@ div#other-panel > a > span > span{
 
 .navbar-collapse, .navbar-center{
 	display:block;
+}
+
 }
 
 @media (min-width:768px) and (max-width:980px){
