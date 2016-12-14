@@ -1,7 +1,6 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 use kartik\file\FileInput;
 
@@ -51,28 +50,9 @@ use kartik\file\FileInput;
         <div class="col-md-9">
             <?php
 
-            //    echo $form->field($model, 'img')->widget(\kartik\file\FileInput::className(),
-            //        [
-            //            'options' => ['accept' => '/img/'.$model->manufacturer->title.'/*',],
-            //            'model' => $model,
-            //            //'name' => 'attachment_49[]',
-            //            'pluginOptions' => [
-            //                'initialCaption' => $model->title,
-            //                'initialPreviewConfig' =>
-            //                    ['caption' => '/img/' .$model->manufacturer->title . '/' .$model->img,],
-            //                'initialPreview' =>
-            //                    ['/img/' . $model->manufacturer->title . '/' . $model->img,],
-            //
-            //                'overwriteInitial' => false,
-            //                'maxFileSize' => 2000
-            //            ]
-            //        ]);
-            //    //    echo $form->field($model, 'img')->textInput(['maxlength' => true])
-
             $previews = "/frontend/web/img/products/" . $model->manufacturer->title . '/' . $model->img;
             $previewConf = ['caption' => $model->img,];
 
-            var_dump($model->imageFile);
             echo $form->field($model, 'imageFile')->widget(FileInput::className(), [
                 'name' => 'imageFile',
 

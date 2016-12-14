@@ -106,6 +106,16 @@ $this->params['breadcrumbs'][] = $this->title;
             'filterInputOptions'=>['placeholder'=>'Любые'],
             'format'=>'raw'
         ],
+        ['attribute'=>'currentPrice',],
+        [
+            'attribute'=>'currentCurrency',
+            'value'=>function ($model, $key, $index, $widget) {
+                return (isset($model->price->currency))
+                    ?  Html::a($model->price->currency->title,['currency/view','id' => $model->currentCurrency]) :'';
+            },
+            'format'=>'raw'
+        ],
+
         [
             'class'=>'kartik\grid\EditableColumn',
             'attribute' => 'article',
