@@ -205,9 +205,8 @@ MobileAsset::register($this);
                 ]]);/**/
             ?>
         </div>
-
         <div class="footer-copy col-sm-12 col-xs-12">
-            &copy; Porteliano Итальянские двери, 1996 - <?= date('Y') ?>
+            <span class="footer-copy-text">&copy; Porteliano Итальянские двери, 1996 - <?= date('Y') ?></span>
             </p>
         </div>
 
