@@ -314,4 +314,25 @@
         margin-top: 80px;
         min-width: 479px;
     }
+    /******  BLOCK 11  ABOUT **********************/
+    .wrap-about{
+        min-height: 750px;
+    }
+    .about-left{
+        text-align: center;
+    }
+    .about-right{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    /******  BLOCK 12  CONTACTS **********************/
+    .wrap-contacts{
+        min-height: 910px;
+    }
+    .wrap-contacts .contact-form {
+
+        top: 530px;
+        left: 50%;
+
+    }
 }
