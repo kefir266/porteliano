@@ -195,7 +195,7 @@
     }
 }
 
-/******  BLOCK 5 **********************/
+/******  BLOCK 5  KEY BENEFITS **********************/
 @media screen and (max-width: 768px) {
 
     .row-indent {
@@ -209,6 +209,12 @@
 
     .key-benefits-h2 {
         margin: 75px 0 60px 0;
+    }
+    .key-benefits-text {
+        min-height: 80px;
+    }
+    .panel-key-benefits .glyphicon {
+        margin-left: 10px;
     }
 }
 
