@@ -59,7 +59,7 @@ Yii::setAlias('@img', '@web/img');
                 </div>
                 <div role="tabpanel" class="tab-pane" id="profile">
                     <!-- Вкладка 'Входные'  -->
-                    <div id="doors-out">
+                    <div id="doors-out" class="doors-panel running-ribbon-doors">
                         <div class="wrap-tiles view">
                             <ul>
                                 <?php if (isset($doorsOut['products'])): ?>
