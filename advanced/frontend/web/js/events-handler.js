@@ -252,6 +252,7 @@ function eventClickDropMenu(item) {
 
 function eventClickSelectButton(item) {
 
+    console.log('click');
     var material = $("div .material").find(".btn-default").data('id');
     var manufacturer = $("div .manufacturer").find(".btn-default").data('id');
     var style = $("div .style").find(".btn-default").data('id');

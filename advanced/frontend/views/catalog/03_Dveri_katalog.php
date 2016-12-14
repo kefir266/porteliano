@@ -15,6 +15,7 @@ use yii\bootstrap\ButtonDropdown;
 use yii\bootstrap\Dropdown;
 use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\web\JsExpression;
 
 /*  assets  */
 /*  assets  */
@@ -219,6 +220,7 @@ foreach ($sections->getMenu() as $section) {
                         echo Button::widget([
                             'label' => 'ПОДОБРАТЬ',
                             'options' => ['class' => 'btn-default'],
+                            'clientEvents' => ['click' => new JsExpression('eventClickSelectButton')],
                         ]);
                         ?>
                     </div>
