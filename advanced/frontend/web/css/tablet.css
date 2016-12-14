@@ -506,4 +506,124 @@ div#other-panel > a > span > span{
 		margin:0px;
 		padding:0px;
 	}
+
+	/*Акция*/
+
+	.action-panel{
+		width:720px;
+	}
+
+	.action-panel > div.row > div{
+		/*float:left;*/
+	}
+
+	.action-panel > div.row > div:first-child{
+		width:288px;
+		margin:0px;
+		padding:0px;
+	}
+
+	.action-panel > div.row > div:first-child > h1{
+		font-size:40px;
+	}
+
+	.action-panel > div.row > div:first-child > .action-text{
+		font-size:23px;
+		margin-top:40px;
+	}
+
+	.action-panel > div.row > div:last-child{
+		width:362px;
+		margin-left:52px;
+	}
+
+	/*Новинки*/
+
+	.novelty{
+		width:720px;
+		margin:0px auto;
+	}
+
+	.novelty > div.row:nth-child(2){
+		width:720px;
+		height:500px;
+	}
+
+	.novelty > div.row:nth-child(2) > div,
+	.novelty > div.row:nth-child(2) > div > .doors-panel{
+		margin:0px;
+		padding:0px;
+	}
+
+	.novelty > div.row:last-child{
+		margin-top:50px;
+	}
+
+	.novelty > div.row:nth-child(2) > div > .doors-panel > 
+	div.view{
+		width:720px;
+		height:490px;
+		overflow:hidden;
+	}
+
+	.wrap-novelty .tile{
+		margin:0px;
+		padding:0px;
+		margin-right:10px;
+	}
+
+	.wrap-novelty .tile:nth-child(3){
+		margin-right:0px;
+	}
+
+	/*Ключевые преимущества*/
+
+	.wrap-key-benefits{
+		height:1102px;
+	}
+
+	.panel-key-benefits{
+		width:720px;
+		margin:0px auto;
+	}
+
+	.panel-key-benefits > div.row:first-child{
+		height:210px;
+	}
+
+	.panel-key-benefits > div.row:nth-child(2) > 
+	div:nth-child(odd),
+	.panel-key-benefits > div.row:nth-child(3) > 
+	div:nth-child(odd),
+	.panel-key-benefits > div.row:nth-child(4) > 
+	div:nth-child(odd){
+		padding:0px;
+		width:100px;
+		float:left;
+	}
+
+	.panel-key-benefits > div.row:nth-child(2) > 
+	div:nth-child(odd):before,
+	.panel-key-benefits > div.row:nth-child(3) > 
+	div:nth-child(odd):before,
+	.panel-key-benefits > div.row:nth-child(4) > 
+	div:nth-child(odd):before{
+		clear:both;
+	}
+
+	.panel-key-benefits > div.row:nth-child(2) > 
+	div:nth-child(even),
+	.panel-key-benefits > div.row:nth-child(3) > 
+	div:nth-child(even),
+	.panel-key-benefits > div.row:nth-child(4) > 
+	div:nth-child(even){
+		margin:0px;
+		padding:0px;
+		width:590px;
+		height:102px;
+		position:relative;
+		top:-10px;
+		margin-left:110px;
+		margin-bottom: 39px
+	}
 }
