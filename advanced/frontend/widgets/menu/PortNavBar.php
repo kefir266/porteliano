@@ -35,4 +35,16 @@ class PortNavBar extends NavBar
         BootstrapPluginAsset::register($this->getView());
     }
 
+    protected function renderToggleButton()
+    {
+        $bar = Html::tag('span', '', ['class' => 'glyphicon glyphicon-align-left']);
+        $screenReader = "<span class=\"sr-only\">{$this->screenReaderToggleText}</span>";
+
+        return Html::button("{$screenReader}\n{$bar}", [
+            'class' => 'navbar-toggle',
+            'data-toggle' => 'collapse',
+            'data-target' => "#{$this->containerOptions['id']}",
+        ]);
+    }
+
 }
