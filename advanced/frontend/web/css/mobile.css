@@ -1,5 +1,5 @@
-.navbar-header{
-    display: none;
+.navbar-header {
+
 }
 
 @media screen and (max-width: 768px)and (min-width: 480px) {
@@ -37,7 +37,6 @@
     }
 
     /*******************************************************/
-
     /**************  Навигация  *******************************
     .col-navbar, #navbar-line, .navbar-default {
         width: 100%;
@@ -146,7 +145,6 @@
     .navbar-collapse, .navbar-center {
         display: block;
     }*/
-
     /************** Menu  *******************************//*
     @media screen {
         .col-navbar, #navbar-line, .navbar-default {
@@ -211,16 +209,82 @@
         div#other-panel > a {
             color: #d3ccad;
         }*/
-/**********  navbar-line ********
-        .navbar-default {
-            width: 100%;
-            height: 60px;
-            margin: 0px;
-            padding: 0px;
-            border-radius: 0px;
-            background-color: #413332;
+    /**********  navbar-line ********
+            .navbar-default {
+                width: 100%;
+                height: 60px;
+                margin: 0px;
+                padding: 0px;
+                border-radius: 0px;
+                background-color: #413332;
+            }
+
         }
-        */
+    */
+    #wrap-tablet {
+        width: 100%;
+        height: 60px;
+        position: absolute;
+        display: none;
+    }
+
+    #wrap-tablet > #panel-tablet > div#button-toggle::before {
+        position: relative;
+        z-index: 100;
+        color: #d2ccac;
+        font-size: 20px;
+        line-height: 60px;
+        margin-left: 10px;
+        cursor: pointer;
+        display: none;
+    }
+
+    div#wrap-tablet {
+        display: block;
+    }
+
+    div#other-panel {
+        float: right;
+        position: relative;
+        width: 100px;
+        height: 40px;
+        z-index: 1000;
+        line-height: 70px;
+        top: -5px;
+    }
+
+    div#other-panel > a > span {
+        font-size: 20px;
+    }
+
+    div#other-panel > a {
+        color: #d3ccad;
+        margin-left: 20px;
+        text-decoration: none;
+    }
+
+    .navbar-center > li {
+        display: block;
+    }
+
+    .navbar-center {
+        z-index: 20;
+        background-color: #413332;
+    }
+
+    .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+        background-color: transparent;
+    }
+    .navbar-default .navbar-toggle{
+        border: none;
+        font-size: 21px;
+    }
+
+    div#wrap-tablet.fixed {
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        z-index: 99999;
     }
 
 }
