@@ -344,12 +344,13 @@
 
         }
     }
-    @media screen and (min-width: 719px) and (max-width: 721px){
-    .map{
-        background: url("../../img/other/map-750.jpg") no-repeat;
-        width: 100%;
-        height: 910px;
-        background-size: cover;
+    @media screen and (min-width: 719px) and (max-width: 721px) {
+        .map {
+            background: url("../../img/other/map-750.jpg") no-repeat;
+            width: 100%;
+            height: 910px;
+            background-size: cover;
 
+        }
     }
 }
