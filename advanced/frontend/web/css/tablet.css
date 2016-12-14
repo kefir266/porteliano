@@ -677,7 +677,44 @@
 
 	/*Производители*/
 
+	.wrap-manufacturers > .manufacturers{
+		width:701px;
+		margin:0px auto;
+	}
+
 	/*О компании*/
+
+	.wrap-about{
+		height:730px;
+	}
+
+	.wrap-about > div.row:nth-child(2){
+		width:701px;
+		margin:0px auto;
+	}
+
+	.wrap-about > div.row:nth-child(2) > div{
+		margin:0px;
+		padding:0px;
+		float:left;
+	}
+
+	.wrap-about > div.row:nth-child(2) > div:first-child{
+		width:260px;
+	}
+
+	.wrap-about > div.row:nth-child(2) > div:first-child > p{
+		font-size:28px;
+	}
+
+	.wrap-about > div.row:nth-child(2) > div:last-child{
+		width:361px;
+		margin-left:80px;
+	}
+
+	.wrap-about > div.row:nth-child(2) > div:last-child > p{
+		font-size:18px;
+	}
 
 	/*Контакты*/
 
