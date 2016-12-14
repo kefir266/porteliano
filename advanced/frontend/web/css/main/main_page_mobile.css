@@ -222,20 +222,20 @@
         margin-top: 0;
         position: absolute;
         top: -45px;
-        left: 85%;
+        left: 93%;
         z-index: 1;
 
     }
 
     .wrap-doors .door-show-more {
         position: absolute;
-        top: -46px;
-        left: 105px;
+        top: -38px;
+        left: 50%;
+        transform: translateX(-45%);
     }
 
     .wrap-doors .doors-panel {
-        width: 98%;
-        margin-left: 10px;
+        width: 100%;
     }
     /************** BLOCK 7 **************************/
     .wrap-facts-at-Glance{
@@ -248,5 +248,38 @@
         margin-top: 50px;
         margin-bottom: 100px;
     }
+    /************** BLOCK 8 - SEPTA **************************/
+    .wrap-septa #prev {
+        margin-left: 0;
+        margin-top: 0;
+        position: absolute;
+        top: 570px;
+        z-index: 1;
+    }
 
+    .wrap-septa #next {
+        margin-left: 0;
+        margin-top: 0;
+        position: absolute;
+        top: -45px;
+        left: 93%;
+        z-index: 1;
+    }
+    .wrap-septa .septa-show-more {
+        position: absolute;
+        top: -38px;
+        left: 50%;
+        transform: translateX(-45%);
+    }
+
+    .wrap-septa .doors-panel {
+        width: 106%;
+    }
+    .wrap-septa .septa-h2 {
+        margin-top: 70px;
+
+    }
+    .wrap-septa .tile {
+        margin-top: 0;
+    }
 }
