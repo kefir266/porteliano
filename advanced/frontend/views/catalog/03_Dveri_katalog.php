@@ -87,6 +87,14 @@ switch ($products['section']->id) {
         break;
     default:
         $categoryTitle = 'нет категории';
+        $coverImgLeft = '@cover/outer.jpg';
+        $coverImgRight = '@cover/inner.png';
+
+        $coverTextLeft = 'Входные двери';
+        $coverTextRight = 'Межкомнатные двери';
+
+        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'ind' => '3']);
 }
 
 $this->params['breadcrumbs'][] = [
