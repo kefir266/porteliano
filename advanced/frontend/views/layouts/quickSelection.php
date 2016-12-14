@@ -34,17 +34,26 @@ foreach ($sections->getMenu() as $section) {
                         <b class="caret"></b>
                     </a>
                     <?php
-                    echo Dropdown::widget([
+                    echo ''/*Dropdown::widget([
                         'items' => $items,
-                    ]);
+                    ])*/;
                     ?>
                 </div>
             </div>
         </div>
         <div class="row center-block">
             <div style="display: flex" class="col-sm-12">
+                <div class="dropdown category">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle">
                 <h2 class="section-title"
                     data-id=<?= $products['section']->id ?>><?= $products['section']->title ?></h2>
+                </a>
+                    <?php
+                    echo Dropdown::widget([
+                        'items' => $items,
+                    ]);
+                    ?>
+                </div>
             </div>
         </div>
         <div class="row center-block">
