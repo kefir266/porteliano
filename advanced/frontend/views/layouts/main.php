@@ -19,7 +19,7 @@ use frontend\widgets\menu\PortNavBar;
 
 
 MainAdaptiveAsset::register($this);
-TabletAsset::register($this);
+//TabletAsset::register($this);
 MobileAsset::register($this);
 
 ?>
