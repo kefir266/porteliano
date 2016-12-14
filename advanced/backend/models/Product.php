@@ -175,6 +175,23 @@ class Product extends ActiveRecord
         return $this->hasMany(Price::className(), ['product_id' => 'id'] )->orderBy('date desc')->one();
     }
 
+    public function getImage() {
+
+        $img = '/img/Image-Capture-icon.png';
+        if ( $this->img == '' ) {
+            $old_pic = $this->hasOne(GreenyImages::className(), ['productImageID' => 'imageID'])->src;
+            if (isset($old_pic))
+            {
+                $img = $old_pic;
+            }
+        }
+        else
+        {
+            $img = "/frontend/web/img/products/" . $this->manufacturer->title . '/' . $this->img;
+        }
+
+        return $img;
+    }
 
     public function afterFind()
     {

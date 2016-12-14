@@ -12,6 +12,7 @@ use app\models\Manufacturer;
 use app\models\Material;
 use app\models\Section;
 use app\models\Style;
+use frontend\models\GreenyImages;
 use app\models\Wish;
 
 use yii;
@@ -166,6 +167,25 @@ class Product extends ActiveRecord
         return $this->hasMany(Price::className(), ['product_id' => 'id'] )->orderBy('date desc')->one();
     }
 
+    public function getImage() {
+
+        $img = '/img/Image-Capture-icon.png';
+        if ( $this->img == '' ) {
+            $old_pic = $this->hasOne(GreenyImages::className(), ['imageID' => 'productImageID'])->one();
+            //return $old_pic;
+            if (isset($old_pic->src))
+            {
+                $img = '/img/'.$old_pic->src;
+            }
+        }
+        else
+        {
+            $img = "/frontend/web/img/products/" . $this->manufacturer->title . '/' . $this->img;
+        }
+
+        return $img;
+    }
+
     public function getFilteredProducts($params, $quantity){
 
         $id = (isset($params['section'])) ? $params['section'] : 3;
@@ -174,7 +194,7 @@ class Product extends ActiveRecord
 
         $query = $this->find()
             ->innerJoin('section', 'product.section_id = section.id ')
-            ->where(['product.section_id' => $id])->orWhere(['section.parent_id' => $id]);
+            ->where(['product.section_id' => $id])->orWhere(['section.parent_id' => $id])->limit($quantity);
         $query = (isset($params['style'])) ? $query->andWhere(['product.style_id' => $params['style']]) : $query;
         $query = (isset($params['manufacturer'])) ? $query->andWhere(['product.manufacturer_id' => $params['manufacturer']]) : $query;
         $query = (isset($params['material'])) ? $query->andWhere(['product.material_id' => $params['material']]) : $query;
