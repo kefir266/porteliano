@@ -17,6 +17,7 @@ body {
     height: 100%;
     background-color: #fdfdf3;
     /*background-color: rgba(255, 0, 4, 0.55);*/
+    position: relative;
 }
 .content {
     width: 100%;
@@ -50,7 +51,18 @@ body {
     color: #ccc;
     content: " ";
 }
-
+/*** Прижатый футер ***/
+.wrap-all{
+    /*margin-bottom: -140px;*/
+    position: relative;
+}
+#footer {
+    position: absolute;
+    /*bottom: 0;*/
+    width: 100%;
+    /*margin-bottom: 10px;*/
+}
+/******************************/
 /*****************  NavBar  *********************************/
 .navbar-toggle {
     float: left; /**/

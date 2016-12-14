@@ -176,7 +176,7 @@ MobileAsset::register($this);
         </div>
     </div>
     <div class="push"></div>
-    <footer id="footer" class=" footer footer-general navbar-fixed-bottom">
+    <footer id="footer" class=" footer footer-general">
         <div id="navbar-line-footer" class="nav hidden-xs hidden-sm ">
             <?php
             echo Nav::widget([
