@@ -234,7 +234,19 @@
     }
 
     .wrap-doors .doors-panel {
-        width: 100%;
+        width: 98%;
         margin-left: 10px;
     }
+    /************** BLOCK 7 **************************/
+    .wrap-facts-at-Glance{
+        min-height: 870px;
+    }
+    .facts h1,.facts p{
+        text-align: center;
+    }
+    .facts p{
+        margin-top: 50px;
+        margin-bottom: 100px;
+    }
+
 }

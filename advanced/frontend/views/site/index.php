@@ -34,11 +34,11 @@ $this->title = 'home';
 
     require_once 'home/block_05-key-benefits.php';
 
-    require 'home/block_06-doors.php';/*
+    require 'home/block_06-doors.php';
 
     require_once 'home/block_07-facts.php';
 
-    require 'home/block_08-septa.php';
+    require 'home/block_08-septa.php';/*
 
     require_once 'home/block_09-action2.php';
     require_once 'home/block_10-manufacturers.php';
