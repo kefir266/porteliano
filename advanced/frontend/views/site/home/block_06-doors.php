@@ -29,7 +29,7 @@ Yii::setAlias('@img', '@web/img');
             <ul class="nav nav-tabs nav-pills center-block" role="tablist">
                 <li class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">МЕЖКОМНАТНЫЕ</a></li>
                 <li><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">ВХОДНЫЕ</a></li>
-            </ul>'
+            </ul>
         </div>
     </div>
     <!-- Вкладки -->
