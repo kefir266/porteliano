@@ -97,13 +97,20 @@
 /* Категории */
 .category > ul > li > a{
     font-size: 20px;
+    color: #935347;
+    /* тестовые свойства
+    font-size: 60px;*/
 }
 .category > ul > li > a:hover{
-    font-size: 20px;
     background-color: #e4e2db;
+    color:#6a372d;
 }
 .category > ul{
     background-color: #f7f7f7;
+    width: 100%;
+    /* тестовые свойства
+    width: 690px;
+    margin-left: -220px;*/
 }
 
 
@@ -114,8 +121,14 @@
 .dropdown-submenu > ul > li > a,
 .dropdown-submenu > ul > li{
     text-decoration: none;
-    color: #000;
+    color: #955347;
     margin-left: 10%;
+    /* тестовые свойства
+    font-size: 50px;*/
+}
+.dropdown-submenu > ul > li > a:hover{
+    background-color: #e4e2db;
+    color:#6a372d;
 }
 .dropdown-submenu > ul > li:hover{
     background-color: #E4E2DB;
@@ -133,12 +146,14 @@
 .panel-quick-selection  h2{
     color: #955347;
     border-bottom: #955347 dashed;
-    font-size: 66px;
+    font-size: 60px;
     font-family: PTSerifBold, serif ;
     text-align: center;
 }
 .panel-quick-selection  h2:hover{
+    /*
     color: #6a372d;
     font-size: 66px;
     border-bottom: #6a372d dashed;
+    */
 }
