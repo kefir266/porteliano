@@ -72,7 +72,7 @@
         //console.log('imgsCount = ' + imgsCount);
         //console.log('current = ' + current);
        // console.log('totalImgsW = ' + totalImgsW);
-        $("div#show")
+        $("div.show")
             .show()
             .find("button").on("click", function(){
             var direction = $(this).attr("id");
