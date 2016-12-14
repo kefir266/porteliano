@@ -1,5 +1,5 @@
 .navbar-header{
-    display: none;
+
 }
 
 @media screen and (max-width: 768px)and (min-width: 480px) {
@@ -220,7 +220,60 @@
             border-radius: 0px;
             background-color: #413332;
         }
-        */
-    }
 
+    }
+*/
+
+    #wrap-tablet {
+        width: 100%;
+        height: 60px;
+        position: absolute;
+        display: none;
+    }
+    #wrap-tablet > #panel-tablet > div#button-toggle::before {
+        position: relative;
+        z-index: 100;
+        color: #d2ccac;
+        font-size: 20px;
+        line-height: 60px;
+        margin-left: 10px;
+        cursor: pointer;
+        display: none;
+    }
+    div#wrap-tablet {
+        display: block;
+    }
+    div#other-panel {
+        float: right;
+        position: relative;
+        width: 100px;
+        height: 40px;
+        z-index: 1000;
+        line-height: 70px;
+    }
+    div#other-panel > a > span {
+        font-size: 20px;
+    }
+    div#other-panel > a {
+        color: #d3ccad;
+        margin-left: 20px;
+    }
+    .navbar-center > li {
+        display: block;
+        z-index: 100;
+
+    }
+    .navbar-center{
+        z-index:20;
+        background-color: #413332;
+    }
+    .navbar-toggle.collapsed:before{
+
+    }
+    .navbar-default .navbar-toggle .icon-bar{
+        display: none;
+    }
+    .sr-only:before{
+        content:"\e052";
+    }
 }
