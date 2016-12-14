@@ -640,4 +640,44 @@
 		width:720px;
 		margin:0px auto;
 	}
+
+	/*Факты*/
+
+	.wrap-facts-at-Glance{
+		height:870px;
+	}
+
+	.facts{
+		width:460px;
+		position:relative;
+		/*top:-613px;*/
+		margin-top:-870px;
+	}
+
+	.facts > div.row > div{
+		width:460px;
+		margin:0px;
+		padding:0px;
+		margin-bottom:94px;
+	}
+
+	.facts > div.row > div > h1,
+	.facts > div.row > div > p{
+		margin:0px;
+		padding:0px;
+		width:100%;
+		text-align:center;
+	}
+
+	.facts > div.row > div > p{
+		margin-top:30px;
+	}
+
+	/*Перегородки*/
+
+	/*Производители*/
+
+	/*О компании*/
+
+	/*Контакты*/
 }
