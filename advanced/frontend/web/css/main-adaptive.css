@@ -183,8 +183,6 @@ header .row:first-child {
 }
 
 .footer-general {/*,.push */
-    height: 102px;
-    position: relative;
 }
 
 .footer-general .navbar-nav {
@@ -202,6 +200,12 @@ header .row:first-child {
     color: #cfcbbd;
     background-color: #352929;
     height: 80px;
+    line-height: 80px;
+}
+@media screen and (min-width: 992px){
+    .footer-copy-text{
+        margin-left: -740px;
+    }
 }
 
 .footer-copy-text {

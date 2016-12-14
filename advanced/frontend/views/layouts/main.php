@@ -176,9 +176,8 @@ MobileAsset::register($this);
         </div>
     </div>
     <div class="push"></div>
-
-    <footer id="footer" class="hidden-xs footer footer-general">
-        <div id="navbar-line-footer" class="nav ">
+    <footer id="footer" class=" footer footer-general navbar-fixed-bottom">
+        <div id="navbar-line-footer" class="nav hidden-xs hidden-sm ">
             <?php
             echo Nav::widget([
                 'encodeLabels' => false,
@@ -202,9 +201,8 @@ MobileAsset::register($this);
                 ]]);/**/
             ?>
         </div>
-
-        <div class="footer-copy">
-            &copy; Porteliano Итальянские двери, 1996 - <?= date('Y') ?>
+        <div class="footer-copy col-sm-12 col-xs-12">
+            <span class="footer-copy-text">&copy; Porteliano Итальянские двери, 1996 - <?= date('Y') ?></span>
             </p>
         </div>
 
