@@ -109,7 +109,6 @@ class ProductController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            print_r(UploadedFile::getInstances($model, 'img'));
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [

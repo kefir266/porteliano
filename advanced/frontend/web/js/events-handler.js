@@ -11,9 +11,13 @@
 
     var jCart = $("#basket");
     var jWish = $('#wishlist');
+    var tWish = $('div#other-panel > a > span:first');
+    var tCart = $('div#other-panel > a > span:last');
 
     getQuantity('getcart', jCart);
     getQuantity('getwish', jWish);
+    getQuantity('getcart', tCart);
+    getQuantity('getwish', tWish);
 
 
     // $("#modal-cart .modal-body").on('click','.del-item', function () {
@@ -107,6 +111,7 @@ function addToCart(e) {
 
     e.preventDefault();
     var jtag = $('#basket');
+    var tCart = $('div#other-panel > a > span:last');
 
     var id = $(e.target).data('id');
 
@@ -118,6 +123,7 @@ function addToCart(e) {
             type: 'GET',
             success: function (res) {
                 callbackQuantity(res, jtag);
+                callbackQuantity(res, tCart);
                 //getCart('cart');
 
             },
@@ -160,6 +166,7 @@ function addToWish(e) {
     e.preventDefault();
 
     var jtag = $('#wishlist');
+    var tWish = $('div#other-panel > a > span:first');
 
     var id = $(e.target).data('id');
 
@@ -171,6 +178,7 @@ function addToWish(e) {
             type: 'GET',
             success: function (res) {
                 callbackQuantity(res, jtag);
+                callbackQuantity(res, tWish);
                 //getCart('wish');
             },
             error: function () {
