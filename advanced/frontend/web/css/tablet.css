@@ -632,9 +632,62 @@
 
 	/*Двери*/
 
+	.wrap-doors{
+		height:931px;
+	}
+
 	.wrap-doors > div.row{
 		margin:0px;
 		padding:0px;
+	}
+
+	.wrap-doors > div.row:first-child{
+		height:auto;
+	}
+
+	.wrap-doors > div.row:nth-child(3){
+		max-height:500px;
+	}
+
+	.wrap-doors > div.row:nth-child(3) > div:nth-child(2),
+	.wrap-doors > div.row:nth-child(3) > div:nth-child(2) > div,
+	.wrap-doors > div.row:nth-child(3) > div:nth-child(2) > div >
+	div:first-child, .doors-panel, #doors-inn, #doors-out > .wrap-tiles{
+		margin:0px;
+		padding:0px;
+		width:720px;
+		max-height:500px;
+	}
+
+	#doors-inn > .wrap-tiles{
+		position:relative;
+		width:720px;
+		top:-20px;
+	}
+
+	#doors-inn > .wrap-tiles > ul,
+	#doors-out > .wrap-tiles > ul{
+		max-height:500px;
+		width:10000px;
+	}
+
+	#doors-inn > .wrap-tiles > ul > .tile{
+		margin:0px;
+		padding:0px;
+		margin-right:10px;
+	}
+
+	#doors-out > .wrap-tiles > ul > .tile{
+		padding:0px;
+		margin:0px;
+		margin-right:10px;
+	}
+
+	.wrap-doors > div.row:first-child > div > h2{
+		/*padding:0px;*/
+		margin:0px;
+		margin-top:106px;
+		margin-bottom:20px;
 	}
 
 	.wrap-doors > .row:nth-child(3){
@@ -681,7 +734,8 @@
 		margin:0px auto;
 	}
 
-	.wrap-septa > div.row:nth-child(2) > div:first-child{
+	.wrap-septa > div.row:nth-child(2) > div:first-child,
+	.wrap-doors > div.row:nth-child(3) > div:first-child{
 		width:50px;
 		height:50px;
 		margin:0px;
@@ -690,7 +744,12 @@
 		top:583px;
 	}
 
-	.wrap-septa > div.row:nth-child(2) > div:last-child{
+	.wrap-septa > div.row:nth-child(2) > div:first-child{
+		top:566px;
+	}
+
+	.wrap-septa > div.row:nth-child(2) > div:last-child,
+	.wrap-doors > div.row:nth-child(3) > div:last-child{
 		width:50px;
 		height:50px;
 		position:relative;
@@ -700,7 +759,12 @@
 		top:-67px;
 	}
 
-	.wrap-septa > div.row:nth-child(2) > div:last-child > #next{
+	.wrap-septa > div.row:nth-child(2) > div:last-child{
+		top:17px;
+	}
+
+	.wrap-septa > div.row:nth-child(2) > div:last-child > #next,
+	.wrap-doors > div.row:nth-child(3) > div:last-child > #next{
 		width:50px;
 		height:50px;
 		position:relative;
@@ -712,6 +776,8 @@
 	}
 
 	.wrap-septa > div.row:nth-child(2) > div:first-child > 
+	#prev,
+	.wrap-doors > div.row:nth-child(3) > div:first-child > 
 	#prev{
 		width:50px;
 		height:50px;
@@ -740,9 +806,26 @@
 		margin-right:10px;
 	}
 
-	.wrap-septa > div.row:nth-child(3){
+	.wrap-septa > div.row:nth-child(3),
+	.wrap-doors > div.row:nth-child(4){
 		position:relative;
 		top:-110px;
+	}
+
+	.wrap-septa > div.row:nth-child(3){
+		top:-26px;
+	}
+
+	.wrap-doors > div.row:nth-child(3) > div:first-child{
+		top:569px;
+	}
+
+	.wrap-doors > div.row:nth-child(3) > div:last-child{
+		top:19px;
+	}
+
+	.wrap-doors > div.row:nth-child(4){
+		top:77px;
 	}
 
 	/*Производители*/
