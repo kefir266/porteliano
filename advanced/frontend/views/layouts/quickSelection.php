@@ -118,15 +118,25 @@ foreach ($sections->getMenu() as $section) {
                 <div class="block-1-price">
                     <h5>Цена</h5>
                     <?php
+                    $items = [
+                        ['label' => 'Любые', 'url' => '#',
+                            'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '0']],
+                        ['label' => 'до 500 €', 'url' => '#',
+                            'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '1']],
+                        ['label' => '500 - 1000 €', 'url' => '#',
+                            'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '2']],
+                        ['label' => '1000 - 2000 €', 'url' => '#',
+                            'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '3']],
+                        ['label' => 'от 2000 €', 'url' => '#',
+                            'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '4']],
+                    ];
                     echo ButtonDropdown::widget([
                         'options' => ['class' => 'btn-default'],
                         'split' => true,
-                        'label' => "€ 500 - 2000",
+                        'label' => $items[0]['label'],
                         'dropdown' => [
-                            'items' => [
-                                ['label' => 'Со стеклом', 'url' => '#'],
-                                ['label' => 'DropdownB', 'url' => '#'],
-                            ],
+                            'items' => $items,
+                            'clientEvents' => ['click' => 'eventClickDropMenu'],
                         ],
                     ]);
                     ?>
