@@ -25,7 +25,7 @@ class DoorCatalogAsset extends AssetBundle
         // доп. библиотеки
         
         // скрипты
-       'js/events-handler.js'
+       //'js/events-handler.js'
     ];
     public $depends = [
         'yii\web\JqueryAsset',

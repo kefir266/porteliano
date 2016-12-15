@@ -23,8 +23,10 @@ use yii\web\JsExpression;
 use app\assets\FontAsset;
 use app\assets\BackAsset;
 use app\assets\DoorCatalogAsset;
+use app\assets\MainAdaptiveAsset;
 
 FontAsset::register($this);
+MainAdaptiveAsset::register($this);
 BackAsset::register($this);
 
 DoorCatalogAsset::register($this);
@@ -220,7 +222,7 @@ foreach ($sections->getMenu() as $section) {
                         echo Button::widget([
                             'label' => 'ПОДОБРАТЬ',
                             'options' => ['class' => 'btn-default'],
-                            'clientEvents' => ['click' => new JsExpression('eventClickSelectButton')],
+                            'clientEvents' => ['click' => 'eventClickSelectButton'],
                         ]);
                         ?>
                     </div>
