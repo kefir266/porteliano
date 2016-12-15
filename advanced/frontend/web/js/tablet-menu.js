@@ -1,5 +1,4 @@
 $("#button-toggle").click(function(){
-	//console.log($('ul#w17'));
 	$('ul#w17').slideToggle(200);
 });
 

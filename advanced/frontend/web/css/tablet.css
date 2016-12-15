@@ -676,6 +676,75 @@
 
 	/*Перегородки*/
 
+	.wrap-septa > div.row:nth-child(2){
+		width:721px;
+		margin:0px auto;
+	}
+
+	.wrap-septa > div.row:nth-child(2) > div:first-child{
+		width:50px;
+		height:50px;
+		margin:0px;
+		padding:0px;
+		position:relative;
+		top:583px;
+	}
+
+	.wrap-septa > div.row:nth-child(2) > div:last-child{
+		width:50px;
+		height:50px;
+		position:relative;
+		float:right;
+		margin:0px;
+		padding:0px;
+		top:-67px;
+	}
+
+	.wrap-septa > div.row:nth-child(2) > div:last-child > #next{
+		width:50px;
+		height:50px;
+		position:relative;
+		margin:0px;
+		padding:0px;
+		top:0px;
+		left:0px;
+		z-index:1000;
+	}
+
+	.wrap-septa > div.row:nth-child(2) > div:first-child > 
+	#prev{
+		width:50px;
+		height:50px;
+		position:relative;
+		margin:0px;
+		padding:0px;
+		left:0px;
+		top:0px;
+		z-index:100;
+	}
+
+	.wrap-septa > div.row:nth-child(2) > div:nth-child(2){
+		margin:0px;
+		padding:0px;
+	}
+
+	.wrap-septa > div.row:nth-child(2) > div:nth-child(2) > 
+	div > div{
+		width:721px;
+	}
+
+	.wrap-septa > div.row:nth-child(2) > div:nth-child(2) > 
+	div > div > ul > .tile{
+		background-color:#fff;
+		margin:0px;
+		margin-right:10px;
+	}
+
+	.wrap-septa > div.row:nth-child(3){
+		position:relative;
+		top:-110px;
+	}
+
 	/*Производители*/
 
 	.wrap-manufacturers{
