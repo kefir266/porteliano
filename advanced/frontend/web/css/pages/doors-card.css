@@ -126,4 +126,20 @@
 
         margin-left: 120px;
     }
+    .plate {
+        width: 347px;
+        height: 347px;
+    }
+    .doors-gradient-pos {
+        top: 77%;
+        left: 6px;
+        width: 335px;
+    }
+    .img-border {
+        width: 347px;
+        height: 347px;
+    }
+.bottom-cover{
+    margin-bottom: 165px;
+}
 }

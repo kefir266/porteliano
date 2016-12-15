@@ -194,8 +194,8 @@ foreach ($sections->getMenu() as $section) {
         </div>
         <!--Обложки на соседние категории-->
         <div class="row">
-            <div class="col-md-6">
-                <div class="plate">
+            <div class="col-md-6 col-xs-12">
+                <div class="plate center-block">
                     <a href="<?=$coverLinkLeft?>">
                         <?= Html::img($coverImgLeft, [
                             'class'=>'img-border'
@@ -206,8 +206,8 @@ foreach ($sections->getMenu() as $section) {
                     </a>
                 </div>
             </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="plate">
+            <div class="col-md-6 col-xs-12 bottom-cover">
+                <div class="plate center-block">
                     <a href="<?=$coverLinkRight?>">
                         <?= Html::img($coverImgRight, [
                             'class'=>'img-border'
