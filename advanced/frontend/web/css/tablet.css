@@ -286,6 +286,7 @@
 		top:0px;
 		width:100%;
 		z-index:99999;
+		background-color:#413332;
 	}
 
 	/*Межкомнатные двери*/
@@ -677,9 +678,26 @@
 
 	/*Производители*/
 
+	.wrap-manufacturers{
+		height:875px;
+	}
+
 	.wrap-manufacturers > .manufacturers{
 		width:701px;
 		margin:0px auto;
+	}
+
+	.wrap-manufacturers > .manufacturers > ul > li:nth-child(3n + 1){
+		margin-left:0px;
+	}
+
+	.wrap-manufacturers > .manufacturers > ul > li:nth-child(3n + 2),
+	.wrap-manufacturers > .manufacturers > ul > li:nth-child(3n + 3){
+		margin-left:97px;
+	}
+
+	.wrap-manufacturers > div.row > div > h2{
+		margin-top:80px;
 	}
 
 	/*О компании*/
