@@ -359,4 +359,11 @@
     .col-xs-9{
         float: none;
     }
+    .btn.door-show-more{
+        white-space: normal;
+    }
+    .door-show-more-text{
+        top: -40px;
+        position: relative;
+    }
 }
