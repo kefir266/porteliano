@@ -16,9 +16,9 @@ class BackAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-    //    'js/lib/jquery-ui.min.css'
+        '/js/jquery-ui.min.css'
     ];
     public $js = ['js/events-handler.js',
-    //'js/lib/jquery-ui.min.js'
+        '/js/jquery-ui.min.js'
     ];
 }
