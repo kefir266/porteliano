@@ -259,7 +259,7 @@ function eventClickSelectButton(item) {
     var price = $("div .block-1-price").find(".btn-default").data('id');
     var section = $(".section-title").data('id');
 
-
+console.log(price);
 
     $(location).attr('href',
         '/catalog/?'

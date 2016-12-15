@@ -58,6 +58,7 @@ class Product extends ActiveRecord
 
         $products['products'] = $this->find()
             ->innerJoin('section', 'product.section_id = section.id')
+            ->innerJoin('select * from price limit 1', 'price.product_id = product.id')
             ->where($condition)->each($num);
         
         $materials = $this->find()->
@@ -191,10 +192,24 @@ class Product extends ActiveRecord
         $id = (isset($params['section'])) ? $params['section'] : 3;
         $products = $this->getProductsBySection($id,$quantity);
 
+        $order = 'price.cost';
+        if (isset($params['order'])) {
+            if ($params['order'] == 'abc')
+                $order = 'product.title';
+            else
+                $order = 'price.cost';
+
+        }
 
         $query = $this->find()
             ->innerJoin('section', 'product.section_id = section.id ')
-            ->where(['product.section_id' => $id])->orWhere(['section.parent_id' => $id])->limit($quantity);
+            ->innerJoin('(select distinct price.cost, price.product_id from price order by date DESC ) price ',
+                'price.product_id = product.id')
+            ->where(['product.section_id' => $id])
+            ->orWhere(['section.parent_id' => $id])
+            ->limit($quantity)
+            ->orderBy($order);
+
         $query = (isset($params['style'])) ? $query->andWhere(['product.style_id' => $params['style']]) : $query;
         $query = (isset($params['manufacturer'])) ? $query->andWhere(['product.manufacturer_id' => $params['manufacturer']]) : $query;
         $query = (isset($params['material'])) ? $query->andWhere(['product.material_id' => $params['material']]) : $query;
