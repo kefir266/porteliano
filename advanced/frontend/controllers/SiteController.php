@@ -82,7 +82,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $QuestionForm = new QuestionForm();
+        $questionForm = new QuestionForm();
         $modelProduct = new Product();
         $request = Yii::$app->request;
 
@@ -95,7 +95,7 @@ class SiteController extends Controller
 //        $sectionNames['novelty'] = 'Новинки';
 
         $postParams = Yii::$app->request->post();
-        if (isset($postParams) && isset($postParams['email'])) {
+        if ($questionForm->load($postParams)) {
 
             Yii::$app->mailer->compose('email', ['postParams' => $postParams])
                 ->setFrom('porteliano@mail.ru')
@@ -106,7 +106,7 @@ class SiteController extends Controller
         return $this->render('index',
             [
                 'products' => $products,
-                'questionForm' => $QuestionForm,
+                'questionForm' => $questionForm,
 //                'sectionNames' => $sectionNames,
                 'doorsIn' => $doorsIn,
                 'doorsOut' => $doorsOut,
