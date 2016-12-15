@@ -921,5 +921,16 @@
 
 	/*Страницы*/
 
-	
+	/*Каталог*/
+
+	.max-width{
+		height:auto;
+	}
+
+	.max-width > div{
+		margin:0px;
+		padding:0px;
+		width:700px;
+		margin:0px auto;
+	}
 }
