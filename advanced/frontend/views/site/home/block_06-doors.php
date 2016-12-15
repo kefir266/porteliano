@@ -29,7 +29,7 @@ Yii::setAlias('@img', '@web/img');
             <ul class="nav nav-tabs nav-pills center-block" role="tablist">
                 <li class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">МЕЖКОМНАТНЫЕ</a></li>
                 <li><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">ВХОДНЫЕ</a></li>
-            </ul>'
+            </ul>
         </div>
     </div>
     <!-- Вкладки -->
@@ -59,7 +59,7 @@ Yii::setAlias('@img', '@web/img');
                 </div>
                 <div role="tabpanel" class="tab-pane" id="profile">
                     <!-- Вкладка 'Входные'  -->
-                    <div id="doors-out">
+                    <div id="doors-out" class="doors-panel running-ribbon-doors">
                         <div class="wrap-tiles view">
                             <ul>
                                 <?php if (isset($doorsOut['products'])): ?>

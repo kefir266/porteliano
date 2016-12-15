@@ -14,6 +14,9 @@ use yii\widgets\Breadcrumbs;
 use app\assets\MainAdaptiveAsset;
 use app\assets\TabletAsset;
 use app\assets\MobileAsset;
+use frontend\widgets\menu\PortNavBar;
+
+
 
 MainAdaptiveAsset::register($this);
 TabletAsset::register($this);
@@ -39,7 +42,6 @@ MobileAsset::register($this);
     <body>
     <?php $this->beginBody() ?>
     <div class="wrap-all">
-
         <header>
             <div>
                 <div class="row">
@@ -111,7 +113,8 @@ MobileAsset::register($this);
             </div>
             <div id="navbar-line" class=''>
                 <?php
-                NavBar::begin([]);
+                //NavBar::begin([]);
+                PortNavBar::begin([]);
                 echo Nav::widget([
                     'encodeLabels' => false, /*nav  navbar-header*/
                     'options' => ['class' => 'navbar navbar-nav navbar-center  font-PTSans '],
@@ -155,7 +158,7 @@ MobileAsset::register($this);
 
 
                     ]]);
-                NavBar::end();
+                PortNavBar::end();
                 /**/
                 ?>
             </div>
@@ -177,8 +180,8 @@ MobileAsset::register($this);
     </div>
     <div class="push"></div>
 
-    <footer id="footer" class="hidden-xs footer footer-general">
-        <div id="navbar-line-footer" class="nav ">
+    <footer id="footer" class=" footer footer-general">
+        <div id="navbar-line-footer" class="nav hidden-xs hidden-sm">
             <?php
             echo Nav::widget([
                 'encodeLabels' => false,
@@ -202,9 +205,8 @@ MobileAsset::register($this);
                 ]]);/**/
             ?>
         </div>
-
-        <div class="footer-copy">
-            &copy; Porteliano Итальянские двери, 1996 - <?= date('Y') ?>
+        <div class="footer-copy col-sm-12 col-xs-12">
+            <span class="footer-copy-text">&copy; Porteliano Итальянские двери, 1996 - <?= date('Y') ?></span>
             </p>
         </div>
 

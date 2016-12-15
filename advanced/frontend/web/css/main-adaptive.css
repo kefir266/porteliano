@@ -17,6 +17,7 @@ body {
     height: 100%;
     background-color: #fdfdf3;
     /*background-color: rgba(255, 0, 4, 0.55);*/
+    position: relative;
 }
 .content {
     width: 100%;
@@ -50,7 +51,18 @@ body {
     color: #ccc;
     content: " ";
 }
-
+/*** Прижатый футер ***/
+.wrap-all{
+    /*margin-bottom: -140px;*/
+    position: relative;
+}
+#footer {
+    position: absolute;
+    /*bottom: 0;*/
+    width: 100%;
+    /*margin-bottom: 10px;*/
+}
+/******************************/
 /*****************  NavBar  *********************************/
 .navbar-toggle {
     float: left; /**/
@@ -183,8 +195,6 @@ header .row:first-child {
 }
 
 .footer-general {/*,.push */
-    height: 102px;
-    position: relative;
 }
 
 .footer-general .navbar-nav {
@@ -202,6 +212,12 @@ header .row:first-child {
     color: #cfcbbd;
     background-color: #352929;
     height: 80px;
+    line-height: 80px;
+}
+@media screen and (min-width: 992px){
+    .footer-copy-text{
+        margin-left: -740px;
+    }
 }
 
 .footer-copy-text {
@@ -247,7 +263,7 @@ header .row:first-child {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 5000;
+    z-index: 1000;
 }
 
 /* Для fixedMenu.js */
