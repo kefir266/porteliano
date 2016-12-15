@@ -20,7 +20,7 @@ use frontend\widgets\menu\PortNavBar;
 
 MainAdaptiveAsset::register($this);
 TabletAsset::register($this);
-//MobileAsset::register($this);
+MobileAsset::register($this);
 
 ?>
 <?php $this->beginPage() ?>
