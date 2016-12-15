@@ -108,7 +108,7 @@ $this->params['breadcrumbs'][] = [
 
 $this->params['breadcrumbs'][] =[
     'label' => $categoryTitle,    //'Межкомнтаные двери ',
-    'url' => Url::to(['pages/doorcatalog']),
+    'url' => Url::to(['catalog/']),
     'template' => "<li> {link} </li>\n",
 ];
 
