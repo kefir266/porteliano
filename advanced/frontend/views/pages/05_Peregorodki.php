@@ -45,19 +45,19 @@ $bottomContent_2 = 'Именно они позволят значительно 
                     <div class="plate">
                         <?= Html::beginTag('a', ['href' =>  Url::to(['catalog/', 'section' => '2'])]); ?>
                         <?= Html::img("@septa/septa_01.jpg",
-                            ['alt' => "door_0$i", 'class' => 'tile']); ?>
+                            ['alt' => "Перегородка", 'class' => 'tile']); ?>
                         <?= Html::endTag('a'); ?>
                     </div>
                     <div class="plate">
                         <?= Html::beginTag('a', ['href' =>  Url::to(['catalog/', 'section' => '2']),]); ?>
                         <?= Html::img("@septa/septa_02.jpg",
-                            ['alt' => "door_0$i", 'class' => 'tile']); ?>
+                            ['alt' => "Перегородка", 'class' => 'tile']); ?>
                         <?= Html::endTag('a'); ?>
                     </div>
                     <div class="plate">
                         <?= Html::beginTag('a', ['href' =>  Url::to(['catalog/', 'section' => '2']),]); ?>
                         <?= Html::img("@septa/septa_03.jpg",
-                            ['alt' => "door_0$i", 'class' => 'tile']); ?>
+                            ['alt' => "Перегородка", 'class' => 'tile']); ?>
                         <?= Html::endTag('a'); ?>
                     </div>
                 </div>
