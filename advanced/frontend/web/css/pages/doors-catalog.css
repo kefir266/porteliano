@@ -260,3 +260,7 @@ span.btn{
  .block-price-count > a {
     color: #4e3d36;
 }
+ .ui-button{
+     height: 35px;
+     padding: 0px 0px 0px 10px;
+ }
