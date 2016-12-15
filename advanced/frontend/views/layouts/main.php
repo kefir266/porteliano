@@ -13,9 +13,14 @@ use yii\widgets\Breadcrumbs;
 /**/
 use app\assets\MainAdaptiveAsset;
 use app\assets\TabletAsset;
+use app\assets\MobileAsset;
+use frontend\widgets\menu\PortNavBar;
+
+
 
 MainAdaptiveAsset::register($this);
 TabletAsset::register($this);
+MobileAsset::register($this);
 
 ?>
 <?php $this->beginPage() ?>
@@ -37,17 +42,16 @@ TabletAsset::register($this);
     <body>
     <?php $this->beginBody() ?>
     <div class="wrap-all">
-
         <header>
             <div>
                 <div class="row">
                     <div class="col-md-2 col-sm-2 col-xs-4">
-                        <a href="<?=Yii::$app->urlManager->createUrl(['site/index'])?>" class="logo">
+                        <a href="/" class="logo">
                             <?= Html::img('@web/img/logo.png', ['alt' => 'PORTELIANO',/*'class' => 'logo',*/]) ?>
                         </a>
                     </div>
 
-                    <div class="col-md-offset-1 col-md-6 col-sm-4 col-sm-offset-2 col-xs-offset-2 col-xs-6    ">
+                    <div class="col-md-offset-1 col-md-6 col-sm-4 col-sm-offset-2 col-xs-offset-1 col-xs-7">
                         <div class="row">
                             <section class="hidden-xs col-md-6  col-sm-12 site-contact font-PTSans">
                                 <div id="phone_1">+7(495) 742-17-24</div>
@@ -62,7 +66,7 @@ TabletAsset::register($this);
                     </div>
 
                     <div class="col-md-2 col-md-push-0 col-sm-3 col-xs-push-2 col-xs-6">
-                        <div>
+                        <div class="header-ask-question">
                             <?php
                             /*$address указывает какой view должен загрузится в Content*/
                             /*$controller должен использовать $this->renderAjax*/
@@ -109,14 +113,15 @@ TabletAsset::register($this);
             </div>
             <div id="navbar-line" class=''>
                 <?php
-                NavBar::begin([]);
+                //NavBar::begin([]);
+                PortNavBar::begin([]);
                 echo Nav::widget([
                     'encodeLabels' => false, /*nav  navbar-header*/
                     'options' => ['class' => 'navbar navbar-nav navbar-center  font-PTSans '],
 
                     'items' => [
                         ['label' => 'ГЛАВНАЯ',
-                            'url' => [Url::to(['site/index'])],
+                            'url' => [Url::to(['/'])],
                             'linkOptions' => ['data-target' => 'a0'],
                         ],
                         ['label' => 'НОВИНКИ',
@@ -153,7 +158,7 @@ TabletAsset::register($this);
 
 
                     ]]);
-                NavBar::end();
+                PortNavBar::end();
                 /**/
                 ?>
             </div>
@@ -175,8 +180,8 @@ TabletAsset::register($this);
     </div>
     <div class="push"></div>
 
-    <footer id="footer" class="footer footer-general">
-        <div id="navbar-line-footer" class="nav ">
+    <footer id="footer" class=" footer footer-general">
+        <div id="navbar-line-footer" class="nav hidden-xs hidden-sm">
             <?php
             echo Nav::widget([
                 'encodeLabels' => false,
@@ -200,9 +205,8 @@ TabletAsset::register($this);
                 ]]);/**/
             ?>
         </div>
-
-        <div class="footer-copy">
-            &copy; Porteliano Итальянские двери, 1996 - <?= date('Y') ?>
+        <div class="footer-copy col-sm-12 col-xs-12">
+            <span class="footer-copy-text">&copy; Porteliano Итальянские двери, 1996 - <?= date('Y') ?></span>
             </p>
         </div>
 

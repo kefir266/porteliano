@@ -3,10 +3,12 @@
     height: 950px;
     background-color: #fdfdf3;
 }
-.wrap-catalog .row{
+
+.wrap-catalog .row {
     max-width: 100%;
 }
-.panel-Catalog{
+
+.panel-Catalog {
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -18,7 +20,8 @@
     margin-right: -2px;
 }
 
-.panel-Catalog >div > div > h2{
+.panel-Catalog > div > div > h2 {
+
     font-family: Copperplate, serif;
     text-align: center;
 }
@@ -27,21 +30,22 @@
     margin-left: auto;
     margin-right: auto;
 }
-.tiles > div{
+
+.tiles > div {
 
 }
 
-.doors-gradient{
+.doors-gradient {
     /* Gradient */
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,413332+80,413332+100&0+0,1+80,1+100 */
-    background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(65,51,50,1) 80%, rgba(65,51,50,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(65,51,50,1) 80%,rgba(65,51,50,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(65,51,50,1) 80%,rgba(65,51,50,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#413332',GradientType=0 ); /* IE6-9 */
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(65, 51, 50, 1) 80%, rgba(65, 51, 50, 1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(65, 51, 50, 1) 80%, rgba(65, 51, 50, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(65, 51, 50, 1) 80%, rgba(65, 51, 50, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#413332', GradientType=0); /* IE6-9 */
 
 }
 
-.entryDoors{
+.entryDoors {
 
     background: no-repeat url(../../img/catalog/entryDoors.jpg);
     width: 235px;
@@ -51,14 +55,17 @@
     padding-top: 285px;
     padding-left: 0;
 }
-.doors-gradient h3{
+
+.doors-gradient h3 {
     text-align: center;
     padding-top: 50%;
 }
-.entryDoors > .doors-gradient{
+
+.entryDoors > .doors-gradient {
     width: 225px;
     height: 159px;
 }
+
 /*
 .entryDoors > .doors-gradient > h3{
     position: absolute;
@@ -66,7 +73,7 @@
     left: 23px;
 }
 */
-.grips{
+.grips {
 
     background: no-repeat url(../../img/catalog/grips.jpg);
     width: 230px;
@@ -76,14 +83,17 @@
     padding-top: 30px;
     margin-top: 20px;
 }
-.grips > .doors-gradient{
+
+.grips > .doors-gradient {
     width: 220px;
     height: 173px;
 }
-.grips > .doors-gradient > h3{
+
+.grips > .doors-gradient > h3 {
     padding-top: 60%;
 }
-.septa{
+
+.septa {
     background: no-repeat url(../../img/catalog/septa.jpg);
     width: 225px;
     height: 234px;
@@ -93,15 +103,18 @@
     margin-top: 10px;
 
 }
-.septa > .doors-gradient{
+
+.septa > .doors-gradient {
     width: 215px;
     height: 169px;
 }
-.septa > .doors-gradient > h3{
+
+.septa > .doors-gradient > h3 {
     text-align: center;
 }
-.interiorDoors{
-    background: no-repeat  url(../../img/catalog/interiorDoors.jpg);
+
+.interiorDoors {
+    background: no-repeat url(../../img/catalog/interiorDoors.jpg);
     width: 475px;
     height: 478px;
 
@@ -110,18 +123,21 @@
     margin-top: 20px;
 }
 
-.interiorDoors > .doors-gradient{
+.interiorDoors > .doors-gradient {
 
     width: 463px;
     height: 173px;
 }
-.interiorDoors > .doors-gradient > h3{
+
+.interiorDoors > .doors-gradient > h3 {
     font-size: 22px;
     padding-top: 25%;
 }
-.tiles h3{
+
+.tiles h3 {
     font-size: 22px;
 }
+
 /* Задание рамок для плиток */
 .grips,
 .septa,
@@ -132,36 +148,35 @@
     font-family: "PT Sans Caption",sans-serif;
 }
 
-.panel-Catalog  h2{
+.panel-Catalog h2 {
 
     font-size: 40px;
 }
 
+.entryDoors:hover {
+    animation: backgroundscale_15 1.3s linear normal forwards;
+}
 
-.entryDoors:hover
-{
-    animation: backgroundscale_15 1.3s linear normal  forwards;
+.grips:hover {
+    animation: backgroundscale_15 1.3s linear normal forwards;
 }
-.grips:hover
-{
-    animation: backgroundscale_15 1.3s linear normal  forwards;
+
+.septa:hover {
+    animation: backgroundscale_15 1.3s linear normal forwards;
 }
-.septa:hover
-{
-    animation: backgroundscale_15 1.3s linear normal  forwards;
-}
-.interiorDoors:hover
-{
-    animation: backgroundscale_15 1.3s linear normal  forwards;
+
+.interiorDoors:hover {
+    animation: backgroundscale_15 1.3s linear normal forwards;
 }
 
 /* Бегущая лента */
 
-.running-ribbon{
+.running-ribbon {
     width: 100%;
     height: 145px;
 }
-.running-ribbon div.view{
+
+.running-ribbon div.view {
     height: 150px;
     width: 940px;
     margin-left: -15px;
@@ -169,13 +184,14 @@
     margin-top: 25px;
 }
 
-
-.running-ribbon div.view ul{
-    height: 100%; width: 10000px;
+.running-ribbon div.view ul {
+    height: 100%;
+    width: 10000px;
     list-style: none;
     line-height: 145px;
 }
-.running-ribbon div.view ul > li{
+
+.running-ribbon div.view ul > li {
     vertical-align: middle;
     margin-right: 35px;
     border: 1px solid #f7ebdb;
@@ -183,48 +199,52 @@
     text-align: center;
     float: left
 }
-.running-ribbon div.view ul li{
+
+.running-ribbon div.view ul li {
     width: 200px;
     text-align: center;
 }
 
-.show{
+.show {
     margin-top: 1em;
 }
 
-.wrap-catalog div.show button{
+.wrap-catalog div.show button {
     padding: 0;
     margin-right: 0;
     cursor: pointer;
     margin-top: 50%;
 }
- button#prev{
+
+button#prev {
     width: 50px;
     height: 50px;
     background-image: url('../../img/UI/arrow_inactive.jpg');
     transform: scale(1, 1);
      margin-left: -5px;
 }
- button#next{
+
+button#next {
     width: 50px;
     height: 50px;
     background-image: url('../../img/UI/arrow_inactive.jpg');
     transform: scale(-1, 1);
      margin-left: 38px;
 }
- button#prev:hover{
+
+button#prev:hover {
     background-image: url('../../img/UI/arrow_active.jpg');
     transform: scale(-1, 1);
 
 }
- button#next:hover{
+
+button#next:hover {
     background-image: url('../../img/UI/arrow_active.jpg');
     transform: scale(1, 1);
 }
 
-
-@media all and (max-width: 992px){
-    .running-ribbon div.view{
+@media all and (max-width: 992px) {
+    .running-ribbon div.view {
         width: 530px;
     }
 
@@ -238,7 +258,8 @@
     margin-left: auto;
     margin-right: auto;
 }
-.ribbon-panel{
+
+.ribbon-panel {
     position: relative;
     margin-left: auto;
     margin-right: auto;

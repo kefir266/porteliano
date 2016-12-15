@@ -40,8 +40,8 @@ switch ($product->section->id) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Ручки';
 
-        $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '1']);
-        $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '2']);
+        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'ind' => '5']);
         break;
     case 4:
         $categoryTitle = 'Входные двери';
@@ -51,8 +51,8 @@ switch ($product->section->id) {
         $coverTextLeft = 'Ручки';
         $coverTextRight = 'Межкомнатные двери';
 
-        $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '0']);
-        $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '2']);
+        $coverLinkLeft = Url::to(['catalog/', 'ind' => '5']);
+        $coverLinkRight = Url::to(['catalog/', 'ind' => '3']);
         break;
     case 5:
         $categoryTitle = 'Ручки';
@@ -62,8 +62,8 @@ switch ($product->section->id) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Межкомнатные двери';
 
-        $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '1']);
-        $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '0']);
+        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'ind' => '3']);
         break;
     default:
         $categoryTitle = 'нет категории';
@@ -74,8 +74,8 @@ switch ($product->section->id) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Ручки';
 
-        $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '1']);
-        $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '2']);
+        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'ind' => '5']);
 }
 
 // в хлебные крошки 2 ссылки
@@ -107,7 +107,7 @@ foreach ($sections->getMenu() as $section) {
     <div class="panel-quick-selection">
         <div class="row">
             <div class="col-md-5 ">
-                <?= Html::img('/img/products/' . $product->manufacturer->title . '/' . $product->img, ['class'=> 'doorImg']) ?>
+                <?= Html::img($product->image, ['class'=> 'doorImg']) ?>
             </div>
             <div class="product-discript-door col-md-7 ">
                 <div class="row">

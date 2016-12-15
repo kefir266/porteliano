@@ -15,6 +15,7 @@ use yii\bootstrap\ButtonDropdown;
 use yii\bootstrap\Dropdown;
 use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\web\JsExpression;
 
 /*  assets  */
 /*  assets  */
@@ -22,8 +23,10 @@ use yii\helpers\Url;
 use app\assets\FontAsset;
 use app\assets\BackAsset;
 use app\assets\DoorCatalogAsset;
+use app\assets\MainAdaptiveAsset;
 
 FontAsset::register($this);
+MainAdaptiveAsset::register($this);
 BackAsset::register($this);
 
 DoorCatalogAsset::register($this);
@@ -45,8 +48,8 @@ switch ($products['section']->id) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Ручки';
 
-        $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '1']);
-        $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '2']);
+        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'ind' => '5']);
         break;
     case 2:
         $categoryTitle = 'Перегородки';
@@ -58,8 +61,8 @@ switch ($products['section']->id) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Ручки';
 
-        $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '1']);
-        $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '2']);
+        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'ind' => '5']);
         break;
     case 4:
         $categoryTitle = 'Входные двери';
@@ -70,8 +73,8 @@ switch ($products['section']->id) {
         $coverTextLeft = 'Ручки';
         $coverTextRight = 'Межкомнатные двери';
 
-        $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '2']);
-        $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '0']);
+        $coverLinkLeft = Url::to(['catalog/', 'ind' => '5']);
+        $coverLinkRight = Url::to(['catalog/', 'ind' => '3']);
         break;
     case 5:
         $categoryTitle = 'Ручки';
@@ -82,11 +85,19 @@ switch ($products['section']->id) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Межкомнатные двери';
 
-        $coverLinkLeft = Url::to(['pages/doorcatalog', 'ind' => '1']);
-        $coverLinkRight = Url::to(['pages/doorcatalog', 'ind' => '0']);
+        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'ind' => '3']);
         break;
     default:
         $categoryTitle = 'нет категории';
+        $coverImgLeft = '@cover/outer.jpg';
+        $coverImgRight = '@cover/inner.png';
+
+        $coverTextLeft = 'Входные двери';
+        $coverTextRight = 'Межкомнатные двери';
+
+        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'ind' => '3']);
 }
 
 $this->params['breadcrumbs'][] = [
@@ -97,7 +108,7 @@ $this->params['breadcrumbs'][] = [
 
 $this->params['breadcrumbs'][] =[
     'label' => $categoryTitle,    //'Межкомнтаные двери ',
-    'url' => Url::to(['pages/doorcatalog']),
+    'url' => Url::to(['catalog/']),
     'template' => "<li> {link} </li>\n",
 ];
 
@@ -123,7 +134,7 @@ foreach ($sections->getMenu() as $section) {
         <div class="row">
             <div class="col-md-12">
                 <h2>
-                    <?= $title ? $title : 'Межкомнатные двери' ?>
+                    <?= $sections->findOne($ind)->title_main ?>
                 </h2>
             </div>
         </div>
@@ -191,17 +202,23 @@ foreach ($sections->getMenu() as $section) {
                     <div class="block-1-price">
                         <h5>Цена</h5>
                         <?php
+                        $items = [
+                            ['label' => 'до 500 €', 'url' => '#',
+                                'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '0','table' => 'price']],
+                            ['label' => '500 - 1000 €', 'url' => '#',
+                                'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '1','table' => 'price']],
+                            ['label' => '1000 - 2000 €', 'url' => '#',
+                                'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '2','table' => 'price']],
+                            ['label' => 'от 2000 €', 'url' => '#',
+                                'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '3','table' => 'price',]],
+                        ];
                         echo ButtonDropdown::widget([
                             'options' => ['class' => 'btn-default'],
                             'split' => true,
-                            'label' => "€ 1000 - 2000",
+                            'label' => $items[1]['label'],
                             'dropdown' => [
-                                'items' => [
-                                    ['label' => 'до 500 €', 'url' => '#'],
-                                    ['label' => '500 - 1000 €', 'url' => '#'],
-                                    ['label' => '1000 - 2000 €', 'url' => '#'],
-                                    ['label' => 'от 2000 €', 'url' => '#'],
-                                ],
+                                'items' => $items,
+                                'clientEvents' => ['click' => 'eventClickDropMenu'],
                             ],
                         ]);
                         ?>
@@ -211,6 +228,7 @@ foreach ($sections->getMenu() as $section) {
                         echo Button::widget([
                             'label' => 'ПОДОБРАТЬ',
                             'options' => ['class' => 'btn-default'],
+                            'clientEvents' => ['click' => 'eventClickSelectButton'],
                         ]);
                         ?>
                     </div>
@@ -221,8 +239,8 @@ foreach ($sections->getMenu() as $section) {
         <div class="row">
             <div class="col-md-5">
                 <span>Сортировать по:</span>
-                <span class="btn btn-link">Алфавиту</span>
-                <span class="btn btn-link">Цене</span>
+                <span class="btn btn-link"><?=Html::a('Алфавиту',Url::to(array_merge(['catalog/'], $params, ['order' => 'abc']))) ?></span>
+                <span class="btn btn-link"><?=Html::a('Цена',Url::to(array_merge(['catalog/'], $params, ['order' => '012']))) ?></span>
             </div>
         </div>
         <!-- контейнер для выбранных дверей -->

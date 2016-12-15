@@ -10,9 +10,10 @@
 /dist
 /tags
 *.mo
-
+*.lock
+/advanced/backend/web/img
 /web/assets/
-/advanced/frontend/web/img/products/
+/advanced/frontend/web/img/uploaded/
 
 # IDE and editor specific files #
 #################################

@@ -1,7 +1,6 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 use kartik\file\FileInput;
 
@@ -51,29 +50,11 @@ use kartik\file\FileInput;
         <div class="col-md-9">
             <?php
 
-            //    echo $form->field($model, 'img')->widget(\kartik\file\FileInput::className(),
-            //        [
-            //            'options' => ['accept' => '/img/'.$model->manufacturer->title.'/*',],
-            //            'model' => $model,
-            //            //'name' => 'attachment_49[]',
-            //            'pluginOptions' => [
-            //                'initialCaption' => $model->title,
-            //                'initialPreviewConfig' =>
-            //                    ['caption' => '/img/' .$model->manufacturer->title . '/' .$model->img,],
-            //                'initialPreview' =>
-            //                    ['/img/' . $model->manufacturer->title . '/' . $model->img,],
-            //
-            //                'overwriteInitial' => false,
-            //                'maxFileSize' => 2000
-            //            ]
-            //        ]);
-            //    //    echo $form->field($model, 'img')->textInput(['maxlength' => true])
-
             $previews = "/frontend/web/img/products/" . $model->manufacturer->title . '/' . $model->img;
             $previewConf = ['caption' => $model->img,];
 
-            echo $form->field($model, 'img')->widget(FileInput::className(), [
-                'name' => 'img',
+            echo $form->field($model, 'imageFile')->widget(FileInput::className(), [
+                'name' => 'imageFile',
 
                 'options' => ['accept' => 'image/*',],
 //        'options' => [
@@ -81,12 +62,14 @@ use kartik\file\FileInput;
 //        ],
                 'model' => $model,
                 'pluginOptions' => [
-                    //'uploadUrl' => Url::to(['/file/upload']),
+                    'uploadUrl' => Url::to(['/file/upload']),
                     'initialPreview' => $previews,
                     'initialPreviewAsData' => true,
                     'initialCaption'=>$model->img,
                     'initialPreviewConfig' => $previewConf,
                     'overwriteInitial' => true,
+                    'uploadExtraData' => ['manufacturer' => $model->manufacturer->title,
+                    ],
                     'maxFileSize' => 2000
                 ]
             ]);
@@ -100,7 +83,7 @@ use kartik\file\FileInput;
             $previewConf = [];
             foreach ($model->files as $id => $file) {
 
-                $previews[$id] = "/img/products/" . $model->manufacturer->title . '/' . $file->file;
+                $previews[$id] = "/frontend/web/img/products/" . $model->manufacturer->title . '/' . $file->file;
                 $previewConf[$id] = ['caption' => $file->file,];
             }
             echo $form->field($model, 'upload_files[]')->widget(\kartik\file\FileInput::className(), [
@@ -109,6 +92,7 @@ use kartik\file\FileInput;
                     'multiple' => true
                 ],
                 'pluginOptions' => [
+                    'uploadUrl' => Url::to(['/file/upload']),
                     'initialPreview' => $previews,
                     'initialPreviewAsData' => true,
                     //'initialCaption'=>"",

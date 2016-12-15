@@ -106,6 +106,16 @@ $this->params['breadcrumbs'][] = $this->title;
             'filterInputOptions'=>['placeholder'=>'Любые'],
             'format'=>'raw'
         ],
+        ['attribute'=>'currentPrice',],
+        [
+            'attribute'=>'currentCurrency',
+            'value'=>function ($model, $key, $index, $widget) {
+                return (isset($model->price->currency))
+                    ?  Html::a($model->price->currency->title,['currency/view','id' => $model->currentCurrency]) :'';
+            },
+            'format'=>'raw'
+        ],
+
         [
             'class'=>'kartik\grid\EditableColumn',
             'attribute' => 'article',
@@ -121,7 +131,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'buttons' => [
                 'update' => function ($url, $model) {
                     return Html::a('<span class="glyphicon glyphicon-pencil"></span>',
-                        Yii::$app->urlManager->createUrl(['product/view', 'id' => $model->id, 'edit' => 't']),
+                        Yii::$app->urlManager->createUrl(['product/update', 'id' => $model->id,]),
                         ['title' => Yii::t('yii', 'Edit'),]
                     );
                 }

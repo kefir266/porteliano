@@ -12,6 +12,7 @@ use app\models\Manufacturer;
 use app\models\Material;
 use app\models\Section;
 use app\models\Style;
+use frontend\models\GreenyImages;
 use app\models\Wish;
 
 use yii;
@@ -57,6 +58,7 @@ class Product extends ActiveRecord
 
         $products['products'] = $this->find()
             ->innerJoin('section', 'product.section_id = section.id')
+            ->innerJoin('select * from price limit 1', 'price.product_id = product.id')
             ->where($condition)->each($num);
         
         $materials = $this->find()->
@@ -166,15 +168,48 @@ class Product extends ActiveRecord
         return $this->hasMany(Price::className(), ['product_id' => 'id'] )->orderBy('date desc')->one();
     }
 
+    public function getImage() {
+
+        $img = '/img/Image-Capture-icon.png';
+        if ( $this->img == '' ) {
+            $old_pic = $this->hasOne(GreenyImages::className(), ['imageID' => 'productImageID'])->one();
+            //return $old_pic;
+            if (isset($old_pic->src))
+            {
+                $img = '/img/'.$old_pic->src;
+            }
+        }
+        else
+        {
+            $img = "/frontend/web/img/products/" . $this->manufacturer->title . '/' . $this->img;
+        }
+
+        return $img;
+    }
+
     public function getFilteredProducts($params, $quantity){
 
         $id = (isset($params['section'])) ? $params['section'] : 3;
         $products = $this->getProductsBySection($id,$quantity);
 
+        $order = 'price.cost';
+        if (isset($params['order'])) {
+            if ($params['order'] == 'abc')
+                $order = 'product.title';
+            else
+                $order = 'price.cost';
+
+        }
 
         $query = $this->find()
             ->innerJoin('section', 'product.section_id = section.id ')
-            ->where(['product.section_id' => $id])->orWhere(['section.parent_id' => $id]);
+            ->innerJoin('(select distinct price.cost, price.product_id from price order by date DESC ) price ',
+                'price.product_id = product.id')
+            ->where(['product.section_id' => $id])
+            ->orWhere(['section.parent_id' => $id])
+            ->limit($quantity)
+            ->orderBy($order);
+
         $query = (isset($params['style'])) ? $query->andWhere(['product.style_id' => $params['style']]) : $query;
         $query = (isset($params['manufacturer'])) ? $query->andWhere(['product.manufacturer_id' => $params['manufacturer']]) : $query;
         $query = (isset($params['material'])) ? $query->andWhere(['product.material_id' => $params['material']]) : $query;

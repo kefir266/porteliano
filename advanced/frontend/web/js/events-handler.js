@@ -43,7 +43,7 @@ function delItem(e, cartWish, id) {
                 id: id,
                 cartwish: cartWish
             },
-            type: 'POST',
+            type: 'GET',
             success: function (res) {
                 //showModal('#modal-'+cartWish,res);
                 getQuantity('get' + cartWish, jtag);
@@ -148,7 +148,7 @@ function clearCart(cartWish) {
             data: {
                 cartwish: cartWish
             },
-            type: 'POST',
+            type: 'GET',
             success: function (res) {
                 refreshCart(0, jtag);
                 $("#tab-cart").html("");
@@ -252,13 +252,14 @@ function eventClickDropMenu(item) {
 
 function eventClickSelectButton(item) {
 
+    console.log('click');
     var material = $("div .material").find(".btn-default").data('id');
     var manufacturer = $("div .manufacturer").find(".btn-default").data('id');
     var style = $("div .style").find(".btn-default").data('id');
     var price = $("div .block-1-price").find(".btn-default").data('id');
     var section = $(".section-title").data('id');
 
-
+console.log(price);
 
     $(location).attr('href',
         '/catalog/?'

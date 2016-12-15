@@ -7,7 +7,7 @@ class TabletAsset extends AssetBundle{
 	public $basePath = "@webroot";
 	public $baseUrl = "@web";
 	public $css = [
-		'css/tablet.css'
+		'css/tablet.css',		
 	];
 
 	public $js = [

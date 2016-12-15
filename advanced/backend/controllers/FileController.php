@@ -5,10 +5,13 @@ namespace backend\controllers;
 use Yii;
 use app\models\File;
 use app\models\FileSearch;
+use yii\base\Object;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use app\models\UploadForm;
+use yii\web\UploadedFile;
 
 /**
  * FileController implements the CRUD actions for File model.
@@ -123,8 +126,16 @@ class FileController extends Controller
 
     public function actionUpload() {
 
-        //$file = Yii::$app->request->post('filename');
-        return json_encode(['/img/']);
+
+        foreach ($_FILES as $product){
+            $tmp_name = $product['tmp_name']['imageFile'];
+            move_uploaded_file($tmp_name, "img/products/"
+                . $_POST['manufacturer'] . '/'
+                . $product['name']['imageFile']);
+        }
+        
+        return true;
+
     }
 
     /**
