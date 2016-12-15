@@ -1,0 +1,41 @@
+@media screen and (min-width: 480px) and (max-width: 768px) {
+/*********       02_Dveri.php       ************************/
+    .doors-wrap h2{
+        text-align: left;
+
+    }
+    .doors-wrap .doors-panel {
+        margin-right: auto;
+        margin-left: auto;
+        width: 347px;
+    }
+    .doors-wrap.wrap-tiles .plate-inn-doors > a > .tile {
+        width: 170px;
+    }
+
+    .doors-wrap.wrap-tiles  .plate-out-doors> a > .tile {
+        width: 347px;
+        height: 347px;
+    }
+    .cover-plate {
+        width: 347px;
+    }
+    .doors-wrap.wrap-tiles  .plate-out-doors> a > .doors-out-gradient-pos {
+        width: 97%;
+    }
+
+    .doors-inn-gradient-pos {
+        top: 166px;
+        width: 160px;
+        left: 30px;
+    }
+    .plate-inn-doors > a > h2 {
+        top: 79%;
+        transform: translateX(-35%);
+    }
+    .plate-inn-doors {
+        width: 170px;
+        margin-left: 3px;
+    }
+    /*******************************************************/
+}
