@@ -11,4 +11,5 @@ use yii\helpers\Html;
 if (isset($model)) {
     echo Html::tag('p',$model->name);
     echo Html::tag('p',$model->email);
+    echo Html::tag('p',$model->message);
 }

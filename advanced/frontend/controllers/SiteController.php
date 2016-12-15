@@ -5,6 +5,7 @@ use app\models\Section;
 use frontend\models\QuestionForm;
 use GuzzleHttp\Psr7\Request;
 use Yii;
+use yii\base\Exception;
 use yii\base\InvalidParamException;
 use yii\helpers\ArrayHelper;
 use yii\web\BadRequestHttpException;
@@ -97,11 +98,17 @@ class SiteController extends Controller
         $postParams = Yii::$app->request->post();
         if ($questionForm->load($postParams)) {
 
-            Yii::$app->mailer->compose('email', ['postParams' => $postParams])
-                ->setFrom('porteliano@mail.ru')
-                ->setTo(User::findByUsername('admin')->email)
-                ->setSubject('Обратная связь ' . $postParams['name'])
-                ->send();
+            try {
+                Yii::$app->mailer->compose('email', ['postParams' => $postParams])
+                    ->setFrom('porteliano@mail.ru')
+                    ->setTo(User::findByUsername('admin')->email)
+                    ->setSubject('Обратная связь ' . $questionForm->username)
+                    ->send();
+            }
+            catch (Exception $e) {
+
+            }
+
             return $this->refresh(['index']);
         }
         return $this->render('index',
@@ -269,13 +276,17 @@ class SiteController extends Controller
 
         if ($model->load($postParams) && $model->validate()) {
 
+            try {
 
                 Yii::$app->mailer->compose('email', ['postParams' => $postParams, 'model' => $model])
                     ->setFrom('porteliano@mail.ru')
                     ->setTo(User::findByUsername('admin')->email)
-                    ->setSubject('Вопрос ' . $postParams['name'])
+                    ->setSubject('Вопрос ' . $model->name)
                     ->send();
+            }
+            catch (Exception $e){
 
+            }
 
             return $this->render('entry-confirm', ['model' => $model]);
         } else {
