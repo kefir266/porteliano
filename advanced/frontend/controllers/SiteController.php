@@ -102,6 +102,7 @@ class SiteController extends Controller
                 ->setTo(User::findByUsername('admin')->email)
                 ->setSubject('Обратная связь ' . $postParams['name'])
                 ->send();
+            return $this->refresh(['index']);
         }
         return $this->render('index',
             [
