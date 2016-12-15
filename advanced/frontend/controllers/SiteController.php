@@ -17,6 +17,7 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use frontend\models\Product;
+use common\models\User;
 
 
 /*Для тестов*/
@@ -81,7 +82,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $QuestionForm = new QuestionForm();
+        $questionForm = new QuestionForm();
         $modelProduct = new Product();
         $request = Yii::$app->request;
 
@@ -93,10 +94,19 @@ class SiteController extends Controller
 //        $sectionNames = ArrayHelper::map(Section::findAll(['1','2']),'id','title_main');
 //        $sectionNames['novelty'] = 'Новинки';
 
+        $postParams = Yii::$app->request->post();
+        if ($questionForm->load($postParams)) {
+
+            Yii::$app->mailer->compose('email', ['postParams' => $postParams])
+                ->setFrom('porteliano@mail.ru')
+                ->setTo(User::findByUsername('admin')->email)
+                ->setSubject('Обратная связь ' . $postParams['name'])
+                ->send();
+        }
         return $this->render('index',
             [
                 'products' => $products,
-                'questionForm' => $QuestionForm,
+                'questionForm' => $questionForm,
 //                'sectionNames' => $sectionNames,
                 'doorsIn' => $doorsIn,
                 'doorsOut' => $doorsOut,
@@ -254,10 +264,17 @@ class SiteController extends Controller
     {
         $model = new EntryForm();
 
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            // данные в $model удачно проверены
+        $postParams = Yii::$app->request->post();
 
-            // делаем что-то полезное с $model ...
+        if ($model->load($postParams) && $model->validate()) {
+
+
+                Yii::$app->mailer->compose('email', ['postParams' => $postParams, 'model' => $model])
+                    ->setFrom('porteliano@mail.ru')
+                    ->setTo(User::findByUsername('admin')->email)
+                    ->setSubject('Вопрос ' . $postParams['name'])
+                    ->send();
+
 
             return $this->render('entry-confirm', ['model' => $model]);
         } else {
