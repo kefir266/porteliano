@@ -1,215 +1,273 @@
-/******  BLOCK 1 **********************/
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    /******  BLOCK 1 **********************/
+    @media screen {
+        .panel-quick-selection {
+            font-size: 20px;
+            width: 460px;
+        }
 
-    .panel-quick-selection {
-        font-size: 20px;
-        width: 460px;
+        .panel-quick-selection h2 {
+            font-size: 50px;
+        }
+
+        .panel-quick-selection h2:hover {
+            font-size: 50px;
+        }
+
+        .material, .style, .manufacturer, .block-1-price {
+            margin-left: 0;
+        }
+
+        .col-navbar {
+            height: 50px;
+        }
+
+        .block-1-price .btn-default.btn,
+        .manufacturer .btn-default.btn,
+        .style .btn-default.btn,
+        .material .btn-default.btn {
+            font-size: 16px;
+        }
+
+        .block-1-price > div > button:nth-child(1),
+        .manufacturer > div > button:nth-child(1),
+        .style > div > button:nth-child(1),
+        .material > div > button:nth-child(1) {
+            width: 188px;
+        }
+
+        .block-1-price > div.btn-group > button:nth-child(2),
+        .manufacturer > div > button:nth-child(2),
+        .style > div > button:nth-child(2),
+        .material > div > button:nth-child(2) {
+            width: 40px;
+        }
+
+        .col-clear {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        div.col-navbar {
+            height: 50px;
+        !important;
+        }
+    }
+    /******  BLOCK 2 **********************/
+    @media screen {
+        .panel-Catalog {
+            width: 348px;
+        }
+
+        .grips {
+            width: 170px;
+            height: 170px;
+        }
+
+        .grips > .doors-gradient {
+            width: 100%;
+            margin-top: 41%;
+            height: 50%;
+        }
+
+        .septa {
+            width: 170px;
+            height: 170px;
+            background-size: cover;
+        }
+
+        .grips > .doors-gradient > h3 {
+            padding-top: 20%;
+        }
+
+        .septa > .doors-gradient {
+            width: 100%;
+            height: 50%;
+            margin-top: 40%;
+            background-size: cover;
+        }
+
+        .septa > .doors-gradient > h3 {
+            padding-top: 0;
+        }
+
+        .entryDoors {
+            width: 170px;
+            height: 350px;
+            margin-top: 20px;
+            padding-top: 0;
+            padding-left: 0;
+            background-size: cover;
+        }
+
+        .entryDoors > .doors-gradient {
+            width: 100%;
+            height: 159px;
+            margin-top: 180px;
+        }
+
+        .entryDoors .doors-gradient h3 {
+            text-align: center;
+            padding-top: 60%;
+        }
+
+        .interiorDoors {
+            width: 345px;
+            height: 340px;
+            padding-top: 42%;
+            background-size: cover;
+        }
+
+        .interiorDoors > .doors-gradient > h3 {
+            font-size: 22px;
+            padding-top: 40%;
+        }
+
+        .interiorDoors > .doors-gradient {
+            width: 100%;
+        }
+
+        .running-ribbon div.view {
+            width: 370px;
+            margin-left: -28px;
+        }
+
+        button#next {
+            margin-left: 68px;
+            margin-top: 25px;
+        }
     }
 
-    .panel-quick-selection h2 {
-        font-size: 50px;
+    /******  BLOCK 3 ACTION **********************/
+    @media screen {
+        .wrap-action {
+            height: 866px;
+        }
+
+        .action-panel {
+            width: 435px;
+        }
+
+        .action-text,
+        .action-header {
+            text-align: center;
+        }
+
+        .action-header {
+            margin-top: 0;
+        }
+
+        .action-text {
+            font-size: 22px;
+        }
+
+        .contact-form {
+            margin-top: 35px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 
-    .panel-quick-selection h2:hover {
-        font-size: 50px;
+    /******  BLOCK 4  NOVELTY **********************/
+    @media screen {
+        .novelty > .wrap-tiles.view > ul > .tile:first-child,
+        .novelty > .wrap-tiles.view > ul > .tile:nth-child(2) {
+            background: black;
+            display: none;
+        }
+
+        .novetly-col {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .wrap-novelty .tile {
+            margin-left: 8px;
+        }
+
+        .row-indent {
+            margin-top: 10px;
+        }
+
+        .wrap-novelty .running-ribbon-doors div.view ul {
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 
-    .material, .style, .manufacturer, .block-1-price {
-        margin-left: 0;
+    /******  BLOCK 5  KEY BENEFITS **********************/
+    @media screen {
+
+        .row-indent {
+            margin-top: 10px;
+        !important;
+        }
+
+        .wrap-key-benefits {
+            height: 1100px;
+        }
+
+        .key-benefits-h2 {
+            margin: 75px 0 60px 0;
+        }
+
+        .key-benefits-text {
+            min-height: 80px;
+        }
+
+        .panel-key-benefits .glyphicon {
+            margin-left: 10px;
+        }
+    }
+    /******  BLOCK 6 DOORS **********************/
+    @media screen {
+        .wrap-doors #prev {
+            margin-left: 0;
+            margin-top: 0;
+            position: absolute;
+            top: 570px;
+            z-index: 1;
+        }
+
+        .wrap-doors #next {
+            margin-left: 0;
+            margin-top: 0;
+            position: absolute;
+            top: -45px;
+            left: 93%;
+            z-index: 1;
+
+        }
+
+        .wrap-doors .door-show-more {
+            position: absolute;
+            top: -38px;
+            left: 50%;
+            transform: translateX(-45%);
+        }
+
+        .wrap-doors .doors-panel {
+            width: 100%;
+        }
     }
 
-    .col-navbar {
-        height: 50px;
+    /************** BLOCK 7 FACTS **********************/
+    .wrap-facts-at-Glance {
+        min-height: 870px;
     }
 
-    .block-1-price .btn-default.btn,
-    .manufacturer .btn-default.btn,
-    .style .btn-default.btn,
-    .material .btn-default.btn {
-        font-size: 16px;
-    }
-
-    .block-1-price > div > button:nth-child(1),
-    .manufacturer > div > button:nth-child(1),
-    .style > div > button:nth-child(1),
-    .material > div > button:nth-child(1) {
-        width: 188px;
-    }
-
-    .block-1-price > div.btn-group > button:nth-child(2),
-    .manufacturer > div > button:nth-child(2),
-    .style > div > button:nth-child(2),
-    .material > div > button:nth-child(2) {
-        width: 40px;
-    }
-
-    .col-clear {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    div.col-navbar {
-        height: 50px;
-    !important;
-    }
-}
-
-/******  BLOCK 2 **********************/
-@media screen and (max-width: 768px) {
-    .panel-Catalog {
-        width: 348px;
-    }
-
-    .grips {
-        width: 170px;
-        height: 170px;
-    }
-
-    .grips > .doors-gradient {
-        width: 100%;
-        margin-top: 41%;
-        height: 50%;
-    }
-
-    .septa {
-        width: 170px;
-        height: 170px;
-        background-size: cover;
-    }
-
-    .grips > .doors-gradient > h3 {
-        padding-top: 20%;
-    }
-
-    .septa > .doors-gradient {
-        width: 100%;
-        height: 50%;
-        margin-top: 40%;
-        background-size: cover;
-    }
-
-    .septa > .doors-gradient > h3 {
-        padding-top: 0;
-    }
-
-    .entryDoors {
-        width: 170px;
-        height: 350px;
-        margin-top: 20px;
-        padding-top: 0;
-        padding-left: 0;
-        background-size: cover;
-    }
-
-    .entryDoors > .doors-gradient {
-        width: 100%;
-        height: 159px;
-        margin-top: 180px;
-    }
-
-    .entryDoors .doors-gradient h3 {
+    .facts h1, .facts p {
         text-align: center;
-        padding-top: 60%;
     }
 
-    .interiorDoors {
-        width: 345px;
-        height: 340px;
-        padding-top: 42%;
-        background-size: cover;
+    .facts p {
+        margin-top: 50px;
+        margin-bottom: 100px;
     }
 
-    .interiorDoors > .doors-gradient > h3 {
-        font-size: 22px;
-        padding-top: 40%;
-    }
-
-    .interiorDoors > .doors-gradient {
-        width: 100%;
-    }
-
-    .running-ribbon div.view {
-        width: 370px;
-        margin-left: -28px;
-    }
-
-    button#next {
-        margin-left: 68px;
-        margin-top: 25px;
-    }
-}
-
-/******  BLOCK 3 **********************/
-@media screen and (max-width: 768px) {
-    .wrap-action {
-        height: 866px;
-    }
-
-    .action-panel {
-        width: 435px;
-    }
-
-    .action-text,
-    .action-header {
-        text-align: center;
-    }
-
-    .action-header {
-        margin-top: 0;
-    }
-
-    .action-text {
-        font-size: 22px;
-    }
-
-    .contact-form {
-        margin-top: 35px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .novelty > .wrap-tiles.view > ul > .tile:first-child,
-    .novelty > .wrap-tiles.view > ul > .tile:nth-child(2) {
-        background: black;
-        display: none;
-    }
-
-    .novetly-col {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .wrap-novelty .tile {
-        margin-left: 8px;
-    }
-
-    .row-indent {
-        margin-top: 10px;
-    }
-}
-
-/******  BLOCK 5 **********************/
-@media screen and (max-width: 768px) {
-
-    .row-indent {
-        margin-top: 10px;
-    !important;
-    }
-
-    .wrap-key-benefits {
-        height: 1100px;
-    }
-
-    .key-benefits-h2 {
-        margin: 75px 0 60px 0;
-    }
-}
-
-/******  BLOCK 6 **********************/
-@media screen and (max-width: 768px) {
-    .wrap-doors #prev {
+    /************** BLOCK 8 - SEPTA **************************/
+    .wrap-septa #prev {
         margin-left: 0;
         margin-top: 0;
         position: absolute;
@@ -217,24 +275,88 @@
         z-index: 1;
     }
 
-    .wrap-doors #next {
+    .wrap-septa #next {
         margin-left: 0;
         margin-top: 0;
         position: absolute;
         top: -45px;
-        left: 85%;
+        left: 93%;
         z-index: 1;
-
     }
 
-    .wrap-doors .door-show-more {
+    .wrap-septa .septa-show-more {
         position: absolute;
-        top: -46px;
-        left: 105px;
+        top: -38px;
+        left: 50%;
+        transform: translateX(-45%);
     }
 
-    .wrap-doors .doors-panel {
-        width: 100%;
+    .wrap-septa .doors-panel {
+        width: 106%;
+    }
+
+    .wrap-septa .septa-h2 {
+        margin-top: 70px;
+
+    }
+
+    .wrap-septa .tile {
+        margin-top: 0;
+    }
+
+    /******  BLOCK 9  ACTION 2 **********************/
+    .wrap-action-another {
+        height: 866px;
+    }
+
+    /******  BLOCK 10  MANUFACTURERS **********************/
+    .manufacturers-h2 {
+        margin-top: 80px;
+        min-width: 479px;
+    }
+    /******  BLOCK 11  ABOUT **********************/
+    .wrap-about{
+        min-height: 750px;
+    }
+    .about-left{
+        text-align: center;
+    }
+    .about-right{
         margin-left: 10px;
+        margin-right: 10px;
+    }
+    /******  BLOCK 12  CONTACTS **********************/
+    .wrap-contacts{
+        min-height: 910px;
+    }
+    .wrap-contacts .contact-form {
+
+        top: 530px;
+        left: 50%;
+
+    }
+    @media screen and (max-width: 490px){
+        .map{
+            background: url("../../img/other/map-480.jpg") no-repeat;
+            width: 480px;
+            height: 910px;
+            background-size: cover;
+
+        }
+    }
+    @media screen and (min-width: 719px) and (max-width: 721px) {
+        .map {
+            background: url("../../img/other/map-750.jpg") no-repeat;
+            width: 100%;
+            height: 910px;
+            background-size: cover;
+
+        }
+    }
+}
+/********** Fix *********/
+@media screen and (min-width: 768px){
+    .col-xs-9{
+        float: none;
     }
 }

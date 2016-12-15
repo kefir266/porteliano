@@ -15,6 +15,7 @@ use yii\bootstrap\ButtonDropdown;
 use yii\bootstrap\Dropdown;
 use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\web\JsExpression;
 
 /*  assets  */
 /*  assets  */
@@ -22,8 +23,10 @@ use yii\helpers\Url;
 use app\assets\FontAsset;
 use app\assets\BackAsset;
 use app\assets\DoorCatalogAsset;
+use app\assets\MainAdaptiveAsset;
 
 FontAsset::register($this);
+MainAdaptiveAsset::register($this);
 BackAsset::register($this);
 
 DoorCatalogAsset::register($this);
@@ -219,6 +222,7 @@ foreach ($sections->getMenu() as $section) {
                         echo Button::widget([
                             'label' => 'ПОДОБРАТЬ',
                             'options' => ['class' => 'btn-default'],
+                            'clientEvents' => ['click' => 'eventClickSelectButton'],
                         ]);
                         ?>
                     </div>
