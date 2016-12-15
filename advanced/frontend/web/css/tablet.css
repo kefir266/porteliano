@@ -290,6 +290,7 @@
 		top:0px;
 		width:100%;
 		z-index:99999;
+		background-color:#413332;
 	}
 
 	/*Межкомнатные двери*/
@@ -679,9 +680,159 @@
 
 	/*Перегородки*/
 
+	.wrap-septa > div.row:nth-child(2){
+		width:721px;
+		margin:0px auto;
+	}
+
+	.wrap-septa > div.row:nth-child(2) > div:first-child{
+		width:50px;
+		height:50px;
+		margin:0px;
+		padding:0px;
+		position:relative;
+		top:583px;
+	}
+
+	.wrap-septa > div.row:nth-child(2) > div:last-child{
+		width:50px;
+		height:50px;
+		position:relative;
+		float:right;
+		margin:0px;
+		padding:0px;
+		top:-67px;
+	}
+
+	.wrap-septa > div.row:nth-child(2) > div:last-child > #next{
+		width:50px;
+		height:50px;
+		position:relative;
+		margin:0px;
+		padding:0px;
+		top:0px;
+		left:0px;
+		z-index:1000;
+	}
+
+	.wrap-septa > div.row:nth-child(2) > div:first-child > 
+	#prev{
+		width:50px;
+		height:50px;
+		position:relative;
+		margin:0px;
+		padding:0px;
+		left:0px;
+		top:0px;
+		z-index:100;
+	}
+
+	.wrap-septa > div.row:nth-child(2) > div:nth-child(2){
+		margin:0px;
+		padding:0px;
+	}
+
+	.wrap-septa > div.row:nth-child(2) > div:nth-child(2) > 
+	div > div{
+		width:721px;
+	}
+
+	.wrap-septa > div.row:nth-child(2) > div:nth-child(2) > 
+	div > div > ul > .tile{
+		background-color:#fff;
+		margin:0px;
+		margin-right:10px;
+	}
+
+	.wrap-septa > div.row:nth-child(3){
+		position:relative;
+		top:-110px;
+	}
+
 	/*Производители*/
+
+	.wrap-manufacturers{
+		height:875px;
+	}
+
+	.wrap-manufacturers > .manufacturers{
+		width:701px;
+		margin:0px auto;
+	}
+
+	.wrap-manufacturers > .manufacturers > ul > li:nth-child(3n + 1){
+		margin-left:0px;
+	}
+
+	.wrap-manufacturers > .manufacturers > ul > li:nth-child(3n + 2),
+	.wrap-manufacturers > .manufacturers > ul > li:nth-child(3n + 3){
+		margin-left:97px;
+	}
+
+	.wrap-manufacturers > div.row > div > h2{
+		margin-top:80px;
+	}
 
 	/*О компании*/
 
+	.wrap-about{
+		height:730px;
+	}
+
+	.wrap-about > div.row:nth-child(2){
+		width:701px;
+		margin:0px auto;
+	}
+
+	.wrap-about > div.row:nth-child(2) > div{
+		margin:0px;
+		padding:0px;
+		float:left;
+	}
+
+	.wrap-about > div.row:nth-child(2) > div:first-child{
+		width:260px;
+	}
+
+	.wrap-about > div.row:nth-child(2) > div:first-child > p{
+		font-size:28px;
+	}
+
+	.wrap-about > div.row:nth-child(2) > div:last-child{
+		width:361px;
+		margin-left:80px;
+	}
+
+	.wrap-about > div.row:nth-child(2) > div:last-child > p{
+		font-size:18px;
+	}
+
 	/*Контакты*/
+
+	.wrap-contacts .contact-form{
+		left:77%;
+	}
+
+	.ymaps-2-1-45-ground-pane{
+		transform:translate3d(-500px, 0, 0);
+	}
+
+	/*Footer*/
+
+	#navbar-line-footer{
+		display:none;
+	}
+
+	.footer-general{
+		height:75px;
+		box-shadow:0px 5px 5px rgba(0, 0, 0, .9);
+		margin-bottom:5px;
+	}
+
+	.footer-copy{
+		height:75px;
+		text-align:left;
+		line-height:75px;
+		padding-left:34px;
+	}
 }
