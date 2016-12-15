@@ -19,7 +19,7 @@ class ProductAsset extends AssetBundle
         'css/pages/doors-catalog.css',
         'css/pages/doors-card.css',
         /* сюда tablet стили*/
-        'css/pages/_mobile_pages.css',
+        
     ];
     public $js = [
         // доп. библиотеки
