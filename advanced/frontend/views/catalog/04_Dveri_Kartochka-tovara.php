@@ -17,11 +17,11 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 /*  assets  */
-use app\assets\TestAsset;
+use app\assets\ProductAsset;
 use app\assets\FontAsset;
 use app\assets\BackAsset;
 
-TestAsset::register($this);
+ProductAsset::register($this);
 FontAsset::register($this);
 BackAsset::register($this);
 
