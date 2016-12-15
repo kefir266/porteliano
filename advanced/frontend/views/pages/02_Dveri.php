@@ -70,7 +70,7 @@ $bottomContent_2 = 'Речь идет о входных конструкциях
     <div class="wrap-tiles doors-wrap">
         <div class="doors-panel">
             <div class="row center-block">
-                <div class="col-md-10 col-md-offset-1 col-xs-12">
+                <div class="col-md-10  col-xs-12">
                     <?= Html::tag('h2', 'Межкомнатные двери'); ?>
                 </div>
             </div>
@@ -89,7 +89,7 @@ $bottomContent_2 = 'Речь идет о входных конструкциях
                 ?>
             </div>
             <div class="row center-block">
-                <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-10 ">
                     <?= Html::tag('h2', 'Входные двери'); ?>
                 </div>
             </div>
@@ -108,7 +108,7 @@ $bottomContent_2 = 'Речь идет о входных конструкциях
                 ?>
             </div>
             <div class="row center-block">
-                <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-10 ">
                     <?= Html::tag('h2', 'Ручки') ?>
                 </div>
             </div>
@@ -120,16 +120,15 @@ $bottomContent_2 = 'Речь идет о входных конструкциях
                         ['alt' => "door_0$i", 'class' => 'tile']); ?>
 
                     <div class="doors-gradient grips-gradient-pos"></div>
-                    <h2 class="center-block">для межкомнатных дверей
-                    </h2>';
+                    <h2 class="center-block">для межкомнатных дверей</h2>
                     <?= Html::endTag('a'); ?>
                 </div>
 
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+        <div class="row desk-center-block">
+            <div class="col-md-10 ">
                 <?= Html::tag('h4', $bottomHead); ?>
                 <?= Html::tag('p', $bottomContent_1); ?>
                 <?= Html::tag('p', $bottomContent_2); ?>
