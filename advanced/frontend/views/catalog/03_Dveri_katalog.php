@@ -108,7 +108,7 @@ $this->params['breadcrumbs'][] = [
 
 $this->params['breadcrumbs'][] =[
     'label' => $categoryTitle,    //'Межкомнтаные двери ',
-    'url' => Url::to(['pages/doorcatalog']),
+    'url' => Url::to(['catalog/']),
     'template' => "<li> {link} </li>\n",
 ];
 
@@ -202,17 +202,25 @@ foreach ($sections->getMenu() as $section) {
                     <div class="block-1-price">
                         <h5>Цена</h5>
                         <?php
+                        $items = [
+                            ['label' => 'Любые', 'url' => '#',
+                                'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '0']],
+                            ['label' => 'до 500 €', 'url' => '#',
+                                'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '1']],
+                            ['label' => '500 - 1000 €', 'url' => '#',
+                                'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '2']],
+                            ['label' => '1000 - 2000 €', 'url' => '#',
+                                'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '3']],
+                            ['label' => 'от 2000 €', 'url' => '#',
+                                'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '4']],
+                        ];
                         echo ButtonDropdown::widget([
                             'options' => ['class' => 'btn-default'],
                             'split' => true,
-                            'label' => "€ 1000 - 2000",
+                            'label' => (isset($params['price'])) ? $items[$params['price']]['label'] : $items[0]['label'],
                             'dropdown' => [
-                                'items' => [
-                                    ['label' => 'до 500 €', 'url' => '#'],
-                                    ['label' => '500 - 1000 €', 'url' => '#'],
-                                    ['label' => '1000 - 2000 €', 'url' => '#'],
-                                    ['label' => 'от 2000 €', 'url' => '#'],
-                                ],
+                                'items' => $items,
+                                'clientEvents' => ['click' => 'eventClickDropMenu'],
                             ],
                         ]);
                         ?>
@@ -233,8 +241,8 @@ foreach ($sections->getMenu() as $section) {
         <div class="row">
             <div class="col-md-5">
                 <span>Сортировать по:</span>
-                <span class="btn btn-link">Алфавиту</span>
-                <span class="btn btn-link">Цене</span>
+                <span class="btn btn-link"><?=Html::a('Алфавиту',Url::to(array_merge(['catalog/'], $params, ['order' => 'abc']))) ?></span>
+                <span class="btn btn-link"><?=Html::a('Цена',Url::to(array_merge(['catalog/'], $params, ['order' => '012']))) ?></span>
             </div>
         </div>
         <!-- контейнер для выбранных дверей -->

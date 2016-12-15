@@ -355,8 +355,15 @@
     }
 }
 /********** Fix *********/
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px)and (max-width:980px) {
     .col-xs-9{
         float: none;
+    }
+    .btn.door-show-more{
+        white-space: normal;
+    }
+    .door-show-more-text{
+        top: -40px;
+        position: relative;
     }
 }

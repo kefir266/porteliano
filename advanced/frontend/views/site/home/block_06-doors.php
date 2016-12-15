@@ -84,7 +84,7 @@ Yii::setAlias('@img', '@web/img');
     <div class="row center-block">
         <div class="col-md-10 col-md-offset-1">
             <a href="<?= Url::to(['pages/dveri']); ?>" class="btn btn-default btn-lg door-show-more" role="button">
-                ПОКАЗАТЬ БОЛЬШЕ</a>
+                <span class="door-show-more-text">ПОКАЗАТЬ БОЛЬШЕ</span></a>
         </div>
     </div>
     <div class="arrow"></div>
