@@ -198,14 +198,33 @@ class Product extends ActiveRecord
                 $order = 'product.title';
             else
                 $order = 'price.cost';
+        }
+        $conditionPrice = '';
+        if (isset($params['price'])) {
+            switch ($params['price']){
+                case '1' :
+                $conditionPrice = 'price.cost < 500' ;
+            break;
+                case '2' :
+                    $conditionPrice = 'price.cost > 500 and price.cost < 1000';
+                    break;
+                case '3' :
+                    $conditionPrice = 'price.cost > 1000 and price.cost < 2000';
+                    break;
+                case '4':
+                    $conditionPrice = 'price.cost > 2000';
+                    break;
+                default:
+                    $conditionPrice = '';
 
+            }
         }
 
         $query = $this->find()
             ->innerJoin('section', 'product.section_id = section.id ')
             ->innerJoin('(select distinct price.cost, price.product_id from price order by date DESC ) price ',
                 'price.product_id = product.id')
-            ->where(['product.section_id' => $id])
+            ->where(['product.section_id' => $id])->andWhere($conditionPrice)
             ->orWhere(['section.parent_id' => $id])
             ->limit($quantity)
             ->orderBy($order);
