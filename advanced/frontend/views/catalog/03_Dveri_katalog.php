@@ -203,19 +203,21 @@ foreach ($sections->getMenu() as $section) {
                         <h5>Цена</h5>
                         <?php
                         $items = [
+                            ['label' => 'Любые', 'url' => '#',
+                                'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '0']],
                             ['label' => 'до 500 €', 'url' => '#',
-                                'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '0','table' => 'price']],
+                                'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '1']],
                             ['label' => '500 - 1000 €', 'url' => '#',
-                                'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '1','table' => 'price']],
+                                'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '2']],
                             ['label' => '1000 - 2000 €', 'url' => '#',
-                                'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '2','table' => 'price']],
+                                'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '3']],
                             ['label' => 'от 2000 €', 'url' => '#',
-                                'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '3','table' => 'price',]],
+                                'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '4']],
                         ];
                         echo ButtonDropdown::widget([
                             'options' => ['class' => 'btn-default'],
                             'split' => true,
-                            'label' => $items[1]['label'],
+                            'label' => (isset($params['price'])) ? $items[$params['price']]['label'] : $items[0]['label'],
                             'dropdown' => [
                                 'items' => $items,
                                 'clientEvents' => ['click' => 'eventClickDropMenu'],
