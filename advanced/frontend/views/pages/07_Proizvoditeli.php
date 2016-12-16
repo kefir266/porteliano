@@ -19,12 +19,7 @@ use yii\helpers\Url;
 use app\assets\PagesAsset;
 PagesAsset::register($this);
 
-$this->params['breadcrumbs'][] = [
-    'label' => 'Производители',
-    'url' => Url::to(['pages/dveri']),
-    'template' => "<li> {link} </li>\n", // template for this link only
 
-];
 
 Yii::setAlias('@imgLogos', '@web/img/catalog/logos');
 // TODO: перенести массив $fileNames в базу
@@ -41,12 +36,12 @@ if (file_exists($directoryLogo)) {
 require_once Yii::getAlias('@frontend').'/views/layouts/manufacturersNames.php';
 ?>
 <div class="wrap wrap-manuf switch" data-swith="manufacturers">
-    <div class="row">
+    <div class="row  mobil-width">
         <div class="col-md-4 ">
             <h2 class="manuf-header">Производители</h2>
         </div>
     </div>
-    <div class="row">
+    <div class="row  mobil-width">
         <div class="col-md-4 ">
 
             <?

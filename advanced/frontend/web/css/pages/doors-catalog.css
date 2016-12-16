@@ -1,7 +1,8 @@
-body{
+body {
     background-color: #fdfdf3;
 }
-.door-catalog{
+
+.door-catalog {
 
     /*background-color: #66afe9;*/
     max-width: 1030px;
@@ -9,6 +10,7 @@ body{
     margin-right: auto;
 
 }
+
 .flex-container {
     background-color: #ece7d4;
     max-width: 1030px;
@@ -25,80 +27,94 @@ body{
     align-items: center;
 }
 
-.flex-container > div{
+.flex-container > div {
     display: inline-block;
 }
-.btn{
+
+.btn {
     font-size: 16px;
     font-family: PTSerif, serif;
     font-style: italic;
 
 }
-.btn-group > .btn:first-child{
+
+.btn-group > .btn:first-child {
     width: 180px;
     text-align: left;
 }
-.dropdown-menu{
+
+.dropdown-menu {
     width: 180px;
 }
 
-.flex-container button{
+.flex-container button {
     margin: auto;
 }
-.flex-container button:last-child{
+
+.flex-container button:last-child {
     font-family: "PT Sans", serif;
     background-color: #935347;
     color: white;
     font-style: normal;
     margin-right: 10px;
 }
-h5{
+
+h5 {
     font-family: "PT Sans", serif;
     font-size: 12px;
 
 }
-span.btn{
-    font-family: "PT Sans",  sans-serif;
+
+span.btn > a {
+    font-family: "PT Sans", sans-serif;
     font-size: 16px;
     font-style: normal;
     color: #935347;
 }
-.flex-container > div:first-child{
+
+.flex-container > div:first-child {
     margin-left: 5px;
 }
-.sampling-area{
+
+.sampling-area {
     width: 100%;
     height: 100%;
     /*background-color: #4cae4c;*/
 }
 
 @media screen and (max-width: 1023px) {
-    .flex-container{
+    .flex-container {
         width: 450px;
     }
-    .btn-group > .btn:first-child{
+
+    .btn-group > .btn:first-child {
         width: 400px;
     }
-    .flex-container button:last-child{
+
+    .flex-container button:last-child {
         margin-top: 20px;
         margin-bottom: 14px;
         width: 400px;
     }
-    .sampling-area{
+
+    .sampling-area {
         width: 490px;
     }
 }
+
 @media screen and (min-width: 1024px) {
-    .btn-group > .btn:first-child{
+    .btn-group > .btn:first-child {
         width: 180px;
     }
-    .flex-container button:last-child{
+
+    .flex-container button:last-child {
         width: 180px;
         margin-top: 16%;
     }
 }
+
 /************* карточки товара *******************************/
-.tile{
+.tile {
     display: inline-block;
     border: 1px solid #e8e8e8;
     padding-left: 0;
@@ -112,84 +128,96 @@ span.btn{
     margin-bottom: 0;
     list-style-type: none;
 }
-.tile:nth-child(1){
-   /* margin-left: 91px ;*/
+
+.tile:nth-child(1) {
+    /* margin-left: 91px ;*/
 }
-.tile:nth-child(2){
+
+.tile:nth-child(2) {
     margin-left: 9px;
 }
 
-.info{
+.info {
     display: inline-block;
     width: 230px;
     background-color: #ece7d4;
     font-family: "PT Sans";
     font-size: 14px;
 }
-.info:nth-child(1){
+
+.info:nth-child(1) {
     margin-left: 21px;
 }
-.info > p{
+
+.info > p {
     margin: 0 0 0 9px;
     padding: 0 0 0 0;
 }
-.info > p:nth-child(1){
+
+.info > p:nth-child(1) {
     margin-top: 9px;
 
 }
-.info > .delimiter{
+
+.info > .delimiter {
     height: 2px;
     width: 100%;
     background-color: white;
     margin-top: 9px;
 }
+
 .info > .block-4-price {
     width: 100%;
     font-size: 18px;
 }
+
 .info > .block-4-price > div:first-child {
     float: left;
     margin-left: 5%;
 }
+
 .info > .block-4-price > div:last-child {
     float: right;
     margin-right: 5%;
 }
 
-
-
-
-.info{
+.info {
     margin-top: 5%;
     background-color: #ece7d4;
     color: #77767b;
 }
-.info > .delimiter{
+
+.info > .delimiter {
     height: 2px;
     width: 100%;
     background-color: white;
     margin-top: 9px;
 }
-.info p{
+
+.info p {
     text-align: left;
     margin-left: 5%;
 }
-.info p:first-child{
+
+.info p:first-child {
     padding-top: 5%;
 }
 
 /************* ---карточки товара--- *******************************/
 
-.glyphicon-plus-sign{
+.glyphicon-plus-sign {
     font-size: 40px;
 }
-.glyphicon-plus-sign:hover{
+
+.glyphicon-plus-sign:hover {
     color: #935347;
 }
-.col-md-12 > a{
+
+.col-md-12 > a {
     text-decoration: none;
 }
-.center-flex{
+
+.center-flex {
     display: flex;
     /* направление потока
         элементы переносились на новую строку*/
@@ -201,15 +229,18 @@ span.btn{
     margin-bottom: 5%;
     color: black;
 }
-.glyphicon-plus-sign + div{
+
+.glyphicon-plus-sign + div {
     font-size: 16px;
 }
-.plate{
+
+.plate {
     position: relative;
     margin-bottom: 10px;
     outline: 6px solid #935347;
 }
-.doors-gradient-pos{
+
+.doors-gradient-pos {
     position: absolute;
     top: 50%;
     left: 0;
@@ -217,16 +248,17 @@ span.btn{
     height: 50%;
 }
 
-.doors-gradient{
+.doors-gradient {
     /* Gradient */
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,413332+92,413332+100&0+0,1+92,1+100 */
-    background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(65,51,50,1) 92%, rgba(65,51,50,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(65,51,50,1) 92%,rgba(65,51,50,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(65,51,50,1) 92%,rgba(65,51,50,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#413332',GradientType=0 ); /* IE6-9 */
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(65, 51, 50, 1) 92%, rgba(65, 51, 50, 1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(65, 51, 50, 1) 92%, rgba(65, 51, 50, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(65, 51, 50, 1) 92%, rgba(65, 51, 50, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#413332', GradientType=0); /* IE6-9 */
 
 }
-.plate h2{
+
+.plate h2 {
     position: absolute;
     top: 85%;
     left: 0;
@@ -237,15 +269,20 @@ span.btn{
     margin-left: auto;
     width: 100%;
 }
-.tile-img{
+
+.tile-img {
     max-height: 342px;
+    max-width: 220px;
+    height: 342px;
 }
-.add-to-wish{
+
+.add-to-wish {
     font-size: 18px;
     margin-left: 100px;
     color: #4e3d36;
     margin-top: 5px;
 }
+
 .block-price-count {
     display: inline-block;
     margin-left: auto;
@@ -255,6 +292,20 @@ span.btn{
     font-size: 18px;
 }
 
- .block-price-count > a {
+.block-price-count > a {
     color: #4e3d36;
+}
+
+.ui-button {
+    height: 35px;
+    padding: 0px 0px 0px 10px;
+}
+
+.ui-state-default {
+    font-weight: normal;
+    font-style: italic;
+    color: #3c2f26;
+}
+ul.breadcrumb {
+    margin-left: 0;
 }

@@ -9,47 +9,51 @@
 
 @font-face {
     font-family: Copperplate; // имя шрифта для CSS правил 
-    src: local("Copperplate"), // проверяем наличие шрифта в ОС пользователя
-    url(../Fonts/Copperplate.ttc); // если шрифт не установлен, тогда загружаем его по указанному пути
+    src:url(../Fonts/Copperplate.ttc); // если шрифт не установлен, тогда загружаем его по указанному пути
     font-style: normal;
     font-weight: normal;
 }
 @font-face {
     font-family: PTSans;
-    src: local("PTSans"),
-    url(../Fonts/PTSans.ttc);
+    src:url(../Fonts/PTSans.ttc);
 }
 @font-face {
     font-family: PTSansBold;
-    src: local("PTSansBold"),
-    url(../Fonts/pt-sansbold.ttf);
+    src:url(../Fonts/pt-sansbold.ttf);
 }
 @font-face {
     font-family: PTSerif;
-    src: local("PTSerif"),
-    url(../Fonts/PTSerif.ttc);
+    src:url(../Fonts/PTSerif.ttc);
 
 }
 @font-face {
     font-family: PTSerifBold;
-    src: local("PTSerifBold"),
-    url(../Fonts/pt_serif_bold.ttf);
+    src:url(../Fonts/pt_serif_bold.ttf);
 }
 @font-face {
     font-family: PTSerifCaption;
-    src: local("PTSerifCaption"),
-    url(../Fonts/PTSerifCaption.ttc);
+    src:url(../Fonts/PTSerifCaption.ttc);
 }
 
 @font-face {
     font-family: GothamPro;
-    src: local("GothamPro"),
-    url(../Fonts/GothamPro.ttf);
+    src:url(../Fonts/GothamPro.ttf);
 }
-rouble.otf
+
+@font-face {
+    font-family: Awesome;
+    src: local("awesome"),
+    url(../Fonts/awesome.ttf);
+}
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src:url('../Fonts/glyphicons-halflings-regular.ttf')     format('truetype'),
+}
+
+/*rouble.otf*/
 
 @font-face {
     font-family: ALSRubl;
-    src: local("rouble"),
-    url(../Fonts/rouble.otf);
+    src:url(../Fonts/rouble.otf);
 }
+

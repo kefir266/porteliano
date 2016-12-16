@@ -136,9 +136,9 @@ class PagesController extends Controller
         return $this->render('07_Proizvoditeli', ['manufacturer' => $manufArr,]);
     }
 
-    public function actionManufacturers_inner()
+    public function actionManufacturers_inner($name)
     {
-        return $this->render('08_Proizvoditeli-vnutr');
+        return $this->render('08_Proizvoditeli-vnutr', ['$name' => $name,]);
     }
     public function actionAbout()
     {

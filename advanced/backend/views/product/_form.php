@@ -1,7 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use yii\helpers\Url;
+use kartik\file\FileInput;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Product */
@@ -10,7 +11,7 @@ use yii\widgets\ActiveForm;
 
 <div class="product-form">
 
-    <?php $form = ActiveForm::begin([
+    <?php $form = \yii\bootstrap\ActiveForm::begin([
         'options' => ['enctype' => 'multipart/formdata']
     ]); ?>
     <div class="row">
@@ -49,40 +50,26 @@ use yii\widgets\ActiveForm;
         <div class="col-md-9">
             <?php
 
-            //    echo $form->field($model, 'img')->widget(\kartik\file\FileInput::className(),
-            //        [
-            //            'options' => ['accept' => '/img/'.$model->manufacturer->title.'/*',],
-            //            'model' => $model,
-            //            //'name' => 'attachment_49[]',
-            //            'pluginOptions' => [
-            //                'initialCaption' => $model->title,
-            //                'initialPreviewConfig' =>
-            //                    ['caption' => '/img/' .$model->manufacturer->title . '/' .$model->img,],
-            //                'initialPreview' =>
-            //                    ['/img/' . $model->manufacturer->title . '/' . $model->img,],
-            //
-            //                'overwriteInitial' => false,
-            //                'maxFileSize' => 2000
-            //            ]
-            //        ]);
-            //    //    echo $form->field($model, 'img')->textInput(['maxlength' => true])
-
-            $previews = "/img/" . $model->manufacturer->title . '/' . $model->img;
+            $previews = "/frontend/web/img/products/" . $model->manufacturer->title . '/' . $model->img;
             $previewConf = ['caption' => $model->img,];
 
-            echo $form->field($model, 'img')->widget(\kartik\file\FileInput::className(), [
-                //'name' => 'attachment_49[]',
-                'options' => ['accept' => '/img/'.$model->manufacturer->title.'/*',],
+            echo $form->field($model, 'imageFile')->widget(FileInput::className(), [
+                'name' => 'imageFile',
+
+                'options' => ['accept' => 'image/*',],
 //        'options' => [
 //            'multiple' => false,
 //        ],
                 'model' => $model,
                 'pluginOptions' => [
+                    'uploadUrl' => Url::to(['/file/upload']),
                     'initialPreview' => $previews,
                     'initialPreviewAsData' => true,
                     'initialCaption'=>$model->img,
                     'initialPreviewConfig' => $previewConf,
                     'overwriteInitial' => true,
+                    'uploadExtraData' => ['manufacturer' => $model->manufacturer->title,
+                    ],
                     'maxFileSize' => 2000
                 ]
             ]);
@@ -96,7 +83,7 @@ use yii\widgets\ActiveForm;
             $previewConf = [];
             foreach ($model->files as $id => $file) {
 
-                $previews[$id] = "/img/" . $model->manufacturer->title . '/' . $file->file;
+                $previews[$id] = "/frontend/web/img/products/" . $model->manufacturer->title . '/' . $file->file;
                 $previewConf[$id] = ['caption' => $file->file,];
             }
             echo $form->field($model, 'upload_files[]')->widget(\kartik\file\FileInput::className(), [
@@ -105,6 +92,7 @@ use yii\widgets\ActiveForm;
                     'multiple' => true
                 ],
                 'pluginOptions' => [
+                    'uploadUrl' => Url::to(['/file/upload']),
                     'initialPreview' => $previews,
                     'initialPreviewAsData' => true,
                     //'initialCaption'=>"",
@@ -135,6 +123,6 @@ use yii\widgets\ActiveForm;
         </div>
     </div>
 
-    <?php ActiveForm::end(); ?>
+    <?php \yii\bootstrap\ActiveForm::end(); ?>
 
 </div>

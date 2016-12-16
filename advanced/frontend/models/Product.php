@@ -12,6 +12,7 @@ use app\models\Manufacturer;
 use app\models\Material;
 use app\models\Section;
 use app\models\Style;
+use frontend\models\GreenyImages;
 use app\models\Wish;
 
 use yii;
@@ -39,14 +40,33 @@ class Product extends ActiveRecord
 
         $products['products'] = $this->find()
             ->innerJoin('section', 'product.section_id = section.id')
-            ->where($condition)->limit($num)->each();
+            ->where($condition)->limit($num)->orderBy('date DESC')->each();
         return $products;
     }
 
-    public function getProductsBySection($id = null, $num = null)
+    public function getProductsBySection($id = null, $num = null, $notin = null)
     {
 
         //TODO Нужно выделить класс .everything
+
+        $notInCondition = '';
+        if ($notin != null ) {
+
+            $notInCondition = 'product.id NOT IN ( ';
+            $first = true;
+            foreach( $notin as $addItem)
+            {
+                if (! $first) {
+                    $notInCondition .= ' , ';
+
+
+                }
+                $notInCondition .= $addItem;
+                $first = false;
+            }
+            $notInCondition .= ' )';
+        }
+
 
         $id = ($id == null) ? '3': $id;
         $products['section'] = Section::findOne(['id' => $id]);
@@ -57,7 +77,8 @@ class Product extends ActiveRecord
 
         $products['products'] = $this->find()
             ->innerJoin('section', 'product.section_id = section.id')
-            ->where($condition)->each($num);
+            //->innerJoin('select * from price limit 1', 'price.product_id = product.id')
+            ->where($condition)->andWhere($notInCondition)->limit($num)->each();
         
         $materials = $this->find()->
             select('material_id id, material.title title')->distinct()
@@ -67,14 +88,14 @@ class Product extends ActiveRecord
 
         $products['materials'][] = ['label' => 'Любой', 'url' => '#',
             'linkOptions'=> ['data-toggle' =>'dropdown',
-                'id-item' => '0',
+                'data-id' => '0',
                 'class' => 'everything',
                 'table' => 'materials',],];
         foreach ($materials as $item) {
 
             $products['materials'][$item['id']]  = ['label' => $item['title'], 'url' => '#',
                 'linkOptions'=> ['data-toggle' =>'dropdown',
-                    'id-item=' => $item['id'],
+                    'data-id' => $item['id'],
                     'table' => 'material',
                 ],
             ];
@@ -88,14 +109,14 @@ class Product extends ActiveRecord
 
         $products['styles'][] = ['label' => 'Любой', 'url' => '#',
             'linkOptions'=> ['data-toggle' =>'dropdown',
-                'id-item' => '0',
+                'data-id' => '0',
                 'class' => 'everything',
                 'table' => 'styles',],];
         foreach ($styles as $item) {
 
             $products['styles'][$item['id']]  = ['label' => $item['title'], 'url' => '#',
                 'linkOptions'=> ['data-toggle' =>'dropdown',
-                'id-item=' => $item['id'],
+                'data-id' => $item['id'],
                     'table' => 'style',],];
         }
 
@@ -107,7 +128,7 @@ class Product extends ActiveRecord
 
         $products['manufacturers'][] = ['label' => 'Любой', 'url' => '#',
             'linkOptions'=> ['data-toggle' =>'dropdown',
-                'id-item' => '0',
+                'data-id' => '0',
                 'class' => 'everything',
                 'table' => 'manufacturer',],];
 
@@ -115,7 +136,7 @@ class Product extends ActiveRecord
 
             $products['manufacturers'][$item['id']]  = ['label' => $item['title'], 'url' => '#',
                 'linkOptions'=> ['data-toggle' =>'dropdown',
-                    'id-item' => $item['id'],
+                    'data-id' => $item['id'],
                     'table' => 'manufacturer',],];
         }
         
@@ -166,15 +187,67 @@ class Product extends ActiveRecord
         return $this->hasMany(Price::className(), ['product_id' => 'id'] )->orderBy('date desc')->one();
     }
 
+    public function getImage() {
+
+        $img = '/img/Image-Capture-icon.png';
+        if ( $this->img == '' ) {
+            $old_pic = $this->hasOne(GreenyImages::className(), ['imageID' => 'productImageID'])->one();
+            //return $old_pic;
+            if (isset($old_pic->src))
+            {
+                $img = '/img/'.$old_pic->src;
+            }
+        }
+        else
+        {
+            $img = "/frontend/web/img/products/" . $this->manufacturer->title . '/' . $this->img;
+        }
+
+        return $img;
+    }
+
     public function getFilteredProducts($params, $quantity){
 
         $id = (isset($params['section'])) ? $params['section'] : 3;
         $products = $this->getProductsBySection($id,$quantity);
 
+        $order = 'price.cost';
+        if (isset($params['order'])) {
+            if ($params['order'] == 'abc')
+                $order = 'product.title';
+            else
+                $order = 'price.cost';
+        }
+        $conditionPrice = '';
+        if (isset($params['price'])) {
+            switch ($params['price']){
+                case '1' :
+                $conditionPrice = 'price.cost < 500' ;
+            break;
+                case '2' :
+                    $conditionPrice = 'price.cost > 500 and price.cost < 1000';
+                    break;
+                case '3' :
+                    $conditionPrice = 'price.cost > 1000 and price.cost < 2000';
+                    break;
+                case '4':
+                    $conditionPrice = 'price.cost > 2000';
+                    break;
+                default:
+                    $conditionPrice = '';
+
+            }
+        }
 
         $query = $this->find()
             ->innerJoin('section', 'product.section_id = section.id ')
-            ->where(['product.section_id' => $id])->orWhere(['section.parent_id' => $id]);
+            ->innerJoin('(select distinct price.cost, price.product_id from price order by date DESC ) price ',
+                'price.product_id = product.id')
+            ->where(['product.section_id' => $id])->andWhere($conditionPrice)
+            ->orWhere(['section.parent_id' => $id])
+            ->limit($quantity)
+            ->orderBy($order);
+
         $query = (isset($params['style'])) ? $query->andWhere(['product.style_id' => $params['style']]) : $query;
         $query = (isset($params['manufacturer'])) ? $query->andWhere(['product.manufacturer_id' => $params['manufacturer']]) : $query;
         $query = (isset($params['material'])) ? $query->andWhere(['product.material_id' => $params['material']]) : $query;

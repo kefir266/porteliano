@@ -9,7 +9,8 @@
 namespace frontend\controllers;
 
 use app\models\Cart;
-use app\models\Order;
+use common\models\User;
+use frontend\models\Order;
 use app\models\Wish;
 use app\models\Customer;
 use yii;
@@ -18,6 +19,12 @@ use frontend\models\Product;
 
 class CartController extends Controller
 {
+
+    public function beforeAction($action)
+    {
+        return parent::beforeAction($action);
+        $this->enableCsrfValidation = false;
+    }
 
     public function actionAdd(){
 
@@ -90,12 +97,14 @@ class CartController extends Controller
     public function actionClear() {
 
 
+        var_dump(Yii::$app->request);
         try{
-            $cartWish = Yii::$app->request->post('cartwish');
+            $cartWish = Yii::$app->request->get('cartwish');
 
             $session = Yii::$app->session;
             $session->open();
-            unset($session[$cartWish]);
+            var_dump($session[$cartWish]);
+            $session[$cartWish]->clear();
             $this->layout = true;
 
         } catch (yii\base\Exception $e) {
@@ -106,8 +115,8 @@ class CartController extends Controller
     }
     
     public function actionDelelement(){
-        $cartWish = Yii::$app->request->post('cartwish');
-        $id = Yii::$app->request->post('id');
+        $cartWish = Yii::$app->request->get('cartwish');
+        $id = Yii::$app->request->get('id');
         $session = Yii::$app->session;
         $session->open();
 
@@ -163,7 +172,7 @@ class CartController extends Controller
                     Yii::$app->mailer->compose('orderAdmin', ['cart' => $session['cart'],
                         'modelOrder' => $modelOrder,])
                         ->setFrom('porteliano@mail.ru')
-                        ->setTo('kefir266@gmail.com')
+                        ->setTo(User::findByUsername('admin')->email)
                         ->setSubject('Заказ ' . $modelOrder->id)
                         ->send();
 

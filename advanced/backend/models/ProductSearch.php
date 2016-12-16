@@ -19,7 +19,7 @@ class ProductSearch extends Product
     {
         return [
             [['id', 'section_id', 'material_id', 'style_id', 'manufacturer_id' ], 'integer'],
-            [['title',  'img', 'description'], 'safe'],
+            [['title',  'img', 'description','article'], 'safe'],
         ];
     }
 
@@ -51,7 +51,8 @@ class ProductSearch extends Product
                 'attributes' => [
                     'date',
                     'manufacturer',
-                    'title'
+                    'title',
+                    'article'
                 ],
             ],
             'pagination' => [
@@ -78,7 +79,8 @@ class ProductSearch extends Product
 
         $query->andFilterWhere(['like', 'title', $this->title])
             ->andFilterWhere(['like', 'img', $this->img])
-            ->andFilterWhere(['like', 'description', $this->description]);
+            ->andFilterWhere(['like', 'description', $this->description])
+            ->andFilterWhere(['like', 'article', $this->article]);
 
         return $dataProvider;
     }

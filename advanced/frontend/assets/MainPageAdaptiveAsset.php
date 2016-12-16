@@ -29,12 +29,15 @@ class MainPageAdaptiveAsset extends AssetBundle
         'css/main/block_11.css',
         'css/main/block_12.css',
         'css/logo_sprites_all.css',
+        'css/main/main_page_mobile.css',
     ];
     public $js = [
         // доп. библиотеки
         '/js/lib/jquery.min.js',
         '/js/lib/jquery.imageScroll.min.js',
         '/js/lib/jquery.scroolly.js',
+        //'/js/lib/jquery.fontawesome.js', // для иконок
+
         // скрипты
         'js/runningRibbon.js',
         'js/scrollingDoors.js',

@@ -19,7 +19,7 @@
             <div class="col-md-6 col-sm-12">
                 <h1 class="action-header">АКЦИЯ</h1>
                 <p class="action-text"> 
-                    Гарантированно улучшаем любое диллерское предложение на все модели итальянских дверейи перегородок на 4%!
+                    Гарантированно улучшаем любое диллерское предложение на все модели итальянских дверей и перегородок на 4%!
                 </p>
             </div>
             <div class="col-md-6 col-sm-12">
@@ -32,18 +32,6 @@
     </div>
     <script>
         
-        $('.wrap-action > .img-holder').imageScroll({
-            holderClass: 'imageHolder',
-            container: $('.wrap-action'),
-            speed: 0.1,
-            coverRatio: 0.75,
-            mediaWidth: 2000,
-            mediaHeight: 1415,
-            holderMaxHeight: 1000,
-            holderMinHeight: 950,
-            parallax: true,
-            touch: false
-        });
     </script>
 
 </div>

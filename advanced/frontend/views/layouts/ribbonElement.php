@@ -13,13 +13,13 @@ use yii\helpers\Url;
 ?>
 
 <?php
-    echo Html::beginTag('div', ['class' => 'tile']);
+    echo Html::beginTag('div', ['class' => 'tile', 'data-id' => $product->id]);
 
     echo Html::a(
 
-        Html::img('/img/' . $product->manufacturer->title . '/'
-        . $product->img,
-        ['alt' => $product->title, 'class' => 'tile-img']), '/catalog/product/?id='. $product->id);
+        Html::img($product->image,
+        ['alt' => $product->title, 'class' => 'tile-img']), '/catalog/product/?id='. $product->id,
+        ['class' => 'link-tile']);
 
     //заполняется карточка
     echo Html::beginTag('div', ['class' => 'info']);
@@ -31,8 +31,8 @@ use yii\helpers\Url;
     $price = $product->prices;
     echo
     Html::tag('div',
-        Html::tag('a', '€ '
-            . ((count($price) > 0) ?
+        Html::tag('a', ((count($price)) ? current($price)->currency->title : '')
+            . ' '. ((count($price) > 0) ?
                 current($price)->cost
                 : ''), ['href' =>
             Url::to(['cart/add', 'id' => $product->id])]),

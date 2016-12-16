@@ -54,13 +54,13 @@ $info = [
 ?>
 <article id="novelty" class="wrap-novelty" data-item="a1">
     <div class="novelty">
-        <div class="row">
+        <div class="row center-block">
             <div class="col-md-offset-1 col-md-10">
                 <h2 class="novelty-h2">Новинки</h2>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-offset-1 col-md-10">
+        <div class="row center-block">
+            <div class="col-md-offset-1 col-md-10 novetly-col">
                 <div class="novelty doors-panel running-ribbon-doors">
                     <div class="wrap-tiles view">
                         <ul>
@@ -76,7 +76,7 @@ $info = [
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row center-block">
             <div class="col-md-10 col-md-offset-1">
                 <a href="<?= Url::to(['pages/dveri']); ?>" class="btn btn-default btn-lg novelty-show-more" role="button">
                     ПОКАЗАТЬ БОЛЬШЕ</a>

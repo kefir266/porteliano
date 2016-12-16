@@ -8,6 +8,7 @@
 
 namespace frontend\controllers;
 
+use app\models\Section;
 use Yii;
 
 use frontend\models\Product;
@@ -69,6 +70,12 @@ class CatalogController extends Controller
         ];
     }
 
+    public function beforeAction($action)
+    {
+        $this->enableCsrfValidation = false;
+        return parent::beforeAction($action);
+    }
+
     public function actionIndex(){
 
         $modelProduct = new Product();
@@ -77,11 +84,21 @@ class CatalogController extends Controller
 
         $params = $request->get();
 
+        $ind = '3';
+        if (isset($params['ind'])) {
+            $ind = $params['ind'];
+        }
+        if (isset($params['section'])){
+            $ind = $params['section'];
+        }
+
         $products = $modelProduct->getFilteredProducts($params, $quantity);
 
         return $this->render('03_Dveri_katalog',[
             'products' => $products,
-            'params' => $params,]
+            'params' => $params,
+            'ind' => $ind,
+            ]
             );
     }
     
@@ -91,6 +108,25 @@ class CatalogController extends Controller
         
         $product = Product::findOne($id);
         return $this->render('04_Dveri_Kartochka-tovara', ['product' => $product]);
+    }
+
+    public function actionDownload() {
+        $previous = Yii::$app->request->post('elements');
+        $section = Yii::$app->request->post('section');
+        $quant = Yii::$app->request->post('quant');
+        if (isset($previous)){
+
+            $model = new Product();
+            //TODO section
+            $products = $model->getProductsBySection($section,$quant, $previous);
+            $ribbons = '';
+            foreach ($products['products'] as $product){
+                $ribbons .= $this->renderAjax('@frontend/views/layouts/ribbonElement.php',['product' => $product]);
+            }
+            return $ribbons;
+        }
+
+        return true;
     }
 
 }

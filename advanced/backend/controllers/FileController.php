@@ -5,10 +5,13 @@ namespace backend\controllers;
 use Yii;
 use app\models\File;
 use app\models\FileSearch;
+use yii\base\Object;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use app\models\UploadForm;
+use yii\web\UploadedFile;
 
 /**
  * FileController implements the CRUD actions for File model.
@@ -21,20 +24,20 @@ class FileController extends Controller
     public function behaviors()
     {
         return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'actions' => ['login', 'error'],
-                        'allow' => true,
-                    ],
-                    [
-                        'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
+//            'access' => [
+//                'class' => AccessControl::className(),
+//                'rules' => [
+//                    [
+//                        'actions' => ['login', 'error'],
+//                        'allow' => true,
+//                    ],
+//                    [
+//                        'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete'],
+//                        'allow' => true,
+//                        'roles' => ['@'],
+//                    ],
+//                ],
+//            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -119,6 +122,20 @@ class FileController extends Controller
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
+    }
+
+    public function actionUpload() {
+
+
+        foreach ($_FILES as $product){
+            $tmp_name = $product['tmp_name']['imageFile'];
+            move_uploaded_file($tmp_name, "img/products/"
+                . $_POST['manufacturer'] . '/'
+                . $product['name']['imageFile']);
+        }
+        
+        return true;
+
     }
 
     /**

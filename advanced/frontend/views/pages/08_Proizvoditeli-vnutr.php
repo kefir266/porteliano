@@ -6,6 +6,7 @@
  * Time: 17:05
  */
 /* @var $this yii\web\View */
+/* @var $name string */
 
 /* @var $manufacturer \frontend\models\Manufacturer */
 /*  models  */
@@ -17,26 +18,31 @@ use yii\helpers\Url;
 /*  assets  */
 use app\assets\PagesAsset;
 PagesAsset::register($this);
+$nameFactory = 'Agoprofil';
+$title = 'Традиции и инновации';
 
 $this->params['breadcrumbs'][] = [
     'label' => 'Производители',
-    'url' => Url::to(['pages/dveri']),
+    'url' => Url::to(['/pages/manufacturers']),
     'template' => "<li> {link} </li>\n", // template for this link only
-
 ];
-$nameFactory = 'Agoprofil';
-$title = 'Традиции и инновации';
+$this->params['breadcrumbs'][] = [
+    'label' => $nameFactory,
+    'url' => '#',
+    'template' => "<li> {link} </li>\n", // template for this link only
+];
+
 
 Yii::setAlias('@imgBigLogos', '@web/img/catalog/logos/big');
 ?>
 <div class="wrap order-registration switch" data-swith="manufacturers">
     <div class="confirm-orders-title"><?=$nameFactory?> - <?=$title?></div>
     <div class="generic">
-        <?=  Html::img('@imgBigLogos/agoprofil-logo.png')?>
-        <p>
+        <?=  Html::img('@imgBigLogos/agoprofil-logo.png',['class' => 'manuf-logo'])?>
+        <p class="first-p">
             Популярная мебельная фабрика AGOPROFIL ведет коммерческую деятельность с далекого 1972 года. Из них на российском рынке марка присутствует 10 лет, и за этот срок она успела полюбиться множеству покупателей. Свою деятельность AGOPROFIL начинала с изготовления классических итальянских дверей из дерева. Со временем старые ремесленные традиции были не просто сохранены, но скомбинированы с различными современными способами производства и дизайна. Сегодня фабрика специализируется на межкомнатных дверях.
         </p>
-        <h3>Какие преимущества таят в себе двери AGOPROFIL?</h3>
+        <h3><strong class="header-st">Какие преимущества таят в себе двери AGOPROFIL?</strong></h3>
         <ul>
             <li>Классический стиль, сочетающий в себе прошлое, настоящее и будущее;</li>
             <li>Инновационный подход, гарантирующие оптимальные технические характеристики и максимальное удобство
@@ -51,9 +57,9 @@ Yii::setAlias('@imgBigLogos', '@web/img/catalog/logos/big');
             В любой серии дверей, выпускаемых фабрикой, есть модели, сделанные из шпона, из массива и с сотовым наполнением. AGOPROFIL изготавливает и все виды дверных аксессуаров. Сами двери изготавливают в нескольких основных вариантах: распашные, раздвижные двери, и «книжки».
             Оформление двери может быть практически любым: от строгой классики до дверей с позолотой, ручной росписью и прочими атрибутами премиум-класса.
         </p>
-        <h3>
+        <h3><strong class="header-st">
             Чтобы было проще найти нужное вам среди всего изобилия моделей, кратко расскажем о каждой серии дверей от AGOPROFIL:
-        </h3>
+            </strong></h3>
         <ul>
             <li>Серия Class характеризуется строгим классическим дизайном. Двери изготавливаются из древесины.</li>
             <li>Crystal можно расшифровать как кристальную чистоту в оформлении. Количество украшений на деревянных дверях этой серии минимально.</li>
@@ -63,6 +69,6 @@ Yii::setAlias('@imgBigLogos', '@web/img/catalog/logos/big');
             <li>Fun отличается яркой расцветкой дверей и создана специально для тех, кто хочет бросить вызов скучной повседневности.</li>
         </ul>
         <p>Компания "Абсолют Интерьер" рада предложить широкий выбор дверей AGOPROFIL.</p>
-        <a href="http://www.agoprofil.com/ru/">Перейти официальный сайт</a>
+        <a class="link-on-manuf" href="http://www.agoprofil.com/ru/">Перейти официальный сайт</a>
     </div>
 </div>

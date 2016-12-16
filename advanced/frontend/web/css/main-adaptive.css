@@ -17,10 +17,16 @@ body {
     height: 100%;
     background-color: #fdfdf3;
     /*background-color: rgba(255, 0, 4, 0.55);*/
+    position: relative;
 }
 .content {
     width: 100%;
 }
+.max-width.row{
+    max-width: 100%;
+    width: 100%;
+}
+
 /*      breadcrumb      */
 .breadcrumb {
     margin-left: 0;
@@ -35,7 +41,7 @@ body {
 
 .breadcrumb a {
     color: #413332;
-    font-family: "PT Sans", serif;
+    font-family: "PTSans", sans-serif;
     font-size: 16px;
 }
 
@@ -45,7 +51,18 @@ body {
     color: #ccc;
     content: " ";
 }
-
+/*** Прижатый футер ***/
+.wrap-all{
+    /*margin-bottom: -140px;*/
+    position: relative;
+}
+#footer {
+    position: absolute;
+    /*bottom: 0;*/
+    width: 100%;
+    /*margin-bottom: 10px;*/
+}
+/******************************/
 /*****************  NavBar  *********************************/
 .navbar-toggle {
     float: left; /**/
@@ -55,7 +72,7 @@ body {
 #navbar-line nav.navbar-default {
     background-color: #413332;
     color: #d2cca8;
-
+    font-family: PT sans, sans-serif;
     border-color: #413332;
 }
 
@@ -68,6 +85,7 @@ body {
 .navbar-default .navbar-nav > li > a:focus {
     background-color: #574847;
     color: #ffffff;
+    padding: 18px 10px;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -87,10 +105,6 @@ body {
 !important;
     color: #ffffff;
 !important;
-}
-
-@media (min-width: 1092px) {
-    /* TODO переключить на кнопку   */
 }
 
 @media (min-width: 992px) {
@@ -119,20 +133,20 @@ header > div {
 
 #phone_1 {
     font-size: 18px;
-    font-family: "PTSans", Arial, sans-serif;
+    font-family: "PTSans", sans-serif;
     letter-spacing: 1.8px;
 }
 
 #phone_2 {
     font-size: 18px;
-    font-family: "PTSans", Arial, sans-serif;
+    font-family: "PTSans", sans-serif;
     letter-spacing: 1.8px;
 }
 
 #phone_1_label {
     color: #c5926b;
     font-size: 14px;
-    font-family: "PTSans", Arial, sans-serif;
+    font-family: "PTSans", sans-serif;
     letter-spacing: 0.1px;
 }
 
@@ -140,7 +154,7 @@ header > div {
     color: #c5926b;
     font-size: 14px;
     letter-spacing: 0.1px;
-    font-family: "PTSans", Arial, sans-serif;
+    font-family: "PTSans", sans-serif;
 }
 
 .email-nonactive > a {
@@ -150,7 +164,7 @@ header > div {
 
 /*******  button *********************/
 #ask_a_question-button {
-    font-family: PTSansBold, Arial, sans-serif;
+    font-family: PTSansBold, sans-serif;
     padding: 10px 20px 10px 20px;
 
     border-radius: 20px;
@@ -178,8 +192,6 @@ header .row:first-child {
 }
 
 .footer-general {/*,.push */
-    height: 102px;
-    position: relative;
 }
 
 .footer-general .navbar-nav {
@@ -197,6 +209,12 @@ header .row:first-child {
     color: #cfcbbd;
     background-color: #352929;
     height: 80px;
+    line-height: 80px;
+}
+@media screen and (min-width: 992px){
+    .footer-copy-text{
+        margin-left: -740px;
+    }
 }
 
 .footer-copy-text {
@@ -242,7 +260,7 @@ header .row:first-child {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 5000;
+    z-index: 1000;
 }
 
 /* Для fixedMenu.js */
@@ -254,6 +272,7 @@ header .row:first-child {
 .lightButton {
     background-color: #574847 !important;
     color: #ffffff !important;
+    padding-top: 18px !important;
 }
 
 .row-navbar {
@@ -291,4 +310,7 @@ header .row:first-child {
     margin-left: auto;
     margin-right: auto;
     max-width: 1100px;
+}
+nav.navbar-default ul.navbar-nav. > li > a{
+    padding: 18px 10px;
 }

@@ -2,7 +2,7 @@
  * Created by dmitrij on 24.11.2016.
  */
 
-
+var semaphore = false;
 
 (function ($) {
 
@@ -11,9 +11,13 @@
 
     var jCart = $("#basket");
     var jWish = $('#wishlist');
+    var tWish = $('div#other-panel > a > span:first');
+    var tCart = $('div#other-panel > a > span:last');
 
     getQuantity('getcart', jCart);
     getQuantity('getwish', jWish);
+    getQuantity('getcart', tCart);
+    getQuantity('getwish', tWish);
 
 
     // $("#modal-cart .modal-body").on('click','.del-item', function () {
@@ -24,7 +28,68 @@
     //     delItem('wish', $(this).data('id'));
     //
     // })
+    semaphore = false;
 })(jQuery);
+
+function getCurrentSection(novetly) {
+
+    var section = novetly.data("section");
+
+    if (section)
+        return section;
+    else
+        return '2'; //перегородки
+}
+
+function getCurrentElements(novetly) {
+    var currentId = {};
+    var elements = novetly.children();
+    for (i = 0 ; i < elements.length; i++) {
+        currentId[i] = elements.eq(i).data('id');
+    }
+    return currentId;
+
+}
+
+function nextDownload(e,left, quant) {
+
+    e.preventDefault();
+    if (semaphore) return;
+
+    semaphore = true;
+    var currentButton = $(e.target);
+
+    var novetly = currentButton.parent().siblings(".novelty-folders").find(".ribbon-ul");
+    var active = currentButton.parent().siblings(".novelty-folders").find(".active > > > .ribbon-ul  ");
+    novetly = (active.length > 0)? active : novetly;
+
+    var giveMore = $(".catalog-elements");
+    novetly = (giveMore.length > 0) ? giveMore : novetly;
+
+    var section = getCurrentSection(novetly);
+    var elements = getCurrentElements(novetly);
+
+    $.ajax({
+        url: '/catalog/download',
+        data: {section: section,
+            elements: elements,
+            quant: quant
+        },
+        type: 'POST',
+        success: function (res) {
+            if (left)
+                novetly.prepend(res);
+            else
+                novetly.append(res);
+            semaphore = false;
+        },
+        error: function () {
+            console.log('error downloading');
+            semaphore = false;
+        }
+    });
+
+}
 
 function delItem(e, cartWish, id) {
 
@@ -39,7 +104,7 @@ function delItem(e, cartWish, id) {
                 id: id,
                 cartwish: cartWish
             },
-            type: 'POST',
+            type: 'GET',
             success: function (res) {
                 //showModal('#modal-'+cartWish,res);
                 getQuantity('get' + cartWish, jtag);
@@ -84,7 +149,6 @@ function setGlyphiconHeart(jtag, state) {
 
 function refreshCart(quantity, jtag, zero) {
 
-    console.log(quantity);
     if (quantity == 0) {
         jtag.text((!!zero) ? zero : '');
         if (jtag.attr('id') == 'wishlist') {
@@ -108,6 +172,7 @@ function addToCart(e) {
 
     e.preventDefault();
     var jtag = $('#basket');
+    var tCart = $('div#other-panel > a > span:last');
 
     var id = $(e.target).data('id');
 
@@ -119,6 +184,7 @@ function addToCart(e) {
             type: 'GET',
             success: function (res) {
                 callbackQuantity(res, jtag);
+                callbackQuantity(res, tCart);
                 //getCart('cart');
 
             },
@@ -143,7 +209,7 @@ function clearCart(cartWish) {
             data: {
                 cartwish: cartWish
             },
-            type: 'POST',
+            type: 'GET',
             success: function (res) {
                 refreshCart(0, jtag);
                 $("#tab-cart").html("");
@@ -161,6 +227,7 @@ function addToWish(e) {
     e.preventDefault();
 
     var jtag = $('#wishlist');
+    var tWish = $('div#other-panel > a > span:first');
 
     var id = $(e.target).data('id');
 
@@ -172,6 +239,7 @@ function addToWish(e) {
             type: 'GET',
             success: function (res) {
                 callbackQuantity(res, jtag);
+                callbackQuantity(res, tWish);
                 //getCart('wish');
             },
             error: function () {
@@ -234,33 +302,33 @@ function showModal(id, tab) {
 
 function eventClickDropMenu(item) {
     if (item.target.tagName == 'A') {
-        var idItem = item.target.getAttribute('id-item');
+        var idItem = $(item.target).data('id');
         var button = $(item.target).parents(".btn-group").children(".btn-default:first");
 
         button.text(item.target.innerHTML);
-        button.attr('id-item', idItem);
+        button.attr('data-id', idItem);
     }
 }
 
 
 function eventClickSelectButton(item) {
 
+    console.log('click');
+    var material = $("div .material").find(".btn-default").data('id');
+    var manufacturer = $("div .manufacturer").find(".btn-default").data('id');
+    var style = $("div .style").find(".btn-default").data('id');
+    var price = $("div .block-1-price").find(".btn-default").data('id');
+    var section = $(".section-title").data('id');
 
-    var material = $("div .material").find(".btn-default").attr('id-item');
-    var manufacturer = $("div .material").find(".btn-default").attr('id-item');
-    var style = $("div .style").find(".btn-default").attr('id-item');
-    var price = $("div .block-1-price").find(".btn-default").attr('id-item');
-    var section = $(".section-title").attr('section-id');
+console.log(price);
 
-
-    console.log(material);
     $(location).attr('href',
         '/catalog/?'
-        + ((!!section) ? '&section=' + section.replace(/[^.\d]+/g, "") : '')
-        + ((!!material) ? '&material=' + material.replace(/[^.\d]+/g, "") : '')
-        + ((!!manufacturer) ? '&manufacturer=' + manufacturer.replace(/[^.\d]+/g, "") : '')
-        + ((!!style) ? '&style=' + style.replace(/[^.\d]+/g, "") : '')
-        + ((!!price) ? '&price=' + price : '').replace(/[^.\d]+/g, ""));
+        + ((!!section) ? '&section=' + section : '')
+        + ((!!material) ? '&material=' + material : '')
+        + ((!!manufacturer) ? '&manufacturer=' + manufacturer : '')
+        + ((!!style) ? '&style=' + style : '')
+        + ((!!price) ? '&price=' + price : ''));
 }
 
 // для 03_dveri-catalog

@@ -41,9 +41,9 @@ class Cart
     }
     
     public function clear(){
-        unset($this->_cart) ;
-        $this->_cart['quantity'] = 0;
-        $this->_cart['sum'] = 0;
+        $this->_cart = [];
+//        $this->_cart['quantity'] = 0;
+//        $this->_cart['sum'] = 0;
     }
 
     public function getQuantity(){

@@ -51,13 +51,13 @@ class Product extends ActiveRecord
             [['section_id'],'integer', 'min'=> 1],
             [['description'], 'string'],
             [['title'], 'string', 'max' => 50],
-            [['img'], 'safe'],
+            [['img'],'string'],
             [['currentPrice'],'match', 'pattern'=>'/^[0-9]{1,12}(\.[0-9]{0,4})?$/'],
             [['currentCurrency'], 'safe',],
             [['upload_files', ],'safe'],
             [['article'], 'unique'],
             [['note'], 'string', 'max' => 500],
-            //[['imageFile'], 'file', 'skipOnEmpty' => 'true', 'extensions' => 'png, jpg'],
+            [['imageFile'], 'file', 'skipOnEmpty' => 'true', 'extensions' => 'png, jpg'],
             [['manufacturer_id'], 'exist', 'skipOnError' => true, 'targetClass' => Manufacturer::className(), 'targetAttribute' => ['manufacturer_id' => 'id']],
             [['material_id'], 'exist', 'skipOnError' => true, 'targetClass' => Material::className(), 'targetAttribute' => ['material_id' => 'id']],
             [['section_id'], 'exist', 'skipOnError' => true, 'targetClass' => Section::className(), 'targetAttribute' => ['section_id' => 'id']],
@@ -86,6 +86,8 @@ class Product extends ActiveRecord
             'note' => 'Заметки',
         ];
     }
+
+
 
     /**
      * @return \yii\db\ActiveQuery
@@ -173,23 +175,28 @@ class Product extends ActiveRecord
         return $this->hasMany(Price::className(), ['product_id' => 'id'] )->orderBy('date desc')->one();
     }
 
+    public function getImage() {
 
+        $img = '/img/Image-Capture-icon.png';
+        if ( $this->img == '' ) {
+            $old_pic = $this->hasOne(GreenyImages::className(), ['productImageID' => 'imageID'])->src;
+            if (isset($old_pic))
+            {
+                $img = $old_pic;
+            }
+        }
+        else
+        {
+            $img = "/frontend/web/img/products/" . $this->manufacturer->title . '/' . $this->img;
+        }
 
-//    public function upload(){
-//
-//        if ($this->img) {
-//
-//            $path = Url::to('@frontend/web/img/'.$this->manufacturer->title.'/');
-//            $filename = strtolower($this->img);
-//            $this->imageFile->saveAS($path,$filename);
-//
-//        }
-//    }
-
+        return $img;
+    }
 
     public function afterFind()
     {
         parent::afterFind();
+        $this->imageFile = $this->img;
         foreach($this->getFiles()->all() as $file) {
             $this->upload_files[] = $file->getAttribute('file');
         }
@@ -199,7 +206,7 @@ class Product extends ActiveRecord
             $this->currentCurrency = $this->getPrice()->getAttribute('currency_id');
         }
 
-        $imageFile = $this->img;
+        //$this->imageFile = $this->img;
     }
 
     public function beforeSave($insert)
@@ -232,6 +239,7 @@ class Product extends ActiveRecord
             $modelPrice->cost = $this->currentPrice;
             $modelPrice->currency_id  = $this->currentCurrency;
             $modelPrice->date = date('Y-m-d');
+            $modelPrice->product_id = $this->id;
             $modelPrice->save();
         }
     }

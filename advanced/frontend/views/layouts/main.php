@@ -12,8 +12,15 @@ use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
 /**/
 use app\assets\MainAdaptiveAsset;
+use app\assets\TabletAsset;
+use app\assets\MobileAsset;
+use frontend\widgets\menu\PortNavBar;
+
+
 
 MainAdaptiveAsset::register($this);
+TabletAsset::register($this);
+MobileAsset::register($this);
 
 ?>
 <?php $this->beginPage() ?>
@@ -35,17 +42,16 @@ MainAdaptiveAsset::register($this);
     <body>
     <?php $this->beginBody() ?>
     <div class="wrap-all">
-
         <header>
             <div>
                 <div class="row">
                     <div class="col-md-2 col-sm-2 col-xs-4">
-                        <a href="index.php" class="logo">
+                        <a href="/" class="logo">
                             <?= Html::img('@web/img/logo.png', ['alt' => 'PORTELIANO',/*'class' => 'logo',*/]) ?>
                         </a>
                     </div>
 
-                    <div class="col-md-offset-1 col-md-6 col-sm-4 col-sm-offset-2 col-xs-offset-2 col-xs-6    ">
+                    <div class="col-md-offset-1 col-md-6 col-sm-4 col-sm-offset-2 col-xs-offset-1 col-xs-7">
                         <div class="row">
                             <section class="hidden-xs col-md-6  col-sm-12 site-contact font-PTSans">
                                 <div id="phone_1">+7(495) 742-17-24</div>
@@ -60,14 +66,14 @@ MainAdaptiveAsset::register($this);
                     </div>
 
                     <div class="col-md-2 col-md-push-0 col-sm-3 col-xs-push-2 col-xs-6">
-                        <div>
+                        <div class="header-ask-question">
                             <?php
                             /*$address указывает какой view должен загрузится в Content*/
                             /*$controller должен использовать $this->renderAjax*/
                             $address = Url::to(['site/entry'], true);
                             Modal::begin([
                                 'headerOptions' => ['id' => 'modalHeader'],
-                                'header' => '<h2>здесь будет то, что написано в title</h2>',
+                                'header' => '<h2>Задайте свой вопрос</h2>',
                                 //keeps from closing modal with esc key or by clicking out of the modal.
                                 // user must click cancel or X to close
                                 //'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
@@ -92,16 +98,30 @@ MainAdaptiveAsset::register($this);
             </div>
         </header>
         <div class="col-navbar">
+            <div id="wrap-tablet">
+                <div id="panel-tablet">
+                    <div id="button-toggle" class="glyphicon glyphicon-align-left"></div>
+                    <div id="other-panel">
+                        <a href="/cart/wishlist">
+                            <span class="glyphicon glyphicon-heart-empty"></span>
+                        </a>
+                        <a href="/cart/index">
+                            <span class="glyphicon glyphicon-shopping-cart"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
             <div id="navbar-line" class=''>
                 <?php
-                NavBar::begin([]);
+                //NavBar::begin([]);
+                PortNavBar::begin([]);
                 echo Nav::widget([
                     'encodeLabels' => false, /*nav  navbar-header*/
                     'options' => ['class' => 'navbar navbar-nav navbar-center  font-PTSans '],
 
                     'items' => [
                         ['label' => 'ГЛАВНАЯ',
-                            'url' => [Url::to(['site/index'])],
+                            'url' => [Url::to(['/'])],
                             'linkOptions' => ['data-target' => 'a0'],
                         ],
                         ['label' => 'НОВИНКИ',
@@ -117,15 +137,15 @@ MainAdaptiveAsset::register($this);
                             'linkOptions' => ['data-target' => 'a3'],
                         ],
                         ['label' => 'ПРОИЗВОДИТЕЛИ',
-                            'url' => Url::to(['site/index', '#' => 'manufacturers']),
+                            'url' => Url::to(['/pages/manufacturers']),
                             'linkOptions' => ['data-target' => 'a4'],
                         ],
                         ['label' => 'О КОМПАНИИ',
-                            'url' => Url::to(['site/index', '#' => 'about']),
+                            'url' => Url::to(['/pages/about']),
                             'linkOptions' => ['data-target' => 'a5'],
                         ],
                         ['label' => 'КОНТАКТЫ',
-                            'url' => Url::to(['site/index', '#' => 'contacts']),
+                            'url' => Url::to(['/pages/contacts']),
                             'linkOptions' => ['data-target' => 'a6'],
                         ],
 
@@ -138,12 +158,12 @@ MainAdaptiveAsset::register($this);
 
 
                     ]]);
-                NavBar::end();
+                PortNavBar::end();
                 /**/
                 ?>
             </div>
         </div>
-        <div class="row">
+        <div class="row max-width">
             <div class="col-md-offset-1 col-md-10">
                 <?= Breadcrumbs::widget([
                 'homeLink' => [
@@ -160,8 +180,8 @@ MainAdaptiveAsset::register($this);
     </div>
     <div class="push"></div>
 
-    <footer id="footer" class="footer footer-general">
-        <div id="navbar-line-footer" class="nav ">
+    <footer id="footer" class=" footer footer-general">
+        <div id="navbar-line-footer" class="nav hidden-xs hidden-sm">
             <?php
             echo Nav::widget([
                 'encodeLabels' => false,
@@ -185,9 +205,8 @@ MainAdaptiveAsset::register($this);
                 ]]);/**/
             ?>
         </div>
-
-        <div class="footer-copy">
-            &copy; Porteliano Итальянские двери, 1996 - <?= date('Y') ?>
+        <div class="footer-copy col-sm-12 col-xs-12">
+            <span class="footer-copy-text">&copy; Porteliano Итальянские двери, 1996 - <?= date('Y') ?></span>
             </p>
         </div>
 
