@@ -7,7 +7,6 @@
  */
 /* @var $this yii\web\View */
 
-/* @var $manufacturer \frontend\models\Manufacturer */
 /*  models  */
 
 /*  widgets  */
