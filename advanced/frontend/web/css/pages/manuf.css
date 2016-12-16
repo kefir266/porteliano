@@ -1,17 +1,16 @@
-.wrap-manuf{
+.wrap-manuf {
     margin-left: auto;
     margin-right: auto;
     max-width: 1030px;
 }
 
-.wrap-manuf .list-company{
+.wrap-manuf .list-company {
     padding: 0;
     list-style: none;
-
     width: 645px;
-    /*margin: 2px -23px 0 0;*/
     position: relative;
 }
+
 .wrap-manuf .list-company li {
     float: left;
     width: 198px;
@@ -22,28 +21,62 @@
     display: block;
     outline: 1px solid #ece7d4;
 }
+
 .wrap-manuf .list-company li a {
     display: block;
 }
+
 .wrap-manuf .list {
     padding: 0;
     list-style: none;
     margin: 0 0 250px;
     font-size: 22px;
-    font-family: "PT Sans",sans-serif;
+    font-family: "PT Sans", sans-serif;
 }
+
 .wrap-manuf .list li {
     margin: 0 0 4px;
 }
+
 .wrap-manuf ul li {
     vertical-align: top;
 }
+
 .wrap-manuf a {
     color: #353432;
     text-decoration: none;
 }
-.manuf-header{
+
+.manuf-header {
     font-family: "Copperplate", serif;
     font-size: 40px;
     margin-bottom: 50px;
+}
+
+/****************** Mobile *************************************/
+@media screen and (min-width: 480px) and (max-width: 768px) {
+
+    .wrap-manuf {
+        margin-bottom: 85px;
+    }
+
+    .wrap-manuf .list {
+        list-style-position: inside;
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+        height: 500px;
+        margin-bottom: 10px;
+    }
+
+    .wrap-manuf .mobil-width {
+        max-width: 460px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .wrap-manuf .list-company {
+        width: 430px;
+        position: relative;
+    }
 }
