@@ -81,13 +81,13 @@ switch ($product->section->id) {
 // в хлебные крошки 2 ссылки
 $this->params['breadcrumbs'][] = [
     'label' => 'Двери ',
-    'url' => Url::to(['pages/dveri']),
+    'url' => Url::to(['/catalog','section' => '1']),
     'template' => "<li><ins>{link}</ins></li>\n", // template for this link only
 ];
 
 $this->params['breadcrumbs'][] = [
     'label' => $categoryTitle,    //'Межкомнтаные двери ',
-    'url' => Url::to(['pages/doorcatalog']),
+    'url' => Url::to(['/catalog','section' => '3']),
     'template' => "<li> {link} </li>\n",
 ];
 

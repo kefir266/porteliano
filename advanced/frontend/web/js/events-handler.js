@@ -30,6 +30,54 @@
     // })
 })(jQuery);
 
+function getCurrentSection(novetly) {
+
+    var section = novetly.data("section");
+
+    if (section)
+        return section
+    else
+        return '2'; //перегородки
+}
+
+function getCurrentElements(novetly) {
+    var currentId = {};
+    var elements = novetly.children();
+    for (i = 0 ; i < elements.length; i++) {
+        currentId[i] = elements.eq(i).data('id');
+    }
+    return currentId;
+
+}
+
+function nextDownload(e,left) {
+
+    var currentButton = $(e.target);
+
+    var novetly = currentButton.parent().siblings(".novetly-col").find(".active > > > .ribbon-ul  ");
+    var section = getCurrentSection(novetly);
+    var elements = getCurrentElements(novetly);
+
+
+    $.ajax({
+        url: '/catalog/download',
+        data: {section: section,
+            elements: elements
+        },
+        type: 'POST',
+        success: function (res) {
+            if (left)
+                novetly.prepend(res);
+            else
+                novetly.append(res);
+        },
+        error: function () {
+            console.log('error downloading');
+
+        }
+    });
+}
+
 function delItem(e, cartWish, id) {
 
     if (cartWish == 'cart')
