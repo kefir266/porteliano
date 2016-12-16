@@ -35,3 +35,26 @@
 .generic > ul > li{
     text-indent: 25px;
 }
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    .order-registration {
+        max-width: 460px;
+    }
+    .confirm-orders-title{
+        padding-left: 0;
+    }
+    .manuf-logo {
+        max-height: 250px;
+        width: 100%;
+    }
+    .header-st{
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "PT Sans",sans-serif;
+    }
+    .link-on-manuf {
+        color: #935347;
+        text-decoration: none;
+        margin-bottom: 80px;
+        display: block;
+    }
+}
