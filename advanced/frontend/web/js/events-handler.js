@@ -2,7 +2,7 @@
  * Created by dmitrij on 24.11.2016.
  */
 
-
+var semaphore = false;
 
 (function ($) {
 
@@ -28,7 +28,68 @@
     //     delItem('wish', $(this).data('id'));
     //
     // })
+    semaphore = false;
 })(jQuery);
+
+function getCurrentSection(novetly) {
+
+    var section = novetly.data("section");
+
+    if (section)
+        return section;
+    else
+        return '2'; //перегородки
+}
+
+function getCurrentElements(novetly) {
+    var currentId = {};
+    var elements = novetly.children();
+    for (i = 0 ; i < elements.length; i++) {
+        currentId[i] = elements.eq(i).data('id');
+    }
+    return currentId;
+
+}
+
+function nextDownload(e,left, quant) {
+
+    e.preventDefault();
+    if (semaphore) return;
+
+    semaphore = true;
+    var currentButton = $(e.target);
+
+    var novetly = currentButton.parent().siblings(".novelty-folders").find(".ribbon-ul");
+    var active = currentButton.parent().siblings(".novelty-folders").find(".active > > > .ribbon-ul  ");
+    novetly = (active.length > 0)? active : novetly;
+
+    var giveMore = $(".catalog-elements");
+    novetly = (giveMore.length > 0) ? giveMore : novetly;
+
+    var section = getCurrentSection(novetly);
+    var elements = getCurrentElements(novetly);
+
+    $.ajax({
+        url: '/catalog/download',
+        data: {section: section,
+            elements: elements,
+            quant: quant
+        },
+        type: 'POST',
+        success: function (res) {
+            if (left)
+                novetly.prepend(res);
+            else
+                novetly.append(res);
+            semaphore = false;
+        },
+        error: function () {
+            console.log('error downloading');
+            semaphore = false;
+        }
+    });
+
+}
 
 function delItem(e, cartWish, id) {
 

@@ -248,7 +248,7 @@ foreach ($sections->getMenu() as $section) {
         <!-- контейнер для выбранных дверей -->
         <div class="row">
             <div class="col-md-12">
-                <div class="sampling-area">
+                <div class="sampling-area catalog-elements" data-section="<?= $ind ?>">
 
                     <?php foreach ($products['products'] as $product): ?>
 
@@ -259,9 +259,9 @@ foreach ($sections->getMenu() as $section) {
             </div>
         </div>
         <!-- кнопка показать ещё -->
-        <div class="row">
+        <div class="row give-more">
             <div class="col-md-12">
-                <a href="#">
+                <a href="#" onclick="nextDownload(event, false,20)">
                     <div class="center-flex">
                         <div class="glyphicon glyphicon-plus-sign"></div>
                         <div class="">Показать ещё</div>

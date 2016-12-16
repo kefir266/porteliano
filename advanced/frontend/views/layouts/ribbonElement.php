@@ -13,7 +13,7 @@ use yii\helpers\Url;
 ?>
 
 <?php
-    echo Html::beginTag('div', ['class' => 'tile']);
+    echo Html::beginTag('div', ['class' => 'tile', 'data-id' => $product->id]);
 
     echo Html::a(
 
