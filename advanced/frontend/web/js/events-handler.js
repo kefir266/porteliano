@@ -69,12 +69,23 @@ function nextDownload(e,left, quant) {
     var section = getCurrentSection(novetly);
     var elements = getCurrentElements(novetly);
 
+    var dataAjax = {section: section,
+        elements: elements,
+        quant: quant
+    };
+
+    if (giveMore.length > 0) {
+        dataAjax.material = $("div .material").find(".btn-default").data('id');
+        dataAjax.manufacturer = $("div .manufacturer").find(".btn-default").data('id');
+        dataAjax.style = $("div .style").find(".btn-default").data('id');
+        dataAjax.price = $("div .block-1-price").find(".btn-default").data('id');
+        dataAjax.section = $(".section-title").data('id');
+    }
+
+    console.log(dataAjax);
     $.ajax({
         url: '/catalog/download',
-        data: {section: section,
-            elements: elements,
-            quant: quant
-        },
+        data: dataAjax,
         type: 'POST',
         success: function (res) {
             if (left)

@@ -114,11 +114,12 @@ class CatalogController extends Controller
         $previous = Yii::$app->request->post('elements');
         $section = Yii::$app->request->post('section');
         $quant = Yii::$app->request->post('quant');
+        $params = Yii::$app->request->post();
         if (isset($previous)){
 
             $model = new Product();
             //TODO section
-            $products = $model->getProductsBySection($section,$quant, $previous);
+            $products = $model->getFilteredProducts($params, $quant, $previous);
             $ribbons = '';
             foreach ($products['products'] as $product){
                 $ribbons .= $this->renderAjax('@frontend/views/layouts/ribbonElement.php',['product' => $product]);

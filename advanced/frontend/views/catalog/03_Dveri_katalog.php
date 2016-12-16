@@ -146,7 +146,7 @@ foreach ($sections->getMenu() as $section) {
                         <h5>Вид</h5>
                         <?php
                         echo ButtonDropdown::widget([
-                            'options' => ['class' => 'btn-default'],
+                            'options' => ['class' => 'btn-default', 'data-id' => $params['style']],
                             'split' => true,
                             'label' => (isset($params['material']))
                                 ? $products['materials'][$params['material']]['label']
@@ -168,7 +168,7 @@ foreach ($sections->getMenu() as $section) {
                         echo ButtonDropdown::widget([
                             'options' => [
                                 'class' => 'btn-default',
-
+                                'data-id' => $params['style']
                             ],
 
                             'split' => true,
@@ -187,7 +187,7 @@ foreach ($sections->getMenu() as $section) {
                         <h5>Производитель</h5>
                         <?php
                         echo ButtonDropdown::widget([
-                            'options' => ['class' => 'btn-default'],
+                            'options' => ['class' => 'btn-default', 'data-id' => $params['manufacturer']],
                             'split' => true,
                             'label' => (isset($params['manufacturer']))
                                 ? $products['manufacturers'][$params['manufacturer']]['label']

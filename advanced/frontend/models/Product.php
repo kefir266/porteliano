@@ -206,7 +206,25 @@ class Product extends ActiveRecord
         return $img;
     }
 
-    public function getFilteredProducts($params, $quantity){
+    public function getFilteredProducts($params, $quantity, $notin = null){
+
+        $notInCondition = '';
+        if ($notin != null ) {
+
+            $notInCondition = 'product.id NOT IN ( ';
+            $first = true;
+            foreach( $notin as $addItem)
+            {
+                if (! $first) {
+                    $notInCondition .= ' , ';
+
+
+                }
+                $notInCondition .= $addItem;
+                $first = false;
+            }
+            $notInCondition .= ' )';
+        }
 
         $id = (isset($params['section'])) ? $params['section'] : 3;
         $products = $this->getProductsBySection($id,$quantity);
@@ -243,8 +261,8 @@ class Product extends ActiveRecord
             ->innerJoin('section', 'product.section_id = section.id ')
             ->innerJoin('(select distinct price.cost, price.product_id from price order by date DESC ) price ',
                 'price.product_id = product.id')
-            ->where(['product.section_id' => $id])->andWhere($conditionPrice)
-            ->orWhere(['section.parent_id' => $id])
+            ->where(['product.section_id' => $id])
+            ->orWhere(['section.parent_id' => $id])->andWhere($conditionPrice)->andWhere($notInCondition)
             ->limit($quantity)
             ->orderBy($order);
 
