@@ -113,11 +113,12 @@ class CatalogController extends Controller
     public function actionDownload() {
         $previous = Yii::$app->request->post('elements');
         $section = Yii::$app->request->post('section');
+        $quant = Yii::$app->request->post('quant');
         if (isset($previous)){
 
             $model = new Product();
             //TODO section
-            $products = $model->getProductsBySection($section,'1', $previous);
+            $products = $model->getProductsBySection($section,$quant, $previous);
             $ribbons = '';
             foreach ($products['products'] as $product){
                 $ribbons .= $this->renderAjax('@frontend/views/layouts/ribbonElement.php',['product' => $product]);
