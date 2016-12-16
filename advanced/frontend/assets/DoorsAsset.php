@@ -16,11 +16,12 @@ class DoorsAsset extends AssetBundle
     public $baseUrl = '@web';
     
     public $css = [
-        'css/pages/doors.css',        
+        'css/pages/doors.css',
+        /* сюда tablet стили*/        
+        'css/pages/_mobile_pages.css', 
     ];
     public $js = [
-        // доп. библиотеки
-        
+        // доп. библиотеки        
         // скрипты
         'js/navbarSwitch.js',
     ];

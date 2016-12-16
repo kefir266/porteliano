@@ -34,35 +34,45 @@ $bottomContent_2 = 'Именно они позволят значительно 
     <div class="septa-container">
         <div class="wrap-tiles">
             <!-- Заголовок -->
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-                    <?= Html::tag('h2', 'Раздвижные перегородки'); ?>
+            <div class="row mobil-width center-block">
+                <div class="col-md-10 col-md-offset-1 clear-indent">
+                    <?= Html::tag('h2', 'Раздвижные перегородки',['class' => 'septa-header']); ?>
                 </div>
             </div>
             <!-- плитки -->
-            <div class="row">
-                <div class="col-md-11 col-md-offset-1">
-                    <div class="plate">
+            <div class="row mobil-width center-block">
+                <div class="col-md-11 col-md-offset-1 clear-indent">
+                    <div class="plate plate-m-1">
                         <?= Html::beginTag('a', ['href' =>  Url::to(['catalog/', 'section' => '2'])]); ?>
                         <?= Html::img("@septa/septa_01.jpg",
-                            ['alt' => "door_0$i", 'class' => 'tile']); ?>
+
+                            ['alt' => "Межкомнатные перегородки", 'class' => 'tile']); ?>
+                        <div class="gradient gradient-pos"></div>
+                        <h2 class="center-block cover-text">Межкомнатные</h2>
+
                         <?= Html::endTag('a'); ?>
                     </div>
-                    <div class="plate">
+                    <div class="plate plate-m-3">
                         <?= Html::beginTag('a', ['href' =>  Url::to(['catalog/', 'section' => '2']),]); ?>
                         <?= Html::img("@septa/septa_02.jpg",
-                            ['alt' => "door_0$i", 'class' => 'tile']); ?>
+
+                            ['alt' => "Стеклянные перегородки", 'class' => 'tile']); ?>
+                        <div class="gradient gradient-pos"></div>
+                        <h2 class="center-block cover-text">Стеклянные</h2>
                         <?= Html::endTag('a'); ?>
                     </div>
-                    <div class="plate">
+                    <div class="plate plate-m-2">
                         <?= Html::beginTag('a', ['href' =>  Url::to(['catalog/', 'section' => '2']),]); ?>
                         <?= Html::img("@septa/septa_03.jpg",
-                            ['alt' => "door_0$i", 'class' => 'tile']); ?>
+                            ['alt' => "Радиусные перегородки", 'class' => 'tile']); ?>
+                        <div class="gradient gradient-pos"></div>
+                        <h2 class="center-block cover-text">Радиусные</h2>
+
                         <?= Html::endTag('a'); ?>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row center-block bottom-text">
                 <div class="col-md-10 col-md-offset-1">
                     <?= Html::tag('h4', $bottomHead); ?>
                     <?= Html::tag('p', $bottomContent_1); ?>

@@ -303,7 +303,14 @@
     .wrap-septa .tile {
         margin-top: 0;
     }
-
+    .wrap-septa .running-ribbon-septa div.view {
+        width: 479px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .wrap-septa .tile {
+        margin-left: 5px;
+    }
     /******  BLOCK 9  ACTION 2 **********************/
     .wrap-action-another {
         height: 866px;

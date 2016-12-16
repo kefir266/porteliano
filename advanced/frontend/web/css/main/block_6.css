@@ -24,7 +24,13 @@
     left: 12px;
     top: 10px;
 }
-
+.tile{
+    min-height: 470px;
+}
+.link-tile{
+    min-height: 342px;
+    display: block;
+}
 .wrap-doors .tile {
     padding-left: 0;
     padding-right: 0;
