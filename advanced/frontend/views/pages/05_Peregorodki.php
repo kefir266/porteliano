@@ -35,8 +35,8 @@ $bottomContent_2 = 'Именно они позволят значительно 
         <div class="wrap-tiles">
             <!-- Заголовок -->
             <div class="row mobil-width center-block">
-                <div class="col-md-10 col-md-offset-1">
-                    <?= Html::tag('h2', 'Раздвижные перегородки'); ?>
+                <div class="col-md-10 col-md-offset-1 clear-indent">
+                    <?= Html::tag('h2', 'Раздвижные перегородки',['class' => 'septa-header']); ?>
                 </div>
             </div>
             <!-- плитки -->

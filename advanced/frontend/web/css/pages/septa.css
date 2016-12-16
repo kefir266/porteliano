@@ -79,3 +79,58 @@ p {
     font-family: Copperplate, serif;
     color: #fdfdf3;
 }
+.septa-header{
+    font-family: Copperplate,serif;
+    font-size: 40px;
+    margin-top: 0;
+}
+/****************** Mobile *************************************/
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    ul.breadcrumb {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5%;
+        padding-left: 0;
+        background-color: #fdfdf3;
+        width: 330px;
+    }
+    .clear-indent{
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .mobil-width {
+        max-width: 347px;
+    }
+    .plate{
+        margin-left: 0;
+
+    }
+    .plate-m-3 {
+        margin-top: 10px;
+    }
+    .wrap-tiles img.tile{
+        margin-left: 0;
+    }
+    .plate-m-2 > a > img.tile,
+    .plate-m-1 > a > img.tile {
+        height: 350px;
+        width: 159px;
+    }
+    .plate-m-2{
+        position: absolute;
+        top: 0;
+        left: 176px;
+    }
+    .plate-m-3 > a > img.tile {
+        width: 335px;
+    }
+    .bottom-text{
+        max-width: 460px;
+    }
+    .cover-text {
+        font-size: 18px;
+    }
+}
+

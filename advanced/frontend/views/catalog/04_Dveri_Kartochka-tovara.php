@@ -17,11 +17,11 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 /*  assets  */
-use app\assets\TestAsset;
+use app\assets\ProductAsset;
 use app\assets\FontAsset;
 use app\assets\BackAsset;
 
-TestAsset::register($this);
+ProductAsset::register($this);
 FontAsset::register($this);
 BackAsset::register($this);
 
@@ -103,77 +103,78 @@ foreach ($sections->getMenu() as $section) {
 
 
 ?>
-<div class="door-catalog">
+<div class="door-catalog door-cart">
     <div class="panel-quick-selection">
-        <div class="row">
+        <!--карточка-->
+        <div class="row door-card-info">
             <div class="col-md-5 ">
                 <?= Html::img($product->image, ['class'=> 'doorImg']) ?>
             </div>
             <div class="product-discript-door col-md-7 ">
-                <div class="row">
-                    <div class="col-md-10">
+                <div class="row ">
+                    <div class="col-md-10 col-xs-11 door-title">
                         <h1 class="product-title"><?= $product->section->title ?></h1>
                     </div>
                 </div>
                 <!--Производитель-->
-                <div class="row">
-                    <div class="col-md-6">
+                <div class="row ">
+                    <div class="col-md-6 col-xs-6">
                         <h4 class="product-discript">Производитель</h4>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-xs-6">
                         <h4 ><?= $product->manufacturer->title ?></h4>
                     </div>
                 </div>
                 <!--Коллекция-->
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-xs-6">
                         <h4 class="product-discript">Коллекция</h4>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-xs-6">
                         <h4><?= $product->collection  ?></h4>
                     </div>
                 </div>
                 <!--Артикул-->
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-xs-6">
                         <h4 class="product-discript">Артикул</h4>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-xs-6">
                         <h4><?= $product->article  ?></h4>
                     </div>
                 </div>
                 <!--Стиль-->
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-xs-6">
                         <h4 class="product-discript">Стиль</h4>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-xs-6">
                         <h4><?= $product->style->title ?></h4>
                     </div>
                 </div>
                 <!----------->
                 <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-md-9  col-xs-9">
                         <h5 class="product-note"><?=$product->note  ?></h5>
                         <hr class="hr-separation"/>
                     </div>
                 </div>
                 <!--Стоимость-->
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6  col-xs-6">
                         <h4 class="product-discript product-price-h">Стоимость</h4>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6  col-xs-6">
                         <h4 class="product-price"><?= $product->price->cost ?></h4>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-md-9  col-xs-9">
                         <hr class="hr-separation"/>
                     </div>
                 </div>
                 <div class="row buttons-area">
-                    <div class="col-md-6">
+                    <div class="col-md-6  col-xs-6">
                         <a  href="#">
 <!--                            TODO перекрасить кнопку по функции $product->isOrdered() -->
                 <span id="in-basket" class="btn btn-default send-button"
@@ -182,7 +183,7 @@ foreach ($sections->getMenu() as $section) {
                 </span>
                         </a>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-xs-6">
                         <a id="in-wishlist" class="btn btn-default" href="#">
                 <span class="glyphicon glyphicon-heart<?= ($product->isWished()) ? '' : '-empty' ?>"
                       data-id="<?= $product->id ?>" onclick=addToWish(event)></span>
@@ -190,11 +191,11 @@ foreach ($sections->getMenu() as $section) {
                     </div>
                 </div> <!--Добавить в корзину-->
             </div>
-        </div> <!--карточка-->
-
+        </div>
+        <!--Обложки на соседние категории-->
         <div class="row">
-            <div class="col-md-6">
-                <div class="plate">
+            <div class="col-md-6 col-xs-12">
+                <div class="plate center-block">
                     <a href="<?=$coverLinkLeft?>">
                         <?= Html::img($coverImgLeft, [
                             'class'=>'img-border'
@@ -205,8 +206,8 @@ foreach ($sections->getMenu() as $section) {
                     </a>
                 </div>
             </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="plate">
+            <div class="col-md-6 col-xs-12 bottom-cover">
+                <div class="plate center-block">
                     <a href="<?=$coverLinkRight?>">
                         <?= Html::img($coverImgRight, [
                             'class'=>'img-border'
@@ -216,6 +217,6 @@ foreach ($sections->getMenu() as $section) {
                     </a>
                 </div>
             </div>
-        </div> <!--Обложки на соседние категории-->
+        </div>
     </div>
 </div>
