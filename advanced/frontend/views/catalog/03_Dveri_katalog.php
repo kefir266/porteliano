@@ -146,7 +146,8 @@ foreach ($sections->getMenu() as $section) {
                         <h5>Вид</h5>
                         <?php
                         echo ButtonDropdown::widget([
-                            'options' => ['class' => 'btn-default', 'data-id' => $params['style']],
+                            'options' => ['class' => 'btn-default',
+                                'data-id' => (isset($params['material'])) ? $params['material'] : null],
                             'split' => true,
                             'label' => (isset($params['material']))
                                 ? $products['materials'][$params['material']]['label']
@@ -168,7 +169,7 @@ foreach ($sections->getMenu() as $section) {
                         echo ButtonDropdown::widget([
                             'options' => [
                                 'class' => 'btn-default',
-                                'data-id' => $params['style']
+                                'data-id' => (isset($params['style'])) ? $params['style'] : null
                             ],
 
                             'split' => true,
@@ -187,7 +188,9 @@ foreach ($sections->getMenu() as $section) {
                         <h5>Производитель</h5>
                         <?php
                         echo ButtonDropdown::widget([
-                            'options' => ['class' => 'btn-default', 'data-id' => $params['manufacturer']],
+                            'options' => ['class' => 'btn-default',
+                                'data-id' => (isset($params['manufacturer'])) ? $params['manufacturer'] : null
+                            ],
                             'split' => true,
                             'label' => (isset($params['manufacturer']))
                                 ? $products['manufacturers'][$params['manufacturer']]['label']
@@ -215,7 +218,9 @@ foreach ($sections->getMenu() as $section) {
                                 'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '4']],
                         ];
                         echo ButtonDropdown::widget([
-                            'options' => ['class' => 'btn-default'],
+                            'options' => ['class' => 'btn-default',
+                                'data-id' => (isset($params['price'])) ? $params['price'] : null
+                            ],
                             'split' => true,
                             'label' => (isset($params['price'])) ? $items[$params['price']]['label'] : $items[0]['label'],
                             'dropdown' => [
