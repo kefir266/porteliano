@@ -18,7 +18,8 @@ use yii\helpers\Url;
     echo Html::a(
 
         Html::img($product->image,
-        ['alt' => $product->title, 'class' => 'tile-img']), '/catalog/product/?id='. $product->id);
+        ['alt' => $product->title, 'class' => 'tile-img']), '/catalog/product/?id='. $product->id,
+        ['class' => 'link-tile']);
 
     //заполняется карточка
     echo Html::beginTag('div', ['class' => 'info']);
