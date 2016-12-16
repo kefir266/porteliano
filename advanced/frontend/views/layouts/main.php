@@ -73,7 +73,7 @@ MobileAsset::register($this);
                             $address = Url::to(['site/entry'], true);
                             Modal::begin([
                                 'headerOptions' => ['id' => 'modalHeader'],
-                                'header' => '<h2>здесь будет то, что написано в title</h2>',
+                                'header' => '<h2>Задайте свой вопрос</h2>',
                                 //keeps from closing modal with esc key or by clicking out of the modal.
                                 // user must click cancel or X to close
                                 //'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
