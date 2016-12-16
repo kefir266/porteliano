@@ -55,3 +55,40 @@ p {
     margin-left: auto;
     max-width: 1200px;
 }
+
+/****************** Mobile *************************************/
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    .clear-indent{
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .mobil-width {
+        max-width: 347px;
+    }
+    .plate{
+        margin-left: 0;
+    }
+    .plate-m-1 {
+    }
+    .wrap-tiles img.tile{
+        margin-left: 0;
+    }
+    .plate-m-2 > a > img.tile,
+    .plate-m-1 > a > img.tile {
+        height: 350px;
+        width: 171px;
+    }
+    .plate-m-2{
+        position: absolute;
+        top: 0;
+        left: 176px;
+    }
+    .plate-m-3 > a > img.tile {
+        width: 347px;
+    }
+    .bottom-text{
+        max-width: 460px;
+    }
+}
