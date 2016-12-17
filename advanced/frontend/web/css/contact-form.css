@@ -4,10 +4,6 @@
     background-color: #FFFFFF;
     padding: 0 30px 0 30px;
 }
-.contact-form-header-all{
-    margin-top: 45px;
-}
-
 .contact-form p {
     margin-bottom: 5%;
 }
@@ -20,20 +16,29 @@
     margin-left: 0;
     margin-right: 0;
 }
-
+.form-control{
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border-radius: 0;
+    border: none;
+}
 .contact-form button {
-
     background-color: #955347;
     border: none;
+    border-radius: 0;
+    font-family: "PT Sans",sans-serif;
+    font-style: normal;
+    font-size: 16px;
     width: 100%;
 
-}
 
+}
 .contact-form button:hover {
     background-color: #6a372d;
 }
 .form-horizontal .form-group{
     margin-left: 0;
+    margin-right: 0;
 }
 .contact-form input {
     background-color: #f3f0df;
@@ -49,18 +54,30 @@
 /* цвет шрифта для placeholder */
 .contact-form input::-webkit-input-placeholder {
     color: #000;
+    font-family: "PT Serif",serif;
+    font-style: italic;
+    font-size: 14px;
 }
 
 .contact-form input::-moz-placeholder {
     color: #000;
+    font-family: "PT Serif",serif;
+    font-style: italic;
+    font-size: 14px;
 }
 
 .contact-form input:-moz-placeholder {
     color: #000;
+    font-family: "PT Serif",serif;
+    font-style: italic;
+    font-size: 14px;
 }
 
 .contact-form input:-ms-input-placeholder {
     color: #000;
+    font-family: "PT Serif",serif;
+    font-style: italic;
+    font-size: 14px;
 }
 
 /* сдвиг placeholder-а вправо при фокусе */
@@ -129,6 +146,7 @@
 .contact-form-header-all{
     font-family: 'PTSerif', serif;
     font-size: 30px;
+    margin-top: 45px;
 }
 .contact-form-text{
     font-family: "PTSans", sans-serif;
@@ -154,4 +172,10 @@
  }
 .contact-form-back-call{
     height: 540px;
+}
+.col-lg-12{
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
 }

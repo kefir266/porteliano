@@ -91,9 +91,7 @@
     */
     padding: 0 30px 0 30px;
 }
-.contact-form-header-all{
-    margin-top: 45px;
-}
+
 .contact-form p {
     margin-bottom: 5%;
 }
@@ -106,7 +104,7 @@
     margin-left: 0;
     margin-right: 0;
 }
-
+/*
 .contact-form button {
     background-color: #6a372d;
     border: none;
@@ -116,7 +114,7 @@
 .contact-form button:hover {
     background-color: #955347;
 }
-
+*/
 .contact-form input {
     background-color: #f3f0df;
     font-family: 'PTSerif', serif;
@@ -206,10 +204,13 @@
         height: 370px;
         width: 250px;
         background: #d1c9b2 url("../../img/other/ruletka.jpg") no-repeat;
+        background-position: 0 20px;
         text-align: center;
         padding-top: 150px;
         /*margin-top: 67px;*/
         margin-left: -90px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
     .wrap-about h1:first-child {
