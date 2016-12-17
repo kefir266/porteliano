@@ -48,8 +48,8 @@ switch ($products['section']->id) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Ручки';
 
-        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
-        $coverLinkRight = Url::to(['catalog/', 'ind' => '5']);
+        $coverLinkLeft = Url::to(['catalog/', 'section' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'section' => '5']);
         break;
     case 2:
         $categoryTitle = 'Перегородки';
@@ -61,8 +61,8 @@ switch ($products['section']->id) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Ручки';
 
-        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
-        $coverLinkRight = Url::to(['catalog/', 'ind' => '5']);
+        $coverLinkLeft = Url::to(['catalog/', 'section' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'section' => '5']);
         break;
     case 4:
         $categoryTitle = 'Входные двери';
@@ -73,8 +73,8 @@ switch ($products['section']->id) {
         $coverTextLeft = 'Ручки';
         $coverTextRight = 'Межкомнатные двери';
 
-        $coverLinkLeft = Url::to(['catalog/', 'ind' => '5']);
-        $coverLinkRight = Url::to(['catalog/', 'ind' => '3']);
+        $coverLinkLeft = Url::to(['catalog/', 'section' => '5']);
+        $coverLinkRight = Url::to(['catalog/', 'section' => '3']);
         break;
     case 5:
         $categoryTitle = 'Ручки';
@@ -85,8 +85,8 @@ switch ($products['section']->id) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Межкомнатные двери';
 
-        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
-        $coverLinkRight = Url::to(['catalog/', 'ind' => '3']);
+        $coverLinkLeft = Url::to(['catalog/', 'section' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'section' => '3']);
         break;
     default:
         $categoryTitle = 'нет категории';
@@ -96,8 +96,8 @@ switch ($products['section']->id) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Межкомнатные двери';
 
-        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
-        $coverLinkRight = Url::to(['catalog/', 'ind' => '3']);
+        $coverLinkLeft = Url::to(['catalog/', 'section' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'section' => '3']);
 }
 
 $this->params['breadcrumbs'][] = [
@@ -133,7 +133,7 @@ foreach ($sections->getMenu() as $section) {
         <!-- заголовок -->
         <div class="row">
             <div class="col-md-12">
-                <h2>
+                <h2 class="section-title" data-id="<?= $ind ?>">
                     <?= $sections->findOne($ind)->title_main ?>
                 </h2>
             </div>

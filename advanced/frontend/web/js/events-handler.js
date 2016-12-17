@@ -6,8 +6,8 @@ var semaphore = false;
 
 (function ($) {
 
-    $(".add-to-cart").on('click', addToCart);
-    $(".add-to-wish").on('click', addToWish);
+    //$(".add-to-cart").on('click', addToCart);
+    //$(".add-to-wish").on('click', addToWish);
 
     var jCart = $("#basket");
     var jWish = $('#wishlist');

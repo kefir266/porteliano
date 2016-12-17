@@ -31,20 +31,19 @@ use yii\helpers\Url;
     $price = $product->prices;
     echo
     Html::tag('div',
-        Html::tag('a', ((count($price)) ? current($price)->currency->title : '')
+        ((count($price)) ? current($price)->currency->title : '')
             . ' '. ((count($price) > 0) ?
                 current($price)->cost
-                : ''), ['href' =>
-            Url::to(['cart/add', 'id' => $product->id])]),
+                : ''),
         ['class' => 'block-price-count add-to-cart',
             'data-id' => $product->id]
     );
-    echo Html::tag('a',
+    echo Html::a(
         Html::tag('div', '', [
             'class' => 'glyphicon glyphicon-heart-empty add-to-wish ',
             'data-id' => $product->id]),
         ['href' =>
-            Url::to(['cart/addWish', 'id' => $product->id])]);
+            Url::to(['cart/addWish', 'id' => $product->id, ])],[ 'onclick' => 'addToWish(event)']);
     echo Html::endTag('div');
     echo Html::endTag('div');
     echo Html::endTag('div');

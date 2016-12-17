@@ -40,8 +40,8 @@ switch ($product->section->id) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Ручки';
 
-        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
-        $coverLinkRight = Url::to(['catalog/', 'ind' => '5']);
+        $coverLinkLeft = Url::to(['catalog/', 'section' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'section' => '5']);
         break;
     case 4:
         $categoryTitle = 'Входные двери';
@@ -51,8 +51,8 @@ switch ($product->section->id) {
         $coverTextLeft = 'Ручки';
         $coverTextRight = 'Межкомнатные двери';
 
-        $coverLinkLeft = Url::to(['catalog/', 'ind' => '5']);
-        $coverLinkRight = Url::to(['catalog/', 'ind' => '3']);
+        $coverLinkLeft = Url::to(['catalog/', 'section' => '5']);
+        $coverLinkRight = Url::to(['catalog/', 'section' => '3']);
         break;
     case 5:
         $categoryTitle = 'Ручки';
@@ -62,8 +62,8 @@ switch ($product->section->id) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Межкомнатные двери';
 
-        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
-        $coverLinkRight = Url::to(['catalog/', 'ind' => '3']);
+        $coverLinkLeft = Url::to(['catalog/', 'section' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'section' => '3']);
         break;
     default:
         $categoryTitle = 'нет категории';
@@ -74,8 +74,8 @@ switch ($product->section->id) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Ручки';
 
-        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
-        $coverLinkRight = Url::to(['catalog/', 'ind' => '5']);
+        $coverLinkLeft = Url::to(['catalog/', 'section' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'section' => '5']);
 }
 
 // в хлебные крошки 2 ссылки
