@@ -41,6 +41,7 @@
     margin-left: 0;
     margin-right: 0;
 }
+.contact-form textarea,
 .contact-form input {
     background-color: #f3f0df;
     font-family: 'PTSerif', serif;
@@ -53,27 +54,28 @@
 
 
 /* цвет шрифта для placeholder */
+.contact-form textarea::-webkit-input-placeholder,
 .contact-form input::-webkit-input-placeholder {
     color: #000;
     font-family: "PT Serif",serif;
     font-style: italic;
     font-size: 14px;
 }
-
+.contact-form textarea::-moz-placeholder,
 .contact-form input::-moz-placeholder {
     color: #000;
     font-family: "PT Serif",serif;
     font-style: italic;
     font-size: 14px;
 }
-
+.contact-form textarea:-moz-placeholder,
 .contact-form input:-moz-placeholder {
     color: #000;
     font-family: "PT Serif",serif;
     font-style: italic;
     font-size: 14px;
 }
-
+.contact-form textarea:-ms-input-placeholder,
 .contact-form input:-ms-input-placeholder {
     color: #000;
     font-family: "PT Serif",serif;
@@ -82,49 +84,50 @@
 }
 
 /* сдвиг placeholder-а вправо при фокусе */
+.contact-form textarea::-webkit-input-placeholder,
 .contact-form input::-webkit-input-placeholder {
     color: #000;
     text-overflow: ellipsis;
     text-indent: 0px;
     transition: text-indent 0.3s ease;
 }
-
+.contact-form textarea::-moz-placeholder,
 .contact-form input::-moz-placeholder {
     color: #000;
     text-overflow: ellipsis;
     text-indent: 0px;
     transition: text-indent 0.3s ease;
 }
-
+.contact-form textarea:-moz-placeholder,
 .contact-form input:-moz-placeholder {
     color: #000;
     text-overflow: ellipsis;
     text-indent: 0px;
     transition: text-indent 0.3s ease;
 }
-
+.contact-form textarea:-ms-input-placeholder,
 .contact-form input:-ms-input-placeholder {
     color: #000;
     text-overflow: ellipsis;
     text-indent: 0px;
     transition: text-indent 0.3s ease;
 }
-
+.contact-form textarea:focus::-webkit-input-placeholder,
 .contact-form input:focus::-webkit-input-placeholder {
     text-indent: 500px;
     transition: text-indent 0.3s ease;
 }
-
+.contact-form textarea:focus::-moz-placeholder,
 .contact-form input:focus::-moz-placeholder {
     text-indent: 500px;
     transition: text-indent 0.3s ease;
 }
-
+.contact-form textarea:focus:-moz-placeholder,
 .contact-form input:focus:-moz-placeholder {
     text-indent: 500px;
     transition: text-indent 0.3s ease;
 }
-
+.contact-form textarea:-ms-input-placeholder,
 .contact-form input:focus:-ms-input-placeholder {
     text-indent: 500px;
     transition: text-indent 0.3s ease;
