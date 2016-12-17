@@ -64,7 +64,7 @@ Yii::setAlias('@imgBigLogos', '@web/img/catalog/logos/big');
         <div class="col-md-12">
             <div class="action">
                 <div class="img-holder"
-                     data-image="<?= Yii::getAlias('@web') . '/img/background/FOTO_INTRO_01.jpg' ?>">
+                     data-image="<?= Yii::getAlias('@web') . '/img/background/28818-FOTO_INTRO_15.jpg' ?>">
                 </div>
                 <div class="row">
                     <div class="action-text">

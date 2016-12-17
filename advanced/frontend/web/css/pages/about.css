@@ -146,28 +146,28 @@
 .contact-form input::-webkit-input-placeholder {
     color: #000;
     text-overflow: ellipsis;
-    text-indent: 0px;
+    text-indent: 0;
     transition: text-indent 0.3s ease;
 }
 
 .contact-form input::-moz-placeholder {
     color: #000;
     text-overflow: ellipsis;
-    text-indent: 0px;
+    text-indent: 0;
     transition: text-indent 0.3s ease;
 }
 
 .contact-form input:-moz-placeholder {
     color: #000;
     text-overflow: ellipsis;
-    text-indent: 0px;
+    text-indent: 0;
     transition: text-indent 0.3s ease;
 }
 
 .contact-form input:-ms-input-placeholder {
     color: #000;
     text-overflow: ellipsis;
-    text-indent: 0px;
+    text-indent: 0;
     transition: text-indent 0.3s ease;
 }
 
@@ -225,8 +225,7 @@
         background: #d1c9b2 url("../../img/other/ruletka.jpg") no-repeat;
         background-position-x: 210px;
         margin-bottom: 1%;
-        padding: 20%;
-        padding-top: 30%;
+        padding: 30% 20% 20%;
     }
 }
 
@@ -304,8 +303,8 @@ p {
     }
 
     .ruletka {
-        background-position: 210px 0;
-        padding: 30px 0 0 10px;
+        background-position: 268px 0;
+        padding: 30px 0 0 18px;
         margin-bottom: 40px;
     }
     div.action-text {
