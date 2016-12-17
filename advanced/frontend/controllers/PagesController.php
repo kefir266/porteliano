@@ -28,8 +28,8 @@ use app\models\EntryForm;
  * ссылки для перехода
  *
  * /pages/dveri
- * /pages/doorcatalog
- * /pages/door_card
+ * /catolog/doorcatalog
+ * /catolog/door_card
  * /pages/manufacturers
  * /pages/manufacturers_inner
  * /pages/about
