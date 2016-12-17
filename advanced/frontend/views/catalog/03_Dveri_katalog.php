@@ -247,7 +247,7 @@ foreach ($sections->getMenu() as $section) {
         </div>
         <!-- контейнер для выбранных дверей -->
         <div class="row mobil-width-full">
-            <div class="col-md-12">
+            <div class="col-md-12 mobil-width-full">
                 <div class="sampling-area">
 
                     <?php foreach ($products['products'] as $product): ?>
@@ -271,7 +271,7 @@ foreach ($sections->getMenu() as $section) {
         </div>
         <!-- Обложки на соседние категории -->
         <div class="row mobil-width-full">
-            <div class="col-md-6">
+            <div class="col-md-6 ">
                 <div class="plate">
                     <a href="<?=$coverLinkLeft?>">
                         <?= Html::img($coverImgLeft, [
