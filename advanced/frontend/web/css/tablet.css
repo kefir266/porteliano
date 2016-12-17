@@ -943,6 +943,10 @@
 		padding-top:40px;
 	}
 
+	ul.breadcrumb > li:first-child{
+		margin-left:0px;
+	}
+
 	.door-catalog > .panel-quick-selection{
 		width:720px;
 	}
@@ -950,5 +954,177 @@
 	.door-catalog > .panel-quick-selection > div.row:first-child >
 	div{
 		padding:0px;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:first-child >
+	div > h2{
+		margin:0px;
+		margin:20px 0px;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2){
+		width:700px;
+		margin:0px auto;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container{
+		width:700px;
+		height:178px;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container > div > h5{
+		margin-top:0px;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container > .material,
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container > .manufacturer,
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container > .block-1-price,
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container > .pick-up{
+		display:block;
+		float:left;
+		margin:0px;
+		padding:0px;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container > .pick-up,
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container > .pick-up > #w12{
+		width:130px;
+		height:40px;
+		margin:0px;
+		padding:0px;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container > .pick-up{
+		position:relative;
+		margin-top:22px;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container > .block-1-price,
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container > .block-1-price > .btn-group{
+		width:180px;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container > .block-1-price > .btn-group > #w9{
+		width:140px;
+		height:40px;
+		padding:0px;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container > .material,
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container > .material > .btn-group,
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container > .style,
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container > .style > .btn-group,
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container > .manufacturer,
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container > .manufacturer > .btn-group{
+		width:330px;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container > .material > .btn-group > #w0,
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container > .style > .btn-group > #w3,
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container > .manufacturer > .btn-group > #w6{
+		padding:0px;
+		width:290px;
+		height:40px;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container > .material > .btn-group > #w1,
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container > .style > .btn-group > #w4,
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container > .manufacturer > .btn-group > #w7,
+	.door-catalog > .panel-quick-selection > div.row:nth-child(2) > div >
+	.flex-container > .block-1-price > .btn-group > #w10{
+		width:40px;
+		height:40px;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:nth-child(3){
+		width:700px;
+		margin:0px auto;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:nth-child(3) >
+	div{
+		width:700px;
+		margin:0px;
+		padding:0px;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:nth-child(4){
+		width:720px;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:nth-child(4) > div{
+		width:720px;
+		margin:0px;
+		padding:0px;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:nth-child(4) > 
+	div > div{
+		width:720px;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:nth-child(4) > 
+	div > div > div.tile{
+		margin:0px;
+		margin-top:20px;
+		margin-right:10px;
+		background-color:#fff;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:nth-child(4) > 
+	div > div > div.tile:nth-child(3n + 3){
+		margin-right:0px;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:nth-child(6){
+		width:720px;
+		margin-bottom:60px;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:nth-child(6) > 
+	div{
+		margin:0px;
+		padding:0px;
+		width:345px;
+		height:350px;
+		float:left;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:nth-child(6) > 
+	div > div{
+		margin:0px;
+		padding:0px;
+		height:350px;
+		border:6px solid #935347;
+		box-sizing: border-box;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:nth-child(6) > 
+	div:first-child{
+		margin-right:10px;
 	}
 }
