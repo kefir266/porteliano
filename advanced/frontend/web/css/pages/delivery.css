@@ -104,3 +104,30 @@ body{
 .consultation-form{
     margin-top: 40px;
 }
+
+/****************** Mobile *************************************/
+@media screen and (min-width: 480px) and (max-width: 768px) {
+
+	.delivery{		
+		width: 460px
+	}
+	.delivery-header{
+		width: 460px
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

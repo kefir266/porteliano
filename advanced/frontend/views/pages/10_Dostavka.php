@@ -432,21 +432,21 @@ $metering = '
 <div class="wrap-delivery">
 
     <div class="limited-content">
-        <div class="delivery">
+        <div class="delivery center-block">
             <!-- заголовок -->
-            <div class="row">
+            <div class="row center-block">
                 <div class="col-md-12 .col-sm-12 col-xs-12 ">
                     <h1 class="delivery-header">Доставка и установка</h1>
                 </div>
             </div>
             <!-- подзаголовок -->
-            <div class="row">
+            <div class="row center-block">
                 <div class="col-md-12 .col-sm-12 col-xs-12 ">
                     <h2 class="delivery-cost">Стоимость доставки</h2>
                 </div>
             </div>
             <!-- колонка цен и колонка внимание-->
-            <div class="row">
+            <div class="row center-block">
                 <div class="col-md-4 col-sm-4 col-xs-12 ">
                     <table class="table table-responsive table-hover">
                         <caption><h3 class="mark-header">По Москве</h3></caption>
@@ -471,7 +471,7 @@ $metering = '
                     </table>
                 </div>
                 <!-- колонка внимание  -->
-                <div class="col-md-8  .col-sm-2 col-xs-2">
+                <div class="col-md-8  .col-sm-2 col-xs-12">
                     <h3 class="mark-header"> Внимание!</h3>
                     <p>
                         Если по техническим причинам доставить товар «в квартиру» нет возможности, то по согласованию с
