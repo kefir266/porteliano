@@ -519,7 +519,7 @@ $metering = '
     <!--
         <div class="action-push"></div>
          parallax -->
-    <div class="row ">
+    <div class="row center-block">
         <div class="col-md-12">
             <div class="action consultation">
                 <div class="img-holder"
