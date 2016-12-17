@@ -82,6 +82,9 @@ Yii::setAlias('@imgBigLogos', '@web/img/catalog/logos/big');
                     </div>
 
                 </div>
+                <!-- TODO: Сделать через assets -->
+                <script src="/js/lib/jquery.min.js"></script>
+                <script src="/js/lib/jquery.imageScroll.min.js"></script>
                 <script>
                     $('div.action > .img-holder').imageScroll({
                         holderClass: 'imageHolder',

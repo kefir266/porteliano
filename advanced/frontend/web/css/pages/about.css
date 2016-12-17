@@ -253,3 +253,9 @@ p{
     margin-top: 100px;
     margin-bottom: 120px;
 }
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    .limited-block {
+        max-width: 460px;
+    }
+
+}
