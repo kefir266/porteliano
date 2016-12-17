@@ -924,7 +924,7 @@
 	/*Каталог*/
 
 	.max-width.row{
-		width:700px;
+		width:720px;
 		margin:0px auto;
 		height:auto;
 	}
@@ -932,7 +932,7 @@
 	.max-width > div{
 		margin:0px;
 		padding:0px;
-		width:700px;
+		width:720px;
 		margin:0px auto;
 		text-align:left;
 	}
@@ -945,5 +945,10 @@
 
 	.door-catalog > .panel-quick-selection{
 		width:720px;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:first-child >
+	div{
+		padding:0px;
 	}
 }
