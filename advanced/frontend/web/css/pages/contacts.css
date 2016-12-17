@@ -7,9 +7,9 @@
 {
     margin-top: 5%;
 }
-.wrap-contacts  h2{
-    font-family: "Copperplate", serif;
-    font-size: 40px;
+.wrap-contacts h2{
+    font-family: "PT Serif", serif;
+    font-size: 30px;
 }
 @media screen and  (min-width: 1024px) {
     .contact-img {
