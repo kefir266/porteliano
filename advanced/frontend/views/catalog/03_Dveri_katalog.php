@@ -131,7 +131,7 @@ foreach ($sections->getMenu() as $section) {
 <div class="door-catalog">
     <div class="panel-quick-selection">
         <!-- заголовок -->
-        <div class="row ">
+        <div class="row mobil-width-full">
             <div class="col-md-12">
                 <h2 class="catalog-header">
                     <?= 'Межкомнатные двери'//$sections->findOne($ind)->title_main ?>
@@ -239,14 +239,14 @@ foreach ($sections->getMenu() as $section) {
         </div>
         <!-- методы сортировки -->
         <div class="row sorting">
-            <div class="col-md-5">
+            <div class="col-md-5 clear-padding">
                 <span>Сортировать по:</span>
                 <span class="btn btn-link"><?=Html::a('Алфавиту',Url::to(array_merge(['catalog/'], $params, ['order' => 'abc']))) ?></span>
                 <span class="btn btn-link"><?=Html::a('Цена',Url::to(array_merge(['catalog/'], $params, ['order' => '012']))) ?></span>
             </div>
         </div>
         <!-- контейнер для выбранных дверей -->
-        <div class="row">
+        <div class="row mobil-width-full">
             <div class="col-md-12">
                 <div class="sampling-area">
 
@@ -259,7 +259,7 @@ foreach ($sections->getMenu() as $section) {
             </div>
         </div>
         <!-- кнопка показать ещё -->
-        <div class="row">
+        <div class="row mobil-width-full">
             <div class="col-md-12">
                 <a href="#">
                     <div class="center-flex">
@@ -270,7 +270,7 @@ foreach ($sections->getMenu() as $section) {
             </div>
         </div>
         <!-- Обложки на соседние категории -->
-        <div class="row">
+        <div class="row mobil-width-full">
             <div class="col-md-6">
                 <div class="plate">
                     <a href="<?=$coverLinkLeft?>">

@@ -361,4 +361,22 @@ ul.breadcrumb {
         width: 440px;
         margin-left: 9px;
     }
+    .clear-padding{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .sampling-area{
+        width: 480px;
+    }
+    .sampling-area > .tile:first-child{
+        margin-left: 0;
+    }
+    .sampling-area > .tile{
+        margin-left: 8px;
+    }
+    .mobil-width-full{
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
