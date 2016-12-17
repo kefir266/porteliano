@@ -3,6 +3,7 @@ body{
 }
 .delivery{
     min-height: 485px;
+    max-width: 1100px;
     font-family: "PT Sans",sans-serif;
     font-size: 18px;
 }
@@ -59,7 +60,7 @@ body{
     font-family: "ALS Rubl", ALSRubl, serif;
 }
 .consultation{
-    height: 390px;
+    max-height: 390px;
     overflow: hidden;
 }
 .action h1,
@@ -104,7 +105,14 @@ body{
 .consultation-form{
     margin-top: 40px;
 }
-
+.table > tbody > tr > td{
+    border-top: none;
+}
+.action-push{
+    height: 20px;
+    background-color: aqua;
+    position: relative;
+}
 /****************** Mobile *************************************/
 @media screen and (min-width: 480px) and (max-width: 768px) {
 
@@ -114,20 +122,70 @@ body{
 	.delivery-header{
 		width: 460px
 	}
+    .clear-indent{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .table > tbody > tr > td{
+        border-top: none;
+    }
+    .delivery .table-responsive{
+        border: none;
+    }
+    .delivery .table-responsive > tbody > tr > td:nth-child(2){
+        text-align: right;
+    }
+    .collapse-wrap{
+        width: 460px
+    }
+    .m-1-header{
+        position: absolute;
+        top: -3px;
+        width: 100%;
+        background-color: #ece7d4;
+    }
+    .table > tbody > tr.m-2-header > td{
+        padding-top: 42px;
+        /*position: relative;
+        top: 42px;*/
+    }
+    .m-2-header{
+        font-size: 14px;
+    }
+    .panel-body{
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .panel-body > .row{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .panel-body > .row > .col-md-12{
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .lifting-costs > tbody > tr:first-child > td:nth-child(1){
+/*  */background-color: #99ee99;
+        width: 220px;
+
+    }
+    .lifting-costs > tbody > tr:first-child > td:nth-child(2){
+        background-color: #f8efc0;
+        width: 81px;
+        padding-left: 0px;
+        padding-right: 10px;
+       /* */
+    }
+    .lifting-costs > tbody > tr:first-child > td:nth-child(3){
+/**/    background-color: #935347;
+        width: 70px;
+        padding-left: 0;
+        padding-right: 10px;
+    }
+    .lifting-costs > tbody > tr:first-child > td:nth-child(4){
+        /**/    background-color: #66afe9;
+        width: 70px;
+        padding-left: 10px;
+        padding-right: 0px;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -44,7 +44,7 @@ function TypesJobs($arr)
     $str = '';
     for ($i = 0; $i < count($arr[0]); $i++) {
         $str .= '<tr>';
-        for ($j = 0; $j <= count($arr); $j++) {
+        for ($j = 0; $j <= count($arr)-1; $j++) {
             $str .= "<td>" . $arr[$j][$i] . "</td>";
         }
         $str .= '</tr>';
@@ -345,17 +345,16 @@ $lifting = '
 <div class="row">
     <div class="col-md-12">
     <table class="table table-hover lifting-costs">
-        <tr class="table-headers">
+        <tr class="table-headers m-2-header">
             <td></td>
             <td>В грузовом лифте, за дверь</td>
             <td>На руках, за дверь, за этаж</td>
             <td>Частный дом, коттедж, 1 шт.</td>
         </tr>
-        <tr class="table-headers">
+        <tr class="table-headers m-1-header">
             <td>Двери, перегородки, входные двери</td>
             <td></td>
-            <td></td>
-            <td></td>
+            <td></td>            
         </tr>
         ' . TypesJobs($costLifting) . '
     </table>
@@ -435,19 +434,19 @@ $metering = '
         <div class="delivery center-block">
             <!-- заголовок -->
             <div class="row center-block">
-                <div class="col-md-12 .col-sm-12 col-xs-12 ">
+                <div class="col-md-12 .col-sm-12 col-xs-12 clear-indent">
                     <h1 class="delivery-header">Доставка и установка</h1>
                 </div>
             </div>
             <!-- подзаголовок -->
-            <div class="row center-block">
-                <div class="col-md-12 .col-sm-12 col-xs-12 ">
+            <div class="row center-block ">
+                <div class="col-md-12 .col-sm-12 col-xs-12 clear-indent">
                     <h2 class="delivery-cost">Стоимость доставки</h2>
                 </div>
             </div>
             <!-- колонка цен и колонка внимание-->
             <div class="row center-block">
-                <div class="col-md-4 col-sm-4 col-xs-12 ">
+                <div class="col-md-4 col-sm-4 col-xs-12 clear-indent">
                     <table class="table table-responsive table-hover">
                         <caption><h3 class="mark-header">По Москве</h3></caption>
                         <tbody>
@@ -471,7 +470,7 @@ $metering = '
                     </table>
                 </div>
                 <!-- колонка внимание  -->
-                <div class="col-md-8  .col-sm-2 col-xs-12">
+                <div class="col-md-8  .col-sm-2 col-xs-12 clear-indent">
                     <h3 class="mark-header"> Внимание!</h3>
                     <p>
                         Если по техническим причинам доставить товар «в квартиру» нет возможности, то по согласованию с
@@ -484,8 +483,8 @@ $metering = '
             </div>
         </div>
         <!-- collapse -->
-        <div class="row">
-            <div class="col-md-12 ">
+        <div class="row center-block collapse-wrap ">
+            <div class="col-md-12 clear-indent">
                 <?php
                 echo Collapse::widget([
                     'items' => [
@@ -513,10 +512,10 @@ $metering = '
             </div>
         </div>
     </div>
-
-
-    <!-- parallax -->
-    <div class="row">
+    <!--
+        <div class="action-push"></div>
+         parallax -->
+    <div class="row ">
         <div class="col-md-12">
             <div class="action consultation">
                 <div class="img-holder"
@@ -539,6 +538,8 @@ $metering = '
                     </div>
 
                 </div>
+                <script src="/js/lib/jquery.min.js"></script>
+                <script src="/js/lib/jquery.imageScroll.min.js"></script>
                 <script>
                     $('div.action > .img-holder').imageScroll({
                         holderClass: 'imageHolder',
@@ -552,10 +553,22 @@ $metering = '
                         parallax: true,
                         touch: false
                     });
+                    $(function () {
+                        $('.panel-heading > .panel-title > a').on("click", function() {
+
+                            $('div.action > .img-holder').imageScroll('refresh');
+                            var content = $('html');
+                            $('div.action > .img-holder').trigger('scroll');
+
+                            console.log( $( this ).text() );
+
+
+                        });
+                    })
                 </script>
             </div>
         </div>
     </div>
 
-
 </div>
+
