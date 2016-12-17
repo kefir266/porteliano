@@ -45,7 +45,11 @@ function TypesJobs($arr)
     for ($i = 0; $i < count($arr[0]); $i++) {
         $str .= '<tr>';
         for ($j = 0; $j <= count($arr)-1; $j++) {
-            $str .= "<td>" . $arr[$j][$i] . "</td>";
+            if($j > 0){
+                $str .= "<td><strong>" . $arr[$j][$i] . "</strong></td>";
+            }else {
+                $str .= "<td>" . $arr[$j][$i] . "</td>";
+            }
         }
         $str .= '</tr>';
     }
@@ -364,20 +368,20 @@ $lifting = '
 $metering = '
 <div class="row">
     <div class="row">
-        <div class="col-md-12">
-            <p>Замер проема под межкомнатную дверь: 5 €</p>
-            <p>Замер под межкомнатную перегородку или замер входной двери: 10 €</p>
+        <div class="col-md-12 zamer">
+            <p>Замер проема под межкомнатную дверь: <strong>5 €</strong></p>
+            <p>Замер под межкомнатную перегородку или замер входной двери: <strong>10 €</strong></p>
         </div>
     </div>
     <div class="col-md-12">
-        <table class="table table-hover lifting-costs">
+        <table class="table table-hover metering">
             <tr >
                 <td>
                     <h2 class="table-headers">Виды работ</h2>
                     <span>(цена рассчитывается исходя из стоимости единицы товара без учета скидки)</span>
                 </td>
-                <td class="table-headers">Barrausse и Lualdi</td>
-                <td class="table-headers">Другие
+                <td class="table-headers table-other">Barrausse и Lualdi</td>
+                <td class="table-headers table-other">Другие
                     фабрики</td>
             </tr>
             <tr class="table-headers">
