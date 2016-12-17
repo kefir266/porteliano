@@ -242,9 +242,9 @@ span.btn > a {
 
 .doors-gradient-pos {
     position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
+    top: 49%;
+    left: 6px;
+    width: calc(100% - 12px);
     height: 50%;
 }
 
