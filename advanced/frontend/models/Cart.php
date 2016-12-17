@@ -26,8 +26,6 @@ class Cart
         if (!isset($this->_cart[$product->id]['quantity'])) {
             $this->_cart[$product->id]['quantity'] = 1;
             $this->_cart[$product->id]['sum'] = $product->price->cost;
-            $this->_cart['quantity'] = 0;
-            $this->_cart['sum'] = 0;
 
         }
         else {

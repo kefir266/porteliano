@@ -82,7 +82,6 @@ function nextDownload(e,left, quant) {
         dataAjax.section = $(".section-title").data('id');
     }
 
-    console.log(dataAjax);
     $.ajax({
         url: '/catalog/download',
         data: dataAjax,
@@ -196,6 +195,8 @@ function addToCart(e) {
             success: function (res) {
                 callbackQuantity(res, jtag);
                 callbackQuantity(res, tCart);
+                setGlyphiconHeart($(e.target), 1);
+
                 //getCart('cart');
 
             },
