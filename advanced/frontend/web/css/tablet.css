@@ -1137,7 +1137,7 @@
 		padding:0px;
 		height:350px;
 		border:6px solid #935347;
-		box-sizing: border-box;
+		outline:none;
 	}
 
 	.door-catalog > .panel-quick-selection > div.row:nth-child(6) > 
