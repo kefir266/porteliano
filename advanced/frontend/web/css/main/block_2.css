@@ -282,4 +282,34 @@ button#next:hover {
     .interiorDoors, .grips, .entryDoors {
         margin-top: 0px;
     }
+
+    .grips, .septa, .entryDoors, .interiorDoors{
+        border: 0;
+        outline: 6px solid #935347;
+        background-size: cover;
+    }
+    .grips{
+        margin-bottom: 10px;
+    }
+    .septa,.grips{
+        width: 218px;
+        height: 222px;
+    }
+    .interiorDoors{
+        width: 463px;
+        height: 466px;
+    }
+    .entryDoors{
+        width: 223px;
+        height: 466px;
+        padding-top: 287px;
+    }
+    /**********************/
+    .septa{
+    padding-top: 36px;
+    }
+    .septa > .doors-gradient {
+        width: 100%;
+
+    }
 }
