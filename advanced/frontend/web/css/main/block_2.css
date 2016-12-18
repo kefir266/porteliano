@@ -154,20 +154,13 @@
     font-size: 40px;
 }
 
-.entryDoors:hover {
-    animation: backgroundscale_15 1.3s linear normal forwards;
-}
-
-.grips:hover {
-    animation: backgroundscale_15 1.3s linear normal forwards;
-}
-
-.septa:hover {
-    animation: backgroundscale_15 1.3s linear normal forwards;
-}
-
+.entryDoors:hover,
+.grips:hover,
+.septa:hover,
 .interiorDoors:hover {
-    animation: backgroundscale_15 1.3s linear normal forwards;
+    animation: backgroundscale_15 1s linear normal forwards;
+    border: none;
+    outline: none;
 }
 
 /* Бегущая лента */
