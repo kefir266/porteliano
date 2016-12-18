@@ -155,11 +155,11 @@ class PagesController extends Controller
         $QuestionForm = new QuestionForm();
         return $this->render('12_Kontakti',['questionForm' => $QuestionForm]);
     }
-    public function actionWishlist()
-    {
-        $QuestionForm = new QuestionForm();
-        return $this->render('13_Wishlist',['questionForm' => $QuestionForm]);
-    }
+//    public function actionWishlist()
+//    {
+//        $QuestionForm = new QuestionForm();
+//        return $this->render('13_Wishlist',['questionForm' => $QuestionForm]);
+//    }
 //    public function actionBasket()
 //    {
 //
