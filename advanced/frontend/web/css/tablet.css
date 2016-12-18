@@ -1382,4 +1382,24 @@
 		margin-top:20px;
 		width:700px;
 	}
+
+	.wrap.order-registration > div:first-child{
+		background-color:transparent;
+		margin:0px;
+		padding:0px;
+		width:430px;
+		font-size:45px;
+	}
+
+	.wrap.order-registration > div:last-child{
+		margin-top:30px;
+	}
+
+	.wrap.order-registration > div:last-child > img{
+		width:470px;
+	}
+
+	.wrap.order-registration > div:last-child > p.first-p{
+		font-size:22px;
+	}
 }
