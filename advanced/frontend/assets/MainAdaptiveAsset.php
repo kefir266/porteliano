@@ -20,7 +20,7 @@ class MainAdaptiveAsset extends AssetBundle
         'css/gray.css',
         'css/contact-form.css',
         'css/main-adaptive.css',
-        'css/door_card.css',
+        
     ];
     public $js = [
         // доп. библиотеки

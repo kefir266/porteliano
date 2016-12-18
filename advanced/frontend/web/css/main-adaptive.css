@@ -72,7 +72,7 @@ body {
 #navbar-line nav.navbar-default {
     background-color: #413332;
     color: #d2cca8;
-
+    font-family: PT sans, sans-serif;
     border-color: #413332;
 }
 
@@ -85,6 +85,7 @@ body {
 .navbar-default .navbar-nav > li > a:focus {
     background-color: #574847;
     color: #ffffff;
+    padding: 18px 10px;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -104,10 +105,6 @@ body {
 !important;
     color: #ffffff;
 !important;
-}
-
-@media (min-width: 1092px) {
-    /* TODO переключить на кнопку   */
 }
 
 @media (min-width: 992px) {
@@ -277,6 +274,7 @@ header .row:first-child {
 .lightButton {
     background-color: #574847 !important;
     color: #ffffff !important;
+    padding-top: 18px !important;
 }
 
 .row-navbar {
@@ -318,4 +316,7 @@ header .row:first-child {
     margin-left: auto;
     margin-right: auto;
     max-width: 1100px;
+}
+nav.navbar-default ul.navbar-nav. > li > a{
+    padding: 18px 10px;
 }
