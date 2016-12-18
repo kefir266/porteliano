@@ -320,6 +320,10 @@ button#next:hover {
         height: 140px;
         padding-top: 20px;
     }
+    .running-ribbon div.view ul > li {
+        margin-left: 17px;
+        margin-right: 17px;
+    }
     .wrap-catalog div.show button {
         margin-top: 71px;
     }
