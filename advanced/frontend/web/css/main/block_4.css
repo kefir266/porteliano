@@ -44,6 +44,7 @@
     width: 230px;
     margin-left: 13px;
     border: 1px solid #e8e8e8;
+    background-color: white;
 }
 
 .wrap-novelty .tile:hover {
@@ -85,26 +86,11 @@
     background-color: #6a372d;
 }
 
-.wrap-novelty .info > .delimiter {
-    height: 2px;
-    width: 100%;
-    background-color: white;
-    margin-top: 9px;
-}
 
-.wrap-novelty .info {
-    margin-top: 5%;
-    background-color: #ece7d4;
-}
 
-.wrap-novelty .info p {
-    text-align: left;
-    margin-left: 5%;
-}
 
-.wrap-novelty .info p:first-child {
-    padding-top: 5%;
-}
+
+
 
 .wrap-novelty .novelty-h2 {
     text-align: center;
@@ -142,8 +128,53 @@
     color: #4e3d36;
 }
 
-.wrap-novelty .add-to-wish {
-    font-size: 16px;
-    margin-left: 100px;
-    color: #4e3d36;
+/***********  Card **************/
+.info > .delimiter {
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    margin-top: 0;
+}
+
+.info {
+    margin-top: 5%;
+    background-color: #ece7d4;
+}
+.add-to-wish {
+    font-size: 18px;
+    color: #777777;
+    position: absolute;
+    top: 9px;
+    left: 198px;
+}
+.block-4-price{
+    position: relative;
+    height: 34px;
+}
+.block-price-count.add-to-cart{
+    position: absolute;
+    top:0;
+    left: 9px;
+}
+.info-text{
+    height: 96px;
+    background-color: transparent;
+    overflow: hidden;
+    padding-top: 12px;
+}
+.info p {
+    margin-left: 10px;
+    margin-bottom: 8px;
+    text-align: left;
+    font-size: 14px;
+    font-family: "PT Sans",sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    /*line-height: 0.020em;*/
+}
+
+
+.glyphicon-heart-empty:hover::before {
+    content: "\e005";
+    color: #942b34;
 }
