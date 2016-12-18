@@ -195,7 +195,7 @@ function addToCart(e) {
             success: function (res) {
                 callbackQuantity(res, jtag);
                 callbackQuantity(res, tCart);
-                setGlyphiconHeart($(e.target), 1);
+
 
                 //getCart('cart');
 
@@ -252,6 +252,7 @@ function addToWish(e) {
             success: function (res) {
                 callbackQuantity(res, jtag);
                 callbackQuantity(res, tWish);
+                setGlyphiconHeart($(e.target), 1);
                 //getCart('wish');
             },
             error: function () {

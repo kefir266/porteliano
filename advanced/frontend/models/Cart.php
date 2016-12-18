@@ -34,7 +34,10 @@ class Cart
         }
         $this->_cart[$product->id]['product'] = $product;
         $this->_cart['quantity']++;
-        $this->_cart['sum'] += $product->price->cost;
+        if (isset($this->_cart['sum']))
+            $this->_cart['sum'] += $product->price->cost;
+        else
+            $this->_cart['sum'] = $product->price->cost;
         return $this->_cart['quantity'];
     }
     

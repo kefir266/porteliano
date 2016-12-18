@@ -40,10 +40,12 @@ use yii\helpers\Url;
     );
     echo Html::a(
         Html::tag('div', '', [
-            'class' => 'glyphicon glyphicon-heart-empty add-to-wish ',
+            'class' => 'glyphicon add-to-wish '. ((isset($wish) && $wish->isWished($product->id))
+                ? ' glyphicon-heart ' : ' glyphicon-heart-empty '),
             'data-id' => $product->id]),
-        ['href' =>
-            Url::to(['cart/addWish', 'id' => $product->id, ])],[ 'onclick' => 'addToWish(event)']);
+
+        Url::to(['cart/addWish', 'id' => $product->id,]), ['onclick' => 'addToWish(event)']);
+
     echo Html::endTag('div');
     echo Html::endTag('div');
     echo Html::endTag('div');

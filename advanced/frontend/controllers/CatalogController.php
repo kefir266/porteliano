@@ -78,6 +78,9 @@ class CatalogController extends Controller
 
     public function actionIndex(){
 
+        $session = Yii::$app->session;
+        $session->open();
+
         $modelProduct = new Product();
         $request = Yii::$app->request;
         $quantity = 20;
@@ -94,10 +97,11 @@ class CatalogController extends Controller
 
         $products = $modelProduct->getFilteredProducts($params, $quantity);
 
-        return $this->render('03_Dveri_katalog',[
-            'products' => $products,
-            'params' => $params,
-            'ind' => $ind,
+        return $this->render('03_Dveri_katalog', [
+                'products' => $products,
+                'params' => $params,
+                'ind' => $ind,
+                'wish' => (isset($session['wish'])) ? $session['wish'] : null
             ]
             );
     }
