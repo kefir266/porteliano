@@ -24,6 +24,9 @@
     left: 12px;
     top: 10px;
 }
+.tab-content{
+    margin-top: 30px;
+}
 
 .wrap-doors .doors-h2 {
     text-align: center;
@@ -34,7 +37,7 @@
 }
 
 .wrap-doors .running-ribbon-doors div.view {
-    height: 600px;
+    height: 543px;
     width: 96%;
 
 }
@@ -55,11 +58,6 @@
     font-family: 'PTSerifBold', serif;
     font-size: 18px;
 }
-
-.wrap-doors .block-price-count > a {
-    color: #4e3d36;
-}
-
 
 /*******************************************************************/
 .wrap-doors .door-show-more {
