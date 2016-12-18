@@ -29,6 +29,7 @@ class MainAdaptiveAsset extends AssetBundle
 
         '/js/lib/jquery.scroolly.js',
         // скрипты
+        'js/fixedMenu.js',
 
     ];
     public $depends = [
