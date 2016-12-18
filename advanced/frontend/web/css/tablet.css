@@ -932,7 +932,7 @@
 	.max-width > div{
 		margin:0px;
 		padding:0px;
-		width:720px;
+		width:700px;
 		margin:0px auto;
 		text-align:left;
 	}
@@ -953,6 +953,8 @@
 
 	.door-catalog > .panel-quick-selection > div.row:first-child >
 	div{
+		width:700px;
+		margin:0px auto;
 		padding:0px;
 	}
 
@@ -1126,5 +1128,202 @@
 	.door-catalog > .panel-quick-selection > div.row:nth-child(6) > 
 	div:first-child{
 		margin-right:10px;
+	}
+
+	/*Межкомнатные двери*/
+
+	div.switch{
+		width:700px;
+		margin:0px auto;
+		padding:0px;
+	}
+
+	div.switch .doors-panel{
+		width:700px;
+		max-height:1300px;
+	}
+
+	div.switch .doors-panel > .row:first-child > div{
+		margin:0px;
+		padding:0px;
+	}
+
+	div.switch .doors-panel > .row:nth-child(2) > div{
+		height:352px;
+		width:170px;
+		margin:0px;
+		padding:0px;
+	}
+
+	div.switch .doors-panel > .row:nth-child(2) > div > a > img{
+		width:100%;
+		height:352px;
+		margin:0px;
+		padding:0px;
+	}
+
+	div.switch .doors-panel > .row:nth-child(2) > div > a >
+	.doors-gradient{
+		position:relative;
+		margin-top:-423px;
+		left:5px;
+		width:160px;
+	}
+
+	div.switch .doors-panel > .row:nth-child(2) > div > a > h2{
+		width:100%;
+		text-align:center;
+		left:70px;
+		text-transform:uppercase;
+		top:295px;
+	}
+
+	div.switch .doors-panel > .row:nth-child(2) > div:nth-child(4) 
+	> a > h2{
+		top:270px;
+	}
+
+	div.switch .doors-panel > .row:nth-child(3){
+		width:700px;
+		margin:0px auto;
+		padding:0px;
+	}
+
+	div.switch .doors-panel > .row:nth-child(3) > div{
+		margin:0px;
+		padding:0px;
+		width:700px;	
+	}
+
+	div.switch .doors-panel > .row:nth-child(3) > div > h2{
+		margin:0px;
+		margin-top:50px;
+		margin-bottom:20px;
+	}
+
+	div.switch .doors-panel > .row:nth-child(2) > div{
+		margin-right:6px;
+	}
+
+	div.switch .doors-panel > .row:nth-child(2) > div:nth-child(4n + 4){
+		margin-right:0px;
+	}
+
+	div.switch .doors-panel > .row:nth-child(4){
+		width:700px;
+		height:350px;
+		margin:0px;
+		padding:0px;
+	}
+
+	div.switch .doors-panel > .row:nth-child(4) > div{
+		width:345px;
+		height:350px;
+		margin:0px;
+		padding:0px;
+		float:left;
+	}
+
+	div.switch .doors-panel > .row:nth-child(4) > div > a{
+		width:345px;
+		height:350px;
+		padding:0px;
+		margin:0px;
+	}
+
+	div.switch .doors-panel > .row:nth-child(4) > div > a > img{
+		width:345px;
+		height:350px;
+		padding:0px;
+		margin:0px;
+	}
+
+	div.switch .doors-panel > .row:nth-child(4) > div > a > 
+	.doors-gradient{
+		width:335px;
+		position:relative;
+		left:5px;
+		top:-180px;
+	}
+
+	div.switch .doors-panel > .row:nth-child(4) > div:first-child{
+		margin-right:10px;
+	}
+
+	div.switch .doors-panel > .row:nth-child(4) > div > a > h2{
+		width:100%;
+		top:290px;
+		text-transform:uppercase;
+		text-align:center;
+		left:0px;
+	}
+
+	div.switch .doors-panel > .row:nth-child(5){
+		width:700px;
+		padding:0px;
+		margin:0px;
+	}
+
+	div.switch .doors-panel > .row:nth-child(5) > div{
+		width:700px;
+		margin:0px;
+		padding:0px;
+	}
+
+	div.switch .doors-panel > .row:nth-child(5) > div > h2{
+		margin:0px;
+		margin:50px 0px 25px 0px;
+	}
+
+	div.switch .doors-panel > .row:nth-child(6){
+		width:350px;
+		height:170px;
+	}
+
+	div.switch .doors-panel > .row:nth-child(6) > div,
+	div.switch .doors-panel > .row:nth-child(6) > div > a,
+	div.switch .doors-panel > .row:nth-child(6) > div > a > img{
+		width:350px;
+		height:170px;
+		padding:0px;
+		margin:0px;
+	}
+
+	div.switch .doors-panel > .row:nth-child(6) > div > a >
+	.doors-gradient{
+		width:340px;
+		position:relative;
+		left:5px;
+		top:-90px;
+	}
+
+	div.switch .doors-panel > .row:nth-child(6) > div > a > h2{
+		width:100%;
+		position:relative;
+		text-align:center;
+		text-transform:uppercase;
+		top:-140px;
+		font-size:19px;
+		left:0px;
+	}
+
+	.switch > div > div:last-child{
+		width:700px;
+		height:400px;
+	}
+
+	.switch > div > div:last-child > div{
+		margin:0px;
+		padding:0px;
+		width:700px;
+	}
+
+	.switch > div > div:last-child > div > h4{
+		margin:0px;
+		margin:60px 0px 20px 0px;
+	}
+
+	.switch > div > div:last-child > div > p{
+		margin-bottom:20px;
 	}
 }
