@@ -170,7 +170,17 @@
     */
 }
 @media screen and (min-width: 992px){
+    .material, .style, .manufacturer,.block-1-price{
+        margin-left: 20px;
+    }
     .material{
         margin-left: 0;
+    }
+    .btn-group{
+        border: 1px solid #574544;
+    }
+    .btn-default.btn.dropdown-toggle{
+        border-left: 1px solid #574544;
+        width: 40px;
     }
 }
