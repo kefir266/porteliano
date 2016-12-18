@@ -17,14 +17,9 @@ use yii\helpers\Url;
 /*  assets  */
 
 use app\assets\PagesAsset;
+
 PagesAsset::register($this);
 
-$this->params['breadcrumbs'][] = [
-    'label' => 'Производители',
-    'url' => Url::to(['pages/dveri']),
-    'template' => "<li> {link} </li>\n", // template for this link only
-
-];
 
 Yii::setAlias('@imgLogos', '@web/img/catalog/logos');
 // TODO: перенести массив $fileNames в базу
@@ -38,23 +33,28 @@ if (file_exists($directoryLogo)) {
         //$logos[] = Html::img('@imgLogos/' . $fileNames[$i], ['alt' => "$alt"]);
     }
 }
-require_once Yii::getAlias('@frontend').'/views/layouts/manufacturersNames.php';
+require_once Yii::getAlias('@frontend') . '/views/layouts/manufacturersNames.php';
 ?>
 <div class="wrap wrap-manuf switch" data-swith="manufacturers">
-    <div class="row">
+    <div class="row  mobil-width">
         <div class="col-md-4 ">
             <h2 class="manuf-header">Производители</h2>
         </div>
     </div>
-    <div class="row">
+    <div class="row  mobil-width">
         <div class="col-md-4 ">
 
             <?
+
             echo Html::beginTag('ul', ['class' => 'list']);
             for ($i = 0; $i < count($manufacturer); $i++) {
 
+
                 echo Html::beginTag('li');
-                echo '<a href="#">' . $manufacturer[$i] . '</a>';
+                echo Html::beginTag('a', ['href' => Url::to(['pages/manufacturers_inner', 'name' => $manufacturer[$i]])]);
+                echo $manufacturer[$i];
+                echo Html::endTag('a');
+
                 echo Html::endTag('li');
 
             }
@@ -66,7 +66,7 @@ require_once Yii::getAlias('@frontend').'/views/layouts/manufacturersNames.php';
             echo Html::beginTag('ul', ['class' => 'list-company']);
             for ($i = 0; $i < 15/*count($logoNames)*/; $i++) {
                 echo Html::beginTag('li', ['class' => 'wrap-resize']);
-                echo '<a href="#" class="center-logo '.$logoNames[$i].'"></a>';
+                echo '<a href="#" class="center-logo ' . $logoNames[$i] . '"></a>';
                 echo Html::endTag('li');
             }
             echo Html::endTag('ul');
