@@ -1524,4 +1524,68 @@
 		height:710px;
 		margin-top:280px;
 	}
+
+	/*Контакты*/
+	.wrap-contacts.switch{
+		width:100%;
+		height:100%;
+	}
+
+	.wrap-contacts.switch > .row-contact{
+		width:700px;
+		margin:0px auto;
+	}
+
+	.wrap-contacts.switch > .row-contact > div > div{
+		margin:0px;
+		padding:0px;
+		float:left;
+	}
+
+	.wrap-contacts.switch > .row-contact > div > div:first-child{
+		width:339px;
+	}
+
+	.wrap-contacts.switch > .row-contact > div > div:first-child > 
+	h2{
+		margin:0px;
+		padding:0px;
+	}
+
+	.wrap-contacts.switch > .row-contact > div > div:first-child >
+	.orange{
+		margin-top:25px;
+	}
+
+	.wrap-contacts.switch > .row-contact > div > div:first-child >
+	.row > div{
+		margin:0px;
+		padding:0px;
+	}
+
+	.wrap-contacts.switch > .row-contact > div{
+		margin-top:45px;
+	}
+
+	.wrap-contacts.switch > .row-contact > div > div:last-child{
+		width:361px;
+		height:257px;
+		margin-top:75px;
+	}
+
+	.contact-img{
+		height:100%;
+		background-image:url(../img/other/Kontakti.png);
+		background-repeat:no-repeat;
+		background-size:cover;
+	}
+
+	.forma{
+		width:365px;
+		margin:0px;
+		padding:0px;
+		position:relative;
+		top:-570px;
+		left:calc(100% - 398px);
+	}
 }
