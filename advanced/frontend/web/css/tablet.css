@@ -1326,4 +1326,80 @@
 	.switch > div > div:last-child > div > p{
 		margin-bottom:20px;
 	}
+
+	/*Производители*/
+
+	.wrap-manuf > .mobil-width:first-child{
+		width:700px;
+		height:45px;
+		margin-top:45px;
+	}
+
+	.wrap-manuf > .mobil-width:last-child{
+		margin-top:55px;
+	}
+
+	.wrap-manuf > .mobil-width:first-child > div,
+	.wrap-manuf > .mobil-width:last-child > div{
+		margin:0px;
+		padding:0px;
+	}
+
+	.wrap-manuf > .mobil-width:first-child > div > h2{
+		margin:0px;
+	}
+
+	.wrap-manuf > .mobil-width:last-child > div:first-child{
+		width:180px;
+		margin-right:20px;
+	}
+
+	.wrap-manuf > .mobil-width:last-child > div{
+		float:left;
+	}
+
+	.wrap-manuf > .mobil-width:last-child > div:last-child,
+	.wrap-manuf > .mobil-width:last-child > div:last-child > ul{
+		width:500px;
+	}
+
+	.wrap-manuf > .mobil-width:last-child > div:last-child > ul >
+	li{
+		margin-left:0px;
+		margin-right:0px;
+		background-color:#fff;
+	}
+
+	.wrap-manuf > .mobil-width:last-child > div:last-child > ul >
+	li:nth-child(2n + 1){
+		margin-left:84px;
+		margin-right:20px;
+	}
+
+	/*Производители внутр*/
+
+	.wrap.order-registration{
+		margin-top:20px;
+		width:700px;
+	}
+
+	.wrap.order-registration > div:first-child{
+		background-color:transparent;
+		margin:0px;
+		padding:0px;
+		width:430px;
+		font-size:45px;
+	}
+
+	.wrap.order-registration > div:last-child{
+		margin-top:30px;
+	}
+
+	.wrap.order-registration > div:last-child > img{
+		width:470px;
+	}
+
+	.wrap.order-registration > div:last-child > p.first-p{
+		font-size:22px;
+	}
 }
