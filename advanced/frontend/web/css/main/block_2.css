@@ -15,7 +15,8 @@
     max-width: 960px;
     min-height: 480px;
 }
-.indent-col{
+
+.indent-col {
     margin-left: 2px;
     margin-right: -2px;
 }
@@ -26,7 +27,7 @@
     text-align: center;
 }
 
-.tiles{
+.tiles {
     margin-left: auto;
     margin-right: auto;
 }
@@ -142,10 +143,10 @@
 .grips,
 .septa,
 .entryDoors,
-.interiorDoors{
+.interiorDoors {
     border: 6px solid #935347;
     color: #ffffff;
-    font-family: "PT Sans Caption",sans-serif;
+    font-family: "PT Sans Caption", sans-serif;
 }
 
 .panel-Catalog h2 {
@@ -221,7 +222,7 @@ button#prev {
     height: 50px;
     background-image: url('../../img/UI/arrow_inactive.jpg');
     transform: scale(1, 1);
-     margin-left: -5px;
+    margin-left: -5px;
 }
 
 button#next {
@@ -229,7 +230,7 @@ button#next {
     height: 50px;
     background-image: url('../../img/UI/arrow_inactive.jpg');
     transform: scale(-1, 1);
-     margin-left: 38px;
+    margin-left: 38px;
 }
 
 button#prev:hover {
@@ -249,12 +250,14 @@ button#next:hover {
     }
 
 }
-@media all and  (max-width: 768px){
-    .running-ribbon div.view{
+
+@media all and  (max-width: 768px) {
+    .running-ribbon div.view {
         width: 380px;
     }
 }
-.center-logo{
+
+.center-logo {
     margin-left: auto;
     margin-right: auto;
 }
@@ -265,6 +268,18 @@ button#next:hover {
     margin-right: auto;
     max-width: 1100px;
 }
-.no-link-decoration:hover{
+
+.no-link-decoration:hover {
     text-decoration: none;
+}
+
+@media screen and (min-width: 992px) {
+    .panel-Catalog > div > div > h2 {
+        margin-top: 77px;
+        margin-bottom: 40px;
+    }
+
+    .interiorDoors, .grips, .entryDoors {
+        margin-top: 0px;
+    }
 }
