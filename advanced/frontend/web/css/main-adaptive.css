@@ -288,6 +288,10 @@ header .row:first-child {
 }
 #wishlist{
     position: relative;
+    font-size: 20px;
+}
+#basket{
+    font-size: 20px;
 }
 .circle-number{
     position: absolute;
