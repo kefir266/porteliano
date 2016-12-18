@@ -190,6 +190,7 @@
     width: 10000px;
     list-style: none;
     line-height: 145px;
+    background-color: white;
 }
 
 .running-ribbon div.view ul > li {
@@ -306,10 +307,26 @@ button#next:hover {
     }
     /**********************/
     .septa{
-    padding-top: 36px;
+        padding-top: 36px;
     }
     .septa > .doors-gradient {
         width: 100%;
 
+    }
+    .running-ribbon div.view {
+        margin-top: 43px;
+    }
+    .running-ribbon div.view ul {
+        height: 140px;
+        padding-top: 20px;
+    }
+    .wrap-catalog div.show button {
+        margin-top: 71px;
+    }
+    button#next {
+        margin-left: 38px;
+    }
+    button#prev {
+        margin-left: -4px;
     }
 }
