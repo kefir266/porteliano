@@ -91,7 +91,8 @@
 .category > a >.caret{
     color: #000;
     text-decoration: none;
-    font-family: GothamPro;
+    font-family: GothamPro, serif;
+    font-size: 20px;
 }
 .category > a >.caret{
     border-top: 12px dashed;
@@ -99,11 +100,12 @@
     border-left: 9px solid transparent;
 }
 /* Категории */
+.dropdown-header,
 .category > ul > li > a{
     font-size: 20px;
     color: #935347;
     /* тестовые свойства*/
-    font-size: 60px;
+    font-size: 60px;/**/
 }
 .category > ul > li > a:hover{
     background-color: #e4e2db;
