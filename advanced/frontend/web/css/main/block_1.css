@@ -169,3 +169,8 @@
     border-bottom: #6a372d dashed;
     */
 }
+@media screen and (min-width: 992px){
+    .material{
+        margin-left: 0;
+    }
+}
