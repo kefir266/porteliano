@@ -23,9 +23,11 @@ use yii\helpers\Url;
 
     //заполняется карточка
     echo Html::beginTag('div', ['class' => 'info']);
+    echo Html::beginTag('div', ['class' => 'info-text']);
     echo Html::tag('p', $product->section->title);
     echo Html::tag('p', $product->manufacturer->title);
     echo Html::tag('p', $product->title);
+    echo Html::endTag('div');
     echo Html::tag('div', '', ['class' => 'delimiter']);
     echo Html::beginTag('div', ['class' => 'block-4-price']);
     $price = $product->prices;
