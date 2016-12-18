@@ -208,6 +208,13 @@
 	width:100%;
 }
 
+.wrap-delivery > .center-block,
+.wrap-delivery > .center-block > div{
+	width:100%;
+	margin:0px;
+	padding:0px;
+}
+
 @media (min-width:768px) and (max-width:980px){
 	header{
 		width:701px;
