@@ -1602,4 +1602,60 @@
 		top:-570px;
 		left:calc(100% - 398px);
 	}
+
+	/*Избранное, Корзина*/
+
+	.wrap-wishlist, .wrap-basket{
+		min-height:330px;
+		padding-bottom:337px;
+	}
+
+	.wrap-wishlist > .row:first-child,
+	.wrap-basket > .row:first-child{
+		width:700px;
+		margin:0px auto;
+	}
+
+	.wrap-wishlist > .row:last-child{
+		display:none;
+	}
+
+	.wrap-wishlist > .goods-row{
+		width:740px;
+		margin:0px auto;
+		background-color:#fff;
+		margin-bottom:10px;
+	}
+
+	.wrap-wishlist > .goods-row > div{
+		margin:0px;
+		padding:0px;
+		float:left;
+	}
+
+	.wrap-wishlist > .goods-row > div{
+		margin:20px;
+	}
+
+	.wrap-wishlist > .goods-row > div:last-child{
+		float:right;
+	}
+
+	.wrap-wishlist > .row:first-child > div,
+	.wrap-basket > .row:first-child > div{
+		margin:0px;
+		padding:0px;
+		width:50%;
+		float:left;
+	}
+
+	.wrap-wishlist > .row:first-child > div:last-child > h4,
+	.wrap-basket > .row:first-child > div:last-child > h4{
+		text-align:right;
+	}
+
+	.wrap-wishlist > h2,
+	.wrap-basket > #tab-cart > h2{
+		text-align:center;
+	}
 }
