@@ -19,7 +19,10 @@
 /* Кнопки выбора для Блока с фильтром быстрого подбора*/
 .material, .style, .manufacturer, .block-1-price{
     display: inline-block;
-    margin-left: 4%;
+    margin-left: 20px;
+}
+.material{
+    margin-left: 0;
 }
 .wrap-quick-selection .row{
     max-width: 100%;
@@ -141,10 +144,14 @@
 
 .panel-quick-selection{
     font-size: 22px;
-    width: 1100px;
+    width: 960px;
     margin-left: auto;
     margin-right: auto;
 
+}
+.col-clear{
+    padding-left: 0;
+    padding-right: 0;
 }
 .panel-quick-selection  h2{
     color: #955347;
