@@ -45,7 +45,7 @@ Yii::setAlias('@img', '@web/img/');
     <div class="row goods-row">
         <!-- иконка -->
         <div class="col-md-1 col-md-offset-3 ">
-            <?= Html::img($item['product']->image,
+            <?= Html::img($item['product']->getImage(),
                 ['class' => 'door-icon', 'alt' => "door icon"]) ?>
         </div>
         <!-- описание и удаление -->
@@ -69,8 +69,8 @@ Yii::setAlias('@img', '@web/img/');
         </div>
         <!-- кнопка в корзину -->
         <div class="col-md-1 button-area">
-            <a href="#" onclick="addToCart(event)">
-                <span
+            <a href="#"  onclick="addToCart(event)">
+                <span data-id="<?= $item['product']->id ?> "
                     class="glyphicon glyphicon-shopping-cart btn btn-default basket-button"
                     role="button"
                 ></span>
