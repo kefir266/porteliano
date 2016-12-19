@@ -50,7 +50,7 @@
             var widthBlock = $("#doors-inn").width();
             //var direction = $(this).data("param"); // для html 5
             ///////////////////////////////////////////////////////
-            var last = viewUL.children(":first").position().left + totalImgsW;
+            var last = viewUL.children(":first").position().left + totalImgsW + imgW;
             var first = viewUL.children(":first").position().left;
 
             if(direction == "next") {
