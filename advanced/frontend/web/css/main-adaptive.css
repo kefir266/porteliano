@@ -245,6 +245,7 @@ header .row:first-child {
 .navbar-footer {
     font-size: 17px;
     background-color: #413332;
+    font-family: PT sans, sans-serif;
 }
 
 .navbar-center {
