@@ -323,6 +323,38 @@
     margin-top: 35px;
     width: auto;
 }
+label.control-label{
+    display: none;
+}
+.ui-spinner.ui-widget.ui-widget-content.ui-corner-all{
+    line-height: 42px;
+    width: 95px;
+    outline: 2px solid #e2e2e2;
+    border: none;
+}
+input.ui-spinner-input{
+    font-size: 18px;
+    font-family: Montserrat,serif ;
+    padding-left: 20px;
+}
+/******** кнопки **********************/
+.ui-spinner-button.ui-spinner-down.ui-corner-br,
+.ui-spinner-button.ui-spinner-up.ui-corner-tr{
+    width: 32px;
+    left: 63px;
+    outline: 2px solid #e2e2e2;
+}
+/******** иконки **********************/
+.ui-widget-content .ui-icon{
+    background-position: 0 0;
+    transform: scale(1.1);
+    margin-left: 10px;
+}
+.ui-spinner-button > .ui-icon.ui-icon-triangle-1-s {
+    background-position: -65px 0;
+    width: 32px;
+    margin-left: 11px;
+}
 /****************** Mobile *************************************/
 @media screen and (min-width: 480px) and (max-width: 768px) {
     .wrap-wishlist{
