@@ -133,4 +133,65 @@ p {
         font-size: 18px;
     }
 }
+@media screen and (min-width: 992px){
+    .septa-container {
+        max-width: 960px;
+    }
 
+    .row.mobil-width > div{
+        margin-left: 0;
+        margin-right: 0;
+        padding-right: 0;
+        padding-left: 0;
+        width: 100%;
+    }
+    .plate{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .tile{
+        height: 466px;
+        margin: 6px 0 0 0 ;
+    }
+    .plate-m-1 > a > .tile {
+        width: 234px;
+    }
+    .plate-m-1 > a >.gradient-pos {
+        width: 234px;
+    }
+    .plate-m-1{
+        margin-left: 6px;
+        width: 241px;
+    }
+    .plate-m-3 > a > .tile {
+        width: 459px;
+    }
+    .plate-m-3 > a >.gradient-pos {
+        width: 459px;
+    }
+    .plate-m-3{
+        margin-left: 10px;
+        width: 466px;
+    }
+    .plate-m-2 > a > .tile {
+        width: 223px;
+    }
+    .plate-m-2 > a >.gradient-pos {
+        width: 223px;
+    }
+    .plate-m-2{
+        margin-left: 10px;
+        width: 219px;
+    }
+    .bottom-text > div{
+        margin-left: 0;
+        margin-right: 0;
+        padding-right: 0;
+        padding-left: 0;
+        width: 100%;
+    }
+    ul.breadcrumb {
+        margin-left: 42px;
+        margin-top: 5%;
+    }
+}
