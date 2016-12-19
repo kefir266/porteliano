@@ -1778,4 +1778,110 @@
 		text-transform:uppercase;
 		font-size:18px;
 	}
+
+	/*Доставка*/
+
+	.wrap-delivery > .row.center-block > div > .consultation > 
+	.row > .action-text{
+		width:700px;
+		margin:0px auto;
+	}
+
+	.wrap-delivery > .row.center-block > div > .consultation > 
+	.row > .action-text > article{
+		margin:0px;
+		padding:0px;
+		text-align:center;
+	}
+
+	.wrap-delivery > .row.center-block > div > .consultation > 
+	.row > .action-text > div{
+		margin:0px;
+		padding:0px;
+	}
+
+	.consultation{
+		max-height:488px;
+	}
+
+	.consultation-form{
+		width:620px;
+		margin:0px auto;
+	}
+
+	.consultation-form > .row{
+		margin-top:30px;
+	}
+
+	.consultation-form > .row > div{
+		margin:0px;
+		padding:0px;
+	}
+
+	.consultation-form > .row > div:last-child{
+		text-align:center;
+		margin-top:65px;
+	}
+
+	.consultation-form > .row > div:first-child,
+	.consultation-form > .row > div:nth-child(2){
+		width:300px;
+		height:45px;
+		float:left;
+	}
+
+	.consultation-form > .row > div:first-child{
+		margin-right:20px;
+	}
+
+	.consultation-form > .row > div:last-child > button{
+		width:300px;
+		height:45px;
+		text-transform:uppercase;
+	}
+
+	#questionform-username,
+	#questionform-phone{
+		height:45px;
+	}
+
+	.wrap-delivery > .limited-content > .row.center-block.collapse-wrap >
+	div,
+	.wrap-delivery > .limited-content > .row.center-block.collapse-wrap >
+	div > div{
+		margin:0px;
+		padding:0px;
+	}
+
+	.wrap-delivery > .limited-content > .delivery.center-block{
+		width:700px;
+		margin:0px auto;
+	}
+
+	.wrap-delivery > .limited-content > .delivery.center-block >
+	div:last-child > div{
+		width:340px;
+	}
+
+	.wrap-delivery > .limited-content > .delivery.center-block >
+	div:last-child > div:first-child{
+		margin-right:20px;
+	}
+
+	.wrap-delivery > .limited-content > .delivery.center-block >
+	div:last-child > div:first-child > table > tbody > tr > td{
+		padding-left:0px;
+		margin-left:0px;
+	}
+
+	.wrap-delivery > .limited-content > .delivery.center-block >
+	div:last-child > div:last-child{
+		margin-top:7px;
+	}
+
+	.wrap-delivery > .limited-content > .delivery.center-block > 
+	div > div{
+		margin:0px;
+		padding:0px;
+	}
 }
