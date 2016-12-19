@@ -63,8 +63,6 @@
         position: relative;
     }
     .description{
-        line-height: 80px;
-        width: 100%;
         margin-top: 45px;
         margin-right: 140px;
         font-family: "PT Sans",sans-serif;
@@ -72,6 +70,12 @@
         font-weight: normal;
         font-style: normal;
         color: #413332;
+
+        line-height: normal;
+        position: absolute;
+        left: 90px;
+        top: -110px;
+        width: 125px;
     }
     .wrap-basket #count-goods{
         float: right;
@@ -80,14 +84,14 @@
         font-weight: normal;
         font-style: normal;
         color: #413332;
-
         position: absolute;
         top: 66px;
-        left: 279px;
+        left: 299px;
     }
     .delete-area > .delete{
         line-height: 80px;
         margin-left: 78px;
+
     }
     .basket-describ {
         width: 618px;
@@ -95,11 +99,12 @@
         padding-right: 0;
     }
     .wrap-basket .button-area{
-        float: left;
-
         width: 100px;
-        margin-top: 23px;
-
+        position: absolute;
+        top: 20px;
+        left: 346px;
+        padding-left: 0;
+        padding-right: 0;
     }
     .basket-icon {
         margin-right: 20px;
@@ -126,19 +131,36 @@
     }
     .form-area{
         float: right;
-        margin-right: 200px;
     }
     .basket-describ{
         width: 250px;
     }
-    .description{
-        line-height: normal;
-    }
+
     .basket-icon {
         margin-right: 55px;
+        width: 110px;
+        padding-left: 0;
+        padding-right: 0;
     }
     div.wrap-basket > .row > div:last-child{
         padding-top: 0;
     }
+    .row.goods-row{
+        position: relative;
+        margin-right: 0;
+        margin-left: 0;
+        padding-right: 0;
+        padding-left: 0;
+        margin-top: 20px;
+    }
+    .delete-area {
+        width: 100px;
+        position: absolute;
+        top: 63px;
+        left: 307px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
 
 }
