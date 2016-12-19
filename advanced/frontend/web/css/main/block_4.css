@@ -73,3 +73,6 @@
 .doors-panel > .wrap-tiles > .tile:nth-child(2) {
     margin-left: 9px;
 }
+.novelty .wrap-tiles.view .tile:nth-child(n+5){
+    display: none;
+}
