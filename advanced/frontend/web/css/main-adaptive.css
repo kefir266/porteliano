@@ -320,3 +320,9 @@ header .row:first-child {
 nav.navbar-default ul.navbar-nav. > li > a{
     padding: 18px 10px;
 }
+
+@media screen and (max-width: 768px ){
+    .circle-number {
+        padding-left: 6px;
+    }
+}
