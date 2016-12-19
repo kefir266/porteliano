@@ -157,6 +157,13 @@
         .action-text,
         .action-header {
             text-align: center;
+
+        }
+        .entryDoors:hover{
+            padding-top: 1px;
+        }
+        .entryDoors > .doors-gradient:hover {
+            margin-top: 190px;
         }
 
         .action-header {
