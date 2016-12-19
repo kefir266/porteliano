@@ -215,7 +215,7 @@
 }
 
 .wrap-basket > .row > div:last-child > h4{
-	width:710px;
+	/*width:710px;*/
 	float:left;
 	margin:0px;
 	padding:0px;
@@ -229,6 +229,8 @@
 	width:250px;
 	margin:0px;
 	padding:0px;
+	float:right;
+	text-align:center;
 }
 
 .wrap-delivery > .center-block,
@@ -2001,7 +2003,11 @@
 
 	/*Кариочка товара*/
 
-	.door-card-info{
+	.door-card-info,
+	.door-card-info > .col-md-5{
 		width:280px;
+		height:440px;
+		margin:0px;
+		padding:0px;
 	}
 }
