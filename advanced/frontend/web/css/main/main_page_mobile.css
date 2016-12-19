@@ -1,4 +1,7 @@
 @media screen and (min-width: 480px) and (max-width: 768px) {
+    .circle-number{
+        padding-left: 6px;
+    }
     /******  BLOCK 1 **********************/
     @media screen {
         .panel-quick-selection {
@@ -258,6 +261,7 @@
     /************** BLOCK 7 FACTS **********************/
     .wrap-facts-at-Glance {
         min-height: 870px;
+        max-width: 460px;
     }
 
     .facts h1, .facts p {
@@ -267,6 +271,9 @@
     .facts p {
         margin-top: 50px;
         margin-bottom: 100px;
+    }
+    .facts {
+        width: 460px;
     }
 
     /************** BLOCK 8 - SEPTA **************************/
