@@ -87,8 +87,13 @@ function nextDownload(e,left, quant) {
         data: dataAjax,
         type: 'POST',
         success: function (res) {
-            if (left)
+            if (left) {
                 novetly.prepend(res);
+                //cloneEl = novetly.children(":first").clone().hide().css("display", "").prependTo(novetly);
+                //cloneEl.replaceWith(res);
+                //novetly.css('float', 'left');
+                //cloneEl.show("slide", { direction: "left" }, 2000);
+            }
             else
                 novetly.append(res);
             semaphore = false;

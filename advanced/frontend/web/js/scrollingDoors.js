@@ -13,11 +13,7 @@
         $(".running-ribbon-septa > div.view-septa")
                     .css("overflow", "hidden");
 
-        var viewUL,
-            imgs, 	    // коллекция картинок
-            imgW = 250,						// ширина одной картинки
-            imgsCount, 		// общее колличество картинок
-            totalImgsW;  // общая ширина
+        var viewUL;
         $("div.show-doors")
             .show()
             .find("button").on("click", function(){
@@ -25,9 +21,6 @@
             var direction = $(this).attr("id");
             viewUL = $(".active > > .view-doors")
                 .children("ul");
-            imgs = viewUL.children();
-            imgsCount = imgs.length;
-            totalImgsW = imgsCount * imgW;
             moveRibbon(direction);
             //clearTimeout(timerId);
         });
@@ -37,27 +30,31 @@
                 var direction = $(this).attr("id");
                 viewUL = $(".view-septa")
                     .children("ul");
-                imgs = viewUL.children();
-                imgsCount = imgs.length;
-                totalImgsW = imgsCount * imgW;
                 moveRibbon(direction);
                 //clearTimeout(timerId);
             }
         );
 
         function moveRibbon(direction){
-            var   position = imgW;
             var widthBlock = $("#doors-inn").width();
             //var direction = $(this).data("param"); // для html 5
             ///////////////////////////////////////////////////////
-            var last = viewUL.children(":first").position().left + totalImgsW + imgW;
-            var first = viewUL.children(":first").position().left;
+            var widthRibons = 0;
+            var chldr = viewUL.children();
+
+            for (i = 0 ; i < chldr.length ; i++)
+                widthRibons += $(chldr[i]).width();
 
             if(direction == "next") {
+                imgW = viewUL.children(":last").width()+19;
+                var last = viewUL.children(":first").position().left + widthRibons + imgW;
+                console.log(imgW);
                 if (last <= widthBlock) return;
             }
             else {
-                if (last >= 15) return;
+                imgW = viewUL.children(":first").width()+19;
+                var first = viewUL.children(":first").position().left;
+                if (first >= 15) return;
             }
             doIt(viewUL,  direction);
         }
@@ -65,14 +62,16 @@
             var sign; // "-=" or "+="
                 if (direction == "next") {
                     sign = "-=" ;
+                    var shift = {"margin-left": sign + imgW + "px",
+                        "duration": 100
+                    };
+                    container.animate(shift);
                 }
                 else {
-                    sign = "+=";
+                    //sign = "+=";
                 }
-            var shift = {"margin-left": sign + imgW + "px",
-                "duration": 100
-            };
-            container.animate(shift);
+
+
 
         }
 
