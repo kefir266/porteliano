@@ -25,9 +25,9 @@ Yii::setAlias('@img', '@web/img/');
     <!-- заголовок -->
     <div class="row">
         <div class="col-md-2 col-md-offset-3 ">
-            <h1>Избранное</h1>
+            <h1 class="wishlist-header">Избранное</h1>
         </div>
-        <div class="col-md-2 col-md-offset-3 ">
+        <div class="col-md-10 col-md-offset-3 ">
             <h4 id="count-goods"><span id="counter-goods">
                     <?= $wish->getQuantity() ?> </span><span class="word-product"> товара</span></h4>
         </div>
