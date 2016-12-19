@@ -49,7 +49,7 @@ Yii::setAlias('@img', '@web/img/');
                 ['class' => 'door-icon', 'alt' => "door icon"]) ?>
         </div>
         <!-- описание и удаление -->
-        <div class="col-md-4">
+        <div class="col-md-4 del-describ">
             <!-- описание -->
             <div class="row">
                 <div class="col-md-12">

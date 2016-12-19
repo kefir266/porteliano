@@ -327,6 +327,7 @@
 @media screen and (min-width: 480px) and (max-width: 768px) {
     .wrap-wishlist{
         max-width: 460px;
+        position: relative;
     }
     .wrap-wishlist .wishlist-header{
         margin-top: 50px;
@@ -340,7 +341,12 @@
         max-width: 210px;
         width: 210px;
     }
-    .wrap-wishlist .button-area{margin-right: 23px;}
+    .wrap-wishlist .button-area{
+        position: absolute;
+        top: 0;
+        left: 380px;
+        width: 80px;
+    }
     .wrap-wishlist .door-icon{
         max-width: 70px;
         margin-right: 17px;
@@ -348,10 +354,22 @@
     .wrap-wishlist .description{
         line-height: normal;
     }
-    #count-goods{
-        margin-top: 60px;
-    }
     .circle-number {
         padding-left: 6px;
+    }
+    .wrap-wishlist #count-goods {
+        float: right;
+        margin-top: 35px;
+        width: auto;
+        position: absolute;
+        top: -76px;
+        left: 404px;
+        width: 70px;
+    }
+    .del-describ{
+        position: absolute;
+        top: 0;
+        left: 100px;
+        width: 380px;
     }
 }
