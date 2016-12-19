@@ -29,9 +29,10 @@ Yii::setAlias('@img', '@web/img/');
     <!-- заголовок -->
     <div class="row">
         <div class="col-md-2 col-md-offset-3 ">
-            <h1>Ваша корзина</h1>
+            <h1 class="basket-header">Ваша корзина</h1>
         </div>
         <div class="col-md-2 col-md-offset-2 ">
+            <h4 id="goods-name">Наименование</h4>
             <h4 id="count-goods">Количество</h4>
         </div>
     </div>
@@ -58,12 +59,12 @@ Yii::setAlias('@img', '@web/img/');
                         )
                         ?>
                         <!-- иконка -->
-                        <div class="col-md-1 col-md-offset-3 ">
+                        <div class="col-md-1 col-md-offset-3 basket-icon">
                             <?= Html::img($item['product']->image,
                                 ['class' => 'door-icon', 'alt' => "door icon"]) ?>
                         </div>
                         <!-- описание-->
-                        <div class="col-md-3">
+                        <div class="col-md-3 basket-describ" >
             <span class="description">
              <?= $item['product']->title ?>
             </span>
@@ -109,7 +110,7 @@ Yii::setAlias('@img', '@web/img/');
 
 
 
-                <div class="col-md-1 col-md-offset-3 delete-all-area">
+                <div class="col-md-1 col-md-offset-3 delete-all-area form-area">
                     <?= $form->field($modelOrder, 'customer')->textInput(['maxlength' => true]) ?>
                     <?= $form->field($modelOrder, 'phone')->textInput(['maxlength' => true]) ?>
                     <?= $form->field($modelOrder, 'email')->textInput(['type' => 'email']) ?>
