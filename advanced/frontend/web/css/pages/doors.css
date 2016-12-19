@@ -11,12 +11,13 @@
 .doors-panel {
     margin-right: auto;
     margin-left: auto;
-    width: 90%;
+    width: 960px;
 }
 
 .doors-wrap h2 {
-    font-size: 2.8em;
+    font-size: 40px;
     font-family: Copperplate, serif;
+    padding-left: 9px;
 }
 
 .doors-wrap.wrap-tiles .tile {
@@ -106,7 +107,7 @@
 .plate-out-doors > a > h2 {
     position: absolute;
     top: 85%;
-    left: 23%;
+    left: 19%;
     font-size: 22px;
     color: #fdfdf3;
 }
@@ -146,4 +147,101 @@
     max-width: 1100px ;
     margin-left: auto;
     margin-right: auto;
+}
+@media screen and (min-width: 992px){
+    .doors-wrap.wrap-tiles .tile {
+        margin: 0;
+        padding: 0;
+        width: 218px;
+    }
+    .doors-wrap.wrap-tiles .tile:nth-child(1) {
+        margin-left: 0px;
+    }
+    .plate-inn-doors {
+        margin-left: 10px;
+        padding-left: 0;
+        padding-right: 0;
+        width: 230px;
+    }
+    .plate-inn-doors:first-child{
+        margin-left: 6px;
+    }
+    .doors-panel> .row:nth-child(1) > div {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .doors-panel > .row:nth-child(2){
+
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .doors-wrap h2 {
+        padding-left: 0;
+    }
+    .doors-wrap.wrap-tiles .tile {
+        outline: 6px solid #935347;
+        border: none;
+        height: 478px;
+    }
+    .doors-inn-gradient-pos {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 218px;
+        height: 50%;
+    }
+    .plate-inn-doors > a > h2 {
+        transform: translateX(-50%);
+    }
+    .inner-header{
+        margin-left: -20px;
+    }
+    .row:nth-child(4){
+        /*background-color: #0b3e6f;*/
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .plate-out-doors{
+        padding-left: 0;
+        padding-right: 0;
+        width: 472px;
+        margin-left: 10px;
+    }
+    .plate-out-doors:nth-child(1){
+        margin-left: 6px;
+    }
+
+    .cover-plate {
+        width: 100%;
+    }
+
+    .doors-wrap.wrap-tiles .cover-plate > img.tile{
+        width: 463px;
+        background-color: #0f0f0f;
+    }
+    .doors-out-gradient-pos {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 463px;
+        height: 50%;
+    }
+    .grips-header{
+        margin-left: -20px;
+    }
+    .col-md-6.wrap-doors-tiles.plate > a.grip-wrap > img.tile{
+        width: 463px;
+        height: 222px;
+    }
+    .grips-gradient-pos {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 463px;
+        height: 50%;
+    }
+    ul.breadcrumb {
+        margin-left: 42px;
+        margin-top: 5%;
+    }
 }
