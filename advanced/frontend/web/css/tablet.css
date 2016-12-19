@@ -200,12 +200,14 @@
 }
 
 .wrap-wishlist, .wrap-basket{
-	min-height:302px;
+	min-height:329px;
+	/*height:325px;*/
+	height:100%;
 }
 
 .wrap-wishlist > .row,
 .wrap-basket > .row{
-	width:100%;
+	width:80%;
 }
 
 .wrap-basket > .row > div{
@@ -213,7 +215,7 @@
 }
 
 .wrap-basket > .row > div:last-child > h4{
-	width:710px;
+	/*width:710px;*/
 	float:left;
 	margin:0px;
 	padding:0px;
@@ -227,6 +229,8 @@
 	width:250px;
 	margin:0px;
 	padding:0px;
+	float:right;
+	text-align:center;
 }
 
 .wrap-delivery > .center-block,
@@ -1995,5 +1999,15 @@
 		float:right;
 		height:108px;
 		line-height:108px;
+	}
+
+	/*Кариочка товара*/
+
+	.door-card-info,
+	.door-card-info > .col-md-5{
+		width:280px;
+		height:440px;
+		margin:0px;
+		padding:0px;
 	}
 }
