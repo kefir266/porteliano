@@ -36,13 +36,13 @@ $price = ['1545', '1545', '2119', '2194'];
     <!-- Вкладки -->
     <div class="row">
         <!-- кнопка назад -->
-        <div class="col-md-1 flex-vert-centr show">
+        <div class="col-md-1 flex-vert-centr show show-septa">
             <button id="prev"  class="btn btn-link prev" data-param="prev" onclick="nextDownload(event, true, 1)"></button>
         </div>
         <!-- Перегородки -->
         <div class="col-md-10 novelty-folders">
             <div id="doors-inn" class="doors-panel running-ribbon-septa">
-                <div class="wrap-tiles view">
+                <div class="wrap-tiles view view-septa">
                     <ul class="ribbon-ul" data-section="2">
                         <?php if (isset($septum['products'])): ?>
                             <?php foreach ($septum['products'] as $product): ?>
@@ -56,7 +56,7 @@ $price = ['1545', '1545', '2119', '2194'];
             </div>
         </div>
         <!-- кнопка вперед -->
-        <div class="col-md-1 show">
+        <div class="col-md-1 show show-septa">
             <button id="next" class="btn btn-link next" data-param="next" onclick="nextDownload(event, false, 1)"></button>
         </div>
     </div>

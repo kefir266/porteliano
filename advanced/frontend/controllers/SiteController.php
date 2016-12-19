@@ -90,11 +90,11 @@ class SiteController extends Controller
         $modelProduct = new Product();
         $request = Yii::$app->request;
 
-        $products = $modelProduct->getProductsBySection($request->get('section'),'4' ); /// 4 картинки на страницу
-        $novelty = $modelProduct->getProducts(null,'4' );
-        $doorsIn = $modelProduct->getProducts('3','4' );
-        $doorsOut = $modelProduct->getProducts('4','4' );
-        $septum = $modelProduct->getProducts('2','4' );
+        $products = $modelProduct->getProductsBySection($request->get('section'),'6' ); /// 6 картинки на страницу
+        $novelty = $modelProduct->getProducts(null,'6' );
+        $doorsIn = $modelProduct->getProducts('3','6' );
+        $doorsOut = $modelProduct->getProducts('4','6' );
+        $septum = $modelProduct->getProducts('2','6' );
 //        $sectionNames = ArrayHelper::map(Section::findAll(['1','2']),'id','title_main');
 //        $sectionNames['novelty'] = 'Новинки';
 
