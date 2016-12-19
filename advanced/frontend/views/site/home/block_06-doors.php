@@ -35,7 +35,7 @@ Yii::setAlias('@img', '@web/img');
     <!-- Вкладки -->
     <div class="row center-block">
         <!-- кнопка назад -->
-        <div class="col-md-1 col-xs-12 flex-vert-centr show ">
+        <div class="col-md-1 col-xs-12 flex-vert-centr show show-doors">
             <button id="prev" class="btn btn-link butt-prev" data-param="prev" onclick="nextDownload(event, true,1)"></button>
         </div>
         <!-- Содержимое вкладок -->
@@ -44,7 +44,7 @@ Yii::setAlias('@img', '@web/img');
                 <div role="tabpanel" class="tab-pane active" id="home">
                     <!-- Вкладка 'Межкомнатные'  -->
                     <div id="doors-inn" class="doors-panel running-ribbon-doors">
-                        <div class="wrap-tiles view">
+                        <div class="wrap-tiles view view-doors">
                             <ul class="ribbon-ul" data-section="3">
                                 <?php if (isset($doorsIn['products'])): ?>
                                 <?php foreach ($doorsIn['products'] as $product): ?>
@@ -60,7 +60,7 @@ Yii::setAlias('@img', '@web/img');
                 <div role="tabpanel" class="tab-pane" id="profile">
                     <!-- Вкладка 'Входные'  -->
                     <div id="doors-out" class="doors-panel running-ribbon-doors">
-                        <div class="wrap-tiles view">
+                        <div class="wrap-tiles view view-doors">
                             <ul class="ribbon-ul" data-section="4">
                                 <?php if (isset($doorsOut['products'])): ?>
                                     <?php foreach ($doorsOut['products'] as $product): ?>
@@ -76,7 +76,7 @@ Yii::setAlias('@img', '@web/img');
             </div>
         </div>
         <!-- кнопка вперед -->
-        <div class="col-md-1 col-xs-12 show">
+        <div class="col-md-1 col-xs-12 show show-doors">
             <button id="next" class="btn btn-link" data-param="next" onclick="nextDownload(event, false,1)"></button>
         </div>
     </div>
