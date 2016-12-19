@@ -316,11 +316,12 @@ body {
     background: url(../../img/background/FOTO_INTRO_01.jpg) no-repeat fixed 0 50%;
 }
 
-.glyphicon-plus-square:hover::before {
+
+.glyphicon-minus-square::before {
+    font-family: Awesome;
     content: "\F147";
-}
-.glyphicon-plus-square:active::before {
-    content: "\F147";
+    float: right;
+    font-size: 30px;
 }
 .glyphicon-plus-square::before {
     font-family: Awesome;
@@ -333,4 +334,7 @@ body {
     max-width: 960px;
     margin-left: auto;
     margin-right: auto;
+}
+.wrap-delivery > .center-block, .wrap-delivery > .center-block > div.clear-indent {
+    margin-bottom: -18px;
 }

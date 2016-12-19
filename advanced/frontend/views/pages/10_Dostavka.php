@@ -561,4 +561,20 @@ $metering = '
     </div>
 
 </div>
+<script>
+    //
 
+        $('.panel-title > a').on( "click", function() {
+            var button = $( this ).find('span');
+            if(button.hasClass('glyphicon-plus-square')){
+                button.addClass('glyphicon-minus-square');
+                button.removeClass('glyphicon-plus-square');
+            }else {
+                button.addClass('glyphicon-plus-square');
+                button.removeClass('glyphicon-minus-square');
+            }
+
+            console.log( 'dfdfdf' );
+        });
+
+</script>
