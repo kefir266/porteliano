@@ -1170,6 +1170,13 @@
 	}
 
 	.door-catalog > .panel-quick-selection > div.row:nth-child(6) > 
+	div > div .doors-gradient{
+		width:100%;
+		left:0px;
+		top:50%;
+	}
+
+	.door-catalog > .panel-quick-selection > div.row:nth-child(6) > 
 	div:first-child{
 		margin-right:10px;
 	}
@@ -2003,11 +2010,94 @@
 
 	/*Кариочка товара*/
 
-	.door-card-info,
-	.door-card-info > .col-md-5{
+	.door-catalog.door-cart > .panel-quick-selection{
+		width:700px;
+	}
+
+	.door-catalog.door-cart > .panel-quick-selection > 
+	.door-card-info{
+		width:700px;
+	}
+
+	.door-catalog.door-cart > .panel-quick-selection > 
+	.door-card-info > div:first-child{
 		width:280px;
-		height:440px;
 		margin:0px;
 		padding:0px;
+		text-align:center;
+		background-color:#fff;
+		float:left;
+		margin-top:80px;
+	}
+
+	.door-catalog.door-cart > .panel-quick-selection > 
+	.door-card-info > div:last-child{
+		width:420px;
+		float:left;
+		margin-top:20px;
+	}
+
+	.door-catalog.door-cart > .panel-quick-selection > 
+	.door-card-info > div:last-child > div:first-child > div{
+		margin:0px;
+		padding:0px;
+	}
+
+	.door-catalog.door-cart > .panel-quick-selection > 
+	.door-card-info > div:last-child > div:first-child > div >
+	h1{
+		margin:0px;
+		padding:0px;
+	}
+
+	.door-catalog.door-cart > .panel-quick-selection > 
+	.door-card-info > div:last-child > div:first-child{
+		margin-left:-280px;
+	}
+
+	.door-catalog.door-cart > .panel-quick-selection > 
+	.door-card-info > div:last-child > div:nth-child(2){
+		margin-top:20px;
+	}
+
+	.door-catalog.door-cart > .panel-quick-selection > 
+	.door-card-info > div:last-child > div:last-child{
+		margin-top:21px;
+	}
+
+	.door-catalog.door-cart > .panel-quick-selection > 
+	.door-card-info > div:last-child > div:last-child >
+	div:first-child{
+		width:290px;
+	}
+
+	.door-catalog.door-cart > .panel-quick-selection > 
+	.door-card-info > div:last-child > div:last-child >
+	div:last-child{
+		width:80px;
+		margin-left:20px;
+	}
+
+	.door-catalog.door-cart > .panel-quick-selection > div:last-child{
+		margin:0px;
+		padding:0px;
+	}
+
+	.door-catalog.door-cart > .panel-quick-selection > div:last-child >
+	div{
+		width:345px;
+	}
+
+	.door-catalog.door-cart > .panel-quick-selection > div:last-child >
+	div:first-child{
+		margin-right:10px;
+	}
+
+	.manufacturer{
+		margin-left:0px;
+	}
+
+	.door-catalog.door-cart > .panel-quick-selection > div:last-child{
+		margin-bottom:80px;
 	}
 }
