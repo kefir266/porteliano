@@ -201,6 +201,7 @@
 
 .wrap-wishlist, .wrap-basket{
 	min-height:302px;
+	height:325px;
 }
 
 .wrap-wishlist > .row,
