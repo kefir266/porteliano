@@ -54,6 +54,108 @@
     color: #ffffff;
 
 }
+@media screen and (min-width: 992px)  {
+    .wrap-basket {
+        max-width: 960px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .description{
+        line-height: 80px;
+        width: 100%;
+
+        margin-top: 45px;
+        margin-right: 140px;
+        font-family: "PT Sans",sans-serif;
+        font-size: 18px;
+        font-weight: normal;
+        font-style: normal;
+        color: #413332;
+    }
+    #count-goods{
+         float: right;
+         font-family: "PT Sans",sans-serif;
+         font-size: 18px;
+         font-weight: normal;
+         font-style: normal;
+         color: #413332;
+         margin-top: 45px;
+     }
+    .wrap-basket #count-goods{
+        margin-right: 130px;
+        margin-top: 45px;
+    }
+
+    .delete-area > .delete{
+        line-height: 80px;
+        margin-left: 78px;
+
+    }
+    .basket-describ {
+        width: 618px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .wrap-basket .button-area{
+        float: left;
+
+        width: 100px;
+        margin-top: 23px;
+
+    }
+    .basket-icon {
+        margin-right: 20px;
+    }
+    #goods-name{
+        float: left;
+        margin-top: 45px;
+        font-family: "PT Sans",sans-serif;
+        font-size: 18px;
+        font-weight: normal;
+        font-style: normal;
+        color: #413332;
+    }
+    .goods-row{
+        border-top: solid 1px #eeeeee;
+    }
+    .basket-header{
+        color: #413332;
+        font-family: Copperplate,sans-serif;
+        font-size: 40px;
+        font-weight: normal;
+        font-style: normal;
+    }
+    .form-area{
+        float: right;
+        margin-right: 200px;
+    }
+    .wrap-basket > .row > div {
+        padding-left: 0;
+        padding-right: 0;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .wrap-basket > div.row > div:last-child {
+        padding-top: 0px;
+        width: 100%;
+    }
+    .wrap-wishlist > .row, .wrap-basket > .row {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .wrap-wishlist > div.row, div.wrap-basket > .row {
+        width: 100%;
+    }
+    .col-md-offset-3{
+        padding-left: 0;
+        padding-right: 0;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
 /****************** Mobile *************************************/
 @media screen and (min-width: 480px) and (max-width: 768px) {
     .wrap-basket{
@@ -62,36 +164,26 @@
         margin-left: auto;
         position: relative;
     }
+    .goods-row{
+        margin-top: 20px;
+    }
     .description{
-        margin-top: 45px;
-        margin-right: 140px;
         font-family: "PT Sans",sans-serif;
         font-size: 18px;
         font-weight: normal;
         font-style: normal;
         color: #413332;
-
-        line-height: normal;
-        position: absolute;
-        left: 90px;
-        top: -110px;
-        width: 125px;
     }
     .wrap-basket #count-goods{
-        float: right;
         font-family: "PT Sans",sans-serif;
         font-size: 18px;
         font-weight: normal;
         font-style: normal;
         color: #413332;
-        position: absolute;
-        top: 66px;
-        left: 299px;
     }
     .delete-area > .delete{
         line-height: 80px;
         margin-left: 78px;
-
     }
     .basket-describ {
         width: 618px;
@@ -110,8 +202,6 @@
         margin-right: 20px;
     }
     #goods-name{
-        float: left;
-        margin-top: 65px;
         font-family: "PT Sans",sans-serif;
         font-size: 18px;
         font-weight: normal;
