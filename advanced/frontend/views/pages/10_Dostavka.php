@@ -486,34 +486,38 @@ $metering = '
 
             </div>
         </div>
-        <!-- collapse -->
-        <div class="row center-block collapse-wrap ">
-            <div class="col-md-12 clear-indent">
-                <?php
-                echo Collapse::widget([
-                    'items' => [
-                        [
-                            'label' => 'Стоимость подъёма',
-                            'content' => $lifting,
-                            'options' => ['class' => 'lifting-costs-head'],
-                            // Открыто по-умолчанию
-                            'contentOptions' => [
-                                'class' => ' panel-lifting-costs'//in
-                            ]
 
+    </div>
+    <!-- collapse -->
+    <div class="row center-block collapse-wrap ">
+        <div class="col-md-12 clear-indent">
+
+            <?php
+            echo Collapse::widget([
+                'encodeLabels' => false,
+                'items' => [
+                    [
+                        'label' => 'Стоимость подъёма   <span class="glyphicon-plus-square"></span>',
+                        'content' => $lifting,
+
+                        'options' => ['class' => 'lifting-costs-head'],
+                        // Открыто по-умолчанию
+                        'contentOptions' => [
+                            'class' => ' panel-lifting-costs'//in
+                        ]
+
+                    ],
+                    [
+                        'label' => 'Стоимость замеров и установки <span class="glyphicon-plus-square"></span>',
+                        'content' => $metering,
+                        'contentOptions' => [
+                            'class' => ' panel-metering-costs'
                         ],
-                        [
-                            'label' => 'Стоимость замеров и установки',
-                            'content' => $metering,
-                            'contentOptions' => [
-                                'class' => ' panel-metering-costs'
-                            ],
-                            'options' => ['class' => 'metering-costs-head'],
-                        ],
-                    ]
-                ]);
-                ?>
-            </div>
+                        'options' => ['class' => 'metering-costs-head'],
+                    ],
+                ]
+            ]);
+            ?>
         </div>
     </div>
     <!--
@@ -542,37 +546,35 @@ $metering = '
                     </div>
 
                 </div>
+                <div class="parallax" data-velocity="-.3"></div>
                 <script src="/js/lib/jquery.min.js"></script>
                 <script src="/js/lib/jquery.imageScroll.min.js"></script>
+                <script src="js/lib/jquery.jquery.scrolly.js"></script>
+
                 <script>
-                    $('div.action > .img-holder').imageScroll({
-                        holderClass: 'imageHolder',
-                        container: $('div.action'),
-                        speed: 0.1,
-                        coverRatio: 0.75,
-                        mediaWidth: 2000,
-                        mediaHeight: 1014,
-                        holderMaxHeight: 1000,
-                        holderMinHeight: 866,
-                        parallax: true,
-                        touch: false
+                    $(document).ready(function(){
+                        $('.parallax').scrolly({bgParallax: true});
                     });
-                    $(function () {
-                        $('.panel-heading > .panel-title > a').on("click", function() {
-
-                            $('div.action > .img-holder').imageScroll('refresh');
-                            var content = $('html');
-                            $('div.action > .img-holder').trigger('scroll');
-
-                            console.log( $( this ).text() );
-
-
-                        });
-                    })
                 </script>
             </div>
         </div>
     </div>
 
 </div>
+<script>
+    //
 
+        $('.panel-title > a').on( "click", function() {
+            var button = $( this ).find('span');
+            if(button.hasClass('glyphicon-plus-square')){
+                button.addClass('glyphicon-minus-square');
+                button.removeClass('glyphicon-plus-square');
+            }else {
+                button.addClass('glyphicon-plus-square');
+                button.removeClass('glyphicon-minus-square');
+            }
+
+            console.log( 'dfdfdf' );
+        });
+
+</script>

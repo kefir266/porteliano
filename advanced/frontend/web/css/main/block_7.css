@@ -1,25 +1,59 @@
-.wrap-facts-at-Glance{
+.wrap-facts-at-Glance {
     position: relative;
     height: 510px;
     /*background-color: #9900fd;*/
     z-index: 0;
 
 }
+
 .wrap-facts-at-Glance .row {
     max-width: 100%;
 }
-.facts{
+
+.facts {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    width: 80%;
+    width: 960px;
 }
-.facts h1{
-    font-size: 4em;
-    color: #9A2434;
+
+.facts h1 {
+    color: #992333;
+    font-family: Copperplate, serif;
+    font-size: 60px;
 }
-.facts p{
-    font-size: 2em;
+
+.facts p {
     color: black;
+    font-family: "PT Serif", serif;
+    font-size: 28px;
+}
+
+@media screen and (min-width: 992px) {
+
+    .facts-col-1 {
+        margin-left: 0;
+        padding-left: 0;
+        padding-right: 0;
+        width: 198px;
+        text-align: center;
+        color: #413332;
+    }
+
+    .facts-col-2 {
+        margin-left: 125px;
+        padding-left: 0;
+        padding-right: 0;
+        width: 165px;
+        text-align: center;
+    }
+
+    .facts-col-3 {
+        margin-left: 120px;
+        padding-left: 0;
+        padding-right: 0;
+        width: 246px;
+        text-align: center;
+    }
 }

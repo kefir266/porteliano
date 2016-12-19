@@ -4,7 +4,7 @@ body {
 
 .delivery {
     min-height: 485px;
-    max-width: 1100px;
+    max-width: 960px;
     font-family: "PT Sans", sans-serif;
     font-size: 18px;
 }
@@ -302,4 +302,39 @@ body {
         font-size: 16px;
         width: 100%;
     }
+    .panel-heading > .panel-title {
+        width: 430px;
+    }
+}
+
+.img-holder {
+    margin: 0;
+    height: 1000px;
+    position:absolute;
+    top:0px;left:0px;
+    width:100%;
+    background: url(../../img/background/FOTO_INTRO_01.jpg) no-repeat fixed 0 50%;
+}
+
+
+.glyphicon-minus-square::before {
+    font-family: Awesome;
+    content: "\F147";
+    float: right;
+    font-size: 30px;
+}
+.glyphicon-plus-square::before {
+    font-family: Awesome;
+    content: "\F196";
+    float: right;
+    font-size: 30px;
+}
+.panel-body,
+.panel-title{
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.wrap-delivery > .center-block, .wrap-delivery > .center-block > div.clear-indent {
+    margin-bottom: -18px;
 }
