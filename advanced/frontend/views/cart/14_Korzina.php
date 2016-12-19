@@ -32,6 +32,7 @@ Yii::setAlias('@img', '@web/img/');
             <h1>Ваша корзина</h1>
         </div>
         <div class="col-md-2 col-md-offset-2 ">
+            <h4>Наименование</h4>
             <h4 id="count-goods">Количество</h4>
         </div>
     </div>

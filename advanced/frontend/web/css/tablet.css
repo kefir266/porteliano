@@ -208,11 +208,36 @@
 	width:100%;
 }
 
+.wrap-basket > .row > div{
+	width:76%;
+}
+
+.wrap-basket > .row > div:last-child > h4{
+	width:710px;
+	float:left;
+	margin:0px;
+	padding:0px;
+}
+
+.wrap-basket > .row > div:last-child{
+	padding-top:30px;
+}
+
+#count-goods{
+	width:250px;
+	margin:0px;
+	padding:0px;
+}
+
 .wrap-delivery > .center-block,
 .wrap-delivery > .center-block > div{
 	width:100%;
 	margin:0px;
 	padding:0px;
+}
+
+#tab-cart > h2{
+	text-align:center;
 }
 
 @media (min-width:768px) and (max-width:980px){
@@ -1883,5 +1908,47 @@
 	div > div{
 		margin:0px;
 		padding:0px;
+	}
+
+	/*Корзина*/
+
+	.wrap-basket > .row:first-child > div{
+		width:700px;
+	}
+
+	.wrap-basket > .row:first-child > div:last-child{
+		width:700px;
+	}
+
+	.wrap-basket > .row:first-child > div:last-child > h4:first-child{
+		width:500px;
+		text-align:left;
+	}
+
+	.wrap-basket > .row:first-child > div:last-child > h4#count-goods{
+		width:100px;
+	}
+
+	.wrap-basket > #tab-cart .goods-row{
+		width:700px;
+		margin:0px auto;
+		border:1px solid #eee;
+		border-left:none;
+		border-right:none;
+	}
+
+	.wrap-basket > #tab-cart .goods-row > div{
+		float:left;
+	}
+
+	.wrap-basket > #tab-cart .goods-row > div:last-child{
+		float:right;
+		height:100%;
+	}
+
+	input::-webkit-inner-spin-button{
+		/*-webkit-appearance:none;*/
+		padding:20px 5px;
+		margin:0px;
 	}
 }
