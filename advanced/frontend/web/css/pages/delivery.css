@@ -4,7 +4,7 @@ body {
 
 .delivery {
     min-height: 485px;
-    max-width: 1100px;
+    max-width: 960px;
     font-family: "PT Sans", sans-serif;
     font-size: 18px;
 }
@@ -302,6 +302,9 @@ body {
         font-size: 16px;
         width: 100%;
     }
+    .panel-heading > .panel-title {
+        width: 430px;
+    }
 }
 
 .img-holder {
@@ -311,4 +314,23 @@ body {
     top:0px;left:0px;
     width:100%;
     background: url(../../img/background/FOTO_INTRO_01.jpg) no-repeat fixed 0 50%;
+}
+
+.glyphicon-plus-square:hover::before {
+    content: "\F147";
+}
+.glyphicon-plus-square:active::before {
+    content: "\F147";
+}
+.glyphicon-plus-square::before {
+    font-family: Awesome;
+    content: "\F196";
+    float: right;
+    font-size: 30px;
+}
+.panel-body,
+.panel-title{
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -486,34 +486,38 @@ $metering = '
 
             </div>
         </div>
-        <!-- collapse -->
-        <div class="row center-block collapse-wrap ">
-            <div class="col-md-12 clear-indent">
-                <?php
-                echo Collapse::widget([
-                    'items' => [
-                        [
-                            'label' => 'Стоимость подъёма',
-                            'content' => $lifting,
-                            'options' => ['class' => 'lifting-costs-head'],
-                            // Открыто по-умолчанию
-                            'contentOptions' => [
-                                'class' => ' panel-lifting-costs'//in
-                            ]
 
+    </div>
+    <!-- collapse -->
+    <div class="row center-block collapse-wrap ">
+        <div class="col-md-12 clear-indent">
+
+            <?php
+            echo Collapse::widget([
+                'encodeLabels' => false,
+                'items' => [
+                    [
+                        'label' => 'Стоимость подъёма   <span class="glyphicon-plus-square"></span>',
+                        'content' => $lifting,
+
+                        'options' => ['class' => 'lifting-costs-head'],
+                        // Открыто по-умолчанию
+                        'contentOptions' => [
+                            'class' => ' panel-lifting-costs'//in
+                        ]
+
+                    ],
+                    [
+                        'label' => 'Стоимость замеров и установки <span class="glyphicon-plus-square"></span>',
+                        'content' => $metering,
+                        'contentOptions' => [
+                            'class' => ' panel-metering-costs'
                         ],
-                        [
-                            'label' => 'Стоимость замеров и установки',
-                            'content' => $metering,
-                            'contentOptions' => [
-                                'class' => ' panel-metering-costs'
-                            ],
-                            'options' => ['class' => 'metering-costs-head'],
-                        ],
-                    ]
-                ]);
-                ?>
-            </div>
+                        'options' => ['class' => 'metering-costs-head'],
+                    ],
+                ]
+            ]);
+            ?>
         </div>
     </div>
     <!--
