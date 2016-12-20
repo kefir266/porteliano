@@ -155,3 +155,103 @@
     margin-bottom: 165px;
 }
 }
+@media screen and (min-width: 992px){
+    .door-cart {
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 70px;
+    }
+    .door-card-info{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .door-card-info > div:first-child{
+        padding-left: 0;
+        padding-right: 0;
+        width: 351px;
+        margin-right: 10px;
+    }
+    .doorImg {
+        margin-left: 0;
+        width: 349px;
+    }
+    div.row.max-width{
+        position: relative;
+        max-width: 960px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    div.row.max-width > div:first-child{
+        margin-right: 0;
+        margin-left: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    ul.breadcrumb {
+        margin-left: 0;
+        position: absolute;
+        top: 32px;
+        left: 359px;
+        background-color: transparent;
+    }
+    div.door-title{
+        margin-right: 0;
+        margin-left: 0;
+        padding-right: 0;
+        padding-left: 0;
+        width: 100%;
+    }
+    .product-discript-door{
+        margin-right: 0;
+        margin-left: 0;
+        padding-right: 0;
+        padding-left: 0;
+        width: 62%;
+        margin-top: 8px;
+    }
+    .product-discript-door > .row{
+        margin-right: 0;
+        margin-left: 0;
+        padding-right: 0;
+        padding-left: 0;
+        width: 100%;
+    }
+    .product-discript{
+        margin-left: -13px;
+    }
+    .doors-gradient-pos {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 462px;
+        height: 50%;
+    }
+    .img-border {
+        width: 462px;
+        height: 466px;
+        outline: 6px solid #935347;
+        border: none;
+        margin-top: 100px;
+    }
+    .top-cover{
+        margin-left: 21px;
+        padding-right: 0;
+        padding-left: 0;
+        width: 467px;
+    }
+    .bottom-cover{
+        float: right;
+        margin-left: 0;
+        margin-right: 16px;
+        padding-right: 0;
+        padding-left: 0;
+        width: 467px;
+    }
+    .plate{
+        width: 467px;
+    }
+    .cover-all{
+        margin-bottom: 100px;
+    }
+}

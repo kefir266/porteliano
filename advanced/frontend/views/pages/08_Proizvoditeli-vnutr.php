@@ -15,8 +15,8 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 /*  assets  */
-use app\assets\PagesAsset;
-PagesAsset::register($this);
+use app\assets\pages\ManufInnerAsset;
+ManufInnerAsset::register($this);
 
 $this->params['breadcrumbs'][] = [
     'label' => 'Производители',

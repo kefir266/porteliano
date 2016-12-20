@@ -13,7 +13,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 /*  assets  */
-use app\assets\DoorsAsset;
+use app\assets\pages\DoorsAsset;
 
 DoorsAsset::register($this);
 

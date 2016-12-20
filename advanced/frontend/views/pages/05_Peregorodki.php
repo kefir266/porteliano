@@ -13,7 +13,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 /*  assets  */
-use app\assets\SeptaAsset;
+use app\assets\pages\SeptaAsset;
 
 SeptaAsset::register($this);
 

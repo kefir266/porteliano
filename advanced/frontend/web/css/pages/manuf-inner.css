@@ -53,3 +53,15 @@
         margin-bottom: 80px;
     }
 }
+@media screen and (min-width: 992px) {
+    .order-registration {
+        max-width: 960px;
+    }
+    .confirm-orders-title {
+        padding-left: 0;
+    }
+    ul.breadcrumb{
+        margin-left: 42px;
+        margin-top: 5%;
+    }
+}
