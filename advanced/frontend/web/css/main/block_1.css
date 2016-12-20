@@ -107,6 +107,7 @@
     /* тестовые свойства*/
     font-size: 60px;/**/
 }
+
 .category > ul > li > a:hover{
     background-color: #e4e2db;
     color:#6a372d;
@@ -134,6 +135,7 @@
     /* тестовые свойства*/
     font-size: 50px;
 }
+
 .dropdown-submenu > ul > li > a:hover{
     background-color: #e4e2db;
     color:#6a372d;
