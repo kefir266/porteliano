@@ -8,15 +8,11 @@
 }
 
 .wrap-septa .arrow {
-    background-image: url(../../img/other/angle-light.png);
+    background-image: url(../../img/other/angle-light-1.png);
     width: 61px;
-    height: 10px;
-    position: absolute;
-    top: 100%;
-    /* верт. центр */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
+    height: 20px;
+    top: calc(100% - 10px);
+    z-index: 5;
 }
 
 .wrap-septa .septa-panel {

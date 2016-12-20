@@ -491,7 +491,8 @@ $metering = '
     <!-- collapse -->
     <div class="row center-block collapse-wrap ">
         <div class="col-md-12 clear-indent">
-
+            <div class="angle-light"></div>
+            <div class="angle-dark"></div>
             <?php
             echo Collapse::widget([
                 'encodeLabels' => false,
