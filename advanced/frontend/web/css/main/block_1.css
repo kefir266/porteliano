@@ -27,10 +27,17 @@
 .wrap-quick-selection .row{
     max-width: 100%;
 }
-
+.ui-button-text-only .ui-button-text,
 .material > div > button:nth-child(1){
-    font-size: 20px;
+    font-family: "PT Serif",serif;
+    font-weight: normal;
+    font-style: italic;
+    color: #3c2f26;
+    font-size: 16px;
     width: 177px;
+}
+.ui-button-text-only span.ui-button-text {
+    padding: .6em 1em;
 }
 .material > div > button:nth-child(2){
     font-size: 20px;
@@ -104,8 +111,9 @@
 .category > ul > li > a{
     font-size: 20px;
     color: #935347;
+    cursor:pointer;
     /* тестовые свойства*/
-    font-size: 60px;/**/
+    font-size: 50px;/**/
 }
 
 .category > ul > li > a:hover{
@@ -133,7 +141,8 @@
     color: #955347;
     margin-left: 10%;
     /* тестовые свойства*/
-    font-size: 50px;
+    font-size: 40px;
+    cursor:pointer;
 }
 
 .dropdown-submenu > ul > li > a:hover{

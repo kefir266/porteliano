@@ -498,7 +498,7 @@ $metering = '
                 'encodeLabels' => false,
                 'items' => [
                     [
-                        'label' => 'Стоимость подъёма   <span class="glyphicon-plus-square"></span>',
+                        'label' => 'Стоимость подъёма   <span class="glyphicon-plus-square first"></span>',
                         'content' => $lifting,
 
                         'options' => ['class' => 'lifting-costs-head'],
@@ -509,7 +509,7 @@ $metering = '
 
                     ],
                     [
-                        'label' => 'Стоимость замеров и установки <span class="glyphicon-plus-square"></span>',
+                        'label' => 'Стоимость замеров и установки <span class="glyphicon-plus-square second"></span>',
                         'content' => $metering,
                         'contentOptions' => [
                             'class' => ' panel-metering-costs'
@@ -538,7 +538,7 @@ $metering = '
                         </article>
                                                  
                             <p class="consultation-text">
-                                Заполните поля ниже, и наш менеджер свяжется с Вами, чтобы проконсультироватьпо Вашим индивидуальным вопросам.
+                                Заполните поля ниже, и наш менеджер свяжется с Вами, чтобы проконсультировать по Вашим индивидуальным вопросам.
                             </p>
                         
                         <div class="col-md-12 col-xs-12">
@@ -566,16 +566,38 @@ $metering = '
     //
 
         $('.panel-title > a').on( "click", function() {
-            var button = $( this ).find('span');
+            var button = $( this ).find('span'),
+                upArrow = $('.angle-light'),
+                downArrow = $('.angle-dark');
             if(button.hasClass('glyphicon-plus-square')){
                 button.addClass('glyphicon-minus-square');
                 button.removeClass('glyphicon-plus-square');
+
+            if(button.hasClass('first')){
+                // первый collapse
+                upArrow.addClass('angle-light-revert');
+                downArrow.addClass('angle-dark-indent');
+            }else {
+                // второй collapse
+                downArrow.addClass('angle-dark-revert ');
+            }
+
+                console.log( 'open = ' + upArrow );
             }else {
                 button.addClass('glyphicon-plus-square');
                 button.removeClass('glyphicon-minus-square');
+                console.log( 'close' );
+                if(button.hasClass('first')) {
+                    // первый collapse
+                    upArrow.removeClass('angle-light-revert');
+                    downArrow.removeClass('angle-dark-indent');
+                }else {
+                    // второй collapse
+                    downArrow.removeClass('angle-dark-revert ');
+                }
             }
 
-            console.log( 'dfdfdf' );
+            console.log( 'проверка пройдена' );
         });
 
 </script>

@@ -19,11 +19,9 @@ use yii\helpers\Url;
 /*  assets  */
 use app\assets\pages\ProductAsset;
 use app\assets\FontAsset;
-use app\assets\BackAsset;
 
 ProductAsset::register($this);
 FontAsset::register($this);
-BackAsset::register($this);
 
 // псевдоним пути к папке
 Yii::setAlias('@doors', '@web/img/doors');

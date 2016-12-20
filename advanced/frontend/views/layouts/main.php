@@ -14,10 +14,11 @@ use yii\widgets\Breadcrumbs;
 use app\assets\MainAdaptiveAsset;
 use app\assets\TabletAsset;
 use app\assets\MobileAsset;
+use app\assets\BackAsset;
 use frontend\widgets\menu\PortNavBar;
 
 
-
+BackAsset::register($this);
 MainAdaptiveAsset::register($this);
 TabletAsset::register($this);
 MobileAsset::register($this);
