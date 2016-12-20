@@ -111,6 +111,7 @@
 .category > ul > li > a{
     font-size: 20px;
     color: #935347;
+    cursor:pointer;
     /* тестовые свойства*/
     font-size: 50px;/**/
 }
@@ -141,6 +142,7 @@
     margin-left: 10%;
     /* тестовые свойства*/
     font-size: 40px;
+    cursor:pointer;
 }
 
 .dropdown-submenu > ul > li > a:hover{
