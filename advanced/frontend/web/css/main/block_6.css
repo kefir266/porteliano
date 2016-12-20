@@ -12,6 +12,7 @@
     background-image: url(../../img/other/angle-light-1.png);
     width: 61px;
     height: 20px;
+    top: 917px;
     top: calc(100% - 10px);
     z-index: 5;
 }
