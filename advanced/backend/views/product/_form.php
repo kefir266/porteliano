@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use kartik\file\FileInput;
+use mihaildev\ckeditor\CKEditor;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Product */
@@ -114,14 +115,15 @@ use kartik\file\FileInput;
 
         <div class="col-md-9">
 
-            <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
+            <?php echo $form->field($model, 'description')->widget(CKEditor::className(),[
+                'editorOptions' => [
+                    'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+                    'inline' => false, //по умолчанию false
+                ],
+            ]);?>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-9">
             <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-        </div>
-    </div>
 
     <?php \yii\bootstrap\ActiveForm::end(); ?>
 
