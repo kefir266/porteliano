@@ -1954,10 +1954,6 @@
 		margin-top:20px;
 	}
 
-	.wrap-basket > #tab-cart .row:nth-child(4){
-		display:none;
-	}
-
 	.wrap-basket > #tab-cart .row:last-child{
 		width:700px;
 		margin:20px auto 0px;
@@ -1968,15 +1964,27 @@
 		padding:0px;
 	}
 
+	.separator{
+		display:none;
+	}
+
 	.wrap-basket > #tab-cart .goods-row > div{
 		float:left;
 		height:108px;
+		margin:0px;
+		padding:0px;
+	}
+
+	.wrap-basket > #tab-cart .goods-row > div:nth-child(2){
+		background-color:#fff;
+		width:154px;
 	}
 
 	.wrap-basket > #tab-cart .goods-row > div:nth-child(3){
-		width:400px;
+		width:380px;
 		margin:0px;
 		padding:0px;
+		padding-left:5px;
 		line-height:108px;
 	}
 
@@ -1985,7 +1993,16 @@
 	input{
 		margin:0px;
 		padding:0px;
-		padding-top:calc((108px - 34px) / 2);
+		/*padding-top:calc((108px - 34px) / 2);*/
+		padding-top:12px;
+	}
+
+	#count-goods{
+		float:left;
+	}
+
+	#goods-name{
+		width:530px;
 	}
 
 	.wrap-basket > #tab-cart .goods-row > div:nth-child(4) > div > 
@@ -1994,6 +2011,10 @@
 		display:block;
 		padding-top:0px;
 		box-sizing: border-box;
+	}
+
+	.wrap-basket > #tab-cart .row:nth-child(3){
+		/*display:none;*/
 	}
 
 	.wrap-basket > #tab-cart .goods-row > div:nth-child(4){
@@ -2008,7 +2029,7 @@
 		line-height:108px;
 	}
 
-	/*Кариочка товара*/
+	/*Карточка товара*/
 
 	.door-catalog.door-cart > .panel-quick-selection{
 		width:700px;
@@ -2099,5 +2120,10 @@
 
 	.door-catalog.door-cart > .panel-quick-selection > div:last-child{
 		margin-bottom:80px;
+	}
+
+	.delete-area{
+		margin:0px;
+		padding:0px;
 	}
 }

@@ -115,7 +115,7 @@ Yii::setAlias('@img', '@web/img/');
                 <?php endif; ?>
             <?php endforeach; ?>
             <!-- разделитель -->
-            <div class="row">
+            <div class="row separator">
                 <div class="col-md-6 col-md-offset-3 ">
                     <hr/>
                 </div>

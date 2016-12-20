@@ -103,10 +103,14 @@ function nextDownload(e,left, quant) {
 
 function delItem(e, cartWish, id) {
 
-    if (cartWish == 'cart')
+    if (cartWish == 'cart'){
         var jtag = $('#basket');
-    else
+        var tag = $('div#other-panel > a > span:last');
+    }
+    else{
         var jtag = $('#wishlist');
+        var tag = $('div#other-panel > a > span:first');
+    }
 
     $.ajax({
             url: '/cart/delelement',
@@ -118,6 +122,7 @@ function delItem(e, cartWish, id) {
             success: function (res) {
                 //showModal('#modal-'+cartWish,res);
                 getQuantity('get' + cartWish, jtag);
+                getQuantity('get' + cartWish, tag);
                 $(e.target).parents(".goods-row").remove();
                 getQuantity('get' + cartWish, $("#counter-goods"), '0'); //would be altered
             },
@@ -211,10 +216,14 @@ function addToCart(e) {
 
 function clearCart(cartWish) {
 
-    if (cartWish == 'cart')
+    if (cartWish == 'cart'){
         var jtag = $('#basket');
-    else
+        var tag = $('div#other-panel > a > span:last');
+    }
+    else{
         var jtag = $('#wishlist');
+        var tag = $('div#other-panel > a > span:first');
+    }
 
     $.ajax({
             url: '/cart/clear',
@@ -224,6 +233,7 @@ function clearCart(cartWish) {
             type: 'GET',
             success: function (res) {
                 refreshCart(0, jtag);
+                refreshCart(0, tag);
                 $("#tab-cart").html("");
             },
             error: function () {
