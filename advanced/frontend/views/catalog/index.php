@@ -14,12 +14,10 @@ use app\assets\MainPageAsset;
 use app\assets\AppAsset;
 use app\assets\MainAsset;
 use app\assets\FontAsset;
-use app\assets\BackAsset;
 
 AppAsset::register($this);
 $test = MainAsset::register($this);
 FontAsset::register($this);
-BackAsset::register($this);
 MainPageAsset::register($this);
 
 ?>

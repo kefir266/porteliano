@@ -16,8 +16,6 @@ MainPageAdaptiveAsset::register($this);
 use app\assets\FontAsset;
 FontAsset::register($this);
 
-use app\assets\BackAsset;
-BackAsset::register($this);
 
 
 $this->title = 'home';

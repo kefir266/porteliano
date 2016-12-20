@@ -10,11 +10,6 @@ use yii\bootstrap\ButtonDropdown;
 use yii\bootstrap\Dropdown;
 use yii\bootstrap\Button;
 
-/*  assets
-*/
-use app\assets\BackAsset;
-
-BackAsset::register($this);
 
 ?>
 <?php

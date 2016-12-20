@@ -21,13 +21,11 @@ use yii\web\JsExpression;
 /*  assets  */
 
 use app\assets\FontAsset;
-use app\assets\BackAsset;
 use app\assets\pages\DoorCatalogAsset;
 use app\assets\MainAdaptiveAsset;
 
 FontAsset::register($this);
 MainAdaptiveAsset::register($this);
-BackAsset::register($this);
 
 DoorCatalogAsset::register($this);
 // псевдоним пути к папке

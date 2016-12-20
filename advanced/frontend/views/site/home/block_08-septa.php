@@ -9,10 +9,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-/*  assets  */
-use app\assets\BackAsset;
 
-BackAsset::register($this);
 // псевдоним пути к папке на основе другого псевдонима
 Yii::setAlias('@septa', '@web/img/septa');
 

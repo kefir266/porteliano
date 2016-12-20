@@ -12,16 +12,12 @@ use yii\bootstrap\Button;
 
 use app\models\Section;
 
-use app\assets\BackAsset;
-
-BackAsset::register($this);
-
 $sections = new Section();
 
-$items = [];
-foreach ($sections->getMenu() as $section) {
-    $items[] = $section;
-}
+$items = \yii\helpers\ArrayHelper::toArray($sections->getMenu());
+//foreach ($sections->getMenu() as $section) {
+//    $items[] = $section;
+//}
 ?>
 <!---->
 <div id="quick-selection" class="wrap-quick-selection">
@@ -34,9 +30,9 @@ foreach ($sections->getMenu() as $section) {
                         <b class="caret"></b>
                     </a>
                     <?php
-                    echo ''/*Dropdown::widget([
-                        'items' => $items,
-                    ])*/;
+//                    echo Dropdown::widget([
+//                        'items' => $items,
+//                    ]);
                     ?>
                 </div>
             </div>
@@ -51,6 +47,7 @@ foreach ($sections->getMenu() as $section) {
                     <?php
                     echo Dropdown::widget([
                         'items' => $items,
+                        'options' => ['class' => 'drop-down-quick-selection']
                     ]);
                     ?>
                 </div>
