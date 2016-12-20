@@ -39,6 +39,7 @@ class Product extends ActiveRecord
             : 'product.section_id = '.$section.' OR section.parent_id = '.$section ;
 
         $products['products'] = $this->find()
+            ->with('prices','section','manufacturer')
             ->innerJoin('section', 'product.section_id = section.id')
             ->where($condition)->limit($num)->orderBy('date DESC')->each();
         return $products;
@@ -76,6 +77,7 @@ class Product extends ActiveRecord
 
 
         $products['products'] = $this->find()
+            ->with('prices','section','manufacturer')
             ->innerJoin('section', 'product.section_id = section.id')
             //->innerJoin('select * from price limit 1', 'price.product_id = product.id')
             ->where($condition)->andWhere($notInCondition)->limit($num)->each();
@@ -144,7 +146,7 @@ class Product extends ActiveRecord
 
     }
 
-    public function getMaterials(){
+    public function getMaterial(){
 
         return $this->hasOne(Material::className(), ['id' => 'material_id']);
         
@@ -257,7 +259,7 @@ class Product extends ActiveRecord
             }
         }
 
-        $query = $this->find()
+        $query = $this->find()->with('prices','section','manufacturer')
             ->innerJoin('section', 'product.section_id = section.id ')
             ->innerJoin('(select distinct price.cost, price.product_id from price order by date DESC ) price ',
                 'price.product_id = product.id')
@@ -270,7 +272,7 @@ class Product extends ActiveRecord
         $query = (isset($params['manufacturer'])) ? $query->andWhere(['product.manufacturer_id' => $params['manufacturer']]) : $query;
         $query = (isset($params['material'])) ? $query->andWhere(['product.material_id' => $params['material']]) : $query;
 
-        $products['products'] = $query->each($quantity);
+        $products['products'] = $query->each();
 
         return $products;
     }
@@ -292,6 +294,9 @@ class Product extends ActiveRecord
 
         return false;
 
+    }
+    public function getGreeny_images(){
+        return $this->hasOne(GreenyImages::className(),['imageID' => 'productImageID']);
     }
 
 }

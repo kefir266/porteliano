@@ -9,6 +9,15 @@ use Yii;
  *
  * @property string $id
  * @property string $title
+ * @property string $alias
+ * @property integer $imageID
+ * @property string $body
+ * @property string $website
+ * @property integer $brandID
+ * @property integer $isPublished
+ * @property string $meta_title
+ * @property string $meta_description
+ * @property string $meta_keywords
  *
  * @property Product[] $products
  */
@@ -28,8 +37,12 @@ class Manufacturer extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title'], 'required'],
+            [['title', 'alias', 'imageID', 'body'], 'required'],
+            [['imageID', 'brandID', 'isPublished'], 'integer'],
+            [['body'], 'string'],
             [['title'], 'string', 'max' => 50],
+            [['alias', 'website', 'meta_title', 'meta_description', 'meta_keywords'], 'string', 'max' => 255],
+            [['title'], 'unique'],
         ];
     }
 
@@ -40,7 +53,16 @@ class Manufacturer extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'title' => 'Производитель',
+            'title' => 'Наименование',
+            'alias' => 'Alias',
+            'imageID' => 'Image ID',
+            'body' => 'Описание',
+            'website' => 'Website',
+            'brandID' => 'Brand ID',
+            'isPublished' => 'Is Published',
+            'meta_title' => 'Meta Title',
+            'meta_description' => 'Meta Description',
+            'meta_keywords' => 'Meta Keywords',
         ];
     }
 
@@ -51,4 +73,6 @@ class Manufacturer extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Product::className(), ['manufacturer_id' => 'id']);
     }
+
+
 }
