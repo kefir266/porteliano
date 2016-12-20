@@ -367,6 +367,16 @@ body {
     width: 59px;
     height: 13px;
 }
+.angle-light-revert {
+    position: absolute;
+    top: 667px;
+    left: 50%;
+    transform: translateX(-50%) scale(-1,-1);
+
+    background: url(../../img/other/angle-dark-2.png) no-repeat;
+    width: 59px;
+    height: 13px;
+}
 
 .angle-dark {
     position: absolute;
@@ -377,4 +387,17 @@ body {
     width: 59px;
     height: 13px;
     z-index: 500;
+}
+.angle-dark-revert {
+    position: absolute;
+    top: 3300px;
+    left: 50%;
+    transform: translateX(-50%) scale(1, 1);
+    background: url(../../img/other/angle-parallax.png) no-repeat;
+    width: 59px;
+    height: 13px;
+    z-index: 500;
+}
+.angle-dark-indent{
+    top: 731px;
 }
