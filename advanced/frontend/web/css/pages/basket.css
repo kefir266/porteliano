@@ -171,15 +171,20 @@
         margin-left: auto;
         position: relative;
     }
-    .goods-row{
+    .wrap-basket .goods-row{
         margin-top: 20px;
     }
-    .description{
+    .wrap-basket .description{
         font-family: "PT Sans",sans-serif;
         font-size: 18px;
         font-weight: normal;
         font-style: normal;
         color: #413332;
+        position: absolute;
+        top: -80px;
+        left: 90px;
+        line-height: normal;
+        width: 240px;
     }
     .wrap-basket #count-goods{
         font-family: "PT Sans",sans-serif;
@@ -187,17 +192,20 @@
         font-weight: normal;
         font-style: normal;
         color: #413332;
+        position: absolute;
+        top: 0;
+        left: 280px;
     }
-    .delete-area > .delete{
+    .wrap-basket .delete-area > .delete{
         line-height: 80px;
         margin-left: 78px;
     }
-    .basket-describ {
+    .wrap-basket .basket-describ {
         width: 618px;
         padding-left: 0;
         padding-right: 0;
     }
-    .wrap-basket .button-area{
+     .wrap-basket .button-area{
         width: 100px;
         position: absolute;
         top: 20px;
@@ -205,20 +213,20 @@
         padding-left: 0;
         padding-right: 0;
     }
-    .basket-icon {
+    .wrap-basket .basket-icon {
         margin-right: 20px;
     }
-    #goods-name{
+    .wrap-basket #goods-name{
         font-family: "PT Sans",sans-serif;
         font-size: 18px;
         font-weight: normal;
         font-style: normal;
         color: #413332;
     }
-    .goods-row{
+    .wrap-basket .goods-row{
         border-top: solid 1px #eeeeee;
     }
-    .basket-header{
+    .wrap-basket .basket-header{
         color: #413332;
         font-family: Copperplate,sans-serif;
         font-size: 40px;
@@ -226,23 +234,23 @@
         font-style: normal;
         width: 460px;
     }
-    .form-area{
+    .wrap-basket .form-area{
         float: right;
     }
-    .basket-describ{
+    .wrap-basket .basket-describ{
         width: 250px;
     }
 
-    .basket-icon {
+    .wrap-basket .basket-icon {
         margin-right: 55px;
         width: 110px;
         padding-left: 0;
         padding-right: 0;
     }
-    div.wrap-basket > .row > div:last-child{
+     div.wrap-basket > .row > div:last-child{
         padding-top: 0;
     }
-    .row.goods-row{
+    .wrap-basket .row.goods-row{
         position: relative;
         margin-right: 0;
         margin-left: 0;
@@ -250,10 +258,10 @@
         padding-left: 0;
         margin-top: 20px;
     }
-    .delete-area {
+    .wrap-basket .delete-area {
         width: 100px;
         position: absolute;
-        top: 63px;
+        top: 100px;
         left: 307px;
         padding-left: 0;
         padding-right: 0;
@@ -322,6 +330,38 @@
     float: right;
     margin-top: 35px;
     width: auto;
+}
+label.control-label{
+    display: none;
+}
+.ui-spinner.ui-widget.ui-widget-content.ui-corner-all{
+    line-height: 42px;
+    width: 95px;
+    outline: 2px solid #e2e2e2;
+    border: none;
+}
+input.ui-spinner-input{
+    font-size: 18px;
+    font-family: Montserrat,serif ;
+    padding-left: 20px;
+}
+/******** кнопки **********************/
+.ui-spinner-button.ui-spinner-down.ui-corner-br,
+.ui-spinner-button.ui-spinner-up.ui-corner-tr{
+    width: 32px;
+    left: 63px;
+    outline: 2px solid #e2e2e2;
+}
+/******** иконки **********************/
+.ui-widget-content .ui-icon{
+    background-position: 0 0;
+    transform: scale(1.1);
+    margin-left: 11px;
+}
+.ui-spinner-button > .ui-icon.ui-icon-triangle-1-s {
+    background-position: -65px 0;
+    width: 32px;
+    margin-left: 11px;
 }
 /****************** Mobile *************************************/
 @media screen and (min-width: 480px) and (max-width: 768px) {

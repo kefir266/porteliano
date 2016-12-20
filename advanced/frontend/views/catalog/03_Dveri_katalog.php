@@ -22,7 +22,7 @@ use yii\web\JsExpression;
 
 use app\assets\FontAsset;
 use app\assets\BackAsset;
-use app\assets\DoorCatalogAsset;
+use app\assets\pages\DoorCatalogAsset;
 use app\assets\MainAdaptiveAsset;
 
 FontAsset::register($this);

@@ -13,7 +13,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 /*  assets  */
-use app\assets\DoorsAsset;
+use app\assets\pages\DoorsAsset;
 
 DoorsAsset::register($this);
 
@@ -95,7 +95,7 @@ $bottomContent_2 = 'Речь идет о входных конструкциях
             </div>
             <div class="row center-block">
                 <div class="col-md-10 ">
-                    <?= Html::tag('h2', 'Входные двери'); ?>
+                    <?= Html::tag('h2', 'Входные двери',['class' => 'inner-header']); ?>
                 </div>
             </div>
             <div class="row ">
@@ -114,7 +114,7 @@ $bottomContent_2 = 'Речь идет о входных конструкциях
             </div>
             <div class="row center-block">
                 <div class="col-md-10 ">
-                    <?= Html::tag('h2', 'Ручки') ?>
+                    <?= Html::tag('h2', 'Ручки', ['class' => 'grips-header']) ?>
                 </div>
             </div>
             <div class="row ">

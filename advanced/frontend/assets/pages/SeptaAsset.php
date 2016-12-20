@@ -5,23 +5,22 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace app\assets;
+namespace app\assets\pages;
 
 use yii\web\AssetBundle;
 
 
-class DoorsAsset extends AssetBundle
+class SeptaAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     
     public $css = [
-        'css/pages/doors.css',
-        /* сюда tablet стили*/        
-        'css/pages/_mobile_pages.css', 
+        'css/pages/septa.css',        
     ];
     public $js = [
-        // доп. библиотеки        
+        // доп. библиотеки
+        
         // скрипты
         'js/navbarSwitch.js',
     ];

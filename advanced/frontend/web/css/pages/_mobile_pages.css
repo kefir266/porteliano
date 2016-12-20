@@ -62,9 +62,10 @@
     .wrap-doors-tiles.plate > a > h2 {
         position: absolute;
         top: 68%;
-        left: 10%;
+        left: 23px;
         font-size: 22px;
         color: #fdfdf3;
+        width: 350px;
     }
     /*******************************************************/
 }

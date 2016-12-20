@@ -62,7 +62,7 @@ use yii\bootstrap\ActiveForm;
                 ]
             )->textInput(['placeholder' => 'E-mail']); ?>
 
-            <?= $form->field($questionForm, 'messge',
+            <?= $form->field($questionForm, 'message',
                 [
                     'horizontalCssClasses' => [
                         'wrapper' => 'col-sm-2',

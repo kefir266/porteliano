@@ -136,13 +136,16 @@ body {
     background-color: aqua;
     position: relative;
 }
-.panel-group .panel + .panel{
+
+.panel-group .panel + .panel {
     margin-top: 0;
 }
-.action-text > p{
+
+.action-text > p {
     /*font-size: 18px;*/
-    font-family: "PT Sans",sans-serif;
+    font-family: "PT Sans", sans-serif;
 }
+
 /****************** Mobile *************************************/
 @media screen and (min-width: 480px) and (max-width: 768px) {
 
@@ -158,7 +161,8 @@ body {
         padding-left: 0;
         padding-right: 0;
     }
-    .clear-margin{
+
+    .clear-margin {
         margin-left: 0;
         margin-right: 0;
     }
@@ -192,8 +196,6 @@ body {
         top: 42px;*/
     }
 
-
-
     .panel-body {
         padding-right: 0;
         padding-left: 0;
@@ -217,6 +219,7 @@ body {
         padding-right: 0;
         font-size: 16px;
     }
+
     .lifting-costs > tbody > tr:nth-child(n+3) > td:nth-child(2),
     .lifting-costs > tbody > tr:first-child > td:nth-child(2) {
         /*background-color: #f8efc0;*/
@@ -226,6 +229,7 @@ body {
         font-size: 16px;
         /* */
     }
+
     .lifting-costs > tbody > tr:nth-child(n+3) > td:nth-child(3),
     .lifting-costs > tbody > tr:first-child > td:nth-child(3) {
         /*background-color: #935347;*/
@@ -234,6 +238,7 @@ body {
         padding-right: 10px;
         font-size: 16px;
     }
+
     .lifting-costs > tbody > tr:nth-child(n+3) > td:nth-child(4),
     .lifting-costs > tbody > tr:first-child > td:nth-child(4) {
         /*background-color: #66afe9;*/
@@ -256,52 +261,63 @@ body {
         padding-top: 45px;
         font-size: 14px;
     }
-    .metering{
+
+    .metering {
         font-size: 16px;
-        font-family: "PT Sans",sans-serif;
+        font-family: "PT Sans", sans-serif;
     }
+
     .metering > tbody > tr > td:nth-child(1) {
         /*background-color: #99ee99;*/
         width: 310px;
         padding-left: 10px;
         padding-right: 0px;
     }
+
     .metering > tbody > tr > td:nth-child(2) {
         /*background-color: #f8efc0;*/
         width: 80px;
         padding-left: 10px;
         padding-right: 10px;
     }
+
     .metering > tbody > tr > td:nth-child(3) {
         /*background-color: #935347;*/
         width: 70px;
         padding-left: 10px;
         padding-right: 0px;
     }
-    .zamer{
+
+    .zamer {
         margin-left: 10px;
     }
+
     .lifting-costs > tbody > tr.table-headers.m-2-header > td {
         font-size: 14px;
     }
+
     /* parallax form */
     .consultation {
         max-height: 615px;
     }
+
     .consultation-form {
         margin-top: 40px;
         max-width: 300px;
         margin-left: auto;
         margin-right: auto;
     }
-    .action-text > p{
+
+    .action-text > p {
         font-size: 18px;
-        font-family: "PT Sans",sans-serif;
+        font-family: "PT Sans", sans-serif;
     }
+
     .consultation-button {
         font-size: 16px;
         width: 100%;
     }
+
     .panel-heading > .panel-title {
         width: 430px;
     }
@@ -310,12 +326,12 @@ body {
 .img-holder {
     margin: 0;
     height: 1000px;
-    position:absolute;
-    top:0px;left:0px;
-    width:100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
     background: url(../../img/background/FOTO_INTRO_01.jpg) no-repeat fixed 0 50%;
 }
-
 
 .glyphicon-minus-square::before {
     font-family: Awesome;
@@ -323,18 +339,42 @@ body {
     float: right;
     font-size: 30px;
 }
+
 .glyphicon-plus-square::before {
     font-family: Awesome;
     content: "\F196";
     float: right;
     font-size: 30px;
 }
+
 .panel-body,
-.panel-title{
+.panel-title {
     max-width: 960px;
     margin-left: auto;
     margin-right: auto;
 }
+
 .wrap-delivery > .center-block, .wrap-delivery > .center-block > div.clear-indent {
     margin-bottom: -18px;
+}
+
+.angle-light {
+    position: absolute;
+    top: 52px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url(../../img/other/angle-light-2.png) no-repeat;
+    width: 59px;
+    height: 13px;
+}
+
+.angle-dark {
+    position: absolute;
+    top: 109px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url(../../img/other/angle-dark-2.png) no-repeat;
+    width: 59px;
+    height: 13px;
+    z-index: 500;
 }

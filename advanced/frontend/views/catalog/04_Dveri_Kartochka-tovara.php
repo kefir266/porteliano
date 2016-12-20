@@ -17,7 +17,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 /*  assets  */
-use app\assets\ProductAsset;
+use app\assets\pages\ProductAsset;
 use app\assets\FontAsset;
 use app\assets\BackAsset;
 
@@ -193,8 +193,8 @@ foreach ($sections->getMenu() as $section) {
             </div>
         </div>
         <!--Обложки на соседние категории-->
-        <div class="row">
-            <div class="col-md-6 col-xs-12">
+        <div class="row cover-all">
+            <div class="col-md-6 col-xs-12 top-cover">
                 <div class="plate center-block">
                     <a href="<?=$coverLinkLeft?>">
                         <?= Html::img($coverImgLeft, [

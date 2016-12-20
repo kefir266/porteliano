@@ -18,7 +18,7 @@ class PagesAsset extends AssetBundle
     public $css = [        
         'css/pages/doors.css',
         'css/pages/doors-catalog.css',
-        'css/pages/septa.css',
+        
         'css/pages/manuf.css',
         'css/pages/manuf-inner.css',
         'css/pages/about.css',
