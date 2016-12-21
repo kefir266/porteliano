@@ -98,7 +98,6 @@ class CartController extends Controller
     public function actionClear() {
 
 
-        var_dump(Yii::$app->request);
         try{
             $cartWish = Yii::$app->request->get('cartwish');
 

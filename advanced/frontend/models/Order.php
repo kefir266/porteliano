@@ -94,11 +94,17 @@ class Order extends \yii\db\ActiveRecord
 
             if (is_numeric($id)) {
 
+                if (!isset($item['product'])) {
+                    $cart->delete($id); //Удаляем глючные
+                    continue;
+                }
                 $this->newOrderContent[$id] = new OrderContent();
                 $this->newOrderContent[$id]->product_id = $item['product']->id;
                 $this->newOrderContent[$id]->quantity = $item['quantity'];
-                $this->newOrderContent[$id]->price = $item['product']->price->cost;
-                $this->newOrderContent[$id]->currency_id = $item['product']->price->currency_id;
+                $this->newOrderContent[$id]->price = (isset($item['product']->price))
+                    ? $item['product']->price->cost : 0;
+                $this->newOrderContent[$id]->currency_id = (isset($item['product']->price))
+                    ? $item['product']->price->currency_id : '978';
                 $this->newOrderContent[$id]->sum = $item['sum'];
             }
         }

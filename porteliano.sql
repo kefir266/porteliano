@@ -9200,7 +9200,7 @@ CREATE TABLE IF NOT EXISTS `section` (
   CONSTRAINT `FK_section_section` FOREIGN KEY (`parent_id`) REFERENCES `section` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы porteliano_db.section: ~6 rows (приблизительно)
+-- Дамп данных таблицы porteliano_db.section: ~9 rows (приблизительно)
 /*!40000 ALTER TABLE `section` DISABLE KEYS */;
 INSERT INTO `section` (`id`, `title`, `parent_id`, `title_main`, `page`) VALUES
 	(1, 'ДВЕРИ', NULL, 'Двери', '?section=1'),
