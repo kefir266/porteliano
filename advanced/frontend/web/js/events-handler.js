@@ -81,7 +81,7 @@ function nextDownload(e,left, quant) {
         dataAjax.price = $("div .block-1-price").find(".btn-default").data('id');
         dataAjax.section = $(".section-title").data('id');
     }
-
+    left = false;
     $.ajax({
         url: '/catalog/download',
         data: dataAjax,
