@@ -93,3 +93,43 @@
 .row-indent {
     margin-top: 60px;
 }
+@media screen and (min-width: 992px){
+    .panel-key-benefits{
+        width: 960px;
+    }
+    .panel-key-benefits .col-md-offset-1{
+        margin-left: 0;
+    }
+    .panel-key-benefits .col-md-1.col-md-offset-1.col-xs-offset-0.col-xs-3{
+        padding-left: 0;
+        padding-right: 0;
+        width: 102px;
+    }
+    .panel-key-benefits .col-md-4.col-xs-9{
+        width: 360px;
+    }
+    .panel-key-benefits .col-md-1.col-xs-3{
+        padding-left: 10px;
+        padding-right: 0;
+
+    }
+    .panel-key-benefits .col-md-4.col-xs-9{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .panel-key-benefits  .col-md-1.col-xs-3{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .panel-key-benefits .col-md-5.col-xs-9{
+        padding-left: 25px;
+        padding-right: 0;
+    }
+    .panel-key-benefits .row{
+        margin-left: 0;
+    }
+    .key-benefits-header {
+        margin-top: -10px;
+    }
+
+}
