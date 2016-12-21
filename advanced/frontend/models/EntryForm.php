@@ -20,7 +20,7 @@ class EntryForm extends Model
 
 
         return [
-            'name' => [['name'], 'required', 'message' => 'Пожалуста введите ваше имя.'],
+            'name' => [['name'], 'required', 'message' => 'Пожалуйста введите ваше имя.'],
             'email' => [['email'], 'required','message' => 'Пожалуйста введите вашу почту.'],
             ['email', 'email', 'message' => 'Почта не коректна.'],
             [['message'], 'string', 'max' => 1000]
