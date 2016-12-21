@@ -34,11 +34,12 @@
     margin-top: 100px;
     margin-bottom: 40px;
 }
-
+.doors-panel.running-ribbon-septa{
+    width: 960px;
+}
 .wrap-septa .running-ribbon-septa div.view {
     height: 600px;
-    width: 94%;
-
+    width: 960px;
 }
 
 .running-ribbon-septa ul {
@@ -80,7 +81,7 @@
 }
 
 .wrap-septa #prev {
-    margin-left: 50%;
+    margin-left: 0;
     margin-top: 160px;
 
     position: absolute;
@@ -114,4 +115,36 @@
 .next:hover{
     background-image: url('../../img/UI/arrow_active.jpg');
     transform: scale(1, 1);
+}
+@media screen and (min-width: 992px){
+    .septa-row{
+        width: 1100px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .col-md-1.flex-vert-centr.show.show-septa.row-prev{
+        width: 50px;
+        padding-right: 0;
+        padding-left: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .row-next{
+        width: 50px;
+        padding-right: 0;
+        padding-left: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .novelty-folders{
+        width: 960px;
+        padding-right: 0;
+        padding-left: 0;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    .wrap-septa #next{
+        margin-left: 0;
+        margin-top: 160px;
+    }
 }
