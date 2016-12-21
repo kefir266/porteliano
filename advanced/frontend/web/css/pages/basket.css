@@ -186,7 +186,7 @@
 
 /****************** Mobile *************************************/
 @media screen and (min-width: 480px) and (max-width: 768px) {
-    #w0{
+    #tab-cart > form#w0{
         width: 450px;
     }
     .wrap-basket{
