@@ -55,6 +55,38 @@
             height: 50px;
         !important;
         }
+
+
+
+        .material, .style, .manufacturer,.block-1-price{
+            margin-left: 20px;
+        }
+        .material{
+            margin-left: 0;
+        }
+        .btn-group{
+            border: 1px solid #574544;
+        }
+        .btn-default.btn.dropdown-toggle{
+            border-left: 1px solid #574544;
+            width: 40px;
+            padding-bottom: 7px;
+        }
+        .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+            padding-bottom: 4px;
+            font-size: 16px;
+            width: 177px;
+        }
+        .btn-group{
+            width: 220px;
+        }
+        .material, .manufacturer {
+            margin-left: 0;
+        }
+        .style, .block-1-price {
+            margin-left: 14px;
+        }
+
     }
     /******  BLOCK 2 **********************/
     @media screen {
