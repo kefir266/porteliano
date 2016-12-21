@@ -138,9 +138,7 @@ span.btn > a {
         margin-top: 16%;
     }
 }
-.section-title {
-    margin-bottom: 30px;
-}
+
 
 /************* карточки товара *******************************/
 /*
@@ -364,6 +362,9 @@ ul.breadcrumb {
     .row.row-covers > div >.plate > a > img {
         height: 465px;
     }
+    .section-title {
+        margin-bottom: 30px;
+    }
 }
 
 @media screen and (min-width: 480px) and (max-width: 768px) {
@@ -418,9 +419,7 @@ ul.breadcrumb {
         margin-left: 0;
     }
 
-    .sampling-area > .tile {
-        margin-left: 7px;
-    }
+
 
     .mobil-width-full {
         max-width: 480px;

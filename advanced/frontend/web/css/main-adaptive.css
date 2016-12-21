@@ -330,12 +330,12 @@ nav.navbar-default ul.navbar-nav. > li > a{
 @media screen and (min-width: 992px){
     .col-navbar > #navbar-line > .navbar-default >
     .container > .navbar-collapse > ul > li:last-child > a{
-        padding-left: 15px;
+        /*padding-left: 15px;*/
         border: none;
     }
     .col-navbar > #navbar-line > .navbar-default >
     .container > .navbar-collapse > ul > li:nth-child(8) > a{
-        padding-left: 15px;
+        /*padding-left: 15px;*/
     }
     /******     форма задать вопрос    *********/
     .modal-dialog.modal-sm > .modal-content{
