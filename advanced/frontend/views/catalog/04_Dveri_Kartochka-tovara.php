@@ -163,7 +163,7 @@ foreach ($sections->getMenu() as $section) {
                         <h4 class="product-discript product-price-h">Стоимость</h4>
                     </div>
                     <div class="col-md-6  col-xs-6">
-                        <h4 class="product-price"><?= $product->price->cost ?></h4>
+                        <h4 class="product-price"><?= (isset($product->price)) ? $product->price->cost : '' ?></h4>
                     </div>
                 </div>
                 <div class="row">

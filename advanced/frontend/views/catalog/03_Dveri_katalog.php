@@ -171,7 +171,7 @@ foreach ($sections->getMenu() as $section) {
                             ],
 
                             'split' => true,
-                            'label' => (isset($products['style'][$params['style']]['label']))
+                            'label' => (isset($params['style']))
                                 ? $products['styles'][$params['style']]['label']
                                 : 'Любой',
                             'dropdown' => [
