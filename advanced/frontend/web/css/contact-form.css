@@ -175,7 +175,9 @@
      color: #b16e3a;
  }
 .contact-form-back-call{
-    height: 540px;
+    height: 489px;
+    width: 361px;
+    padding: 0 30px;
 }
 .col-lg-12{
     margin-left: 0;
