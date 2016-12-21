@@ -33,9 +33,9 @@ Yii::setAlias('@img', '@web/img');
         </div>
     </div>
     <!-- Вкладки -->
-    <div class="row center-block">
+    <div class="row center-block row-folder-doors">
         <!-- кнопка назад -->
-        <div class="col-md-1 col-xs-12 flex-vert-centr show show-doors">
+        <div class="col-md-1 col-xs-12 flex-vert-centr show show-doors row-prev">
             <button id="prev" class="btn btn-link butt-prev" data-param="prev" onclick="nextDownload(event, true,1)"></button>
         </div>
         <!-- Содержимое вкладок -->
@@ -76,7 +76,7 @@ Yii::setAlias('@img', '@web/img');
             </div>
         </div>
         <!-- кнопка вперед -->
-        <div class="col-md-1 col-xs-12 show show-doors">
+        <div class="col-md-1 col-xs-12 show show-doors row-next">
             <button id="next" class="btn btn-link" data-param="next" onclick="nextDownload(event, false,1)"></button>
         </div>
     </div>

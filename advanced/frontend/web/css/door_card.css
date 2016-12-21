@@ -16,7 +16,7 @@
     padding-top: 5px;
     text-align: center;
     width: 230px;
-    margin-left: 13px;
+    margin-left: 10px;
     border: 1px solid #e8e8e8;
     background-color: white;
 }
@@ -86,7 +86,7 @@
 }
 
 .info-text {
-    height: 96px;
+    height: 115px;
     background-color: transparent;
     overflow: hidden;
     padding-top: 12px;

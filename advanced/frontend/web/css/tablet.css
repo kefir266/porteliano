@@ -1,6 +1,5 @@
 /* Категории */
 
-
 @media (min-width:768px){
 
 	header{
@@ -615,7 +614,7 @@
 	.novelty > div.row:nth-child(2) > div > .doors-panel > 
 	div.view{
 		width:720px;
-		height:490px;
+		max-height:505px;
 		overflow:hidden;
 	}
 

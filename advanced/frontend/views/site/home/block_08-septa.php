@@ -25,15 +25,15 @@ $price = ['1545', '1545', '2119', '2194'];
 //echo Html::img('@septa/septa_'.$i.'.jpg',
 ?>
 <article id="septa" class="wrap-septa" data-item="a3">
-    <div class="row">
+    <div class="row septa-row">
         <div class="col-md-offset-1 col-md-10">
             <h2 class="septa-h2">Перегородки</h2>
         </div>
     </div>
     <!-- Вкладки -->
-    <div class="row">
+    <div class="row septa-row">
         <!-- кнопка назад -->
-        <div class="col-md-1 flex-vert-centr show show-septa">
+        <div class="col-md-1 flex-vert-centr show show-septa row-prev">
             <button id="prev"  class="btn btn-link prev" data-param="prev" onclick="nextDownload(event, true, 1)"></button>
         </div>
         <!-- Перегородки -->
@@ -53,7 +53,7 @@ $price = ['1545', '1545', '2119', '2194'];
             </div>
         </div>
         <!-- кнопка вперед -->
-        <div class="col-md-1 show show-septa">
+        <div class="col-md-1 show show-septa row-next">
             <button id="next" class="btn btn-link next" data-param="next" onclick="nextDownload(event, false, 1)"></button>
         </div>
     </div>
