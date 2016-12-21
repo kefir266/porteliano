@@ -18,8 +18,8 @@ class ManufacturerSearch extends Manufacturer
     public function rules()
     {
         return [
-            [['id'], 'integer'],
-            [['title', 'img', 'link'], 'safe'],
+            [['id', 'imageID', 'brandID', 'isPublished'], 'integer'],
+            [['title', 'alias', 'body', 'website', 'meta_title', 'meta_description', 'meta_keywords'], 'safe'],
         ];
     }
 
@@ -60,11 +60,18 @@ class ManufacturerSearch extends Manufacturer
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'imageID' => $this->imageID,
+            'brandID' => $this->brandID,
+            'isPublished' => $this->isPublished,
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'img', $this->img])
-            ->andFilterWhere(['like', 'link', $this->link]);
+            ->andFilterWhere(['like', 'alias', $this->alias])
+            ->andFilterWhere(['like', 'body', $this->body])
+            ->andFilterWhere(['like', 'website', $this->website])
+            ->andFilterWhere(['like', 'meta_title', $this->meta_title])
+            ->andFilterWhere(['like', 'meta_description', $this->meta_description])
+            ->andFilterWhere(['like', 'meta_keywords', $this->meta_keywords]);
 
         return $dataProvider;
     }
