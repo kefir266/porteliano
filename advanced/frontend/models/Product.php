@@ -95,19 +95,30 @@ class Product extends ActiveRecord
                 'table' => 'materials',],];
         foreach ($materials as $item) {
 
-            $products['materials'][$item['id']]  = ['label' => $item['title'], 'url' => '#',
+            $products['materials'][$item->id]  = ['label' => $item->title, 'url' => '#',
                 'linkOptions'=> ['data-toggle' =>'dropdown',
-                    'data-id' => $item['id'],
+                    'data-id' => $item->id,
                     'table' => 'material',
                 ],
             ];
         }
+//
+//        $stylesAll = [];
+//        foreach (Style::find()->each() as $item) {
+//            $stylesAll[$item->id] = ['label' => $item->title, 'url' => '#',
+//                'linkOptions'=> ['data-toggle' =>'dropdown',
+//                    'data-id' => $item->id,
+//                    'table' => 'style',],];
+//        }
+//        $products['styleAll'] = $stylesAll;
+//
 
         $styles = $this->find()->
-        select('style_id id, style.title title')->distinct()
-            ->innerJoin('section', 'product.section_id = section.id')
-            ->innerJoin('style','style_id = style.id')
-            ->where($condition)->each();
+        select('style.id id, style.title title')->distinct()
+//          ->innerJoin('section', 'product.section_id = section.id')
+            ->rightJoin('style','style_id = style.id')
+//            ->where($condition)   //Выбираем все стили
+            ->each();
 
         $products['styles'][] = ['label' => 'Любой', 'url' => '#',
             'linkOptions'=> ['data-toggle' =>'dropdown',
@@ -116,9 +127,9 @@ class Product extends ActiveRecord
                 'table' => 'styles',],];
         foreach ($styles as $item) {
 
-            $products['styles'][$item['id']]  = ['label' => $item['title'], 'url' => '#',
+            $products['styles'][$item->id]  = ['label' => $item->title, 'url' => '#',
                 'linkOptions'=> ['data-toggle' =>'dropdown',
-                'data-id' => $item['id'],
+                'data-id' => $item->id,
                     'table' => 'style',],];
         }
 
@@ -126,7 +137,7 @@ class Product extends ActiveRecord
         select('manufacturer_id id, manufacturer.title title')->distinct()
             ->innerJoin('section', 'product.section_id = section.id')
             ->innerJoin('manufacturer','manufacturer_id = manufacturer.id')
-            ->where($condition)->each();
+            ->where($condition)->orderBy('manufacturer.title')->each();
 
         $products['manufacturers'][] = ['label' => 'Любой', 'url' => '#',
             'linkOptions'=> ['data-toggle' =>'dropdown',
@@ -136,9 +147,9 @@ class Product extends ActiveRecord
 
         foreach ($manufacturers as $item) {
 
-            $products['manufacturers'][$item['id']]  = ['label' => $item['title'], 'url' => '#',
+            $products['manufacturers'][$item->id]  = ['label' => $item->title, 'url' => '#',
                 'linkOptions'=> ['data-toggle' =>'dropdown',
-                    'data-id' => $item['id'],
+                    'data-id' => $item->id,
                     'table' => 'manufacturer',],];
         }
         
@@ -261,7 +272,7 @@ class Product extends ActiveRecord
 
         $query = $this->find()->with('prices','section','manufacturer')
             ->innerJoin('section', 'product.section_id = section.id ')
-            ->innerJoin('(select distinct price.cost, price.product_id from price order by date DESC ) price ',
+            ->leftJoin('(select distinct price.cost, price.product_id from price order by date DESC ) price ',
                 'price.product_id = product.id')
             ->where(['product.section_id' => $id])
             ->orWhere(['section.parent_id' => $id])->andWhere($conditionPrice)->andWhere($notInCondition)
