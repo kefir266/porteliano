@@ -1,7 +1,8 @@
 .door-icon{
-    height: 110px;
+    max-height: 120px;
     border: 1px solid #ece7d4;
     padding: 4px 12px;
+    max-width: 70px;
 }
 .goods-row{
     margin-top: 50px;
@@ -82,7 +83,7 @@
          margin-top: 45px;
      }
     .wrap-basket #count-goods{
-        margin-right: 130px;
+        margin-right: 110px;
         margin-top: 45px;
     }
 
