@@ -11,15 +11,20 @@
 .tile {
     padding-left: 0;
     padding-right: 0;
-    display: inline-block;
-
+    /*display: inline-block;*/
+    float:left;
     padding-top: 5px;
     text-align: center;
     width: 230px;
-    margin-left: 10px;
-    margin-right: -4px;
+    /*width:228px;*/
+    /*margin-left: 10px;*/
+    margin-right:10px;
     border: 1px solid #e8e8e8;
     background-color: white;
+}
+
+.tile:first-child{
+    margin-left:0px;
 }
 
 .link-tile {
