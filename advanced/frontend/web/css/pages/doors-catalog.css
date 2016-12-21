@@ -441,5 +441,70 @@ ul.breadcrumb {
     .mobil-width-full .col-md-6:first-child > .plate img {
         height: 347px;
     }
+    .section-title {
+        max-width: 460px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .row-covers{
+        max-width: 460px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .row-covers > .col-md-6{
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .row-covers .col-md-6.col-xs-12{
+        margin-top: 10px;
+        margin-bottom: 50px;
+    }
+    .row-covers .plate {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .plate img{
+        height: 335px;
+        width: 330px;
+    }
+    .row.give-more{
+        width: 480px;
+        padding-right: 0;
+        padding-left: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .row.give-more > .col-md-12{
+        padding-right: 0;
+        padding-left: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .wrap-all > .row.max-width{
+        padding-right: 0;
+        padding-left: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .wrap-all > .row.max-width > .col-md-offset-1.col-md-10{
+        padding-right: 0;
+        padding-left: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .panel-quick-selection > .row > .col-md-12 {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .panel-quick-selection > .row{
+        width: 460px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .panel-quick-selection .row.selected-doores{
+        margin-left: 0;
+    }
 
 }

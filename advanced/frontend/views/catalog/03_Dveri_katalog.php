@@ -249,7 +249,7 @@ foreach ($sections->getMenu() as $section) {
             </div>
         </div>
         <!-- контейнер для выбранных дверей -->
-        <div class="row">
+        <div class="row selected-doores">
             <div class="col-md-12">
                 <div class="sampling-area catalog-elements" data-section="<?= $ind ?>">
 
@@ -273,7 +273,7 @@ foreach ($sections->getMenu() as $section) {
             </div>
         </div>
         <!-- Обложки на соседние категории -->
-        <div class="row">
+        <div class="row row-covers">
             <div class="col-md-6">
                 <div class="plate">
                     <a href="<?=$coverLinkLeft?>">

@@ -408,8 +408,14 @@ input.ui-spinner-input{
     }
     .del-describ{
         position: absolute;
-        top: 0;
+        top: 30px;
         left: 100px;
         width: 380px;
+        max-width: 290px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .row.goods-row{
+        position: relative;
     }
 }
