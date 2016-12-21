@@ -73,12 +73,14 @@ MobileAsset::register($this);
                             /*$controller должен использовать $this->renderAjax*/
                             $address = Url::to(['site/entry'], true);
                             Modal::begin([
-                                'headerOptions' => ['id' => 'modalHeader'],
+                                'class' => 'set-question',
+                                'headerOptions' => ['id' => 'set-question-header'],
                                 'header' => '<h2>Задайте свой вопрос</h2>',
                                 //keeps from closing modal with esc key or by clicking out of the modal.
                                 // user must click cancel or X to close
                                 //'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
-                                'size' => 'modal-sm',
+                                'size' => '',
+                                'id'=> 'set-question',
                                 'toggleButton' => [
                                     'tag' => 'button',
                                     'value' => $address,

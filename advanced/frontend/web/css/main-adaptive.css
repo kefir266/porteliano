@@ -338,19 +338,20 @@ nav.navbar-default ul.navbar-nav. > li > a{
         /*padding-left: 15px;*/
     }
     /******     форма задать вопрос    *********/
-    .modal-dialog.modal-sm > .modal-content{
+    #set-question > .modal-content{
 
     }
-    .modal-dialog.modal-sm .form-control{
+    #set-question .form-control{
         background-color: #f3f0df;
     }
-    .modal-dialog.modal-sm .control-label {
+    #set-question .control-label {
         float: left;
     }
-    .modal-dialog.modal-sm #entryform-message{
-        max-width: 268px;
+    #set-question textarea#entryform-message{
+        max-width: 100%;
+        min-width: 223px;
     }
-    .modal-dialog.modal-sm .btn.btn-primary{
+    #set-question .btn.btn-primary{
         background-color: #955347;
         border: none;
         border-radius: 0;
@@ -359,11 +360,12 @@ nav.navbar-default ul.navbar-nav. > li > a{
         font-size: 16px;
         width: 100%;
     }
-    #modalHeader >  h2{
+    #set-question-header >  h2{
         text-align: left;
         color: #242626;
+        font-size: 25px;
     }
-    .modal-dialog.modal-sm label{
+    #set-question label{
         font-family: "PT Sans",sans-serif;
         font-style: normal;
         font-size: 16px;

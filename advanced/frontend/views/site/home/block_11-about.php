@@ -46,7 +46,8 @@ use yii\helpers\Url;
                 //keeps from closing modal with esc key or by clicking out of the modal.
                 // user must click cancel or X to close
                 //'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
-                'size' => '',
+                'size' => '',//
+                'id' => 'get-consultation',
                 'toggleButton' => [
                     'tag' => 'button',
                     'value' => $address,
