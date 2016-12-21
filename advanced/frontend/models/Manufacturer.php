@@ -30,6 +30,7 @@ class Manufacturer extends \yii\db\ActiveRecord
         return [
             [['title'], 'required'],
             [['title'], 'string', 'max' => 50],
+            [['website'], 'string', 'max' => 50],
         ];
     }
 
@@ -41,6 +42,7 @@ class Manufacturer extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'title' => 'Title',
+            'website' => 'Веб-сайт'
         ];
     }
 

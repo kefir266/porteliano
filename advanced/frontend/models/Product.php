@@ -133,6 +133,9 @@ class Product extends ActiveRecord
                     'table' => 'style',],];
         }
 
+        $products['fabrics'] = ArrayHelper::toArray(Manufacturer::find()->each());
+
+
         $manufacturers = $this->find()->
         select('manufacturer_id id, manufacturer.title title')->distinct()
             ->innerJoin('section', 'product.section_id = section.id')
@@ -253,16 +256,16 @@ class Product extends ActiveRecord
         if (isset($params['price'])) {
             switch ($params['price']){
                 case '1' :
-                $conditionPrice = 'price.cost < 500' ;
+                $conditionPrice = 'price.cost <= 500' ;
             break;
                 case '2' :
-                    $conditionPrice = 'price.cost > 500 and price.cost < 1000';
+                    $conditionPrice = 'price.cost >= 500 and price.cost <= 1000';
                     break;
                 case '3' :
-                    $conditionPrice = 'price.cost > 1000 and price.cost < 2000';
+                    $conditionPrice = 'price.cost >= 1000 and price.cost <= 2000';
                     break;
                 case '4':
-                    $conditionPrice = 'price.cost > 2000';
+                    $conditionPrice = 'price.cost >= 2000';
                     break;
                 default:
                     $conditionPrice = '';

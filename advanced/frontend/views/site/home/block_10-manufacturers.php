@@ -20,13 +20,12 @@ require_once Yii::getAlias('@frontend').'/views/layouts/manufacturersNames.php';
     </div>
     <div class="manufacturers">
         <ul>
-            <?php
-            for ($i = 0; $i < count($logoNames); $i++){
-                echo '<li>
-                        <a href="#" class="'.$logoNames[$i].'"></a>
-                      </li>';
-            }
-            ?>
+            <?php   foreach ($products['fabrics'] as $manufacturer): ?>
+                <li>
+                        <?= Html::a('', \yii\helpers\Url::to($manufacturer['website']), ['class' => 's-01_agoprofil']) ?>
+                </li>
+
+            <?php endforeach; ?>
         </ul>
     </div>
     <div class="arrow"></div>
