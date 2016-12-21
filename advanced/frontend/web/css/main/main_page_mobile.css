@@ -227,7 +227,7 @@
         }
 
         .wrap-novelty .tile {
-            margin-left: 8px;
+            
         }
 
         .row-indent {
@@ -263,6 +263,10 @@
 
         .panel-key-benefits .glyphicon {
             margin-left: 10px;
+        }
+        .key-benefits-text {
+            width: 350px;
+
         }
     }
     /******  BLOCK 6 DOORS **********************/
