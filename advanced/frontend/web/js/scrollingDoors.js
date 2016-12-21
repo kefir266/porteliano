@@ -46,13 +46,13 @@
                 widthRibons += $(chldr[i]).width();
 
             if(direction == "next") {
-                imgW = viewUL.children(":last").width()+19;
+                imgW = viewUL.children(":last").width()+12;
                 var last = viewUL.children(":first").position().left + widthRibons + imgW;
                 console.log(imgW);
                 if (last <= widthBlock) return;
             }
             else {
-                imgW = viewUL.children(":first").width()+19;
+                imgW = viewUL.children(":first").width()+12;
                 var first = viewUL.children(":first").position().left;
                 if (first >= 15) return;
             }
