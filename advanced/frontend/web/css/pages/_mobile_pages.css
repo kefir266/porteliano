@@ -20,7 +20,8 @@
         width: 347px;
     }
     .doors-wrap.wrap-tiles .plate-inn-doors > a > .tile {
-        width: 170px;
+        width: 158px;
+        height: 338px;
     }
 
     .doors-wrap.wrap-tiles  .plate-out-doors> a > .tile {
@@ -36,12 +37,12 @@
 
     .doors-inn-gradient-pos {
         top: 166px;
-        width: 160px;
-        left: 30px;
+        width: 146px;
+        left: 16px;
     }
     .plate-inn-doors > a > h2 {
         top: 79%;
-        transform: translateX(-35%);
+        transform: translateX(-50%);
     }
     .plate-inn-doors {
         width: 170px;
@@ -66,6 +67,13 @@
         font-size: 22px;
         color: #fdfdf3;
         width: 350px;
+    }
+    .doors-panel .row,
+    .doors-panel .col-md-3{
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
     }
     /*******************************************************/
 }
