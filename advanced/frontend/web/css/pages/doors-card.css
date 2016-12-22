@@ -159,7 +159,7 @@ ul.breadcrumb {
 
     #in-wishlist {
 
-        margin-left: 120px;
+        margin-left: 10px;
     }
 
     .plate {
@@ -180,6 +180,18 @@ ul.breadcrumb {
 
     .bottom-cover {
         margin-bottom: 165px;
+    }
+    .row.buttons-area  .col-md-6.col-xs-6:first-child{
+        width: 290px;
+        padding-right: 0;
+        padding-left: 0;
+        margin-left: -10px;
+
+    }
+    .row.buttons-area > .col-md-6.col-xs-6:nth-child(2){
+        width: 80px;
+        padding-right: 0;
+        padding-left: 0;
     }
 }
 
