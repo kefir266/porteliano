@@ -11,7 +11,7 @@
 ?>
 
 <div id="action" class="wrap-action">
-    <div class="img-holder"
+    <div class="img-holder-alter-1"
          data-image="<?= Yii::getAlias('@web').'/img/background/FOTO_INTRO_01.jpg'?>">
     </div>
     <div class="action-panel">
