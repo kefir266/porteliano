@@ -168,9 +168,20 @@ ul.breadcrumb {
     }
 
     .doors-gradient-pos {
-        top: 77%;
+        top: 74%;
         left: 6px;
-        width: 335px;
+        width: 318px;
+    }
+    .plate h2 {
+        position: absolute;
+        top: 105%;
+        left: 0;
+        color: white;
+        font-size: 22px;
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+        width: 100%;
     }
 
     .img-border {
@@ -309,5 +320,17 @@ ul.breadcrumb {
 
     .cover-all {
         margin-bottom: 100px;
+    }
+    .row.buttons-area  .col-md-6.col-xs-6:first-child{
+        width: 321px;
+        padding-right: 0;
+        padding-left: 0;
+        margin-left: -10px;
+
+    }
+    .row.buttons-area > .col-md-6.col-xs-6:nth-child(2){
+        width: 80px;
+        padding-right: 0;
+        padding-left: 0;
     }
 }
