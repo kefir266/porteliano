@@ -24,8 +24,7 @@ $this->params['breadcrumbs'][] = [
     'template' => "<li> {link} </li>\n", // template for this link only
 ];
 $this->params['breadcrumbs'][] = [
-    'label' => $name,
-    'url' => '#',
+    'label' => $fabric->title,
     'template' => "<li> {link} </li>\n", // template for this link only
 ];
 $title = 'Традиции и инновации';

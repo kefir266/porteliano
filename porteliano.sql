@@ -113,10 +113,11 @@ CREATE TABLE IF NOT EXISTS `greeny_images` (
   `imageID` int(11) NOT NULL,
   `src` varchar(255) NOT NULL,
   `srcSmall` varchar(255) DEFAULT NULL,
-  `srcBig` varchar(255) DEFAULT NULL
+  `srcBig` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`imageID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы porteliano_db.greeny_images: ~5 823 rows (приблизительно)
+-- Дамп данных таблицы porteliano_db.greeny_images: ~5 571 rows (приблизительно)
 /*!40000 ALTER TABLE `greeny_images` DISABLE KEYS */;
 INSERT INTO `greeny_images` (`imageID`, `src`, `srcSmall`, `srcBig`) VALUES
 	(15, '/uploaded/banners/sales.jpg', '/uploaded/banners/sales_small.jpg', NULL),
@@ -5699,7 +5700,7 @@ CREATE TABLE IF NOT EXISTS `manufacturer` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(50) NOT NULL,
   `alias` varchar(255) NOT NULL,
-  `imageID` int(11) NOT NULL,
+  `imageID` int(11) DEFAULT NULL,
   `body` text NOT NULL,
   `website` varchar(255) DEFAULT NULL,
   `brandID` int(11) DEFAULT NULL,
@@ -5709,10 +5710,12 @@ CREATE TABLE IF NOT EXISTS `manufacturer` (
   `meta_keywords` varchar(255) DEFAULT NULL,
   `class` char(30) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `title` (`title`)
+  UNIQUE KEY `title` (`title`),
+  KEY `FK_manufacturer_greeny_images` (`imageID`),
+  CONSTRAINT `FK_manufacturer_greeny_images` FOREIGN KEY (`imageID`) REFERENCES `greeny_images` (`imageID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=188 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы porteliano_db.manufacturer: ~92 rows (приблизительно)
+-- Дамп данных таблицы porteliano_db.manufacturer: ~184 rows (приблизительно)
 /*!40000 ALTER TABLE `manufacturer` DISABLE KEYS */;
 INSERT INTO `manufacturer` (`id`, `title`, `alias`, `imageID`, `body`, `website`, `brandID`, `isPublished`, `meta_title`, `meta_description`, `meta_keywords`, `class`) VALUES
 	(1, 'Agoprofil', 'Agoprofil', 5620, '<h1 style="text-align: justify;">Традиции и инновации</h1>\r\n<div style="text-align: justify;">Популярная мебельная фабрика AGOPROFIL ведет коммерческую деятельность с далекого 1972 года. Из них на российском рынке марка присутствует 10 лет, и за этот срок она успела полюбиться множеству покупателей. Свою деятельность AGOPROFIL начинала с изготовления классических итальянских дверей из дерева. Со временем старые ремесленные традиции были не просто сохранены, но скомбинированы с различными современными способами производства и дизайна. Сегодня фабрика специализируется на межкомнатных дверях.</div>\r\n<div style="text-align: justify;">&nbsp;</div>\r\n<h3 style="text-align: justify;">Какие преимущества таят в себе двери AGOPROFIL?</h3>\r\n<ul>\r\n    <li style="text-align: justify;">&nbsp;Классический стиль, сочетающий в себе прошлое, настоящее и будущее;</li>\r\n    <li style="text-align: justify;">&nbsp;Инновационный подход, гарантирующие оптимальные технические характеристики и максимальное удобство монтажа;</li>\r\n    <li style="text-align: justify;">&nbsp;Разнообразие моделей, подходящих как для жилых, так и для офисных помещений;</li>\r\n    <li style="text-align: justify;">&nbsp;Узнаваемый дизайн, нарочитая простота форм и удивительно долгий срок службы.</li>\r\n</ul>\r\n<div style="text-align: justify;">Помимо этого, сегодня AGOPROFIL имеет собственное проектное бюро, где очень &nbsp;чутко реагируют на желания потребителей.</div>\r\n<div style="text-align: justify;">Компания имеет особый сертификат системы качества UNI EN ISO 9001. Это не просто признак того, что предприятию можно доверять, но еще и доказательство способности фабрики гибко реагировать на изменения потребностей рынка. Сертификат свидетельствует о грамотном проектировании и разработке индивидуальных архитектурных решений.</div>\r\n<div style="text-align: justify;">В любой серии дверей, выпускаемых фабрикой, есть модели, сделанные из шпона, из массива и с сотовым наполнением. AGOPROFIL изготавливает и все виды дверных аксессуаров. Сами двери изготавливают в нескольких основных вариантах: распашные, раздвижные двери, и &laquo;книжки&raquo;.</div>\r\n<div style="text-align: justify;">Оформление двери может быть практически любым: от строгой классики до дверей с позолотой, ручной росписью и прочими атрибутами премиум-класса.</div>\r\n<div style="text-align: justify;">&nbsp;</div>\r\n<h3 style="text-align: justify;">Чтобы было проще найти нужное вам среди всего изобилия моделей, кратко расскажем о каждой серии дверей от AGOPROFIL:</h3>\r\n<ul>\r\n    <li style="text-align: justify;">Серия Class характеризуется строгим классическим дизайном. Двери изготавливаются из древесины.</li>\r\n    <li style="text-align: justify;">Crystal можно расшифровать как кристальную чистоту в оформлении. Количество украшений на деревянных дверях этой серии минимально.</li>\r\n    <li style="text-align: justify;">Diamond изготавливается из шпона. Двери этой серии отличаются наличием матовых стекол.</li>\r\n    <li style="text-align: justify;">Double round похож на серию Diamond, только стеклянные вставки здесь более широкие и напоминают небольшие окна.</li>\r\n    <li style="text-align: justify;">Elegance характеризуется массивными косяками. В дизайне присутствуют овальные вставки из матового стекла.</li>\r\n    <li style="text-align: justify;">Fun отличается яркой расцветкой дверей и создана специально для тех, кто хочет бросить вызов скучной повседневности.</li>\r\n</ul>\r\n<div style="text-align: justify;">Компания &quot;Абсолют Интерьер&quot; рада предложить широкий выбор дверей AGOPROFIL.</div>', 'http://www.agoprofil.com/ru/', 5, 1, NULL, NULL, NULL, 's-01_agoprofil'),
@@ -5771,7 +5774,6 @@ INSERT INTO `manufacturer` (`id`, `title`, `alias`, `imageID`, `body`, `website`
 	(54, 'Bacci stile', 'bacci-stile', 5833, '<p>&nbsp;Мебель для дома в классике</p>', NULL, NULL, 1, NULL, NULL, NULL, NULL),
 	(55, 'Bamax', 'bamax', 5834, '<p>&nbsp;Мебель для дома, средне - высокий уровень</p>', NULL, NULL, 1, NULL, NULL, NULL, NULL),
 	(56, 'Barnini oseo', 'barnini-oseo', 5835, '<p>&nbsp;Мебель в классике, высокий уровень</p>', NULL, NULL, 1, NULL, NULL, NULL, NULL),
-	(57, 'Bastex', 'bastex', 5836, '<p>&nbsp;Мебель для дома в арт-деко, гламур</p>', NULL, NULL, 1, NULL, NULL, NULL, NULL),
 	(58, 'Battistella', 'battistella', 5837, '<p>&nbsp;Детские эконом уровень, цены, как у Siloma</p>', NULL, NULL, 1, NULL, NULL, NULL, NULL),
 	(59, 'Baxter', 'baxter', 5838, '<p>&nbsp;Дизайнерская мягкая мебель</p>', 'www.bastex.it', NULL, 1, NULL, NULL, NULL, NULL),
 	(60, 'Beby group', 'bebygroup', 5839, '<p>&nbsp;Мебель и свет для дома в стиле гламур (высокий уровень)</p>', NULL, NULL, 1, NULL, NULL, NULL, NULL),
@@ -5816,7 +5818,6 @@ INSERT INTO `manufacturer` (`id`, `title`, `alias`, `imageID`, `body`, `website`
 	(99, 'Del tongo', 'del-tongo', 5878, '<p>&nbsp;Кухни</p>', NULL, NULL, 1, NULL, NULL, NULL, NULL),
 	(100, 'Delta salotti', 'delta_salotti', 5879, '<p>&nbsp;Мягкая мебель</p>', NULL, NULL, 1, NULL, NULL, NULL, NULL),
 	(101, 'Desiree', 'desiree', 5880, '<p>&nbsp;Мягкая мебель</p>', NULL, NULL, 1, NULL, NULL, NULL, NULL),
-	(102, 'Вialma brown', 'dialma-brown', 0, '<p>&nbsp;Корпусная мебель для дома. Баров. Ресторанов</p>', NULL, NULL, 1, NULL, NULL, NULL, NULL),
 	(103, 'Dom Edizioni', 'Dom_Edizioni', 5881, '<p>&nbsp;Мебель для дома в современном стиле</p>', NULL, NULL, 1, NULL, NULL, NULL, NULL),
 	(104, 'Dominigo Saloti', 'dominigo-saloti', 5882, '<p>&nbsp;Диваны, кресла, для гостиниц, дома, офисов</p>', NULL, NULL, 1, NULL, NULL, NULL, NULL),
 	(105, 'Ebanisteria bacci', 'ebanisteria-bacci', 5883, '<p>&nbsp;Мебель для детских</p>', NULL, NULL, 1, NULL, NULL, NULL, NULL),
@@ -5893,7 +5894,6 @@ INSERT INTO `manufacturer` (`id`, `title`, `alias`, `imageID`, `body`, `website`
 	(176, 'Tura', 'tura', 5954, '<p>&nbsp;Корпус, проекты, интерьеры яхт и самолетов в стиле Ардеко</p>', NULL, NULL, 1, NULL, NULL, NULL, NULL),
 	(177, 'Turri', 'turri', 5955, '<p>&nbsp;?</p>', NULL, NULL, 1, NULL, NULL, NULL, NULL),
 	(178, 'Twils', 'twils', 5956, '<p>&nbsp;Кровати в обивке</p>', NULL, NULL, 1, NULL, NULL, NULL, NULL),
-	(179, 'Ulivi', 'ulivi', 0, '<p>&nbsp;Мягкая мебель, в коже, высокий уровень</p>', NULL, NULL, 1, NULL, NULL, NULL, NULL),
 	(180, 'Varaschin', 'varaschin', 5957, '<p>&nbsp;Плетеная мебель</p>', NULL, NULL, 1, NULL, NULL, NULL, NULL),
 	(181, 'Veneta Sedie', 'Veneta-Sedie', 5958, '<p>&nbsp;Стулья, столы, классика</p>', NULL, NULL, 1, NULL, NULL, NULL, NULL),
 	(182, 'Villari', 'villari', 5959, '<p>&nbsp;Люстры, предметы интерьера, посуда из фарфора, позолота.</p>', NULL, NULL, 1, NULL, NULL, NULL, NULL),
@@ -6010,7 +6010,7 @@ CREATE TABLE IF NOT EXISTS `price` (
   CONSTRAINT `FK_price_product` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6146 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы porteliano_db.price: ~1 556 rows (приблизительно)
+-- Дамп данных таблицы porteliano_db.price: ~1 460 rows (приблизительно)
 /*!40000 ALTER TABLE `price` DISABLE KEYS */;
 INSERT INTO `price` (`id`, `currency_id`, `cost`, `product_id`, `date`) VALUES
 	(4099, 978, 1285.00, 1, NULL),
@@ -7526,7 +7526,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   CONSTRAINT `FK_product_style` FOREIGN KEY (`style_id`) REFERENCES `style` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1924 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы porteliano_db.product: ~1 356 rows (приблизительно)
+-- Дамп данных таблицы porteliano_db.product: ~1 655 rows (приблизительно)
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`id`, `title`, `section_id`, `material_id`, `style_id`, `manufacturer_id`, `article`, `img`, `description`, `date`, `seriesID`, `collection`, `note`, `productModel`, `productArticul`, `productIndex`, `otherDescription`, `productImageID`, `productAlias`, `productSeoKeywords`, `productSeoDescription`, `productSeoTitle`, `productPrice`, `productOldPrice`, `productVendorPrice`, `currencyID`, `productWeight`, `productPoints`, `productStyle`, `isDiscount`, `discount`, `stockID`, `isTop`, `quantity`, `importID`, `status`) VALUES
 	(1, 'Agoprofil 713 XLS P', 3, 1, 1, 5, '713', NULL, NULL, '2014-10-07 09:49:02', 7, NULL, NULL, NULL, NULL, NULL, '', 5713, 'agoprofil713XLSP', NULL, NULL, NULL, 1285.00, 0.00, 0.00, 978, NULL, NULL, 'classic', 0, 0.00, 1, 0, 2, NULL, 1),
