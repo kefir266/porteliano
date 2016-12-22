@@ -111,7 +111,7 @@ foreach ($sections->getMenu() as $section) {
             <div class="product-discript-door col-md-7 ">
                 <div class="row ">
                     <div class="col-md-10 col-xs-11 door-title">
-                        <h1 class="product-title"><?= $product->section->title ?></h1>
+                        <h1 class="product-title"><?= (isset($product->section)) ? $product->section->title : '' ?></h1>
                     </div>
                 </div>
                 <!--Производитель-->
@@ -120,7 +120,7 @@ foreach ($sections->getMenu() as $section) {
                         <h4 class="product-discript">Производитель</h4>
                     </div>
                     <div class="col-md-6 col-xs-6">
-                        <h4 ><?= $product->manufacturer->title ?></h4>
+                        <h4 ><?= (isset($product->manufacturer)) ? $product->manufacturer->title : '' ?></h4>
                     </div>
                 </div>
                 <!--Коллекция-->
@@ -147,7 +147,7 @@ foreach ($sections->getMenu() as $section) {
                         <h4 class="product-discript">Стиль</h4>
                     </div>
                     <div class="col-md-6 col-xs-6">
-                        <h4><?= $product->style->title ?></h4>
+                        <h4><?= (isset($product->style)) ? $product->style->title : '' ?></h4>
                     </div>
                 </div>
                 <!----------->
