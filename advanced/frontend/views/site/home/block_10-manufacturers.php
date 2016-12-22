@@ -10,7 +10,6 @@ use yii\helpers\Html;
 
 /*  assets  */
 
-require_once Yii::getAlias('@frontend').'/views/layouts/manufacturersNames.php';
 ?>
 <article id="manufacturers" class="wrap-manufacturers">
     <div class="row">
@@ -20,9 +19,11 @@ require_once Yii::getAlias('@frontend').'/views/layouts/manufacturersNames.php';
     </div>
     <div class="manufacturers">
         <ul>
-            <?php   foreach ($products['fabrics'] as $manufacturer): ?>
+            <?php
+
+                foreach ( $fabrics as $manufacturer): ?>
                 <li>
-                        <?= Html::a('', \yii\helpers\Url::to($manufacturer['website']), ['class' => 's-01_agoprofil']) ?>
+                        <?= Html::a('', \yii\helpers\Url::to($manufacturer->website), ['class' => $manufacturer->class]) ?>
                 </li>
 
             <?php endforeach; ?>

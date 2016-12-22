@@ -2,6 +2,7 @@
 
 namespace frontend\models;
 
+use app\models\Manufacturer;
 use Yii;
 
 /**
@@ -55,5 +56,10 @@ class GreenyImages extends \yii\db\ActiveRecord
     public function getProducts()
     {
         return $this->hasMany(Product::className(), ['productImageID' => 'imageID']);
+    }
+
+    public function getManufacturers()
+    {
+        return $this->hasMany(Manufacturer::className(), ['imageID' => 'imageID']);
     }
 }

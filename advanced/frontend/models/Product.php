@@ -133,8 +133,6 @@ class Product extends ActiveRecord
                     'table' => 'style',],];
         }
 
-        $products['fabrics'] = ArrayHelper::toArray(Manufacturer::find()->each());
-
 
         $manufacturers = $this->find()->
         select('manufacturer_id id, manufacturer.title title')->distinct()
@@ -155,7 +153,7 @@ class Product extends ActiveRecord
                     'data-id' => $item->id,
                     'table' => 'manufacturer',],];
         }
-        
+
         return $products;
 
     }
@@ -163,7 +161,7 @@ class Product extends ActiveRecord
     public function getMaterial(){
 
         return $this->hasOne(Material::className(), ['id' => 'material_id']);
-        
+
     }
 
     public function getSection(){
@@ -183,7 +181,7 @@ class Product extends ActiveRecord
         return $this->hasOne(Manufacturer::className(), ['id' => 'manufacturer_id']);
 
     }
-    
+
 
     public function getNewProducts($quantity){
 

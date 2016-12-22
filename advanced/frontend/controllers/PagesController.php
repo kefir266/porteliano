@@ -7,6 +7,7 @@
  */
 namespace frontend\controllers;
 
+use app\models\Manufacturer;
 use frontend\models\Product;
 use frontend\models\QuestionForm;
 use GuzzleHttp\Psr7\Request;
@@ -130,15 +131,16 @@ class PagesController extends Controller
 
     public function actionManufacturers()
     {
-        //TODO: переделать в запрос производителей из базы
-        $manufArr = file('manuf.txt');
 
-        return $this->render('07_Proizvoditeli', ['manufacturer' => $manufArr,]);
+        $fabrics = (new \app\models\Manufacturer())->getManufacturersByClasses();
+
+        return $this->render('07_Proizvoditeli', ['fabrics' => $fabrics,]);
     }
 
-    public function actionManufacturers_inner($name)
+    public function actionManufacturers_inner($id)
     {
-        return $this->render('08_Proizvoditeli-vnutr',['name' => $name]);
+        $fabric = Manufacturer::findOne($id);
+        return $this->render('08_Proizvoditeli-vnutr',['fabric' => $fabric]);
     }
     public function actionAbout()
     {
