@@ -17,6 +17,11 @@
     top: 50%;
     left: 70%;
     transform: translateX(-50%) translateY(-50%);
+    height: 490px;
+}
+.contact-form.contact-form-back-call .row{
+    margin-left: 0;
+    margin-right: 0;
 }
 
 

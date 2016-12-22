@@ -61,14 +61,6 @@ use yii\bootstrap\ActiveForm;
                     ]
                 )->textInput(['placeholder' => 'Ваше имя']); ?>
 
-                <?= $form->field($questionForm, 'email',
-                    [
-                        'horizontalCssClasses' => [
-                            'wrapper' => 'col-sm-2',
-                        ],
-                        'template' => '{input}{error}'
-                    ]
-                )->textInput(['placeholder' => 'E-mail']); ?>
 
                 <?= $form->field($questionForm, 'phone',
                     [
@@ -83,7 +75,7 @@ use yii\bootstrap\ActiveForm;
         <div class="row">
             <div class="col-lg-12">
                 <div class="form-group">
-                    <?= Html::submitButton('ОТПРАВИТЬ ЗАЯВКУ', ['class' => 'btn btn-primary']) ?>
+                    <?= Html::submitButton('ЗАКАЗАТЬ ОБРАТНЫЙ ЗВОНОК', ['class' => 'btn btn-primary']) ?>
                 </div>
                 <?php ActiveForm::end() ?>
             </div>

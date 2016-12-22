@@ -55,6 +55,38 @@
             height: 50px;
         !important;
         }
+
+
+
+        .material, .style, .manufacturer,.block-1-price{
+            margin-left: 20px;
+        }
+        .material{
+            margin-left: 0;
+        }
+        .btn-group{
+            border: 1px solid #574544;
+        }
+        .btn-default.btn.dropdown-toggle{
+            border-left: 1px solid #574544;
+            width: 40px;
+            padding-bottom: 7px;
+        }
+        .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+            padding-bottom: 4px;
+            font-size: 16px;
+            width: 177px;
+        }
+        .btn-group{
+            width: 220px;
+        }
+        .material, .manufacturer {
+            margin-left: 0;
+        }
+        .style, .block-1-price {
+            margin-left: 14px;
+        }
+
     }
     /******  BLOCK 2 **********************/
     @media screen {
@@ -195,7 +227,7 @@
         }
 
         .wrap-novelty .tile {
-            margin-left: 8px;
+            
         }
 
         .row-indent {
@@ -232,9 +264,21 @@
         .panel-key-benefits .glyphicon {
             margin-left: 10px;
         }
+        .key-benefits-text {
+            width: 350px;
+
+        }
     }
     /******  BLOCK 6 DOORS **********************/
     @media screen {
+
+        .wrap-doors .doors-panel.running-ribbon-doors .tile:nth-child(n+3){
+            display: none;
+        }
+        .wrap-doors .running-ribbon-doors div.view {
+            width: 480px;
+        }
+
         .wrap-doors #prev {
             margin-left: 0;
             margin-top: 0;
@@ -268,7 +312,7 @@
     /************** BLOCK 7 FACTS **********************/
     .wrap-facts-at-Glance {
         min-height: 870px;
-        max-width: 460px;
+        max-width: 480px;
     }
 
     .facts h1, .facts p {

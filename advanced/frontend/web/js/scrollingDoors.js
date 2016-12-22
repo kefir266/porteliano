@@ -4,6 +4,7 @@
 
 //
 (function($){
+    var stop = false;
     function doorRibon_inn() {
 
         $("#doors-inn").find(".view-doors")
@@ -17,7 +18,7 @@
         $("div.show-doors")
             .show()
             .find("button").on("click", function(){
-            console.log('click');
+            //console.log('click');
             var direction = $(this).attr("id");
             viewUL = $(".active > > .view-doors")
                 .children("ul");
@@ -36,43 +37,58 @@
         );
 
         function moveRibbon(direction){
-            var widthBlock = $("#doors-inn").width();
+            //var widthBlock = $("#doors-inn").width();
             //var direction = $(this).data("param"); // для html 5
             ///////////////////////////////////////////////////////
-            var widthRibons = 0;
-            var chldr = viewUL.children();
+            var widthRibons = 0,
+                chldr = viewUL.children(),
+                len = chldr.length,
+                add = len * 10;
 
-            for (i = 0 ; i < chldr.length ; i++)
-                widthRibons += $(chldr[i]).width();
+            widthRibons = (len * 230) + add;
+            var left = Math.abs(parseInt(viewUL.css('margin-left')));
+            if(direction == "next"){
+                if(widthRibons == left) return;
+                left += 240;
+            }
+            else{
+                if(left == 0) return;
+                left -= 240;
+            }
 
-            if(direction == "next") {
+            console.log(left);
+            /*for (i = 0 ; i < chldr.length ; i++)
+                widthRibons += $(chldr[i]).width();*/
+
+            /*if(direction == "next") {
                 imgW = viewUL.children(":last").width()+19;
                 var last = viewUL.children(":first").position().left + widthRibons + imgW;
                 console.log(imgW);
                 if (last <= widthBlock) return;
             }
             else {
-                imgW = viewUL.children(":first").width()+19;
+                imgW = viewUL.children(":first").width()+12;
                 var first = viewUL.children(":first").position().left;
                 if (first >= 15) return;
-            }
-            doIt(viewUL,  direction);
+            }*/
+            if(!stop)
+                doIt(viewUL,  direction);
         }
         function doIt(container,  direction){
+            console.log(direction);
             var sign; // "-=" or "+="
-                if (direction == "next") {
-                    sign = "-=" ;
-                    var shift = {"margin-left": sign + imgW + "px",
-                        "duration": 100
-                    };
-                    container.animate(shift);
-                }
-                else {
-                    //sign = "+=";
-                }
-
-
-
+            if (direction == "next") {
+                sign = "-=" ;
+                /*var shift = {"margin-left": sign + imgW + "px",
+                    "duration": 100
+                };*/
+            }
+            else 
+                sign = "+=";
+            var shift = {
+                "margin-left" : sign + "240px"
+            };
+            container.animate(shift, 300);
         }
 
     }

@@ -13,7 +13,7 @@ use yii\helpers\Html;
 
 ?>
 <div id="action-another"  class="wrap-action-another">
-    <div class="img-holder"
+    <div class="img-holder-alter-3"
          data-image="<?=Yii::getAlias('@web').'/img/background/anotherAction.jpg'?>">
     </div>
     <div class="action-panel">

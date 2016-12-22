@@ -76,3 +76,17 @@
 .novelty .wrap-tiles.view .tile:nth-child(n+5){
     display: none;
 }
+@media screen and (min-width: 992px){
+    .novelty{
+        max-width: 960px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .col-md-offset-1.col-md-10.novetly-col{
+        margin-right: 0;
+        margin-left: 0;
+        padding-left: 0;
+        padding-right: 0;
+        width: 960px;
+    }
+}

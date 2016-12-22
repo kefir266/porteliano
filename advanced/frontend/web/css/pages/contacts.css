@@ -138,3 +138,8 @@
         font-family: "PT Sans", sans-serif;
     }
 }
+@media screen and (min-width: 992px) {
+    .help-block.help-block-error{
+        display: none;
+    }
+}

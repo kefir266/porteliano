@@ -14,7 +14,7 @@ use yii\helpers\Html;
 ?>
 <div id="facts" class="wrap-facts-at-Glance">
 
-    <div class="img-holder"
+    <div class="img-holder-alter-2"
          data-image="<?=Yii::getAlias('@web').'/img/background/facts.jpg'?>">
     </div>
     <div class="facts">
