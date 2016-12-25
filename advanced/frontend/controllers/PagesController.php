@@ -7,6 +7,7 @@
  */
 namespace frontend\controllers;
 
+use app\models\Manufacturer;
 use frontend\models\Product;
 use frontend\models\QuestionForm;
 use GuzzleHttp\Psr7\Request;
@@ -28,8 +29,8 @@ use app\models\EntryForm;
  * ссылки для перехода
  *
  * /pages/dveri
- * /pages/doorcatalog
- * /pages/door_card
+ * /catolog/doorcatalog
+ * /catolog/door_card
  * /pages/manufacturers
  * /pages/manufacturers_inner
  * /pages/about
@@ -130,15 +131,16 @@ class PagesController extends Controller
 
     public function actionManufacturers()
     {
-        //TODO переделать в запрос производителей из базы
-        $manufArr = file('manuf.txt');
 
-        return $this->render('07_Proizvoditeli', ['manufacturer' => $manufArr,]);
+        $fabrics = (new \app\models\Manufacturer())->getManufacturersByClasses();
+
+        return $this->render('07_Proizvoditeli', ['fabrics' => $fabrics,]);
     }
 
-    public function actionManufacturers_inner($name)
+    public function actionManufacturers_inner($id)
     {
-        return $this->render('08_Proizvoditeli-vnutr', ['$name' => $name,]);
+        $fabric = Manufacturer::findOne($id);
+        return $this->render('08_Proizvoditeli-vnutr',['fabric' => $fabric]);
     }
     public function actionAbout()
     {
@@ -155,22 +157,22 @@ class PagesController extends Controller
         $QuestionForm = new QuestionForm();
         return $this->render('12_Kontakti',['questionForm' => $QuestionForm]);
     }
-    public function actionWishlist()
-    {
-        $QuestionForm = new QuestionForm();
-        return $this->render('13_Wishlist',['questionForm' => $QuestionForm]);
-    }
-    public function actionBasket()
-    {
-        
-
-        $QuestionForm = new QuestionForm();
-        return $this->render('14_Korzina',
-            [
-                'questionForm' => $QuestionForm,
-                'model' => $model,
-            ]);
-    }    
+//    public function actionWishlist()
+//    {
+//        $QuestionForm = new QuestionForm();
+//        return $this->render('13_Wishlist',['questionForm' => $QuestionForm]);
+//    }
+//    public function actionBasket()
+//    {
+//
+//
+//        $QuestionForm = new QuestionForm();
+//        return $this->render('14_Korzina',
+//            [
+//                'questionForm' => $QuestionForm,
+//                'model' => $model,
+//            ]);
+//    }
 
 //тест
     public function actionAdd_manufacturers_in_db()

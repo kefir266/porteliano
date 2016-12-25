@@ -22,8 +22,9 @@ class CartController extends Controller
 
     public function beforeAction($action)
     {
-        return parent::beforeAction($action);
         $this->enableCsrfValidation = false;
+        return parent::beforeAction($action);
+
     }
 
     public function actionAdd(){
@@ -97,7 +98,6 @@ class CartController extends Controller
     public function actionClear() {
 
 
-        var_dump(Yii::$app->request);
         try{
             $cartWish = Yii::$app->request->get('cartwish');
 

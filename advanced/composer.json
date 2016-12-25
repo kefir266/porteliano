@@ -25,7 +25,9 @@
         "warrence/yii2-kartikgii": "dev-master",
         "kartik-v/yii2-widget-activeform": "@dev",
         "kartik-v/yii2-mpdf": "dev-master",
-        "kartik-v/yii2-editable": "@dev"
+        "kartik-v/yii2-editable": "@dev",
+        "yiisoft/yii2-jui": "^2.0",
+        "mihaildev/yii2-ckeditor": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

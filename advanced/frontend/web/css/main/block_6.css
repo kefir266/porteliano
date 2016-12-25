@@ -9,76 +9,27 @@
 }
 
 .wrap-doors .arrow {
-    background-image: url(../../img/other/angle-light.png);
+    background-image: url(../../img/other/angle-light-1.png);
     width: 61px;
-    height: 10px;
+    height: 20px;
+    top: 917px;
+    top: calc(100% - 10px);
+    z-index: 5;
 }
 
 .wrap-doors .doors-panel {
     top: 138px;
     left: 399px;
-    width: 100%;
+    width: 960px;
 }
 
 .wrap-doors .doors-panel > .wrap-tiles {
     left: 12px;
     top: 10px;
 }
-.tile{
-    min-height: 470px;
-}
-.link-tile{
-    min-height: 342px;
-    display: block;
-}
-.wrap-doors .tile {
-    padding-left: 0;
-    padding-right: 0;
+
+.tab-content {
     margin-top: 30px;
-    text-align: center;
-    display: inline-block;
-
-    padding-top: 5px;
-    width: 230px;
-    margin-left: 13px;
-
-    border: 1px solid #e8e8e8;
-}
-
-.wrap-doors .tile:hover {
-    box-shadow: 0px 0px 21px 7px #dcd7be;
-}
-
-.wrap-doors .tile-img {
-    margin-top: 7px;
-    max-height: 342px;
-    margin-left: auto;
-    margin-right: auto;
-
-    max-width: 220px;
-    height: 342px;
-}
-
-/*-inner-doors*/
-.wrap-doors .info > .delimiter {
-    height: 2px;
-    width: 100%;
-    background-color: white;
-    margin-top: 9px;
-}
-
-.wrap-doors .info {
-    margin-top: 5%;
-    background-color: #ece7d4;
-}
-
-.wrap-doors .info p {
-    text-align: left;
-    margin-left: 5%;
-}
-
-.wrap-doors .info p:first-child {
-    padding-top: 5%;
 }
 
 .wrap-doors .doors-h2 {
@@ -90,17 +41,17 @@
 }
 
 .wrap-doors .running-ribbon-doors div.view {
-    height: 600px;
-    width: 96%;
-
+    height: 543px;
+    width: 960px;
+    /*outline: 5px solid #ed00ff;*/
 }
 
 .wrap-doors .running-ribbon-doors div.view ul {
     height: 100%;
-    width: 10000px;
+    width: 100000px;
     list-style: none;
     /* line-height: 145px; */
-    padding-left: 0
+    padding-left: 0;
 }
 
 .wrap-doors .block-price-count {
@@ -110,16 +61,6 @@
     margin-top: 5px;
     font-family: 'PTSerifBold', serif;
     font-size: 18px;
-}
-
-.wrap-doors .block-price-count > a {
-    color: #4e3d36;
-}
-
-.wrap-doors .add-to-wish {
-    font-size: 16px;
-    margin-left: 100px;
-    color: #4e3d36;
 }
 
 /*******************************************************************/
@@ -197,4 +138,38 @@
 .wrap-doors .nav-pills {
     border: 1px solid #802b3a;
     padding: 0;
+}
+
+@media screen and (min-width: 992px) {
+    .row-folder-doors {
+        width: 1100px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .wrap-doors #prev {
+        margin-left: 0;
+
+    }
+
+    .row-prev {
+        width: 50px;
+        padding-right: 0;
+        padding-left: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .col-md-10.col-xs-12.novetly-col.novelty-folders {
+        width: 960px;
+        padding-right: 0;
+        padding-left: 0;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .wrap-doors #next {
+        margin-left: 0;
+        margin-top: 160px;
+    }
 }

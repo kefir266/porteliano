@@ -7,7 +7,6 @@
  */
 /* @var $this yii\web\View */
 
-/* @var $manufacturer \frontend\models\Manufacturer */
 /*  models  */
 
 /*  widgets  */
@@ -45,8 +44,12 @@ function TypesJobs($arr)
     $str = '';
     for ($i = 0; $i < count($arr[0]); $i++) {
         $str .= '<tr>';
-        for ($j = 0; $j <= count($arr); $j++) {
-            $str .= "<td>" . $arr[$j][$i] . "</td>";
+        for ($j = 0; $j <= count($arr)-1; $j++) {
+            if($j > 0){
+                $str .= "<td><strong>" . $arr[$j][$i] . "</strong></td>";
+            }else {
+                $str .= "<td>" . $arr[$j][$i] . "</td>";
+            }
         }
         $str .= '</tr>';
     }
@@ -346,17 +349,16 @@ $lifting = '
 <div class="row">
     <div class="col-md-12">
     <table class="table table-hover lifting-costs">
-        <tr class="table-headers">
+        <tr class="table-headers m-2-header">
             <td></td>
             <td>В грузовом лифте, за дверь</td>
             <td>На руках, за дверь, за этаж</td>
             <td>Частный дом, коттедж, 1 шт.</td>
         </tr>
-        <tr class="table-headers">
+        <tr class="table-headers m-1-header">
             <td>Двери, перегородки, входные двери</td>
             <td></td>
-            <td></td>
-            <td></td>
+            <td></td>            
         </tr>
         ' . TypesJobs($costLifting) . '
     </table>
@@ -366,20 +368,20 @@ $lifting = '
 $metering = '
 <div class="row">
     <div class="row">
-        <div class="col-md-12">
-            <p>Замер проема под межкомнатную дверь: 5 €</p>
-            <p>Замер под межкомнатную перегородку или замер входной двери: 10 €</p>
+        <div class="col-md-12 zamer">
+            <p>Замер проема под межкомнатную дверь: <strong>5 €</strong></p>
+            <p>Замер под межкомнатную перегородку или замер входной двери: <strong>10 €</strong></p>
         </div>
     </div>
     <div class="col-md-12">
-        <table class="table table-hover lifting-costs">
+        <table class="table table-hover metering">
             <tr >
                 <td>
                     <h2 class="table-headers">Виды работ</h2>
                     <span>(цена рассчитывается исходя из стоимости единицы товара без учета скидки)</span>
                 </td>
-                <td class="table-headers">Barrausse и Lualdi</td>
-                <td class="table-headers">Другие
+                <td class="table-headers table-other">Barrausse и Lualdi</td>
+                <td class="table-headers table-other">Другие
                     фабрики</td>
             </tr>
             <tr class="table-headers">
@@ -433,22 +435,22 @@ $metering = '
 <div class="wrap-delivery">
 
     <div class="limited-content">
-        <div class="delivery">
+        <div class="delivery center-block">
             <!-- заголовок -->
-            <div class="row">
-                <div class="col-md-12 .col-sm-12 col-xs-12 ">
+            <div class="row center-block">
+                <div class="col-md-12 .col-sm-12 col-xs-12 clear-indent">
                     <h1 class="delivery-header">Доставка и установка</h1>
                 </div>
             </div>
             <!-- подзаголовок -->
-            <div class="row">
-                <div class="col-md-12 .col-sm-12 col-xs-12 ">
+            <div class="row center-block ">
+                <div class="col-md-12 .col-sm-12 col-xs-12 clear-indent">
                     <h2 class="delivery-cost">Стоимость доставки</h2>
                 </div>
             </div>
             <!-- колонка цен и колонка внимание-->
-            <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-12 ">
+            <div class="row center-block">
+                <div class="col-md-4 col-sm-4 col-xs-12 clear-indent">
                     <table class="table table-responsive table-hover">
                         <caption><h3 class="mark-header">По Москве</h3></caption>
                         <tbody>
@@ -472,7 +474,7 @@ $metering = '
                     </table>
                 </div>
                 <!-- колонка внимание  -->
-                <div class="col-md-8  .col-sm-2 col-xs-2">
+                <div class="col-md-8  .col-sm-2 col-xs-12 clear-indent">
                     <h3 class="mark-header"> Внимание!</h3>
                     <p>
                         Если по техническим причинам доставить товар «в квартиру» нет возможности, то по согласованию с
@@ -484,40 +486,45 @@ $metering = '
 
             </div>
         </div>
-        <!-- collapse -->
-        <div class="row">
-            <div class="col-md-12 ">
-                <?php
-                echo Collapse::widget([
-                    'items' => [
-                        [
-                            'label' => 'Стоимость подъёма',
-                            'content' => $lifting,
-                            'options' => ['class' => 'lifting-costs-head'],
-                            // Открыто по-умолчанию
-                            'contentOptions' => [
-                                'class' => ' panel-lifting-costs'//in
-                            ]
 
+    </div>
+    <!-- collapse -->
+    <div class="row center-block collapse-wrap ">
+        <div class="col-md-12 clear-indent">
+            <div class="angle-light"></div>
+            <div class="angle-dark"></div>
+            <?php
+            echo Collapse::widget([
+                'encodeLabels' => false,
+                'items' => [
+                    [
+                        'label' => 'Стоимость подъёма   <span class="glyphicon-plus-square first"></span>',
+                        'content' => $lifting,
+
+                        'options' => ['class' => 'lifting-costs-head'],
+                        // Открыто по-умолчанию
+                        'contentOptions' => [
+                            'class' => ' panel-lifting-costs'//in
+                        ]
+
+                    ],
+                    [
+                        'label' => 'Стоимость замеров и установки <span class="glyphicon-plus-square second"></span>',
+                        'content' => $metering,
+                        'contentOptions' => [
+                            'class' => ' panel-metering-costs'
                         ],
-                        [
-                            'label' => 'Стоимость замеров и установки',
-                            'content' => $metering,
-                            'contentOptions' => [
-                                'class' => ' panel-metering-costs'
-                            ],
-                            'options' => ['class' => 'metering-costs-head'],
-                        ],
-                    ]
-                ]);
-                ?>
-            </div>
+                        'options' => ['class' => 'metering-costs-head'],
+                    ],
+                ]
+            ]);
+            ?>
         </div>
     </div>
-
-
-    <!-- parallax -->
-    <div class="row">
+    <!--
+        <div class="action-push"></div>
+         parallax -->
+    <div class="row center-block">
         <div class="col-md-12">
             <div class="action consultation">
                 <div class="img-holder"
@@ -531,7 +538,7 @@ $metering = '
                         </article>
                                                  
                             <p class="consultation-text">
-                                Заполните поля ниже, и наш менеджер свяжется с Вами, чтобы проконсультироватьпо Вашим индивидуальным вопросам.
+                                Заполните поля ниже, и наш менеджер свяжется с Вами, чтобы проконсультировать по Вашим индивидуальным вопросам.
                             </p>
                         
                         <div class="col-md-12 col-xs-12">
@@ -540,23 +547,57 @@ $metering = '
                     </div>
 
                 </div>
+                <div class="parallax" data-velocity="-.3"></div>
+                <script src="/js/lib/jquery.min.js"></script>
+                <script src="/js/lib/jquery.imageScroll.min.js"></script>
+                <script src="js/lib/jquery.jquery.scrolly.js"></script>
+
                 <script>
-                    $('div.action > .img-holder').imageScroll({
-                        holderClass: 'imageHolder',
-                        container: $('div.action'),
-                        speed: 0.1,
-                        coverRatio: 0.75,
-                        mediaWidth: 2000,
-                        mediaHeight: 1014,
-                        holderMaxHeight: 1000,
-                        holderMinHeight: 866,
-                        parallax: true,
-                        touch: false
+                    $(document).ready(function(){
+                        $('.parallax').scrolly({bgParallax: true});
                     });
                 </script>
             </div>
         </div>
     </div>
 
-
 </div>
+<script>
+    //
+
+        $('.panel-title > a').on( "click", function() {
+            var button = $( this ).find('span'),
+                upArrow = $('.angle-light'),
+                downArrow = $('.angle-dark');
+            if(button.hasClass('glyphicon-plus-square')){
+                button.addClass('glyphicon-minus-square');
+                button.removeClass('glyphicon-plus-square');
+
+            if(button.hasClass('first')){
+                // первый collapse
+                upArrow.addClass('angle-light-revert');
+                downArrow.addClass('angle-dark-indent');
+            }else {
+                // второй collapse
+                downArrow.addClass('angle-dark-revert ');
+            }
+
+                console.log( 'open = ' + upArrow );
+            }else {
+                button.addClass('glyphicon-plus-square');
+                button.removeClass('glyphicon-minus-square');
+                console.log( 'close' );
+                if(button.hasClass('first')) {
+                    // первый collapse
+                    upArrow.removeClass('angle-light-revert');
+                    downArrow.removeClass('angle-dark-indent');
+                }else {
+                    // второй collapse
+                    downArrow.removeClass('angle-dark-revert ');
+                }
+            }
+
+            console.log( 'проверка пройдена' );
+        });
+
+</script>

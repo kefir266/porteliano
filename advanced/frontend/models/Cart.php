@@ -25,18 +25,24 @@ class Cart
 
         if (!isset($this->_cart[$product->id]['quantity'])) {
             $this->_cart[$product->id]['quantity'] = 1;
-            $this->_cart[$product->id]['sum'] = $product->price->cost;
-            $this->_cart['quantity'] = 0;
-            $this->_cart['sum'] = 0;
+            $this->_cart[$product->id]['sum'] = (isset($product->price)) ?$product->price->cost : 0;
 
         }
         else {
             $this->_cart[$product->id]['quantity']++;
-            $this->_cart[$product->id]['sum'] += $product->price->cost;
+            $this->_cart[$product->id]['sum'] += (isset($product->price)) ?$product->price->cost : 0;
         }
         $this->_cart[$product->id]['product'] = $product;
-        $this->_cart['quantity']++;
-        $this->_cart['sum'] += $product->price->cost;
+
+        if (isset($this->_cart['quantity']))
+            $this->_cart['quantity']++;
+        else
+            $this->_cart['quantity'] = 1;
+
+        if (isset($this->_cart['sum']))
+            $this->_cart['sum'] += (isset($product->price)) ?$product->price->cost : 0;
+        else
+            $this->_cart['sum'] = (isset($product->price)) ?$product->price->cost : 0;
         return $this->_cart['quantity'];
     }
     

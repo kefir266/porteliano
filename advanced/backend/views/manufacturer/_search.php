@@ -19,9 +19,23 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'title') ?>
 
-    <?= $form->field($model, 'img') ?>
+    <?= $form->field($model, 'alias') ?>
 
-    <?= $form->field($model, 'link') ?>
+    <?= $form->field($model, 'imageID') ?>
+
+    <?= $form->field($model, 'body') ?>
+
+    <?php // echo $form->field($model, 'website') ?>
+
+    <?php // echo $form->field($model, 'brandID') ?>
+
+    <?php // echo $form->field($model, 'isPublished') ?>
+
+    <?php // echo $form->field($model, 'meta_title') ?>
+
+    <?php // echo $form->field($model, 'meta_description') ?>
+
+    <?php // echo $form->field($model, 'meta_keywords') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

@@ -39,6 +39,7 @@ class Product extends ActiveRecord
             : 'product.section_id = '.$section.' OR section.parent_id = '.$section ;
 
         $products['products'] = $this->find()
+            ->with('prices','section','manufacturer')
             ->innerJoin('section', 'product.section_id = section.id')
             ->where($condition)->limit($num)->orderBy('date DESC')->each();
         return $products;
@@ -76,6 +77,7 @@ class Product extends ActiveRecord
 
 
         $products['products'] = $this->find()
+            ->with('prices','section','manufacturer')
             ->innerJoin('section', 'product.section_id = section.id')
             //->innerJoin('select * from price limit 1', 'price.product_id = product.id')
             ->where($condition)->andWhere($notInCondition)->limit($num)->each();
@@ -93,19 +95,30 @@ class Product extends ActiveRecord
                 'table' => 'materials',],];
         foreach ($materials as $item) {
 
-            $products['materials'][$item['id']]  = ['label' => $item['title'], 'url' => '#',
+            $products['materials'][$item->id]  = ['label' => $item->title, 'url' => '#',
                 'linkOptions'=> ['data-toggle' =>'dropdown',
-                    'data-id' => $item['id'],
+                    'data-id' => $item->id,
                     'table' => 'material',
                 ],
             ];
         }
+//
+//        $stylesAll = [];
+//        foreach (Style::find()->each() as $item) {
+//            $stylesAll[$item->id] = ['label' => $item->title, 'url' => '#',
+//                'linkOptions'=> ['data-toggle' =>'dropdown',
+//                    'data-id' => $item->id,
+//                    'table' => 'style',],];
+//        }
+//        $products['styleAll'] = $stylesAll;
+//
 
         $styles = $this->find()->
-        select('style_id id, style.title title')->distinct()
-            ->innerJoin('section', 'product.section_id = section.id')
-            ->innerJoin('style','style_id = style.id')
-            ->where($condition)->each();
+        select('style.id id, style.title title')->distinct()
+//          ->innerJoin('section', 'product.section_id = section.id')
+            ->rightJoin('style','style_id = style.id')
+//            ->where($condition)   //Выбираем все стили
+            ->each();
 
         $products['styles'][] = ['label' => 'Любой', 'url' => '#',
             'linkOptions'=> ['data-toggle' =>'dropdown',
@@ -114,17 +127,18 @@ class Product extends ActiveRecord
                 'table' => 'styles',],];
         foreach ($styles as $item) {
 
-            $products['styles'][$item['id']]  = ['label' => $item['title'], 'url' => '#',
+            $products['styles'][$item->id]  = ['label' => $item->title, 'url' => '#',
                 'linkOptions'=> ['data-toggle' =>'dropdown',
-                'data-id' => $item['id'],
+                'data-id' => $item->id,
                     'table' => 'style',],];
         }
+
 
         $manufacturers = $this->find()->
         select('manufacturer_id id, manufacturer.title title')->distinct()
             ->innerJoin('section', 'product.section_id = section.id')
             ->innerJoin('manufacturer','manufacturer_id = manufacturer.id')
-            ->where($condition)->each();
+            ->where($condition)->orderBy('manufacturer.title')->each();
 
         $products['manufacturers'][] = ['label' => 'Любой', 'url' => '#',
             'linkOptions'=> ['data-toggle' =>'dropdown',
@@ -134,20 +148,20 @@ class Product extends ActiveRecord
 
         foreach ($manufacturers as $item) {
 
-            $products['manufacturers'][$item['id']]  = ['label' => $item['title'], 'url' => '#',
+            $products['manufacturers'][$item->id]  = ['label' => $item->title, 'url' => '#',
                 'linkOptions'=> ['data-toggle' =>'dropdown',
-                    'data-id' => $item['id'],
+                    'data-id' => $item->id,
                     'table' => 'manufacturer',],];
         }
-        
+
         return $products;
 
     }
 
-    public function getMaterials(){
+    public function getMaterial(){
 
         return $this->hasOne(Material::className(), ['id' => 'material_id']);
-        
+
     }
 
     public function getSection(){
@@ -167,7 +181,7 @@ class Product extends ActiveRecord
         return $this->hasOne(Manufacturer::className(), ['id' => 'manufacturer_id']);
 
     }
-    
+
 
     public function getNewProducts($quantity){
 
@@ -206,7 +220,25 @@ class Product extends ActiveRecord
         return $img;
     }
 
-    public function getFilteredProducts($params, $quantity){
+    public function getFilteredProducts($params, $quantity, $notin = null){
+
+        $notInCondition = '';
+        if ($notin != null ) {
+
+            $notInCondition = 'product.id NOT IN ( ';
+            $first = true;
+            foreach( $notin as $addItem)
+            {
+                if (! $first) {
+                    $notInCondition .= ' , ';
+
+
+                }
+                $notInCondition .= $addItem;
+                $first = false;
+            }
+            $notInCondition .= ' )';
+        }
 
         $id = (isset($params['section'])) ? $params['section'] : 3;
         $products = $this->getProductsBySection($id,$quantity);
@@ -222,16 +254,16 @@ class Product extends ActiveRecord
         if (isset($params['price'])) {
             switch ($params['price']){
                 case '1' :
-                $conditionPrice = 'price.cost < 500' ;
+                $conditionPrice = 'price.cost <= 500' ;
             break;
                 case '2' :
-                    $conditionPrice = 'price.cost > 500 and price.cost < 1000';
+                    $conditionPrice = 'price.cost >= 500 and price.cost <= 1000';
                     break;
                 case '3' :
-                    $conditionPrice = 'price.cost > 1000 and price.cost < 2000';
+                    $conditionPrice = 'price.cost >= 1000 and price.cost <= 2000';
                     break;
                 case '4':
-                    $conditionPrice = 'price.cost > 2000';
+                    $conditionPrice = 'price.cost >= 2000';
                     break;
                 default:
                     $conditionPrice = '';
@@ -239,12 +271,12 @@ class Product extends ActiveRecord
             }
         }
 
-        $query = $this->find()
+        $query = $this->find()->with('prices','section','manufacturer')
             ->innerJoin('section', 'product.section_id = section.id ')
-            ->innerJoin('(select distinct price.cost, price.product_id from price order by date DESC ) price ',
+            ->leftJoin('(select distinct price.cost, price.product_id from price order by date DESC ) price ',
                 'price.product_id = product.id')
-            ->where(['product.section_id' => $id])->andWhere($conditionPrice)
-            ->orWhere(['section.parent_id' => $id])
+            ->where(['product.section_id' => $id])
+            ->orWhere(['section.parent_id' => $id])->andWhere($conditionPrice)->andWhere($notInCondition)
             ->limit($quantity)
             ->orderBy($order);
 
@@ -252,7 +284,7 @@ class Product extends ActiveRecord
         $query = (isset($params['manufacturer'])) ? $query->andWhere(['product.manufacturer_id' => $params['manufacturer']]) : $query;
         $query = (isset($params['material'])) ? $query->andWhere(['product.material_id' => $params['material']]) : $query;
 
-        $products['products'] = $query->each($quantity);
+        $products['products'] = $query->each();
 
         return $products;
     }
@@ -274,6 +306,9 @@ class Product extends ActiveRecord
 
         return false;
 
+    }
+    public function getGreeny_images(){
+        return $this->hasOne(GreenyImages::className(),['imageID' => 'productImageID']);
     }
 
 }

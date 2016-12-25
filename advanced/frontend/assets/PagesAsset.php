@@ -18,7 +18,7 @@ class PagesAsset extends AssetBundle
     public $css = [        
         'css/pages/doors.css',
         'css/pages/doors-catalog.css',
-        'css/pages/septa.css',
+        
         'css/pages/manuf.css',
         'css/pages/manuf-inner.css',
         'css/pages/about.css',
@@ -28,7 +28,8 @@ class PagesAsset extends AssetBundle
     ];
     public $js = [
         // доп. библиотеки
-        
+        //'/js/lib/jquery.min.js',
+        //'/js/lib/jquery.imageScroll.min.js',
         // скрипты
         'js/parallax.js',
         'js/navbarSwitch.js',

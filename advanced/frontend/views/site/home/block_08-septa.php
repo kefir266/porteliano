@@ -9,10 +9,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-/*  assets  */
-use app\assets\BackAsset;
 
-BackAsset::register($this);
 // псевдоним пути к папке на основе другого псевдонима
 Yii::setAlias('@septa', '@web/img/septa');
 
@@ -28,21 +25,21 @@ $price = ['1545', '1545', '2119', '2194'];
 //echo Html::img('@septa/septa_'.$i.'.jpg',
 ?>
 <article id="septa" class="wrap-septa" data-item="a3">
-    <div class="row">
+    <div class="row septa-row">
         <div class="col-md-offset-1 col-md-10">
             <h2 class="septa-h2">Перегородки</h2>
         </div>
     </div>
     <!-- Вкладки -->
-    <div class="row">
+    <div class="row septa-row">
         <!-- кнопка назад -->
-        <div class="col-md-1 flex-vert-centr show">
+        <div class="col-md-1 flex-vert-centr show show-septa row-prev">
             <button id="prev"  class="btn btn-link prev" data-param="prev" onclick="nextDownload(event, true, 1)"></button>
         </div>
         <!-- Перегородки -->
         <div class="col-md-10 novelty-folders">
             <div id="doors-inn" class="doors-panel running-ribbon-septa">
-                <div class="wrap-tiles view">
+                <div class="wrap-tiles view view-septa">
                     <ul class="ribbon-ul" data-section="2">
                         <?php if (isset($septum['products'])): ?>
                             <?php foreach ($septum['products'] as $product): ?>
@@ -56,7 +53,7 @@ $price = ['1545', '1545', '2119', '2194'];
             </div>
         </div>
         <!-- кнопка вперед -->
-        <div class="col-md-1 show">
+        <div class="col-md-1 show show-septa row-next">
             <button id="next" class="btn btn-link next" data-param="next" onclick="nextDownload(event, false, 1)"></button>
         </div>
     </div>

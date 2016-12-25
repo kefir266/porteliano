@@ -16,8 +16,6 @@ MainPageAdaptiveAsset::register($this);
 use app\assets\FontAsset;
 FontAsset::register($this);
 
-use app\assets\BackAsset;
-BackAsset::register($this);
 
 
 $this->title = 'home';
@@ -25,6 +23,7 @@ $this->title = 'home';
 
 <div id="Scrollspy" data-spy="scroll" data-target=".navbar" data-offset="10">
     <?
+
 
     require_once 'home/block_01.php';
     require_once 'home/block_02-catalog.php';

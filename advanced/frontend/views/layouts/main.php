@@ -14,10 +14,11 @@ use yii\widgets\Breadcrumbs;
 use app\assets\MainAdaptiveAsset;
 use app\assets\TabletAsset;
 use app\assets\MobileAsset;
+use app\assets\BackAsset;
 use frontend\widgets\menu\PortNavBar;
 
 
-
+BackAsset::register($this);
 MainAdaptiveAsset::register($this);
 TabletAsset::register($this);
 MobileAsset::register($this);
@@ -72,12 +73,14 @@ MobileAsset::register($this);
                             /*$controller должен использовать $this->renderAjax*/
                             $address = Url::to(['site/entry'], true);
                             Modal::begin([
-                                'headerOptions' => ['id' => 'modalHeader'],
+                                'class' => 'set-question',
+                                'headerOptions' => ['id' => 'set-question-header'],
                                 'header' => '<h2>Задайте свой вопрос</h2>',
                                 //keeps from closing modal with esc key or by clicking out of the modal.
                                 // user must click cancel or X to close
                                 //'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
-                                'size' => 'modal-sm',
+                                'size' => '',
+                                'id'=> 'set-question',
                                 'toggleButton' => [
                                     'tag' => 'button',
                                     'value' => $address,
@@ -125,15 +128,16 @@ MobileAsset::register($this);
                             'linkOptions' => ['data-target' => 'a0'],
                         ],
                         ['label' => 'НОВИНКИ',
-                            'url' => Url::to(['site/index', '#' => 'novelty']),//['#novelty'],
+                            //TODO: как показывать новинки в каталоге section&material
+                            'url' => Url::to(['/catalog', 'section' => '1','material' => '1']),//Url::to(['site/index', '#' => 'novelty']),//['#novelty'],
                             'linkOptions' => ['data-target' => 'a1'],
                         ],
                         ['label' => 'ДВЕРИ',
-                            'url' => Url::to(['site/index', '#' => 'doors']),  //?section=1 ['#doors']
+                            'url' => Url::to(['/pages/dveri']),  //?section=1 ['#doors']
                             'linkOptions' => ['data-target' => 'a2'],
                         ],
                         ['label' => 'ПЕРЕГОРОДКИ',
-                            'url' => Url::to(['site/index', '#' => 'septa']), //?section=2  #septa
+                            'url' => Url::to(['/pages/septa']), //?section=2  #septa
                             'linkOptions' => ['data-target' => 'a3'],
                         ],
                         ['label' => 'ПРОИЗВОДИТЕЛИ',

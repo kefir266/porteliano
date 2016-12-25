@@ -19,16 +19,24 @@
 /* Кнопки выбора для Блока с фильтром быстрого подбора*/
 .material, .style, .manufacturer, .block-1-price{
     display: inline-block;
-    margin-left: 4%;
+    margin-left: 20px;
+}
+.material{
+    margin-left: 0;
 }
 .wrap-quick-selection .row{
     max-width: 100%;
 }
-
+.ui-button-text-only .ui-button-text,
 .material > div > button:nth-child(1){
-    font-size: 20px;
+    font-family: "PT Serif",serif;
+    font-weight: normal;
+    font-style: italic;
+    color: #3c2f26;
+    font-size: 16px;
     width: 177px;
 }
+
 .material > div > button:nth-child(2){
     font-size: 20px;
     width: 43px;
@@ -88,7 +96,8 @@
 .category > a >.caret{
     color: #000;
     text-decoration: none;
-    font-family: GothamPro;
+    font-family: GothamPro, serif;
+    font-size: 20px;
 }
 .category > a >.caret{
     border-top: 12px dashed;
@@ -96,12 +105,15 @@
     border-left: 9px solid transparent;
 }
 /* Категории */
+.dropdown-header,
 .category > ul > li > a{
     font-size: 20px;
     color: #935347;
+    cursor:pointer;
     /* тестовые свойства*/
-    font-size: 60px;
+    font-size: 50px;/**/
 }
+
 .category > ul > li > a:hover{
     background-color: #e4e2db;
     color:#6a372d;
@@ -127,8 +139,10 @@
     color: #955347;
     margin-left: 10%;
     /* тестовые свойства*/
-    font-size: 50px;
+    font-size: 40px;
+    cursor:pointer;
 }
+
 .dropdown-submenu > ul > li > a:hover{
     background-color: #e4e2db;
     color:#6a372d;
@@ -141,10 +155,14 @@
 
 .panel-quick-selection{
     font-size: 22px;
-    width: 1100px;
+    width: 960px;
     margin-left: auto;
     margin-right: auto;
 
+}
+.col-clear{
+    padding-left: 0;
+    padding-right: 0;
 }
 .panel-quick-selection  h2{
     color: #955347;
@@ -159,4 +177,34 @@
     font-size: 66px;
     border-bottom: #6a372d dashed;
     */
+}
+@media screen and (min-width: 992px){
+    .material, .style, .manufacturer,.block-1-price{
+        margin-left: 20px;
+    }
+    .material{
+        margin-left: 0;
+    }
+    .btn-group{
+        border: 1px solid #574544;
+    }
+    .btn-default.btn.dropdown-toggle{
+        border-left: 1px solid #574544;
+        width: 40px;
+        padding-bottom: 7px;
+    }
+}
+.ui-button-text-only span.ui-button-text {
+    padding: 0 1em;
+}
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle){
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: "PT Serif",serif;
+    font-weight: normal;
+    font-style: italic;
+    color: #3c2f26;
+    font-size: 16px;
 }

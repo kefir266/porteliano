@@ -21,13 +21,11 @@ use yii\web\JsExpression;
 /*  assets  */
 
 use app\assets\FontAsset;
-use app\assets\BackAsset;
-use app\assets\DoorCatalogAsset;
+use app\assets\pages\DoorCatalogAsset;
 use app\assets\MainAdaptiveAsset;
 
 FontAsset::register($this);
 MainAdaptiveAsset::register($this);
-BackAsset::register($this);
 
 DoorCatalogAsset::register($this);
 // псевдоним пути к папке
@@ -48,8 +46,8 @@ switch ($products['section']->id) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Ручки';
 
-        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
-        $coverLinkRight = Url::to(['catalog/', 'ind' => '5']);
+        $coverLinkLeft = Url::to(['catalog/', 'section' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'section' => '5']);
         break;
     case 2:
         $categoryTitle = 'Перегородки';
@@ -61,8 +59,8 @@ switch ($products['section']->id) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Ручки';
 
-        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
-        $coverLinkRight = Url::to(['catalog/', 'ind' => '5']);
+        $coverLinkLeft = Url::to(['catalog/', 'section' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'section' => '5']);
         break;
     case 4:
         $categoryTitle = 'Входные двери';
@@ -73,8 +71,8 @@ switch ($products['section']->id) {
         $coverTextLeft = 'Ручки';
         $coverTextRight = 'Межкомнатные двери';
 
-        $coverLinkLeft = Url::to(['catalog/', 'ind' => '5']);
-        $coverLinkRight = Url::to(['catalog/', 'ind' => '3']);
+        $coverLinkLeft = Url::to(['catalog/', 'section' => '5']);
+        $coverLinkRight = Url::to(['catalog/', 'section' => '3']);
         break;
     case 5:
         $categoryTitle = 'Ручки';
@@ -85,8 +83,8 @@ switch ($products['section']->id) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Межкомнатные двери';
 
-        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
-        $coverLinkRight = Url::to(['catalog/', 'ind' => '3']);
+        $coverLinkLeft = Url::to(['catalog/', 'section' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'section' => '3']);
         break;
     default:
         $categoryTitle = 'нет категории';
@@ -96,8 +94,8 @@ switch ($products['section']->id) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Межкомнатные двери';
 
-        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
-        $coverLinkRight = Url::to(['catalog/', 'ind' => '3']);
+        $coverLinkLeft = Url::to(['catalog/', 'section' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'section' => '3']);
 }
 
 $this->params['breadcrumbs'][] = [
@@ -133,7 +131,7 @@ foreach ($sections->getMenu() as $section) {
         <!-- заголовок -->
         <div class="row">
             <div class="col-md-12">
-                <h2>
+                <h2 class="section-title" data-id="<?= $ind ?>">
                     <?= $sections->findOne($ind)->title_main ?>
                 </h2>
             </div>
@@ -146,7 +144,8 @@ foreach ($sections->getMenu() as $section) {
                         <h5>Вид</h5>
                         <?php
                         echo ButtonDropdown::widget([
-                            'options' => ['class' => 'btn-default'],
+                            'options' => ['class' => 'btn-default',
+                                'data-id' => (isset($params['material'])) ? $params['material'] : null],
                             'split' => true,
                             'label' => (isset($params['material']))
                                 ? $products['materials'][$params['material']]['label']
@@ -168,7 +167,7 @@ foreach ($sections->getMenu() as $section) {
                         echo ButtonDropdown::widget([
                             'options' => [
                                 'class' => 'btn-default',
-
+                                'data-id' => (isset($params['style'])) ? $params['style'] : null
                             ],
 
                             'split' => true,
@@ -187,7 +186,9 @@ foreach ($sections->getMenu() as $section) {
                         <h5>Производитель</h5>
                         <?php
                         echo ButtonDropdown::widget([
-                            'options' => ['class' => 'btn-default'],
+                            'options' => ['class' => 'btn-default',
+                                'data-id' => (isset($params['manufacturer'])) ? $params['manufacturer'] : null
+                            ],
                             'split' => true,
                             'label' => (isset($params['manufacturer']))
                                 ? $products['manufacturers'][$params['manufacturer']]['label']
@@ -215,7 +216,9 @@ foreach ($sections->getMenu() as $section) {
                                 'linkOptions'=> ['data-toggle' =>'dropdown','data-id' => '4']],
                         ];
                         echo ButtonDropdown::widget([
-                            'options' => ['class' => 'btn-default'],
+                            'options' => ['class' => 'btn-default',
+                                'data-id' => (isset($params['price'])) ? $params['price'] : null
+                            ],
                             'split' => true,
                             'label' => (isset($params['price'])) ? $items[$params['price']]['label'] : $items[0]['label'],
                             'dropdown' => [
@@ -246,7 +249,7 @@ foreach ($sections->getMenu() as $section) {
             </div>
         </div>
         <!-- контейнер для выбранных дверей -->
-        <div class="row">
+        <div class="row selected-doores">
             <div class="col-md-12">
                 <div class="sampling-area catalog-elements" data-section="<?= $ind ?>">
 
@@ -270,7 +273,7 @@ foreach ($sections->getMenu() as $section) {
             </div>
         </div>
         <!-- Обложки на соседние категории -->
-        <div class="row">
+        <div class="row row-covers">
             <div class="col-md-6">
                 <div class="plate">
                     <a href="<?=$coverLinkLeft?>">

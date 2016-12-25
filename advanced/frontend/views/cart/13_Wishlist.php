@@ -6,8 +6,6 @@
  * Time: 17:05
  */
 /* @var $this yii\web\View */
-
-/* @var $manufacturer \frontend\models\Manufacturer */
 /*  models  */
 
 /*  widgets  */
@@ -27,9 +25,9 @@ Yii::setAlias('@img', '@web/img/');
     <!-- заголовок -->
     <div class="row">
         <div class="col-md-2 col-md-offset-3 ">
-            <h1>Избранное</h1>
+            <h1 class="wishlist-header">Избранное</h1>
         </div>
-        <div class="col-md-2 col-md-offset-3 ">
+        <div class="col-md-10 col-md-offset-3 ">
             <h4 id="count-goods"><span id="counter-goods">
                     <?= $wish->getQuantity() ?> </span><span class="word-product"> товара</span></h4>
         </div>
@@ -47,11 +45,11 @@ Yii::setAlias('@img', '@web/img/');
     <div class="row goods-row">
         <!-- иконка -->
         <div class="col-md-1 col-md-offset-3 ">
-            <?= Html::img($item['product']->image,
+            <?= Html::img($item['product']->getImage(),
                 ['class' => 'door-icon', 'alt' => "door icon"]) ?>
         </div>
         <!-- описание и удаление -->
-        <div class="col-md-4">
+        <div class="col-md-4 del-describ">
             <!-- описание -->
             <div class="row">
                 <div class="col-md-12">
@@ -71,8 +69,8 @@ Yii::setAlias('@img', '@web/img/');
         </div>
         <!-- кнопка в корзину -->
         <div class="col-md-1 button-area">
-            <a href="#" onclick="addToCart(event)">
-                <span
+            <a href="#"  onclick="addToCart(event)">
+                <span data-id="<?= $item['product']->id ?> "
                     class="glyphicon glyphicon-shopping-cart btn btn-default basket-button"
                     role="button"
                 ></span>

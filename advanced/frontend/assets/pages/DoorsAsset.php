@@ -5,26 +5,25 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace app\assets;
+namespace app\assets\pages;
 
 use yii\web\AssetBundle;
 
 
-class DoorCatalogAsset extends AssetBundle
+class DoorsAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
-
+    
     public $css = [
-        'css/pages/doors-card.css',
-        'css/pages/doors-catalog.css',
-
+        'css/pages/doors.css',
+        /* сюда tablet стили*/        
+        'css/pages/_mobile_pages.css', 
     ];
     public $js = [
-        // доп. библиотеки
-        
+        // доп. библиотеки        
         // скрипты
-       //'js/events-handler.js'
+        'js/navbarSwitch.js',
     ];
     public $depends = [
         'yii\web\JqueryAsset',

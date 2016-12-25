@@ -91,9 +91,11 @@ require_once Yii::getAlias('@frontend') . '/views/layouts/manufacturersNames.php
                 <div class="view">
                     <ul>
                         <?php
-                        for ($i = 0; $i < count($logoNames); $i++) {
-                            echo '<li> <a href="#" class="center-logo ' . $logoNames[$i] . '"></a></li>';
-                        }
+                        foreach ( $fabrics as $manufacturer): ?>
+                            <li>
+                                <?= Html::a('', \yii\helpers\Url::to($manufacturer->website), ['class' => $manufacturer->class]) ?>
+                            </li>
+                        <? endforeach; ?>
                         ?>
                     </ul>
                 </div>

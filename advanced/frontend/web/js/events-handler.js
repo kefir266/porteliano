@@ -6,8 +6,8 @@ var semaphore = false;
 
 (function ($) {
 
-    $(".add-to-cart").on('click', addToCart);
-    $(".add-to-wish").on('click', addToWish);
+    //$(".add-to-cart").on('click', addToCart);
+    //$(".add-to-wish").on('click', addToWish);
 
     var jCart = $("#basket");
     var jWish = $('#wishlist');
@@ -69,16 +69,31 @@ function nextDownload(e,left, quant) {
     var section = getCurrentSection(novetly);
     var elements = getCurrentElements(novetly);
 
+    var dataAjax = {section: section,
+        elements: elements,
+        quant: quant
+    };
+
+    if (giveMore.length > 0) {
+        dataAjax.material = $("div .material").find(".btn-default").data('id');
+        dataAjax.manufacturer = $("div .manufacturer").find(".btn-default").data('id');
+        dataAjax.style = $("div .style").find(".btn-default").data('id');
+        dataAjax.price = $("div .block-1-price").find(".btn-default").data('id');
+        dataAjax.section = $(".section-title").data('id');
+    }
+    left = false;
     $.ajax({
         url: '/catalog/download',
-        data: {section: section,
-            elements: elements,
-            quant: quant
-        },
+        data: dataAjax,
         type: 'POST',
         success: function (res) {
-            if (left)
+            if (left) {
                 novetly.prepend(res);
+                //cloneEl = novetly.children(":first").clone().hide().css("display", "").prependTo(novetly);
+                //cloneEl.replaceWith(res);
+                //novetly.css('float', 'left');
+                //cloneEl.show("slide", { direction: "left" }, 2000);
+            }
             else
                 novetly.append(res);
             semaphore = false;
@@ -93,10 +108,14 @@ function nextDownload(e,left, quant) {
 
 function delItem(e, cartWish, id) {
 
-    if (cartWish == 'cart')
+    if (cartWish == 'cart'){
         var jtag = $('#basket');
-    else
+        var tag = $('div#other-panel > a > span:last');
+    }
+    else{
         var jtag = $('#wishlist');
+        var tag = $('div#other-panel > a > span:first');
+    }
 
     $.ajax({
             url: '/cart/delelement',
@@ -108,6 +127,7 @@ function delItem(e, cartWish, id) {
             success: function (res) {
                 //showModal('#modal-'+cartWish,res);
                 getQuantity('get' + cartWish, jtag);
+                getQuantity('get' + cartWish, tag);
                 $(e.target).parents(".goods-row").remove();
                 getQuantity('get' + cartWish, $("#counter-goods"), '0'); //would be altered
             },
@@ -185,6 +205,8 @@ function addToCart(e) {
             success: function (res) {
                 callbackQuantity(res, jtag);
                 callbackQuantity(res, tCart);
+
+
                 //getCart('cart');
 
             },
@@ -199,10 +221,14 @@ function addToCart(e) {
 
 function clearCart(cartWish) {
 
-    if (cartWish == 'cart')
+    if (cartWish == 'cart'){
         var jtag = $('#basket');
-    else
+        var tag = $('div#other-panel > a > span:last');
+    }
+    else{
         var jtag = $('#wishlist');
+        var tag = $('div#other-panel > a > span:first');
+    }
 
     $.ajax({
             url: '/cart/clear',
@@ -212,6 +238,7 @@ function clearCart(cartWish) {
             type: 'GET',
             success: function (res) {
                 refreshCart(0, jtag);
+                refreshCart(0, tag);
                 $("#tab-cart").html("");
             },
             error: function () {
@@ -240,6 +267,7 @@ function addToWish(e) {
             success: function (res) {
                 callbackQuantity(res, jtag);
                 callbackQuantity(res, tWish);
+                setGlyphiconHeart($(e.target), 1);
                 //getCart('wish');
             },
             error: function () {

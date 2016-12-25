@@ -13,10 +13,8 @@ use yii\bootstrap\ActiveForm;
 
 /*  assets  */
 use app\assets\BasketAsset;
-use app\assets\BackAsset;
 
 BasketAsset::register($this);
-BackAsset::register($this);
 
 Yii::setAlias('@img', '@web/img/');
 ?>

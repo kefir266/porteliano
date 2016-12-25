@@ -17,13 +17,11 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 /*  assets  */
-use app\assets\ProductAsset;
+use app\assets\pages\ProductAsset;
 use app\assets\FontAsset;
-use app\assets\BackAsset;
 
 ProductAsset::register($this);
 FontAsset::register($this);
-BackAsset::register($this);
 
 // псевдоним пути к папке
 Yii::setAlias('@doors', '@web/img/doors');
@@ -40,8 +38,8 @@ switch ($product->section->id) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Ручки';
 
-        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
-        $coverLinkRight = Url::to(['catalog/', 'ind' => '5']);
+        $coverLinkLeft = Url::to(['catalog/', 'section' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'section' => '5']);
         break;
     case 4:
         $categoryTitle = 'Входные двери';
@@ -51,8 +49,8 @@ switch ($product->section->id) {
         $coverTextLeft = 'Ручки';
         $coverTextRight = 'Межкомнатные двери';
 
-        $coverLinkLeft = Url::to(['catalog/', 'ind' => '5']);
-        $coverLinkRight = Url::to(['catalog/', 'ind' => '3']);
+        $coverLinkLeft = Url::to(['catalog/', 'section' => '5']);
+        $coverLinkRight = Url::to(['catalog/', 'section' => '3']);
         break;
     case 5:
         $categoryTitle = 'Ручки';
@@ -62,8 +60,8 @@ switch ($product->section->id) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Межкомнатные двери';
 
-        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
-        $coverLinkRight = Url::to(['catalog/', 'ind' => '3']);
+        $coverLinkLeft = Url::to(['catalog/', 'section' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'section' => '3']);
         break;
     default:
         $categoryTitle = 'нет категории';
@@ -74,8 +72,8 @@ switch ($product->section->id) {
         $coverTextLeft = 'Входные двери';
         $coverTextRight = 'Ручки';
 
-        $coverLinkLeft = Url::to(['catalog/', 'ind' => '4']);
-        $coverLinkRight = Url::to(['catalog/', 'ind' => '5']);
+        $coverLinkLeft = Url::to(['catalog/', 'section' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'section' => '5']);
 }
 
 // в хлебные крошки 2 ссылки
@@ -113,7 +111,7 @@ foreach ($sections->getMenu() as $section) {
             <div class="product-discript-door col-md-7 ">
                 <div class="row ">
                     <div class="col-md-10 col-xs-11 door-title">
-                        <h1 class="product-title"><?= $product->section->title ?></h1>
+                        <h1 class="product-title"><?= (isset($product->section)) ? $product->section->title : '' ?></h1>
                     </div>
                 </div>
                 <!--Производитель-->
@@ -122,7 +120,7 @@ foreach ($sections->getMenu() as $section) {
                         <h4 class="product-discript">Производитель</h4>
                     </div>
                     <div class="col-md-6 col-xs-6">
-                        <h4 ><?= $product->manufacturer->title ?></h4>
+                        <h4 ><?= (isset($product->manufacturer)) ? $product->manufacturer->title : '' ?></h4>
                     </div>
                 </div>
                 <!--Коллекция-->
@@ -149,7 +147,7 @@ foreach ($sections->getMenu() as $section) {
                         <h4 class="product-discript">Стиль</h4>
                     </div>
                     <div class="col-md-6 col-xs-6">
-                        <h4><?= $product->style->title ?></h4>
+                        <h4><?= (isset($product->style)) ? $product->style->title : '' ?></h4>
                     </div>
                 </div>
                 <!----------->
@@ -165,7 +163,7 @@ foreach ($sections->getMenu() as $section) {
                         <h4 class="product-discript product-price-h">Стоимость</h4>
                     </div>
                     <div class="col-md-6  col-xs-6">
-                        <h4 class="product-price"><?= $product->price->cost ?></h4>
+                        <h4 class="product-price"><?= (isset($product->price)) ? $product->price->cost : '' ?></h4>
                     </div>
                 </div>
                 <div class="row">
@@ -175,11 +173,11 @@ foreach ($sections->getMenu() as $section) {
                 </div>
                 <div class="row buttons-area">
                     <div class="col-md-6  col-xs-6">
-                        <a  href="#">
+                        <a  href="#" class="add-basket-link">
 <!--                            TODO перекрасить кнопку по функции $product->isOrdered() -->
                 <span id="in-basket" class="btn btn-default send-button"
                       role="button" data-id="<?= $product->id ?>" onclick=addToCart(event)>
-                    <?= ($product->isOrdered()) ? 'Товар уже в корзине' : 'Добавить в корзину'  ?>
+                    <?= ($product->isOrdered()) ? 'Товар уже в корзине' : 'ДОБАВИТЬ В КОРЗИНУ'  ?>
                 </span>
                         </a>
                     </div>
@@ -193,8 +191,8 @@ foreach ($sections->getMenu() as $section) {
             </div>
         </div>
         <!--Обложки на соседние категории-->
-        <div class="row">
-            <div class="col-md-6 col-xs-12">
+        <div class="row cover-all">
+            <div class="col-md-6 col-xs-12 top-cover">
                 <div class="plate center-block">
                     <a href="<?=$coverLinkLeft?>">
                         <?= Html::img($coverImgLeft, [

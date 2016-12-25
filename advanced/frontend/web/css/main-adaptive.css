@@ -134,20 +134,19 @@ header > div {
 #phone_1 {
     font-size: 18px;
     font-family: "PTSans", sans-serif;
-    letter-spacing: 1.8px;
+    letter-spacing: 0.100em;
 }
 
 #phone_2 {
     font-size: 18px;
     font-family: "PTSans", sans-serif;
-    letter-spacing: 1.8px;
+    letter-spacing: 0.100em;
 }
 
 #phone_1_label {
     color: #c5926b;
     font-size: 14px;
     font-family: "PTSans", sans-serif;
-    letter-spacing: 0.1px;
 }
 
 .email-nonactive {
@@ -164,7 +163,10 @@ header > div {
 
 /*******  button *********************/
 #ask_a_question-button {
-    font-family: PTSansBold, sans-serif;
+    font-family: "PT Sans", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px; /* -1/4 от 14pt в photoShop = 10.5pt*/
     padding: 10px 20px 10px 20px;
 
     border-radius: 20px;
@@ -243,6 +245,7 @@ header .row:first-child {
 .navbar-footer {
     font-size: 17px;
     background-color: #413332;
+    font-family: PT sans, sans-serif;
 }
 
 .navbar-center {
@@ -284,6 +287,10 @@ header .row:first-child {
 }
 #wishlist{
     position: relative;
+    font-size: 20px;
+}
+#basket{
+    font-size: 20px;
 }
 .circle-number{
     position: absolute;
@@ -313,4 +320,54 @@ header .row:first-child {
 }
 nav.navbar-default ul.navbar-nav. > li > a{
     padding: 18px 10px;
+}
+
+@media screen and (max-width: 768px ){
+    .circle-number {
+        padding-left: 6px;
+    }
+}
+@media screen and (min-width: 992px){
+    .col-navbar > #navbar-line > .navbar-default >
+    .container > .navbar-collapse > ul > li:last-child > a{
+        /*padding-left: 15px;*/
+        border: none;
+    }
+    .col-navbar > #navbar-line > .navbar-default >
+    .container > .navbar-collapse > ul > li:nth-child(8) > a{
+        /*padding-left: 15px;*/
+    }
+    /******     форма задать вопрос    *********/
+    #set-question > .modal-content{
+
+    }
+    #set-question .form-control{
+        background-color: #f3f0df;
+    }
+    #set-question .control-label {
+        float: left;
+    }
+    #set-question textarea#entryform-message{
+        max-width: 100%;
+        min-width: 223px;
+    }
+    #set-question .btn.btn-primary{
+        background-color: #955347;
+        border: none;
+        border-radius: 0;
+        font-family: "PT Sans",sans-serif;
+        font-style: normal;
+        font-size: 16px;
+        width: 100%;
+    }
+    #set-question-header >  h2{
+        text-align: left;
+        color: #242626;
+        font-size: 25px;
+    }
+    #set-question label{
+        font-family: "PT Sans",sans-serif;
+        font-style: normal;
+        font-size: 16px;
+    }
 }

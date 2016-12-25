@@ -11,7 +11,7 @@
 ?>
 
 <div id="action" class="wrap-action">
-    <div class="img-holder"
+    <div class="img-holder-alter-1"
          data-image="<?= Yii::getAlias('@web').'/img/background/FOTO_INTRO_01.jpg'?>">
     </div>
     <div class="action-panel">
@@ -19,7 +19,7 @@
             <div class="col-md-6 col-sm-12">
                 <h1 class="action-header">АКЦИЯ</h1>
                 <p class="action-text"> 
-                    Гарантированно улучшаем любое диллерское предложение на все модели итальянских дверей и перегородок на 4%!
+                    Гарантированно улучшаем любое диллерское предложение на все модели итальянских дверей и перегородок <strong>на 4%!</strong>
                 </p>
             </div>
             <div class="col-md-6 col-sm-12">

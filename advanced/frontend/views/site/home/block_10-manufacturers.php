@@ -10,7 +10,6 @@ use yii\helpers\Html;
 
 /*  assets  */
 
-require_once Yii::getAlias('@frontend').'/views/layouts/manufacturersNames.php';
 ?>
 <article id="manufacturers" class="wrap-manufacturers">
     <div class="row">
@@ -21,12 +20,13 @@ require_once Yii::getAlias('@frontend').'/views/layouts/manufacturersNames.php';
     <div class="manufacturers">
         <ul>
             <?php
-            for ($i = 0; $i < count($logoNames); $i++){
-                echo '<li>
-                        <a href="#" class="'.$logoNames[$i].'"></a>
-                      </li>';
-            }
-            ?>
+
+                foreach ( $fabrics as $manufacturer): ?>
+                <li>
+                        <?= Html::a('', \yii\helpers\Url::to($manufacturer->website), ['class' => $manufacturer->class]) ?>
+                </li>
+
+            <?php endforeach; ?>
         </ul>
     </div>
     <div class="arrow"></div>

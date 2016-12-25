@@ -5,7 +5,7 @@ body {
 .door-catalog {
 
     /*background-color: #66afe9;*/
-    max-width: 1030px;
+    max-width: 960px;
     margin-left: auto;
     margin-right: auto;
 
@@ -41,6 +41,18 @@ body {
 .btn-group > .btn:first-child {
     width: 180px;
     text-align: left;
+    border-radius: 0;
+    border: #574544 1px solid;
+    color: #3c2f26;
+    font-family: "PT Serif", serif;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 16px;
+    padding-left: 0;
+}
+
+.btn-group > .btn:first-child > .ui-button-text {
+    padding-left: 8px;
 }
 
 .dropdown-menu {
@@ -49,20 +61,27 @@ body {
 
 .flex-container button {
     margin: auto;
+    border-radius: 0;
+    border: 1px solid #574544;
 }
 
 .flex-container button:last-child {
     font-family: "PT Sans", serif;
+    font-size: 16px;
+    letter-spacing: 0.075em;
+    font-weight: normal;
+    font-style: normal;
     background-color: #935347;
     color: white;
-    font-style: normal;
+    border-radius: 0;
+    border: none;
     margin-right: 10px;
+    height: 42px;
 }
 
 h5 {
     font-family: "PT Sans", serif;
     font-size: 12px;
-
 }
 
 span.btn > a {
@@ -89,6 +108,12 @@ span.btn > a {
 
     .btn-group > .btn:first-child {
         width: 400px;
+        height: 40px;
+    }
+
+    .dropdown-toggle {
+        height: 40px;
+        width: 40px;
     }
 
     .flex-container button:last-child {
@@ -105,6 +130,7 @@ span.btn > a {
 @media screen and (min-width: 1024px) {
     .btn-group > .btn:first-child {
         width: 180px;
+
     }
 
     .flex-container button:last-child {
@@ -113,7 +139,9 @@ span.btn > a {
     }
 }
 
+
 /************* карточки товара *******************************/
+/*
 .tile {
     display: inline-block;
     border: 1px solid #e8e8e8;
@@ -130,7 +158,7 @@ span.btn > a {
 }
 
 .tile:nth-child(1) {
-    /* margin-left: 91px ;*/
+    /* margin-left: 91px ;*//*
 }
 
 .tile:nth-child(2) {
@@ -240,6 +268,10 @@ span.btn > a {
     outline: 6px solid #935347;
 }
 
+.row-covers{
+    margin-bottom: 105px;
+}
+
 .doors-gradient-pos {
     position: absolute;
     top: 50%;
@@ -270,30 +302,8 @@ span.btn > a {
     width: 100%;
 }
 
-.tile-img {
-    max-height: 342px;
-    max-width: 220px;
-    height: 342px;
-}
-
-.add-to-wish {
-    font-size: 18px;
-    margin-left: 100px;
-    color: #4e3d36;
-    margin-top: 5px;
-}
-
-.block-price-count {
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5px;
-    font-family: 'PTSerifBold', serif;
-    font-size: 18px;
-}
-
-.block-price-count > a {
-    color: #4e3d36;
+.tile {
+    margin-top: 20px;
 }
 
 .ui-button {
@@ -306,6 +316,204 @@ span.btn > a {
     font-style: italic;
     color: #3c2f26;
 }
+
 ul.breadcrumb {
     margin-left: 0;
+
+}
+
+@media screen and (min-width: 992px) {
+
+    .btn-default.btn.dropdown-toggle,
+    .btn-default.btn.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only {
+        height: 40px;
+        background-color: #ffffff;
+    }
+    .ui-button-text{
+        background-color: #ffffff;
+    }
+
+    .btn-default.btn.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only {
+        width: 167px;
+    }
+
+    .btn-default.btn.dropdown-toggle {
+        width: 40px;
+    }
+    .flex-container button:last-child {
+        width: 128px;
+        margin-top: 24%;
+    }
+    .flex-container > div {
+        margin-top: -33px;
+    }
+    .flex-container {
+        background-color: #ece7d4;
+
+        min-width: 450px;
+        min-height: 105px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .row.row-covers > div >.plate > a > img {
+        height: 465px;
+    }
+    .section-title {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    ul.breadcrumb {
+        margin-left: 10px;
+    }
+
+    .catalog-header {
+        font-family: Copperplate, serif;
+        font-size: 40px;
+        font-weight: normal;
+        font-style: normal;
+        color: #413332;
+        width: 460px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .select-panel {
+        margin-left: auto;
+        margin-right: auto;
+        width: 460px;
+    }
+
+    .flex-container {
+        width: 460px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .sorting {
+        margin-left: auto;
+        margin-right: auto;
+        width: 460px;
+    }
+
+    .flex-container button:last-child {
+        width: 440px;
+        margin-left: 9px;
+    }
+
+    .clear-padding {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .sampling-area {
+        width: 480px;
+    }
+
+    .sampling-area > .tile:first-child {
+        margin-left: 0;
+    }
+
+
+
+    .mobil-width-full {
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .mobil-width-full .doors-gradient-pos {
+        position: absolute;
+        top: 51%;
+        left: 0;
+        width: 100%;
+        height: 50%;
+    }
+
+    .mobil-width-full .plate {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mobil-width-full .col-md-6:last-child > .plate {
+        margin-top: 10px;
+        margin-bottom: 50px;
+    }
+
+    .mobil-width-full .col-md-6:first-child > .plate img {
+        height: 347px;
+    }
+    .section-title {
+        max-width: 460px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .row-covers{
+        max-width: 460px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .row-covers > .col-md-6{
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .row-covers .col-md-6.col-xs-12{
+        margin-top: 10px;
+        margin-bottom: 50px;
+    }
+    .row-covers .plate {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .plate img{
+        height: 335px;
+        width: 330px;
+    }
+    .row.give-more{
+        width: 480px;
+        padding-right: 0;
+        padding-left: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .row.give-more > .col-md-12{
+        padding-right: 0;
+        padding-left: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .wrap-all > .row.max-width{
+        padding-right: 0;
+        padding-left: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .wrap-all > .row.max-width > .col-md-offset-1.col-md-10{
+        padding-right: 0;
+        padding-left: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .panel-quick-selection > .row > .col-md-12 {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .panel-quick-selection > .row{
+        width: 460px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .panel-quick-selection .row.selected-doores{
+        margin-left: 0;
+    }
+
 }

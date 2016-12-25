@@ -24,10 +24,21 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             'title',
-            'img',
-            'link',
+            'alias',
+//            [
+//                'attribute'=>'imageID',
+//                'value' => function($data){
+//                    return $data->src;
+//                }
+//            ],
+            //'body:ntext',
+            // 'website',
+            // 'brandID',
+            // 'isPublished',
+            // 'meta_title',
+            // 'meta_description',
+            // 'meta_keywords',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

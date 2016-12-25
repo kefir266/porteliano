@@ -8,6 +8,12 @@
 */
 
 @font-face {
+    font-family: Montserrat; // имя шрифта для CSS правил
+    src:url(../Fonts/Montserrat-Regular.ttf); // если шрифт не установлен, тогда загружаем его по указанному пути
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
     font-family: Copperplate; // имя шрифта для CSS правил 
     src:url(../Fonts/Copperplate.ttc); // если шрифт не установлен, тогда загружаем его по указанному пути
     font-style: normal;
@@ -47,7 +53,7 @@
 }
 @font-face {
     font-family: 'Glyphicons Halflings';
-    src:url('../Fonts/glyphicons-halflings-regular.ttf')     format('truetype'),
+    src:url('../Fonts/glyphicons-halflings-regular.ttf');
 }
 
 /*rouble.otf*/

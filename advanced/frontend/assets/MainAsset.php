@@ -27,7 +27,7 @@ class MainAsset extends AssetBundle
         'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
         '/js/lib/jquery.scroolly.js',
         // скрипты
-
+        'js/fixedMenu.js',
     ];
     public $depends = [
         'yii\web\JqueryAsset',

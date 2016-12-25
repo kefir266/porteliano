@@ -1,4 +1,4 @@
-.wrap-about{
+.wrap-about {
     position: relative;
     height: 669px;
     /*
@@ -9,23 +9,27 @@
     background: #93fd73 url("../../img/background/FOTO_INTRO_22.jpg");
     background-position-y: 75%;
 }
+
 .wrap-about .row {
     max-width: 100%;
 }
-.block-header{
+
+.block-header {
     margin-top: 100px;
     margin-bottom: 40px;
     text-align: center;
     font-family: Copperplate, serif;
     font-size: 34px;
 }
-.about-left{
-    font-family: "PT Sans",sans-serif;
+
+.about-left {
+    font-family: "PT Sans", sans-serif;
     font-weight: bold;
     font-size: 28px;
 }
-.about-right{
-    font-family: "PT Serif",sans-serif;
+
+.about-right {
+    font-family: "PT Serif", sans-serif;
     font-size: 20px;
 }
 
@@ -46,9 +50,51 @@
     margin-right: auto;
     display: block;
 }
+
 .get-consultation:hover,
 .get-consultation:focus,
-.get-consultation:active{
+.get-consultation:active {
     color: #ffffff;
     background-color: #6a372d;
+}
+
+/******     форма консультации    *********/
+#get-consultation > .modal-content {
+    color: #0f0f0f;
+}
+
+#get-consultation .form-control {
+    background-color: #f3f0df;
+}
+
+#get-consultation .control-label {
+    float: left;
+}
+
+#get-consultation #entryform-message {
+    max-width: 100%;
+
+    min-width: 223px;
+}
+
+#get-consultation .btn.btn-primary {
+    background-color: #955347;
+    border: none;
+    border-radius: 0;
+    font-family: "PT Sans", sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    width: 100%;
+}
+
+#consultation-modal-header > h2 {
+    text-align: left;
+    color: #242626;
+    font-size: 25px;
+}
+
+#get-consultation label {
+    font-family: "PT Sans", sans-serif;
+    font-style: normal;
+    font-size: 16px;
 }

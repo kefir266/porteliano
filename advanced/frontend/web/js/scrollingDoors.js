@@ -4,168 +4,95 @@
 
 //
 (function($){
+    var stop = false;
     function doorRibon_inn() {
-        var viewUL = $("#doors-inn").find(".view")
-                .css("overflow", "hidden")
-                .children("ul"),
-            imgs = viewUL.find("img"), 	    // коллекция картинок
-            imgW = 250,						// ширина одной картинки
-            imgsCount = imgs.length, 		// общее колличество картинок
-            totalImgsW = imgsCount * imgW,  // общая ширина
-            current = 1; 					// текушая картинка(позиция)
-        //  console.log('imgsCount = ' + imgsCount);
-          //  console.log('current = ' + current);
-          //  console.log('totalImgsW = ' + totalImgsW);
-        $("div.show")
+
+        $("#doors-inn").find(".view-doors")
+            .css("overflow", "hidden");
+        $("#doors-out").find("div.view-doors")
+                    .css("overflow", "hidden");
+        $(".running-ribbon-septa > div.view-septa")
+                    .css("overflow", "hidden");
+
+        var viewUL;
+        $("div.show-doors")
             .show()
             .find("button").on("click", function(){
+            //console.log('click');
             var direction = $(this).attr("id");
+            viewUL = $(".active > > .view-doors")
+                .children("ul");
             moveRibbon(direction);
             //clearTimeout(timerId);
-        } );
+        });
+        $("div.show-septa")
+            .show()
+            .find("button").on("click", function(){
+                var direction = $(this).attr("id");
+                viewUL = $(".view-septa")
+                    .children("ul");
+                moveRibbon(direction);
+                //clearTimeout(timerId);
+            }
+        );
 
         function moveRibbon(direction){
-            var   position = imgW;
+            //var widthBlock = $("#doors-inn").width();
             //var direction = $(this).data("param"); // для html 5
             ///////////////////////////////////////////////////////
-            if(direction == "next")
-                current ++;
-            else
-                current --;
-            if(current <= 0){
-                current = imgsCount; // поставить последнюю картинку
-                direction = "next";
-                position = totalImgsW-imgW;
-            }else if(current-1 >= imgsCount){
-                current = 1;			// поставить первую картинку
-                position = 0
-            }
-            doIt(viewUL, position, direction);
-          // console.log('current = ' + current);
-          //  console.log('imgsCount = ' + imgsCount);
-        }
-        function doIt(container, position, direction){
-            var sign; // "-=" or "+="
-            if(direction && position != 0){
-                sign = (direction == "next") ? "-=" : "+=";
-            }
-            var shift = {"margin-left": sign  ? (sign + position) : position};
-            var duration ={};
-            if(position == 0 || position == imgW*(imgsCount-1)){
-                duration = {duration: 0};
-            }
-            container.animate(shift, duration);
+            var widthRibons = 0,
+                chldr = viewUL.children(),
+                len = chldr.length,
+                add = len * 10;
 
+            widthRibons = (len * 230) + add;
+            var left = Math.abs(parseInt(viewUL.css('margin-left')));
+            if(direction == "next"){
+                if(widthRibons == left) return;
+                left += 240;
+            }
+            else{
+                if(left == 0) return;
+                left -= 240;
+            }
+
+            console.log(left);
+            /*for (i = 0 ; i < chldr.length ; i++)
+                widthRibons += $(chldr[i]).width();*/
+
+            /*if(direction == "next") {
+                imgW = viewUL.children(":last").width()+19;
+                var last = viewUL.children(":first").position().left + widthRibons + imgW;
+                console.log(imgW);
+                if (last <= widthBlock) return;
+            }
+            else {
+                imgW = viewUL.children(":first").width()+12;
+                var first = viewUL.children(":first").position().left;
+                if (first >= 15) return;
+            }*/
+            if(!stop)
+                doIt(viewUL,  direction);
+        }
+        function doIt(container,  direction){
+            console.log(direction);
+            var sign; // "-=" or "+="
+            if (direction == "next") {
+                sign = "-=" ;
+                /*var shift = {"margin-left": sign + imgW + "px",
+                    "duration": 100
+                };*/
+            }
+            else 
+                sign = "+=";
+            var shift = {
+                "margin-left" : sign + "240px"
+            };
+            container.animate(shift, 300);
         }
 
     }
+
     doorRibon_inn();
-    function doorRibon_out() {
-        var viewUL = $("#doors-out").find("div.view")
-                .css("overflow", "hidden")
-                .children("ul"),
-            imgs = viewUL.find("img"), 	    // коллекция картинок
-            imgW = 250,						// ширина одной картинки
-            imgsCount = imgs.length, 		// общее колличество картинок
-            totalImgsW = imgsCount * imgW,  // общая ширина
-            current = 1; 					// текушая картинка(позиция)
-        //console.log('imgsCount = ' + imgsCount);
-        //console.log('current = ' + current);
-       // console.log('totalImgsW = ' + totalImgsW);
-        $("div.show")
-            .show()
-            .find("button").on("click", function(){
-            var direction = $(this).attr("id");
-            moveRibbon(direction);
-            //clearTimeout(timerId);
-        } );
 
-        function moveRibbon(direction){
-            var   position = imgW;
-            //var direction = $(this).data("param"); // для html 5
-            ///////////////////////////////////////////////////////
-            if(direction == "next")
-                current ++;
-            else
-                current --;
-            if(current <= 0){
-                current = imgsCount; // поставить последнюю картинку
-                direction = "next";
-                position = totalImgsW-imgW;
-            }else if(current-1 >= imgsCount){
-                current = 1;			// поставить первую картинку
-                position = 0
-            }
-            doIt(viewUL, position, direction);
-            //console.log('current = ' + current);
-            //console.log('imgsCount = ' + imgsCount);
-        }
-        function doIt(container, position, direction){
-            var sign; // "-=" or "+="
-            if(direction && position != 0){
-                sign = (direction == "next") ? "-=" : "+=";
-            }
-            var shift = {"margin-left": sign  ? (sign + position) : position};
-            var duration ={};
-            if(position == 0 || position == imgW*(imgsCount-1)){
-                duration = {duration: 0};
-            }
-            container.animate(shift, duration);
-
-        }
-
-    }
-    doorRibon_out();
-    function septaRibon() {
-        var viewUL = $(".running-ribbon-septa > div.view")
-                .css("overflow", "hidden")
-                .children("ul"),
-            imgs = viewUL.find("img"), 	    // коллекция картинок
-            imgW = 244,						// ширина одной картинки
-            imgsCount = imgs.length, 		// общее колличество картинок
-            totalImgsW = imgsCount * imgW,  // общая ширина
-            current = 1; 					// текушая картинка(позиция)
-
-        $("div.show")
-            .show()
-            .find("button").on("click", function(){
-            var direction = $(this).attr("id");
-            moveRibbon(direction);
-            //clearTimeout(timerId);
-        } );
-
-        function moveRibbon(direction){
-            var   position = imgW;
-            //var direction = $(this).data("param"); // для html 5
-            ///////////////////////////////////////////////////////
-            if(direction == "next")
-                current ++;
-            else
-                current --;
-            if(current == 0){
-                current = imgsCount; // поставить последнюю картинку
-                direction = "next";
-                position = totalImgsW-imgW;
-            }else if(current-1 == imgsCount){
-                current = 1;			// поставить первую картинку
-                position = 0
-            }
-            doIt(viewUL, position, direction);
-        }
-        function doIt(container, position, direction){
-            var sign; // "-=" or "+="
-            if(direction && position != 0){
-                sign = (direction == "next") ? "-=" : "+=";
-            }
-            var shift = {"margin-left": sign  ? (sign + position) : position};
-            var duration ={};
-            if(position == 0 || position == imgW*(imgsCount-1)){
-                duration = {duration: 0};
-            }
-            container.animate(shift, duration);
-
-        }
-
-    }
-    septaRibon();
 })(jQuery);
