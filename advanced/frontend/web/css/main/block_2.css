@@ -23,7 +23,7 @@
 
 .panel-Catalog > div > div > h2 {
 
-    font-family: Copperplate, serif;
+    font-family: Copperplate, sans-serif;
     text-align: center;
 }
 
@@ -159,8 +159,6 @@
 .septa:hover,
 .interiorDoors:hover {
     animation: backgroundscale_15 1s linear normal forwards;
-    border: none;
-    outline: none;
 }
 
 /* Бегущая лента */
@@ -230,12 +228,18 @@ button#next {
 button#prev:hover {
     background-image: url('../../img/UI/arrow_active.jpg');
     transform: scale(-1, 1);
+    border: 0px solid #b7743e;
 
 }
 
 button#next:hover {
     background-image: url('../../img/UI/arrow_active.jpg');
     transform: scale(1, 1);
+    border: 0px solid #b7743e;
+}
+
+button#next:active,button#next:focus, button#prev:active, button#prev:focus{
+    outline: none;
 }
 
 @media all and (max-width: 992px) {

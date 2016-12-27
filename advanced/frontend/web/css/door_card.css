@@ -21,7 +21,6 @@
     margin-right:10px;
     border: 1px solid #e8e8e8;
     background-color: white;
-    height: 512px;
 }
 
 .tile:first-child{
@@ -76,13 +75,17 @@
 
 .info p {
     margin-left: 10px;
-    margin-bottom: 8px;
+    margin-bottom: 0px;
     text-align: left;
     font-size: 14px;
     font-family: "PT Sans", sans-serif;
     font-weight: normal;
     font-style: normal;
+    color: #777777;
     /*line-height: 0.020em;*/
+}
+.info p:nth-child(2){
+    font-style: italic;
 }
 
 .info > .delimiter {
@@ -93,10 +96,10 @@
 }
 
 .info-text {
-    height: 115px;
     background-color: transparent;
     overflow: hidden;
-    padding-top: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .glyphicon-heart-empty:hover::before {

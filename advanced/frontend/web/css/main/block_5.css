@@ -23,7 +23,7 @@
 
 .key-benefits-h2 {
     margin: 105px 0 90px 0;
-    font-family: 'Copperplate', serif;
+    font-family: 'Copperplate', sans-serif;
     font-size: 40px;
     text-align: center;
 }
@@ -58,7 +58,9 @@
     /* вертикальное выравнивание
     display: table-cell;
     vertical-align: middle*/
-    line-height: 102px;
+    line-height: 85px;
+    padding-left: 5px;
+
 }
 
 .panel-key-benefits .glyphicon:before {
@@ -74,6 +76,9 @@
     width: 365px;
     font-size: 18px;
     margin-left: 8px;
+
+		padding-right: 20px;
+
 }
 
 .key-benefits-header {

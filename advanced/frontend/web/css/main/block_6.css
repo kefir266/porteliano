@@ -35,7 +35,7 @@
 .wrap-doors .doors-h2 {
     text-align: center;
     font-size: 2.8em;
-    font-family: Copperplate, serif;
+    font-family: Copperplate, sans-serif;
     margin-top: 100px;
     margin-bottom: 40px;
 }
@@ -125,6 +125,7 @@
 
 .wrap-doors .nav-pills > li.active > a {
     background-color: #802b3a;
+    border-radius: 0;
 }
 
 .wrap-doors .nav-pills > li > a {
@@ -138,6 +139,19 @@
 .wrap-doors .nav-pills {
     border: 1px solid #802b3a;
     padding: 0;
+}
+
+/*дополнительные стили*/
+
+.nav-tabs > li > a{
+    border:none;
+}
+.nav-tabs > li.active > a{
+    border: none;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
+    border:none;
+    margin-right: 0;
 }
 
 @media screen and (min-width: 992px) {

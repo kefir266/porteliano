@@ -26,6 +26,8 @@
     color: #992333;
     font-family: Copperplate, serif;
     font-size: 60px;
+    font-weight: bold;
+    font-family: sans-serif;
 }
 
 .facts p {
@@ -40,24 +42,19 @@
         margin-left: 0;
         padding-left: 0;
         padding-right: 0;
-        width: 198px;
         text-align: center;
         color: #413332;
     }
 
     .facts-col-2 {
-        margin-left: 125px;
         padding-left: 0;
         padding-right: 0;
-        width: 165px;
         text-align: center;
     }
 
     .facts-col-3 {
-        margin-left: 120px;
         padding-left: 0;
         padding-right: 0;
-        width: 246px;
         text-align: center;
     }
 }
