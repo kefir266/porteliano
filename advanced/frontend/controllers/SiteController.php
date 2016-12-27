@@ -115,7 +115,7 @@ class SiteController extends Controller
 
             }
 
-            return $this->refresh(['index']);
+            return $this->refresh();
         }
         return $this->render('index',
             [
