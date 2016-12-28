@@ -273,11 +273,13 @@
     /******  BLOCK 6 DOORS **********************/
     @media screen {
 
-        .wrap-doors .doors-panel.running-ribbon-doors .tile:nth-child(n+3){
-            display: none;
-        }
+        // .wrap-doors .doors-panel.running-ribbon-doors .tile:nth-child(n+3){
+        //     display: none;
+        // }
         .wrap-doors .running-ribbon-doors div.view {
             width: 480px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .wrap-doors #prev {
@@ -526,5 +528,361 @@
     }
     .wrap-action-another{
         margin-bottom: 85px;
+    }
+}
+
+/*адаптив до 320px*/
+@media (max-width: 479px) and (min-width: 320px){
+    /*шапка*/
+    header div.col-xs-4{
+        width:100%;
+        text-align: center;
+    }
+    header .col-xs-4+.col-xs-7{
+        width: 100%;
+        margin-left: 0;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    header .col-xs-7+.col-xs-6{
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+    #phone_2{
+        text-align: center;
+        
+    }
+    /*навигация*/
+    #wrap-tablet{
+        width: 100%;
+        height: 60px;
+        position: absolute;
+        display: block;
+    }
+    .glyphicon-align-left:before{
+        content: '\e052';
+    }
+    div#other-panel{
+        float: right;
+        position: relative;
+        width: 100px;
+        height: 40px;
+        z-index: 1000;
+        line-height: 70px;
+        top: 0;
+    }
+    div#other-panel > a{
+        color: #d3ccad;
+        margin-left: 20px;
+        text-decoration: none;
+    }
+    .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus{
+        background-color: transparent;
+    }
+    .navbar-default .navbar-toggle{
+        border: none;
+        font-size: 21px;
+        z-index: 1002;
+        margin-left: 30px;
+    }
+    .navbar-default .navbar-toggle{
+        font-size: 21px;
+    }
+    .navbar-center{
+        z-index: 20;
+        background-color: #413332;
+    }
+    .navbar-center{
+        width: 100%;
+        text-align: center;
+    }
+    .col-navbar .navbar-center > li{
+        display: block;
+    }
+    div#wrap-tablet.fixed{
+        position: fixed;
+        top: 0px;
+        width: 90%;
+        z-index: 1001;
+        margin-left: 10%;
+    }
+    .fixed-0-0-top{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+    /*1-я секция*/
+
+    .panel-quick-selection{
+        width: 300px;
+    }
+    .panel-quick-selection  h2{
+        font-size: 30px;
+    }
+    .col-clear{
+        text-align: center;
+        
+    }
+    .material, .style, .manufacturer, .block-1-price{
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle){
+        padding-bottom: 8px;
+    }
+    .wrap-quick-selection .row{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    /*секция каталог*/
+    .wrap-catalog{
+        height: auto;
+    }
+    .interiorDoors{
+        width: 300px;
+    }
+    .interiorDoors > .doors-gradient{
+        width: 290px;
+    }
+    .panel-Catalog{
+        width: 300px;
+    }
+    .grips, .septa{
+        width: 150px;
+    }
+    .grips > .doors-gradient, .septa > .doors-gradient{
+        width: 140px;
+    }
+    .grips > .doors-gradient > h3{
+        padding-top: 100%;
+    }
+    .tiles h3{
+        font-size: 14px;
+    }
+    .septa > .doors-gradient > h3{
+        padding-top: 90%;
+    }
+
+    .entryDoors{
+        height: 478px;
+        width: 135px;
+    }
+    .tiles .col-sm-4{
+        padding-left: 30px;
+    }
+    .entryDoors > .doors-gradient{
+        width: 123px;
+    }
+    .entryDoors > .doors-gradient > h3{
+        padding-top: 100%;
+    }
+    /*слайдер*/
+    .ribbon-panel{
+        margin-top: 20px;
+    }
+    .running-ribbon{
+        width: 300px;
+        margin: 0 auto;
+    }
+    .running-ribbon div.view{
+        width: 225px;
+    }
+    #catalog .running-ribbon .col-md-10{
+        width: 200px;
+        padding: 0;
+    }
+    #catalog .show{
+        padding: 0;
+    }
+    #catalog .prev{
+        padding: 0;
+    }
+    #catalog button#next{
+        margin-left: 0;
+        margin-top: 20px;
+        width: 40px;
+    }
+    #catalog button#prev{
+        width: 40px;
+        margin-left: 0;
+    }
+
+    /*секция акция*/
+    #action.wrap-action{
+        height: 1000px;
+    }
+    .action-panel{
+        width: 300px;
+        top: 40%;
+    }
+    #action .contact-form{
+        width: 300px;
+    }
+    #action .contact-form-header-all{
+        font-size: 28px;
+    }
+    .action-text{
+        font-size: 20px;
+        margin-bottom: 45px;
+    }
+    /*секция новинки*/
+    .novelty > .wrap-tiles.view > ul > .tile:first-child, .novelty > .wrap-tiles.view > ul > .tile:nth-child(2){
+        display: none;
+    }
+    .wrap-novelty{
+        height: auto;
+    }
+    .wrap-novelty .running-ribbon-doors div.view{
+        height: auto;
+    }
+    #novelty .tile{
+        float: none;
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
+    /*секция ключевые преимущества*/
+    .wrap-key-benefits, .panel-key-benefits{
+        height: auto;
+    }
+    #key-benefits .panel-key-benefits .col-md-1{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    #key-benefits .panel-key-benefits .col-md-4{
+        width: 100%;
+        padding: 0 15px;
+    }
+    #key-benefits .panel-key-benefits .col-md-5{
+        width: 100%;
+        padding: 0 15px;
+    }
+    .key-benefits-text{
+        width: 100%;
+    }
+    .row-indent{
+        margin-top: 0;
+    }
+    .wrap-key-benefits{
+        padding-bottom: 140px;
+    }
+    .key-benefits-text, .text-block-scale{
+        margin-bottom: 25px;
+    }
+    /*секция двери*/
+    .wrap-doors .nav-pills > li > a{
+        font-size: 10px;
+    }
+    .wrap-doors .running-ribbon-doors div.view{
+        width: 240px;
+    }
+    .wrap-doors .doors-panel{
+        width: 240px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .wrap-doors #prev{
+        margin-top: 525px;
+        z-index: 100;
+        margin-left: 15px;
+    }
+    .wrap-doors #next{
+        margin-left: 0;
+        margin-top: 0;
+    }
+    #doors .row-next{
+        text-align: right;
+        padding-right: 40px;
+        margin-top: -50px;
+    }
+    .wrap-doors .row{
+        width: 300px;
+        margin-right: auto;
+        margin-left: auto; 
+    }
+    #doors .center-block .door-show-more{
+        margin-top: 25px;
+    }
+    /*секция факты*/
+    .facts{
+        width: 300px;
+        text-align: center;
+        
+    }
+    .facts > .row{
+        width: auto;
+    }
+    .wrap-facts-at-Glance{
+        height: 650px;
+    }
+    /*секция перегородки*/
+    .wrap-septa .running-ribbon-septa div.view{
+        width: 240px;
+    }
+    .doors-panel.running-ribbon-septa{
+        width: 240px;
+        margin: 0 auto;
+    }
+    .wrap-septa #prev{
+        margin-top: 500px;
+        margin-left: 25px;
+        z-index: 100;
+    }
+    .wrap-septa #next{
+        margin-left: 0;
+        margin-top: 0;
+    }
+    #septa .row-next{
+        text-align: right;
+        padding-right: 40px;
+        margin-top: -100px;
+        float: right;
+    }
+    /*секция акция*/
+    .wrap-action-another .row{
+        width: 300px;
+    }
+    .wrap-action-another{
+        height: 1100px;
+    }
+    #action-another .contact-form{
+        width: auto;   
+    }
+    .img-holder-alter-3{
+        height: 1100px;
+    }
+    /*секция производители*/
+    #manufacturers{
+        text-align: center;
+    }
+    /*секция о компании*/
+    .wrap-about{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .get-consultation{
+        white-space: inherit;
+        font-size: 30px;
+    }
+    /*секция контакты*/
+    #contacts .contact-form-back-call{
+        width: 300px;
+    }
+    .wrap-contacts .contact-form{
+        top: 45%;
+        left: 45%;
+    }
+    .contact-form-phone{
+        font-size: 14px;
+    }
+    .contact-form button{
+        font-size: 11px;
+    }
+    /*футер*/
+    #footer{
+        font-size: 12px;
     }
 }
