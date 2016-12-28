@@ -102,9 +102,9 @@ span.btn > a {
 }
 
 @media screen and (max-width: 1023px) {
-    .flex-container {
-        width: 450px;
-    }
+    // .flex-container {
+    //     width: 450px;
+    // }
 
     .btn-group > .btn:first-child {
         width: 400px;
@@ -122,9 +122,9 @@ span.btn > a {
         width: 400px;
     }
 
-    .sampling-area {
-        width: 490px;
-    }
+    // .sampling-area {
+    //     width: 490px;
+    // }
 }
 
 @media screen and (min-width: 1024px) {
@@ -512,8 +512,8 @@ ul.breadcrumb {
         margin-left: auto;
         margin-right: auto;
     }
-    .panel-quick-selection .row.selected-doores{
-        margin-left: 0;
-    }
+    // .panel-quick-selection .row.selected-doores{
+    //     margin-left: 0;
+    // }
 
 }

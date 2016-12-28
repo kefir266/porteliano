@@ -1,6 +1,5 @@
 .wrap-manufacturers{
     position: relative;
-    height: 766px;
     background-color: #fff;
 }
 .wrap-manufacturers .row {
@@ -17,7 +16,6 @@
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
-    height: 620px;
 }
 .wrap-resize > a > img{
     width: 100%;
@@ -26,7 +24,9 @@
 .manufacturers-h2{
     text-align: center;
     font-size: 40px;
-    font-family: "Copperplate", serif;
+    font-family: "Copperplate", sans-serif;
+    margin-top: 100px;
+    margin-bottom: 40px;
 }
 .wrap-manufacturers .arrow {
     background-image: url(../../img/other/angle-light.png);

@@ -15,7 +15,8 @@
 @media screen and  (min-width: 1024px) {
     .contact-img {
         height: 404px;
-        width: 571px;
+        // width: 571px;
+        width: 470px;
         background: url("../../img/other/Kontakti.png") no-repeat;
         background-position-x: 0;
         margin-bottom: 1%;
@@ -59,7 +60,7 @@
 
 .contact-form {
     width: 365px;
-    height: 480px;
+    // height: 480px;
     background-color: #FFFFFF;
     padding-top: 1%;
 }

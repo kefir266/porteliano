@@ -215,13 +215,14 @@ header .row:first-child {
 }
 @media screen and (min-width: 992px){
     .footer-copy-text{
-        margin-left: -740px;
+        // margin-left: -740px;
     }
 }
 
 .footer-copy-text {
     line-height: 80px;
-    padding-left: -50%;
+    text-align: left;
+    display: inherit;
 }
 
 .navbar-footer > li > a:hover,
@@ -234,7 +235,7 @@ header .row:first-child {
 
 .navbar-footer > li > a {
     line-height: 30px;
-    letter-spacing: 0.3px;
+    // letter-spacing: 0.3px;
     min-width: 48px;
     min-height: 60px;
 
@@ -337,6 +338,7 @@ nav.navbar-default ul.navbar-nav. > li > a{
     .container > .navbar-collapse > ul > li:nth-child(8) > a{
         /*padding-left: 15px;*/
     }
+}
     /******     форма задать вопрос    *********/
     #set-question > .modal-content{
 

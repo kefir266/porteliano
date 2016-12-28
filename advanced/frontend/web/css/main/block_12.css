@@ -33,6 +33,7 @@
 .wrap-manufacturers,
 .wrap-contacts {
     background-color: #fdfdf3;
+    padding-bottom: 140px;
 }
 .wrap-quick-selection,
 .wrap-action,
@@ -41,4 +42,10 @@
 .wrap-action-another,
 .wrap-about{
     background-color: #dad2bb;
+}
+.wrap-about{
+    padding-bottom: 140px;
+}
+.wrap-contacts{
+    padding-bottom: 0;
 }

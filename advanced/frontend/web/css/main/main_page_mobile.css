@@ -180,6 +180,7 @@
     @media screen {
         .wrap-action {
             height: 866px;
+            margin-bottom: 85px;
         }
 
         .action-panel {
@@ -341,7 +342,7 @@
         margin-top: 0;
         position: absolute;
         top: -45px;
-        left: 92%;
+        left: 86%;
         z-index: 1;
     }
 
@@ -352,9 +353,9 @@
         transform: translateX(-45%);
     }
 
-    .wrap-septa .doors-panel {
-        width: 106%;
-    }
+    // .wrap-septa .doors-panel {
+    //     width: 106%;
+    // }
 
     .wrap-septa .septa-h2 {
         margin-top: 70px;
@@ -433,5 +434,97 @@
     .door-show-more-text{
         top: -40px;
         position: relative;
+    }
+}
+
+/*дополнительные стили*/
+@media(max-width:1300px){
+    .wrap-quick-selection{
+        background-position: center center;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1100px){
+    #action .row{
+        margin: 0;
+    }
+    .contact-form{
+        margin: 0 auto;
+    }
+    #manufacturers .row{
+        margin: 0;
+    }
+    /*слайдер в секции Двери*/
+    .wrap-doors .running-ribbon-doors div.view{
+        width: 715px;
+    }
+    .wrap-doors .doors-panel{
+        width: 715px;
+        margin: 0 auto;
+   }
+   .col-md-10.col-xs-12.novetly-col.novelty-folders{
+        width: 840px;
+   }
+   .wrap-doors .row{
+    width: 980px;
+   }
+   /*слайдер в секции Каталог*/
+   #catalog .ribbon-panel .row{
+        margin: 0;
+   }
+   .running-ribbon div.view{
+    width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    
+   }
+   #catalog button#next{
+    margin-left: 0;
+   }
+   /*слайдер в перегородках*/
+   .wrap-septa .septa-row{
+    width: 990px;
+   }
+   .novelty-folders{
+    width: 850px;
+   }
+   .doors-panel.running-ribbon-septa{
+    width: 710px;
+    margin: 0 auto;
+   }
+   .wrap-septa .running-ribbon-septa div.view{
+    width: 710px;
+   }
+   /*производители*/
+   #manufacturers ul{
+    width: 745px;
+    margin: 0 auto;
+   }
+}
+@media (max-width: 980px) and (min-width: 768px){
+    .wrap-novelty .tile:nth-child(4){
+        display: none;
+    }
+    /*ключевые преисущества*/
+    .text-block-time, .text-block-scale, .text-block-ruby, .text-block-alert, .text-block-star, .text-block-calc{
+        padding-top: 15px;
+    }
+    .key-benefits-text{
+        width: 100%;
+    }
+}
+@media (max-width: 768px) and (min-width: 480px){
+    #septa .novelty-folders{
+        padding: 0;
+    }
+    .wrap-septa .doors-panel{
+        width: 100%;
+    }
+    /*блок акция*/
+    .action-another .row{
+        margin: 0;
+    }
+    .wrap-action-another{
+        margin-bottom: 85px;
     }
 }
