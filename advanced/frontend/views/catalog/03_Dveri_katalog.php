@@ -253,11 +253,18 @@ foreach ($sections->getMenu() as $section) {
             <div class="col-md-12">
                 <div class="sampling-area catalog-elements" data-section="<?= $ind ?>">
 
-                    <?php foreach ($products['products'] as $product): ?>
+                    <?php
+                        $i = 0;
+                        foreach ($products['products'] as $product) {
 
-                        <?php require Yii::getAlias('@frontend') . "/views/layouts/ribbonElement.php"; ?>
+                            if ($i % 4 == 0) {
+                                echo '<div class="clearfix"></div>';
+                            }
+                            require Yii::getAlias('@frontend') . "/views/layouts/ribbonElement.php";
+                            $i++;
+                        }
+                        ?>
 
-                    <?php endforeach; ?>
                 </div>
             </div>
         </div>

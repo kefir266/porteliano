@@ -125,8 +125,12 @@ class CatalogController extends Controller
             //TODO section
             $products = $model->getFilteredProducts($params, $quant, $previous);
             $ribbons = '';
+            $i=0;
             foreach ($products['products'] as $product){
+                if ($i % 4 == 0)
+                    $ribbons .=  '<div class="clearfix"></div>';
                 $ribbons .= $this->renderAjax('@frontend/views/layouts/ribbonElement.php',['product' => $product]);
+                $i++;
             }
             return $ribbons;
         }
