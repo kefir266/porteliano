@@ -754,7 +754,7 @@
 		width:460px;
 		position:relative;
 		/*top:-613px;*/
-		margin-top:-870px;
+		// margin-top:-870px;
 	}
 
 	.facts > div.row > div{
@@ -879,9 +879,9 @@
 
 	/*Производители*/
 
-	.wrap-manufacturers{
-		height:875px;
-	}
+	// .wrap-manufacturers{
+	// 	height:875px;
+	// }
 
 	.wrap-manufacturers > .manufacturers{
 		width:701px;
@@ -892,10 +892,10 @@
 		margin-left:0px;
 	}
 
-	.wrap-manufacturers > .manufacturers > ul > li:nth-child(3n + 2),
-	.wrap-manufacturers > .manufacturers > ul > li:nth-child(3n + 3){
-		margin-left:97px;
-	}
+	// .wrap-manufacturers > .manufacturers > ul > li:nth-child(3n + 2),
+	// .wrap-manufacturers > .manufacturers > ul > li:nth-child(3n + 3){
+	// 	margin-left:97px;
+	// }
 
 	.wrap-manufacturers > div.row > div > h2{
 		margin-top:80px;
@@ -938,9 +938,9 @@
 
 	/*Контакты*/
 
-	.wrap-contacts .contact-form{
-		left:77%;
-	}
+	// .wrap-contacts .contact-form{
+	// 	left:77%;
+	// }
 
 	.ymaps-2-1-45-ground-pane{
 		transform:translate3d(-500px, 0, 0);
@@ -1362,7 +1362,7 @@
 
 	.switch > div > div:last-child{
 		width:700px;
-		height:400px;
+		// height:400px;
 	}
 
 	.switch > div > div:last-child > div{

@@ -1,12 +1,17 @@
 .wrap-septa{
     position: relative;
-    height: 870px;
+    // height: 870px;
     background-color: #FFFFFF;
 }
-.wrap-septa .row {
-    max-width: 100%;
+// .wrap-septa .row {
+//     max-width: 100%;
+// }
+#septa .row{
+    margin: 0;
 }
-
+#septa .septa-row{
+    margin: 0 auto;
+}
 .wrap-septa .arrow {
     background-image: url(../../img/other/angle-light-1.png);
     width: 61px;
