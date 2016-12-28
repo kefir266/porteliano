@@ -127,7 +127,7 @@ class CatalogController extends Controller
             $ribbons = '';
             $i=0;
             foreach ($products['products'] as $product){
-                if ($i % 4 == 0)
+                if (($i % 4 == 0) && ($quant == 20)) // только для галереии где добавляем по 20
                     $ribbons .=  '<div class="clearfix"></div>';
                 $ribbons .= $this->renderAjax('@frontend/views/layouts/ribbonElement.php',['product' => $product]);
                 $i++;
