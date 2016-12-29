@@ -35,7 +35,7 @@ class Product extends ActiveRecord
 
     public function getProducts($section = null, $num = null){
 
-        $condition = ($section == null) ? []
+        $condition = ($section == null || $section === '0') ? []
             : 'product.section_id = '.$section.' OR section.parent_id = '.$section ;
 
         $products['products'] = $this->find()
@@ -72,7 +72,7 @@ class Product extends ActiveRecord
         $id = ($id == null) ? '3': $id;
         $products['section'] = Section::findOne(['id' => $id]);
 
-        $condition = ($id == null) ? []
+        $condition = ($id == null || $id == 0) ? []
             : 'product.section_id = '.$id.' OR section.parent_id = '.$id ;
 
 
@@ -271,12 +271,15 @@ class Product extends ActiveRecord
             }
         }
 
+        $condition = ($id == null || $id == 0) ? []
+            : 'product.section_id = '.$id.' OR section.parent_id = '.$id ;
+
         $query = $this->find()->with('prices','section','manufacturer')
             ->innerJoin('section', 'product.section_id = section.id ')
             ->leftJoin('(select distinct price.cost, price.product_id from price order by date DESC ) price ',
                 'price.product_id = product.id')
-            ->where(['product.section_id' => $id])
-            ->orWhere(['section.parent_id' => $id])->andWhere($conditionPrice)->andWhere($notInCondition)
+            ->where($condition)
+            ->andWhere($conditionPrice)->andWhere($notInCondition)
             ->limit($quantity)
             ->orderBy($order);
 

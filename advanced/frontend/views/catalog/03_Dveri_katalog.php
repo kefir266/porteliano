@@ -35,7 +35,25 @@ Yii::setAlias('@doors', '@web/img/doors');
 Yii::setAlias('@cover', '@web/img/cover');
 
 // определение какие обложки и заголовки показывать
-switch ($products['section']->id) {
+
+$currentSection = (isset($params['section'])? $params['section'] : '0' );
+
+switch ($currentSection) {
+
+    case 0:
+        $categoryTitle = 'Все';
+
+        $coverImgLeft = '@cover/outer.jpg';
+        $coverImgRight = '@cover/grips.png';
+
+
+        $coverTextLeft = 'Входные двери';
+        $coverTextRight = 'Ручки';
+
+        $coverLinkLeft = Url::to(['catalog/', 'section' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'section' => '5']);
+        break;
+
     case 3:
         $categoryTitle = 'Межкомнатные двери';
 
@@ -131,8 +149,9 @@ foreach ($sections->getMenu() as $section) {
         <!-- заголовок -->
         <div class="row">
             <div class="col-md-12">
-                <h2 class="section-title" data-id="<?= $ind ?>">
-                    <?= $sections->findOne($ind)->title_main ?>
+                <h2 class="section-title" data-id="<?= $currentSection ?>">
+                    <?= ($sections->findOne($currentSection))
+                        ? $sections->findOne($currentSection)->title_main : 'Все' ?>
                 </h2>
             </div>
         </div>
@@ -190,7 +209,8 @@ foreach ($sections->getMenu() as $section) {
                                 'data-id' => (isset($params['manufacturer'])) ? $params['manufacturer'] : null
                             ],
                             'split' => true,
-                            'label' => (isset($params['manufacturer']))
+                            'label' => (isset($params['manufacturer'])
+                                && isset($products['manufacturers'][$params['manufacturer']]))
                                 ? $products['manufacturers'][$params['manufacturer']]['label']
                                 : 'Любой',
                             'dropdown' => [
@@ -251,7 +271,7 @@ foreach ($sections->getMenu() as $section) {
         <!-- контейнер для выбранных дверей -->
         <div class="row selected-doores">
             <div class="col-md-12">
-                <div class="sampling-area catalog-elements" data-section="<?= $ind ?>">
+                <div class="sampling-area catalog-elements" data-section="<?= $currentSection ?>">
 
                     <?php
                         $i = 0;

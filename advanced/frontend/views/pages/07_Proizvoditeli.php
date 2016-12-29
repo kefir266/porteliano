@@ -50,8 +50,8 @@ PagesAsset::register($this);
 
 
                 echo Html::beginTag('li');
-                echo Html::a($manufacturer->title, Url::to(['pages/manufacturers_inner', 'id' => $manufacturer->id]));
-
+                echo Html::a($manufacturer->title, Url::to(['/catalog/',
+                    'manufacturer' => $manufacturer->id, 'section' => '0']));//['pages/manufacturers_inner', 'id' => $manufacturer->id]
                 echo Html::endTag('li');
 
             }
@@ -64,7 +64,8 @@ PagesAsset::register($this);
             foreach($fabrics as $manufacturer) {
                 echo Html::beginTag('li', ['class' => 'wrap-resize']);
                 echo Html::a($manufacturer->title,
-                    Url::to($manufacturer->website),
+                    Url::to(['/catalog/',
+                        'manufacturer' => $manufacturer->id, 'section' => '0']),
                     ['class' => $manufacturer->class]);
                 echo Html::endTag('li');
             }
