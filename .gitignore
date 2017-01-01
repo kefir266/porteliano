@@ -15,6 +15,7 @@
 /web/assets/
 /advanced/frontend/web/img/uploaded/
 /gitstatistics
+composer.lock
 
 # IDE and editor specific files #
 #################################
