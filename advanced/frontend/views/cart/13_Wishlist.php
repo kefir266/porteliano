@@ -29,7 +29,7 @@ Yii::setAlias('@img', '@web/img/');
         </div>
         <div class="col-md-10 col-md-offset-3 ">
             <h4 id="count-goods"><span id="counter-goods">
-                    <?= $wish->getQuantity() ?> </span><span class="word-product"> товара</span></h4>
+                    <?= (isset($wish)) ? $wish->getQuantity() : 0 ?> </span><span class="word-product"> товара</span></h4>
         </div>
     </div>
     <!-- товары -->

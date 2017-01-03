@@ -3,31 +3,16 @@
  */
 
 var semaphore = false;
+var jCart,jWish;
 
 (function ($) {
-
-    //$(".add-to-cart").on('click', addToCart);
-    //$(".add-to-wish").on('click', addToWish);
-
-    var jCart = $("#basket");
-    var jWish = $('#wishlist');
-    var tWish = $('div#other-panel > a > span:first');
-    var tCart = $('div#other-panel > a > span:last');
+    jCart = $(".ccart");
+    jWish = $('.cwishlist');
 
     getQuantity('getcart', jCart);
     getQuantity('getwish', jWish);
-    getQuantity('getcart', tCart);
-    getQuantity('getwish', tWish);
 
 
-    // $("#modal-cart .modal-body").on('click','.del-item', function () {
-    //     delItem('cart',$(this).data('id'));
-    //
-    // })
-    // $("#modal-wish .modal-body").on('click','.del-item', function () {
-    //     delItem('wish', $(this).data('id'));
-    //
-    // })
     semaphore = false;
 })(jQuery);
 
@@ -109,12 +94,10 @@ function nextDownload(e,left, quant) {
 function delItem(e, cartWish, id) {
 
     if (cartWish == 'cart'){
-        var jtag = $('#basket');
-        var tag = $('div#other-panel > a > span:last');
+        var jtag = jCart;
     }
     else{
-        var jtag = $('#wishlist');
-        var tag = $('div#other-panel > a > span:first');
+        var jtag = jWish;
     }
 
     $.ajax({
@@ -127,9 +110,8 @@ function delItem(e, cartWish, id) {
             success: function (res) {
                 //showModal('#modal-'+cartWish,res);
                 getQuantity('get' + cartWish, jtag);
-                getQuantity('get' + cartWish, tag);
                 $(e.target).parents(".goods-row").remove();
-                getQuantity('get' + cartWish, $("#counter-goods"), '0'); //would be altered
+                //getQuantity('get' + cartWish, $("#counter-goods"), '0'); //would be altered
             },
             error: function () {
                 console.log('error delete');
@@ -158,12 +140,14 @@ function getQuantity(action, jtag, zero) {
 function setGlyphiconHeart(jtag, state) {
 
     if (state == 0) {
-        jtag.removeClass("glyphicon-heart");
-        jtag.addClass("glyphicon-heart-empty");
+        for (i = 0 ; i < jtag.length ; i++ ){
+            $(jtag.get(i)).removeClass("glyphicon-heart");
+            $(jtag.get(i)).addClass("glyphicon-heart-empty");}
     }
     else {
-        jtag.addClass("glyphicon-heart");
-        jtag.removeClass("glyphicon-heart-empty");
+        for (i = 0 ; i < jtag.length ; i++ ){
+            $(jtag.get(i)).addClass("glyphicon-heart");
+            $(jtag.get(i)).removeClass("glyphicon-heart-empty");}
     }
 }
 
@@ -172,15 +156,18 @@ function refreshCart(quantity, jtag, zero) {
     if (quantity == 0) {
         jtag.text((!!zero) ? zero : '');
         if (jtag.attr('id') == 'wishlist') {
-            jtag.removeClass("glyphicon-heart");
-            jtag.addClass("glyphicon-heart-empty");
+            for (i = 0 ; i < jtag.length ; i++ ){
+                $(jtag.get(i)).removeClass("glyphicon-heart");
+                $(jtag.get(i)).addClass("glyphicon-heart-empty");}
         }
     }
     else {
         jtag.html('<span class="circle-number">' + quantity + '</span>');
         if (jtag.attr('id') == 'wishlist') {
-            jtag.addClass("glyphicon-heart");
-            jtag.removeClass("glyphicon-heart-empty");
+            for (i = 0 ; i < jtag.length ; i++ ){
+                $(jtag.get(i)).addClass("glyphicon-heart");
+                $(jtag.get(i)).removeClass("glyphicon-heart-empty");
+            }
 
         }
     }
@@ -191,8 +178,7 @@ function addToCart(e) {
 
 
     e.preventDefault();
-    var jtag = $('#basket');
-    var tCart = $('div#other-panel > a > span:last');
+    var jtag = jCart;
 
     var id = $(e.target).data('id');
 
@@ -204,7 +190,6 @@ function addToCart(e) {
             type: 'GET',
             success: function (res) {
                 callbackQuantity(res, jtag);
-                callbackQuantity(res, tCart);
 
 
                 //getCart('cart');
@@ -222,12 +207,10 @@ function addToCart(e) {
 function clearCart(cartWish) {
 
     if (cartWish == 'cart'){
-        var jtag = $('#basket');
-        var tag = $('div#other-panel > a > span:last');
+        var jtag = jCart;
     }
     else{
-        var jtag = $('#wishlist');
-        var tag = $('div#other-panel > a > span:first');
+        var jtag = jWish;
     }
 
     $.ajax({
@@ -238,7 +221,6 @@ function clearCart(cartWish) {
             type: 'GET',
             success: function (res) {
                 refreshCart(0, jtag);
-                refreshCart(0, tag);
                 $("#tab-cart").html("");
             },
             error: function () {
@@ -253,8 +235,7 @@ function addToWish(e) {
 
     e.preventDefault();
 
-    var jtag = $('#wishlist');
-    var tWish = $('div#other-panel > a > span:first');
+    var jtag = jWish;
 
     var id = $(e.target).data('id');
 
@@ -266,7 +247,6 @@ function addToWish(e) {
             type: 'GET',
             success: function (res) {
                 callbackQuantity(res, jtag);
-                callbackQuantity(res, tWish);
                 setGlyphiconHeart($(e.target), 1);
                 //getCart('wish');
             },

@@ -36,7 +36,7 @@ Yii::setAlias('@img', '@web/img/');
     </div>
     <!-- товары -->
     <div id="tab-cart">
-        <? if ($cart->getQuantity() === 0): ?>
+        <? if ((! isset($cart)) || $cart->getQuantity() === 0): ?>
 
             <H2>Корзина пуста!</H2>
 
@@ -80,28 +80,7 @@ Yii::setAlias('@img', '@web/img/');
                                 'clientOptions' =>
                                     ['step' => 1, 'min' => 1,],
                             ])
-                            /*
-                            Spinner::widget([
-                                'model' => $modelOrder->
-                                newOrderContent[$id],
-                                'attribute' => '[' . $id . ']' . 'quantity',
-                                'clientOptions' => ['step' => 1, 'min' => 1],
-                            ]);
-                            */
-                            /*
-                            $form->field($modelOrder->
-                            newOrderContent[$id],'['.$id.']'.'quantity')
-                                ->widget(\yii\jui\Spinner::classname(), [
-                                    'clientOptions' => ['step' => 1],
-                                ]);
-                            */
-                            /* ->label(false)
-                             ->textInput([
-                             'type' => 'number',
-                             'min' => 1,
-                             //'value' => $item['quantity'],
-                         ])
-                         /**/
+
                             ?>
 
                         </div>
@@ -147,19 +126,5 @@ Yii::setAlias('@img', '@web/img/');
     </div>
 </div>
 
-<script>/*
-     $( function() {
-     $( "#currency" ).on( "change", function() {
-     $( "#spinner" ).spinner( "option", "culture", $( this ).val() );
-     });
 
-     $( "#spinner" ).spinner({
-     min: 1,
-     max: 2500,
-     step: 1,
-     start: 1000,
-     numberFormat: "C"
-     });
-     } );
-</script>
 
