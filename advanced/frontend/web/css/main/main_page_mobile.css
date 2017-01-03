@@ -865,11 +865,15 @@
     }
     .get-consultation{
         white-space: inherit;
-        font-size: 30px;
+        font-size: 20px;
+        line-height: 30px;
     }
     /*секция контакты*/
     #contacts .contact-form-back-call{
         width: 300px;
+    }
+    #contacts .contact-form button{
+    	font-size: 12px;
     }
     .wrap-contacts .contact-form{
         top: 45%;
