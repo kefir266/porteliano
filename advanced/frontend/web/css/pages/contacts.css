@@ -125,14 +125,14 @@
         margin-bottom: 30px;
     }
     .forma {
-        top: 260px;
+        top: 130px;
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
     }
     .wrap-contacts h2{
         font-family: Copperplate, serif;
-        font-size: 40px;
+        font-size: 35px;
     }
     .contact-form p{
         font-size: 16px;
@@ -142,5 +142,29 @@
 @media screen and (min-width: 992px) {
     .help-block.help-block-error{
         display: none;
+    }
+}
+/*дополнительные стили, адаптив на 320px*/
+@media (max-width: 479px) and (min-width: 320px){
+    .forma {
+        top: 130px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .map .forma .contact-form{
+        width: 300px;
+        min-width: 300px;
+    }
+    ymaps{
+        display: none;
+        height: 600px !important;
+    }
+    .map{
+        height: 600px;
+        margin-top: 0;
+    }
+    .map .forma {
+        top: 0;
     }
 }

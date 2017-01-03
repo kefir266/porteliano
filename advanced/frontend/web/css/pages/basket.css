@@ -444,3 +444,48 @@ input.ui-spinner-input{
         position: relative;
     }
 }
+/*дополнительные стили*/
+@media (max-width: 479px) and (min-width: 320px){
+    .wrap-wishlist #count-goods {
+        float: right;
+        margin-top: 35px;
+        width: auto;
+        position: absolute;
+        top: -76px;
+        left: 250px;
+        width: 70px;
+    }
+    .row.goods-row{
+        position: relative;
+    }
+    .wrap-wishlist .door-icon {
+        max-width: 70px;
+        margin-right: 17px;
+    }
+    .del-describ {
+        position: absolute;
+        top: 30px;
+        left: 100px;
+        width: 300px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .wrap-wishlist .description {
+        line-height: normal;
+    }
+    .wrap-wishlist .button-area {
+        position: absolute;
+        top: 0;
+        left: 380px;
+        width: 80px;
+    }
+    .del-describ {
+        width: auto;
+    }
+    .wrap-wishlist .button-area{
+        left: 250px;
+    }
+    #footer{
+        font-size: 13px;
+    }
+}
