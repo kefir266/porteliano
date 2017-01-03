@@ -150,10 +150,10 @@ foreach ($sections->getMenu() as $section) {
         <div class="row">
             <div class="col-md-12">
                 <h2 class="section-title" data-id="<?= $currentSection ?>">
-                    <?= ($sections->findOne($currentSection))
-                        ? $sections->findOne($currentSection)->title_main :
-                            (isset($products['manufacturers'][$params['manufacturer']])) ?
-                                $products['manufacturers'][$params['manufacturer']]['label'] : '' ?>
+                    <?= (Section::findOne($currentSection))
+                        ? Section::findOne($currentSection)->title_main :
+                        ((isset($params['manufacturer']) && isset($products['manufacturers'][$params['manufacturer']])) ?
+                                $products['manufacturers'][$params['manufacturer']]['label'] : '') ?>
                 </h2>
             </div>
         </div>
@@ -301,6 +301,8 @@ foreach ($sections->getMenu() as $section) {
                 </a>
             </div>
         </div>
+        <?php list($w, $b, $c) = [1,3,4];
+        echo 30 *5.7 ?>
         <!-- Обложки на соседние категории -->
         <div class="row row-covers">
             <div class="col-md-6">
