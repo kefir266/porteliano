@@ -191,7 +191,7 @@ p {
         width: 100%;
     }
     ul.breadcrumb {
-        margin-left: 42px;
+        // margin-left: 42px;
         margin-top: 5%;
     }
 }

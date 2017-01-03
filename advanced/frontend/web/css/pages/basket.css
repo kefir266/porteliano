@@ -4,9 +4,12 @@
     padding: 4px 12px;
     max-width: 70px;
 }
-.goods-row{
+#tab-cart{
     margin-top: 50px;
 }
+// #tab-cart .goods-row{
+//     margin-top: 50px;
+// }
 .description{
     line-height: 80px;
 }

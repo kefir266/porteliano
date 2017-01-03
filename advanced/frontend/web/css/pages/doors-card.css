@@ -10,7 +10,7 @@
 }
 
 .buttons-area {
-    margin-top: 35px;
+    margin-top: 20px;
 
 }
 
@@ -78,11 +78,11 @@
     font-family: "PT Sans", sans-serif;
     font-weight: bold;
     font-size: 18px;
-    padding-bottom: 15px;
+    // padding-bottom: 15px;
 }
 
 .product-price-h {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .product-discript-door {
@@ -102,6 +102,7 @@
     font-family: "PT Serif", serif;
     font-weight: bold;
     font-size: 40px;
+    margin-top: 0;
 }
 
 .img-border {
@@ -248,7 +249,8 @@ ul.breadcrumb {
     ul.breadcrumb {
         margin-left: 0;
         position: absolute;
-        top: 32px;
+        // top: 32px;
+        top: 12px;
         left: 359px;
         background-color: transparent;
     }
@@ -325,12 +327,20 @@ ul.breadcrumb {
         width: 321px;
         padding-right: 0;
         padding-left: 0;
-        margin-left: -10px;
+        // margin-left: -10px;
 
     }
     .row.buttons-area > .col-md-6.col-xs-6:nth-child(2){
         width: 80px;
         padding-right: 0;
         padding-left: 0;
+    }
+}
+/*дополнительные стили*/
+@media screen and (min-width: 992px){
+    ul.breadcrumb{
+        position: relative;
+        top: 0;
+        left: 0;
     }
 }

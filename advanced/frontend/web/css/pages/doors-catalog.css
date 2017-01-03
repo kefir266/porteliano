@@ -517,3 +517,35 @@ ul.breadcrumb {
     // }
 
 }
+/*дополнительные стили*/
+@media (max-width: 479px) and (min-width: 320px){
+    .flex-container{
+        min-width: 300px;
+    }
+    .btn-group > .btn:first-child{
+        width: 250px;
+    }
+    .btn-group{
+        display: block;
+    }
+    .flex-container button:last-child{
+        width: 290px;
+        margin-left: 13px;
+    }
+    .selected-doores .tile{
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+    }
+    .door-catalog .row-covers{
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+    .door-catalog .row-covers .col-md-6{
+        margin-bottom: 45px;
+    }
+    #footer{
+        font-size: 13px;
+    }
+}

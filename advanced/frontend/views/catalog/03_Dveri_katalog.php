@@ -35,7 +35,25 @@ Yii::setAlias('@doors', '@web/img/doors');
 Yii::setAlias('@cover', '@web/img/cover');
 
 // определение какие обложки и заголовки показывать
-switch ($products['section']->id) {
+
+$currentSection = (isset($params['section'])? $params['section'] : '0' );
+
+switch ($currentSection) {
+
+    case 0:
+        $categoryTitle = 'Все';
+
+        $coverImgLeft = '@cover/outer.jpg';
+        $coverImgRight = '@cover/grips.png';
+
+
+        $coverTextLeft = 'Входные двери';
+        $coverTextRight = 'Ручки';
+
+        $coverLinkLeft = Url::to(['catalog/', 'section' => '4']);
+        $coverLinkRight = Url::to(['catalog/', 'section' => '5']);
+        break;
+
     case 3:
         $categoryTitle = 'Межкомнатные двери';
 
@@ -131,8 +149,11 @@ foreach ($sections->getMenu() as $section) {
         <!-- заголовок -->
         <div class="row">
             <div class="col-md-12">
-                <h2 class="section-title" data-id="<?= $ind ?>">
-                    <?= $sections->findOne($ind)->title_main ?>
+                <h2 class="section-title" data-id="<?= $currentSection ?>">
+                    <?= (Section::findOne($currentSection))
+                        ? Section::findOne($currentSection)->title_main :
+                        ((isset($params['manufacturer']) && isset($products['manufacturers'][$params['manufacturer']])) ?
+                                $products['manufacturers'][$params['manufacturer']]['label'] : '') ?>
                 </h2>
             </div>
         </div>
@@ -190,7 +211,8 @@ foreach ($sections->getMenu() as $section) {
                                 'data-id' => (isset($params['manufacturer'])) ? $params['manufacturer'] : null
                             ],
                             'split' => true,
-                            'label' => (isset($params['manufacturer']))
+                            'label' => (isset($params['manufacturer'])
+                                && isset($products['manufacturers'][$params['manufacturer']]))
                                 ? $products['manufacturers'][$params['manufacturer']]['label']
                                 : 'Любой',
                             'dropdown' => [
@@ -251,13 +273,20 @@ foreach ($sections->getMenu() as $section) {
         <!-- контейнер для выбранных дверей -->
         <div class="row selected-doores">
             <div class="col-md-12">
-                <div class="sampling-area catalog-elements" data-section="<?= $ind ?>">
+                <div class="sampling-area catalog-elements" data-section="<?= $currentSection ?>">
 
-                    <?php foreach ($products['products'] as $product): ?>
+                    <?php
+                        $i = 0;
+                        foreach ($products['products'] as $product) {
 
-                        <?php require Yii::getAlias('@frontend') . "/views/layouts/ribbonElement.php"; ?>
+                            if ($i % 4 == 0) {
+                                echo '<div class="clearfix"></div>';
+                            }
+                            require Yii::getAlias('@frontend') . "/views/layouts/ribbonElement.php";
+                            $i++;
+                        }
+                        ?>
 
-                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
@@ -272,6 +301,8 @@ foreach ($sections->getMenu() as $section) {
                 </a>
             </div>
         </div>
+        <?php list($w, $b, $c) = [1,3,4];
+        echo 30 *5.7 ?>
         <!-- Обложки на соседние категории -->
         <div class="row row-covers">
             <div class="col-md-6">
