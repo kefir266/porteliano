@@ -14,6 +14,7 @@ class ContactForm extends Model
     public $email;
     public $subject;
     public $body;
+    public $phone;
     public $verifyCode;
 
 
@@ -54,7 +55,7 @@ class ContactForm extends Model
             ->setTo($email)
             ->setFrom([$this->email => $this->name])
             ->setSubject($this->subject)
-            ->setTextBody($this->body)
+            ->setTextBody($this->name.'\n'.$this->email.'\n'.$this->phone.'\n'.$this->body)
             ->send();
     }
 }

@@ -13,6 +13,7 @@ class EntryForm extends Model
 {
     public $name;
     public $email;
+    public $phone;
     public $message;
 
     public function rules()
@@ -22,6 +23,7 @@ class EntryForm extends Model
         return [
             'name' => [['name'], 'required', 'message' => 'Пожалуйста введите ваше имя.'],
             'email' => [['email'], 'required','message' => 'Пожалуйста введите вашу почту.'],
+            'phone' => [['phone'], 'required','message' => 'Пожалуйста введите ваш телефон.'],
             ['email', 'email', 'message' => 'Почта не коректна.'],
             [['message'], 'string', 'max' => 1000]
         ];

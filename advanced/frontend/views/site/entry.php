@@ -10,6 +10,7 @@ use yii\widgets\ActiveForm;
 <?= $form->field($model, 'name')->label('Имя')->error([]) ?>
 
 <?= $form->field($model, 'email')->label('Е-мейл') ?>
+<?= $form->field($model, 'phone')->label('Телефон') ?>
 
 <?= $form->field($model, 'message')->textarea(['rows' => 6])->label('Текст вопроса') ?>
 
