@@ -151,7 +151,9 @@ foreach ($sections->getMenu() as $section) {
             <div class="col-md-12">
                 <h2 class="section-title" data-id="<?= $currentSection ?>">
                     <?= ($sections->findOne($currentSection))
-                        ? $sections->findOne($currentSection)->title_main : 'Все' ?>
+                        ? $sections->findOne($currentSection)->title_main :
+                            (isset($products['manufacturers'][$params['manufacturer']])) ?
+                                $products['manufacturers'][$params['manufacturer']]['label'] : '' ?>
                 </h2>
             </div>
         </div>
