@@ -133,7 +133,7 @@ $bottomContent_2 = 'Речь идет о входных конструкциях
         </div>
 
         <div class="row desk-center-block">
-            <div class="col-md-10 ">
+            <div class="col-md-12 ">
                 <?= Html::tag('h4', $bottomHead); ?>
                 <?= Html::tag('p', $bottomContent_1); ?>
                 <?= Html::tag('p', $bottomContent_2); ?>

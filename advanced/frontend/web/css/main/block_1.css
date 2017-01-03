@@ -196,6 +196,7 @@
 }
 .ui-button-text-only span.ui-button-text {
     padding: 0 1em;
+    text-align: left;
 }
 .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle){
     border-top-right-radius: 0;

@@ -168,7 +168,7 @@ MobileAsset::register($this);
             </div>
         </div>
         <div class="row max-width">
-            <div class="col-md-offset-1 col-md-10">
+            <div class="col-md-12">
                 <?= Breadcrumbs::widget([
                 'homeLink' => [
                     'label' => 'Главная',
