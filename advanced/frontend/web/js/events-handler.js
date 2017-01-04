@@ -12,6 +12,10 @@ var jCart,jWish;
     getQuantity('getcart', jCart);
     getQuantity('getwish', jWish);
 
+    $(".category-2").on('click',function (event) {
+        event.stopPropagation();
+        $("h2.section-title").click();
+    })
 
     semaphore = false;
 })(jQuery);
@@ -191,8 +195,7 @@ function addToCart(e) {
             success: function (res) {
                 callbackQuantity(res, jtag);
 
-
-                //getCart('cart');
+                $(".tip-cart").show(0).fadeOut(1000);
 
             },
             error: function () {
@@ -231,9 +234,10 @@ function clearCart(cartWish) {
     )
 }
 
-function addToWish(e) {
+function addToWish() {
 
-    e.preventDefault();
+    var e =event;
+    event.preventDefault();
 
     var jtag = jWish;
 
@@ -248,7 +252,8 @@ function addToWish(e) {
             success: function (res) {
                 callbackQuantity(res, jtag);
                 setGlyphiconHeart($(e.target), 1);
-                //getCart('wish');
+
+                $(".tip-wish").show(0).fadeOut(2000);
             },
             error: function () {
                 console.log('error');
@@ -345,4 +350,5 @@ $('ul.dropdown-menu > li > a').on('click', function (event) {
         .parents(".btn-group")
         .children(".btn-default:first")
         .text($(this).text());
+
 });

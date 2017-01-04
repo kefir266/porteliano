@@ -16,7 +16,7 @@ use yii\helpers\Html;
     <!--  Интерактивная карта-->
     <div class="hidden-xs" style="width: 100%; height: 100%">
     <script type="text/javascript" charset="utf-8" async
-            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=-zt7pyu1ot07ORrKltN3hhhNxShJKgs-&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true">
+            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=-zt7pyu1ot07ORrKltN3hhhNxShJKgs-&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=false">
     </script>
     </div>
     <div class="map visible-xs"></div>

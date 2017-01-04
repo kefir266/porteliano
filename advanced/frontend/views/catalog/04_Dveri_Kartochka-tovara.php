@@ -183,9 +183,10 @@ foreach ($sections->getMenu() as $section) {
                         </a>
                     </div>
                     <div class="col-md-6 col-xs-6">
-                        <a id="in-wishlist" class="btn btn-default" href="#">
+                        <a id="in-wishlist" class="btn btn-default" href="#"
+                           data-id="<?= $product->id ?>" onclick=addToWish()>
                 <span class="glyphicon glyphicon-heart<?= ($product->isWished()) ? '' : '-empty' ?>"
-                      data-id="<?= $product->id ?>" onclick=addToWish(event)></span>
+                      data-id="<?= $product->id ?>" ></span>
                         </a>
                     </div>
                 </div> <!--Добавить в корзину-->

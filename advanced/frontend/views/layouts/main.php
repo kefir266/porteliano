@@ -165,6 +165,8 @@ MobileAsset::register($this);
                 PortNavBar::end();
                 /**/
                 ?>
+                <span class="tip-cart">Товар добавлен в корзину</span>
+                <span class="tip-wish">Товар добавлен в избранное</span>
             </div>
         </div>
         <div class="row max-width">

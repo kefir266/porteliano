@@ -46,7 +46,7 @@ use yii\helpers\Url;
                 ? ' glyphicon-heart ' : ' glyphicon-heart-empty '),
             'data-id' => $product->id]),
 
-        Url::to(['cart/addWish', 'id' => $product->id,]), ['onclick' => 'addToWish(event)']);
+        Url::to(['cart/addWish', 'id' => $product->id,]), ['onclick' => 'addToWish()']);
 
     echo Html::endTag('div');
     echo Html::endTag('div');
