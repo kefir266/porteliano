@@ -301,8 +301,7 @@ foreach ($sections->getMenu() as $section) {
                 </a>
             </div>
         </div>
-        <?php list($w, $b, $c) = [1,3,4];
-        echo 30 *5.7 ?>
+        <?php list($w, $b, $c) = [1,3,4];?>
         <!-- Обложки на соседние категории -->
         <div class="row row-covers">
             <div class="col-md-6">

@@ -80,7 +80,7 @@ Yii::setAlias('@imgBigLogos', '@web/img/catalog/logos/big');
     <div class="map">
 
         <script type="text/javascript" charset="utf-8" async
-                src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=-zt7pyu1ot07ORrKltN3hhhNxShJKgs-&amp;width=-1&amp;height=800&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true">
+                src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=-zt7pyu1ot07ORrKltN3hhhNxShJKgs-&amp;width=-1&amp;height=800&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=false">
         </script>
         <div class="forma">
             <?// require Yii::getAlias('@frontend') . '/views/site/home/contact-form.php' ?>
