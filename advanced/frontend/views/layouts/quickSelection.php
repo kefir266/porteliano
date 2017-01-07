@@ -24,11 +24,11 @@ $items = \yii\helpers\ArrayHelper::toArray($sections->getMenu());
     <div class="panel-quick-selection">
         <div class="row center-block">
             <div style="display: flex" class="col-sm-12">
-                <div class="dropdown category">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                <div class="dropdown category category-2">
+                    <button href="#" data-toggle="dropdown" class="dropdown-toggle" ">
                         Выберите категорию
                         <b class="caret"></b>
-                    </a>
+                    </button>
                     <?php
 //                    echo Dropdown::widget([
 //                        'items' => $items,
@@ -40,7 +40,7 @@ $items = \yii\helpers\ArrayHelper::toArray($sections->getMenu());
         <div class="row center-block">
             <div style="display: flex" class="col-sm-12">
                 <div class="dropdown category">
-                <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle dropdown-toggle-categories">
                 <h2 class="section-title"
                     data-id=<?= $products['section']->id ?>><?= $products['section']->title ?></h2>
                 </a>

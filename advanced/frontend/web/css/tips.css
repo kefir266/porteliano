@@ -1,0 +1,19 @@
+.tip-cart, .tip-wish {
+    padding: 0.8em 1em;
+    background: #FFFFAA; border: 1px solid #803f1e;
+
+    border-radius: 10px 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 10px 10px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 10px 10px rgba(0, 0, 0, 0.1);
+    font-family: Calibri, Tahoma, Geneva, sans-serif;
+    position: relative; right: 0em; top: 1em; z-index: 99;
+    margin-left: 0; width: 22rem;
+    display: none;
+}
+
+.dropdown  {
+    cursor: pointer;
+}

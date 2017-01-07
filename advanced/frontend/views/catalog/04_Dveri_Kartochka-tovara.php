@@ -111,7 +111,8 @@ foreach ($sections->getMenu() as $section) {
             <div class="product-discript-door col-md-7 ">
                 <div class="row ">
                     <div class="col-md-10 col-xs-11 door-title">
-                        <h1 class="product-title"><?= (isset($product->section)) ? $product->section->title : '' ?></h1>
+                        <h1 class="product-title"><?= (isset($product->section)) ? $product->section->title_product . ' ' .
+                                $product->title : '' ?></h1>
                     </div>
                 </div>
                 <!--Производитель-->
@@ -183,9 +184,10 @@ foreach ($sections->getMenu() as $section) {
                         </a>
                     </div>
                     <div class="col-md-6 col-xs-6">
-                        <a id="in-wishlist" class="btn btn-default" href="#">
+                        <a id="in-wishlist" class="btn btn-default" href="#"
+                           data-id="<?= $product->id ?>" onclick=addToWish()>
                 <span class="glyphicon glyphicon-heart<?= ($product->isWished()) ? '' : '-empty' ?>"
-                      data-id="<?= $product->id ?>" onclick=addToWish(event)></span>
+                      data-id="<?= $product->id ?>" ></span>
                         </a>
                     </div>
                 </div> <!--Добавить в корзину-->

@@ -36,7 +36,7 @@ Yii::setAlias('@img', '@web/img/');
     </div>
     <!-- товары -->
     <div id="tab-cart">
-        <? if ($cart->getQuantity() === 0): ?>
+        <? if ((! isset($cart)) || $cart->getQuantity() === 0): ?>
 
             <H2>Корзина пуста!</H2>
 
@@ -80,28 +80,7 @@ Yii::setAlias('@img', '@web/img/');
                                 'clientOptions' =>
                                     ['step' => 1, 'min' => 1,],
                             ])
-                            /*
-                            Spinner::widget([
-                                'model' => $modelOrder->
-                                newOrderContent[$id],
-                                'attribute' => '[' . $id . ']' . 'quantity',
-                                'clientOptions' => ['step' => 1, 'min' => 1],
-                            ]);
-                            */
-                            /*
-                            $form->field($modelOrder->
-                            newOrderContent[$id],'['.$id.']'.'quantity')
-                                ->widget(\yii\jui\Spinner::classname(), [
-                                    'clientOptions' => ['step' => 1],
-                                ]);
-                            */
-                            /* ->label(false)
-                             ->textInput([
-                             'type' => 'number',
-                             'min' => 1,
-                             //'value' => $item['quantity'],
-                         ])
-                         /**/
+
                             ?>
 
                         </div>
@@ -129,14 +108,28 @@ Yii::setAlias('@img', '@web/img/');
                 </div>
 
 
-                <div class="col-md-1 col-md-offset-3 delete-all-area form-area">
-                    <?= $form->field($modelOrder, 'customer')->textInput(['maxlength' => true])->label('Имя') ?>
-                    <?= $form->field($modelOrder, 'phone')->textInput(['maxlength' => true]) ?>
-                    <?= $form->field($modelOrder, 'email')->textInput(['type' => 'email']) ?>
-
-                    <?= Html::submitButton('<span
+                <div class="delete-all-area form-area">
+                    <h2>Для покупки воспользуйтесь формой ниже</h2>
+                    <div class="col-md-4">
+                    <?= $form->field($modelOrder, 'customer')
+                        ->textInput(['maxlength' => true, 'placeholder' => 'Ваше имя', ])->label(false) ?>
+                    </div>
+                     <div class="col-md-4">
+                    <?= $form->field($modelOrder, 'email')
+                        ->textInput(['type' => 'email', 'placeholder' => 'E-mail', ])->label(false) ?>
+                    </div>
+                    <div class="col-md-4">
+                    <?= $form->field($modelOrder, 'phone')
+                        ->textInput(['maxlength' => true, 'placeholder' => 'Тел. номер', ])->label(false) ?>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-md-4 form-button">
+                        <?= Html::submitButton('<span
                     class="btn btn-default send-button"
                     role="button" >ОТПРАВИТЬ ЗАЯВКУ</span>', ['class' => 'btn btn-default send-button']) ?>
+                    </div>
+                    <div class="clearfix"></div>
+                    
 
 
                 </div>
@@ -147,19 +140,5 @@ Yii::setAlias('@img', '@web/img/');
     </div>
 </div>
 
-<script>/*
-     $( function() {
-     $( "#currency" ).on( "change", function() {
-     $( "#spinner" ).spinner( "option", "culture", $( this ).val() );
-     });
 
-     $( "#spinner" ).spinner({
-     min: 1,
-     max: 2500,
-     step: 1,
-     start: 1000,
-     numberFormat: "C"
-     });
-     } );
-</script>
 
