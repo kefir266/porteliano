@@ -108,10 +108,13 @@ Yii::setAlias('@img', '@web/img/');
                 </div>
 
 
-                <div class="col-md-1 col-md-offset-3 delete-all-area form-area">
-                    <?= $form->field($modelOrder, 'customer')->textInput(['maxlength' => true])->label('Имя') ?>
-                    <?= $form->field($modelOrder, 'phone')->textInput(['maxlength' => true]) ?>
-                    <?= $form->field($modelOrder, 'email')->textInput(['type' => 'email']) ?>
+                <div class="col-md-4 col-md-offset-3 delete-all-area form-area">
+                    <?= $form->field($modelOrder, 'customer')
+                        ->textInput(['maxlength' => true, 'placeholder' => 'ФИО'])->label(false) ?>
+                    <?= $form->field($modelOrder, 'phone')
+                        ->textInput(['maxlength' => true, 'placeholder' => 'Телефон'])->label(false) ?>
+                    <?= $form->field($modelOrder, 'email')
+                        ->textInput(['type' => 'email', 'placeholder' => 'Электронная почта'])->label(false) ?>
 
                     <?= Html::submitButton('<span
                     class="btn btn-default send-button"
