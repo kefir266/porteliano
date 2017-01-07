@@ -109,22 +109,27 @@ Yii::setAlias('@img', '@web/img/');
 
 
                 <div class="delete-all-area form-area">
-                    <div class="col-md-04">
+                    <h2>Для покупки воспользуйтесь формой ниже</h2>
+                    <div class="col-md-4">
                     <?= $form->field($modelOrder, 'customer')
-                        ->textInput(['maxlength' => true, 'placeholder' => 'ФИО', ])->label(false) ?>
+                        ->textInput(['maxlength' => true, 'placeholder' => 'Ваше имя', ])->label(false) ?>
                     </div>
-                    <div class="col-md-04">
-                    <?= $form->field($modelOrder, 'phone')
-                        ->textInput(['maxlength' => true, 'placeholder' => 'Телефон', ])->label(false) ?>
-                    </div>
-                    <div class="col-md-04">
+                     <div class="col-md-4">
                     <?= $form->field($modelOrder, 'email')
-                        ->textInput(['type' => 'email', 'placeholder' => 'Электронная почта', ])->label(false) ?>
+                        ->textInput(['type' => 'email', 'placeholder' => 'E-mail', ])->label(false) ?>
                     </div>
-
-                    <?= Html::submitButton('<span
+                    <div class="col-md-4">
+                    <?= $form->field($modelOrder, 'phone')
+                        ->textInput(['maxlength' => true, 'placeholder' => 'Тел. номер', ])->label(false) ?>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-md-4 form-button">
+                        <?= Html::submitButton('<span
                     class="btn btn-default send-button"
                     role="button" >ОТПРАВИТЬ ЗАЯВКУ</span>', ['class' => 'btn btn-default send-button']) ?>
+                    </div>
+                    <div class="clearfix"></div>
+
 
 
                 </div>

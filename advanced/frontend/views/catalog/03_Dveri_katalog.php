@@ -295,8 +295,9 @@ foreach ($sections->getMenu() as $section) {
             <div class="col-md-12">
                 <a href="#" onclick="nextDownload(event, false,20)">
                     <div class="center-flex">
-                        <div class="glyphicon glyphicon-plus-sign"></div>
-                        <div class="">Показать ещё</div>
+                        <!-- <div class="glyphicon glyphicon-plus-sign"></div> -->
+                        <div class="plus">+</div>
+                        <div class="">Показать ещё 20 <br> показано 20 из 245</div>
                     </div>
                 </a>
             </div>
