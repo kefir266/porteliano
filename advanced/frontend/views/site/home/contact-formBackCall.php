@@ -20,8 +20,8 @@ use yii\bootstrap\ActiveForm;
         <div class="row">
             <article class="col-lg-12">
                 <h2 class="contact-form-header">Контакты</h2>
-                <div class="contact-form-city">м. Ленинский проспект</div>
-                <div class="contact-form-str">3-й Донской проезд, дом 1</div>
+                <div class="contact-form-city">м. Проспект</div>
+                <div class="contact-form-str">Арбатская улица 1</div>
                 <div class="contact-form-phone">+5(555) 555-55-55,  +5(555) 555-55-55</div>
                 <div class="contact-form-mail">mail@mail.ru</div>
                 <hr style="
