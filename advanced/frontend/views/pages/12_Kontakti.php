@@ -32,7 +32,7 @@ Yii::setAlias('@imgBigLogos', '@web/img/catalog/logos/big');
                 </div>
                 <div class="row indent">
                     <div class="col-md-12 .col-sm-12 col-xs-12">
-                        +7 (495) 742-17-24
+                        +5(555) 555-55-55
                     </div>
                 </div>
                 <div class="row orange">
@@ -42,7 +42,7 @@ Yii::setAlias('@imgBigLogos', '@web/img/catalog/logos/big');
                 </div>
                 <div class="row indent">
                     <div class="col-md-12 .col-sm-12 col-xs-12">
-                        +7 (495) 123-65-56
+                        +5(555) 555-55-55
                     </div>
                 </div>
                 <div class="row orange">
@@ -67,7 +67,7 @@ Yii::setAlias('@imgBigLogos', '@web/img/catalog/logos/big');
                 </div>
                 <div class="row indent">
                     <div class="col-md-12 .col-sm-12 col-xs-12">
-                        absolute@ak-in.ru
+                        mail@mail.ru
                     </div>
                 </div>
             </div>
